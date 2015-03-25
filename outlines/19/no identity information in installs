@@ -1,0 +1,5 @@
+- identity information in installs 
+
+As discussed previously, we were able to work around this, but the behavior didn't match my expectation of how it was going to work and caused some confusion.  If nothing else, you may want to highlight/discuss this behavior in the documentation.
+
+Jon Klein
