@@ -13,7 +13,7 @@ npm install
 
 ### Run gulp to compile and watch js and scss
 ```
-gulp
+gulp watch
 ```
 
 ### Open another terminal console and start jekyll
