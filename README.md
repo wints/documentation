@@ -1,4 +1,4 @@
-Website
+Documentation
 =======
 
 ### Install Jekyll and Dependencies
