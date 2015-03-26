@@ -1,0 +1,37 @@
+machine:
+  ruby:
+    version: 1.9.3-p0-falcon
+
+checkout:
+  post:
+    - rm _config.yml && mv _config_live.yml _config.yml
+    - mv Gemfile.custom ../Gemfile
+
+dependencies:
+  cache_directories:
+    - "~/nvm/v0.10.32"
+    - "~/vendor"
+  post:
+    - cd .. && mkdir -p vendor && bundle check --path=vendor/bundle || bundle install --path=vendor/bundle --jobs=4 --retry=3
+    - cd .. && bundle install --binstubs
+#    - stat "/home/ubuntu/vendor/bundle/ruby/1.9.1/gems/s3_website-2.7.1/s3_website-2.7.1.jar" || curl -L -o --create-dirs "/home/ubuntu/vendor/bundle/ruby/1.9.1/gems/s3_website-2.7.1/s3_website-2.7.1.jar" "https://github.com/laurilehmijoki/s3_website/releases/download/v2.7.1/s3_website.jar"
+
+    - gulp -v || npm install -g gulp
+
+test:
+  override:
+    - echo "TODO WRITE TESTS!"
+
+deployment:
+  production:
+    branch: prod
+    commands:
+      - gulp deploy
+      - ../bin/jekyll build
+      - ../bin/s3_website push
+  master:
+    branch: master
+    commands:
+      - gulp deploy
+      - ../bin/jekyll build
+      - ../bin/s3_website push --dry-run

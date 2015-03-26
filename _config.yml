@@ -1,0 +1,29 @@
+  # Site settings
+title: Branch Documentation
+name: Branch Metrics
+email: info@branchmetrics.io
+description: TODO
+url: "http://localhost:4000"
+baseurl: ""
+permalink: pretty
+markdown: rdiscount
+highlighter: pygments
+dashboard_url: "http://localhost:3000"
+branch_app_id: "25390586299155098"
+
+# Social media
+gplus: https://plus.google.com/+BranchIoMobile
+twitter: https://www.twitter.com/branchmetrics
+facebook: https://www.facebook.com/branchmetrics
+linkedin: https://www.linkedin.com/company/3813083?trk=prof-0-ovw-curr_pos
+soundcloud: https://soundcloud.com/branchmetrics/
+
+exclude:
+  - .gitignore
+  - package.json
+  - circle.yml
+  - gulpfile.js
+  - README.md
+  - s3_website.yml
+  - node_modules
+  - .sass-cache

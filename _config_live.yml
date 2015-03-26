@@ -1,0 +1,29 @@
+  # Site settings
+title: Branch Metrics
+name: Branch Metrics
+email: info@branchmetrics.io
+description: TODO
+url: "https://branch.io" # the base hostname & protocol for your site
+baseurl: "https://branch.io"
+permalink: pretty
+markdown: rdiscount
+highlighter: pygments
+dashboard_url: "https://dashboard.branch.io"
+branch_app_id: "74591864124080823"
+
+# Social media
+gplus: https://plus.google.com/+BranchIoMobile
+twitter: https://www.twitter.com/branchmetrics
+facebook: https://www.facebook.com/branchmetrics
+linkedin: https://www.linkedin.com/company/3813083?trk=prof-0-ovw-curr_pos
+soundcloud: https://soundcloud.com/branchmetrics/
+
+exclude:
+  - .gitignore
+  - package.json
+  - circle.yml
+  - gulpfile.js
+  - README.md
+  - s3_website.yml
+  - node_modules
+  - .sass-cache
