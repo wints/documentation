@@ -15,13 +15,13 @@ var paths = {
 	img: './img/**',
 	imgOut: './img',
 	js: './js/core',
-	less: './less/main.less',
+	less: './less',
 	css: './css'
 }
 
 // Compile .less to .css
 gulp.task('css', function() {
-	return gulp.src(paths.less)
+	return gulp.src(paths.less + '/main.less')
 		.pipe(less())
 			.on('error', gutil.beep)
 			.on('error', function(err) {
@@ -62,7 +62,7 @@ gulp.task('images', function () {
 });
 
 gulp.task('watch', [ 'css', 'js' ], function() {
-	gulp.watch(paths.scss, ['css']);
+	gulp.watch(paths.less + '/*', ['css']);
 	gulp.watch(paths.js + '/*', ['js']);
 	// gulp.watch(paths.images, ['images']);
 });
