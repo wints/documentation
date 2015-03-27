@@ -1,50 +1,14 @@
 <div class="sidebar">
-	<div class="sidebar-group">
-		<div class="sidebar-title">Overview {{ page.platform }}</div>
-		<ul>
-			<li {% if page.name == "index.html" %} class="active" {% endif %}><a href="{{ site.baseurl }}/docs/{{ page.platform }}/overview/">What is Branch?</a></li>
-			<li {% if page.name == "our-technology.html" %} class="active" {% endif %}><a href="{{ site.baseurl }}/docs/{{ page.platform }}/overview/our-technology">Our Technology</a></li>
-			<li {% if page.name == "links.html" %} class="active" {% endif %}><a href="{{ site.baseurl }}/docs/{{ page.platform }}/overview/links">Links</a></li>
-			<li {% if page.name == "pricing.html" %} class="active" {% endif %}><a href="{{ site.baseurl }}/docs/{{ page.platform }}/overview/pricing">Pricing: The Best Part</a></li>
-			<li {% if page.name == "toss-em.html" %} class="active" {% endif %}><a href="{{ site.baseurl }}/docs/{{ page.platform }}/overview/toss-em">Toss Your Old Links</a></li>
-		</ul>
-	</div>
-	<div class="sidebar-group">
-		<div class="sidebar-title">Building with Branch (Recipes)</div>
-		<ul>
-			<li {% if page.name == "ios" %} class="active" {% endif %}><a href="{{ site.baseurl }}/docs/{{ page.platform }}/guides/db-intro">Dashboard Intro</a></li>
-			<li {% if page.name == "ios" %} class="active" {% endif %}><a href="{{ site.baseurl }}/docs/{{ page.platform }}/guides/first-link">Your First Link</a></li>
-			<li {% if page.name == "ios" %} class="active" {% endif %}><a href="{{ site.baseurl }}/docs/{{ page.platform }}/guides/marketing-campaign">Marketing Campaign</a></li>
-			<li {% if page.name == "ios" %} class="active" {% endif %}><a href="{{ site.baseurl }}/docs/{{ page.platform }}/guides/download-tracking">Download Tracking</a></li>
-			<li {% if page.name == "ios" %} class="active" {% endif %}><a href="{{ site.baseurl }}/docs/{{ page.platform }}/guides/deeplinked-ads">Deeplinked Ads</a></li>
-			<li {% if page.name == "ios" %} class="active" {% endif %}><a href="{{ site.baseurl }}/docs/{{ page.platform }}/guides/smart-banner">Mobile Web Smart Banner with Deeplink</a></li>
-			<li {% if page.name == "ios" %} class="active" {% endif %}><a href="{{ site.baseurl }}/docs/{{ page.platform }}/guides/share-content">App Content Share with Deeplink</a></li>
-			<li {% if page.name == "ios" %} class="active" {% endif %}><a href="{{ site.baseurl }}/docs/{{ page.platform }}/guides/personalized-invite">Personalized Invite System</a></li>
-			<li {% if page.name == "ios" %} class="active" {% endif %}><a href="{{ site.baseurl }}/docs/{{ page.platform }}/guides/referral-system">Incentivized Referral System</a></li>
-			<li {% if page.name == "ios" %} class="active" {% endif %}><a href="{{ site.baseurl }}/docs/{{ page.platform }}/guides/text-me-the-app">Text-Me-The-App</a></li>
-		</ul>
-	</div>
-	<div class="sidebar-group">
-		<div class="sidebar-title">Feature (Ingredients)</div>
-		<ul>
-			<li {% if page.name == "ios" %} class="active" {% endif %}><a href="{{ site.baseurl }}/docs/{{ page.platform }}/features/dashboard">Dashboard</a></li>
-			<li {% if page.name == "ios" %} class="active" {% endif %}><a href="{{ site.baseurl }}/docs/{{ page.platform }}/features/configuring-apps">Configuring Client Apps</a></li>
-			<li {% if page.name == "ios" %} class="active" {% endif %}><a href="{{ site.baseurl }}/docs/{{ page.platform }}/features/sharing">Sharing</a></li>
-			<li {% if page.name == "ios" %} class="active" {% endif %}><a href="{{ site.baseurl }}/docs/{{ page.platform }}/features/redirects">Redirection</a></li>
-			<li {% if page.name == "ios" %} class="active" {% endif %}><a href="{{ site.baseurl }}/docs/{{ page.platform }}/features/analaytics">Analytics and Custom Events</a></li>
-			<li {% if page.name == "ios" %} class="active" {% endif %}><a href="{{ site.baseurl }}/docs/{{ page.platform }}/features/rewards">Rewards</a></li>
-			<li {% if page.name == "ios" %} class="active" {% endif %}><a href="{{ site.baseurl }}/docs/{{ page.platform }}/features/routing">Routing</a></li>
-			<li {% if page.name == "ios" %} class="active" {% endif %}><a href="{{ site.baseurl }}/docs/{{ page.platform }}/features/webhooks">Webhooks (Advanced)</a></li>
-			<li {% if page.name == "ios" %} class="active" {% endif %}><a href="{{ site.baseurl }}/docs/{{ page.platform }}/features/debug-tools">Debug tools (Advanced)</a></li>
-		</ul>
-	</div>
-	<div class="sidebar-group">
-		<div class="sidebar-title">API Reference</div>
-		<ul>
-			<li><a href="https://branch.io/docs/">iOS</a></li>
-			<li><a href="https://branch.io/docs/">Android</a></li>
-			<li><a href="https://branch.io/docs/">Web SDK</a></li>
-			<li><a href="https://branch.io/docs/">HTTP API</a></li>
-		</ul>
-	</div>
+	{% for group in site.data.groups %}
+		<div class="sidebar-group">
+			<div class="sidebar-title">{{ group.name }}</div>
+			<ul>
+				{% for ref in group.refs %}
+				<li {% if page.name == {{ ref.route }}.html %} class="active" {% endif %}>
+					<a href="{{ site.baseurl }}/docs/{{ page.platform }}/overview/{{ ref.route }}">{{ ref.title }}</a>
+				</li>
+				{% endfor %}
+			</ul>
+		</div>
+	{% endfor %}
 </div>
