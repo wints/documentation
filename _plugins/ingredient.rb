@@ -45,9 +45,9 @@ module Jekyll
     def render(context)
       if context.registers[:ingredient] and context.registers[:ingredient][@markup] then
         context.registers[:ingredient][@markup]
-        else
-          super
-        end
+      else
+        super
+      end
     end
   end
 end
