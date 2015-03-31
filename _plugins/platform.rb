@@ -1,6 +1,3 @@
-require "byebug"
-require "pp"
-
 module Jekyll
 
   class PlatformPage < Page
