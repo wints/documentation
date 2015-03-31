@@ -12,7 +12,7 @@ module Jekyll
       super
 
       # Include file and remove frontmatter
-      file = read_file(context.registers[:site].in_source_dir("ingredients") + "/" + @markup + ".md").gsub(/^---\n((?!---).*\n)*---/, "")
+      file = read_file(context.registers[:site].in_source_dir("ingredients" + "/" + @markup + ".md")).gsub(/^---\n((?!---).*\n)*---/, "")
       partial = Liquid::Template.parse(file)
       context.stack do
         partial.render!(context)
@@ -56,4 +56,3 @@ end
 Liquid::Template.register_tag('ingredient', Jekyll::IngredientTag)
 Liquid::Template.register_tag('override', Jekyll::OverrideTag)
 Liquid::Template.register_tag('section', Jekyll::SectionTag)
-

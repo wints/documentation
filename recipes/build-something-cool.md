@@ -1,5 +1,10 @@
 ---
-layout: null
+type: recipe
+title: Build something cool
+platforms:
+- ios
+- android
+- web
 ---
 
 There are two types of links you can use:
@@ -24,5 +29,16 @@ This is a simple explanation...
 {% endoverride %}
 
 {% endingredient %}
+
+platform: {{ page.platform }}
+
+{% if page.ios %}
+ios-specific
+{% endif %}
+
+{% if page.android %}
+android-specific
+{% endif %}
+
 
 

@@ -1,5 +1,6 @@
 ---
-layout: null
+type: ingredient
+title: Build something cool
 ---
 
 ### Links
@@ -25,4 +26,6 @@ c = d;
 ```
 
 {% endsection %}
+
+ingg platform: {{ page.platform }}
 
