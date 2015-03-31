@@ -21,6 +21,7 @@ module Jekyll
 
       self.data[platform] = true
       self.data['platform'] = platform
+      self.data['layout'] = type
     end
   end
 
