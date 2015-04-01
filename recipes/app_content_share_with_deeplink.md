@@ -28,7 +28,6 @@ That's the end of the required setup for the Dashboard! The dashboard is incredi
 
 {% override configuring_the_client_header %}{% if page.ios %}Configuring your iOS App{%endif%}{% if page.android %}Configuring your Android App{%endif%}{% endoverride %}
 
-
 {% override configuring_the_client_advanced %}{% endoverride %}<!--- Hide advanced -->
 
 {% endingredient %}

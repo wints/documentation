@@ -7,6 +7,8 @@ Required
 
 After you have followed the required steps for configuring your app on the Dashboard and in your client app(s) (Android, iOS), you can...
 
+Identifying users (and logout)
+
 Share Content -- params/options (parallels between 12,13,14,15)
 	- include custom info on the content <-20.VII
 	- include custom info on the referring user if you want it immediately available <-20.VII
@@ -38,7 +40,7 @@ Routing to content <-24 (parallels between 10?,11,12,13,14,15)
 -- Optional --
 
 Identify your influential users (common to 10,11,12,13,14,15)
-- Identify Call! <-19.V
+- Identify Call! referenced above <-19.V
 - Influencers on the dashboard <-18.Referrals.3
 
 Analytics <-22 (common to 10,11,12,13,14,15)
