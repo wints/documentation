@@ -12,8 +12,11 @@ platforms:
 <!--- /HEADER -->
 
 
+
 <!--- REQUIRED -->
 {% section configuring_the_dashboard_required %}
+
+
 
 <!---    1. App Name -->
 {% section configuring_the_dashboard_app_name %}
@@ -35,9 +38,9 @@ Tip: We recommend keeping production and development versions of your app as com
 {% endsection %}
 <!---       /Tip1 -->
 
-
 {% endsection %}
 <!---    /1. App Name -->
+
 
 
 <!---    2. Web URL -->
@@ -57,9 +60,9 @@ Tip: You can customize this fallback URL on a per-platform or even per-link basi
 {% endsection %}
 <!---       /Tip2 -->
 
-
 {% endsection %}
 <!---    /2. Web URL -->
+
 
 
 <!---    3. Store or custom URL -->
@@ -67,6 +70,7 @@ Tip: You can customize this fallback URL on a per-platform or even per-link basi
 
 {% if page.ios %}### 3. App Store or custom URL{%endif%}
 {% if page.android %}### 3. Play Store or custom URL{%endif%}
+{% if page.web %}### [TODO] Doesn't work for web{%endif%}
 
 Part of the magic of Branch Links is that you can have different configurations for iOS, Android, Fire... -- and it just works! In this section, you need to specify where the user can download your app.
 
@@ -82,6 +86,7 @@ Tip: Please note that this field is __required__. If you are in the early stages
 
 {% endsection %}
 <!---    /3. Store or custom URL -->
+
 
 
 <!---    4. URI Scheme -->
@@ -104,6 +109,8 @@ When you know or have decided on which URI scheme your app is going to use, add 
 {% endsection %} 
 <!---    /4. URI Scheme -->
 
+
+
 <!---    end required comment  -->
 {% section configuring_the_dashboard_end_required %}
 That's the end of the required setup for the Dashboard! The dashboard is incredibly powerful, so the sections below will help you get acquainted with everything it can do. Otherwise feel free to head on over to {% if page.ios %}[TODO] [Configuring the Client]() to set up your iOS app{%endif%}{% if page.android %}[TODO] [Configuring the Client]() to set up your Android app{%endif%}.
@@ -112,6 +119,7 @@ That's the end of the required setup for the Dashboard! The dashboard is incredi
 
 {% endsection %} 
 <!--- /REQUIRED -->
+
 
 
 <!--- ADVANCED -->

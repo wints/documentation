@@ -28,9 +28,18 @@ That's the end of the required setup for the Dashboard! The dashboard is incredi
 
 {% override configuring_the_client_header %}{% if page.ios %}Configuring your iOS App{%endif%}{% if page.android %}Configuring your Android App{%endif%}{% endoverride %}
 
-{% override configuring_the_client_advanced %}{% endoverride %}<!--- Hide advanced -->
+{% override configuring_the_client_advanced_header %}{% endoverride %}
+{% override configuring_the_client_first_link_programmatically %}{% endoverride %}
+{% override configuring_the_client_is_referrable %}{% endoverride %}
+{% override configuring_the_client_web_banner %}{% endoverride %}
 
 {% endingredient %}
 <!--- /Configuring the Client-->
 
 
+<!--- Links and Sharing -->
+{% ingredient links_and_sharing %}
+
+
+{% endingredient %}
+<!--- /Links and Sharing -->

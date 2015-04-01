@@ -29,3 +29,5 @@ Derrick's comments
 - so it looks like i'm going to be putting code samples in-line in the ingredient. do we have a better way to do this? we kinda punted on this question, last I recall.
 - Objective C vs Swift -- do we want separate pages? I'd prefer them be side-by-side
 - I want special styling for the "tips"
+- Numbers for sections is going to be a nightmare. As is what size a given section should be based on the number of pound signs `#`
+- 
