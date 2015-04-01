@@ -10,6 +10,6 @@ this is how you build an app baner:
 blah blah
 blah
 
-{% if page.ios %}ytrdytr{%endif%}
+{% if page.ios %}ytrdytr{% endif %}
 
 

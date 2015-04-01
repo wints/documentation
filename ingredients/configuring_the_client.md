@@ -104,7 +104,7 @@ Next, you'll need to open your project in XCode and complete the following.
 ![Setting Key in PList Demo](/img/ingredients/configuring_the_client/ios_uri_scheme.png)
 
 Go do a quick double-check that this is the same URI scheme listed on the Dashboard, where it should be `myapp://`). For more info on setting up a URI scheme on the Dashboard, [click here](/ingredients/configuring_the_dashboard/ios/index.html#uri_scheme).
-{%endif%}
+{% endif %}
 <!---       /iOS-specific URI Scheme -->
 
 {% if page.android %}
@@ -113,7 +113,7 @@ Go do a quick double-check that this is the same URI scheme listed on the Dashbo
 [TODO]
 
 Go do a quick double-check that this is the same URI scheme listed on the Dashboard, where it should be `myapp://`). For more info on setting up a URI scheme on the Dashboard, [click here](/ingredients/configuring_the_dashboard/android/index.html#uri_scheme).
-{%endif%}
+{% endif %}
 <!---       /Android-specific URI Scheme -->
 
 {% endsection %}
@@ -155,11 +155,11 @@ Here's an example of the initSession call that you should make. This **must** be
 {% endsection %}
 <!---       /iOS initSession call -->
 
-{%endif%}
+{% endif %}
 
 {% if page.android %}
 TODO, don't forget the closeSession as well
-{%endif%}
+{% endif %}
 
 		
 {% endsection %} 
@@ -183,11 +183,11 @@ In order for your app to properly handle deep links, and to allow Branch to work
     return YES;
 }
 ```
-{%endif%}
+{% endif %}
 
 {% if page.android %}
 [TODO]
-{%endif%}
+{% endif %}
 	
 {% endsection %} 
 <!---    /5. Handle Deep Link -->
@@ -232,11 +232,11 @@ Add a `logout` call anywhere you allow the user to logout.
 ```
 
 It's that simple!
-{%endif%}<!--- iOS identify and logout -->
+{% endif %}<!--- iOS identify and logout -->
 
 {% if page.android %}
 [TODO] Android setIdentity and logout
-{%endif%}<!--- Android identify and logout -->
+{% endif %}<!--- Android identify and logout -->
 
 {% endsection %}
 <!---    /identify and logout -->
@@ -282,11 +282,11 @@ You can set _isReferrable_ to **@YES** or **@NO** (Swift: **true** or **false**)
 2. **@NO** (_Swift_ **false**): If _isReferrable_ is set to **@NO**, your app will never track the relationship between referring users and referred users. While we're not sure why you wouldn't want such valuable information, it is certainly an option.
 
 Note that the default behavior when _isReferrable_ is not set is different from both @YES and @NO. It relates the current user to a referring user ONLY for the very first open (aka "Install").
-{%endif%}
+{% endif %}
 
 {% if page.android %}
 [TODO] isReferrable Android
-{%endif%}
+{% endif %}
 
 {% endsection %}
 <!---    /isReferrable -->
