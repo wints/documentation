@@ -35,3 +35,5 @@ Derrick's comments
 - the goal is maintainability for the future. but i feel like we're being trapped in a structure with rigid rules that others won't fully understand
 
 - we have a lot to figure out. i need to keep dropping in content so we can see how feasible this is
+
+- so we can't put ingredients in subfolders currently. everything in one massive folder, with namespace used to differentiate

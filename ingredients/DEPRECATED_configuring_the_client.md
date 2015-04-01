@@ -19,8 +19,6 @@ platforms:
 {% section configuring_the_client_installing_the_sdk %}
 ### 1. Installing the SDK
 
-
-
 {% if page.ios %}
 For iOS, the easiest way to install the SDK is via Cocoapods. Add `pod "Branch"` to your podfile and run `pod install` from the command line.
 
