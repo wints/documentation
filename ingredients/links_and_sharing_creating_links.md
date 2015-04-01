@@ -1,17 +1,18 @@
 ---
 type: ingredient
-title: Configuring the Client - URI Scheme
+title: Links and Sharing - Your First Link
 platforms:
 - ios
 - android
 - web
 ---
 
-{% section configuring_the_client_uri_scheme_header %}### URI Scheme{% endsection %}
+{% section links_and_sharing_your_first_link_header %}### Creating Links{% endsection %}
 
 {% if page.ios %}
+#### Here's how to do it on iOS
 
-To set up your URI Scheme, you'll need to open your project in XCode and complete the following.
+Next, you'll need to open your project in XCode and complete the following.
 
 1. Click on YourProject-Info.plist on the left (or in Swift, Info.plist).
 1. Find URL Types and click the right arrow. (If it doesn't exist, right click anywhere and choose Add Row. Scroll down and choose URL Types)

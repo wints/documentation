@@ -15,7 +15,6 @@ platforms:
 {% ingredient configuring_the_dashboard_store_or_custom_url %}{% endingredient %}
 {% ingredient configuring_the_dashboard_uri_scheme %}{% endingredient %}
 
-
 That's the end of the required setup for the Dashboard! The dashboard is incredibly powerful, so if you want to dive in deeper, definitely check out {% if page.ios %}[TODO] [Configuring the Dashboard](/ingredients/configuring_the_dashboard/ios/index.html#advanced)'s advanced configurations{%endif%}{% if page.android %}[TODO] [Configuring the Dashboard](/ingredients/configuring_the_dashboard/android/index.html#advanced)'s advanced configurations{%endif%}.
 <!--- /Configuring the Dashboard-->
 

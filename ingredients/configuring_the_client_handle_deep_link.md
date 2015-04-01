@@ -13,7 +13,7 @@ platforms:
 {% if page.ios %}
 
 <!---       iOS explanation -->
-{% section configuring_the_client_handle_deep_link_ios_expl %}
+{% section configuring_the_client_handle_deep_link_ios_explation %}
 In order for your app to properly handle deep links, and to allow Branch to work its magic and call the deepLinkHandler, you will need to add the following code within `application:openURL:sourceApplication:annotation:`:
 {% endsection %}
 <!---       /iOS explanation -->
