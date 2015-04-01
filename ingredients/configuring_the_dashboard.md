@@ -66,6 +66,7 @@ Tip: You can customize this fallback URL on a per-platform or even per-link basi
 
 
 <!---    3. Store or custom URL -->
+<a id="store_or_custom_url" />
 {% section configuring_the_dashboard_store_or_custom_url %}
 
 {% if page.ios %}### 3. App Store or custom URL{%endif%}
@@ -127,6 +128,81 @@ That's the end of the required setup for the Dashboard! The dashboard is incredi
 {% section configuring_the_dashboard_advanced %} 
 
 ## Advanced Dashboard Setup
+
+
+### Summary
+
+#### Installs
+
+#### Install Summary
+
+#### Click Flow
+
+#### Funnel Examples
+
+
+### Referrals
+
+#### Overview
+
+#### Reward Rules
+
+#### Influencers
+
+
+### Marketing - Adding Links
+
+#### Description
+
+#### Channel
+
+#### Campaign
+
+#### Tags
+
+#### Custom link label (alias)
+
+#### Custom Redirects
+
+##### $android_url
+
+##### $ios_url
+
+##### $desktop_url
+
+
+### Debug
+
+
+### Export
+
+
+### Webhooks
+
+
+### Settings
+
+#### General
+
+##### API Key
+
+##### Dashboard User ID
+
+##### App Name
+
+##### Text Message
+
+#### Link Settings
+
+##### Redirects -- rather have this be in links_and_sharing?
+
+##### Advanced Settings - Match Type
+
+##### Social Media Customization (OG tags)
+
+##### Custom Link Domain
+
+#### Team -- adding collaborators
 
 {% endsection %} 
 <!--- /ADVANCED -->

@@ -30,4 +30,7 @@ Derrick's comments
 - Objective C vs Swift -- do we want separate pages? I'd prefer them be side-by-side
 - I want special styling for the "tips"
 - Numbers for sections is going to be a nightmare. As is what size a given section should be based on the number of pound signs `#`
-- 
+- Maybe we could somehow pull in only one part of an ingredient? Like `{% partial links_and_sharing links_and_sharing_customizing_url_desktop_url %}` would only pull in the $desktop_url from links and sharing? Excluding everything is far more tedious.
+- it'd be nice to have some simple styling so code examples aren't necessarily shown for every single option on the links and sharing page. or in general. having some sort of "click to view example" that then expands into a code box might save some real estate / busy-ness
+
+- we have a lot to figure out. i need to keep dropping in content so we can see how feasible this is
