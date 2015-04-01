@@ -13,8 +13,11 @@ platforms:
 
 {% override configuring_the_dashboard_header %}{% if page.ios %}Configuring the Dashboard for your iOS app{%endif%}{% if page.android %}Configuring the Dashboard for your Android app{%endif%}{% endoverride %}
 
+{% override configuring_the_dashboard_end_required %}
+That's the end of the required setup for the Dashboard! The dashboard is incredibly powerful, so if you want to dive in deeper, definitely check out {% if page.ios %}[Configuring the Dashboard](/ingredients/configuring_the_dashboard/ios/index.html#advanced)'s advanced configurations{%endif%}{% if page.android %}[Configuring the Dashboard](/ingredients/configuring_the_dashboard/android/index.html#advanced)'s advanced configurations{%endif%}.
+{% endoverride %}
 
-{% override configuring_the_dashboard_optional %}{% endoverride %}<!--- Hide optional -->
+{% override configuring_the_dashboard_advanced %}{% endoverride %}<!--- Hide advanced -->
 
 {% endingredient %}
 <!--- /Configuring the Dashboard-->
@@ -26,7 +29,7 @@ platforms:
 {% override configuring_the_client_header %}{% if page.ios %}Configuring your iOS App{%endif%}{% if page.android %}Configuring your Android App{%endif%}{% endoverride %}
 
 
-{% override configuring_the_client_optional %}{% endoverride %}<!--- Hide optional -->
+{% override configuring_the_client_advanced %}{% endoverride %}<!--- Hide advanced -->
 
 {% endingredient %}
 <!--- /Configuring the Client-->

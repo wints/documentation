@@ -19,6 +19,13 @@ platforms:
 {% section configuring_the_client_installing_the_sdk %}
 ### 1. Installing the SDK
 
+{% if page.ios %}
+
+{% endif %}
+
+{% if page.android %}
+
+{% endif %}
 
 {% endsection %}
 <!---    /1. Installing the SDK -->
@@ -68,16 +75,21 @@ platforms:
 <!---    /5. Handle Deep Link -->
 
 
-
+<!---    end required comment  -->
+{% section configuring_the_client_end_required %}
+{% endsection %} 
+<!---    /end required comment -->
 
 
 {% endsection %} 
 <!--- /REQUIRED -->
 
-<!--- OPTIONAL -->
-{% section configuring_the_client_optional %} 
 
-## Optional Client Setup
+<!--- ADVANCED -->
+<a id="advanced">
+{% section configuring_the_client_advanced %} 
+
+## Advanced Client Setup
 
 
 
@@ -87,4 +99,4 @@ platforms:
 
 
 {% endsection %} 
-<!--- /OPTIONAL -->
+<!--- /ADVANCED -->
