@@ -11,7 +11,7 @@
 					<ul class="nav navbar-nav nav-pills">
 						{% for platform in site.data.platforms %}
 						<li {% if page.platform == platform.key %} class="active" {% endif %}>
-							<a href="{{ site.baseurl }}/docs/{{ platform.key }}/overview/">{{ platform.name }}</a>
+							<a href="{{ site.baseurl }}/#{{ platform.key }}" onclick="setPlatform('{{ platform.key }}')">{{ platform.name }}</a>
 						</li>
 						{% endfor %}
 					</ul>
