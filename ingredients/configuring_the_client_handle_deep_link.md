@@ -21,7 +21,7 @@ In order for your app to properly handle deep links, and to allow Branch to work
 
 <!---       iOS code -->
 {% section configuring_the_client_handle_deep_link_ios_code %}
-```objc
+~~~ objc
 - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
 	// pass the url to the handle deep link call
 	if (![[Branch getInstance] handleDeepLink:url]) {
@@ -29,7 +29,7 @@ In order for your app to properly handle deep links, and to allow Branch to work
 	}
     return YES;
 }
-```
+~~~
 {% endsection %}
 <!---       /iOS code -->
 

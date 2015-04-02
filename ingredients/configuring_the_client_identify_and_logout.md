@@ -24,15 +24,15 @@ The good news is that your app only needs the addition of two lines of code.
 
 Add a `setIdentity:` call wherever you create or login a user.
 
-```
+~~~
 [[Branch getInstance] setIdentity:@"1234"]; // your app's userId
-```
+~~~
 
 Add a `logout` call anywhere you allow the user to logout.
 
-```
+~~~
 [[Branch getInstance] logout];
-```
+~~~
 
 It's that simple!
 {% endsection %}
