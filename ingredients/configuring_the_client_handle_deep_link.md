@@ -7,7 +7,7 @@ platforms:
 - web
 ---
 
-{% section configuring_the_client_handle_deep_link_header %}### Handle Deep Link{% endsection %} 
+{% section configuring_the_client_handle_deep_link_header %}### Handle Deep Link{% endsection %}
 
 <!---    iOS -->
 {% if page.ios %}
@@ -39,4 +39,4 @@ In order for your app to properly handle deep links, and to allow Branch to work
 {% if page.android %}
 [TODO]
 {% endif %}
-	
+

@@ -7,7 +7,7 @@ platforms:
 - web
 ---
 
-{% section configuring_the_client_init_session %}### Starting a Branch Session{% endsection %} 
+{% section configuring_the_client_init_session %}### Starting a Branch Session{% endsection %}
 
 This is required for any SDK call. There is a lot of magic packed into the initSession call and corresponding deepLinkHandler.
 
@@ -28,7 +28,7 @@ Here's an example of the initSession call that you should make. This **must** be
 
 <!---       iOS code -->
 {% section configuring_the_client_init_session_ios_code %}
-```objc
+~~~ objc
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 	// anything else you need to do in this method
 	// ...
@@ -38,11 +38,11 @@ Here's an example of the initSession call that you should make. This **must** be
         if (!error) {
 			// params are the deep linked params associated with the link that the user clicked -> was re-directed to this app
 			// params will be empty if no data found
-			// ... insert custom logic here ...   
+			// ... insert custom logic here ...
         }
 	}];
 }
-```
+~~~
 {% endsection %}
 <!---       /iOS code -->
 
