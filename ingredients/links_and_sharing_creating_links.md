@@ -1,36 +1,50 @@
 ---
 type: ingredient
-title: Links and Sharing - Your First Link
+title: Links and Sharing - Creating Links
 platforms:
 - ios
 - android
 - web
 ---
 
-{% section links_and_sharing_your_first_link_header %}### Creating Links{% endsection %}
+{% section links_and_sharing_creating_links_header %}### Creating Links{% endsection %}
 
+
+<!--- iOS -->
 {% if page.ios %}
-#### Here's how to do it on iOS
 
-Next, you'll need to open your project in XCode and complete the following.
+<!---    iOS explanation -->
+{% section links_and_sharing_creating_links_ios_explanation %}
 
-1. Click on YourProject-Info.plist on the left (or in Swift, Info.plist).
-1. Find URL Types and click the right arrow. (If it doesn't exist, right click anywhere and choose Add Row. Scroll down and choose URL Types)
-1. Add `myapp`, where _myapp_ is a unique string for your app, as an item in URL Schemes as below:
+{% endsection %}
+<!---    /iOS explanation -->
 
+<!---    iOS code -->
+{% section SECTION_INGREDIENT_ios_code %}
+```objc
+```
+{% endsection %}
+<!---    /iOS code -->
 
-![Setting Key in PList Demo](/img/ingredients/configuring_the_client/ios_uri_scheme.png)
-
-Go do a quick double-check that this is the same URI scheme listed on the Dashboard, where it should be `myapp://`). For more info on setting up a URI scheme on the Dashboard, [click here](/ingredients/configuring_the_dashboard/ios/index.html#uri_scheme).
 {% endif %}
-<!---       /iOS-specific URI Scheme -->
+<!--- /iOS -->
 
+
+<!--- Android -->
 {% if page.android %}
-#### Here's how to do it on Android
 
-[TODO]
+<!---    Android explanation -->
+{% section SECTION_INGREDIENT_android_explanation %}
+EXPLANATION HERE
+{% endsection %}
+<!---    /Android explanation -->
 
-Go do a quick double-check that this is the same URI scheme listed on the Dashboard, where it should be `myapp://`). For more info on setting up a URI scheme on the Dashboard, [click here](/ingredients/configuring_the_dashboard/android/index.html#uri_scheme).
+<!---    Android code -->
+{% section SECTION_INGREDIENT_android_code %}
+```java
+```
+{% endsection %}
+<!---    /Android code -->
+
 {% endif %}
-<!---       /Android-specific URI Scheme -->
-
+<!--- /Android -->

@@ -15,7 +15,7 @@ This is required for any SDK call. There is a lot of magic packed into the initS
 {% if page.ios %}
 
 <!---       iOS explanation -->
-{% section configuring_the_client_init_session_ios_expl %}
+{% section configuring_the_client_init_session_ios_explation %}
 The deepLinkHandler is a block of code that executes when a Branch session is successfully initialized, as well as anytime a user clicks a link to your app. This is the central place where you define how your app should respond to links.
 
 When a user clicks a Branch link and your app opens, the Branch SDK contacts the Branch servers to see whether this user opening your app is the same one who just clicked the link. If it is, then the params dictionary that you see below will be populated with any data attached to a Branch link if a user just clicked one.
