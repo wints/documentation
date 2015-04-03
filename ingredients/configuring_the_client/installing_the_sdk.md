@@ -1,12 +1,3 @@
----
-type: ingredient
-title: Configuring the Client - Installing the SDK
-platforms:
-- ios
-- android
-- web
----
-
 {% section configuring_the_client_installing_the_sdk_header %}### Installing the SDK{% endsection %}
 
 {% if page.ios %}

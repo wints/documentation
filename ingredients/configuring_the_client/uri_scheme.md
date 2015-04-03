@@ -1,12 +1,3 @@
----
-type: ingredient
-title: Configuring the Client - URI Scheme
-platforms:
-- ios
-- android
-- web
----
-
 {% section configuring_the_client_uri_scheme_header %}### URI Scheme{% endsection %}
 
 {% if page.ios %}

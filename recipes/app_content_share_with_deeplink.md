@@ -20,7 +20,6 @@ That's the end of the required setup for the Dashboard! The dashboard is incredi
 <!--- /Configuring the Dashboard-->
 
 
-
 ## {% if page.ios %}Configuring your iOS app{%endif%}{% if page.android %}Configuring your Android app{%endif%}
 {% ingredient configuring_the_client_installing_the_sdk %}{% endingredient %}
 {% ingredient configuring_the_client_branch_key %}{% endingredient %}
@@ -35,3 +34,11 @@ If you want to know who is sharing your content, whether for internal purposes (
 <!--- /Configuring the Client-->
 
 
+## Generating Links
+{% ingredient links_and_sharing_creating_links %}{% endingredient %}
+{% ingredient links_and_sharing_custom_data %}{% endingredient %}
+{% ingredient links_and_sharing_channel %}{% endingredient %}
+{% ingredient links_and_sharing_feature %}{% endingredient %}
+{% ingredient links_and_sharing_alias %}{% endingredient %}
+{% ingredient links_and_sharing_og_tags %}{% endingredient %}
+<!--- /Links and Sharing-->
