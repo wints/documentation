@@ -1,11 +1,12 @@
 <div class="sidebar">
 	{% for group in site.data.groups %}
 		<div class="sidebar-group">
-			<div class="sidebar-title">{{ group.name }}</div>
+			<div class="sidebar-title">{{ group[1][0] }}</div>
 			<ul>
-				{% for ref in group.refs %}
-				<li{% if page.name == {{ ref.route }} %} class="active"{% endif %}>
-					<a href="{{ site.baseurl }}/docs/{{ page.platform }}/overview/{{ ref.route }}">{{ ref.title }}</a>
+				{{ groups[1] }}
+				{% for ref in group[1][1] %}
+				<li{% if page.name == ref[0] %} class="active"{% endif %}>
+					<a href="{{ site.baseurl }}/{{ group[0] }}/{{ ref[0] }}/{% if ref[2][page.platform] %}{{ page.platform }}{% endif %}">{{ ref[1] }}</a>
 				</li>
 				{% endfor %}
 			</ul>

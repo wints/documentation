@@ -1,11 +1,11 @@
 module Jekyll
 
   class PlatformPage < Page
-    def initialize(site, base, type, page, platform)
+    def initialize(site, base, type, page, platform, default)
       @site = site
       @base = base
 
-      if platform != '' then
+      if platform != '' and !default then
         @dir = File.join(type + 's', page.name.split(".")[0])
         @name = platform + '.md'
       else
@@ -18,6 +18,7 @@ module Jekyll
 
       self.data[platform] = true
       self.data['platform'] = platform
+      self.data['default'] = default
       self.data['layout'] = type
     end
   end
@@ -29,13 +30,13 @@ module Jekyll
 
       filtered_pages.each do |page|
         if page.data['platforms'] then
-          # add a default page
-          site.pages << PlatformPage.new(site, site.source, page.data['type'], page, "index")
+          # add a default page as the first value in the array
+          site.pages << PlatformPage.new(site, site.source, page.data['type'], page, page.data['platforms'][0], true)
           page.data['platforms'].each do |platform|
-            site.pages << PlatformPage.new(site, site.source, page.data['type'], page, platform)
+            site.pages << PlatformPage.new(site, site.source, page.data['type'], page, platform, false)
           end
         else
-          site.pages << PlatformPage.new(site, site.source, page.data['type'], page, "")
+          site.pages << PlatformPage.new(site, site.source, page.data['type'], page, page.data['platforms'][0] || "", false)
         end
       end
     end
