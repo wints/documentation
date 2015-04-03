@@ -107,7 +107,7 @@ Code for HTTP API
 
 {% section links_and_sharing_custom_data_header %}### Custom Data{% endsection %}
 
-This is one of the most powerful tools that Branch offers you--you can attach any data you want to a link. 
+This is one of the most powerful tools that Branch offers you--you can attach any data you want to a link.
 
 One possibility is to use this for users sharing invitations or content. For example, when Mario wants to invite his friends to your app, you can give him a unique link with custom data about him and his content in it.
 
@@ -119,7 +119,7 @@ Example:
 ![picture here]()
 {% endif %}
 {% if page.ios %}
-```objc
+~~~ objc
 NSDictionary *params = @{@"referringUsername": @"Mario",
                          @"referringUserId": @"1234",
                          @"pictureId": @"987666",
@@ -133,22 +133,22 @@ NSString *feature = BRANCH_FEATURE_TAG_SHARE;
         NSLog(@"url is: %@", url);
     }
 }];
-```
+~~~
 {% endif %}
 {% if page.android %}
-```
+~~~
 Code here
-```
+~~~
 {% endif %}
 {% if page.web %}
-```
+~~~
 Code here
-```
+~~~
 {% endif %}
 {% if page.http %}
-```
+~~~
 Code here
-```
+~~~
 {% endif %}
 
 {% endsection %}
@@ -168,7 +168,7 @@ Example:
 ![picture here]()
 {% endif %}
 {% if page.ios %}
-```objc
+~~~ objc
 NSDictionary *params = @{@"$og_title": @"MyApp is awesome",
                          @"$og_description": @"going crazy viral!",
                          @"$og_image_url": @"http://yoursite.com/pics/987666"};
@@ -180,22 +180,22 @@ NSString *feature = BRANCH_FEATURE_TAG_SHARE;
         NSLog(@"url is: %@", url);
     }
 }];
-```
+~~~
 {% endif %}
 {% if page.android %}
-```
+~~~
 Code here
-```
+~~~
 {% endif %}
 {% if page.web %}
-```
+~~~
 Code here
-```
+~~~
 {% endif %}
 {% if page.http %}
-```
+~~~
 Code here
-```
+~~~
 {% endif %}
 
 Here is a full list of OG tags recognized by Branch:
@@ -205,7 +205,7 @@ Here is a full list of OG tags recognized by Branch:
 | "$og_title" | The title you'd like to appear for the link in social media
 | "$og_description" | The description you'd like to appear for the link in social media
 | "$og_image_url" | The URL for the image you'd like to appear for the link in social media
-| "$og_video" | The URL for the video 
+| "$og_video" | The URL for the video
 | "$og_url" | The URL you'd like to appear
 | "$og_app_id" | Your OG app ID. Optional and rarely used.
 
@@ -233,7 +233,7 @@ Example:
 ![picture here]()
 {% endif %}
 {% if page.ios %}
-```objc
+~~~ objc
 NSDictionary *params = @{ @"$ios_url": @"http://example.com/your-custom-page-instead-of-the-app-store" };
 [[Branch getInstance] getShortURLWithParams:params andCallback:^(NSString *url, NSError *error) {
     if (!error) {
@@ -241,22 +241,22 @@ NSDictionary *params = @{ @"$ios_url": @"http://example.com/your-custom-page-ins
         NSLog(@"url is: %@", url);
     }
 }];
-```
+~~~
 {% endif %}
 {% if page.android %}
-```
+~~~
 Code here
-```
+~~~
 {% endif %}
 {% if page.web %}
-```
+~~~
 Code here
-```
+~~~
 {% endif %}
 {% if page.http %}
-```
+~~~
 Code here
-```
+~~~
 {% endif %}
 
 {% endsection %}
@@ -276,7 +276,7 @@ Example:
 ![picture here]()
 {% endif %}
 {% if page.ios %}
-```objc
+~~~ objc
 NSDictionary *params = @{ @"$android_url": @"http://example.com/your-custom-page-instead-of-the-play-store" };
 [[Branch getInstance] getShortURLWithParams:params andCallback:^(NSString *url, NSError *error) {
     if (!error) {
@@ -284,22 +284,22 @@ NSDictionary *params = @{ @"$android_url": @"http://example.com/your-custom-page
         NSLog(@"url is: %@", url);
     }
 }];
-```
+~~~
 {% endif %}
 {% if page.android %}
-```
+~~~
 Code here
-```
+~~~
 {% endif %}
 {% if page.web %}
-```
+~~~
 Code here
-```
+~~~
 {% endif %}
 {% if page.http %}
-```
+~~~
 Code here
-```
+~~~
 {% endif %}
 
 {% endsection %}
@@ -320,7 +320,7 @@ Example:
 ![picture here]()
 {% endif %}
 {% if page.ios %}
-```objc
+~~~ objc
 NSDictionary *params = @{ @"$desktop_url": @"http://example.com/your-custom-page-instead-of-a-text-me-the-app-screen" };
 [[Branch getInstance] getShortURLWithParams:params andCallback:^(NSString *url, NSError *error) {
     if (!error) {
@@ -328,22 +328,22 @@ NSDictionary *params = @{ @"$desktop_url": @"http://example.com/your-custom-page
         NSLog(@"url is: %@", url);
     }
 }];
-```
+~~~
 {% endif %}
 {% if page.android %}
-```
+~~~
 Code here
-```
+~~~
 {% endif %}
 {% if page.web %}
-```
+~~~
 Code here
-```
+~~~
 {% endif %}
 {% if page.http %}
-```
+~~~
 Code here
-```
+~~~
 {% endif %}
 
 {% endsection %}
@@ -366,7 +366,7 @@ Example:
 ![picture here]()
 {% endif %}
 {% if page.ios %}
-```objc
+~~~ objc
 NSDictionary *params = @{ @"$always_deeplink": @"true" };
 [[Branch getInstance] getShortURLWithParams:params andCallback:^(NSString *url, NSError *error) {
     if (!error) {
@@ -374,22 +374,22 @@ NSDictionary *params = @{ @"$always_deeplink": @"true" };
         NSLog(@"url is: %@", url);
     }
 }];
-```
+~~~
 {% endif %}
 {% if page.android %}
-```
+~~~
 Code here
-```
+~~~
 {% endif %}
 {% if page.web %}
-```
+~~~
 Code here
-```
+~~~
 {% endif %}
 {% if page.http %}
-```
+~~~
 Code here
-```
+~~~
 {% endif %}
 
 {% endsection %}
@@ -414,29 +414,29 @@ Example:
 ![picture here]()
 {% endif %}
 {% if page.ios %}
-```objc
+~~~ objc
 [[Branch getInstance] getShortURLWithParams:nil andTags:nil andChannel:@"iOS" andFeature:BRANCH_FEATURE_TAG_SHARE andStage:nil andMatchDuration:(60*60*1) andCallback:^(NSString *url, NSError *error) {
     if (!error) {
         // url is available for sharing!
         NSLog(@"url is: %@", url);
     }
 }];
-```
+~~~
 {% endif %}
 {% if page.android %}
-```
+~~~
 Code here
-```
+~~~
 {% endif %}
 {% if page.web %}
-```
+~~~
 Code here
-```
+~~~
 {% endif %}
 {% if page.http %}
-```
+~~~
 Code here
-```
+~~~
 {% endif %}
 
 {% endsection %}

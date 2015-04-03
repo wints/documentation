@@ -5,7 +5,7 @@ title: Configuring the Dashboard - App Name
 
 {% section configuring_the_dashboard_app_name_header %}### App Name{% endsection %}
 
-Our dashboard is the starting point for adding apps as well as tracking users of your app. 
+Our dashboard is the starting point for adding apps as well as tracking users of your app.
 
 To get started, point your browser to [https://dashboard.branch.io/](https://dashboard.branch.io/). If you haven't created an account before, you can signup and get taken through the basic setup right away. If you've signed up already, simply navigate to the [Summary](https://dashboard.branch.io/#) page and click the dropdown button in the top right. Choose "Create new app."
 

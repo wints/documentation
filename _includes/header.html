@@ -9,13 +9,11 @@
 
 				<div class="collapse navbar-collapse">
 					<ul class="nav navbar-nav nav-pills">
-						<li {% if page.platform == "ios" %} class="active" {% endif %}><a href="{{ site.baseurl }}/docs/ios/overview/">iOS {{page.platfrom }}</a></li>
-						<li {% if page.platform == "android" %} class="active" {% endif %}><a href="{{ site.baseurl }}/docs/android/overview/">Android</a></li>
-						<li {% if page.platform == "web" %} class="active" {% endif %}><a href="{{ site.baseurl }}/docs/web/overview/">Web</a></li>
-						<li {% if page.platform == "cordova" %} class="active" {% endif %}><a href="{{ site.baseurl }}/docs/cordova/overview/">Cordova</a></li>
-						<li {% if page.platform == "xamarin" %} class="active" {% endif %}><a href="{{ site.baseurl }}/docs/xamarin/overview/">Xamarin</a></li>
-						<li {% if page.platform == "unity" %} class="active" {% endif %}><a href="{{ site.baseurl }}/docs/unity/overview/">Unity</a></li>
-						<li {% if page.platform == "swift" %} class="active" {% endif %}><a href="{{ site.baseurl }}/docs/swift/overview/">Swift</a></li>
+						{% for platform in site.data.platforms %}
+						<li {% if page.platform == platform.key %} class="active" {% endif %}>
+							<a href="{{ site.baseurl }}/#{{ platform.key }}" onclick="setPlatform('{{ platform.key }}')">{{ platform.name }}</a>
+						</li>
+						{% endfor %}
 					</ul>
 
 					<ul class="nav navbar-nav navbar-right">

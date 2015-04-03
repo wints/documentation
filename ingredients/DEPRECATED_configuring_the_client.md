@@ -22,7 +22,7 @@ platforms:
 {% if page.ios %}
 For iOS, the easiest way to install the SDK is via Cocoapods. Add `pod "Branch"` to your podfile and run `pod install` from the command line.
 
-However, if you don't currently use Cocoapods, you can easily download and install our SDK. To download an open-source copy, [grab the zip here](https://github.com/BranchMetrics/Branch-ios-sdk). 
+However, if you don't currently use Cocoapods, you can easily download and install our SDK. To download an open-source copy, [grab the zip here](https://github.com/BranchMetrics/Branch-ios-sdk).
 
 You will need to drag and drop the Branch.framework file that you downloaded into your project. Be sure that "Copy items if needed" is selected.
 
@@ -119,7 +119,7 @@ Go do a quick double-check that this is the same URI scheme listed on the Dashbo
 
 
 <!---    4. InitSession  -->
-{% section configuring_the_client_init_session %} 
+{% section configuring_the_client_init_session %}
 
 ### 4. Starting a Branch Session
 
@@ -145,7 +145,7 @@ Here's an example of the initSession call that you should make. This **must** be
         if (!error) {
 			// params are the deep linked params associated with the link that the user clicked -> was re-directed to this app
 			// params will be empty if no data found
-			// ... insert custom logic here ...   
+			// ... insert custom logic here ...
         }
 	}];
 }
@@ -159,8 +159,8 @@ Here's an example of the initSession call that you should make. This **must** be
 TODO, don't forget the closeSession as well
 {% endif %}
 
-		
-{% endsection %} 
+
+{% endsection %}
 <!---    /4. InitSession -->
 
 
@@ -172,7 +172,7 @@ TODO, don't forget the closeSession as well
 {% if page.ios %}
 In order for your app to properly handle deep links, and to allow Branch to work its magic and call the deepLinkHandler, you will need to add the following code within `application:openURL:sourceApplication:annotation:`:
 
-```objc
+```
 - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
 	// pass the url to the handle deep link call
 	if (![[Branch getInstance] handleDeepLink:url]) {
@@ -186,26 +186,26 @@ In order for your app to properly handle deep links, and to allow Branch to work
 {% if page.android %}
 [TODO]
 {% endif %}
-	
-{% endsection %} 
+
+{% endsection %}
 <!---    /5. Handle Deep Link -->
 
 
 <!---    end required comment  -->
 {% section configuring_the_client_end_required %}
-{% endsection %} 
+{% endsection %}
 <!---    /end required comment -->
 
 
-{% endsection %} 
+{% endsection %}
 <!--- /REQUIRED -->
 
 
 <!--- ADVANCED -->
 <a id="advanced" />
-{% section configuring_the_client_advanced %} 
+{% section configuring_the_client_advanced %}
 
-{% section configuring_the_client_advanced_header %} 
+{% section configuring_the_client_advanced_header %}
 ## Advanced Client Setup
 {% endsection %}
 
@@ -249,7 +249,7 @@ It's that simple!
 Branch's default behavior is to track which users refer other users. Also by default, a "referral" event is only recorded if a user who clicked on a link has *never* opened the app before. The first time he or she clicks a shared Branch link and opens the app, it counts as a referral.
 
 {% if page.ios %}
-This default behavior can be overridden by modifying the _initSessionWithLaunchOptions:andRegisterDeepLinkHandler:_ method in _application:didFinishLaunchingWithOptions:_. Replace the method call with the following: 
+This default behavior can be overridden by modifying the _initSessionWithLaunchOptions:andRegisterDeepLinkHandler:_ method in _application:didFinishLaunchingWithOptions:_. Replace the method call with the following:
 
 ##### Objective-C
 ```objc
@@ -296,5 +296,5 @@ Note that the default behavior when _isReferrable_ is not set is different from 
 <!---    /configuring the client web banner -->
 
 
-{% endsection %} 
+{% endsection %}
 <!--- /ADVANCED -->

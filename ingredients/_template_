@@ -9,7 +9,7 @@ platforms:
 - http
 ---
 
-{% section SECTION_INGREDIENT_HEADER %}### HEADER HERE{% endsection %} 
+{% section SECTION_INGREDIENT_HEADER %}### HEADER HERE{% endsection %}
 
 
 <!--- iOS -->
@@ -23,8 +23,8 @@ EXPLANATION HERE
 
 <!---    iOS code -->
 {% section SECTION_INGREDIENT_ios_code %}
-```objc
-```
+~~~ objc
+~~~
 {% endsection %}
 <!---    /iOS code -->
 
@@ -43,8 +43,8 @@ EXPLANATION HERE
 
 <!---    Android code -->
 {% section SECTION_INGREDIENT_android_code %}
-```java
-```
+~~~java
+~~~
 {% endsection %}
 <!---    /Android code -->
 
