@@ -3,16 +3,17 @@ module Jekyll
   class IngredientTag < Liquid::Block
     def initialize(tag_name, markup, tokens)
       super
-      @markup = markup.gsub(/[^a-z_0-9]/, "")
+      @markup = markup.gsub(/[^a-z_0-9\-\.]/, "")
     end
 
     def render(context)
       # Register overrides
       context.registers[:ingredient] = {}
+      context.registers[:ingredient_name] = @markup
       super
 
       # Include file and remove frontmatter
-      file = read_file(context.registers[:site].in_source_dir("ingredients" + "/" + @markup + ".md")).gsub(/^---\n((?!---).*\n)*---/, "")
+      file = read_file(context.registers[:site].in_source_dir("ingredients" + "/" + @markup.gsub(".", "/") + ".md")).gsub(/^---\n((?!---).*\n)*---/, "")
       partial = Liquid::Template.parse(file)
       context.stack do
         partial.render!(context)
@@ -28,7 +29,7 @@ module Jekyll
   class OverrideTag < Liquid::Block
     def initialize(tag_name, markup, tokens)
       super
-      @markup = markup.gsub(/[^a-z_0-9]/, "")
+      @markup = markup.gsub(/[^a-z_0-9\-]/, "")
     end
 
     def render(context)
@@ -40,7 +41,7 @@ module Jekyll
   class SectionTag < Liquid::Block
     def initialize(tag_name, markup, tokens)
       super
-      @markup = markup.gsub(/[^a-z_0-9]/, "")
+      @markup = markup.gsub(/[^a-z_0-9\-]/, "")
     end
 
     def render(context)
