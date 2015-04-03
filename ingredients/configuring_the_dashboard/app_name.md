@@ -1,4 +1,6 @@
-{% section configuring_the_dashboard_app_name_header %}### App Name{% endsection %}
+{% section configuring_the_dashboard_app_name_header %}
+### App Name
+{% endsection %}
 
 Our dashboard is the starting point for adding apps as well as tracking users of your app.
 
