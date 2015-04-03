@@ -1,4 +1,6 @@
-{% section configuring_the_client_is_referrable_header %}### IsReferrable{% endsection %}
+{% section configuring_the_client_is_referrable_header %}
+### IsReferrable
+{% endsection %}
 
 
 {% section configuring_the_client_is_referrable_explation %}

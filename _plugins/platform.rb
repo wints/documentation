@@ -29,6 +29,8 @@ module Jekyll
 
       filtered_pages.each do |page|
         if page.data['platforms'] then
+          # add a default page
+          site.pages << PlatformPage.new(site, site.source, page.data['type'], page, "index")
           page.data['platforms'].each do |platform|
             site.pages << PlatformPage.new(site, site.source, page.data['type'], page, platform)
           end
