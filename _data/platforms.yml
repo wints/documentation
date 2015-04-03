@@ -1,0 +1,15 @@
+---
+- key: ios
+  name: iOS
+- key: android
+  name: Android
+- key: web
+  name: Web
+- key: cordova
+  name: Cordova
+- key: xamarin
+  name: Xamarin
+- key: unity
+  name: Unity
+- key: swift
+  name: Swift

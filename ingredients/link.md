@@ -9,21 +9,21 @@ blah these are what links are
 
 {% section link_deeplinkpath %}
 
-#### Deeplink path!
+	#### Deeplink path!
 
-{% section link_deeplinkpath_explanation %}
+	{% section link_deeplinkpath_explanation %}
 
-Deeplink path is loooooong and complex.
+		Deeplink path is loooooong and complex.
 
-{% endsection %}
+	{% endsection %}
 
 
-You use it like this:
+	You use it like this:
 
-```
-var a = b;
-c = d;
-```
+	```
+	var a = b;
+	c = d;
+	```
 
 {% endsection %}
 

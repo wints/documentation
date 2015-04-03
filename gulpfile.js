@@ -14,7 +14,7 @@ var path = require('path'),
 var paths = {
 	img: './img/**',
 	imgOut: './img',
-	js: './js/core',
+	js: './js',
 	less: './less',
 	css: './css'
 }
@@ -41,7 +41,7 @@ gulp.task('minify', function() {
 
 // Concate .js
 gulp.task('js', function() {
-	return gulp.src(paths.js + '/*')
+	return gulp.src(paths.js + '/core/*')
 		.pipe(concat('all.js'))
 		.pipe(gulp.dest(paths.js));
 });
@@ -63,7 +63,7 @@ gulp.task('images', function () {
 
 gulp.task('watch', [ 'css', 'js' ], function() {
 	gulp.watch(paths.less + '/*', ['css']);
-	gulp.watch(paths.js + '/*', ['js']);
+	gulp.watch(paths.js + '/core/*', ['js']);
 	// gulp.watch(paths.images, ['images']);
 });
 

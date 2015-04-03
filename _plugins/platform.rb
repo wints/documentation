@@ -7,10 +7,10 @@ module Jekyll
 
       if platform != '' then
         @dir = File.join(type + 's', page.name.split(".")[0])
-        @name = platform + '.html'
+        @name = platform + '.md'
       else
         @dir = type + 's'
-        @name = page.name.split(".")[0] + '.html'
+        @name = page.name.split(".")[0] + '.md'
       end
 
       self.read_yaml(File.join(base, type + 's'), page.name)

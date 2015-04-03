@@ -2,14 +2,13 @@
 title: Branch Metrics
 name: Branch Metrics
 email: info@branchmetrics.io
-description: TODO
-url: "https://branch.io" # the base hostname & protocol for your site
-baseurl: "https://branch.io"
+description: "Helping apps grow through seamless referrals, sharing and deep linking across install."
+url: "https://docs.branch.io" # the base hostname & protocol for your site
+baseurl: "https://docs.branch.io"
 permalink: pretty
 markdown: rdiscount
 highlighter: pygments
 dashboard_url: "https://dashboard.branch.io"
-branch_app_id: "74591864124080823"
 
 # Social media
 gplus: https://plus.google.com/+BranchIoMobile
@@ -27,3 +26,6 @@ exclude:
   - s3_website.yml
   - node_modules
   - .sass-cache
+  - less
+  - Gemfile.custom
+  - documentation_assets

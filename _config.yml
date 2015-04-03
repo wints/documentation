@@ -2,14 +2,13 @@
 title: Branch Documentation
 name: Branch Metrics
 email: info@branchmetrics.io
-description: TODO
+description: "Helping apps grow through seamless referrals, sharing and deep linking across install."
 url: "http://localhost:4000"
 baseurl: ""
 permalink: pretty
-markdown: rdiscount
+markdown: kramdown
 highlighter: pygments
 dashboard_url: "http://localhost:3000"
-branch_app_id: "25390586299155098"
 
 # Social media
 gplus: https://plus.google.com/+BranchIoMobile
@@ -27,3 +26,6 @@ exclude:
   - s3_website.yml
   - node_modules
   - .sass-cache
+  - less
+  - Gemfile.custom
+  - documentation_assets

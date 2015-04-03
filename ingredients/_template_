@@ -1,0 +1,52 @@
+---
+type: ingredient
+title: SECTION - INDIVIDUAL INGREDIENT
+platforms:
+- dashboard
+- ios
+- android
+- web
+- http
+---
+
+{% section SECTION_INGREDIENT_HEADER %}### HEADER HERE{% endsection %}
+
+
+<!--- iOS -->
+{% if page.ios %}
+
+<!---    iOS explanation -->
+{% section SECTION_INGREDIENT_ios_explanation %}
+EXPLANATION HERE
+{% endsection %}
+<!---    /iOS explanation -->
+
+<!---    iOS code -->
+{% section SECTION_INGREDIENT_ios_code %}
+~~~ objc
+~~~
+{% endsection %}
+<!---    /iOS code -->
+
+{% endif %}
+<!--- /iOS -->
+
+
+<!--- Android -->
+{% if page.android %}
+
+<!---    Android explanation -->
+{% section SECTION_INGREDIENT_android_explanation %}
+EXPLANATION HERE
+{% endsection %}
+<!---    /Android explanation -->
+
+<!---    Android code -->
+{% section SECTION_INGREDIENT_android_code %}
+~~~java
+~~~
+{% endsection %}
+<!---    /Android code -->
+
+{% endif %}
+<!--- /Android -->
