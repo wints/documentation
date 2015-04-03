@@ -2,6 +2,9 @@
 <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
 <script type="text/javascript" src="{{site.baseurl}}/js/all.js"></script>
 
-<script>hljs.initHighlightingOnLoad();</script>
-
-<script>setHeaderToPlatform('{{ page.platform }}', {{ page.default }});</script>
+<script>
+hljs.initHighlightingOnLoad();
+setHeaderToPlatform('{{ page.platform }}', {{ page.default || false }});
+var groups = JSON.parse('{{ site.data.groups_json }}');
+console.log('groups:', groups);
+</script>
