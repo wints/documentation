@@ -3,12 +3,13 @@ module Jekyll
   class IngredientTag < Liquid::Block
     def initialize(tag_name, markup, tokens)
       super
-      @markup = markup.gsub(/[^a-z_\/0-9]/, "")
+      @markup = markup.gsub(/[^a-z_\/0-9\-]/, "")
     end
 
     def render(context)
       # Register overrides
       context.registers[:ingredient] = {}
+      context.registers[:ingredient_name] = @markup
       super
 
       # Include file and remove frontmatter
@@ -28,7 +29,7 @@ module Jekyll
   class OverrideTag < Liquid::Block
     def initialize(tag_name, markup, tokens)
       super
-      @markup = markup.gsub(/[^a-z_0-9]/, "")
+      @markup = markup.gsub(/[^a-z_0-9\-]/, "")
     end
 
     def render(context)
@@ -40,7 +41,7 @@ module Jekyll
   class SectionTag < Liquid::Block
     def initialize(tag_name, markup, tokens)
       super
-      @markup = markup.gsub(/[^a-z_0-9]/, "")
+      @markup = markup.gsub(/[^a-z_0-9\-]/, "")
     end
 
     def render(context)
