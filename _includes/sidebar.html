@@ -4,7 +4,7 @@
 			<div class="sidebar-title">{{ group.name }}</div>
 			<ul>
 				{% for ref in group.refs %}
-				<li {% if page.name == {{ ref.route }}.html %} class="active" {% endif %}>
+				<li{% if page.name == {{ ref.route }} %} class="active"{% endif %}>
 					<a href="{{ site.baseurl }}/docs/{{ page.platform }}/overview/{{ ref.route }}">{{ ref.title }}</a>
 				</li>
 				{% endfor %}
