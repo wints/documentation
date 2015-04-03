@@ -7,7 +7,7 @@ platforms:
 - web
 ---
 
-{% section configuring_the_client_branch_key_header %}### Branch Key{% endsection %}
+### Branch Key
 
 {% if page.ios %}
 Now you need to add the Branch Key that you received on the Dashboard into your app.

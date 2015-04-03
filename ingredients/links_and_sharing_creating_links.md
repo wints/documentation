@@ -18,21 +18,13 @@ Here's how to create your own Branch Links.
 <!--- iOS -->
 {% if page.ios %}
 
-<!---    iOS explanation -->
-{% section links_and_sharing_creating_links_ios_explanation %}
 On iOS, it's a rather simple method call.
-{% endsection %}
-<!---    /iOS explanation -->
 
-<!---    iOS code -->
-{% section SECTION_INGREDIENT_ios_code %}
-```objc
-    [[Branch getInstance] getShortURLWithParams:@{@"foo": @"bar"} andCallback:^(NSString *url, NSError *error) {
-        if (!error) NSLog(@"got my Branch link to share: %@", url);
-    }];
-```
-{% endsection %}
-<!---    /iOS code -->
+~~~objc
+[[Branch getInstance] getShortURLWithParams:@{@"foo": @"bar"} andCallback:^(NSString *url, NSError *error) {
+    if (!error) NSLog(@"got my Branch link to share: %@", url);
+}];
+~~~
 
 {% endif %}
 <!--- /iOS -->
@@ -41,18 +33,6 @@ On iOS, it's a rather simple method call.
 <!--- Android -->
 {% if page.android %}
 
-<!---    Android explanation -->
-{% section SECTION_INGREDIENT_android_explanation %}
-EXPLANATION HERE
-{% endsection %}
-<!---    /Android explanation -->
-
-<!---    Android code -->
-{% section SECTION_INGREDIENT_android_code %}
-```java
-```
-{% endsection %}
-<!---    /Android code -->
 
 {% endif %}
 <!--- /Android -->
