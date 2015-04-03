@@ -1,6 +1,6 @@
 {% section configuring_the_client_init_session %}
-### Starting a Branch Session{
-% endsection %}
+### Starting a Branch Session
+{% endsection %}
 
 This is required for any SDK call. There is a lot of magic packed into the initSession call and corresponding deepLinkHandler.
 
