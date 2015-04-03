@@ -1,13 +1,3 @@
----
-type: ingredient
-title: Configuring the Client - Identity and Logout
-platforms:
-- ios
-- android
-- web
----
-
-
 ### Identifying Your Users
 
 {% section configuring_the_client_identify_and_logout_pre_explanation %}{% endsection %}

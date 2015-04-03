@@ -1,12 +1,3 @@
----
-type: ingredient
-title: Configuring the Client - HandleDeepLink
-platforms:
-- ios
-- android
-- web
----
-
 ### Handle Deep Link
 
 {% if page.ios %}

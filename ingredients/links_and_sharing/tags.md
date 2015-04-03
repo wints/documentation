@@ -1,12 +1,3 @@
----
-type: ingredient
-title: Links and Sharing - Tags
-platforms:
-- ios
-- android
-- web
----
-
 ### Adding Tags
 
 Are you a tag person? You can add as many simply tags as you want to a link. Note that these are **not** key-value pairs -- those belong in the [TODO] [data dictionary]().

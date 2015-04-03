@@ -1,12 +1,3 @@
----
-type: ingredient
-title: Links and Sharing - Custom Data
-platforms:
-- ios
-- android
-- web
----
-
 ### Attaching Custom Data to Links
 
 Branch links allow you to attach any information you want to links. Custom data can mean information about the ad campaign, referring user, promotion, or content being shared. You use it to build a personalized referral system so users never see a generic onboarding screen again. You can take users straight to the content they wanted to see when they clicked the link in the first place.

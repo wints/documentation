@@ -1,12 +1,3 @@
----
-type: ingredient
-title: Configuring the Client - Branch Key
-platforms:
-- ios
-- android
-- web
----
-
 ### Branch Key
 
 {% if page.ios %}

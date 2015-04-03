@@ -1,12 +1,3 @@
----
-type: ingredient
-title: Links and Sharing - OG Tags
-platforms:
-- ios
-- android
-- web
----
-
 ### OG Tags - Looking Good on Social Media
 
 If you want to tailor how a link will appear on social media, you should make use of our support for Open Graph (OG) tags. You can customize the OG tags associated with the link by including key-value pairs in the params dictionary when creating a link. Note that these overwrite any defaults that you previously set on the Branch Dashboard.

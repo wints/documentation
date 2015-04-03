@@ -1,12 +1,3 @@
----
-type: ingredient
-title: Links and Sharing - Alias
-platforms:
-- ios
-- android
-- web
----
-
 ### Alias - The Custom Ending
 
 Do you want prettier links -- perhaps customized to the user? 

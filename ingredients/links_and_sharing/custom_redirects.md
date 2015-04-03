@@ -1,12 +1,3 @@
----
-type: ingredient
-title: Links and Sharing - Custom Data
-platforms:
-- ios
-- android
-- web
----
-
 ### Custom Redirects
 
 The default behavior for where links lead to is specified on the Dashboard -- you can read more about it [TODO] [here](). 

@@ -1,12 +1,3 @@
----
-type: ingredient
-title: Configuring the Client - IsReferrable
-platforms:
-- ios
-- android
-- web
----
-
 {% section configuring_the_client_is_referrable_header %}### IsReferrable{% endsection %}
 
 

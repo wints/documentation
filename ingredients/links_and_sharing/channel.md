@@ -1,12 +1,3 @@
----
-type: ingredient
-title: Links and Sharing - Channel
-platforms:
-- ios
-- android
-- web
----
-
 ### Specifying Channel
 
 If you want a breakdown of your best performing channels--whether you measure best performing by most installs, most actual signups, or any other custom events you want to track--you should specify the channel. This can be done both for marketing links on the dashboard and for links created programmatically.

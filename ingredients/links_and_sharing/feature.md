@@ -1,12 +1,3 @@
----
-type: ingredient
-title: Links and Sharing - Feature
-platforms:
-- ios
-- android
-- web
----
-
 ### Specifying Feature
 
 The more analytics the better. If you want to track whether personalized invites, content shares or gift offers are driving more installs, you can optionally specify a `feature` tag.

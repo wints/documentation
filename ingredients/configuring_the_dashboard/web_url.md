@@ -1,8 +1,3 @@
----
-type: ingredient
-title: Configuring the Dashboard - Web URL
----
-
 {% section configuring_the_dashboard_web_url_header %}### Web URL{% endsection %}
 
 Next, to configure the Web URL on an existing app, you will need to navigate to the Settings > [http://dashboard.branch.io/#/settings/link](Link Settings) page on the Dashboard. Scroll down to _Default URL_ and enter your website.   
