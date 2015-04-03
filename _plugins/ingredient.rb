@@ -3,7 +3,7 @@ module Jekyll
   class IngredientTag < Liquid::Block
     def initialize(tag_name, markup, tokens)
       super
-      @markup = markup.gsub(/[^a-z_0-9]/, "")
+      @markup = markup.gsub(/[^a-z_\/0-9]/, "")
     end
 
     def render(context)
