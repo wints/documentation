@@ -21,7 +21,7 @@ That's the end of the required setup for the Dashboard! The dashboard is incredi
 
 
 
-## <a name="configure-the-client"></a> {% if page.ios %}Configuring your iOS app{%endif%}{% if page.android %}Configuring your Android app{%endif%}
+## {% if page.ios %}Configuring your iOS app{%endif%}{% if page.android %}Configuring your Android app{%endif%}
 {% ingredient configuring_the_client_installing_the_sdk %}{% endingredient %}
 {% ingredient configuring_the_client_branch_key %}{% endingredient %}
 {% ingredient configuring_the_client_uri_scheme %}{% endingredient %}

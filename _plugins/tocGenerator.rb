@@ -46,7 +46,7 @@ module Jekyll
 
             h2s.map.each do |h2|
                 inner_section += 1;
-                anchor_id = anchor_prefix + toc_level.to_s + '-' + toc_section.to_s + '-' + inner_section.to_s
+                anchor_id = h2['id']
                 h2['id'] = "#{anchor_id}"
 
                 level_html += create_level_html(anchor_id,
@@ -59,7 +59,7 @@ module Jekyll
             if level_html.length > 0
                 level_html = '<ul>' + level_html + '</ul>';
             end
-            anchor_id = anchor_prefix + toc_level.to_s + '-' + toc_section.to_s;
+            anchor_id = h1['id'];
             h1['id'] = "#{anchor_id}"
 
             toc_html += create_level_html(anchor_id,
