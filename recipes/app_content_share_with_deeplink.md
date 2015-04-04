@@ -30,15 +30,24 @@ That's the end of the required setup for the Dashboard! The dashboard is incredi
 	{% override configuring_the_client_identify_and_logout_pre_explanation %}
 If you want to know who is sharing your content, whether for internal purposes (i.e. analytics) or for customizing the experience of a user receiving a referral, you'll want to identify your users.
 	{% endoverride %}
-{% endingredient %}
+	{% endingredient %}
 <!--- /Configuring the Client-->
 
 
 ## Generating Links
+
 {% ingredient links_and_sharing/creating_links %}{% endingredient %}
 {% ingredient links_and_sharing/custom_data %}{% endingredient %}
 {% ingredient links_and_sharing/channel %}{% endingredient %}
 {% ingredient links_and_sharing/feature %}{% endingredient %}
 {% ingredient links_and_sharing/alias %}{% endingredient %}
 {% ingredient links_and_sharing/og_tags %}{% endingredient %}
+{% ingredient links_and_sharing/sharing_teaser %}{% endingredient %}
 <!--- /Links and Sharing-->
+
+
+## Analytics and Custom Events
+{% ingredient analytics_and_custom_events/intro %}{% endingredient %}
+{% ingredient analytics_and_custom_events/standard_events %}{% endingredient %}
+{% ingredient analytics_and_custom_events/custom_events %}{% endingredient %}
+<!--- /Analytics and Custom Events-->

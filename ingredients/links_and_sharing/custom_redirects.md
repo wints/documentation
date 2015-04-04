@@ -106,13 +106,17 @@ This is especially useful if you want to serve up content on the web for users w
 <!--- $always_deeplink -->
 {% section links_and_sharing_custom_redirects_always_deeplink %}
 
+#### Always try to open the app - $always_deeplink
+
+In certain cases you may want to override the default Branch behavior, which uses cookies and communication with our backend to determine whether to open an app. Branch knows that a user has the app if that user has clicked a Branch link and opened the app. This means that the first time a user clicks a Branch link, even if the app is installed, we will direct the user to the App Store. 
+
+To override this behavior, you can either select "Always try to open the app" on the [TODO] [Dashboard](), or you can specify "$always_deeplink" : "true" on a per-link basis.
+
 <!---    iOS -->
 {% if page.ios %}
 
-On iOS, attaching information is as simple as including a dictionary at link creation time. If, for example, James is inviting friends to check out your app, you could do the following:
-
 ~~~objc
-[[Branch getInstance] getShortURLWithParams:@{@"referringUsername": @"James", @"referringUserId": @"1234"} andCallback:^(NSString *url, NSError *error) {
+[[Branch getInstance] getShortURLWithParams:@{@"$always_deeplink": @"true"} andCallback:^(NSString *url, NSError *error) {
     if (!error) NSLog(@"got my Branch link to share: %@", url);
 }];
 ~~~
