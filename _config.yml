@@ -19,12 +19,6 @@ soundcloud: https://soundcloud.com/branchmetrics/
 
 exclude:
 - .gitignore
-- package.json
-- circle.yml
-- gulpfile.js
 - README.md
-- s3_website.yml
-- node_modules
-- Gemfile.custom
 - documentation_assets
 - "**.less"
