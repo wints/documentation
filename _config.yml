@@ -18,14 +18,13 @@ linkedin: https://www.linkedin.com/company/3813083?trk=prof-0-ovw-curr_pos
 soundcloud: https://soundcloud.com/branchmetrics/
 
 exclude:
-  - .gitignore
-  - package.json
-  - circle.yml
-  - gulpfile.js
-  - README.md
-  - s3_website.yml
-  - node_modules
-  - .sass-cache
-  - less
-  - Gemfile.custom
-  - documentation_assets
+- .gitignore
+- package.json
+- circle.yml
+- gulpfile.js
+- README.md
+- s3_website.yml
+- node_modules
+- Gemfile.custom
+- documentation_assets
+- "**.less"
