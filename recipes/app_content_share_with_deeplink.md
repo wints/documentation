@@ -10,7 +10,7 @@ platforms:
 
 ------
 
-## {% if page.ios %}Configuring the Dashboard for your iOS app{%endif%}{% if page.android %}Configuring the Dashboard for your Android app{%endif%}
+## Configuring the Dashboard for your {{ page.platform_formatted }} app
 {% ingredient configuring_the_dashboard/app_name %}{% endingredient %}
 {% ingredient configuring_the_dashboard/web_url %}{% endingredient %}
 {% ingredient configuring_the_dashboard/store_or_custom_url %}{% endingredient %}
@@ -20,7 +20,7 @@ That's the end of the required setup for the Dashboard! The dashboard is incredi
 <!--- /Configuring the Dashboard-->
 
 
-## {% if page.ios %}Configuring your iOS app{%endif%}{% if page.android %}Configuring your Android app{%endif%}
+## Configuring your {{ page.platform_formatted }} app
 {% ingredient configuring_the_client/installing_the_sdk %}{% endingredient %}
 {% ingredient configuring_the_client/branch_key %}{% endingredient %}
 {% ingredient configuring_the_client/uri_scheme %}{% endingredient %}

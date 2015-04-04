@@ -1,5 +1,5 @@
-module Jekyll
 
+module Jekyll
   class PlatformPage < Page
     def initialize(site, base, type, page, platform, default)
       @site = site
@@ -16,8 +16,15 @@ module Jekyll
       self.read_yaml(File.join(base, type + 's'), page.name)
       self.process(@name)
 
+      formatted_platforms = {
+        "ios" => "iOS",
+        "android" => "Android",
+        "web" => "Web"
+      }
+
       self.data[platform] = true
       self.data['platform'] = platform
+      self.data['platform_formatted'] = formatted_platforms[platform] or platform
       self.data['default'] = default
       self.data['layout'] = type
     end
