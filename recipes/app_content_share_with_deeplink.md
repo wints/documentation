@@ -45,9 +45,15 @@ If you want to know who is sharing your content, whether for internal purposes (
 {% ingredient links_and_sharing/sharing_teaser %}{% endingredient %}
 <!--- /Links and Sharing-->
 
+<!--- /Routing to Content-->
 
 ## Analytics and Custom Events
 {% ingredient analytics_and_custom_events/intro %}{% endingredient %}
 {% ingredient analytics_and_custom_events/standard_events %}{% endingredient %}
 {% ingredient analytics_and_custom_events/custom_events %}{% endingredient %}
+{% ingredient analytics_and_custom_events/dashboard_summary %}{% endingredient %}
+{% ingredient analytics_and_custom_events/funnels %}{% endingredient %}
 <!--- /Analytics and Custom Events-->
+
+
+<!--- /Influential Users-->

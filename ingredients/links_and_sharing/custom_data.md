@@ -12,7 +12,7 @@ This data is stored on our backend and presented again when the user clicks on a
 On iOS, attaching information is as simple as including a dictionary at link creation time. If, for example, James is inviting friends to check out your app, you could do the following:
 
 ~~~objc
-[[Branch getInstance] getShortURLWithParams:@{@"referringUsername": @"James", @"referringUserId": @"1234"} andCallback:^(NSString *url, NSError *error) {
+[[Branch getInstance] getShortURLWithParams:@{@"referringUsername": @"James", @"referringUserId": @"1234", @"contentId": @"0987"} andCallback:^(NSString *url, NSError *error) {
     if (!error) NSLog(@"got my Branch link to share: %@", url);
 }];
 ~~~
