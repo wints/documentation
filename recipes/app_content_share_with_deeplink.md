@@ -45,7 +45,7 @@ If you want to know who is sharing your content, whether for internal purposes (
 {% ingredient sdk_links/sharing_teaser %}{% endingredient %}
 <!--- /Links and Sharing-->
 
-{% ingredient routing/routing %}{% endingredient %}
+{% ingredient sdk_routing/routing %}{% endingredient %}
 <!--- /Routing to Content-->
 
 ## Analytics and Custom Events
