@@ -24,8 +24,26 @@ module Jekyll
   end
 
   class PlatformGenerator < Generator
+    def buildGroups(site)
+      group_pages = site.pages.select { |page| page.data['type'] }
+      site.data['groups'] = {
+        'overview' => ['Overview', Array.new],
+        'recipe' => ['Building with Branch (Recipes)', Array.new],
+        'domain' => ['Feature (Domains)', Array.new],
+        'reference' => ['API Reference', Array.new]
+      }
+
+      group_pages.each do |page|
+        if page.data['platforms'] then
+            site.data['groups'][page.data['type']][1].push([page.name.split(".")[0], page.data['title'], Hash[page.data['platforms'].zip(page.data['platforms'].map {|i| true })]])
+        end
+      end
+      site.data['groups_json'] = site.data['groups'].to_json
+    end
+
     def generate(site)
-      filtered_pages = site.pages.select { |page| page.data['type'] == 'recipe' or page.data['type'] == 'ingredient' }
+      buildGroups(site)
+      filtered_pages = site.pages.select { |page| page.data['type'] == 'recipe' or page.data['type'] == 'overview' or page.data['type'] == 'domain' }
       site.pages.reject! { |page| page.data['type'] == 'recipe' or page.data['type'] == 'ingredient' }
 
       filtered_pages.each do |page|
