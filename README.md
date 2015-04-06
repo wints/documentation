@@ -3,7 +3,7 @@ Documentation
 
 ### Install Jekyll and Dependencies
 ```
-sudo gem install therubyracer less jekyll kramdown s3_website
+sudo gem install therubyracer less jekyll kramdown s3_website byebug
 ```
 
 ### Open another terminal console and start jekyll
