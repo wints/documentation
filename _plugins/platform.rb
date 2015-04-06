@@ -1,3 +1,4 @@
+require 'json'
 
 module Jekyll
   class PlatformPage < Page
@@ -45,12 +46,12 @@ module Jekyll
             site.data['groups'][page.data['type']][1].push([page.name.split(".")[0], page.data['title'], Hash[page.data['platforms'].zip(page.data['platforms'].map {|i| true })]])
         end
       end
-      # site.data['groups_json'] = site.data['groups'].to_json
+      site.data['groups_json'] = site.data['groups'].to_json
     end
 
     def generate(site)
       buildGroups(site)
-      filtered_pages = site.pages.select { |page| page.data['type'] == 'recipe' or page.data['type'] == 'overview' or page.data['type'] == 'domain' }
+      filtered_pages = site.pages.select { |page| ['recipe', 'overview', 'domain'].include?(page.data['type']) }
       site.pages.reject! { |page| page.data['type'] == 'recipe' or page.data['type'] == 'ingredient' }
 
       filtered_pages.each do |page|
