@@ -22,3 +22,4 @@ exclude:
 - README.md
 - documentation_assets
 - "**.less"
+- ingredients

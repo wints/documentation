@@ -1,7 +1,7 @@
-{% section configuring_the_client_identify_and_logout_header %}### Identifying Your Users{% endsection %}
+{% section header %}### Identifying Your Users{% endsection %}
 
 
-{% section configuring_the_client_identify_and_logout_pre_explanation %}{% endsection %}
+{% section pre_explanation %}{% endsection %}
 
 Branch automatically tracks unique devices. However, to make full use of our powerful API, you should also identify users with form of unique identification your app uses. The usefulness of this is hard to understate. When making future queries, when scanning through data on the dashboard, and when combing through anything you choose to export, you'll see your app's user Id alongside the Branch-provided [TODO] user Id. If you want to know that User A shared with User B, add this code.
 

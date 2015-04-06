@@ -1,4 +1,4 @@
-{% section configuring_the_dashboard_web_url_header %}
+{% section header %}
 ### Web URL
 {% endsection %}
 
@@ -9,7 +9,7 @@ Next, to configure the Web URL on an existing app, you will need to navigate to 
 This is where we will take users who click a Branch link if we don't know where else to take them. For example, if you don't have an Android app released yet, Android users will be taken to this link. Don't forget to Save!
 
 <!---       Tip2 -->
-{% section configuring_the_dashboard_app_name_tip2 %}
+{% section tip2 %}
 Tip: You can customize this fallback URL on a per-platform or even per-link basis. After completing setup, you may want to check out [TODO] [links-and-sharing.VIII-customizing-URL](http://example.com).
 {% endsection %}
 <!---       /Tip2 -->

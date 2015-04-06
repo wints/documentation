@@ -5,7 +5,7 @@ The default behavior for where links lead to is specified on the Dashboard -- yo
 If, however, you want to override the default behavior, you can specify redirect behavior on a per-link basis.
 
  <!--- $ios_url -->
-{% section links_and_sharing_custom_redirects_ios_url %}
+{% section ios_url %}
 #### iOS App Store override - $ios_url
 
 <!---    iOS -->
@@ -37,7 +37,7 @@ When a user doesn't have your app and clicks a link on iOS, by default the user 
 
 
   <!--- $android_url -->
-{% section links_and_sharing_custom_redirects_android_url %}
+{% section android_url %}
 #### Android Play Store override - $android_url
 
 <!---    iOS -->
@@ -69,7 +69,7 @@ When a user doesn't have your app and clicks a link on Android, by default the u
 
 
 <!--- $desktop_url -->
-{% section links_and_sharing_custom_redirects_desktop_url %}
+{% section desktop_url %}
 
 #### Desktop override - $desktop_url
 
@@ -104,7 +104,7 @@ This is especially useful if you want to serve up content on the web for users w
 
 
 <!--- $always_deeplink -->
-{% section links_and_sharing_custom_redirects_always_deeplink %}
+{% section always_deeplink %}
 
 #### Always try to open the app - $always_deeplink
 

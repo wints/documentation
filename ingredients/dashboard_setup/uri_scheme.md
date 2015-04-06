@@ -1,7 +1,7 @@
-{% section configuring_the_dashboard_uri_scheme_header %}
+{% section header %}
 {% if page.ios %}### URI Scheme{%endif%}
 {% if page.android %}### URI Scheme{%endif%}
-{% endsection %} 
+{% endsection %}
 
 Setting the URI scheme is not strictly required if you are only going to use Branch to measure the number of clicks. To obtain the number of installs, to deeplink to your app, or to do anything else that Branch enables you to do, you need to choose a URI scheme and make sure it is consistent between the Dashboard.
 

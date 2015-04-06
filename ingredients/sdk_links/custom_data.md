@@ -8,13 +8,13 @@ This data is stored on our backend and presented again when the user clicks on a
 
 Tip: Because we don't store data in the URL, you can create pretty links, like `yourapp.com/bob`. For information on custom aliases for links, [TODO] [click here]().
 
-{% section sdk_links_custom_data_example_explanation %}Store data about both the sharing user and the content shared in the data dictionary. Attaching information is as simple as including a dictionary at link creation time. If, for example, James is inviting friends to check out your app, you could do the following:{% endsection %}
+{% section example_explanation %}Store data about both the sharing user and the content shared in the data dictionary. Attaching information is as simple as including a dictionary at link creation time. If, for example, James is inviting friends to check out your app, you could do the following:{% endsection %}
 
 <!--- iOS -->
 {% if page.ios %}
 
 ~~~ objc
-[[Branch getInstance] getShortURLWithParams:{% section sdk_links_custom_data_example_code %}@{@"referringUsername": @"James", @"referringUserId": @"1234", @"contentId": @"0987"}{% endsection %} andCallback:^(NSString *url, NSError *error) {
+[[Branch getInstance] getShortURLWithParams:{% section example_code %}@{@"referringUsername": @"James", @"referringUserId": @"1234", @"contentId": @"0987"}{% endsection %} andCallback:^(NSString *url, NSError *error) {
     if (!error) NSLog(@"got my Branch link to share: %@", url);
 }];
 ~~~

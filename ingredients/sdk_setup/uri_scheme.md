@@ -1,4 +1,4 @@
-{% section configuring_the_client_uri_scheme_header %}
+{% section header %}
 ### URI Scheme
 {% endsection %}
 

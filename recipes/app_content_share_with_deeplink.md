@@ -27,9 +27,9 @@ That's the end of the required setup for the Dashboard! The dashboard is incredi
 {% ingredient sdk_setup/init_session %}{% endingredient %}
 {% ingredient sdk_setup/handle_deep_link %}{% endingredient %}
 {% ingredient sdk_setup/identify_and_logout %}
-	{% override configuring_the_client_identify_and_logout_pre_explanation %}
+	{% override pre_explanation %}
 		If you want to know who is sharing your content, whether for internal purposes (i.e. analytics) or for customizing the experience of a user receiving a referral, you'll want to identify your users.{% endoverride %}
-	{% override configuring_the_client_identify_and_logout_header %}###Identifying Your Users (Optional but recommended){% endoverride %}
+	{% override header %}###Identifying Your Users (Optional but recommended){% endoverride %}
 {% endingredient %}
 <!--- /Configuring the Client-->
 
@@ -37,10 +37,10 @@ That's the end of the required setup for the Dashboard! The dashboard is incredi
 ## Generating Links
 
 {% ingredient sdk_links/custom_data %}
-	{% override sdk_links_custom_data_example_explanation %}
+	{% override example_explanation %}
 		Store data about the content shared (and, optionally, the sharing user) in the data dictionary. Attaching information is as simple as including a dictionary at link creation time. If, for example, James is sharing a picture with Id `1234`, your code could do the following:{% endoverride %}
 
-	{% override sdk_links_custom_data_example_code %}@{@"pictureId": @"1234", @"referringUsername": @"James"}{% endoverride %}
+	{% override example_code %}@{@"pictureId": @"1234", @"referringUsername": @"James"}{% endoverride %}
 {% endingredient %}
 {% ingredient sdk_links/sharing_teaser %}{% endingredient %}
 <!--- /Links and Sharing-->

@@ -1,4 +1,4 @@
-{% section configuring_the_client_installing_the_sdk_header %}
+{% section header %}
 ### Installing the SDK
 {% endsection %}
 

@@ -1,9 +1,9 @@
-{% section configuring_the_client_is_referrable_header %}
+{% section header %}
 ### IsReferrable
 {% endsection %}
 
 
-{% section configuring_the_client_is_referrable_explation %}
+{% section explanation %}
 Branch's default behavior is to track which users refer other users. Also by default, a "referral" event is only recorded if a user who clicked on a link has *never* opened the app before. The first time he or she clicks a shared Branch link and opens the app, it counts as a referral.
 {% endsection %}
 
@@ -11,14 +11,14 @@ Branch's default behavior is to track which users refer other users. Also by def
 {% if page.ios %}
 
 <!---    iOS explanation 1 -->
-{% section configuring_the_client_is_referrable_ios_expl_1 %}
+{% section ios_explanation_1 %}
 This default behavior can be overridden by modifying the _initSessionWithLaunchOptions:andRegisterDeepLinkHandler:_ method in _application:didFinishLaunchingWithOptions:_. Replace the method call with the following:
 {% endsection %}
 <!---    /iOS explanation 1 -->
 
 
 <!---    iOS code -->
-{% section configuring_the_client_is_referrable_ios_code %}
+{% section ios_code %}
 ##### Objective-C
 ~~~ objc
 [branch initSessionWithLaunchOptions:launchOptions isReferrable:@YES andRegisterDeepLinkHandler:^(NSDictionary *params, NSError *error) {     // previously initUserSessionWithCallback:withLaunchOptions:
@@ -45,7 +45,7 @@ branch.initSessionWithLaunchOptions(launchOptions, isReferrable: true, andRegist
 
 
 <!---    iOS explanation 2 -->
-{% section configuring_the_client_is_referrable_ios_expl_2 %}
+{% section ios_explanation_2 %}
 You can set _isReferrable_ to **@YES** or **@NO** (Swift: **true** or **false**), and the behavior is as follows:
 
 1. **@YES** (_Swift_ **true**): Now a connection can be established between a referring user and a referred user during _any_ session, not just the very first time a user opens the app. This means that if a user signs up without clicking on a shared Branch link but later clicks on a link, the referring-referred connection is established. (In the example in part 3 below, if Bob's friend Amy had already found and opened the app on her own but later came back to it because Bob sent her a link, Bob is the referring user and Amy is the referred user.) There can only be one referring user for any given user (e.g. as soon as Amy clicks a link from Bob, Bob is her referrer and no subsequent shared Branch links will change that). There are specific use cases where you may want this flexibility--feel free to reach out if you have questions.

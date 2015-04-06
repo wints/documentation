@@ -1,4 +1,4 @@
-{% section configuring_the_dashboard_store_or_custom_url_header %}
+{% section header %}
 {% if page.ios %}### App Store or custom URL{%endif%}
 {% if page.android %}### Play Store or custom URL{%endif%}
 {% if page.web %}### [TODO] Doesn't work for web{%endif%}

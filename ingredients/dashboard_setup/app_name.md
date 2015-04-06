@@ -1,4 +1,4 @@
-{% section configuring_the_dashboard_app_name_header %}
+{% section header %}
 ### App Name
 {% endsection %}
 
@@ -13,7 +13,7 @@ You will be prompted to enter a name for your new app. Do so and press "Create."
 ![Dashboard Screenshot App Name](/img/ingredients/configuring_the_dashboard/app_name.png)
 
 <!---       Tip1 -->
-{% section configuring_the_dashboard_app_name_tip1 %}
+{% section tip1 %}
 Tip: We recommend keeping production and development versions of your app as completely separate apps.
 {% endsection %}
 <!---       /Tip1 -->
