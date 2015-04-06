@@ -17,7 +17,7 @@ You should feel free to specify any other "features" as you see fit.
 
 Again, the code is straightforward:
 
-~~~objc
+~~~ objc
 [[Branch getInstance] getShortURLWithParams:@{} andChannel:@"SMS" andFeature:@"invite" andCallback:^(NSString *url, NSError *error) {
     if (!error) NSLog(@"got my Branch link to share: %@", url);
 }];

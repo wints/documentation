@@ -33,7 +33,7 @@ module Jekyll
 
   class PlatformGenerator < Generator
     def buildGroups(site)
-      group_pages = site.pages.select { |page| page.data['type'] }
+      group_pages = site.pages.select { |page| ['recipe', 'overview', 'domain', 'reference'].include?(page.data['type']) }
       site.data['groups'] = {
         'overview' => ['Overview', Array.new],
         'recipe' => ['Building with Branch (Recipes)', Array.new],
@@ -51,7 +51,7 @@ module Jekyll
 
     def generate(site)
       buildGroups(site)
-      filtered_pages = site.pages.select { |page| ['recipe', 'overview', 'domain'].include?(page.data['type']) }
+      filtered_pages = site.pages.select { |page| ['recipe', 'overview', 'domain', 'reference'].include?(page.data['type']) }
       site.pages.reject! { |page| page.data['type'] == 'recipe' or page.data['type'] == 'ingredient' }
 
       filtered_pages.each do |page|

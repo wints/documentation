@@ -7,7 +7,7 @@ If you want a breakdown of your best performing channels--whether you measure be
 
 On iOS, it's a rather simple method call.
 
-~~~objc
+~~~ objc
 [[Branch getInstance] getShortURLWithParams:@{ @"foo": @"bar" } andChannel:@"SMS" andFeature:nil andCallback:^(NSString *url, NSError *error) {
     if (!error) NSLog(@"got my Branch link to share: %@", url);
 }];

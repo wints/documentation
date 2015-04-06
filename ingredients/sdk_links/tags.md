@@ -7,7 +7,7 @@ Are you a tag person? You can add as many simply tags as you want to a link. Not
 
 No mysteries here:
 
-~~~objc
+~~~ objc
 [[Branch getInstance] getShortURLWithParams:@{} andTags:@[@"any", @"other", @"tags", @"you", @"want"] andChannel:nil andFeature:nil andStage:nil andAlias:nil andCallback:^(NSString *url, NSError *error) {
     if (!error) NSLog(@"got my Branch link to share: %@", url);
 }];
