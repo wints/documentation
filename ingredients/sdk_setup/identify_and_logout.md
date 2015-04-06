@@ -1,4 +1,5 @@
-### Identifying Your Users
+{% section configuring_the_client_identify_and_logout_header %}### Identifying Your Users{% endsection %}
+
 
 {% section configuring_the_client_identify_and_logout_pre_explanation %}{% endsection %}
 
