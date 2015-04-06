@@ -27,9 +27,10 @@ That's the end of the required setup for the Dashboard! The dashboard is incredi
 {% ingredient sdk_setup/init_session %}{% endingredient %}
 {% ingredient sdk_setup/handle_deep_link %}{% endingredient %}
 {% ingredient sdk_setup/identify_and_logout %}
-	{% override pre_explanation %}
-		If you want to know who is sharing your content, whether for internal purposes (i.e. analytics) or for customizing the experience of a user receiving a referral, you'll want to identify your users.{% endoverride %}
-	{% override header %}###Identifying Your Users (Optional but recommended){% endoverride %}
+  {% override header %}###Identifying Your Users (Optional but recommended){% endoverride %}
+  {% override pre_explanation %}
+  If you want to know who is sharing your content, whether for internal purposes (i.e. analytics) or for customizing the experience of a user receiving a referral, you'll want to identify your users.
+  {% endoverride %}
 {% endingredient %}
 <!--- /Configuring the Client-->
 
@@ -37,10 +38,11 @@ That's the end of the required setup for the Dashboard! The dashboard is incredi
 ## Generating Links
 
 {% ingredient sdk_links/custom_data %}
-	{% override example_explanation %}
-		Store data about the content shared (and, optionally, the sharing user) in the data dictionary. Attaching information is as simple as including a dictionary at link creation time. If, for example, James is sharing a picture with Id `1234`, your code could do the following:{% endoverride %}
+  {% override example_explanation %}
+  Store data about the content shared (and, optionally, the sharing user) in the data dictionary. Attaching information is as simple as including a dictionary at link creation time. If, for example, James is sharing a picture with Id `1234`, your code could do the following:
+  {% endoverride %}
 
-	{% override example_code %}@{@"pictureId": @"1234", @"referringUsername": @"James"}{% endoverride %}
+  {% override example_code %}@{@"pictureId": @"1234", @"referringUsername": @"James"}{% endoverride %}
 {% endingredient %}
 {% ingredient sdk_links/sharing_teaser %}{% endingredient %}
 <!--- /Links and Sharing-->

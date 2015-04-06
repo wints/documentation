@@ -56,11 +56,11 @@ Navigate to [https://www.facebook.com/ads/create](https://www.facebook.com/ads/c
 
 Choose "Send people to your website". Unfortunately due to a bug with Facebook's API, you cannot currently run campaigns for app downloads through the option "Get installs of your app."
 
-![Description](/img/recipes/deeplink_ads/facebook_ad_1.png) 
+![Description](/img/recipes/deeplink_ads/facebook_ad_1.png)
 
 On the next page, you need to enter the Branch link that was generated in the last step. Here's a gif to help:
 
-![Description](/img/recipes/deeplink_ads/facebook_ad_2.gif) 
+![Description](/img/recipes/deeplink_ads/facebook_ad_2.gif)
 
 You can now customize your ad per the usual Facebook ad creation interface.
 
@@ -70,7 +70,7 @@ Notice that any OG tag information your provided has prepopulated in the interfa
 
 Last step is to make sure you target the mobile app, not the desktop! If you need help, see the gif below:
 
-![Description](/img/recipes/deeplink_ads/facebook_ad_4.gif) 
+![Description](/img/recipes/deeplink_ads/facebook_ad_4.gif)
 
-Now make sure you have a picture of the appropriate size, then order up that ad! 
+Now make sure you have a picture of the appropriate size, then order up that ad!
 

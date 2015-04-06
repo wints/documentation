@@ -23,19 +23,19 @@ Let's assume your app revolves around pictures and each one is tagged with a pic
                                                          NSError *error) {
 
         // start setting up the view controller hierarchy
-    	UINavigationController *navC = (UINavigationController *)self.window.rootViewController;
-    	UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main"
+        UINavigationController *navC = (UINavigationController *)self.window.rootViewController;
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main"
                                                          bundle:nil];
-    	UIViewController *nextVC;
-    	// If the key '{%section ios_key %}pictureId{% endsection %}' is present in the deep link dictionary
-    	// then load the picture screen with the appropriate picture
-    	NSString *{%section ios_key %}pictureId{% endsection %} = [params objectForKey:@"{%section ios_key %}pictureId{% endsection %}"];
-    	if ({%section ios_key %}pictureId{% endsection %}) {
+        UIViewController *nextVC;
+        // If the key '{%section ios_key %}pictureId{% endsection %}' is present in the deep link dictionary
+        // then load the picture screen with the appropriate picture
+        NSString *{%section ios_key %}pictureId{% endsection %} = [params objectForKey:@"{%section ios_key %}pictureId{% endsection %}"];
+        if ({%section ios_key %}pictureId{% endsection %}) {
             nextVC = [storyboard instantiateViewControllerWithIdentifier:@"{%section vc_name %}PicVC{% endsection %}"];
             [nextVC setNext{%section ios_key_U %}PictureId{% endsection %}:{%section ios_key %}pictureId{% endsection %}];
-    	} else {
-        	nextVC = [storyboard instantiateViewControllerWithIdentifier:@"MainVC"];
-    	}
+        } else {
+            nextVC = [storyboard instantiateViewControllerWithIdentifier:@"MainVC"];
+        }
         [navC setViewControllers:@[nextVC] animated:YES];
     }];
 
