@@ -38,17 +38,19 @@ If you want to know who is sharing your content, whether for internal purposes (
 
 {% ingredient sdk_links/creating_links %}{% endingredient %}
 {% ingredient sdk_links/custom_data %}{% endingredient %}
-{% ingredient sdk_links/channel %}{% endingredient %}
-{% ingredient sdk_links/feature %}{% endingredient %}
-{% ingredient sdk_links/alias %}{% endingredient %}
-{% ingredient sdk_links/og_tags %}{% endingredient %}
 {% ingredient sdk_links/sharing_teaser %}{% endingredient %}
 <!--- /Links and Sharing-->
 
 {% ingredient sdk_routing/routing %}{% endingredient %}
 <!--- /Routing to Content-->
 
-## Analytics and Custom Events
+------
+
+**That's all you need** to be able to share and route directly to content. The following optional
+
+------
+
+## (Optional) Analytics and Custom Events
 {% ingredient analytics_and_custom_events/intro %}{% endingredient %}
 {% ingredient analytics_and_custom_events/standard_events %}{% endingredient %}
 {% ingredient analytics_and_custom_events/custom_events %}{% endingredient %}
@@ -56,5 +58,10 @@ If you want to know who is sharing your content, whether for internal purposes (
 {% ingredient analytics_and_custom_events/funnels %}{% endingredient %}
 <!--- /Analytics and Custom Events-->
 
-
-<!--- /Influential Users-->
+## (Optional) Advanced Links and Redirection
+{% ingredient sdk_links/alias %}{% endingredient %}
+{% ingredient sdk_links/channel %}{% endingredient %}
+{% ingredient sdk_links/feature %}{% endingredient %}
+{% ingredient sdk_links/og_tags %}{% endingredient %}
+* and so on
+* and so on
