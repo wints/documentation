@@ -18,6 +18,13 @@ Derrick's comments
 - I want special styling for the "tips"
 
 
+Future todos
+=======
+
+- React -> binding components to docs so we can show progress / encourage users
+- Handle case where user moves to recipe that doesn't support platform (what happens if a given recipe is iOS/Android only and user was previously on web?). being sure to return to previously platform when clicking out of recipe without that previous platform. (Ask Derrick if unclear)
+
+
 Overview for the team
 =======
 
@@ -41,3 +48,4 @@ Right now we are primarily focused on 2. Recipes and 3. Domains, as well as the 
 The next thing to be aware of is our syntax.
 
 [TODO]
+

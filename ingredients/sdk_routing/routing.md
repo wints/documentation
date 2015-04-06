@@ -31,8 +31,8 @@ Let's assume your app revolves around pictures and each one is tagged with a pic
     	// then load the picture screen with the appropriate picture
     	NSString *{%section sdk_routing_routing_ios_key %}pictureId{% endsection %} = [params objectForKey:@"{%section sdk_routing_routing_ios_key %}pictureId{% endsection %}"];
     	if ({%section sdk_routing_routing_ios_key %}pictureId{% endsection %}) {
-        	[MyAppPreferences setNext{%section sdk_routing_routing_ios_key_U %}PictureId{% endsection %}:{%section sdk_routing_routing_ios_key %}pictureId{% endsection %}];
-        	nextVC = [storyboard instantiateViewControllerWithIdentifier:@"{%section sdk_routing_routing_vc_name %}PicVC{% endsection %}"];
+            nextVC = [storyboard instantiateViewControllerWithIdentifier:@"{%section sdk_routing_routing_vc_name %}PicVC{% endsection %}"];
+            [nextVC setNext{%section sdk_routing_routing_ios_key_U %}PictureId{% endsection %}:{%section sdk_routing_routing_ios_key %}pictureId{% endsection %}];
     	} else {
         	nextVC = [storyboard instantiateViewControllerWithIdentifier:@"MainVC"];
     	}
