@@ -43,25 +43,3 @@ If you want to know who is sharing your content, whether for internal purposes (
 
 {% ingredient sdk_routing/routing %}{% endingredient %}
 <!--- /Routing to Content-->
-
-------
-
-**That's all you need** to be able to share and route directly to content. The following optional
-
-------
-
-## (Optional) Analytics and Custom Events
-{% ingredient analytics_and_custom_events/intro %}{% endingredient %}
-{% ingredient analytics_and_custom_events/standard_events %}{% endingredient %}
-{% ingredient analytics_and_custom_events/custom_events %}{% endingredient %}
-{% ingredient analytics_and_custom_events/dashboard_summary %}{% endingredient %}
-{% ingredient analytics_and_custom_events/funnels %}{% endingredient %}
-<!--- /Analytics and Custom Events-->
-
-## (Optional) Advanced Links and Redirection
-{% ingredient sdk_links/alias %}{% endingredient %}
-{% ingredient sdk_links/channel %}{% endingredient %}
-{% ingredient sdk_links/feature %}{% endingredient %}
-{% ingredient sdk_links/og_tags %}{% endingredient %}
-* and so on
-* and so on
