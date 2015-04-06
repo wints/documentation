@@ -45,7 +45,7 @@ module Jekyll
             site.data['groups'][page.data['type']][1].push([page.name.split(".")[0], page.data['title'], Hash[page.data['platforms'].zip(page.data['platforms'].map {|i| true })]])
         end
       end
-      site.data['groups_json'] = site.data['groups'].to_json
+      # site.data['groups_json'] = site.data['groups'].to_json
     end
 
     def generate(site)
