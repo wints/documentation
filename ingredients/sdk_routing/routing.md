@@ -15,28 +15,26 @@ Let's assume your app revolves around pictures and each one is tagged with a pic
 
 ~~~ objc
 - (BOOL)application:(UIApplication *)application
-        didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 
     // initialize the session, setup a deep link handler
     [[Branch getInstance] initSessionWithLaunchOptions:launchOptions
-                            andRegisterDeepLinkHandler:^(NSDictionary *params,
-                                                         NSError *error) {
+                          andRegisterDeepLinkHandler:^(NSDictionary *params, NSError *error) {
 
-        // start setting up the view controller hierarchy
-        UINavigationController *navC = (UINavigationController *)self.window.rootViewController;
-        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main"
-                                                         bundle:nil];
-        UIViewController *nextVC;
-        // If the key '{%section ios_key %}pictureId{% endsection %}' is present in the deep link dictionary
-        // then load the picture screen with the appropriate picture
-        NSString *{%section ios_key %}pictureId{% endsection %} = [params objectForKey:@"{%section ios_key %}pictureId{% endsection %}"];
-        if ({%section ios_key %}pictureId{% endsection %}) {
-            nextVC = [storyboard instantiateViewControllerWithIdentifier:@"{%section vc_name %}PicVC{% endsection %}"];
-            [nextVC setNext{%section ios_key_U %}PictureId{% endsection %}:{%section ios_key %}pictureId{% endsection %}];
-        } else {
-            nextVC = [storyboard instantiateViewControllerWithIdentifier:@"MainVC"];
-        }
-        [navC setViewControllers:@[nextVC] animated:YES];
+      // start setting up the view controller hierarchy
+      UINavigationController *navC = (UINavigationController *)self.window.rootViewController;
+      UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main"bundle:nil];
+      UIViewController *nextVC;
+      // If the key '{%section ios_key %}pictureId{% endsection %}' is present in the deep link dictionary
+      // then load the picture screen with the appropriate picture
+      NSString *{%section ios_key %}pictureId{% endsection %} = [params objectForKey:@"{%section ios_key %}pictureId{% endsection %}"];
+      if ({%section ios_key %}pictureId{% endsection %}) {
+        nextVC = [storyboard instantiateViewControllerWithIdentifier:@"{%section vc_name %}PicVC{% endsection %}"];
+         [nextVC setNext{%section ios_key_U %}PictureId{% endsection %}:{%section ios_key %}pictureId{% endsection %}];
+      } else {
+        nextVC = [storyboard instantiateViewControllerWithIdentifier:@"MainVC"];
+      }
+      [navC setViewControllers:@[nextVC] animated:YES];
     }];
 
     return YES;
