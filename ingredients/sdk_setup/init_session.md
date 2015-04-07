@@ -45,5 +45,44 @@ Here's an example of the initSession call that you should make. This **must** be
 
 
 {% if page.android %}
-[TODO], don't forget the closeSession as well
+
+**NOTE** This guide assumes that you're familiar with the Android UI lifecycle. A single Branch object instance is used per Activity or Fragment, so declare an object at the class-level, and you can call this in every Activity or Fragment where you need to interact with Branch; if it has already be initialised elsewhere in your app, the same instance will be returned.
+
+Inside your `onStart`, do the following, where the variable `branch` is created in your base activity class (of type `Branch`).
+
+
+~~~java
+@Override
+protected void onStart() {
+    super.onStart();
+
+    branch = Branch.getInstance(this.getApplicationContext());
+    ...
+}
+~~~
+
+Next, initialize a session via the `initSession` call. We notify you via callback of type `BranchReferralInitListener`. Go ahead and create that first as follows: 
+
+~~~java
+Branch branchReferralInitListener = new BranchReferralInitListener() {
+    @Override
+    public void onInitFinished(JSONObject referringParams, BranchError error) {
+
+        // Do this when a response is returned.
+        ...
+
+    }
+}
+~~~
+
+Finally, init the session!
+
+~~~java
+branch.initSession(branchReferralInitListener, this.getIntent().getData(), this);
+~~~
+
+**NOTE** if you're calling this inside a fragment, please use getActivity() instead of passing in `this`. Also, `this.getIntent().getData()` refers to the data associated with an incoming intent.
+
+As a quick reminder, make sure to properly close the session inside `onStop` with a `branch.closeSession()`.
+
 {% endif %}
