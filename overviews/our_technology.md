@@ -24,8 +24,6 @@ default: {{ page.default }}
     console.log('hello, ' + name);
   }
 {% endhighlight %}
-
-
 {% endtab %}
 {% tab swift %}
 # Second

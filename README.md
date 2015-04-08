@@ -1,6 +1,15 @@
 Documentation
 =======
 
+### Install Bundler
+```
+gem install bundler
+```
+### Update Submodule
+```
+git submodule update
+```
+
 ### Install Jekyll and Dependencies
 ```
 npm install && bundle install
@@ -41,7 +50,7 @@ Right now we are primarily focused on 2. Recipes and 3. Domains, as well as the 
 
 `Domains`: Lists of the various `ingredients` for a given domain. For example, all information related to programmatically creating links belongs on one page. Like `recipes`, domains are composed of `ingredients`.
 
-`Ingredients`: The pieces. A short, self-contained explanation and/or code sample. 
+`Ingredients`: The pieces. A short, self-contained explanation and/or code sample.
 
 ---
 

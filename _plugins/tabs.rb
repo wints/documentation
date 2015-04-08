@@ -14,7 +14,7 @@ module Jekyll
       context.registers[:tabs] = []
       super
 
-      html = context.registers[:tabs].join("\n")
+      html = context.registers[:tabs].join("")
       html = '<Tabs>' + html + '</Tabs>'
 
       BranchUtils.instance.react(html)
@@ -30,7 +30,7 @@ module Jekyll
     def render(context)
       site = context.registers[:site]
       contents = Kramdown::Document.new(super).to_html
-      context.registers[:tabs].push('<Tab name="' + @markup + '" >' + contents + '</Tab>')
+      context.registers[:tabs].push('<Tab name="' + @markup + '">' + contents + '</Tab>')
       ""
     end
   end
