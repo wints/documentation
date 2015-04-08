@@ -26,6 +26,18 @@ It's that simple!
 
 
 {% if page.android %}
-[TODO] Android setIdentity and logout
+Invoke the `setIdentity` call whenever you create or login a user.
+
+~~~java
+Branch.getInstance(getApplicationContext()).setIdentity("your user identity"");
+~~~
+
+**NOTE** Please keep the string to less than 127 characters.
+
+In case you'd like to clear your user after they have logged out, please use the following:
+
+~~~java
+Branch.getInstance(getApplicationContext()).logout();
+~~~
 {% endif %}<!--- Android identify and logout -->
 

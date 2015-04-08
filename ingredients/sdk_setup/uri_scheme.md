@@ -18,11 +18,32 @@ Go do a quick double-check that this is the same URI scheme listed on the Dashbo
 <!---       /iOS-specific URI Scheme -->
 
 {% if page.android %}
-#### Here's how to do it on Android
 
-[TODO]
+Open up Android Studio and navigate to your `AndroidManifest.xml`.
+
+You can register your app to respond to direct deep links (yourapp:// in a mobile browser) by adding the second intent filter block.
+
+~~~xml
+<activity
+	android:name="com.yourapp.SplashActivity"
+	android:label="@string/app_name" >
+	<intent-filter>
+		<action android:name="android.intent.action.MAIN" />
+		<category android:name="android.intent.category.LAUNCHER" />
+	</intent-filter>
+	<!-- Add this intent filter below, and change yourapp to your app name -->
+	<intent-filter>
+		<data android:scheme="yourapp" android:host="open" />
+		<action android:name="android.intent.action.VIEW" />
+		<category android:name="android.intent.category.DEFAULT" />
+		<category android:name="android.intent.category.BROWSABLE" />
+	</intent-filter>
+</activity>
+~~~
+
+However, you can have many `intent-filters`. It all depends on how you architecht receiving intents inside your application.
 
 Go do a quick double-check that this is the same URI scheme listed on the Dashboard, where it should be `myapp://`). For more info on setting up a URI scheme on the Dashboard, [click here](/ingredients/configuring_the_dashboard/android/index.html#uri_scheme).
+
 {% endif %}
 <!---       /Android-specific URI Scheme -->
-
