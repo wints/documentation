@@ -45,7 +45,6 @@ function bundle(data, c) {
 	b.bundle().pipe(accum(function(data) {
 		data = JSON.stringify(String(data));
 		c.write(String("0000000000" + data.length).slice(-10));
-		fs.writeFileSync('node.txt', data);
 		data.match(/.{0,10000}/g).forEach(function(piece) {
 			c.write(piece);
 		});
