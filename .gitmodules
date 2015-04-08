@@ -1,3 +1,3 @@
 [submodule "_includes/branch-web-assets"]
 	path = _includes/branch-web-assets
-	url = git@github.com:BranchMetrics/branch-web-assets.git
+	url = https://github.com/BranchMetrics/branch-web-assets.git
