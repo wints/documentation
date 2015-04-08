@@ -22,9 +22,21 @@ class BranchUtils
 
   end
 
-
   def bundle(content)
-    @s1.send JSON.generate({ :type => "bundle", :data => content }), 0
+    _node("bundle", content)
+  end
+
+  def react(content)
+    if @_react[content] then
+      @_react[content]
+    else
+      @_react[content] = _node("react", _to_jsx(Nokogiri::XML(content).children[0]))
+    end
+  end
+
+
+  def _node(type, data)
+    @s1.send JSON.generate({ :type => type, :data => data }), 0
 
     length = Integer(@s1.recv(10).sub(/^0+/, ''))
     out = ""
@@ -33,15 +45,6 @@ class BranchUtils
     end
 
     JSON.parse('[' + out + ']')[0]
-  end
-
-  def react(content)
-    if @_react[content] then
-      @_react[content]
-    else
-     @s1.send JSON.generate({ :type => "react", :data => _to_jsx(Nokogiri::XML(content).children[0]) }), 0
-      @_react[content] = @s1.recv(1000 * 1000 * 1000)
-    end
   end
 
   def _to_jsx(content)

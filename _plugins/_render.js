@@ -18,7 +18,7 @@ fs.readdirSync(path.join(__dirname, '..', 'js/components')).forEach(function(fil
 });
 
 var _cache = {}, _packageCache = {};
-function bundle(data, c) {
+function bundle(data, done) {
 
 	var startTime = new Date();
 	var s = new stream.Readable();
@@ -35,24 +35,17 @@ function bundle(data, c) {
 	b.transform(reactify);
 	b.add(s);
 
-/*
+	/*
 	b.pipeline.get('deps').push(through.obj(function(row, enc, next) {
 		_cache[row.file] = JSON.parse(JSON.stringify({ id: row.file, source: row.source, deps: row.deps, file: row.file }));
 		next();
 	}));
-*/
+	*/
 
-	b.bundle().pipe(accum(function(data) {
-		data = JSON.stringify(String(data));
-		c.write(String("0000000000" + data.length).slice(-10));
-		fs.writeFileSync('node.txt', data);
-		data.match(/.{0,10000}/g).forEach(function(piece) {
-			c.write(piece);
-		});
-	}));
+	b.bundle().pipe(accum(done));
 }
 
-function renderReact(data, c) {
+function renderReact(data, done) {
 	var id = Math.random().toString(36).substring(2);
 	// First: render the JSX
 	var out = '<script type="text/javascript">' + tools.transform('$(function() { React.render(' + data + ', $("#' + id + '")[0]); });') + '</script>';
@@ -62,15 +55,24 @@ function renderReact(data, c) {
 		out += '<div id="' + id + '">' + eval(tools.transform('React.renderToString(' + data + ')')) + '</div>';
 	}
 
-	c.write(out);
+	done(out);
 }
 
 var net = require('net');
 var server = net.createServer(function(c) {
-	c.on('data', function(data) {
-		var data = JSON.parse(data.toString());
-		if (data.type == 'bundle') { bundle(data.data, c); }
-		else { renderReact(data.data, c); }
+	c.on('data', function(incoming) {
+		var inc = JSON.parse(incoming.toString());
+
+		function finish(data) {
+			data = JSON.stringify(String(data));
+			c.write(String("0000000000" + data.length).slice(-10));
+			data.match(/.{0,10000}/g).forEach(function(piece) {
+				c.write(piece);
+			});
+		}
+
+		if (inc.type == 'bundle') { bundle(inc.data, finish); }
+		else if (inc.type == 'react') { renderReact(inc.data, finish); }
 	});
 });
 server.listen(process.argv[2], function() {});
