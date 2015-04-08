@@ -1,7 +1,10 @@
 ### Branch Key
 
-{% if page.ios %}
+{% section explanation %}
 Now you need to add the Branch Key that you received on the Dashboard into your app.
+{% endsection %}
+
+{% if page.ios %}
 
 [TODO] Updated screenshots when we have the next version.
 
@@ -23,9 +26,32 @@ Your app key can be retrieved on the [Settings](https://dashboard.branch.io/#/se
 
 
 {% if page.android %}
-Now you need to add the Branch Key that you received on the Dashboard into your app.
 
-[TODO]
+Your app key can be retrieved on the [Settings](https://dashboard.branch.io/#/settings) page of the dashboard. Now you need to add it to your project workspace. 
+
+1. Navigate to to res/values/strings.xml
+2. Add a new resource, with the name "bnc_app_key". Here's what it should look like:
+
+~~~java
+<resources>
+    <!-- Other existing resources -->
+
+    <!--Change "your app key" to your app key -->
+    <string name="bnc_app_key">"your app key"</string>
+</resources>
+~~~
+
+3. Navigate to AndroidManifest.xml and add the following `<meta-data` tag:
+
+~~~java
+<application>
+    <!-- Other existing entries -->
+
+    <!-- Add this meta-data below; DO NOT changing the android:value -->
+    <meta-data android:name="io.branch.sdk.ApplicationId" android:value="@string/bnc_app_key" />
+</application>
+~~~
+
 
 {% endif %}
 <!---       /Android-specific Branch Key -->
