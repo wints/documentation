@@ -18,18 +18,23 @@ default: {{ page.default }}
 {% tabs %}
 {% tab ios %}
 # First
-~~~ javascript
+
+{% highlight javascript %}
   function greet(name) {
     console.log('hello, ' + name);
   }
-~~~
+{% endhighlight %}
+
+
 {% endtab %}
 {% tab swift %}
 # Second
-~~~ javascript
+
+{% highlight javascript %}
   function farewell(name) {
     console.log('goodbye, ' + name);
   }
-~~~
+{% endhighlight %}
+
 {% endtab %}
 {% endtabs %}

@@ -4,6 +4,7 @@ name: Branch Metrics
 email: info@branchmetrics.io
 description: "Helping apps grow through seamless referrals, sharing and deep linking across install."
 url: "http://localhost:4000"
+branch_base: "https://branch.io"
 baseurl: ""
 permalink: pretty
 markdown: kramdown
@@ -21,6 +22,8 @@ exclude:
 - .gitignore
 - README.md
 - documentation_assets
-- "**.less"
 - ingredients
 - js/components
+
+sass:
+    sass_dir: css

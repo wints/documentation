@@ -1,4 +1,6 @@
 require 'open3'
+require_relative '_utils.rb'
+
 
 module Jekyll
   class BrowserifyConverter < Converter
@@ -14,8 +16,7 @@ module Jekyll
     end
 
     def convert(content)
-      data, s = Open3.capture2("node _plugins/render.js bundle", :stdin_data => content, :binmode => true)
-      data
+      BranchUtils.instance.bundle(content)
     end
   end
 end
