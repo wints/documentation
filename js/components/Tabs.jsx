@@ -1,8 +1,39 @@
-var React = require('react');
+var React = require('react'),
+	R = require('ramda'),
+	cx = require('react/lib/cx');
 
 var Tabs = React.createClass({
+	getInitialState: function() {
+		return { active: 0 };
+	},
+	_toggleTab: function(i) {
+		return function() {
+			this.setState({ active: i });
+		}.bind(this);
+	},
 	render: function() {
-		return <div className="tabs">{ this.props.children }</div>;
+		var self = this;
+
+		var names = R.mapIndexed(function(val , i) {
+			var classes = cx({
+				'btn btn-default': true,
+				'inactive': i != self.state.active
+			});
+			return (<a className={ classes } onClick={ self._toggleTab(i) }>{ val.props.name }</a>);
+		}, this.props.children);
+
+		return (
+			<div className="tabs">
+				<div className="row">
+					{ this.props.children[this.state.active] }
+				</div>
+				<div className="row">
+					<div className="float-right">
+						{ names }
+					</div>
+				</div>
+			</div>
+		);
 	}
 });
 

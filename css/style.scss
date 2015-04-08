@@ -6,7 +6,12 @@ $branch-font-path: "/font";
 @import "../_includes/branch-web-assets/styles/global";
 @import "../_includes/branch-web-assets/components/footer/footer";
 @import "../_includes/branch-web-assets/components/navbar/navbar";
+@import "./tabs";
 
 img {
 	max-width: 100%;
+}
+
+.float-right {
+	float: right;
 }
