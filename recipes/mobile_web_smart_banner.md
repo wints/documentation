@@ -1,6 +1,6 @@
 ---
 type: recipe
-title: Mobile Web Smart Banner With Deeplink
+title: Mobile Web Smart Banner
 platforms:
 - ios
 - android
