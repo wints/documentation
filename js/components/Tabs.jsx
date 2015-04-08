@@ -1,6 +1,11 @@
 var React = require('react'),
-	R = require('ramda'),
-	cx = require('react/lib/cx');
+	R = require('ramda');
+
+var cx = R.pipe(
+	R.pickBy(R.identity),
+	R.keys(),
+	R.join(' ')
+)
 
 var Tabs = React.createClass({
 	getInitialState: function() {
@@ -15,11 +20,11 @@ var Tabs = React.createClass({
 		var self = this;
 
 		var names = R.mapIndexed(function(val , i) {
-			var classes = cx({
+			var classes = {
 				'btn btn-default': true,
 				'inactive': i != self.state.active
-			});
-			return (<a className={ classes } onClick={ self._toggleTab(i) }>{ val.props.name }</a>);
+			};
+			return (<a className={ cx(classes) } onClick={ self._toggleTab(i) }>{ val.props.name }</a>);
 		}, this.props.children);
 
 		return (
