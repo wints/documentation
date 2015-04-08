@@ -22,7 +22,7 @@ var Tabs = React.createClass({
 		var names = R.mapIndexed(function(val , i) {
 			var classes = {
 				'btn btn-default': true,
-				'inactive': i != self.state.active
+				'btn-inactive': i != self.state.active
 			};
 			return (<a className={ cx(classes) } onClick={ self._toggleTab(i) }>{ val.props.name }</a>);
 		}, this.props.children);
