@@ -1,3 +1,9 @@
+---
+---
+
+window.Tab = require('./components/Tab');
+window.Tabs = require('./components/Tabs');
+
 window.onload = function() {
 	if(!getPlatform()) { setPlatform('ios'); }
 }
@@ -18,5 +24,3 @@ function setHeaderToPlatform(current_platform, default_platform) {
 		$('.nav#' + cachedPlatform).parent().addClass('active');
 	}
 }
-
-// $('h2[id], h1[id]')

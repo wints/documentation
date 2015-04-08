@@ -1,4 +1,23 @@
+require 'open3'
 require 'kramdown'
+require 'nokogiri'
+
+def to_jsx(content)
+  attr_translate = { "for" => "htmlFor", "class" => "className" }
+
+  if content.text? then
+    "{" + ("" + content).to_json + "}"
+  elsif content.element?
+    res = "<" + content.name + (content.attributes.map { |_,attr| ' ' + (attr_translate[attr.name] or attr.name) + '=' + attr.value.to_json }.join '')
+    if content.children.count then
+      res + '>' + (content.children.map { |child| to_jsx(child) }.join '') + '</' + content.name + '>'
+    else
+      res + ' />'
+    end
+  else
+    ""
+  end
+end
 
 module Jekyll
 
@@ -12,12 +31,11 @@ module Jekyll
       context.registers[:tabs] = []
       super
 
-      # join tab contents together and convert html -> jsx
-      jsx = context.registers[:tabs].join("\n").gsub(/\sclass=/, ' className=').gsub(/\sfor=/, ' htmlFor=')
-      jsx = '<Tabs>' +
-        jsx +
-      '</Tabs>'
-      # unjsxify(jsx)
+      html = context.registers[:tabs].join("\n")
+      html = '<Tabs>' + html + '</Tabs>'
+
+      data, s = Open3.capture2("node _plugins/render.js renderReact", :stdin_data => to_jsx(Nokogiri::XML(html).children[0]), :binmode => true)
+      data
     end
   end
 
