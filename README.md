@@ -3,12 +3,12 @@ Documentation
 
 ### Install Jekyll and Dependencies
 ```
-sudo gem install therubyracer less jekyll kramdown s3_website byebug
+npm install && bundle install
 ```
 
 ### Open another terminal console and start jekyll
 ```
-jekyll serve --watch
+bundle exec jekyll serve --watch
 ```
 
 Derrick's comments

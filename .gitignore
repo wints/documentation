@@ -3,3 +3,4 @@ node_modules/**
 _site
 npm-debug.log
 .sass-cache
+Gemfile.lock
