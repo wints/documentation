@@ -1,0 +1,12 @@
+{
+  "name": "documentation",
+  "version": "1.0.0",
+  "dependencies": {
+    "accum": "^0.3.6",
+    "browserify": "^9.0.7",
+    "react": "^0.13.1",
+    "react-tools": "^0.13.1",
+    "reactify": "^1.1.0",
+    "through2": "^0.6.3"
+  }
+}
