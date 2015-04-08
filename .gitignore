@@ -4,3 +4,4 @@ _site
 npm-debug.log
 .sass-cache
 Gemfile.lock
+node.txt
