@@ -53,32 +53,33 @@ Let's assume your app revolves around pictures, and each picture has an ID. When
 {% endsection %}
 
 ~~~ java
+
 @Override
 public void onStart() {
-	super.onStart();
+    super.onStart();
 
-	Branch branch = Branch.getInstance(getApplicationContext());
-	branch.initSession(new BranchReferralInitListener(){
-		@Override
-		public void onInitFinished(JSONObject referringParams, Branch.BranchError error) {
-			if (error == null) {
-				// params are the deep linked params associated with the link that the user clicked before showing up
-				// params will be empty if no data found
-				String pictureID = referringParams.optString("picture_id", "");
-				if (pictureID.equals("")) {
-				    startActivity(new Intent(this, HomeActivity.class));
-				} else {
-					Intent i = new Intent(this, ViewerActivity.class);
-					i.putExtra("PICTURE_ID", pictureID);
-					startActivity(i);
-				}
-			} else {
-				Log.e("MyApp", error.getMessage());
-			}
-		}
-	}, this.getIntent().getData(), this);
-	// if you want to specify isReferrable, then comment out the above line and uncomment this line:
-	// }, true, this.getIntent().getData(), this);
+    Branch branch = Branch.getInstance(getApplicationContext());
+    branch.initSession(new BranchReferralInitListener(){
+        @Override
+        public void onInitFinished(JSONObject referringParams, Branch.BranchError error) {
+            if (error == null) {
+            // params are the deep linked params associated with the link that the user clicked before showing up
+            // params will be empty if no data found
+                String pictureID = referringParams.optString("picture_id", "");
+                if (pictureID.equals("")) {
+                    startActivity(new Intent(this, HomeActivity.class));
+                } else {
+                    Intent i = new Intent(this, ViewerActivity.class);
+                    i.putExtra("PICTURE_ID", pictureID);
+                    startActivity(i);
+                }
+            } else {
+                Log.e("MyApp", error.getMessage());
+            }
+        }
+    }, this.getIntent().getData(), this);
+    // if you want to specify isReferrable, then comment out the above line and uncomment this line:
+    // }, true, this.getIntent().getData(), this);
 }
 ~~~
 
