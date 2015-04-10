@@ -43,3 +43,43 @@ Let's assume your app revolves around pictures and each one is tagged with a pic
 
 
 {% endif %}
+
+{% if page.android %}
+
+{% section android_explanation %}
+Inside `onStart`, when Branch is initialized, you will want to examine the dictionary we pass to you from our callback. This will allow you to know whether or not a link click with context was made. You'll likely have many entry points based off different parameters.
+
+Let's assume your app revolves around pictures, and each picture has an ID. When user A decides to share a picture, attach that ID to the shortUrl or LongURL being created. When User B downloads (or opens the app if they already have it), the call to initSession will inform you of the parameters user A sent. Unpack em, and route away to the right view!
+{% endsection %}
+
+~~~ java
+@Override
+public void onStart() {
+	super.onStart();
+
+	Branch branch = Branch.getInstance(getApplicationContext());
+	branch.initSession(new BranchReferralInitListener(){
+		@Override
+		public void onInitFinished(JSONObject referringParams, Branch.BranchError error) {
+			if (error == null) {
+				// params are the deep linked params associated with the link that the user clicked before showing up
+				// params will be empty if no data found
+				String pictureID = referringParams.optString("picture_id", "");
+				if (pictureID.equals("")) {
+				    startActivity(new Intent(this, HomeActivity.class));
+				} else {
+					Intent i = new Intent(this, ViewerActivity.class);
+					i.putExtra("PICTURE_ID", pictureID);
+					startActivity(i);
+				}
+			} else {
+				Log.e("MyApp", error.getMessage());
+			}
+		}
+	}, this.getIntent().getData(), this);
+	// if you want to specify isReferrable, then comment out the above line and uncomment this line:
+	// }, true, this.getIntent().getData(), this);
+}
+~~~
+
+{% endif %}
