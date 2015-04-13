@@ -24,6 +24,10 @@ exclude:
 - documentation_assets
 - ingredients
 - js/components
+- js/stores
+- js/actions
+- js/support
+- node_modules
 
 sass:
     sass_dir: css

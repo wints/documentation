@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "dependencies": {
     "accum": "^0.3.6",
+    "alt": "^0.15.4",
     "browserify": "^9.0.7",
     "ramda": "^0.13.0",
     "react": "^0.13.1",

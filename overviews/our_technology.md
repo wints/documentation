@@ -13,8 +13,6 @@ default: {{ page.default }}
 
 > hey there
 
-
-
 {% tabs %}
 {% tab ios %}
 # First
