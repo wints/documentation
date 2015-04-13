@@ -42,4 +42,4 @@ platforms:
 
 ### Customizing Redirects
 
-Lastly, if you want to customize where links take users if they don't have the app installed, you should check out our page about [Redirection](/ingredients/redirection/{{page.platform}}/)
+Lastly, if you want to customize where links take users if they don't have the app installed, you should check out our page about [Redirection](/domains/redirection/{{page.platform}}/).
