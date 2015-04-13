@@ -35,18 +35,27 @@ module Jekyll
     def buildGroups(site)
       group_pages = site.pages.select { |page| ['recipe', 'overview', 'domain', 'reference'].include?(page.data['type']) }
       site.data['groups'] = {
-        'overview' => ['Overview', Array.new],
-        'recipe' => ['Building with Branch (Recipes)', Array.new],
-        'domain' => ['Feature (Domains)', Array.new],
-        'reference' => ['API Reference', Array.new]
+        'overview' => { 'title' => 'Overview', 'pages' => Array.new },
+        'recipe' => { 'title' => 'Building with Branch (Recipes)', 'pages' => Array.new },
+        'domain' => { 'title' => 'Feature (Domains)', 'pages' => Array.new },
+        'reference' => { 'title' => 'API Reference', 'pages' => Array.new }
       }
 
       group_pages.each do |page|
         if page.data['platforms'] then
-            site.data['groups'][page.data['type']][1].push([page.name.split(".")[0], page.data['title'], Hash[page.data['platforms'].zip(page.data['platforms'].map {|i| true })]])
+            site.data['groups'][page.data['type']]['pages'].push({
+              'path' => page.name.split(".")[0],
+              'title' => page.data['title'],
+              'platforms' => Hash[page.data['platforms'].zip(page.data['platforms'].map {|i| true })]
+            })
         end
       end
-      site.data['groups_json'] = site.data['groups'].to_json
+
+      site.data['groups'].each do |key, value|
+        value['type'] = key;
+      end
+
+      site.data['groups_json'] = site.data['groups'].values.to_json
     end
 
     def generate(site)
