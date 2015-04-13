@@ -10,8 +10,9 @@ module Jekyll
     end
 
     def render(context)
-    	# todo pass in page_name
-      return BranchUtils.instance.react('<Sidebar />')
+      site_map = context.registers[:site].data['groups']
+      current_path = context.environments.first["page"]["current_path"] || '/'
+      return BranchUtils.instance.react('<Sidebar current_path="' + current_path + '" site_map=' + BranchUtils.instance.json_property(site_map) + '/>')
     end
   end
 
@@ -23,7 +24,6 @@ module Jekyll
     def render(context)
       # todo pass in page_name
       platforms = context.registers[:site].data['platforms']
-      # puts BranchUtils.instance.json_property(platforms)
       return BranchUtils.instance.react('<PlatformSelector platforms=' + BranchUtils.instance.json_property(platforms) + '/>')
     end
   end

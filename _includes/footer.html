@@ -2,7 +2,6 @@
 {% include branch-web-assets/components/footer/footer.html %}
 
 <script type="text/javascript">
-PlatformActions.loadSiteMap('{{ site.data.groups_json }}');
 PlatformActions.loadDefaulted({
 	defaulted: {{ page.default }},
 	current_platform: '{{ page.platform }}'

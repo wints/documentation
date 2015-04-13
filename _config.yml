@@ -28,6 +28,10 @@ exclude:
 - js/actions
 - js/support
 - node_modules
+- package.json
+- node.txt
+- Gemfile
+- Gemfile.lock
 
 sass:
     sass_dir: css
