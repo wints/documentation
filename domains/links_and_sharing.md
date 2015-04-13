@@ -37,6 +37,7 @@ platforms:
 ## Sharing
 
 {% ingredient sdk_links/sharing_sms %}{%endingredient%}
+{% ingredient sdk_links/sharing_ios_share_sheet %}{%endingredient%}
 
 
 ## Additional Options
