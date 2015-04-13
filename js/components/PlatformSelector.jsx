@@ -33,6 +33,7 @@ var PlatformSelector = React.createClass({
 				'btn-inactive': self.state.platform != platform.key
 			}
 			return (
+				// TODO current_path
 				<a className={ cx(classes) } key={ platform.key } href={ '/overviews/what_is_branch/' + platform.key } onClick={ self._handleClick(platform.key) }>
 					{ platform.name }
 				</a>);
