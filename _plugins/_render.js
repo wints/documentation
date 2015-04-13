@@ -6,6 +6,7 @@ var fs = require('fs'),
 	reactify = require('reactify'),
 	browserify = require('browserify'),
 	stream = require('stream'),
+	http = require('http'),
 	through = require('through2');
 
 require.extensions['.jsx'] = function(module, filename) {
@@ -58,21 +59,22 @@ function renderReact(data, done) {
 	done(out);
 }
 
-var net = require('net');
-var server = net.createServer(function(c) {
-	c.on('data', function(incoming) {
-		var inc = JSON.parse(incoming.toString());
+var server = http.createServer(function(req, res) {
+	var body = '';
+	req.on('data', function (data) {
+		body += data;
+	});
+	req.on('end', function() {
+		var inc = JSON.parse(body);
 
 		function finish(data) {
-			data = JSON.stringify(String(data));
-			c.write(String("0000000000" + data.length).slice(-10));
-			data.match(/.{0,10000}/g).forEach(function(piece) {
-				c.write(piece);
-			});
+			res.writeHead(200, {'Content-Type': 'text/plain'});
+			res.end(data);
 		}
 
 		if (inc.type == 'bundle') { bundle(inc.data, finish); }
 		else if (inc.type == 'react') { renderReact(inc.data, finish); }
 	});
 });
-server.listen(process.argv[2], function() {});
+
+server.listen(process.argv[2]);
