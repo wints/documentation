@@ -29,11 +29,6 @@ platforms:
 {% ingredient sdk_links/alias %}{%endingredient%}
 
 
-## Customizing Redirects
-
-{% ingredient sdk_links/custom_redirects %}{%endingredient%}
-
-
 ## Sharing
 
 {% ingredient sdk_links/sharing_sms %}{%endingredient%}
@@ -45,3 +40,6 @@ platforms:
 {% ingredient sdk_links/stage %}{%endingredient%}
 {% ingredient sdk_links/match_duration %}{%endingredient%}
 
+### Customizing Redirects
+
+Lastly, if you want to customize where links take users if they don't have the app installed, you should check out our page about [Redirection](/ingredients/redirection/{{page.platform}}/)
