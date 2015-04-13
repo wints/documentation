@@ -49,7 +49,7 @@ class BranchUtils
 
   def _to_jsx(content)
     attr_translate = { "for" => "htmlFor", "class" => "className" }
-  
+
     if content.text? then
       "{" + ("" + content).to_json + "}"
     elsif content.element?
