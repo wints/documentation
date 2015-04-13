@@ -22,6 +22,14 @@ You can safely pass in `nil` for any options you don't wish to specify.
 <!--- Android -->
 {% if page.android %}
 
+In Android, you will need to use a method call that accepts a `String channel` type parameter, for all URL generation calls.
 
+~~~ java
+Branch.getInstance(getApplicationContext()).getContentUrl("sms",  null, new BranchLinkCreateListener() {
+    @Override
+    public void onLinkCreate(String url, BranchError error) {
+    }
+});
+~~~
 {% endif %}
 <!--- /Android -->

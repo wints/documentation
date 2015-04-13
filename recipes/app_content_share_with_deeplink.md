@@ -1,6 +1,6 @@
 ---
 type: recipe
-title: App Content Share with Deeplink
+title: App Content Share + Deeplink
 platforms:
 - ios
 - android

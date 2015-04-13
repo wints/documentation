@@ -1,0 +1,99 @@
+---
+type: recipe
+title: Incentivized Referral Program
+platforms:
+- ios
+- android
+---
+
+# Incentivized Referral Program
+
+------
+
+## Overview
+
+For a referral system, Branch provides:
+
+- _User attribution through a tracking, download URL._ In short, we tell you when an existing user who you empower with a Branch link, drives a new install.
+
+- _(optional) Custom rewarding rules tied to events (install, signup, purchase, etc) in app._ We allow you to tie reward events to special
+
+- _(optional) User reward tracking/storage (integer balance)._ We leave the actual user facing rewarding to you, but we store how many credits have been earned through our reward rules. This makes it easy so that you can just check the balance of credits in the app from us, give the user some reward, then clear the credit balance on our server.
+
+- _(optional) Credit transaction history._ At any time, via API or SDK, you can retrieve the full credit history of the user
+
+
+
+## Configuring the Dashboard for your {{ page.platform_formatted }} app
+{% ingredient dashboard_setup/app_name %}{% endingredient %}
+{% ingredient dashboard_setup/web_url %}{% endingredient %}
+{% ingredient dashboard_setup/store_or_custom_url %}{% endingredient %}
+{% ingredient dashboard_setup/uri_scheme %}{% endingredient %}
+
+That's the end of the required setup for the Dashboard! The dashboard is incredibly powerful, so if you want to dive in deeper, definitely check out [TODO] [Configuring the Dashboard](/ingredients/configuring_the_dashboard/{{ page.platform }}/index.html#advanced)'s advanced configurations.
+<!--- /Configuring the Dashboard-->
+
+
+## Configuring your {{ page.platform_formatted }} app
+{% ingredient sdk_setup/installing_the_sdk %}{% endingredient %}
+{% ingredient sdk_setup/branch_key %}{% endingredient %}
+{% ingredient sdk_setup/uri_scheme %}{% endingredient %}
+{% ingredient sdk_setup/init_session %}{% endingredient %}
+{% ingredient sdk_setup/handle_deep_link %}{% endingredient %}
+{% ingredient sdk_setup/identify_and_logout %}
+  {% override header %}###Identifying Your Users (Optional but recommended){% endoverride %}
+  {% override pre_explanation %}
+  If you want to know who is sharing your content, whether for internal purposes (i.e. analytics) or for customizing the experience of a user receiving a referral, you'll want to identify your users.
+  {% endoverride %}
+{% endingredient %}
+<!--- /Configuring the Client-->
+
+
+## Generating Links
+
+{% ingredient sdk_links/creating_links %}
+  {% override explanation %}
+  Links are the foundation to everything Branch offers. Branch's links offer the ability to deep link directly to content, to pass data through the install process, and to tell where users are coming from. In the case of a incentivized referral program, you don't need to attach any information. You simply need to make sure that you generate links for the user who will be sharing the link. Also, be sure that you make a `setIdentity` call as described above.
+
+  That said, you can attach information about the user who is sharing the link. Then this information about this user--here "John" with id "1234"--is present anytime John's friends install the app after clicking his link.
+  {%endoverride%}
+
+  {% override params %}@{@"referringUsername":@"John", @"referringUserId":@"1234"}{%endoverride%}
+{% endingredient %}
+
+Again, it's not imperative that you attach any information to the link. As long as you made a `setIdentity` call, anytime this link is shared we will know whose link it is and when to attribute an install to him.
+
+{% ingredient sdk_links/sharing_teaser %}{% endingredient %}
+<!--- /Generating Links-->
+
+
+## Rewards
+{% ingredient dashboard_credits_and_reward_rules/overview %}
+	{% override header %}{% endoverride %}
+{% endingredient %}
+{% ingredient events/standard_events %}
+	{% override header %}{% endoverride %}
+{% endingredient %}
+{% ingredient dashboard_credits_and_reward_rules/reward_rule_basics %}
+	{% override header %}### Rewarding Users{% endoverride %}
+	{% override more %}{% endoverride %}
+{% endingredient %}
+{% ingredient dashboard_credits_and_reward_rules/reward_example %}{% endingredient %}
+{% ingredient dashboard_credits_and_reward_rules/rewards_are_flexible %}{% endingredient %}
+
+{% ingredient sdk_credits/get_credits %}{%override different_bucket%}{%endoverride%}{% endingredient %}
+{% ingredient sdk_credits/redeem_credits %}{%override different_bucket%}{%endoverride%}{% endingredient %}
+<!--- /Incentives: Tracking and Rewarding-->
+
+
+## Conclusion: So Much More
+
+You now have an incentivized referral program. Like many popular promo-code systems, you can reward both the user who shares a link and the user who clicks the link and installs the app. With Branch links, the magic is built in, so there's no need for a promo code. Because we want to empower developers, we also offer the ability to reward users with credits, track those credits and redeem them--all with a few lines of code.
+
+This guide covered the basics. The following optional sections may be of interest to you, if you want to:
+
+1. Reward users not based on referred installs alone, but rather more custom events like referred signups or purchases
+
+2. isReferrable [TODO]
+
+3. .... [TODO]

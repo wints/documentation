@@ -5,13 +5,14 @@
   {% include branch-web-assets/components/head/head.html %}
 
   <body>
+	{% include branch-web-assets/components/navbar/navbar.html %}
+	<div class="container"></div>
 
-	{% include header.html %}
-
-	<div class="container top-border box" style="margin: 0 auto; max-width: 1100px;">
+	<div class="container top-border box" style="margin-top: 70px; max-width: 1100px;">
+		{% include header.html %}
 		<div class="row">
 			<div class="col-md-3">
-				{% include sidebar.html %}
+				{% sidebar %}
 			</div>
 			<div class="col-md-9">
 				{{ content }}

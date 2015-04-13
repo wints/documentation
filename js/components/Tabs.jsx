@@ -1,11 +1,10 @@
 var React = require('react'),
-	R = require('ramda');
+	R = require('ramda'),
+	cx = require('../support/utils').cx;
 
-var cx = R.pipe(
-	R.pickBy(R.identity),
-	R.keys(),
-	R.join(' ')
-)
+var PlatformStore = require('../stores/PlatformStore'),
+	PlatformActions = require('../actions/PlatformActions');
+
 
 var Tabs = React.createClass({
 	getInitialState: function() {
@@ -13,6 +12,7 @@ var Tabs = React.createClass({
 	},
 	_toggleTab: function(i) {
 		return function() {
+			PlatformActions.update(i);
 			this.setState({ active: i });
 		}.bind(this);
 	},
@@ -22,9 +22,9 @@ var Tabs = React.createClass({
 		var names = R.mapIndexed(function(val , i) {
 			var classes = {
 				'btn btn-default': true,
-				'inactive': i != self.state.active
+				'btn-inactive': i != self.state.active
 			};
-			return (<a className={ cx(classes) } onClick={ self._toggleTab(i) }>{ val.props.name }</a>);
+			return (<a key={ i } className={ cx(classes) } onClick={ self._toggleTab(i) }>{ val.props.name }</a>);
 		}, this.props.children);
 
 		return (
