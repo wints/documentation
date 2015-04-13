@@ -4,15 +4,6 @@
 window.Tab = require('./components/Tab');
 window.Tabs = require('./components/Tabs');
 window.Sidebar = require('./components/Sidebar');
+window.PlatformSelector = require('./components/PlatformSelector');
 window.React = require('react');
-window.PlatformActions = require('./actions/PlatformActions')
-
-function setPlatform(platform) {
-	localStorage.setItem('platform', platform);
-}
-
-function getPlatform() {
-	var platform = localStorage.getItem('platform');
-	return platform;
-}
-
+window.PlatformActions = require('./actions/PlatformActions');

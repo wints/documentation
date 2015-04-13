@@ -15,6 +15,19 @@ module Jekyll
     end
   end
 
+  class PlatformSelectorTag < Liquid::Tag
+    def initialize(tag_name, markup, tokens)
+      @markup = markup.gsub(/[^a-z_0-9\-]/, "")
+    end
+
+    def render(context)
+      # todo pass in page_name
+      platforms = context.registers[:site].data['platforms'].to_json
+      return BranchUtils.instance.react('<PlatformSelector platforms="' + platforms + '"/>')
+    end
+  end
+
 end
 
 Liquid::Template.register_tag('sidebar', Jekyll::SidebarTag)
+Liquid::Template.register_tag('platform_selector', Jekyll::PlatformSelectorTag)

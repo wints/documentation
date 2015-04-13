@@ -30,6 +30,9 @@ class BranchUtils
     if @_react[content] then
       @_react[content]
     else
+      puts '----react----'
+      puts content
+      puts Nokogiri::XML(content).children[0]
       @_react[content] = _node("react", _to_jsx(Nokogiri::XML(content).children[0]))
     end
   end
@@ -49,7 +52,7 @@ class BranchUtils
 
   def _to_jsx(content)
     attr_translate = { "for" => "htmlFor", "class" => "className" }
-  
+
     if content.text? then
       "{" + ("" + content).to_json + "}"
     elsif content.element?
