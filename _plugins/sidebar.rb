@@ -22,8 +22,9 @@ module Jekyll
 
     def render(context)
       # todo pass in page_name
-      platforms = context.registers[:site].data['platforms'].to_json
-      return BranchUtils.instance.react('<PlatformSelector platforms="' + platforms + '"/>')
+      platforms = context.registers[:site].data['platforms']
+      # puts BranchUtils.instance.json_property(platforms)
+      return BranchUtils.instance.react('<PlatformSelector platforms=' + BranchUtils.instance.json_property(platforms) + '/>')
     end
   end
 

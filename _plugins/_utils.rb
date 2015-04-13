@@ -30,9 +30,6 @@ class BranchUtils
     if @_react[content] then
       @_react[content]
     else
-      puts '----react----'
-      puts content
-      puts Nokogiri::XML(content).children[0]
       @_react[content] = _node("react", _to_jsx(Nokogiri::XML(content).children[0]))
     end
   end
@@ -56,7 +53,10 @@ class BranchUtils
     if content.text? then
       "{" + ("" + content).to_json + "}"
     elsif content.element?
-      res = "<" + content.name + (content.attributes.map { |_,attr| ' ' + (attr_translate[attr.name] or attr.name) + '=' + attr.value.to_json }.join '')
+      res = "<" + content.name + (content.attributes.map { |_, attr|
+        ' ' + (attr_translate[attr.name] or attr.name) + '=' + (attr.value.start_with?('json:') ? '{' + attr.value[5..-1] + '}' : attr.value.to_json)
+      }.join '')
+
       if content.children.count then
         res + '>' + (content.children.map { |child| _to_jsx(child) }.join '') + '</' + content.name + '>'
       else
@@ -65,5 +65,11 @@ class BranchUtils
     else
       ""
     end
+  end
+
+  def json_property(obj)
+    doc = Nokogiri::XML "<root></root>"
+    doc.root.content = JSON.generate(obj)
+    '"json:' + doc.root.inner_html.gsub('"', '&quot;') + '"'
   end
 end

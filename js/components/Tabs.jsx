@@ -12,7 +12,7 @@ var Tabs = React.createClass({
 	},
 	_toggleTab: function(i) {
 		return function() {
-			PlatformActions.update(i);
+			PlatformActions.updatePlatform(i);
 			this.setState({ active: i });
 		}.bind(this);
 	},
