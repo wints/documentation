@@ -14,14 +14,12 @@ var PlatformStore = function() {
 		displayName: 'PlatformStore',
 		bindListeners: {
 		  onUpdatePlatform: PlatformActions.updatePlatform,
-		  onLoadDefaulted: PlatformActions.loadDefaulted,
-		  onLoadSiteMap: PlatformActions.loadSiteMap
+		  onLoadDefaulted: PlatformActions.loadDefaulted
 		},
 
 		state: {
 			platform: getPlatformState(),
-			defaulted: false,
-			site_map: []
+			defaulted: false
 		},
 
 		onUpdatePlatform: function(platform) {
@@ -32,9 +30,6 @@ var PlatformStore = function() {
 			if (!data.defaulted) {
 				this.onUpdatePlatform(data.current_platform);
 			}
-		},
-		onLoadSiteMap: function(json) {
-			this.state.site_map = JSON.parse(json);
 		}
 	}
 }

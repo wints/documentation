@@ -5,7 +5,6 @@ var React = require('react'),
 var PlatformStore = require('../stores/PlatformStore'),
 	PlatformActions = require('../actions/PlatformActions');
 
-
 var Tabs = React.createClass({
 	getInitialState: function() {
 		return { active: 0 };
@@ -32,7 +31,7 @@ var Tabs = React.createClass({
 				<div className="row">
 					{ this.props.children[this.state.active] }
 				</div>
-				<div className="row">
+				<div className="row switcher">
 					<div className="float-right">
 						{ names }
 					</div>

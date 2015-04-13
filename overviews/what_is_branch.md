@@ -14,3 +14,4 @@ platforms:
 # What is Branch?
 ------
 
+{% ingredient sdk_links/sharing_sms %}{%endingredient%}

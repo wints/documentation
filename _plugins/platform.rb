@@ -5,7 +5,6 @@ module Jekyll
     def initialize(site, base, type, page, platform, default)
       @site = site
       @base = base
-
       if platform != '' and !default then
         @dir = File.join(type + 's', page.name.split(".")[0])
         @name = platform + '.md'
@@ -28,6 +27,8 @@ module Jekyll
       self.data['platform_formatted'] = formatted_platforms[platform] or platform
       self.data['default'] = default
       self.data['layout'] = type
+      self.data['current_path'] = type + 's' + '/' + page.name.split(".")[0]
+
     end
   end
 
@@ -54,8 +55,7 @@ module Jekyll
       site.data['groups'].each do |key, value|
         value['type'] = key;
       end
-
-      site.data['groups_json'] = site.data['groups'].values.to_json
+      site.data['groups'] = site.data['groups'].values
     end
 
     def generate(site)

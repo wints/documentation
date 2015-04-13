@@ -14,11 +14,12 @@ var GroupPages = React.createClass({
 		var self = this;
 		var pages = R.map(function(page) {
 			var path = [ self.props.type + 's', page.path ],
-				pageClass = { 'active': self.props.page_name == page.path };
-			if (page.platforms[self.props.platform]) { path.push(self.props.platform); }
-
+				isCurrentPath = self.props.current_path == path.join('/');
+			if (page.platforms[self.props.platform]) {
+				path.push(self.props.platform);
+			}
 			return (
-				<li className={ cx(pageClass) }>
+				<li className={ cx({ 'active': isCurrentPath }) } key={ page.title }>
 					<a href={ '/' + path.join('/') }>{ page.title }</a>
 				</li>);
 		});
@@ -43,15 +44,19 @@ var Sidebar = React.createClass({
 		var self = this;
 		var groups = R.map(function(group) {
 			return (
-				<div className="sidebar-group">
+				<div className="sidebar-group" key={ group.title }>
 					<div className="sidebar-title">{ group.title }</div>
-					<GroupPages pages={ group.pages } type={ group.type } platform={ self.state.platform }/>
+					<GroupPages
+						pages={ group.pages }
+						type={ group.type }
+						current_path={ self.props.current_path }
+						platform={ self.state.platform }/>
 				</div>);
 		});
 
 		return (
 			<div className="sidebar">
-				{ groups(this.state.site_map) }
+				{ groups(this.props.site_map) }
 			</div>);
 	}
 });
