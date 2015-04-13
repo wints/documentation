@@ -1,7 +1,8 @@
 require 'nokogiri'
 require 'singleton'
-require 'socket'
+require 'net/http'
 require 'digest/md5'
+require 'json'
 
 
 class BranchUtils
@@ -11,15 +12,12 @@ class BranchUtils
   def initialize
     @_react = {}
 
-    sock = Dir.mktmpdir + '/' + (0...10).map { ('a'..'z').to_a[rand(26)] }.join
+    @port = (20000 + rand(1000)).to_s
 
     @pid = fork do
-      exec 'node', File.dirname(__FILE__) + '/_render.js', sock
+      exec 'node', File.dirname(__FILE__) + '/_render.js', @port
     end
     sleep 1
-
-    @s1 = UNIXSocket.new(sock)
-
   end
 
   def bundle(content)
@@ -36,15 +34,13 @@ class BranchUtils
 
 
   def _node(type, data)
-    @s1.send JSON.generate({ :type => type, :data => data }), 0
+    req = Net::HTTP::Post.new '/'
 
-    length = Integer(@s1.recv(10).sub(/^0+/, ''))
-    out = ""
-    while out.length < length do
-      out += @s1.recv([length - out.length, 10000].max)
+    req.body = JSON.generate({ :type => type, :data => data })
+    res = Net::HTTP.start('localhost', @port) do |http|
+      http.request req
     end
-
-    JSON.parse('[' + out + ']')[0]
+    res.body
   end
 
   def _to_jsx(content)
