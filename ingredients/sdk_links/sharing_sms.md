@@ -82,6 +82,24 @@ NSDictionary *params = @{@"referringUsername": @"Bob",
 var params = [ "referringUsername": "Bob",
                 "referringUserId": "1234" ]
 
+// ... insert code to start the spinner of your choice here ...
+Branch.getInstance().getShortURLWithParams(params, andChannel: "SMS", andFeature: "Referral", andCallback: { (url: String!, error: NSError!) -> Void in
+    if (error == nil) {
+        if MFMessageComposeViewController.canSendText() {
+            let messageComposer = MFMessageComposeViewController()
+            messageComposer.body = String(format: "You should definitely take a look at MyApp -- use my invite code to get free brownie points: %@", url)
+            messageComposer.messageComposeDelegate = self
+            self.presentViewController(messageComposer, animated: true, completion:{(Bool) in
+                // ... insert code to stop the spinner here (be sure to do so on the main thread) ...
+            })
+        } else {
+            // ... insert code to stop the spinner here (be sure to do so on the main thread) ...
+            var alert = UIAlertController(title: "Error", message: "Your device does not allow sending SMS or iMessages.", preferredStyle: UIAlertControllerStyle.Alert)
+            alert.addAction(UIAlertAction(title: "Okay", style: UIAlertActionStyle.Default, handler: nil))
+            self.presentViewController(alert, animated: true, completion: nil)
+        }
+    }
+})
 
 {% endhighlight %}
 {% endtab %}
