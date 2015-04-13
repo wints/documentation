@@ -23,6 +23,7 @@ var PlatformStore = function() {
 		},
 
 		onUpdatePlatform: function(platform) {
+			localStorage.setItem('platform', platform);
 			this.state.platform = platform;
 		},
 		onLoadDefaulted: function(data) {
