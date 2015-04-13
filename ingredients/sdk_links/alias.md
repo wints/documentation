@@ -20,6 +20,10 @@ No mysteries here:
 <!--- Android -->
 {% if page.android %}
 
+Utilize the appropriate short/long URL method with the parameter `alias`. We have left the other parameters blank intentionally. You may customize them as you see fit.
 
+~~~ java
+branch.getInstance(getApplicationContext()).getShortUrlSync("exciting_path", "", "", "", null)
+~~~~
 {% endif %}
 <!--- /Android -->

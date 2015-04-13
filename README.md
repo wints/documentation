@@ -5,6 +5,15 @@ Documentation
 ```
 gem install bundler
 ```
+
+### Init submodule
+
+**DO THIS ONCE**, when you first clone the repo.
+
+```
+git submodule init
+```
+
 ### Update Submodule
 ```
 git submodule update
