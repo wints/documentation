@@ -22,7 +22,8 @@ To track custom events, you can make a simple call to the SDK.
 <!--- /iOS -->
 
 {% if page.android %}
-[TODO]
+
+Branch.getInstance(getApplicationContext()).userCompletedAction("custom_action_1");
 
 {% endif %}
 <!--- /Android -->
@@ -37,7 +38,9 @@ You can also include other information about the action, which is useful for [re
 <!--- /iOS -->
 
 {% if page.android %}
-[TODO]
+JSONObject metaData = new JSONObject();
+metaData.put("key", "value");
+Branch.getInstance().userCompletedAction("custom_action_with_data", metaData);
 
 {% endif %}
 <!--- /Android -->
