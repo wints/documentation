@@ -27,7 +27,7 @@ To track custom events, you can make a simple call to the SDK.
 {% endif %}
 <!--- /Android -->
 
-You can also include other information about the action, which is useful for [rewarding user actions](/domains/rewards_and_buckets/{{page.platform}}/) or receiving additional information via our [webhooks](/domains/webhooks/{{page.platform}}/). To include custom information, pass it up via the state dictionary:
+You can also include other information about the action, which is useful for [rewarding user actions](/domains/rewards/{{page.platform}}/) or receiving additional information via our [webhooks](/domains/webhooks/{{page.platform}}/). To include custom information, pass it up via the state dictionary:
 
 {% if page.ios %}
 ~~~ objc
