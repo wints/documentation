@@ -10,3 +10,5 @@ platforms:
 # Debug Tools
 
 ------
+
+{%ingredient debug/intro %}{%endingredient%}

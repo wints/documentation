@@ -1,8 +1,6 @@
 {% section intro %}
 
-Routing to content is highly app-specific, since mobile apps vary widely in how they are structured.
-
-That said, we want to give a concrete example of how you can use Branch links to route straight to content within your app.
+Routing to content is *highly app-specific*, since mobile apps vary widely in how they are structured. That said, we want to give a concrete example of how you can use Branch links to route straight to content within your app.
 {% endsection %}
 
 {% if page.ios %}
