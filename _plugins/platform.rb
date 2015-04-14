@@ -33,33 +33,36 @@ module Jekyll
   end
 
   class PlatformGenerator < Generator
-    def buildGroups(site)
+    def buildSiteMap(site)
       group_pages = site.pages.select { |page| ['recipe', 'overview', 'domain', 'reference'].include?(page.data['type']) }
-      site.data['groups'] = {
-        'overview' => { 'title' => 'Overview', 'pages' => Array.new },
-        'recipe' => { 'title' => 'Building with Branch (Recipes)', 'pages' => Array.new },
-        'domain' => { 'title' => 'Feature (Domains)', 'pages' => Array.new },
-        'reference' => { 'title' => 'API Reference', 'pages' => Array.new }
+      site.data['site_map'] = {
+        'overview' => { 'title' => 'Overview', 'pages' => Hash.new },
+        'recipe' => { 'title' => 'Building with Branch (Recipes)', 'pages' => Hash.new },
+        'domain' => { 'title' => 'Feature (Domains)', 'pages' => Hash.new },
+        'reference' => { 'title' => 'API Reference', 'pages' => Hash.new }
       }
 
       group_pages.each do |page|
         if page.data['platforms'] then
-            site.data['groups'][page.data['type']]['pages'].push({
-              'path' => page.name.split(".")[0],
+            path = page.name.split(".")[0]
+            site.data['site_map'][page.data['type']]['pages'][path] = {
+              'path' => path,
               'title' => page.data['title'],
               'platforms' => Hash[page.data['platforms'].zip(page.data['platforms'].map {|i| true })]
-            })
+            }
         end
       end
 
-      site.data['groups'].each do |key, value|
-        value['type'] = key;
+      site.data['site_layout'] = Marshal.load( Marshal.dump(site.data['site_map']) )
+      site.data['site_layout'].each do |key, value|
+        value['type'] = key
+        value['pages'] = value['pages'].values
       end
-      site.data['groups'] = site.data['groups'].values
+      site.data['site_layout'] = site.data['site_layout'].values
     end
 
     def generate(site)
-      buildGroups(site)
+      buildSiteMap(site)
       filtered_pages = site.pages.select { |page| ['recipe', 'overview', 'domain', 'reference'].include?(page.data['type']) }
       site.pages.reject! { |page| page.data['type'] == 'recipe' or page.data['type'] == 'ingredient' }
 

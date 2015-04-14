@@ -1,6 +1,7 @@
 var React = require('react'),
 	R = require('ramda'),
-	cx = require('../support/utils').cx;
+	utils = require('../support/utils');
+var cx = utils.cx;
 
 var PlatformStore = require('../stores/PlatformStore'),
 	PlatformActions = require('../actions/PlatformActions');
@@ -13,6 +14,7 @@ var PlatformSelector = React.createClass({
 	getInitialState: function() {
 		return getStateFromStore();
 	},
+
 	componentDidMount: function() {
 		PlatformStore.listen(this._onChange);
 	},
@@ -32,15 +34,19 @@ var PlatformSelector = React.createClass({
 				'btn btn-default': true,
 				'btn-inactive': self.state.platform != platform.key
 			}
+			var platform_path = utils.pageHasPlatform(self.props.site_map, self.props.current_path, platform.key) ? platform.key : '';
 			return (
-				// TODO current_path
-				<a className={ cx(classes) } key={ platform.key } href={ '/overviews/what_is_branch/' + platform.key } onClick={ self._handleClick(platform.key) }>
+				<a
+					className={ cx(classes) }
+					key={ platform.key }
+					href={ '/' + self.props.current_path + '/' + platform_path }
+					onClick={ self._handleClick(platform.key) }>
 					{ platform.name }
 				</a>);
 		});
 
 		return (
-			<div className="row text-center">
+			<div className="row text-center p-b-20">
 				<div className="btn-group">
 					{ platforms(this.props.platforms) }
 				</div>

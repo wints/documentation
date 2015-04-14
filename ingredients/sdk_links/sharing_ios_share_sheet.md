@@ -5,7 +5,7 @@
 
 
 {% tabs %}
-{% tab ios %}
+{% tab objective-c %}
 {% highlight objc %}
 
 // Adding text

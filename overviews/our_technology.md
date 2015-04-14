@@ -14,7 +14,7 @@ default: {{ page.default }}
 > hey there
 
 {% tabs %}
-{% tab ios %}
+{% tab objective-c %}
 # First
 
 {% highlight javascript %}

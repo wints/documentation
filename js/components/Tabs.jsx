@@ -7,14 +7,14 @@ var TabsStore = require('../stores/TabsStore'),
 
 var getOptionsFromChildren = R.map(R.path(['props', 'name']));
 
-function getStateFromStore(options) {
-	return { active: TabsStore.getActive(options)};
+function getState(options) {
+	return { active: TabsStore.getActive(options), options: options };
 }
 
 var Tabs = React.createClass({
 	getInitialState: function() {
 		var options = getOptionsFromChildren(this.props.children);
-		return R.merge({ options: options }, getStateFromStore(options));
+		return getState(options);
 	},
 	componentDidMount: function() {
 		TabsStore.listen(this._onChange);
@@ -23,7 +23,7 @@ var Tabs = React.createClass({
 		TabsStore.unlisten(this._onChange);
 	},
 	_onChange: function() {
-		this.setState(R.merge(this.state, getStateFromStore(this.state.options)));
+		this.setState(getState(this.state.options));
 	},
 	_toggleTab: function(i) {
 		return function() {

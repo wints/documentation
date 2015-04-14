@@ -4,13 +4,13 @@
 
 To quickly share via SMS/iMessage, we've included some code that you can copy and paste into your own app. This is all the code you need to get users started on inviting other users!
 
-First, note that this is making an asynchronous call to Branch's servers to generate the link and attach the information provided in the params dictionary. We highly recommend showing the user a spinner and disabling your "share" button while the link is being generated. You can either use [UIActivityIndicatorView](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIActivityIndicatorView_Class/index.html) (native) or an external library like [MBProgressHUD](https://github.com/jdg/MBProgressHUD). 
+First, note that this is making an asynchronous call to Branch's servers to generate the link and attach the information provided in the params dictionary. We highly recommend showing the user a spinner and disabling your "share" button while the link is being generated. You can either use [UIActivityIndicatorView](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIActivityIndicatorView_Class/index.html) (native) or an external library like [MBProgressHUD](https://github.com/jdg/MBProgressHUD).
 
 
 At the top of your view controller's implementation (.m) file, include the following:
 
 {% tabs %}
-{% tab ios %}
+{% tab objective-c %}
 {% highlight objc %}
 #import <MessageUI/MessageUI.h>
 #import <MessageUI/MFMailComposeViewController.h>
@@ -27,7 +27,7 @@ import MessageUI
 Then be sure to indicate that your view controller conforms to MFMessageComposeViewControllerDelegate protocol. This is done by modifying the @interface line of your view controller's implementation (.m) file.
 
 {% tabs %}
-{% tab ios %}
+{% tab objective-c %}
 {% highlight objc %}
 @interface MyAppViewController () <MFMessageComposeViewControllerDelegate>
 {% endhighlight %}
@@ -43,7 +43,7 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate {
 The following code should go in some method triggered by the user (such as when the user taps on a button).
 
 {% tabs %}
-{% tab ios %}
+{% tab objective-c %}
 {% highlight objc %}
 NSDictionary *params = @{@"referringUsername": @"Bob",
                          @"referringUserId": @"1234"};
@@ -111,7 +111,7 @@ Branch.getInstance().getShortURLWithParams(params,
 Lastly, there is a required delegate method for the MessageComposeViewController. We provide an empty implementation, which you are free to customize.
 
 {% tabs %}
-{% tab ios %}
+{% tab objective-c %}
 {% highlight objc %}
 - (void)messageComposeViewController:(MFMessageComposeViewController *)controller
                  didFinishWithResult:(MessageComposeResult)result {
@@ -132,5 +132,5 @@ func messageComposeViewController(controller: MFMessageComposeViewController!, d
 The above code allows you to quickly implement sharing via SMS. See the screenshot below!
 
 ![sms screenshot](/img/ingredients/sdk_links/ios_sms.png)
- 
+
 {% endif %}

@@ -56,7 +56,7 @@ var Sidebar = React.createClass({
 
 		return (
 			<div className="sidebar">
-				{ groups(this.props.site_map) }
+				{ groups(this.props.site_layout) }
 			</div>);
 	}
 });
