@@ -11,7 +11,9 @@ platforms:
 platform: {{ page.platform %}}
 default: {{ page.default }}
 
-> hey there
+{% protip title='Check out this Protip!' icon='fa-coffee' %}
+ details details details details details details
+{% endprotip %}
 
 {% tabs %}
 {% tab objective-c %}
