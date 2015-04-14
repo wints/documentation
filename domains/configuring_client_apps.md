@@ -19,7 +19,7 @@ platforms:
 {% ingredient sdk_setup/init_session %}{% endingredient %}
 {% ingredient sdk_setup/handle_deep_link %}{% endingredient %}
 
-# Optional (Recommended)
+## Optional (Recommended)
 
 {% ingredient sdk_setup/identify_and_logout %}{% endingredient %}
 
