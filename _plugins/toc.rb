@@ -37,6 +37,7 @@ module Jekyll
                     current_h2[:children].push item
                 end
             end
+            new_toc.push current_h2 if current_h2
             new_toc
         end
     end
