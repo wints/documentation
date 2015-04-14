@@ -20,6 +20,21 @@ No mysteries here:
 <!--- Android -->
 {% if page.android %}
 
+You'll want to use any of the `getShortUrl` methods that accept the paramter of type `Collection<String>` for tags. Check the following example:
+
+~~~ java
+ArrayList<String> tags = new ArrayList<String>();
+tags.add("tag1");
+tags.add("tag2");
+Branch.getInstance(getApplicationContext()).getShortUrl(tags, "channel1", null /*params dictionary */, new BranchLinkCreateListener() {
+	@Override
+	public void onLinkCreate(String url, BranchError error) {
+		if (error == null) {
+		    Log.d("MyTag", "Url = " + url);
+		}
+	}
+});
+~~~
 
 {% endif %}
 <!--- /Android -->
