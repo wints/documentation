@@ -26,6 +26,14 @@ On iOS, it's a rather simple method call.
 <!--- Android -->
 {% if page.android %}
 
+~~~ java
+branch.getShortUrl(tags, "channel1", "feature1", "1", obj, 0, new BranchLinkCreateListener() {
+	@Override
+	public void onLinkCreate(String url, BranchError error) {
+		Log.i(TAG, "Ready to share my link = " + url);
+	}
+});
+~~~
 
 {% endif %}
 <!--- /Android -->
