@@ -81,8 +81,8 @@ Again, it's not imperative that you attach any information to the link. As long 
 {% ingredient rewards/reward_example %}{% endingredient %}
 {% ingredient rewards/rewards_are_flexible %}{% endingredient %}
 
-{% ingredient sdk_credits/get_credits %}{%override different_bucket%}{%endoverride%}{% endingredient %}
-{% ingredient sdk_credits/redeem_credits %}{%override different_bucket%}{%endoverride%}{% endingredient %}
+{% ingredient rewards/get_credits %}{%override different_bucket%}{%endoverride%}{% endingredient %}
+{% ingredient rewards/redeem_credits %}{%override different_bucket%}{%endoverride%}{% endingredient %}
 <!--- /Incentives: Tracking and Rewarding-->
 
 
