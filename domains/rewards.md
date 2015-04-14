@@ -1,12 +1,13 @@
 ---
 type: domain
-title: Rewards and Buckets
+title: Rewards
 platforms:
 - ios
 - android
 - web
 ---
 
-# Rewards and Buckets
+# Rewards
 
 ------
+

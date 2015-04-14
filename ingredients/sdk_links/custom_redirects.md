@@ -4,7 +4,7 @@ If, however, you want to override the default behavior, you can specify redirect
 
  <!--- $ios_url -->
 {% section ios_url %}
-### iOS App Store override - $ios_url
+## iOS App Store override - $ios_url
 
 <!---    iOS -->
 {% if page.ios %}
@@ -36,7 +36,7 @@ When a user doesn't have your app and clicks a link on iOS, by default the user 
 
   <!--- $android_url -->
 {% section android_url %}
-### Android Play Store override - $android_url
+## Android Play Store override - $android_url
 
 <!---    iOS -->
 {% if page.ios %}
@@ -69,7 +69,7 @@ When a user doesn't have your app and clicks a link on Android, by default the u
 <!--- $desktop_url -->
 {% section desktop_url %}
 
-### Desktop override - $desktop_url
+## Desktop override - $desktop_url
 
 When a user clicks a Branch link from a desktop, by default the user is taken to a text-me-the-app page or whichever custom page you specify on the [TODO] [Dashboard](). If you want to specify a different web page on a per-link basis, include a value for $desktop_url.
 
@@ -104,7 +104,7 @@ This is especially useful if you want to serve up content on the web for users w
 <!--- $always_deeplink -->
 {% section always_deeplink %}
 
-### Always try to open the app - $always_deeplink
+## Always try to open the app - $always_deeplink
 
 In certain cases you may want to override the default Branch behavior, which uses cookies and communication with our backend to determine whether to open an app. Branch knows that a user has the app if that user has clicked a Branch link and opened the app. This means that the first time a user clicks a Branch link, even if the app is installed, we will direct the user to the App Store.
 

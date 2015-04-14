@@ -68,18 +68,18 @@ Again, it's not imperative that you attach any information to the link. As long 
 
 
 ## Rewards
-{% ingredient dashboard_credits_and_reward_rules/overview %}
+{% ingredient rewards/overview %}
 	{% override header %}{% endoverride %}
 {% endingredient %}
 {% ingredient events/standard_events %}
 	{% override header %}{% endoverride %}
 {% endingredient %}
-{% ingredient dashboard_credits_and_reward_rules/reward_rule_basics %}
+{% ingredient rewards/reward_rule_basics %}
 	{% override header %}### Rewarding Users{% endoverride %}
 	{% override more %}{% endoverride %}
 {% endingredient %}
-{% ingredient dashboard_credits_and_reward_rules/reward_example %}{% endingredient %}
-{% ingredient dashboard_credits_and_reward_rules/rewards_are_flexible %}{% endingredient %}
+{% ingredient rewards/reward_example %}{% endingredient %}
+{% ingredient rewards/rewards_are_flexible %}{% endingredient %}
 
 {% ingredient sdk_credits/get_credits %}{%override different_bucket%}{%endoverride%}{% endingredient %}
 {% ingredient sdk_credits/redeem_credits %}{%override different_bucket%}{%endoverride%}{% endingredient %}

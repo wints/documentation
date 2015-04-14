@@ -1,11 +1,8 @@
 <!DOCTYPE html>
 <html>
-
-  {% assign head = '<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.3.min.js"></script><script type="text/javascript" src="/js/all.js"></script>' %}
-  {% include branch-web-assets/components/head/head.html %}
-
+	{% webasset head head='<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.3.min.js"></script><script type="text/javascript" src="/js/all.js"></script><link href="/css/style.css" rel="stylesheet" type="text/css"/>' page_title='{{page.title}}' site_title='Branch Documentation' url='{{site.base_url}}{{page.url}}' %}
   <body>
-	{% include branch-web-assets/components/navbar/navbar.html %}
+	{% webasset navbar branch_base='{{site.branch_base}}' %}
 	<div class="container"></div>
 
 	<div class="container main">
