@@ -6,6 +6,7 @@ $branch-font-path: "/font";
 @import "../_includes/branch-web-assets/styles/global";
 @import "../_includes/branch-web-assets/components/footer/footer";
 @import "../_includes/branch-web-assets/components/navbar/navbar";
+@import "../_includes/branch-web-assets/components/header/header";
 @import "./tabs";
 @import "./sidebar";
 @import "./protip";
@@ -27,7 +28,6 @@ img {
 }
 
 .main {
-	margin-top: 70px;
 	max-width: 1100px;
 	padding: 20px 0px;
 }
