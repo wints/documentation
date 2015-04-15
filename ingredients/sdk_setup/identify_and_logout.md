@@ -15,13 +15,14 @@ Add a `setIdentity:` call wherever you create or login a user.
 [[Branch getInstance] setIdentity:@"1234"]; // your app's userId
 ~~~
 
-Add a `logout` call anywhere you allow the user to logout.
+**NOTE:** Please keep the string to less than 127 characters.
+
+Add a `logout` call anywhere you allow the user to logout. 
 
 ~~~ objc
 [[Branch getInstance] logout];
 ~~~
 
-It's that simple!
 {% endif %}
 
 
@@ -32,12 +33,14 @@ Invoke the `setIdentity` call whenever you create or login a user.
 Branch.getInstance(getApplicationContext()).setIdentity("your user identity"");
 ~~~
 
-**NOTE** Please keep the string to less than 127 characters.
+**NOTE:** Please keep the string to less than 127 characters.
 
-In case you'd like to clear your user after they have logged out, please use the following:
+Add a `logout` call anywhere you allow the user to logout. 
 
 ~~~java
 Branch.getInstance(getApplicationContext()).logout();
 ~~~
 {% endif %}<!--- Android identify and logout -->
 
+
+`Logout` should only be called when the user logs out. Calling it at other times could lead to hard-to-discover errors. Failing to call `logout` can likewise lead to bugs if multiple users log in on the same device.

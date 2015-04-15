@@ -23,7 +23,7 @@ Here's an example of the initSession call that you should make. This **must** be
 {% section ios_code %}
 
 ~~~ objc
-(BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 	// anything else you need to do in this method
 	// ...
 
