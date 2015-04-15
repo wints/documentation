@@ -33,3 +33,35 @@ Let's get started. Seeing install numbers (as opposed to merely clicks) requires
 {% ingredient sdk_setup/init_session %}{% endingredient %}
 {% ingredient sdk_setup/handle_deep_link %}{% endingredient %}
 <!--- /Configuring the Client-->
+
+
+## Creating your Link
+
+{% ingredient dashboard_links/creating_links %}
+	{%override screenshot_description%}One example description if you want to treat this guide is: "Marketing our launch on Facebook."{%endoverride%}
+{% endingredient %}
+
+{% ingredient dashboard_links/tags %}{% endingredient %}
+
+{% ingredient dashboard_links/alias %}
+	{%override optional%}(Optional -- highly recommended){%endoverride%}
+{% endingredient %}
+
+{% ingredient dashboard_links/og_tags %}{% endingredient %}
+{% ingredient dashboard_links/end %}{% endingredient %}
+<!--- /Creating your Link -->
+
+
+## Conclusion and Advanced Options
+
+That's it! You now have *campaign- and channel-specific links* that can be shared on social media, pushed out via email, or embedded in ad campaigns. 
+
+Every *user click*, every *fresh install*, and every *subsequent open* can be attributed back to an individual link. 
+
+If you go the additional step of allowing users to share via Branch links, you can compare your campaigns to word-of-mouth. If this interests you, check out our guides on the following topics:
+
+* [Incentivized Referral Program](/recipes/incentivized_referral_program/{{page.platform}}/)
+* [Personalized Invite System](/recipes/personalized_invite_system/{{page.platform}}/)
+* [App Content Share with Deeplink](/recipes/app_content_share_with_deeplink/{{page.platform}}/)
+
+And as always, please email us at [contact@branchmetrics.io](mailto:contact@branchmetrics.io) if you have any questions!
