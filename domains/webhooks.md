@@ -17,3 +17,4 @@ platforms:
 
 {%ingredient webhooks/syntax %}{%endingredient%}
 
+{%ingredient webhooks/requestbin %}{%endingredient%}

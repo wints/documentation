@@ -17,7 +17,7 @@ Send a webhook to [ WEBHOOK URL ] [ EVERY TIME / THE FIRST TIME ] users trigger 
 
 First, enter the webhook URL in your own web server URL that you would like the events to be posted to.
 
-For testing, you can try out using a URL from [RequestBin](http://requestb.in/). More information on that [TODO] [below]().
+For testing, you can try out using a URL from [RequestBin](http://requestb.in/). More information on that [below](/domains/webhooks/{{page.platform}}/#example-using-requestbin-to-test).
 
 
 #### Choose frequency of webhook
