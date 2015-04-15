@@ -24,28 +24,16 @@ Inside Android, allow us to hook into your activities where you have declared an
 branch.initSession(new BranchReferralInitListener() {
 	@Override
 	public void onInitFinished(JSONObject referringParams, BranchError error) {
-		Log.i(TAG, "Branch Initialized! Routing to content...");
 		try {
-			MonsterPreferences prefs = MonsterPreferences.getInstance(getApplicationContext());
-			Intent i;
-			if (referringParams.has("monster")) {
-				prefs.setMonsterName(referringParams.getString("monster_name"));
-				prefs.setFaceIndex(referringParams.getInt("face_index"));
-				prefs.setBodyIndex(referringParams.getInt("body_index"));
-				prefs.setColorIndex(referringParams.getInt("color_index"));
-				i = new Intent(getApplicationContext(), MonsterViewerActivity.class);
-			} else {
-				if (prefs.getMonsterName() == null) {
-					prefs.setMonsterName("");
-					i = new Intent(getApplicationContext(), MonsterCreatorActivity.class);
-				} else {
-					i = new Intent(getApplicationContext(), MonsterViewerActivity.class);
-			    }
+			Iterator<?> keys = referringParams.keys();
+			while (keys.hasNext()) {
+				String key = (String) keys.next();
+				Log.i("Branch Link", key + ", " + referringParams.getString(key));
+				
+				// find where to start Activity.
 			}
-			startActivity(i);
 		} catch (JSONException e) {
 			e.printStackTrace();
-		}
 	}
 }, this.getIntent().getData(), this);
 ~~~
