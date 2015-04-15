@@ -13,7 +13,7 @@ To set up your URI Scheme, you'll need to open your project in XCode and complet
 
 ![Setting Key in PList Demo](/img/ingredients/configuring_the_client/ios_uri_scheme.png)
 
-Go do a quick double-check that this is the same URI scheme listed on the Dashboard, where it should be `myapp://`). For more info on setting up a URI scheme on the Dashboard, [click here](/ingredients/configuring_the_dashboard/ios/index.html#uri_scheme).
+Go do a quick double-check that this is the same URI scheme listed on the Dashboard, where it should be `myapp://`). For more info on setting up a URI scheme on the Dashboard, [TODO] [click here](/ingredients/configuring_the_dashboard/ios/index.html#uri_scheme).
 {% endif %}
 <!---       /iOS-specific URI Scheme -->
 
