@@ -10,7 +10,7 @@ module Jekyll
 
                 if levels.find_index(level) then toc.push({ :level => level, :id => id, :text => text, :children => [] }) end
 
-                '<h' + level.to_s + ' id="' + id + '"><a href="#' + id + '">' + text + '</a></h' + level.to_s + '>'
+                '<h' + level.to_s + '><a class="anchor" name="' + id + '"></a><a href="#' + id + '">' + text + '</a></h' + level.to_s + '>'
             }
             nested_toc = _nested_toc(toc)
             _render_toc(nested_toc) + html

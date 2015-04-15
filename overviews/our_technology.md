@@ -11,7 +11,7 @@ platforms:
 platform: {{ page.platform %}}
 default: {{ page.default }}
 
-{% protip title='Check out this Protip!' icon='fa-coffee' %}
+{% protip title='Check out this Protip!'  %}
  details details details details details details
 {% endprotip %}
 
