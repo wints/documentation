@@ -5,7 +5,7 @@ Once users have credits, they should be able to redeem them.
 
 Checking the balance involves loading the most recent balance from the server and then checking the balance. These can be two separate steps but for the sake of simplicity we have combined them into one example:
 
-{%if platform.ios %}
+{%if page.ios %}
 ~~~ objc
 [[Branch getInstance] loadRewardsWithCallback:^(BOOL changed, NSError *err) {
     if (!err) {
@@ -14,7 +14,7 @@ Checking the balance involves loading the most recent balance from the server an
 }];
 ~~~
 {%endif%}
-{%if platform.android %}
+{%if page.android %}
 ~~~ java
 Branch.getInstance(getApplicationContext()).loadRewards(new BranchReferralStateChangedListener() {
 	@Override
