@@ -27,7 +27,8 @@ On iOS, it's a rather simple method call.
 {% if page.android %}
 
 ~~~ java
-branch.getShortUrl(tags, "channel1", "feature1", "1", obj, 0, new BranchLinkCreateListener() {
+{% section params %}JSONObject obj = new JSONObject(); obj.putString("foo", "bar");{% endsection %}
+branch.getShortUrl(obj, new BranchLinkCreateListener() {
 	@Override
 	public void onLinkCreate(String url, BranchError error) {
 		Log.i(TAG, "Ready to share my link = " + url);

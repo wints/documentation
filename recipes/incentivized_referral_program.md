@@ -58,7 +58,9 @@ That's the end of the required setup for the Dashboard! The dashboard is incredi
   That said, you can attach information about the user who is sharing the link. Then this information about this user--here "John" with id "1234"--is present anytime John's friends install the app after clicking his link.
   {%endoverride%}
 
-  {% override params %}@{@"referringUsername":@"John", @"referringUserId":@"1234"}{%endoverride%}
+  {% override params %}{% if page.ios %}@{@"referringUsername":@"John", @"referringUserId":@"1234"}{% endif %}{% if page.android %}JSONObject obj = new JSONObject();
+obj.putString("referringUserName", "John");
+obj.putString("referringUserId", "1234"));{% endif %}{%endoverride%}
 {% endingredient %}
 
 Again, it's not imperative that you attach any information to the link. As long as you made a `setIdentity` call, anytime this link is shared we will know whose link it is and when to attribute an install to him.
