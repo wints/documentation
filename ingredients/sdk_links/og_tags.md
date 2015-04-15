@@ -15,6 +15,7 @@ If you want to tailor how a link will appear on social media, you should make us
 <!--- iOS -->
 {% if page.ios %}
 
+
 ~~~ objc
 // Facebook OG tags -- this will overwrite any defaults you set up on the Branch Dashboard
 NSMutableDictionary *params = [NSMutableDictionary dictionary];
@@ -33,8 +34,9 @@ params[@"og_description"] = @"Out of all the apps disrupting apps, MyApp is with
 <!--- Android -->
 {% if page.android %}
 
-// This will OVERWRITE any defaults you have set on the Branch Dashboard
+
 ~~~ java
+// This will OVERWRITE any defaults you have set on the Branch Dashboard
 JSONObject params = new JSONObject();
 try {
     params.put("referringUsername", "Mario");
