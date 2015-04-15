@@ -13,4 +13,7 @@ platforms:
 
 {%ingredient webhooks/intro %}{%endingredient%}
 
+{%ingredient webhooks/add %}{%endingredient%}
+
+{%ingredient webhooks/syntax %}{%endingredient%}
 
