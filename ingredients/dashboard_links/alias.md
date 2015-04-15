@@ -1,3 +1,8 @@
-#### Custom Link Label (optional)
 
-This is more important for links that will be visible. For ads, this URL will be buried in the add and most users won't see it. However, you still have the option to customize it.
+### Custom Link Label {%section optional%}(Optional){%endsection%}
+
+You can customize how your link will appear--for free!
+
+{%section explanation%}You should set this if users are going to see the link, whether on social media, in a text message, or in an email. It's less important if this link is going to be buried behind a button or picture on a web page. We think it's generally a good idea to set this, as users will often see your links.{%endsection%}
+
+{%section screenshot%}![Description](/img/ingredients/dashboard_links/alias.png){%endsection%}

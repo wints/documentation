@@ -6,7 +6,7 @@ platforms:
 - android
 ---
 
-# Deeplink Ads
+# Deeplinked Ads
 
 ------
 
@@ -17,15 +17,32 @@ platforms:
 That's the end of the required setup for the Dashboard! The dashboard is incredibly powerful, so if you want to dive in deeper, definitely check out [TODO] [Configuring the Dashboard](/ingredients/configuring_the_dashboard/{{ page.platform }}/index.html#advanced)'s advanced configurations.
 <!--- /Basic Setup -->
 
+
 ## Creating your Link
 
-{% ingredient dashboard_links/creating_links %}{% endingredient %}
-{% ingredient dashboard_links/tags %}{% endingredient %}
-{% ingredient dashboard_links/alias %}{% endingredient %}
+{% ingredient dashboard_links/creating_links %}
+	{%override screenshot_description%}One example description if you want to treat this guide is: "Facebook ad for blue sneakers - summer 2015."{%endoverride%}
+	{%override screenshot%}![Description](/img/ingredients/dashboard_links/fb_example_create.png){%endoverride%}
+{% endingredient %}
+
+{% ingredient dashboard_links/tags %}
+	{%override screenshot%}![Description](/img/ingredients/dashboard_links/fb_example_tags.png){%endoverride%}
+{% endingredient %}
+
+{% ingredient dashboard_links/alias %}
+	{%override explanation%}This is more important for links that will be visible. For ads, this URL will be buried in the add and most users won't see it. However, you still have the option to customize it.{%endoverride%}
+	{%override screenshot%}{%endoverride%}
+{% endingredient %}
+
 {% ingredient dashboard_links/custom_redirects %}{% endingredient %}
 {% ingredient dashboard_links/og_tags %}{% endingredient %}
 {% ingredient dashboard_links/end %}{% endingredient %}
-{% ingredient dashboard_links/end %}{% endingredient %}
+
+### So Far, So Good
+{% ingredient dashboard_links/no_sdk %}
+	{%override alias%}{%endoverride%}
+	{%override more_power%}keep reading.{%endoverride%}
+{% endingredient %}
 <!--- /Creating your Link -->
 
 
