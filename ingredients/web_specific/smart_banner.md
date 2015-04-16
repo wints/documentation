@@ -36,6 +36,10 @@ branch.init('YOUR-API-KEY', function(err, data) {
 </script>
 {% endhighlight %}
 
+We have deprecated the API Key in favor of the Branch Key, but this change is not yet active for the Web SDK. Please grab the API Key from the following location on the [Dashboard](https://dashboard.branch.io/#/settings)
+
+![deprecated API Key](/img/ingredients/web_specific/api_key.png)
+
 #### Smart Banner Options
 
 There are a lot of options here, but don't be scared. Specifying them is optional, although you'll probably want to do so to tailor it to your needs.
