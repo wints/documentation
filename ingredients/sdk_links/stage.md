@@ -26,6 +26,16 @@ If your app is a game, stage could require to the user's current level.
 <!--- Android -->
 {% if page.android %}
 
+~~~ java
+Branch.getInstance(getApplicationContext()).getShortUrl("", "", "stage_four", null, new BranchLinkCreateListener() {
+	@Override
+	public void onLinkCreate(String url, BranchError error) {
+		if (error != null) {
+			Log.i("Branch", ""have a link with stage!");
+		}
+	}
+})
+~~~
 
 {% endif %}
 <!--- /Android -->
