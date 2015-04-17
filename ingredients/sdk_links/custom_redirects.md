@@ -125,7 +125,21 @@ To override this behavior, you can either select "Always try to open the app" on
 
 <!---    Android -->
 {% if page.android %}
+~~~java
+JSONObject params = new JSONObject();
+try {
+    params.put("$always_deeplink", true);
+} catch (JSONException ex) { }
+Branch.getInstance(getApplicationContext()).getShortUrl(params, new BranchLinkCreateListener() {
+	@Override
+	public void onLinkCreate(String url, BranchError error) {
+		if (error==null) {
+			Log.i("Branch", "created an always_deeplink URL");
+		}
+	}
 
+})
+~~~
 
 {% endif %}
 <!---    /Android -->
