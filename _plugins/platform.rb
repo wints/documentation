@@ -34,12 +34,13 @@ module Jekyll
 
   class PlatformGenerator < Generator
     def buildSiteMap(site)
-      group_pages = site.pages.select { |page| ['recipe', 'overview', 'domain', 'reference'].include?(page.data['type']) }
+      group_pages = site.pages.select { |page| ['recipe', 'overview', 'domain' #, 'reference'
+                                                ].include?(page.data['type']) }
       site.data['site_map'] = {
         'overview' => { 'title' => 'Overview', 'pages' => Hash.new },
         'recipe' => { 'title' => 'Building with Branch (Recipes)', 'pages' => Hash.new },
-        'domain' => { 'title' => 'Feature (Domains)', 'pages' => Hash.new },
-        'reference' => { 'title' => 'API Reference', 'pages' => Hash.new }
+        'domain' => { 'title' => 'Feature (Domains)', 'pages' => Hash.new }
+        # 'reference' => { 'title' => 'API Reference', 'pages' => Hash.new }
       }
 
       group_pages.each do |page|
@@ -63,7 +64,8 @@ module Jekyll
 
     def generate(site)
       buildSiteMap(site)
-      filtered_pages = site.pages.select { |page| ['recipe', 'overview', 'domain', 'reference'].include?(page.data['type']) }
+      filtered_pages = site.pages.select { |page| ['recipe', 'overview', 'domain' #, 'reference'
+                                                   ].include?(page.data['type']) }
       site.pages.reject! { |page| page.data['type'] == 'recipe' or page.data['type'] == 'ingredient' }
 
       filtered_pages.each do |page|
