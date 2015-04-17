@@ -34,7 +34,7 @@ Again, the code is straightforward:
 Branch.getInstance(getApplicationContext()).getShortUrl("sms", "invite_feature", "", null, new BranchLinkCreateListener() {
 	@Override
 	public void onLinkCreate(String url, BranchError error) {
-		if (error != null) {
+		if (error == null) {
 			Log.i("Branch", ""have a link with feature!");
 		}
 	}
