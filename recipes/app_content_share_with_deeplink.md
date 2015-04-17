@@ -10,6 +10,19 @@ platforms:
 
 ------
 
+Using Branch, your users can share links to content from your app -- and other users can be linked straight to that content!
+
+Imagine your app allows users to create and publish digital photo books. Let's say a user named James just finished creating a photo book with pictures from his adventure to Southeast Asia. He can share a Branch link to Facebook with the photo book's Id embedded in the link. Then when his friends click on these links and download the app, they will go straight to his Southeast Asia adventure photo book!
+
+And you aren't even limited to linking to content. In the example above:
+
+* you can link to James' profile by attaching a userId to the link. 
+* you can embed a promo code so that any of James' friends who click the link automatically get $10 off any books that they create and then print. 
+* you can show a custom splash screen when they first open the app, saying "Welcome to Photo Book App! James is glad you're here!"
+
+The possibilities extend far beyond this, but we wanted to give you some ideas to get started.
+
+
 ## Configuring the Dashboard for your {{ page.platform_formatted }} app
 {% ingredient dashboard_setup/app_name %}{% endingredient %}
 {% ingredient dashboard_setup/web_url %}{% endingredient %}
