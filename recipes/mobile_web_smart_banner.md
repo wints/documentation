@@ -11,8 +11,9 @@ platforms:
 {% ingredient dashboard_setup/web_url %}{% endingredient %}
 {% ingredient dashboard_setup/store_or_custom_url %}{% endingredient %}
 {% ingredient dashboard_setup/uri_scheme %}
-{% override optional %}##### Note: this is required if you want your smart banner to open the app. If, however, you simply want a banner that links to the {% if platform.ios %}App{%endif%}{% if platform.android %}Play{%endif%} Store (on mobile) or that allows users to text themselves the app (on desktop), you can skip this step.{%endoverride%}
+{% override optional %}**Note**: this is required if you want your smart banner to open the app. If, however, you simply want a banner that links to the {% if platform.ios %}App{%endif%}{% if platform.android %}Play{%endif%} Store (on mobile) or that allows users to text themselves the app (on desktop), you can skip this step.{%endoverride%}
 {% endingredient %}
+{% ingredient dashboard_setup/end_required %}{% endingredient %}
 
 ## The Smart Banner
 {% ingredient web_specific/smart_banner %}{%override header%}{%endoverride%}{% endingredient %}

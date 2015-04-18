@@ -24,8 +24,7 @@ The possibilities extend far beyond this, but we wanted to give you some ideas t
 {% ingredient dashboard_setup/web_url %}{% endingredient %}
 {% ingredient dashboard_setup/store_or_custom_url %}{% endingredient %}
 {% ingredient dashboard_setup/uri_scheme %}{% endingredient %}
-
-That's the end of the required setup for the Dashboard! The dashboard is incredibly powerful, so if you want to dive in deeper, definitely check out [Configuring the Dashboard](/domains/configuring_the_dashboard/{{page.platform}}/#additional-options)'s additional options.
+{% ingredient dashboard_setup/end_required %}{% endingredient %}
 <!--- /Configuring the Dashboard-->
 
 
