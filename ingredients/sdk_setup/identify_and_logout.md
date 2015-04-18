@@ -11,17 +11,17 @@ The good news is that your app only needs the addition of two lines of code.
 
 Add a `setIdentity:` call wherever you create or login a user.
 
-~~~ objc
+{% highlight objc %}
 [[Branch getInstance] setIdentity:@"1234"]; // your app's userId
-~~~
+{% endhighlight %}
 
 **NOTE:** Please keep the string to less than 127 characters.
 
 Add a `logout` call anywhere you allow the user to logout. 
 
-~~~ objc
+{% highlight objc %}
 [[Branch getInstance] logout];
-~~~
+{% endhighlight %}
 
 {% endif %}
 
@@ -29,17 +29,17 @@ Add a `logout` call anywhere you allow the user to logout.
 {% if page.android %}
 Invoke the `setIdentity` call whenever you create or login a user.
 
-~~~java
-Branch.getInstance(getApplicationContext()).setIdentity("your user identity"");
-~~~
+{% highlight java %}
+Branch.getInstance(getApplicationContext()).setIdentity("your user identity");
+{% endhighlight %}
 
 **NOTE:** Please keep the string to less than 127 characters.
 
 Add a `logout` call anywhere you allow the user to logout. 
 
-~~~java
+{% highlight java %}
 Branch.getInstance(getApplicationContext()).logout();
-~~~
+{% endhighlight %}
 {% endif %}<!--- Android identify and logout -->
 
 

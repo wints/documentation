@@ -13,4 +13,6 @@ When setting up {% if page.ios %}an iOS{%endif%}{% if page.android %}an Android{
 
 You may be wondering--what if I can't find my app, or it isn't on the {% if page.ios %}App{%endif%}{% if page.android %}Play{%endif%} Store yet? Good news: you can specify any location you want. {% if page.ios %}For iOS apps, you can put in the URL provided by Apple on iTunesConnect (if you anticipate going live soon) or you can specify a custom URL to wherever the app is hosted remotely.{%endif%}{% if page.android %}For Android Apps, you can specify the URL of your APK file.{%endif%}
 
-Tip: Please note that this field is __required__. If you are in the early stages of testing, you can enter a Custom URL (http://google.com works). Then when you click a Branch link, instead of navigating to the {% if page.ios %}App{%endif%}{% if page.android %}Play{%endif%} Store, it will go to this URL. Then you can simulate an install by running the app from {% if page.ios %}Xcode{%endif%}{% if page.android %}Eclipse or Android Studio{%endif%}.
+{% protip title='Note:'  %}
+This field is __required__. If you are in the early stages of testing, you can enter a Custom URL (http://google.com works). Then when you click a Branch link, instead of navigating to the {% if page.ios %}App{%endif%}{% if page.android %}Play{%endif%} Store, it will go to this URL. Then you can simulate an install by running the app from {% if page.ios %}Xcode{%endif%}{% if page.android %}Eclipse or Android Studio{%endif%}.
+{% endprotip %}

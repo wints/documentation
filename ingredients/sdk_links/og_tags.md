@@ -16,7 +16,7 @@ If you want to tailor how a link will appear on social media, you should make us
 {% if page.ios %}
 
 
-~~~ objc
+{% highlight objc %}
 // Facebook OG tags -- this will overwrite any defaults you set up on the Branch Dashboard
 NSMutableDictionary *params = [NSMutableDictionary dictionary];
 params[@"$og_title"] = @"MyApp is disrupting apps";
@@ -25,7 +25,7 @@ params[@"og_description"] = @"Out of all the apps disrupting apps, MyApp is with
    // Now we can do something with the URL...
    NSLog(@"url: %@", url);
 }];
-~~~
+{% endhighlight %}
 
 {% endif %}
 <!--- /iOS -->
@@ -35,7 +35,7 @@ params[@"og_description"] = @"Out of all the apps disrupting apps, MyApp is with
 {% if page.android %}
 
 
-~~~ java
+{% highlight java %}
 // This will OVERWRITE any defaults you have set on the Branch Dashboard
 JSONObject params = new JSONObject();
 try {
@@ -61,6 +61,6 @@ branch.getShortUrl("Facebook", "share", null, params, new BranchLinkCreateListen
         }
     }
 });
-~~~
+{% endhighlight %}
 {% endif %}
 <!--- /Android -->

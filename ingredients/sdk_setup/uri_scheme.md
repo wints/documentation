@@ -23,7 +23,7 @@ Open up Android Studio and navigate to your `AndroidManifest.xml`.
 
 You can register your app to respond to direct deep links (yourapp:// in a mobile browser) by adding the second intent filter block.
 
-~~~xml
+{% highlight xml %}
 <activity
 	android:name="com.yourapp.SplashActivity"
 	android:label="@string/app_name" >
@@ -39,7 +39,7 @@ You can register your app to respond to direct deep links (yourapp:// in a mobil
 		<category android:name="android.intent.category.BROWSABLE" />
 	</intent-filter>
 </activity>
-~~~
+{% endhighlight %}
 
 However, you can have many `intent-filters`. It all depends on how you architecht receiving intents inside your application.
 

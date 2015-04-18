@@ -11,7 +11,7 @@ Inside of the deepLinkHandler, you will want to examine the params dictionary to
 Let's assume your app revolves around pictures and each one is tagged with a picture Id. When a user shares a picture, simply attach a picture Id to the Branch link being created. If a user clicks a link to a specific picture, this Id will show up in the params dictionary in the deepLinkHandler.
 {%endsection%}
 
-~~~ objc
+{% highlight objc %}
 - (BOOL)application:(UIApplication *)application
     didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 
@@ -37,7 +37,7 @@ Let's assume your app revolves around pictures and each one is tagged with a pic
 
   return YES;
 }
-~~~
+{% endhighlight %}
 
 
 {% endif %}
@@ -50,7 +50,7 @@ Inside `onStart`, when Branch is initialized, you will want to examine the dicti
 Let's assume your app revolves around pictures, and each picture has an ID. When user A decides to share a picture, attach that ID to the shortUrl or LongURL being created. When User B downloads (or opens the app if they already have it), the call to initSession will inform you of the parameters user A sent. Unpack em, and route away to the right view!
 {% endsection %}
 
-~~~ java
+{% highlight java %}
 
 @Override
 public void onStart() {
@@ -79,6 +79,6 @@ public void onStart() {
     // if you want to specify isReferrable, then comment out the above line and uncomment this line:
     // }, true, this.getIntent().getData(), this);
 }
-~~~
+{% endhighlight %}
 
 {% endif %}

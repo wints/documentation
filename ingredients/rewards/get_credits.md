@@ -7,19 +7,19 @@ Checking the balance involves loading the most recent balance from the server an
 
 <!-- iOS -->
 {%if page.ios %}
-~~~ objc
+{% highlight objc %}
 [[Branch getInstance] loadRewardsWithCallback:^(BOOL changed, NSError *err) {
     if (!err) {
         NSLog(@"credit: %lu", [[Branch getInstance] getCredits]);
     }
 }];
-~~~
+{% endhighlight %}
 {%endif%}
 <!-- end iOS -->
 
 <!-- Android -->
 {%if page.android %}
-~~~ java
+{% highlight java %}
 Branch.getInstance(getApplicationContext()).loadRewards(new BranchReferralStateChangedListener() {
 	@Override
 	public void onStateChanged(boolean changed, Branch.BranchError error) {
@@ -29,7 +29,7 @@ Branch.getInstance(getApplicationContext()).loadRewards(new BranchReferralStateC
 		int credits = branch.getCredits();
 	}
 });
-~~~
+{% endhighlight %}
 {%endif%}
 <!-- end Android -->
 
@@ -39,20 +39,20 @@ If you want to see the number of credits in a custom bucket you've specified, su
 
 <!-- iOS -->
 {%if page.ios %}
-~~~ objc
+{% highlight objc %}
 [[Branch getInstance] loadRewardsWithCallback:^(BOOL changed, NSError *err) {
     if (!err) {
         NSString *bucket = @"myBucket";
         NSLog(@"credit for %@ bucket: %lu", bucket, [[Branch getInstance] getCreditsForBucket:bucket]);
     }
 }];
-~~~
+{% endhighlight %}
 {%endif%}
 <!-- end iOS -->
 {%if page.android %}
-~~~ java
+{% highlight java %}
 // TODO
-~~~
+{% endhighlight %}
 {%endif%}
 
 {% endsection %}

@@ -30,25 +30,25 @@ Your app key can be retrieved on the [Settings](https://dashboard.branch.io/#/se
 1. Navigate to to res/values/strings.xml
 2. Add a new resource, with the name "bnc_app_key". Here's what it should look like:
 
-~~~java
+{% highlight xml %}
 <resources>
     <!-- Other existing resources -->
 
     <!--Change "your app key" to your app key -->
     <string name="bnc_app_key">"your app key"</string>
 </resources>
-~~~
+{% endhighlight %}
 
 3. Navigate to AndroidManifest.xml and add the following `<meta-data` tag:
 
-~~~java
+{% highlight xml %}
 <application>
     <!-- Other existing entries -->
 
     <!-- Add this meta-data below; DO NOT changing the android:value -->
     <meta-data android:name="io.branch.sdk.ApplicationId" android:value="@string/bnc_app_key" />
 </application>
-~~~
+{% endhighlight %}
 
 
 {% endif %}

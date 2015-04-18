@@ -20,7 +20,7 @@ This default behavior can be overridden by modifying the _initSessionWithLaunchO
 <!---    iOS code -->
 {% section ios_code %}
 ##### Objective-C
-~~~ objc
+{% highlight objc %}
 [branch initSessionWithLaunchOptions:launchOptions isReferrable:@YES andRegisterDeepLinkHandler:^(NSDictionary *params, NSError *error) {     // previously initUserSessionWithCallback:withLaunchOptions:
    if (!error) {
        // This can now count as a referred session even if this isn't
@@ -28,10 +28,10 @@ This default behavior can be overridden by modifying the _initSessionWithLaunchO
        // ... insert custom logic here ...
    }
 }];
-~~~
+{% endhighlight %}
 
 ##### Swift
-~~~swift
+{% highlight swift %}
 branch.initSessionWithLaunchOptions(launchOptions, isReferrable: true, andRegisterDeepLinkHandler: { params, error in
     if (error == nil) {
         // This can now count as a referred session even if this isn't
@@ -39,7 +39,7 @@ branch.initSessionWithLaunchOptions(launchOptions, isReferrable: true, andRegist
         // ... insert custom logic here ...
     }
 })
-~~~
+{% endhighlight %}
 {% endsection %}
 <!---    /iOS code -->
 

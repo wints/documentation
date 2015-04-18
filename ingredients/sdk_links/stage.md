@@ -13,11 +13,11 @@ If your app is a game, stage could require to the user's current level.
 <!--- iOS -->
 {% if page.ios %}
 
-~~~ objc
+{% highlight objc %}
 [[Branch getInstance] getShortURLWithParams:nil andTags:nil andChannel:nil andFeature:nil andStage:@"4" andAlias:nil andCallback:^(NSString *url, NSError *error) {
     if (!error) NSLog(@"got my Branch link to share: %@", url);
 }];
-~~~
+{% endhighlight %}
 
 {% endif %}
 <!--- /iOS -->
@@ -26,7 +26,7 @@ If your app is a game, stage could require to the user's current level.
 <!--- Android -->
 {% if page.android %}
 
-~~~ java
+{% highlight java %}
 Branch.getInstance(getApplicationContext()).getShortUrl("", "", "stage_four", null, new BranchLinkCreateListener() {
 	@Override
 	public void onLinkCreate(String url, BranchError error) {
@@ -35,7 +35,7 @@ Branch.getInstance(getApplicationContext()).getShortUrl("", "", "stage_four", nu
 		}
 	}
 })
-~~~
+{% endhighlight %}
 
 {% endif %}
 <!--- /Android -->

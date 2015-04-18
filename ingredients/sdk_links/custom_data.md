@@ -13,11 +13,11 @@ Tip: Because we don't store data in the URL, you can create pretty links, like `
 <!--- iOS -->
 {% if page.ios %}
 
-~~~ objc
+{% highlight objc %}
 [[Branch getInstance] getShortURLWithParams:{% section example_code %}@{@"referringUsername": @"James", @"referringUserId": @"1234", @"contentId": @"0987"}{% endsection %} andCallback:^(NSString *url, NSError *error) {
     if (!error) NSLog(@"got my Branch link to share: %@", url);
 }];
-~~~
+{% endhighlight %}
 
 {% endif %}
 <!--- /iOS -->
@@ -26,6 +26,7 @@ Tip: Because we don't store data in the URL, you can create pretty links, like `
 <!--- Android -->
 {% if page.android %}
 
+TODO: fill this out for Android
 
 {% endif %}
 <!--- /Android -->

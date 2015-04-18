@@ -11,11 +11,11 @@ If, however, you want to override the default behavior, you can specify redirect
 
 When a user doesn't have your app and clicks a link on iOS, by default the user is taken to the [TODO] [App Store or Custom URL]() that you specified on the Dashboard. If you want to specify a different destination on a per-link basis, include a value for $ios_url.
 
-~~~ objc
+{% highlight objc %}
 [[Branch getInstance] getShortURLWithParams:@{@"$ios_url": @"http://myawesomesite.com/ios-app-landing-page"} andCallback:^(NSString *url, NSError *error) {
     if (!error) NSLog(@"got my Branch link to share: %@", url);
 }];
-~~~
+{% endhighlight %}
 
 {% endif %}
 <!---    /iOS -->
@@ -24,6 +24,7 @@ When a user doesn't have your app and clicks a link on iOS, by default the user 
 <!---    Android -->
 {% if page.android %}
 
+TODO: fill this out for Android
 
 {% endif %}
 <!---    /Android -->
@@ -43,11 +44,11 @@ When a user doesn't have your app and clicks a link on iOS, by default the user 
 
 When a user doesn't have your app and clicks a link on Android, by default the user is taken to the [TODO] [Play Store or Custom URL]() that you specified on the Dashboard. If you want to specify a different destination on a per-link basis, include a value for $android_url.
 
-~~~ objc
+{% highlight objc %}
 [[Branch getInstance] getShortURLWithParams:@{@"$android_url": @"http://myawesomesite.com/android-app-landing-page"} andCallback:^(NSString *url, NSError *error) {
     if (!error) NSLog(@"got my Branch link to share: %@", url);
 }];
-~~~
+{% endhighlight %}
 
 {% endif %}
 <!---    /iOS -->
@@ -56,6 +57,7 @@ When a user doesn't have your app and clicks a link on Android, by default the u
 <!---    Android -->
 {% if page.android %}
 
+TODO: fill this out for Android
 
 {% endif %}
 <!---    /Android -->
@@ -78,11 +80,11 @@ This is especially useful if you want to serve up content on the web for users w
 <!---    iOS -->
 {% if page.ios %}
 
-~~~ objc
+{% highlight objc %}
 [[Branch getInstance] getShortURLWithParams:@{@"$desktop_url": @"http://myawesomesite.com/content/the-desired-content"} andCallback:^(NSString *url, NSError *error) {
     if (!error) NSLog(@"got my Branch link to share: %@", url);
 }];
-~~~
+{% endhighlight %}
 
 {% endif %}
 <!---    /iOS -->
@@ -91,6 +93,7 @@ This is especially useful if you want to serve up content on the web for users w
 <!---    Android -->
 {% if page.android %}
 
+TODO: fill this out
 
 {% endif %}
 <!---    /Android -->
@@ -113,11 +116,11 @@ To override this behavior, you can either select "Always try to open the app" on
 <!---    iOS -->
 {% if page.ios %}
 
-~~~ objc
+{% highlight objc %}
 [[Branch getInstance] getShortURLWithParams:@{@"$always_deeplink": @"true"} andCallback:^(NSString *url, NSError *error) {
     if (!error) NSLog(@"got my Branch link to share: %@", url);
 }];
-~~~
+{% endhighlight %}
 
 {% endif %}
 <!---    /iOS -->
@@ -125,7 +128,7 @@ To override this behavior, you can either select "Always try to open the app" on
 
 <!---    Android -->
 {% if page.android %}
-~~~java
+{% highlight java %}
 JSONObject params = new JSONObject();
 try {
     params.put("$always_deeplink", true);
@@ -133,13 +136,13 @@ try {
 Branch.getInstance(getApplicationContext()).getShortUrl(params, new BranchLinkCreateListener() {
 	@Override
 	public void onLinkCreate(String url, BranchError error) {
-		if (error==null) {
+		if (error == null) {
 			Log.i("Branch", "created an always_deeplink URL");
 		}
 	}
 
 })
-~~~
+{% endhighlight %}
 
 {% endif %}
 <!---    /Android -->
