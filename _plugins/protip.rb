@@ -12,7 +12,7 @@ module Jekyll
     def render(context)
       data = {}
 
-      @params.scan(/(\w+)='([^'\\]+(\\.[^'\\]+)*)'/).each { |m|
+      @params.scan(/(\w+)=["']([^'\\]+(\\.[^'\\]+)*)["']/).each { |m|
         data[m[0]] = Liquid::Template.parse(m[1]).render!(context)
       }
 
