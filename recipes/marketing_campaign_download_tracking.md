@@ -23,6 +23,7 @@ Let's get started. Seeing install numbers (as opposed to merely clicks) requires
 {% ingredient dashboard_setup/web_url %}{% endingredient %}
 {% ingredient dashboard_setup/store_or_custom_url %}{% endingredient %}
 {% ingredient dashboard_setup/uri_scheme %}{% endingredient %}
+{% ingredient dashboard_setup/end_required %}{% endingredient %}
 <!--- /Configuring the Dashboard-->
 
 
