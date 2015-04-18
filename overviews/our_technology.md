@@ -5,9 +5,6 @@ platforms:
 - web
 ---
 
-# Our Technology
-
-------
 platform: {{ page.platform %}}
 default: {{ page.default }}
 

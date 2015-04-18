@@ -12,12 +12,12 @@ module Jekyll
     def render(context)
       data = {}
 
-      @params.scan(/(\w+)='([^'\\]+(\\.[^'\\]+)*)'/).each { |m|
+      @params.scan(/(\w+)=["']([^'\\]+(\\.[^'\\]+)*)["']/).each { |m|
         data[m[0]] = Liquid::Template.parse(m[1]).render!(context)
       }
 
-      icon = if data['icon'] then '<i class="fa ' + data['icon'] + '"></i> ' else '<i class="fa fa-bookmark-o"></i> ' end
-      title = if data['title'] then '<h4 class="protip__title"> ' + icon + ' ' + data['title'] + '</h4>' end
+      icon = '<i class="fa ' + (data['icon'] or 'fa-bookmark-o') + '"></i> '
+      title = if data['title'] then '<h4 class="protip__title"> ' + icon + ' ' + data['title'] + '</h4>' else '' end
       contents = Kramdown::Document.new(super).to_html
       '<blockquote class="protip">' + title + contents + '</blockquote>'
     end

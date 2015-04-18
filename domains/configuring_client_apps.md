@@ -7,11 +7,7 @@ platforms:
 - web
 ---
 
-# Configuring Client Apps
-
-------
-
-## Required 
+## Required
 
 {% ingredient sdk_setup/installing_the_sdk %}{% endingredient %}
 {% ingredient sdk_setup/branch_key %}{% endingredient %}

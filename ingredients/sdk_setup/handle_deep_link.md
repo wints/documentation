@@ -4,7 +4,7 @@
 
 In order for your app to properly handle deep links, and to allow Branch to work its magic and call the deepLinkHandler, you will need to add the following code within `application:openURL:sourceApplication:annotation:`:
 
-~~~ objc
+{% highlight objc %}
 - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
   // pass the url to the handle deep link call
   if (![[Branch getInstance] handleDeepLink:url]) {
@@ -12,7 +12,7 @@ In order for your app to properly handle deep links, and to allow Branch to work
   }
     return YES;
 }
-~~~
+{% endhighlight %}
 
 {% endif %}
 
@@ -20,7 +20,10 @@ In order for your app to properly handle deep links, and to allow Branch to work
 {% if page.android %}
 Inside Android, allow us to hook into your activities where you have declared and intent filter for deeplinking. During the `onCreate` portion of execution, you can add something like the following: 
 
-~~~java
+{% highlight java %}
+// TODO: fill this out for Android
+// --> I'm worried this isn't a good example... if you think it's fine, delete this comment.
+
 branch.initSession(new BranchReferralInitListener() {
 	@Override
 	public void onInitFinished(JSONObject referringParams, BranchError error) {
@@ -34,8 +37,9 @@ branch.initSession(new BranchReferralInitListener() {
 			}
 		} catch (JSONException e) {
 			e.printStackTrace();
+		}
 	}
 }, this.getIntent().getData(), this);
-~~~
+{% endhighlight %}
 {% endif %}
 

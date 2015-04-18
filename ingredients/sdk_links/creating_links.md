@@ -13,11 +13,11 @@ Here's how to create your own Branch Links.
 
 On iOS, it's a rather simple method call.
 
-~~~ objc
+{% highlight objc %}
 [[Branch getInstance] getShortURLWithParams:{% section params %}@{@"foo": @"bar"}{%endsection%} andCallback:^(NSString *url, NSError *error) {
     if (!error) NSLog(@"got my Branch link to share: %@", url);
 }];
-~~~
+{% endhighlight %}
 
 {% endif %}
 <!--- /iOS -->
@@ -26,7 +26,7 @@ On iOS, it's a rather simple method call.
 <!--- Android -->
 {% if page.android %}
 
-~~~ java
+{% highlight java %}
 {% section params %}JSONObject obj = new JSONObject(); obj.putString("foo", "bar");{% endsection %}
 branch.getShortUrl(obj, new BranchLinkCreateListener() {
 	@Override
@@ -34,7 +34,7 @@ branch.getShortUrl(obj, new BranchLinkCreateListener() {
 		Log.i(TAG, "Ready to share my link = " + url);
 	}
 });
-~~~
+{% endhighlight %}
 
 {% endif %}
 <!--- /Android -->

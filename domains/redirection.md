@@ -7,8 +7,4 @@ platforms:
 - web
 ---
 
-# Redirection
-
-------
-
 {% ingredient sdk_links/custom_redirects %}{%endingredient%}

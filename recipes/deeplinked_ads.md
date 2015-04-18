@@ -6,11 +6,8 @@ platforms:
 - android
 ---
 
-# Deeplinked Ads
-
-------
-
 ## Configuring the Dashboard for your {{ page.platform_formatted }} app
+
 {% ingredient dashboard_setup/app_name %}{% endingredient %}
 {% ingredient dashboard_setup/web_url %}{% endingredient %}
 {% ingredient dashboard_setup/store_or_custom_url %}{% endingredient %}

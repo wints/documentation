@@ -17,11 +17,11 @@ You should feel free to specify any other "features" as you see fit.
 
 Again, the code is straightforward:
 
-~~~ objc
+{% highlight objc %}
 [[Branch getInstance] getShortURLWithParams:@{} andChannel:@"SMS" andFeature:@"invite" andCallback:^(NSString *url, NSError *error) {
     if (!error) NSLog(@"got my Branch link to share: %@", url);
 }];
-~~~
+{% endhighlight %}
 
 {% endif %}
 <!--- /iOS -->
@@ -30,7 +30,7 @@ Again, the code is straightforward:
 <!--- Android -->
 {% if page.android %}
 
-~~~ java
+{% highlight java %}
 Branch.getInstance(getApplicationContext()).getShortUrl("sms", "invite_feature", "", null, new BranchLinkCreateListener() {
 	@Override
 	public void onLinkCreate(String url, BranchError error) {
@@ -39,6 +39,6 @@ Branch.getInstance(getApplicationContext()).getShortUrl("sms", "invite_feature",
 		}
 	}
 })
-~~~
+{% endhighlight %}
 {% endif %}
 <!--- /Android -->

@@ -1,9 +1,6 @@
 {%if page.ios%}
 ### Sharing via the Branch UIActivityItemProvider
 
-
-
-
 {% tabs %}
 {% tab objective-c %}
 {% highlight objc %}

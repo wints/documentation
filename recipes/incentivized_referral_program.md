@@ -6,10 +6,6 @@ platforms:
 - android
 ---
 
-# Incentivized Referral Program
-
-------
-
 ## Overview
 
 For a referral system, Branch provides:

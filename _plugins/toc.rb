@@ -13,7 +13,7 @@ module Jekyll
                 '<h' + level.to_s + '><a class="anchor" name="' + id + '"></a><a href="#' + id + '">' + text + '</a></h' + level.to_s + '>'
             }
             nested_toc = _nested_toc(toc)
-            _render_toc(nested_toc) + html
+            _render_toc(nested_toc) + "<hr />" + html
         end
         def _render_toc(toc)
             if toc.length > 0 then

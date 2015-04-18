@@ -7,10 +7,6 @@ platforms:
 - web
 ---
 
-# Rewards
-
-------
-
 {% ingredient rewards/overview %}{% endingredient %}
 {% ingredient rewards/reward_rule_basics %}{% endingredient %}
 {% ingredient rewards/reward_example %}{% endingredient %}

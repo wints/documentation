@@ -6,10 +6,6 @@ platforms:
 - android
 ---
 
-# Debug Tools
-
-------
-
 {%ingredient debug/intro %}{%endingredient%}
 
 {%ingredient debug/test_app %}{%endingredient%}

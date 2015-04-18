@@ -6,10 +6,6 @@ platforms:
 - android
 ---
 
-# Links and Sharing
-
-------
-
 ## The basics
 
 {% ingredient sdk_links/creating_links %}{%endingredient%}

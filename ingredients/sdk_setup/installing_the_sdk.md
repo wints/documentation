@@ -22,7 +22,7 @@ You will need to drag and drop the Branch.framework file that you downloaded int
 
 
 {% if page.android %}
-For Android, the easiest way to add the SDK to your project is by adding us inside your project structure as a library dependency. Here are the steps: 
+For Android, the easiest way to add the SDK to your project is by adding the Branch SDK inside your project structure as a library dependency. Here are the steps: 
 
 - Right click on the main module within your project (this is called 'app' by default).
 - Select `Open Module Settings`.
