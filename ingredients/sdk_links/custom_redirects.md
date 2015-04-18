@@ -93,7 +93,7 @@ This is especially useful if you want to serve up content on the web for users w
 <!---    Android -->
 {% if page.android %}
 
-TODO: fill this out
+TODO: fill this out for Android
 
 {% endif %}
 <!---    /Android -->

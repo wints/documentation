@@ -51,7 +51,7 @@ If you want to see the number of credits in a custom bucket you've specified, su
 <!-- end iOS -->
 {%if page.android %}
 {% highlight java %}
-// TODO
+// TODO: fill this out for Android
 {% endhighlight %}
 {%endif%}
 

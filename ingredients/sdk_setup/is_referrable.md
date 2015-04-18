@@ -60,5 +60,5 @@ Note that the default behavior when _isReferrable_ is not set is different from 
 <!--- /iOS -->
 
 {% if page.android %}
-[TODO] isReferrable Android
+TODO: fill this out for Android
 {% endif %}
