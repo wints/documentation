@@ -6,10 +6,6 @@ platforms:
 - android
 ---
 
-# Deeplinked Ads
-
-------
-
 ## Basic Setup
 {% ingredient dashboard_setup/app_name %}{% endingredient %}
 {% ingredient dashboard_setup/store_or_custom_url %}{% endingredient %}

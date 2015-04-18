@@ -6,10 +6,6 @@ platforms:
 - android
 ---
 
-# Your First Link
-
-------
-
 ## Getting Started
 
 Branch Links enable deep linking, install attribution, and in-depth analytics. While configuring your apps--whether Android, iOS or web--enables you to be much more powerful, basic links can be set up before writing a line of code.

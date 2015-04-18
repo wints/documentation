@@ -1,5 +1,5 @@
 
-### Webhook Syntax Specification
+## Webhook Syntax Specification
 
 Here is the format of what we post to you
 

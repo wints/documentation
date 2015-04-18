@@ -1,5 +1,5 @@
 
-### Example: Using RequestBin to test
+## Example: Using RequestBin to test
 
 If you're not sure whether one of our webhooks is configured correctly, take a look at [requestb.in](http://requestb.in/). RequestBin gives you a URL that collects requests, such as our webhook's requests, to see what the client (aka Branch) is sending.
 

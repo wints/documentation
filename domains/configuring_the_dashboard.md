@@ -7,10 +7,6 @@ platforms:
 - web
 ---
 
-# Configuring the Dashboard
-
-------
-
 The first section of this page describes the required Dashboard steps for getting your {{page.platform_formatted}} app up and running. After you complete these required steps, you can either keep reading for additional options, or you should check out the [Configuring Client Apps](/domains/configuring_client_apps/{{page.platform}}/) page.
 
 ## Configuring the Dashboard for your {{ page.platform_formatted }} app

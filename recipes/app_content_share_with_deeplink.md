@@ -1,14 +1,10 @@
 ---
 type: recipe
-title: App Content Share + Deeplink
+title: App Content Share with Deeplink
 platforms:
 - ios
 - android
 ---
-
-# App Content Share with Deeplink
-
-------
 
 Using Branch, your users can share links to content from your app -- and other users can be linked straight to that content!
 

@@ -6,8 +6,6 @@ platforms:
 - android
 ---
 
-# Personalized Invite System
-
 ## Configuring the Dashboard for your {{ page.platform_formatted }} app
 {% ingredient dashboard_setup/app_name %}{% endingredient %}
 {% ingredient dashboard_setup/web_url %}{% endingredient %}

@@ -6,10 +6,6 @@ platforms:
 - android
 ---
 
-# Marketing Campaign Download Tracking
-
-------
-
 When you complete this guide, you will have the ability to run powerful marketing campaigns with download tracking. You will know how many installs are being driven by word of mouth versus ad campaigns, and how well Facebook does compared to Twitter and SMS. You can do analysis comparing your marketing links to individualized links shared by your users.
 
 One screenshot is worth a million... dollars on spent on non-performant ads and expensive tools to track those ads:

@@ -7,10 +7,6 @@ platforms:
 - web
 ---
 
-# Analytics and Custom Events
-
-------
-
 ## Tracking Events
 
 {% ingredient events/intro %}{%endingredient%}

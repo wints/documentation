@@ -7,10 +7,6 @@ platforms:
 - web
 ---
 
-# Routing
-
-------
-
 Your app can deliver users a custom experience based on the Branch link they clicked on that directed them to the app.
 
 This means that you can:
