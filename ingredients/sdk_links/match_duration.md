@@ -22,7 +22,17 @@ You can adjust how long the browser fingerprint is stored in the browser by sett
 <!--- Android -->
 {% if page.android %}
 
-TODO: fill this out for Android
+{% highlight java %}
+int duration = 60*60*2;
+Branch.getInstance(getApplicationContext()).("", "", "", "", duration, new BranchLinkCreateListener() {
+
+    @Override
+	public void onLinkCreate(String url, BranchError error) {
+	    Log.i("Branch", "Link created!");
+	}
+
+});
+{% endhighlight %}
 
 {% endif %}
 <!--- /Android -->
