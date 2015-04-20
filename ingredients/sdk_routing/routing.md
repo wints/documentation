@@ -24,7 +24,7 @@ Let's assume your app revolves around pictures and each one is tagged with a pic
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     UIViewController *nextVC;
     // If the key '{%section ios_key %}pictureId{% endsection %}' is present in the deep link dictionary
-    // then load the picture screen with the appropriate picture
+    {% section ios_comment %}// then load the picture screen with the appropriate picture{%endsection%}
     NSString *{%section ios_key %}pictureId{% endsection %} = [params objectForKey:@"{%section ios_key %}pictureId{% endsection %}"];
     if ({%section ios_key %}pictureId{% endsection %}) {
       nextVC = [storyboard instantiateViewControllerWithIdentifier:@"{%section vc_name %}PicVC{% endsection %}"];

@@ -94,7 +94,53 @@ Last step is to make sure you target the mobile app, not the desktop! If you nee
 Now make sure you have a picture of the appropriate size, then order up that ad!
 
 
+## (Optional) Routing to content based on the ad
+
+After you've added `handleDeepLink` call (discussed in the section [Handle Deep Link](/recipes/deeplinked_ads/{{page.platform}}/#handle-deep-link) above), you can add deep linking straight to content.
+
+<!--- CUSTOM DATA -->
+{% ingredient dashboard_links/custom_data %}{%endingredient%}
+
+<!--- ROUTING -->
+{% ingredient sdk_routing/routing %}
+
+{% override ios_explanation %}
+Inside of the `deepLinkHandler`, you will want to examine the params dictionary to determine whether the user clicked on a link to content. Regardless of whether your app involves pictures, videos, text or whatever novel content your app contains, you likely have an internal system of identifiers.
+
+In this case, we want to handle users clicking on ads. When creating an ad, you specified an `ad_id`. If a user clicks a link to a from an ad, this Id will show up in the params dictionary in the deepLinkHandler.
+
+Now you need to customize the code in your deep link handler to route to content based on the `ad_id`. In the example below, we push to a special view controller to content based on ads inside the app. It can show an offer (e.g. 20% off), a product (e.g. blue shoes!) or anything you want.
+{%endoverride%}
+
+{% override android_explanation %}
+[TODO] @Sahil, please convert this to Java/Android-speak.
+
+Inside of the deepLinkHandler, you will want to examine the params dictionary to determine whether the user clicked on a link to content. Regardless of whether your app involves pictures, videos, text or whatever novel content your app contains, you likely have an internal system of identifiers.
+
+In this case, we want to handle users clicking on ads. When creating an ad, you specified an `ad_id`. If a user clicks a link to a from an ad, this Id will show up in the params dictionary in the deepLinkHandler.
+
+Now you need to customize the code in your deep link handler to route to content based on the `ad_id`. In the example below, we push to a special view controller to content based on ads inside the app. It can show an offer (e.g. 20% off), a product (e.g. blue shoes!) or anything you want.
+{%endoverride%}
+
+
+{%if page.android%}[TODO] @Sahil, please make the code sample change to fit this guide. Note that I did this on iOS (you can see it in the routing.md and the overrides here.){%endif%}
+
+
+{%override ios_key %}ad_id{%endoverride%}
+{%override ios_comment %}// then load the ad screen with the appropriate content{%endoverride%}
+{%override ios_key_U %}AdId{%endoverride%}
+{%override vc_name %}adVC{%endoverride%}
+
+{% endingredient %}
+
+
 ## Conclusion
 
-It's pretty simple! 
+It's pretty simple! You need to configure the dashboard, generate links for your ads, and setup your {{page.platform_formatted}} app to track installs. You can optionally deep link straight to content based on the ad that the user clicked on!
 
+{% ingredient recipe_endings/intro %}{%endingredient%}
+{% ingredient recipe_endings/incentivized_referral_program %}{%endingredient%}
+{% ingredient recipe_endings/personalized_invite_system %}{%endingredient%}
+{% ingredient recipe_endings/influencers %}{%endingredient%}
+{% ingredient recipe_endings/channel_tags %}{%endingredient%}
+{% ingredient recipe_endings/contact_us %}{%endingredient%}
