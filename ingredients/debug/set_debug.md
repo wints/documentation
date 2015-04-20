@@ -11,8 +11,13 @@ To simulate a brand new user being referred from our perspective:
 1. Click a link in the browser
 1. Run your test app:
 
+	{% if page.ios %}
     Branch *branch = [Branch getInstance];
 
     [Branch setDebug];
     
     [branch initSession......]
+    {% endif %}
+    {% if page.android %}
+    Branch.getInstance(getApplicationContext()).setDebug();
+    {% endif %}
