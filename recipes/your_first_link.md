@@ -26,7 +26,7 @@ That's the end of the required setup for the Dashboard! The dashboard is incredi
 {% endingredient %}
 
 {% ingredient dashboard_links/tags %}
-	{%override deep_link_data_url%}For information of the form *[key]*: *[value]* such as "product": "shoes", we recommend adding them to "Deep Link Data (Advanced)", discussed in [Links and Sharing](/domains/links_and_sharing/{{page.platform}}/#attaching-custom-data-to-links).
+	{%override deep_link_data_url%}For information of the form *[key]*: *[value]* such as "product": "shoes", we recommend adding them to "Deep Link Data (Advanced)", discussed in [Links and Sharing](/domains/links_and_sharing/{{page.platform}}/#attaching-custom-data-to-links) [TODO!].
     {%endoverride%}
 {% endingredient %}
 
