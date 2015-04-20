@@ -74,6 +74,7 @@ When a user doesn't have your app and clicks a link on Android, by default the u
 <!---    Android -->
 {% if page.android %}
 
+{% highlight java %}
 JSONObject obj = new JSONObject();
 
 try {
@@ -88,6 +89,7 @@ Branch.getInstance(getApplicationContext()).getShortUrl(obj, new BranchLinkCreat
         Log.i("Branch", "Created my URL w an Android redirect!");
     }
 });
+{% endhighlight %}
 
 {% endif %}
 <!---    /Android -->
@@ -123,6 +125,7 @@ This is especially useful if you want to serve up content on the web for users w
 <!---    Android -->
 {% if page.android %}
 
+{% highlight java %}
 JSONObject obj = new JSONObject();
 
 try {
@@ -137,6 +140,7 @@ Branch.getInstance(getApplicationContext()).getShortUrl(obj, new BranchLinkCreat
         Log.i("Branch", "Created my URL w a desktop endpoint!");
     }
 });
+{% endhighlight %}
 
 {% endif %}
 <!---    /Android -->
