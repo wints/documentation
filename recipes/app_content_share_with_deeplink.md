@@ -24,7 +24,7 @@ The possibilities extend far beyond this, but we wanted to give you some ideas t
 {% ingredient dashboard_setup/web_url %}{% endingredient %}
 {% ingredient dashboard_setup/store_or_custom_url %}{% endingredient %}
 {% ingredient dashboard_setup/uri_scheme %}
-	{%override client_uri %}see the section below on [setting the client app's URI scheme](/recipes/app_content_share_with_deeplink/{{page.platform}}/#uri-scheme-1).{%endoverride%}
+	{%override client_uri %}For more details on finding/setting your URI scheme in the client, see the section below on [setting the client app's URI scheme](/recipes/app_content_share_with_deeplink/{{page.platform}}/#uri-scheme-1).{%endoverride%}
 {% endingredient %}
 {% ingredient dashboard_setup/end_required %}{% endingredient %}
 <!--- /Configuring the Dashboard-->

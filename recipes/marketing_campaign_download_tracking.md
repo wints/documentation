@@ -19,7 +19,7 @@ Let's get started. Seeing install numbers (as opposed to merely clicks) requires
 {% ingredient dashboard_setup/web_url %}{% endingredient %}
 {% ingredient dashboard_setup/store_or_custom_url %}{% endingredient %}
 {% ingredient dashboard_setup/uri_scheme %}
-  {%override client_uri %} see the section below on [setting the client app's URI scheme](/recipes/marketing_campaign_download_tracking/{{page.platform}}/#uri-scheme-1).{%endoverride%}
+  {%override client_uri %}For more details on finding/setting your URI scheme in the client, see the section below on [setting the client app's URI scheme](/recipes/marketing_campaign_download_tracking/{{page.platform}}/#uri-scheme-1).{%endoverride%}
 {% endingredient %}
 {% ingredient dashboard_setup/end_required %}{% endingredient %}
 <!--- /Configuring the Dashboard-->

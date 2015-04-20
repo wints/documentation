@@ -25,7 +25,7 @@ For a referral system, Branch provides:
 {% ingredient dashboard_setup/web_url %}{% endingredient %}
 {% ingredient dashboard_setup/store_or_custom_url %}{% endingredient %}
 {% ingredient dashboard_setup/uri_scheme %}
-  {%override client_uri %} see the section below on [setting the client app's URI scheme](/recipes/incentivized_referral_program/{{page.platform}}/#uri-scheme-1).{%endoverride%}
+  {%override client_uri %}For more details on finding/setting your URI scheme in the client, see the section below on [setting the client app's URI scheme](/recipes/incentivized_referral_program/{{page.platform}}/#uri-scheme-1).{%endoverride%}
 {% endingredient %}
 {% ingredient dashboard_setup/end_required %}{% endingredient %}
 <!--- /Configuring the Dashboard-->
