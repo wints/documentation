@@ -10,6 +10,6 @@ To configure the Web URL on an existing app, you will need to navigate to the Se
 
 <!---       Tip2 -->
 {% protip title='Tip:' %}
-You can customize this fallback URL on a per-platform or even per-link basis. After completing setup, you may want to check out [TODO] [links-and-sharing.VIII-customizing-URL](http://example.com).
+You can customize this fallback URL on a per-platform or even per-link basis. After completing setup, you may want to check out our page on [Redirection](/domains/redirection/{{page.platform}}/).
 {% endprotip %}
 <!---       /Tip2 -->
