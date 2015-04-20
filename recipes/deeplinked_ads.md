@@ -26,6 +26,8 @@ platforms:
 {% endingredient %}
 
 {% ingredient dashboard_links/tags %}
+	{%override deep_link_data_url%}For information of the form *[key]*: *[value]* such as "product": "shoes", we recommend adding them to "Deep Link Data (Advanced)", discussed [below](/recipes/deeplinked_ads/ios/#deep-link-data-advanced).
+    {%endoverride%}
 	{%override screenshot%}![Description](/img/ingredients/dashboard_links/fb_example_tags.png){%endoverride%}
 {% endingredient %}
 

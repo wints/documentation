@@ -42,7 +42,11 @@ Let's get started. Seeing install numbers (as opposed to merely clicks) requires
 	{%override screenshot_description%}One example description if you want to treat this guide is: "Marketing our launch on Facebook."{%endoverride%}
 {% endingredient %}
 
-{% ingredient dashboard_links/tags %}{% endingredient %}
+{% ingredient dashboard_links/tags %}
+	{%override deep_link_data_url%}For information of the form *[key]*: *[value]* such as "product": "shoes", we recommend adding them to "Deep Link Data (Advanced)", discussed in [Links and Sharing](/domains/links_and_sharing/{{page.platform}}/#attaching-custom-data-to-links).
+    {%endoverride%}
+	{%override deep_link_data_url%}/recipes/marketing_campaign_download_tracking/ios/#deep-link-data-advanced{%endoverride%}
+{% endingredient %}
 
 {% ingredient dashboard_links/alias %}
 	{%override optional%}(Optional -- highly recommended){%endoverride%}
