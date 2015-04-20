@@ -60,5 +60,26 @@ Note that the default behavior when _isReferrable_ is not set is different from 
 <!--- /iOS -->
 
 {% if page.android %}
-TODO: fill this out for Android
+
+{% section android_explanation %}
+This default behavior can be overridden by modifying the `initSession` method inside your activities `onStart`. Replace the method call with the following:
+
+{% endsection %}
+
+{% highlight java %}
+@Override
+public void onStart() {
+
+    Branch branch = Branch.getInstance(getApplicationContext());
+    branch.initSession(new BranchReferralInitListener(){
+        @Override
+        public void onInitFinished(JSONObject referringParams, Branch.BranchError error) {
+            // init and routing code
+        }
+    }, true, this.getIntent().getData(), this);
+}
+{% endhighlight %}
+
+
+
 {% endif %}
