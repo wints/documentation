@@ -24,7 +24,24 @@ When a user doesn't have your app and clicks a link on iOS, by default the user 
 <!---    Android -->
 {% if page.android %}
 
-TODO: fill this out for Android
+When a user doesn't have your app and clicks a link on iOS, by default, the user is taken to the Apple App store that you specify on our dashboard. If you went to specify a different destination on a per-link basis, add a value to the `$ios_url` key.
+
+{% highlight java %}
+JSONObject obj = new JSONObject();
+
+try {
+	obj.put("$ios_url", "http://myawesomesite.com/ios-app-landing-page");
+
+} catch (JSONException e) {
+    // no-op
+}
+Branch.getInstance(getApplicationContext()).getShortUrl(obj, new BranchLinkCreateListener() {
+    @Override
+    public void onLinkCreate(String url, BranchError error) {
+        Log.i("Branch", "Created my URL w an iOS redirect!");
+    }
+});
+{% endhighlight %}
 
 {% endif %}
 <!---    /Android -->
@@ -57,7 +74,22 @@ When a user doesn't have your app and clicks a link on Android, by default the u
 <!---    Android -->
 {% if page.android %}
 
-TODO: fill this out for Android
+{% highlight java %}
+JSONObject obj = new JSONObject();
+
+try {
+	obj.put("$android_url", "http://myawesomesite.com/android-app-landing-page");
+
+} catch (JSONException e) {
+    // no-op
+}
+Branch.getInstance(getApplicationContext()).getShortUrl(obj, new BranchLinkCreateListener() {
+    @Override
+    public void onLinkCreate(String url, BranchError error) {
+        Log.i("Branch", "Created my URL w an Android redirect!");
+    }
+});
+{% endhighlight %}
 
 {% endif %}
 <!---    /Android -->
@@ -93,7 +125,22 @@ This is especially useful if you want to serve up content on the web for users w
 <!---    Android -->
 {% if page.android %}
 
-TODO: fill this out for Android
+{% highlight java %}
+JSONObject obj = new JSONObject();
+
+try {
+	obj.put("$desktop_url", "http://myawesomesite.com/the-desired-content");
+
+} catch (JSONException e) {
+    // no-op
+}
+Branch.getInstance(getApplicationContext()).getShortUrl(obj, new BranchLinkCreateListener() {
+    @Override
+    public void onLinkCreate(String url, BranchError error) {
+        Log.i("Branch", "Created my URL w a desktop endpoint!");
+    }
+});
+{% endhighlight %}
 
 {% endif %}
 <!---    /Android -->
