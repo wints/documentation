@@ -7,7 +7,7 @@ Imagine how URLs are used on the Internet... now you have the same power inside 
 This data is stored on our backend and presented again when the user clicks on a link via the `deepLinkHandler` -- it's not simply appended to the end of the URL.
 
 {% protip title="Tip:" %}
-Because we don't store data in the URL, you can create pretty links, like `get.yourapp.com/bob`. For information on custom aliases for links, [TODO] [click here]().
+Because we don't store data in the URL, you can create pretty links, like `bnc.lt/bob`. For information on custom aliases for links, visit [Links and Sharing](/domains/links_and_sharing/ios/#alias---the-custom-ending).
 {% endprotip %}
 
 {% section example_explanation %}Store data about both the sharing user and the content shared in the data dictionary. Attaching information is as simple as including a dictionary at link creation time. If, for example, James is inviting friends to check out your app, you could do the following:{% endsection %}

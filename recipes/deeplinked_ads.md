@@ -73,7 +73,7 @@ If you integrate our SDK into your app, you can:
 
 Navigate to [https://www.facebook.com/ads/create](https://www.facebook.com/ads/create) while logged in to your Facebook page. (If you don't yet have a Facebook page, you will need to create one before advertising on Facebook.)
 
-Choose "Send people to your website". Unfortunately due to a bug with Facebook's API, you cannot currently run campaigns for app downloads through the option "Get installs of your app."
+Choose "Send people to your website". Unfortunately due to limitations with Facebook's API, you cannot currently run campaigns for app downloads through the option "Get installs of your app."
 
 ![Description](/img/recipes/deeplink_ads/facebook_ad_1.png)
 
@@ -92,4 +92,9 @@ Last step is to make sure you target the mobile app, not the desktop! If you nee
 ![Description](/img/recipes/deeplink_ads/facebook_ad_4.gif)
 
 Now make sure you have a picture of the appropriate size, then order up that ad!
+
+
+## Conclusion
+
+It's pretty simple! 
 

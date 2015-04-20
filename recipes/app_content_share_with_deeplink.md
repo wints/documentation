@@ -70,13 +70,11 @@ try {
 
 ## Conclusion
 
-That's it! After integrating the SDK into your app, it boils down to [generating links](http://localhost:4000/recipes/app_content_share_with_deeplink/{{page.platform}}/#generating-links) and [routing](http://localhost:4000/recipes/app_content_share_with_deeplink/{{page.platform}}/#routing), as described above.
+That's it! After integrating the SDK into your app, it boils down to [generating links](/recipes/app_content_share_with_deeplink/{{page.platform}}/#generating-links) and [routing](/recipes/app_content_share_with_deeplink/{{page.platform}}/#routing), as described above.
 
-There is so much more you can do with Branch! You can:
-
-* Create an [incentivized referral program](recipes/incentivized_referral_program/{{page.platform}}/) where you reward users based on the installs or engagement they generate
-* [Personalize the initial welcome screen](recipes/incentivized_referral_program/{{page.platform}}/) for users who sign up thanks to other users
-* See a list of your influencers whose shared content is driving the most installs [TODO: LIST DOMAIN AND LINK!]
-* [Specify the channel](/domains/links_and_sharing/{{page.platform}}/#specifying-channel) (Facebook, Email, etc.) or [tag content](/domains/links_and_sharing/{{page.platform}}/#adding-tags) as it is being shared -- then you can see a breakdown of installs by tag on the Dashboard
-
-And as always, [contact us](mailto:support@branchmetrics.io) if you have questions!
+{% ingredient recipe_endings/intro %}{%endingredient%}
+{% ingredient recipe_endings/incentivized_referral_program %}{%endingredient%}
+{% ingredient recipe_endings/personalized_invite_system %}{%endingredient%}
+{% ingredient recipe_endings/influencers %}{%endingredient%}
+{% ingredient recipe_endings/channel_tags %}{%endingredient%}
+{% ingredient recipe_endings/contact_us %}{%endingredient%}
