@@ -28,7 +28,16 @@ Because we don't store data in the URL, you can create pretty links, like `get.y
 <!--- Android -->
 {% if page.android %}
 
-TODO: fill this out for Android
+{% highlight java %}
+{% section example_code %}
+{% endsection %}
+Branch.getInstance(getApplicationContext()).getShortUrl(obj, new BranchLinkCreateListener() {
+	@Override
+	public void onLinkCreate(String url, BranchError error) {
+	    Log.i("Branch", "Got a link with custom data!");
+	}
+});
+{% endhighlight %}
 
 {% endif %}
 <!--- /Android -->
