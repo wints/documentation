@@ -18,5 +18,5 @@ platforms:
 
 {% ingredient dashboard_analytics/summary %}{%endingredient%}
 {% ingredient dashboard_analytics/funnels %}{%endingredient%}
-
+{% ingredient dashboard_analytics/influencers %}{%endingredient%}
 
