@@ -55,7 +55,7 @@ If you want to know who is sharing your content, whether for internal purposes (
 
 {% ingredient sdk_links/creating_links %}
   {% override explanation %}
-  Links are the foundation to everything Branch offers. Branch's links offer the ability to deep link directly to content, to pass data through the install process, and to tell where users are coming from. In the case of a personalized referral system, you can attach information about the user who is sharing the link. Then this information about this user--here "John" with id "1234"--is present anytime John's friends install the app after clicking his link.
+  Links are the foundation to everything Branch offers. Branch's links offer the ability to deep link directly to content, to pass data through the install process, and to understand where users are coming from. In the case of a personalized referral system, you can attach information about the user who is sharing the link. Then this information about this user--here "John" with id "1234"--is present anytime John's friends install the app after clicking his link.
   {%endoverride%}
 
   {% override params %}@{@"referringUsername":@"John", @"referringUserId":@"1234"}{%endoverride%}{% endingredient %}
