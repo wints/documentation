@@ -21,8 +21,7 @@ In order for your app to properly handle deep links, and to allow Branch to work
 Inside Android, allow us to hook into your activities where you have declared and intent filter for deeplinking. During the `onCreate` portion of execution, you can add something like the following: 
 
 {% highlight java %}
-// TODO: fill this out for Android
-// --> I'm worried this isn't a good example... if you think it's fine, delete this comment.
+
 
 branch.initSession(new BranchReferralInitListener() {
 	@Override
@@ -33,11 +32,21 @@ branch.initSession(new BranchReferralInitListener() {
 				String key = (String) keys.next();
 				Log.i("Branch Link", key + ", " + referringParams.getString(key));
 				
-				// find where to start Activity.
+				// start photo viewing activity if data available.
+				if (key.equals("photoId")) {
+				    Intent i = new Intent(this, PhotoViewActivity.class);
+				    String photoId = referringParams.optString(key, "");
+				    i.putExtra(key, photoId);
+				    break;
+				}
 			}
+			startActivity(i);
 		} catch (JSONException e) {
 			e.printStackTrace();
 		}
+		// if at this point of of execution, default to normal flow
+		Intent i = new Intent(this, HomeActivity.class);
+		startActivity(i);
 	}
 }, this.getIntent().getData(), this);
 {% endhighlight %}
