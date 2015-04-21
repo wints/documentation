@@ -42,3 +42,9 @@ That's the end of the required setup for the Dashboard! The dashboard is incredi
 ## Conclusion and Advanced Options
 
 {% ingredient dashboard_links/no_sdk %}{%endingredient%}
+
+{% ingredient recipe_endings/incentivized_referral_program %}{%endingredient%}
+{% ingredient recipe_endings/personalized_invite_system %}{%endingredient%}
+{% ingredient recipe_endings/influencers %}{%endingredient%}
+{% ingredient recipe_endings/channel_tags %}{%endingredient%}
+{% ingredient recipe_endings/contact_us %}{%endingredient%}
