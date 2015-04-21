@@ -33,7 +33,7 @@ branch.initSession(new BranchReferralInitListener() {
 				Log.i("Branch Link", key + ", " + referringParams.getString(key));
 				
 				// iterate through keys and start an Activity.
-
+			}
 		} catch (JSONException e) {
 			e.printStackTrace();
 		}
