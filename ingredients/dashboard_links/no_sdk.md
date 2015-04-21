@@ -5,4 +5,4 @@ The Dashboard's [Summary](https://dashboard.branch.io/#) page, specifically the 
 
 ![click flow no open/install](/img/ingredients/dashboard_links/click_flow_no_sdk.png)
 
-To start collecting statistics regarding installs, opens, referred installs -- and to add powerful, deferred deep links -- {%section more_power%}check out any of our other guides.{%endsection%}
+To start collecting statistics regarding installs, opens, referred installs -- and to add powerful, deferred deep links -- {%section more_power%}check out any of our other guides. These allow you to:{%endsection%}
