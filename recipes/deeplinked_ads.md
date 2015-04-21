@@ -137,13 +137,15 @@ Now you need to customize the code in your deep link handler to route to content
 {%endoverride%}
 
 
-{%if page.android%}[TODO] @Sahil, please make the code sample change to fit this guide. Note that I did this on iOS (you can see it in the routing.md and the overrides here.){%endif%}
-
-
 {%override ios_key %}ad_id{%endoverride%}
 {%override ios_comment %}// then load the ad screen with the appropriate content{%endoverride%}
 {%override ios_key_U %}AdId{%endoverride%}
 {%override vc_name %}adVC{%endoverride%}
+
+<!-- Android -->
+{% override akeyL %}ad_id{% endoverride %}
+{% override akeyU %}AdId{% endoverride %}
+<!-- End Android -->
 
 {% endingredient %}
 

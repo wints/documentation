@@ -61,14 +61,15 @@ public void onStart() {
         @Override
         public void onInitFinished(JSONObject referringParams, Branch.BranchError error) {
             if (error == null) {
-            // params are the deep linked params associated with the link that the user clicked before showing up
-            // params will be empty if no data found
-                String pictureID = referringParams.optString("picture_id", "");
-                if (pictureID.equals("")) {
+                // params are the deep linked params associated with the link that the user clicked before showing up
+                // params will be empty if no data found
+                String {% section akeyU %}pictureID{% endsection %} = referringParams.optString({% section akeyL %}"picture_id"{% endsection %}, "");
+                if ({% section akeyU %}pictureID{% endsection %}.equals("")) {
                     startActivity(new Intent(this, HomeActivity.class));
-                } else {
+                }
+                else {
                     Intent i = new Intent(this, ViewerActivity.class);
-                    i.putExtra("PICTURE_ID", pictureID);
+                    i.putExtra({% section akeyL %}"picture_id"{% endsection %}, {% section akeyU %}pictureID{% endsection %});
                     startActivity(i);
                 }
             } else {
