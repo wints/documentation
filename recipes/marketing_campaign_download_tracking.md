@@ -42,7 +42,10 @@ Let's get started. Seeing install numbers (as opposed to merely clicks) requires
 	{%override screenshot_description%}One example description if you want to treat this guide is: "Marketing our launch on Facebook."{%endoverride%}
 {% endingredient %}
 
-{% ingredient dashboard_links/tags %}{% endingredient %}
+{% ingredient dashboard_links/tags %}
+	{%override deep_link_data_url%}For information of the form *[key]*: *[value]* such as "product": "shoes", we recommend adding them to "Deep Link Data (Advanced)", discussed in [Links and Sharing](/domains/links_and_sharing/{{page.platform}}/#attaching-custom-data-to-links) [TODO!]. 
+    {%endoverride%}
+{% endingredient %}
 
 {% ingredient dashboard_links/alias %}
 	{%override optional%}(Optional -- highly recommended){%endoverride%}
@@ -59,10 +62,10 @@ That's it! You now have *campaign- and channel-specific links* that can be share
 
 Every *user click*, every *fresh install*, and every *subsequent open* can be attributed back to an individual link. 
 
-If you go the additional step of allowing users to share via Branch links, you can compare your campaigns to word-of-mouth. If this interests you, check out our guides on the following topics:
+If you go the additional step of allowing users to share via Branch links, you can compare your campaigns to word-of-mouth. If this interests you, check out our guides on these topics and more:
 
-* [Incentivized Referral Program](/recipes/incentivized_referral_program/{{page.platform}}/)
-* [Personalized Invite System](/recipes/personalized_invite_system/{{page.platform}}/)
-* [App Content Share with Deeplink](/recipes/app_content_share_with_deeplink/{{page.platform}}/)
-
-And as always, please email us at [contact@branchmetrics.io](mailto:contact@branchmetrics.io) if you have any questions!
+{% ingredient recipe_endings/incentivized_referral_program %}{%endingredient%}
+{% ingredient recipe_endings/personalized_invite_system %}{%endingredient%}
+{% ingredient recipe_endings/influencers %}{%endingredient%}
+{% ingredient recipe_endings/channel_tags %}{%endingredient%}
+{% ingredient recipe_endings/contact_us %}{%endingredient%}

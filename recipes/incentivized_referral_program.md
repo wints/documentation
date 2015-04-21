@@ -6,8 +6,6 @@ platforms:
 - android
 ---
 
-## Overview
-
 For a referral system, Branch provides:
 
 - _User attribution through a tracking, download URL._ In short, we tell you when an existing user who you empower with a Branch link, drives a new install.
@@ -80,6 +78,7 @@ Again, it's not imperative that you attach any information to the link. As long 
 	{% override more %}{% endoverride %}
 {% endingredient %}
 {% ingredient rewards/reward_example %}{% endingredient %}
+{% ingredient sdk_setup/is_referrable_protip %}{%endingredient%}
 {% ingredient rewards/rewards_are_flexible %}{% endingredient %}
 
 {% ingredient rewards/get_credits %}{%override different_bucket%}{%endoverride%}{% endingredient %}
@@ -91,10 +90,10 @@ Again, it's not imperative that you attach any information to the link. As long 
 
 You now have an incentivized referral program. Like many popular promo-code systems, you can reward both the user who shares a link and the user who clicks the link and installs the app. With Branch links, the magic is built in, so there's no need for a promo code. Because we want to empower developers, we also offer the ability to reward users with credits, track those credits and redeem them--all with a few lines of code.
 
-This guide covered the basics. The following optional sections may be of interest to you, if you want to:
+This guide covered the basics. The following may be of interest to you, if you want to:
 
-1. Reward users not based on referred installs alone, but rather more custom events like referred signups or purchases
-
-2. isReferrable [TODO]
-
-3. .... [TODO]
+{% ingredient recipe_endings/reward %}{%endingredient%}
+{% ingredient recipe_endings/personalized_invite_system %}{%endingredient%}
+{% ingredient recipe_endings/influencers %}{%endingredient%}
+{% ingredient recipe_endings/channel_tags %}{%endingredient%}
+{% ingredient recipe_endings/contact_us %}{%endingredient%}

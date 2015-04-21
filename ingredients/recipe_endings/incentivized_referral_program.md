@@ -1,1 +1,1 @@
-* Create an [incentivized referral program](recipes/incentivized_referral_program/{{page.platform}}/) where you reward users based on the installs or engagement they generate
+* Create an [incentivized referral program](/recipes/incentivized_referral_program/{{page.platform}}/) where you reward users based on the installs or engagement they generate

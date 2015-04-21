@@ -6,7 +6,7 @@ Imagine how URLs are used on the Internet... now you have the same power inside 
 
 This data is stored on our backend and presented again when the user clicks on a link via the `deepLinkHandler` -- it's not simply appended to the end of the URL.
 
-{% protip title="Tip:" %}
+{% protip title="Tip: Aliasing Links" %}
 Because we don't store data in the URL, you can create pretty links, like `bnc.lt/bob`. For information on custom aliases for links, visit [Links and Sharing](/domains/links_and_sharing/ios/#alias---the-custom-ending).
 {% endprotip %}
 

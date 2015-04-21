@@ -1,0 +1,1 @@
+* [Reward users](/domains/rewards/{{page.platform}}/) for driving installs or even custom events that you define, such as "signup" or "purchase"

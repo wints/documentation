@@ -11,9 +11,9 @@ platforms:
 {% ingredient sdk_links/creating_links %}{%endingredient%}
 {% ingredient sdk_links/custom_data %}{%endingredient%}
 
-### Tip: Be sure to setIdentity
-
-[TODO] In order...
+{% protip title='Tip: Identify your users!'  %}
+You should [identify your users](/domains/configuring_client_apps/{{page.platform}}/#identifying-your-users) so that you know who is sharing--and who is effectively driving the most installs and engagement.
+{% endprotip %}
 
 
 ## Customizing and Tagging Links
