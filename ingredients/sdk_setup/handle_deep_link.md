@@ -36,17 +36,17 @@ branch.initSession(new BranchReferralInitListener() {
 				if (key.equals("photoId")) {
 				    Intent i = new Intent(this, PhotoViewActivity.class);
 				    String photoId = referringParams.optString(key, "");
-				    i.putExtra(key, photoId)
+				    i.putExtra(key, photoId);
+				    break;
 				}
-				// otherwise, default to regular flow.
-				else {
-					Intent i = new Intent(this, HomeActivity.class)
-				}
-				startActivity(i);
 			}
+			startActivity(i);
 		} catch (JSONException e) {
 			e.printStackTrace();
 		}
+		// if at this point of of execution, default to normal flow
+		Intent i = new Intent(this, HomeActivity.class);
+		startActivity(i);
 	}
 }, this.getIntent().getData(), this);
 {% endhighlight %}
