@@ -43,6 +43,7 @@ var Sidebar = React.createClass({
 	render: function() {
 		var self = this;
 		var groups = R.map(function(group) {
+			if (!group.pages.length) { return; }
 			return (
 				<div className="sidebar-group" key={ group.title }>
 					<div className="sidebar-title">{ group.title }</div>

@@ -1,10 +1,7 @@
 ---
 type: domain
 title: Configuring the Dashboard
-platforms:
-- ios
-- android
-- web
+hide_platform_selector: true
 ---
 
 The first section of this page describes the required Dashboard steps for getting your {{page.platform_formatted}} app up and running. After you complete these required steps, you can either keep reading for additional options, or you should check out the [Configuring Client Apps](/domains/configuring_client_apps/{{page.platform}}/) page.
@@ -15,7 +12,7 @@ The first section of this page describes the required Dashboard steps for gettin
 {% ingredient dashboard_setup/store_or_custom_url %}{% endingredient %}
 {% ingredient dashboard_setup/uri_scheme %}{% endingredient %}
 
-That's the end of the required setup for the Dashboard! The dashboard is incredibly powerful, so if you want to dive in deeper, keep reading. 
+That's the end of the required setup for the Dashboard! The dashboard is incredibly powerful, so if you want to dive in deeper, keep reading.
 
 Lastly, if your {{page.platform_formatted}} app isn't fully configured inside the app, simple instructions for installing our SDK can be found on the [Configuring Client Apps](/domains/configuring_client_apps/{{page.platform}}/) page.
 

@@ -7,8 +7,8 @@
   <body>
 
 	<div class="container main">
-		{% platform_selector %}
-		<div class="row">
+		{% if page.hide_platform_selector != true %}{% platform_selector %}{% endif %}
+		<div class="row p-t-20">
 			<div class="col-md-3">
 				{% sidebar %}
 			</div>

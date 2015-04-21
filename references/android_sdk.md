@@ -1,4 +1,5 @@
 ---
+published: false
 type: reference
 title: Android SDK
 platforms:

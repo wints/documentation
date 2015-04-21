@@ -2,14 +2,16 @@ require 'json'
 
 module Jekyll
   class PlatformPage < Page
-    def initialize(site, base, type, page, platform, default)
+    def initialize(site, base, type, page, platform, isDefault, isRootIndex)
       @site = site
       @base = base
-      if platform != '' and !default then
-        @dir = File.join(type + 's', page.name.split(".")[0])
+      types = if !isRootIndex then type + 's' else '' end
+
+      if platform != '' and !isDefault then
+        @dir = File.join(types, page.name.split(".")[0])
         @name = platform + '.md'
       else
-        @dir = type + 's'
+        @dir = types
         @name = page.name.split(".")[0] + '.md'
       end
 
@@ -25,33 +27,36 @@ module Jekyll
       self.data[platform] = true
       self.data['platform'] = platform
       self.data['platform_formatted'] = formatted_platforms[platform] or platform
-      self.data['default'] = default
+      self.data['default'] = isDefault
       self.data['layout'] = type
-      self.data['current_path'] = type + 's' + '/' + page.name.split(".")[0]
 
+      path_page_name = page.name.split(".")[0]
+      if path_page_name == 'index' then path_page_name = '' end
+      self.data['current_path'] = types + '/' + path_page_name
     end
   end
 
   class PlatformGenerator < Generator
     def buildSiteMap(site)
-      group_pages = site.pages.select { |page| ['recipe', 'overview', 'domain' #, 'reference'
-                                                ].include?(page.data['type']) }
+      group_pages = site.pages.select { |page| ['recipe', 'overview', 'domain', 'reference' ].include?(page.data['type']) }
       site.data['site_map'] = {
         'overview' => { 'title' => 'Overview', 'pages' => Hash.new },
         'recipe' => { 'title' => 'Building with Branch (Recipes)', 'pages' => Hash.new },
-        'domain' => { 'title' => 'Feature (Domains)', 'pages' => Hash.new }
-        # 'reference' => { 'title' => 'API Reference', 'pages' => Hash.new }
+        'domain' => { 'title' => 'Feature (Domains)', 'pages' => Hash.new },
+        'reference' => { 'title' => 'API Reference', 'pages' => Hash.new }
       }
 
       group_pages.each do |page|
-        if page.data['platforms'] then
-            path = page.name.split(".")[0]
-            site.data['site_map'][page.data['type']]['pages'][path] = {
-              'path' => path,
-              'title' => page.data['title'],
-              'platforms' => Hash[page.data['platforms'].zip(page.data['platforms'].map {|i| true })]
-            }
-        end
+        page_platforms = if page.data['platforms'] then page.data['platforms'] else [] end
+
+        path = page.name.split(".")[0]
+        if path == 'index' then path = '' end
+
+        site.data['site_map'][page.data['type']]['pages'][path] = {
+          'path' => path,
+          'title' => page.data['title'],
+          'platforms' => Hash[page_platforms.zip(page_platforms.map {|i| true })]
+        }
       end
 
       site.data['site_layout'] = Marshal.load( Marshal.dump(site.data['site_map']) )
@@ -64,21 +69,24 @@ module Jekyll
 
     def generate(site)
       buildSiteMap(site)
-      filtered_pages = site.pages.select { |page| ['recipe', 'overview', 'domain' #, 'reference'
-                                                   ].include?(page.data['type']) }
+      filtered_pages = site.pages.select { |page| ['recipe', 'overview', 'domain', 'reference' ].include?(page.data['type']) }
       site.pages.reject! { |page| page.data['type'] == 'recipe' or page.data['type'] == 'ingredient' }
 
       filtered_pages.each do |page|
         if page.data['platforms'] then
-          # add a default page as the first value in the array
-          site.pages << PlatformPage.new(site, site.source, page.data['type'], page, page.data['platforms'][0], true)
           page.data['platforms'].each do |platform|
-            site.pages << PlatformPage.new(site, site.source, page.data['type'], page, platform, false)
+            site.pages << PlatformPage.new(site, site.source, page.data['type'], page, platform, false, false)
           end
-        else
-          site.pages << PlatformPage.new(site, site.source, page.data['type'], page, page.data['platforms'][0] || "", false)
+        end
+        # add a default page as the first value in the array
+        default_platform = if page.data['platforms'] then page.data['platforms'][0] else '' end
+        site.pages << PlatformPage.new(site, site.source, page.data['type'], page, default_platform, true, false)
+
+        if page.data['root_index'] then
+          site.pages << PlatformPage.new(site, site.source, page.data['type'], page, default_platform, false, true)
         end
       end
+
     end
   end
 end

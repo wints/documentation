@@ -1,10 +1,7 @@
 ---
 type: domain
 title: Webhooks
-platforms:
-- ios
-- android
-- web
+hide_platform_selector: true
 ---
 
 {%ingredient webhooks/intro %}{%endingredient%}

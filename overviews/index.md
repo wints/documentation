@@ -1,14 +1,10 @@
 ---
 type: overview
 title: Overview
-platforms:
-- ios
-- android
-- web
-- cordova
-- xamarin
-- unity
-- swift
+root_index: true
+hide_platform_selector: true
 ---
 
-blah
+# Welcome to Branch!
+
+prepare to be amazed!
