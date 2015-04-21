@@ -6,6 +6,19 @@ platforms:
 - android
 ---
 
+Deeplinked ads are not a new breed--just a rare one. With Branch they're as easy as creating a link on the Dashboard and setting up your {{page.platform_formatted}} app to handle incoming deep links.
+
+This makes the following possible:
+
+* A user clicks on an ad for 20% off all purchases before the end of the week, and upon opening the app sees the coupon and has it automatically added to the shopping cart.
+* A user clicks on an ad for blue sneakers. You show him the blue sneakers as soon as he opens the app.
+* You run a massive ad campaign that drives a ton of new users to the app. You want create a funnel to see how many users signed up and/or completed purchases after clicking different ads (and the conversion rate).
+* You know that users clicking on your ads are already familiar with your product. So in your app you reduce the carousel shown to new users from 5 to 2 if they've come in through an ad.
+
+{% protip title="With or without the app!" %}
+Note that all the deeplink always succeeds when the app is opened, _even if the app was not installed when the ad was clicked on!_ This is the power of deferred deeplinking thanks to Branch.
+{%endprotip%}
+
 ## Configuring the Dashboard for your {{ page.platform_formatted }} app
 
 {% ingredient dashboard_setup/app_name %}{% endingredient %}
