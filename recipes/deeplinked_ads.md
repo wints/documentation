@@ -128,9 +128,8 @@ Now you need to customize the code in your deep link handler to route to content
 {%endoverride%}
 
 {% override android_explanation %}
-[TODO] @Sahil, please convert this to Java/Android-speak.
 
-Inside of the deepLinkHandler, you will want to examine the params dictionary to determine whether the user clicked on a link to content. Regardless of whether your app involves pictures, videos, text or whatever novel content your app contains, you likely have an internal system of identifiers.
+Inside of the `BranchReferralInitListener` from the `initSession` callback, you will want to examine the params dictionary to determine whether the user clicked on a link to content. Regardless of whether your app involves pictures, videos, text or whatever novel content your app contains, you likely have an internal system of identifiers.
 
 In this case, we want to handle users clicking on ads. When creating an ad, you specified an `ad_id`. If a user clicks a link to a from an ad, this Id will show up in the params dictionary in the deepLinkHandler.
 
