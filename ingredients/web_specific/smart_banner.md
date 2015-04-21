@@ -80,4 +80,4 @@ var options = {
 }
 {% endhighlight %}
 
-To see a full list of the options that can be toggled, [TODO] [click here]().
+<!--- TODO: To see a full list of the options that can be toggled, [TODO] [click here](). -->

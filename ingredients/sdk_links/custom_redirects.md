@@ -6,10 +6,10 @@ If, however, you want to override the default behavior, you can specify redirect
 {% section ios_url %}
 ## iOS App Store override - $ios_url
 
+When a user doesn't have your app and clicks a link on iOS, by default the user is taken to the [App Store or Custom URL](/domains/configuring_the_dashboard/#app-store-or-custom-url) that you specified on the Dashboard. If you want to specify a different destination on a per-link basis, include a value for the `$ios_url`.
+
 <!---    iOS -->
 {% if page.ios %}
-
-When a user doesn't have your app and clicks a link on iOS, by default the user is taken to the [TODO] [App Store or Custom URL]() that you specified on the Dashboard. If you want to specify a different destination on a per-link basis, include a value for $ios_url.
 
 {% highlight objc %}
 [[Branch getInstance] getShortURLWithParams:@{@"$ios_url": @"http://myawesomesite.com/ios-app-landing-page"} andCallback:^(NSString *url, NSError *error) {
@@ -23,8 +23,6 @@ When a user doesn't have your app and clicks a link on iOS, by default the user 
 
 <!---    Android -->
 {% if page.android %}
-
-When a user doesn't have your app and clicks a link on iOS, by default, the user is taken to the Apple App store that you specify on our dashboard. If you went to specify a different destination on a per-link basis, add a value to the `$ios_url` key.
 
 {% highlight java %}
 JSONObject obj = new JSONObject();
@@ -56,10 +54,10 @@ Branch.getInstance(getApplicationContext()).getShortUrl(obj, new BranchLinkCreat
 {% section android_url %}
 ## Android Play Store override - $android_url
 
+When a user doesn't have your app and clicks a link on Android, by default the user is taken to the [Play Store or Custom URL](/domains/configuring_the_dashboard/android/#play-store-or-custom-url) that you specified on the Dashboard. If you want to specify a different destination on a per-link basis, include a value for the `$android_url`.
+
 <!---    iOS -->
 {% if page.ios %}
-
-When a user doesn't have your app and clicks a link on Android, by default the user is taken to the [TODO] [Play Store or Custom URL]() that you specified on the Dashboard. If you want to specify a different destination on a per-link basis, include a value for $android_url.
 
 {% highlight objc %}
 [[Branch getInstance] getShortURLWithParams:@{@"$android_url": @"http://myawesomesite.com/android-app-landing-page"} andCallback:^(NSString *url, NSError *error) {
@@ -158,7 +156,7 @@ Branch.getInstance(getApplicationContext()).getShortUrl(obj, new BranchLinkCreat
 
 In certain cases you may want to override the default Branch behavior, which uses cookies and communication with our backend to determine whether to open an app. Branch knows that a user has the app if that user has clicked a Branch link and opened the app. This means that the first time a user clicks a Branch link, even if the app is installed, we will direct the user to the App Store.
 
-To override this behavior, you can either select "Always try to open the app" on the [TODO] [Dashboard](), or you can specify "$always_deeplink" : "true" on a per-link basis.
+To override this behavior, you can either select "Always try to open the app" on the [Dashboard](/domains/configuring_the_dashboard/{{page.platform}}/#always-try-to-open-the-app), or you can specify "$always_deeplink" : "true" on a per-link basis.
 
 <!---    iOS -->
 {% if page.ios %}

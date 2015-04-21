@@ -17,7 +17,6 @@ For a referral system, Branch provides:
 - _(optional) Credit transaction history._ At any time, via API or SDK, you can retrieve the full credit history of the user
 
 
-
 ## Configuring the Dashboard for your {{ page.platform_formatted }} app
 {% ingredient dashboard_setup/app_name %}{% endingredient %}
 {% ingredient dashboard_setup/web_url %}{% endingredient %}

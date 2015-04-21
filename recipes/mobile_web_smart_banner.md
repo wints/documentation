@@ -6,6 +6,7 @@ platforms:
 - android
 ---
 
+
 The mobile web smart banner is a powerful tool--it brings users in from the web experience where they are more easily lost, to your native mobile experience. On desktop, the banner can even drive users to mobile via our text-me-the-app function.
 
 It's highly customizable. If you want simple, cross-platform download links that just work, follow the first two sections on [configuring the dashboard](/recipes/mobile_web_smart_banner/{{page.platform}}/#configuring-the-dashboard-for-your-{{page.platform}}-app) and [The Smart Banner](/recipes/mobile_web_smart_banner/{{page.platform}}/#the-smart-banner).
