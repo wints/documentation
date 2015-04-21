@@ -6,6 +6,12 @@ platforms:
 - android
 ---
 
+The mobile web smart banner is a powerful tool--it brings users in from the web experience where they are more easily lost, to your native mobile experience. On desktop, the banner can even drive users to mobile via our text-me-the-app function.
+
+It's highly customizable. If you want simple, cross-platform download links that just work, follow the first two sections on [configuring the dashboard](/recipes/mobile_web_smart_banner/{{page.platform}}/#configuring-the-dashboard-for-your-{{page.platform}}-app) and [The Smart Banner](/recipes/mobile_web_smart_banner/{{page.platform}}/#the-smart-banner).
+
+If you also want to pass data through the install process or deep link straight to content, check out the optional 3rd and 4th sections on [Configuring the Client for Deep Linking](/recipes/mobile_web_smart_banner/{{page.platform}}/#optional-configuring-the-client-for-deep-linking) and [Routing: passing information from the Banner](/recipes/mobile_web_smart_banner/{{page.platform}}/#optional-routing-passing-information-from-the-banner).
+
 ## Configuring the Dashboard for your {{ page.platform_formatted }} app
 {% ingredient dashboard_setup/app_name %}{% endingredient %}
 {% ingredient dashboard_setup/web_url %}{% endingredient %}
@@ -49,3 +55,14 @@ Using our example of routing above with the PicVC, you'd simply need to change t
 Now when a user clicks on the Smart Banner on a mobile device, when they open your app they will be taken straight to a view controller to see picture with id "12345". It's that simple.
 
 Deep linking has countless possibilities and we'd be happy to brainstorm use cases for your specific app. Happy building!
+
+
+## Conclusion
+
+You've learned how to add a smart banner to your website with minimal configuration and some copying-and-pasting Javascript into your website. Perhaps the allure of passing data through install or deep linking to content caught your eye and you added the SDK to your {{page.platform_formatted}} app. There's a ton more that Branch can do. For example, you can:
+
+{% ingredient recipe_endings/incentivized_referral_program %}{%endingredient%}
+{% ingredient recipe_endings/personalized_invite_system %}{%endingredient%}
+{% ingredient recipe_endings/influencers %}{%endingredient%}
+{% ingredient recipe_endings/channel_tags %}{%endingredient%}
+{% ingredient recipe_endings/contact_us %}{%endingredient%}

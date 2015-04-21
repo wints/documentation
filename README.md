@@ -29,13 +29,6 @@ npm install && bundle install
 bundle exec jekyll serve --watch
 ```
 
-Derrick's comments
-=======
-
-- need Obj-C/Swift UI element
-- I want special styling for the "tips"
-
-
 Future todos
 =======
 
