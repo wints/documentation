@@ -32,21 +32,11 @@ branch.initSession(new BranchReferralInitListener() {
 				String key = (String) keys.next();
 				Log.i("Branch Link", key + ", " + referringParams.getString(key));
 				
-				// start photo viewing activity if data available.
-				if (key.equals("photoId")) {
-				    Intent i = new Intent(this, PhotoViewActivity.class);
-				    String photoId = referringParams.optString(key, "");
-				    i.putExtra(key, photoId);
-				    break;
-				}
-			}
-			startActivity(i);
+				// iterate through keys and start an Activity.
+
 		} catch (JSONException e) {
 			e.printStackTrace();
 		}
-		// if at this point of of execution, default to normal flow
-		Intent i = new Intent(this, HomeActivity.class);
-		startActivity(i);
 	}
 }, this.getIntent().getData(), this);
 {% endhighlight %}
