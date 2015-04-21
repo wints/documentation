@@ -62,10 +62,10 @@ That's it! You now have *campaign- and channel-specific links* that can be share
 
 Every *user click*, every *fresh install*, and every *subsequent open* can be attributed back to an individual link. 
 
-If you go the additional step of allowing users to share via Branch links, you can compare your campaigns to word-of-mouth. If this interests you, check out our guides on the following topics:
+If you go the additional step of allowing users to share via Branch links, you can compare your campaigns to word-of-mouth. If this interests you, check out our guides on these topics and more:
 
-* [Incentivized Referral Program](/recipes/incentivized_referral_program/{{page.platform}}/)
-* [Personalized Invite System](/recipes/personalized_invite_system/{{page.platform}}/)
-* [App Content Share with Deeplink](/recipes/app_content_share_with_deeplink/{{page.platform}}/)
-
-And as always, please email us at [contact@branchmetrics.io](mailto:contact@branchmetrics.io) if you have any questions!
+{% ingredient recipe_endings/incentivized_referral_program %}{%endingredient%}
+{% ingredient recipe_endings/personalized_invite_system %}{%endingredient%}
+{% ingredient recipe_endings/influencers %}{%endingredient%}
+{% ingredient recipe_endings/channel_tags %}{%endingredient%}
+{% ingredient recipe_endings/contact_us %}{%endingredient%}

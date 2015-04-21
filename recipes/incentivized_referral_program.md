@@ -6,8 +6,6 @@ platforms:
 - android
 ---
 
-## Overview
-
 For a referral system, Branch provides:
 
 - _User attribution through a tracking, download URL._ In short, we tell you when an existing user who you empower with a Branch link, drives a new install.
