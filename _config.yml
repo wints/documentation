@@ -11,7 +11,6 @@ highlighter: pygments
 dashboard_url: "http://localhost:3000"
 
 exclude:
-- [vendor]
 - .gitignore
 - README.md
 - documentation_assets
@@ -25,6 +24,8 @@ exclude:
 - node.txt
 - Gemfile
 - Gemfile.lock
+
+exclude: [vendor]
 
 sass:
     sass_dir: css
