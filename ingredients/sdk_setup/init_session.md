@@ -20,12 +20,11 @@ Here's an example of the initSession call that you should make. This **must** be
 <!---       /iOS explanation -->
 
 <!---       iOS code -->
-{% section ios_code %}
-
 {% highlight objc %}
 // at the top of your AppDelegate.m file
 #import <Branch/Branch.h>
-
+{% endhighlight %}
+{% highlight objc %}
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 	// anything else you need to do in this method
 	// ...
@@ -40,7 +39,6 @@ Here's an example of the initSession call that you should make. This **must** be
 	}];
 }
 {% endhighlight %}
-{% endsection %}
 <!---       /iOS code -->
 
 {% endif %}

@@ -45,7 +45,7 @@ Your app key can be retrieved on the [Settings](https://dashboard.branch.io/#/se
 <application>
     <!-- Other existing entries -->
 
-    <!-- Add this meta-data below; DO NOT changing the android:value -->
+    <!-- Add this meta-data below; DO NOT change the android:value -->
     <meta-data android:name="io.branch.sdk.ApplicationId" android:value="@string/bnc_app_key" />
 </application>
 {% endhighlight %}
