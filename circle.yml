@@ -1,0 +1,20 @@
+machine:
+  ruby:
+    version: 1.9.3-p0-falcon
+
+checkout:
+  post:
+    - git submodule sync
+    - git submodule update --init
+
+deployment:
+  production:
+    branch: production
+    commands:
+      - bundle exec jekyll build
+      - bundle exec s3_website push
+  master:
+    branch: master
+    commands:
+      - bundle exec jekyll build
+      - bundle exec s3_website push --dry-run
