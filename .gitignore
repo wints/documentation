@@ -5,3 +5,5 @@ npm-debug.log
 .sass-cache
 Gemfile.lock
 node.txt
+circle.yml
+s3_website.yml
