@@ -51,7 +51,17 @@ If you want to see the number of credits in a custom bucket you've specified, su
 <!-- end iOS -->
 {%if page.android %}
 {% highlight java %}
-// TODO: fill this out for Android @sahil
+Branch.getInstance(getApplicationContext()).loadRewards(new BranchReferralStateChangedListener() {
+	@Override
+	public void onStateChanged(boolean changed, Branch.BranchError error) {
+		// changed boolean will indicate if the balance changed from what is currently in memory
+
+		if (error != null) {
+		    String bucket = "myBucket";
+		    Branch.getInstance(getApplicationContext()).getCreditsForBucket(bucket)
+		}
+	}
+});
 {% endhighlight %}
 {%endif%}
 
