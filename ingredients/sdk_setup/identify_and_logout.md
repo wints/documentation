@@ -3,7 +3,7 @@
 
 {% section pre_explanation %}{% endsection %}
 
-Branch automatically tracks unique devices. However, to make full use of our powerful API, you should also identify users with form of unique identification your app uses. The usefulness of this is hard to understate. When making future queries, when scanning through data on the dashboard, and when combing through anything you choose to export, you'll see your app's user Id alongside the Branch-provided user Id. If you want to know that User A shared with User B, add this code.
+Branch automatically tracks unique devices. However, to make full use of our powerful API, you should also identify users with whichever form of unique identification your app uses. The usefulness of this is hard to understate. When making future queries, when scanning through data on the dashboard, and when combing through anything you choose to export, you'll see your app's user Id alongside the Branch-provided user Id. If you want to know that User A shared with User B, add this code.
 
 The good news is that your app only needs the addition of two lines of code.
 
