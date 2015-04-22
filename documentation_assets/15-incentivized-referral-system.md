@@ -1,2 +1,0 @@
-<!--- Incentivized Referral System -->
-<!--- TODO -->
