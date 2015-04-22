@@ -2,10 +2,10 @@ machine:
   ruby:
     version: 1.9.3-p0-falcon
 
-checkout:
-  post:
-    - git submodule sync
-    - git submodule update --init
+# checkout:
+#   post:
+#     - git submodule sync
+#     - git submodule update --init
 
 deployment:
   production:
