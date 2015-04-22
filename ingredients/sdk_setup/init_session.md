@@ -15,7 +15,7 @@ When a user clicks a Branch link and your app opens, the Branch SDK contacts the
 
 The `initSession` call is an asynchronous call and any other calls will be queued up to complete after the server returns a response.
 
-Here's an example of the initSession call that you should make. This **must** be placed inside your app delegate's `application:didFinishLaunchingWithOptions`.
+Here's an example of the initSession call that you should make. This **must** be placed inside your app delegate's `application:didFinishLaunchingWithOptions:`.
 {% endsection %}
 <!---       /iOS explanation -->
 
@@ -23,6 +23,9 @@ Here's an example of the initSession call that you should make. This **must** be
 {% section ios_code %}
 
 {% highlight objc %}
+// at the top of your AppDelegate.m file
+#import <Branch/Branch.h>
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 	// anything else you need to do in this method
 	// ...
