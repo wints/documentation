@@ -12,8 +12,10 @@ function getStateFromStore() {
 var GroupPages = React.createClass({
 	render: function() {
 		var self = this;
+			type = this.props.type != 'overview' ? this.props.type + 's': null;
+
 		var pages = R.map(function(page) {
-			var path = [ self.props.type + 's', page.path ],
+			var path = type ? [ type, page.path ] : [ page.path ];
 				isCurrentPath = self.props.current_path == path.join('/');
 			if (page.platforms[self.props.platform]) {
 				path.push(self.props.platform);

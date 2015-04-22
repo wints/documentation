@@ -46,7 +46,7 @@ var PlatformSelector = React.createClass({
 		});
 
 		return (
-			<div className="row text-center">
+			<div className="row text-center p-b-20">
 				<div className="btn-group">
 					{ platforms(this.props.platforms) }
 				</div>

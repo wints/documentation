@@ -2,10 +2,11 @@ require 'json'
 
 module Jekyll
   class PlatformPage < Page
-    def initialize(site, base, type, page, platform, isDefault, isRootIndex)
+    def initialize(site, base, type, page, platform, isDefault)
       @site = site
       @base = base
-      types = if !isRootIndex then type + 's' else '' end
+      # set the type to empty if overview so that overview pages will be at root
+      types = if type != 'overview' then type + 's' else '' end
 
       if platform != '' and !isDefault then
         @dir = File.join(types, page.name.split(".")[0])
@@ -32,7 +33,9 @@ module Jekyll
 
       path_page_name = page.name.split(".")[0]
       if path_page_name == 'index' then path_page_name = '' end
-      self.data['current_path'] = types + '/' + path_page_name
+
+      self.data['current_path'] = if types.length > 0 && path_page_name.length > 0 then types + '/' + path_page_name else '' end
+
     end
   end
 
@@ -75,16 +78,12 @@ module Jekyll
       filtered_pages.each do |page|
         if page.data['platforms'] then
           page.data['platforms'].each do |platform|
-            site.pages << PlatformPage.new(site, site.source, page.data['type'], page, platform, false, false)
+            site.pages << PlatformPage.new(site, site.source, page.data['type'], page, platform, false)
           end
         end
         # add a default page as the first value in the array
         default_platform = if page.data['platforms'] then page.data['platforms'][0] else '' end
-        site.pages << PlatformPage.new(site, site.source, page.data['type'], page, default_platform, true, false)
-
-        if page.data['root_index'] then
-          site.pages << PlatformPage.new(site, site.source, page.data['type'], page, default_platform, false, true)
-        end
+        site.pages << PlatformPage.new(site, site.source, page.data['type'], page, default_platform, true)
       end
 
     end

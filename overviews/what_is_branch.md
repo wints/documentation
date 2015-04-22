@@ -1,5 +1,4 @@
 ---
-published: false
 type: overview
 title: What is Branch?
 platforms:
