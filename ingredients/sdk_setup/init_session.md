@@ -15,20 +15,17 @@ When a user clicks a Branch link and your app opens, the Branch SDK contacts the
 
 The `initSession` call is an asynchronous call and any other calls will be queued up to complete after the server returns a response.
 
-Here's an example of the initSession call that you should make. This **must** be placed inside your app delegate's `application:didFinishLaunchingWithOptions:`.
+There are a few pieces that **must** be in place. First, find **AppDelegate.m** in the left sidebar and begin editing it:
 {% endsection %}
-<!---       /iOS explanation -->
 
-<!---       iOS code -->
-{% highlight objc %}
-// at the top of your AppDelegate.m file
-#import <Branch/Branch.h>
-{% endhighlight %}
+* Add `#import "Branch.h"` at the top of the file
+* Find the line which reads: 
 {% highlight objc %}
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-	// anything else you need to do in this method
-	// ...
+{% endhighlight %}
+and paste the following right below it: 
 
+{% highlight objc %}
 	Branch *branch = [Branch getInstance];
 	[branch initSessionWithLaunchOptions:launchOptions andRegisterDeepLinkHandler:^(NSDictionary *params, NSError *error) {
         if (!error) {
@@ -37,9 +34,9 @@ Here's an example of the initSession call that you should make. This **must** be
 			// ... insert custom logic here ...
         }
 	}];
-}
 {% endhighlight %}
-<!---       /iOS code -->
+* Ensure that this method is closed with `return YES;`.
+
 
 {% endif %}
 <!---    /iOS -->
