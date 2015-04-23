@@ -24,8 +24,7 @@ exclude:
 - node.txt
 - Gemfile
 - Gemfile.lock
-
-exclude: [vendor]
+- [vendor]
 
 sass:
     sass_dir: css
