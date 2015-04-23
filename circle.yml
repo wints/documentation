@@ -4,8 +4,7 @@ machine:
 
 checkout:
   post:
-    - git submodule init
-    - git submodule update
+    - git submodule update --init
     - bundle install
 
 test:
