@@ -9,11 +9,11 @@ checkout:
     - bundle install
 
 deployment:
-  production:
-    branch: production
-    commands:
-      - bundle exec jekyll build
-      - bundle exec s3_website push
+  # production:
+  #   branch: production
+  #   commands:
+  #     - bundle exec jekyll build
+  #     - bundle exec s3_website push
   master:
     branch: master
     commands:
