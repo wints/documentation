@@ -15,9 +15,8 @@ This makes the following possible:
 * You run a massive ad campaign that drives a ton of new users to the app. You want create a funnel to see how many users signed up and/or completed purchases after clicking different ads (and the conversion rate).
 * You know that users clicking on your ads are already familiar with your product. So in your app you reduce the carousel shown to new users from 5 to 2 if they've come in through an ad.
 
-{% protip title="With or without the app!" %}
-Note that all the deeplink always succeeds when the app is opened, _even if the app was not installed when the ad was clicked on!_ This is the power of deferred deeplinking thanks to Branch.
-{%endprotip%}
+{% protip title="Branch links work even on first install!" %}
+With standard deeplinks, if a user doesn't have the app, the link fails. With Branch links, users without the app will be directed to the {%if page.ios%}App{%endif%}{%if page.android%}Play{%endif%} Store -- and upon opening the app can be deeplinked! This is called *Deferred Deep Linking*.{%endprotip%}
 
 ## Configuring the Dashboard for your {{ page.platform_formatted }} app
 
