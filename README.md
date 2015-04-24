@@ -1,6 +1,8 @@
 Documentation
 =======
 
+Live at: http://docs.branch.io.s3-website-us-west-1.amazonaws.com/
+
 ### Install Bundler
 ```
 gem install bundler
@@ -55,8 +57,4 @@ Right now we are primarily focused on 2. Recipes and 3. Domains, as well as the 
 `Ingredients`: The pieces. A short, self-contained explanation and/or code sample.
 
 ---
-
-The next thing to be aware of is our syntax.
-
-[TODO]
 
