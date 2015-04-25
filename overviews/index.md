@@ -49,3 +49,6 @@ We also have information separated into several **Feature** pages, as you can se
 {% ingredient recipe_preview/channel_tags %}
 	{%override platform%}ios{%endoverride%}
 {%endingredient%}
+{% ingredient recipe_preview/reward %}
+	{%override platform%}ios{%endoverride%}
+{%endingredient%}

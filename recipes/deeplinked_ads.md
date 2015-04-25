@@ -118,6 +118,9 @@ After you've added `handleDeepLink` call (discussed in the section [Handle Deep 
 {% ingredient dashboard_links/custom_data %}{%endingredient%}
 
 <!--- ROUTING -->
+
+### Routing within your {{page.platform_formatted}} App
+
 {% ingredient sdk_routing/routing %}
 
 {% override ios_explanation %}
