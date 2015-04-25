@@ -1,1 +1,1 @@
-* Make [**your first link**](/recipes/your_first_link/{{page.platform}}/), which will take users to your app from any platform. Bonus: analytics by campaign and channel!
+* Make [**your first link**](/recipes/your_first_link/{%section platform%}{{page.platform}}{%endsection%}/), which will take users to your app from any platform. Bonus: analytics by campaign and channel!

@@ -73,8 +73,10 @@ If you integrate our SDK into your app, you can:
    iii. apply a certain coupon towards a purchase of a new pair of shoes, with a coupon icon at the top of the screen
 3. Track events and create funnels so you can see which ads are performing best on concrete measures such as # of completed signups or number/type of purchases even if the app was not previously installed.
 
-{% ingredient sdk_setup/installing_the_sdk %}{% endingredient %}
-{% ingredient sdk_setup/branch_key %}{% endingredient %}
+{% ingredient sdk_setup/installing_the_sdk %}
+  {%override telephony%}[here](/recipes/app_content_share_with_deeplink/{{page.platform}}/#installing-the-sdk).{%endoverride%}
+{% endingredient %}
+{% ingredient sdk_setup/branch_key %}{%override screenshot%}{%endoverride%}{% endingredient %}
 {% ingredient sdk_setup/uri_scheme %}
   {%override dashboard_uri %}For more info on setting up a URI scheme on the Dashboard, check out the [section above](/recipes/deeplinked_ads/{{page.platform}}/#uri-scheme).{%endoverride%}
 {% endingredient %}

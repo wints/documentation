@@ -18,16 +18,34 @@ We exist to help you grow your mobile app. More users, happier users, repeat use
 
 Below is our list of "recipes" -- a sampling of things you can build thanks to Branch. They're meant to give you an idea of what's possible and the minimum viable code to inject these features into your app. These appear on the left menu under **Building with Branch**.
 
-{% ingredient recipe_preview/your_first_link %}{%endingredient%}
-{% ingredient recipe_preview/mobile_web_smart_banner %}{%endingredient%}
-{% ingredient recipe_preview/marketing_campaign_download_tracking %}{%endingredient%}
-{% ingredient recipe_preview/personalized_invite_system %}{%endingredient%}
-{% ingredient recipe_preview/deeplinked_ads %}{%endingredient%}
-{% ingredient recipe_preview/incentivized_referral_program %}{%endingredient%}
-{% ingredient recipe_preview/app_content_share_with_deeplink %}{%endingredient%}
+{% ingredient recipe_preview/your_first_link %}
+	{%override platform%}ios{%endoverride%}
+{%endingredient%}
+{% ingredient recipe_preview/mobile_web_smart_banner %}
+	{%override platform%}ios{%endoverride%}
+{%endingredient%}
+{% ingredient recipe_preview/marketing_campaign_download_tracking %}
+	{%override platform%}ios{%endoverride%}
+{%endingredient%}
+{% ingredient recipe_preview/personalized_invite_system %}
+	{%override platform%}ios{%endoverride%}
+{%endingredient%}
+{% ingredient recipe_preview/deeplinked_ads %}
+	{%override platform%}ios{%endoverride%}
+{%endingredient%}
+{% ingredient recipe_preview/incentivized_referral_program %}
+	{%override platform%}ios{%endoverride%}
+{%endingredient%}
+{% ingredient recipe_preview/app_content_share_with_deeplink %}
+	{%override platform%}ios{%endoverride%}
+{%endingredient%}
 
 
 We also have information separated into several **Feature** pages, as you can see on the left. A few highlights from the Features include:
 
-{% ingredient recipe_preview/influencers %}{%endingredient%}
-{% ingredient recipe_preview/channel_tags %}{%endingredient%}
+{% ingredient recipe_preview/influencers %}
+	{%override platform%}ios{%endoverride%}
+{%endingredient%}
+{% ingredient recipe_preview/channel_tags %}
+	{%override platform%}ios{%endoverride%}
+{%endingredient%}

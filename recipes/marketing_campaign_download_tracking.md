@@ -26,8 +26,10 @@ Let's get started. Seeing install numbers (as opposed to merely clicks) requires
 
 
 ## Configuring your {{ page.platform_formatted }} app
-{% ingredient sdk_setup/installing_the_sdk %}{% endingredient %}
-{% ingredient sdk_setup/branch_key %}{% endingredient %}
+{% ingredient sdk_setup/installing_the_sdk %}
+  {%override telephony%}[here](/recipes/app_content_share_with_deeplink/{{page.platform}}/#installing-the-sdk).{%endoverride%}
+{% endingredient %}
+{% ingredient sdk_setup/branch_key %}{%override screenshot%}{%endoverride%}{% endingredient %}
 {% ingredient sdk_setup/uri_scheme %}
   {%override dashboard_uri %}For more info on setting up a URI scheme on the Dashboard, check out the [section above](/recipes/marketing_campaign_download_tracking/{{page.platform}}/#uri-scheme).{%endoverride%}
 {% endingredient %}
@@ -43,7 +45,7 @@ Let's get started. Seeing install numbers (as opposed to merely clicks) requires
 {% endingredient %}
 
 {% ingredient dashboard_links/tags %}
-	{%override deep_link_data_url%}For information of the form *[key]*: *[value]* such as "product": "shoes", we recommend adding them to "Deep Link Data (Advanced)", discussed in [Links and Sharing](/domains/links_and_sharing/{{page.platform}}/#attaching-custom-data-to-links) [TODO!]. 
+	{%override deep_link_data_url%}For information of the form *[key]*: *[value]* such as "product": "shoes", we recommend adding them below--see [Deep Link Data (Optional)](/recipes/marketing_campaign_download_tracking/{{page.platform}}/#deep-link-data-optional).
     {%endoverride%}
 {% endingredient %}
 
@@ -52,6 +54,10 @@ Let's get started. Seeing install numbers (as opposed to merely clicks) requires
 {% endingredient %}
 
 {% ingredient dashboard_links/og_tags %}{% endingredient %}
+{% ingredient dashboard_links/custom_data %}
+	{%override advanced%}(Optional){%endoverride%}
+	{%override description%}This custom data can be anything you want and is part of Branch's secret sauce. For now you don't need to put anything here. In case you're interested, you add data at the bottom of the link creation process.{%endoverride%}
+{% endingredient %}
 {% ingredient dashboard_links/end %}{% endingredient %}
 <!--- /Creating your Link -->
 

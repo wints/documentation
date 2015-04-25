@@ -29,8 +29,10 @@ For a referral system, Branch provides:
 
 
 ## Configuring your {{ page.platform_formatted }} app
-{% ingredient sdk_setup/installing_the_sdk %}{% endingredient %}
-{% ingredient sdk_setup/branch_key %}{% endingredient %}
+{% ingredient sdk_setup/installing_the_sdk %}
+  {%override telephony%}[here](/recipes/app_content_share_with_deeplink/{{page.platform}}/#installing-the-sdk).{%endoverride%}
+{% endingredient %}
+{% ingredient sdk_setup/branch_key %}{%override screenshot%}{%endoverride%}{% endingredient %}
 {% ingredient sdk_setup/uri_scheme %}
   {%override dashboard_uri %}For more info on setting up a URI scheme on the Dashboard, check out the [section above](/recipes/incentivized_referral_program/{{page.platform}}/#uri-scheme).{%endoverride%}
 {% endingredient %}
