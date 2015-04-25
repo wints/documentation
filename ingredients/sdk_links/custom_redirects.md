@@ -1,4 +1,4 @@
-The default behavior for where links lead to is specified on the Dashboard -- you can read more about it [TODO] [here]().
+The default behavior for where links lead to is specified on the Dashboard's [Link Settings](https://dashboard.branch.io/#/settings/link) page.
 
 If, however, you want to override the default behavior, you can specify redirect behavior on a per-link basis.
 
@@ -103,7 +103,7 @@ Branch.getInstance(getApplicationContext()).getShortUrl(obj, new BranchLinkCreat
 
 ## Desktop override - $desktop_url
 
-When a user clicks a Branch link from a desktop, by default the user is taken to a text-me-the-app page or whichever custom page you specify on the [TODO] [Dashboard](). If you want to specify a different web page on a per-link basis, include a value for $desktop_url.
+When a user clicks a Branch link from a desktop, by default the user is taken to a text-me-the-app page or whichever custom page you specify on the Dashboard's [Link Settings](https://dashboard.branch.io/#/settings/link) page. If you want to specify a different web page on a per-link basis, include a value for $desktop_url.
 
 This is especially useful if you want to serve up content on the web for users who don't have your mobile app.
 
