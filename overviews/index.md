@@ -16,9 +16,6 @@ In other words, Branch allows mobile apps to deeplink through install, meaning e
 
 We exist to help you grow your mobile app. More users, happier users, repeat users. 
 
-
-## Building with Branch
-
 Below is our list of "recipes" -- a sampling of things you can build thanks to Branch. They're meant to give you an idea of what's possible and the minimum viable code to inject these features into your app. These appear on the left menu under **Building with Branch**.
 
 {% ingredient recipe_preview/your_first_link %}{%endingredient%}
@@ -28,7 +25,6 @@ Below is our list of "recipes" -- a sampling of things you can build thanks to B
 {% ingredient recipe_preview/deeplinked_ads %}{%endingredient%}
 {% ingredient recipe_preview/incentivized_referral_program %}{%endingredient%}
 {% ingredient recipe_preview/app_content_share_with_deeplink %}{%endingredient%}
-
 
 
 We also have information separated into several **Feature** pages, as you can see on the left. A few highlights from the Features include:
