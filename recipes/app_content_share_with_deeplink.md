@@ -72,9 +72,9 @@ try {
 
 That's it! After integrating the SDK into your app, it boils down to [generating links](/recipes/app_content_share_with_deeplink/{{page.platform}}/#generating-links) and [routing](/recipes/app_content_share_with_deeplink/{{page.platform}}/#routing), as described above.
 
-{% ingredient recipe_endings/intro %}{%endingredient%}
-{% ingredient recipe_endings/incentivized_referral_program %}{%endingredient%}
-{% ingredient recipe_endings/personalized_invite_system %}{%endingredient%}
-{% ingredient recipe_endings/influencers %}{%endingredient%}
-{% ingredient recipe_endings/channel_tags %}{%endingredient%}
-{% ingredient recipe_endings/contact_us %}{%endingredient%}
+{% ingredient recipe_preview/recipe_end_intro %}{%endingredient%}
+{% ingredient recipe_preview/incentivized_referral_program %}{%endingredient%}
+{% ingredient recipe_preview/personalized_invite_system %}{%endingredient%}
+{% ingredient recipe_preview/influencers %}{%endingredient%}
+{% ingredient recipe_preview/channel_tags %}{%endingredient%}
+{% ingredient recipe_preview/contact_us %}{%endingredient%}

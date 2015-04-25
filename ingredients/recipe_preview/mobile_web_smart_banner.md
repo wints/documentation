@@ -1,0 +1,1 @@
+* Add a fully customizable [**smart web banner**](/recipes/mobile_web_smart_banner/{{page.platform}}/) to your site, which will take users to your app from any platform. 

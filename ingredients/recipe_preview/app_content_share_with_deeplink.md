@@ -1,0 +1,1 @@
+* Let users [**share in-app content**](/recipes/your_first_link/{{page.platform}}/). iHeartRadio's shared links open straight to radio stations, Allthecooks' shared links open straight to recipes. Did we mention that links work across platforms?

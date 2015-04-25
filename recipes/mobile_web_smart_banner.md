@@ -62,8 +62,8 @@ Deep linking has countless possibilities and we'd be happy to brainstorm use cas
 
 You've learned how to add a smart banner to your website with minimal configuration and some copying-and-pasting Javascript into your website. Perhaps the allure of passing data through install or deep linking to content caught your eye and you added the SDK to your {{page.platform_formatted}} app. There's a ton more that Branch can do. For example, you can:
 
-{% ingredient recipe_endings/incentivized_referral_program %}{%endingredient%}
-{% ingredient recipe_endings/personalized_invite_system %}{%endingredient%}
-{% ingredient recipe_endings/influencers %}{%endingredient%}
-{% ingredient recipe_endings/channel_tags %}{%endingredient%}
-{% ingredient recipe_endings/contact_us %}{%endingredient%}
+{% ingredient recipe_preview/incentivized_referral_program %}{%endingredient%}
+{% ingredient recipe_preview/personalized_invite_system %}{%endingredient%}
+{% ingredient recipe_preview/influencers %}{%endingredient%}
+{% ingredient recipe_preview/channel_tags %}{%endingredient%}
+{% ingredient recipe_preview/contact_us %}{%endingredient%}
