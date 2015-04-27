@@ -14,7 +14,6 @@ exclude:
 - vendor
 - .gitignore
 - README.md
-- documentation_assets
 - ingredients
 - js/components
 - js/stores
@@ -25,6 +24,8 @@ exclude:
 - node.txt
 - Gemfile
 - Gemfile.lock
+- circle.yml
+- s3_website.yml
 
 sass:
     sass_dir: css
