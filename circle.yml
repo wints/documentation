@@ -7,7 +7,6 @@ checkout:
     - git submodule update --init --remote
     - bundle install
     - npm install -g uglify-js
-    - uglifyjs js/all.js -c -o js/all.js
 
 test:
   override:
@@ -24,4 +23,5 @@ deployment:
     branch: master
     commands:
       - bundle exec jekyll build
+      - uglifyjs js/all.js -c -o js/all.js
       - bundle exec s3_website push
