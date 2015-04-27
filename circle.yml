@@ -23,5 +23,5 @@ deployment:
     branch: master
     commands:
       - bundle exec jekyll build
-      - uglifyjs js/all.js -c -o js/all.js
+      - uglifyjs _site/js/all.js -c -o _site/js/all.js
       - bundle exec s3_website push
