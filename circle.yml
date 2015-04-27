@@ -6,6 +6,8 @@ checkout:
   post:
     - git submodule update --init --remote
     - bundle install
+    - npm install -g uglify-js
+    - uglifyjs js/all.js -c -o js/all.js
 
 test:
   override:
