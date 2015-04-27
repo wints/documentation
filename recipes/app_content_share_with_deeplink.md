@@ -10,7 +10,7 @@ Using Branch, your users can share links to content from your app -- and other u
 
 Imagine your app allows users to create and publish digital photo books. Let's say a user named James just finished creating a photo book with pictures from his adventure to Southeast Asia. He can share a Branch link to Facebook with the photo book's Id embedded in the link. Then when his friends click on these links and download the app, they will go straight to his Southeast Asia adventure photo book!
 
-And you aren't even limited to linking to content. In the example above:
+And you aren't limited to linking to content. In the example above:
 
 * you can link to James' profile by attaching a userId to the link. 
 * you can embed a promo code so that any of James' friends who click the link automatically get $10 off any books that they create and then print. 
@@ -31,8 +31,10 @@ The possibilities extend far beyond this, but we wanted to give you some ideas t
 
 
 ## Configuring your {{ page.platform_formatted }} app
-{% ingredient sdk_setup/installing_the_sdk %}{% endingredient %}
-{% ingredient sdk_setup/branch_key %}{% endingredient %}
+{% ingredient sdk_setup/installing_the_sdk %}
+  {%override telephony%}[here](/recipes/app_content_share_with_deeplink/{{page.platform}}/#installing-the-sdk).{%endoverride%}
+{% endingredient %}
+{% ingredient sdk_setup/branch_key %}{%override screenshot%}{%endoverride%}{% endingredient %}
 {% ingredient sdk_setup/uri_scheme %}
   {%override dashboard_uri %}For more info on setting up a URI scheme on the Dashboard, check out the [section above](/recipes/app_content_share_with_deeplink/{{page.platform}}/#uri-scheme).{%endoverride%}
 {% endingredient %}
@@ -72,9 +74,9 @@ try {
 
 That's it! After integrating the SDK into your app, it boils down to [generating links](/recipes/app_content_share_with_deeplink/{{page.platform}}/#generating-links) and [routing](/recipes/app_content_share_with_deeplink/{{page.platform}}/#routing), as described above.
 
-{% ingredient recipe_endings/intro %}{%endingredient%}
-{% ingredient recipe_endings/incentivized_referral_program %}{%endingredient%}
-{% ingredient recipe_endings/personalized_invite_system %}{%endingredient%}
-{% ingredient recipe_endings/influencers %}{%endingredient%}
-{% ingredient recipe_endings/channel_tags %}{%endingredient%}
-{% ingredient recipe_endings/contact_us %}{%endingredient%}
+{% ingredient recipe_preview/recipe_end_intro %}{%endingredient%}
+{% ingredient recipe_preview/incentivized_referral_program %}{%endingredient%}
+{% ingredient recipe_preview/personalized_invite_system %}{%endingredient%}
+{% ingredient recipe_preview/influencers %}{%endingredient%}
+{% ingredient recipe_preview/channel_tags %}{%endingredient%}
+{% ingredient recipe_preview/contact_us %}{%endingredient%}

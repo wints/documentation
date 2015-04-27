@@ -1,1 +1,0 @@
-* See a [list of your influencers](/domains/analytics_and_custom_events/{{page.platform}}/#influencers-your-best-users) whose shared links are driving the most installs

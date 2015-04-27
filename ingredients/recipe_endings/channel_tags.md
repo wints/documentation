@@ -1,1 +1,0 @@
-* [Specify the channel](/domains/links_and_sharing/{{page.platform}}/#specifying-channel) (Facebook, Email, etc.) or [tag content](/domains/links_and_sharing/{{page.platform}}/#adding-tags) as it is being shared -- then you can see a breakdown of installs by tag on the Dashboard

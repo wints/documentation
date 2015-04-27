@@ -15,9 +15,8 @@ This makes the following possible:
 * You run a massive ad campaign that drives a ton of new users to the app. You want create a funnel to see how many users signed up and/or completed purchases after clicking different ads (and the conversion rate).
 * You know that users clicking on your ads are already familiar with your product. So in your app you reduce the carousel shown to new users from 5 to 2 if they've come in through an ad.
 
-{% protip title="With or without the app!" %}
-Note that all the deeplink always succeeds when the app is opened, _even if the app was not installed when the ad was clicked on!_ This is the power of deferred deeplinking thanks to Branch.
-{%endprotip%}
+{% protip title="Branch links work even on first install!" %}
+With standard deeplinks, if a user doesn't have the app, the link fails. With Branch links, users without the app will be directed to the {%if page.ios%}App{%endif%}{%if page.android%}Play{%endif%} Store -- and upon opening the app can be deeplinked! This is called *Deferred Deep Linking*.{%endprotip%}
 
 ## Configuring the Dashboard for your {{ page.platform_formatted }} app
 
@@ -74,8 +73,10 @@ If you integrate our SDK into your app, you can:
    iii. apply a certain coupon towards a purchase of a new pair of shoes, with a coupon icon at the top of the screen
 3. Track events and create funnels so you can see which ads are performing best on concrete measures such as # of completed signups or number/type of purchases even if the app was not previously installed.
 
-{% ingredient sdk_setup/installing_the_sdk %}{% endingredient %}
-{% ingredient sdk_setup/branch_key %}{% endingredient %}
+{% ingredient sdk_setup/installing_the_sdk %}
+  {%override telephony%}[here](/recipes/app_content_share_with_deeplink/{{page.platform}}/#installing-the-sdk).{%endoverride%}
+{% endingredient %}
+{% ingredient sdk_setup/branch_key %}{%override screenshot%}{%endoverride%}{% endingredient %}
 {% ingredient sdk_setup/uri_scheme %}
   {%override dashboard_uri %}For more info on setting up a URI scheme on the Dashboard, check out the [section above](/recipes/deeplinked_ads/{{page.platform}}/#uri-scheme).{%endoverride%}
 {% endingredient %}
@@ -117,6 +118,9 @@ After you've added `handleDeepLink` call (discussed in the section [Handle Deep 
 {% ingredient dashboard_links/custom_data %}{%endingredient%}
 
 <!--- ROUTING -->
+
+### Routing within your {{page.platform_formatted}} App
+
 {% ingredient sdk_routing/routing %}
 
 {% override ios_explanation %}
@@ -154,9 +158,9 @@ Now you need to customize the code in your deep link handler to route to content
 
 It's pretty simple! You need to configure the dashboard, generate links for your ads, and setup your {{page.platform_formatted}} app to track installs. You can optionally deep link straight to content based on the ad that the user clicked on!
 
-{% ingredient recipe_endings/intro %}{%endingredient%}
-{% ingredient recipe_endings/incentivized_referral_program %}{%endingredient%}
-{% ingredient recipe_endings/personalized_invite_system %}{%endingredient%}
-{% ingredient recipe_endings/influencers %}{%endingredient%}
-{% ingredient recipe_endings/channel_tags %}{%endingredient%}
-{% ingredient recipe_endings/contact_us %}{%endingredient%}
+{% ingredient recipe_preview/recipe_end_intro %}{%endingredient%}
+{% ingredient recipe_preview/incentivized_referral_program %}{%endingredient%}
+{% ingredient recipe_preview/personalized_invite_system %}{%endingredient%}
+{% ingredient recipe_preview/influencers %}{%endingredient%}
+{% ingredient recipe_preview/channel_tags %}{%endingredient%}
+{% ingredient recipe_preview/contact_us %}{%endingredient%}

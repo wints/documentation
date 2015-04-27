@@ -26,7 +26,7 @@ That's the end of the required setup for the Dashboard! The dashboard is incredi
 {% endingredient %}
 
 {% ingredient dashboard_links/tags %}
-	{%override deep_link_data_url%}For information of the form *[key]*: *[value]* such as "product": "shoes", we recommend adding them to "Deep Link Data (Advanced)", discussed in [Links and Sharing](/domains/links_and_sharing/{{page.platform}}/#attaching-custom-data-to-links) [TODO!].
+	{%override deep_link_data_url%}For information of the form *[key]*: *[value]* such as "product": "shoes", we recommend adding them below--see [Deep Link Data (Optional)](/recipes/your_first_link/{{page.platform}}/#deep-link-data-optional).
     {%endoverride%}
 {% endingredient %}
 
@@ -35,6 +35,10 @@ That's the end of the required setup for the Dashboard! The dashboard is incredi
 {% endingredient %}
 
 {% ingredient dashboard_links/og_tags %}{% endingredient %}
+{% ingredient dashboard_links/custom_data %}
+	{%override advanced%}(Optional){%endoverride%}
+	{%override description%}This custom data can be anything you want and is part of Branch's secret sauce. For now you don't need to put anything here. In case you're interested, you add data at the bottom of the link creation process.{%endoverride%}
+{% endingredient %}
 {% ingredient dashboard_links/end %}{% endingredient %}
 <!--- /Creating your Link -->
 
@@ -43,8 +47,8 @@ That's the end of the required setup for the Dashboard! The dashboard is incredi
 
 {% ingredient dashboard_links/no_sdk %}{%endingredient%}
 
-{% ingredient recipe_endings/incentivized_referral_program %}{%endingredient%}
-{% ingredient recipe_endings/personalized_invite_system %}{%endingredient%}
-{% ingredient recipe_endings/influencers %}{%endingredient%}
-{% ingredient recipe_endings/channel_tags %}{%endingredient%}
-{% ingredient recipe_endings/contact_us %}{%endingredient%}
+{% ingredient recipe_preview/incentivized_referral_program %}{%endingredient%}
+{% ingredient recipe_preview/personalized_invite_system %}{%endingredient%}
+{% ingredient recipe_preview/influencers %}{%endingredient%}
+{% ingredient recipe_preview/channel_tags %}{%endingredient%}
+{% ingredient recipe_preview/contact_us %}{%endingredient%}

@@ -1,0 +1,1 @@
+* Run [**ads with deep links**](/recipes/deeplinked_ads/{%section platform%}{{page.platform}}{%endsection%}/) -- give users a custom experience based on the ad that brought them to your app!
