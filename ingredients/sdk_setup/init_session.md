@@ -82,7 +82,7 @@ public void onNewIntent(Intent intent) {
 }
 {% endhighlight %}
 
-Finally, init the session!
+Finally, init the session back inside `onStart`!
 
 {% highlight java %}
 branch.initSession(branchReferralInitListener, this.getIntent().getData(), this);
