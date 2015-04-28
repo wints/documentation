@@ -73,6 +73,15 @@ Branch branchReferralInitListener = new BranchReferralInitListener() {
 }
 {% endhighlight %}
 
+Next, you'll need to hook into the `onNewIntent` method specified inside the Activity lifecycle and set the intent. This is required for conformity with Facebook's AppLinks. Verify that the activity you're implementing has *launchMode* set to *singleTask* inside the Manifest declaration. Once that'd done, go to said activity and do something like the folllowing:
+
+{% highlight java %}
+@Override
+public void onNewIntent(Intent intent) {
+    this.setIntent(intent);
+}
+{% endhighlight %}
+
 Finally, init the session!
 
 {% highlight java %}
