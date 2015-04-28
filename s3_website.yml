@@ -1,10 +1,10 @@
 s3_id: <%= ENV['S3_ID'] %>
 s3_secret: <%= ENV['S3_SECRET'] %>
-s3_bucket: docs.branch.io
+s3_bucket: dev.branch.io
 s3_endpoint: us-west-1
 
-# cloudfront_distribution_id: E147IE2H00ZILM
-# cloudfront_invalidate_root: true
+cloudfront_distribution_id: E147IE2H00ZILM
+cloudfront_invalidate_root: true
 
 max_age:
   "*": 6000
