@@ -4,7 +4,7 @@
 
 {% section optional %}{% endsection %}
 
-Setting the URI scheme is not strictly required if you are only going to use Branch to measure the number of clicks. To obtain the number of installs, to deeplink to your app, or to do [anything else that Branch enables you to do](https://branch.io/features/), you need to choose a URI scheme and make sure it is consistent between the Dashboard.
+Setting the URI scheme is not strictly required if you are only going to use Branch to measure the number of clicks for a given link. To obtain the number of installs, to deeplink to your app, or to do [anything else that Branch enables you to do](https://branch.io/features/), you need to choose a URI scheme and make sure it is consistent between the Dashboard.
 
 URI schemes are particular to the platform. {% if page.ios %}For iOS apps, the URI scheme can be specified in the .plist file under URL Types.{%endif%}{% if page.android %}For Android apps, the URI scheme can be specified in your project's manifest file.{%endif%} If you haven't added one to your {{page.platform_formatted}} app yet, you should choose a unique identifier for your app that no one else will use (e.g. `com.yourapp://`).
 
