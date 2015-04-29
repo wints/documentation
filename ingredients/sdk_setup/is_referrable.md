@@ -12,14 +12,15 @@ Branch's default behavior is to track which users refer other users. Also by def
 
 <!---    iOS explanation 1 -->
 {% section ios_explanation_1 %}
-This default behavior can be overridden by modifying the _initSessionWithLaunchOptions:andRegisterDeepLinkHandler:_ method in _application:didFinishLaunchingWithOptions:_. Replace the method call with the following:
+  This default behavior can be overridden by modifying the _initSessionWithLaunchOptions:andRegisterDeepLinkHandler:_ method in _application:didFinishLaunchingWithOptions:_. Replace the method call with the following:
 {% endsection %}
 <!---    /iOS explanation 1 -->
 
 
 <!---    iOS code -->
 {% section ios_code %}
-##### Objective-C
+{% tabs %}
+{% tab objective-c %}
 {% highlight objc %}
 [branch initSessionWithLaunchOptions:launchOptions isReferrable:@YES andRegisterDeepLinkHandler:^(NSDictionary *params, NSError *error) {     // previously initUserSessionWithCallback:withLaunchOptions:
    if (!error) {
@@ -29,9 +30,11 @@ This default behavior can be overridden by modifying the _initSessionWithLaunchO
    }
 }];
 {% endhighlight %}
+{% endtab %}
 
-##### Swift
+{% tab swift %}
 {% highlight swift %}
+
 branch.initSessionWithLaunchOptions(launchOptions, isReferrable: true, andRegisterDeepLinkHandler: { params, error in
     if (error == nil) {
         // This can now count as a referred session even if this isn't
@@ -40,6 +43,8 @@ branch.initSessionWithLaunchOptions(launchOptions, isReferrable: true, andRegist
     }
 })
 {% endhighlight %}
+{% endtab %}
+{% endtabs %}
 {% endsection %}
 <!---    /iOS code -->
 
