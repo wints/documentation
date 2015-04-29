@@ -9,7 +9,8 @@ platforms:
 ## Double Sided Custom Ad Measurement Integrations
 
 This section will describe exactly what needs to be done in order to put a Branch deep link in between a third party ad network and a third party measurement service. For example, this section applies to you if user flow chart looks like this:
-Ad network -> Branch -> measurement partner (Adjust, etc)
+
+_Ad network -> **Branch** -> measurement partner (Adjust, etc)_
 
 {% ingredient dashboard_links/creating_links %}
 {% override title %}Step 1: Create A Marketing Link{% endoverride %}
