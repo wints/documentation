@@ -11,17 +11,36 @@ The good news is that your app only needs the addition of two lines of code.
 
 Add a `setIdentity:` call wherever you create or login a user.
 
+{% tabs %}
+{% tab objective-c %}
 {% highlight objc %}
 [[Branch getInstance] setIdentity:@"1234"]; // your app's userId
 {% endhighlight %}
+{% endtab %}
+{% tab swift %}
+{% highlight swift %}
+Branch.getInstance().setIdentity("1234") // your app's userId
+{% endhighlight %}
+{% endtab %}
+{% endtabs %}
+
 
 **NOTE:** Please keep the string to less than 127 characters.
 
 Add a `logout` call anywhere you allow the user to logout. 
 
+{% tabs %}
+{% tab objective-c %}
 {% highlight objc %}
 [[Branch getInstance] logout];
 {% endhighlight %}
+{% endtab %}
+{% tab swift %}
+{% highlight swift %}
+Branch.getInstance().logout()
+{% endhighlight %}
+{% endtab %}
+{% endtabs %}
 
 {% endif %}
 <!--- iOS identify and logout -->
