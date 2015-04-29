@@ -3,6 +3,6 @@
 
 At the top right of the dashboard, for any given app you see "Live" and "Test". Use the "Test" app and be sure that the [Link Settings](http://dashboard.branch.io/#/settings/link) are properly configured. Use this so as to not pollute your production app's Branch data.
 
-To use this app, grab the Branch Key from the test version of your app. {%if page.ios %}Include this Branch Key in your .plist file, labeled `branch_key`.{%endif%}{%if page.android %}[TODO]{%endif%}
+To use this app, grab the Branch Key from the test version of your app. {% if page.ios %}Include this Branch Key in your .plist file, labeled `branch_key`.{% endif %}{% if page.android %}[TODO]{% endif %}
 
-Make sure that you do not use this in the version of your app that you push to the {%if page.ios %}App{%endif%}{%if page.android%}Play{%endif%} Store!
+Make sure that you do not use this in the version of your app that you push to the {% if page.ios %}App{% endif %}{% if page.android %}Play{% endif %} Store!

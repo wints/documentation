@@ -9,11 +9,35 @@ You can adjust how long the browser fingerprint is stored in the browser by sett
 <!--- iOS -->
 {% if page.ios %}
 
+
+{% tabs %}
+{% tab objective-c %}
 {% highlight objc %}
-[[Branch getInstance] getShortURLWithParams:@{} andChannel:@"SMS" andFeature:nil andStage:nil andMatchDuration:(60*60*2) andCallback:^(NSString *url, NSError *error) {
+[[Branch getInstance] getShortURLWithParams:@{}
+                                 andChannel:@"SMS"
+                                 andFeature:nil
+                                   andStage:nil
+                           andMatchDuration:(60*60*2)
+                                andCallback:^(NSString *url, NSError *error) {
     if (!error) NSLog(@"got my Branch link to share: %@", url);
 }];
 {% endhighlight %}
+{% endtab %}
+{% tab swift %}
+{% highlight swift %}
+Branch.getInstance().getShortURLWithParams( nil,
+                                            andChannel: "SMS",
+                                            andFeature: nil,
+                                            andStage: nil,
+                                            andMatchDuration: 60*60*2,
+                                            andCallback: { (url: String?, error: NSError?) -> Void in
+    if error == nil {
+        NSLog("got my Branch link to share: %@", url!)
+    }
+})
+{% endhighlight %}
+{% endtab %}
+{% endtabs %}
 
 {% endif %}
 <!--- /iOS -->

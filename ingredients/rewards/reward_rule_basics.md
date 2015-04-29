@@ -1,5 +1,5 @@
 
-{% section header%}### Reward Rule Basics{%endsection%}
+{% section header%}### Reward Rule Basics{% endsection %}
 
 To award users for credits, you must set up a reward rule tied to a specific events.
 

@@ -7,11 +7,31 @@ If you want a breakdown of your best performing channels--whether you measure be
 
 On iOS, it's a rather simple method call.
 
+{% tabs %}
+{% tab objective-c %}
 {% highlight objc %}
-[[Branch getInstance] getShortURLWithParams:@{ @"foo": @"bar" } andChannel:@"SMS" andFeature:nil andCallback:^(NSString *url, NSError *error) {
+[[Branch getInstance] getShortURLWithParams:@{ @"foo": @"bar" }
+                                 andChannel:@"SMS"
+                                 andFeature:nil
+                                andCallback:^(NSString *url, NSError *error) {
     if (!error) NSLog(@"got my Branch link to share: %@", url);
 }];
 {% endhighlight %}
+{% endtab %}
+{% tab swift %}
+{% highlight swift %}
+Branch.getInstance().getShortURLWithParams(["foo": "bar"],
+                                            andChannel:"SMS",
+                                            andFeature:nil,
+                                            andCallback: { (url: String?, error: NSError?) -> Void in
+    if error == nil {
+        NSLog("got my Branch link to share: %@", url!)
+    }
+})
+{% endhighlight %}
+{% endtab %}
+{% endtabs %}
+
 
 You can safely pass in `nil` for any options you don't wish to specify.
 
