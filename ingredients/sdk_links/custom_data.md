@@ -14,12 +14,28 @@ Because we don't store data in the URL, you can create pretty links, like `bnc.l
 
 <!--- iOS -->
 {% if page.ios %}
-
+{% tabs %}
+{% tab objective-c %}
 {% highlight objc %}
-[[Branch getInstance] getShortURLWithParams:{% section example_code %}@{@"referringUsername": @"James", @"referringUserId": @"1234", @"contentId": @"0987"}{% endsection %} andCallback:^(NSString *url, NSError *error) {
-    if (!error) NSLog(@"got my Branch link to share: %@", url);
+[[Branch getInstance] getShortURLWithParams:@{  @"referringUsername": @"James",
+                                                @"referringUserId": @"1234",
+                                                @"contentId": @"0987"} andCallback:^(NSString *url, NSError *error) {
+    if (!error) NSLog(@"got my Branch link to share: %@", url);    
 }];
 {% endhighlight %}
+{% endtab %}
+{% tab swift %}
+{% highlight swift %}
+Branch.getInstance().getShortURLWithParams(["referringUsername": "James",
+                                            "referringUserId": "1234",
+                                            "contentId": "0987"], andCallback: { (url: String?, error: NSError?) -> Void in
+    if let urlToShare = url {
+        NSLog("got my Branch link to share: %@", urlToShare);
+    }
+})
+{% endhighlight %}
+{% endtab %}
+{% endtabs %}
 
 {% endif %}
 <!--- /iOS -->
