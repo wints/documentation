@@ -4,6 +4,7 @@ title: Mobile Web Smart Banner
 platforms:
 - ios
 - android
+weight: -19
 ---
 
 
