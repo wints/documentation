@@ -10,16 +10,27 @@ No mysteries here:
 {% tabs %}
 {% tab objective-c %}
 {% highlight objc %}
-[[Branch getInstance] getShortURLWithParams:@{} andTags:@[@"any", @"other", @"tags", @"you", @"want"] andChannel:nil andFeature:nil andStage:nil andAlias:nil andCallback:^(NSString *url, NSError *error) {
+[[Branch getInstance] getShortURLWithParams:@{}
+                                    andTags:@[@"any", @"other", @"tags", @"you", @"want"]
+                                 andChannel:nil
+                                 andFeature:nil
+                                   andStage:nil
+                                   andAlias:nil
+                                andCallback:^(NSString *url, NSError *error) {
     if (!error) NSLog(@"got my Branch link to share: %@", url);
 }];
 {% endhighlight %}
 {% endtab %}
 {% tab swift %}
 {% highlight swift %}
-Branch.getInstance().getShortURLWithParams(["foo": "bar"], andTags: ["any", "other", "tags", "you", "want"], andChannel: nil, andFeature: nil, andStage: nil, andCallback: { (url: String?, error: NSError?) -> Void in
+Branch.getInstance().getShortURLWithParams( ["foo": "bar"],
+                                            andTags: ["any", "other", "tags", "you", "want"],
+                                            andChannel: nil,
+                                            andFeature: nil,
+                                            andStage: nil,
+                                            andCallback: { (url: String?, error: NSError?) -> Void in
     if let urlToShare = url {
-        NSLog("got my Branch link to share: %@", urlToShare)
+        NSLog("got my Branch link to share: %@", urlToShare);
     }
 })
 {% endhighlight %}

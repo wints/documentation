@@ -20,16 +20,22 @@ Again, the code is straightforward:
 {% tabs %}
 {% tab objective-c %}
 {% highlight objc %}
-[[Branch getInstance] getShortURLWithParams:@{} andChannel:@"SMS" andFeature:@"invite" andCallback:^(NSString *url, NSError *error) {
+[[Branch getInstance] getShortURLWithParams:@{}
+                                 andChannel:@"SMS"
+                                 andFeature:@"invite"
+                                andCallback:^(NSString *url, NSError *error) {
     if (!error) NSLog(@"got my Branch link to share: %@", url);
 }];
 {% endhighlight %}
 {% endtab %}
 {% tab swift %}
 {% highlight swift %}
-Branch.getInstance().getShortURLWithParams(["foo": "bar"], andChannel: "SMS", andFeature: "invite", andCallback: { (url: String?, error: NSError?) -> Void in
+Branch.getInstance().getShortURLWithParams( ["foo": "bar"],
+                                            andChannel: "SMS",
+                                            andFeature: "invite",
+                                            andCallback: { (url: String?, error: NSError?) -> Void in
     if let urlToShare = url {
-        NSLog("got my Branch link to share: %@", urlToShare)
+        NSLog("got my Branch link to share: %@", urlToShare);
     }
 })
 {% endhighlight %}
