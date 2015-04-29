@@ -13,10 +13,7 @@ branch.init('YOUR-BRANCH-KEY');
 branch.banner({
     icon: 'http://icons.iconarchive.com/icons/wineass/ios7-redesign/512/Appstore-icon.png',
     title: 'Branch Demo App',
-    description: 'The Branch demo app!',
-    showiOS: true,
-    showAndroid: true,
-    showDesktop: true
+    description: 'The Branch demo app!'
 });
 </script>
 {% endhighlight %}
@@ -60,5 +57,3 @@ var options = {
     make_new_link: false               
 }
 {% endhighlight %}
-
-<!--- TODO: To see a full list of the options that can be toggled, [TODO] [click here](). -->
