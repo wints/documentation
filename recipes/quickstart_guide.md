@@ -49,7 +49,8 @@ Now that you've completed the basic integration, you can **skip steps one (Confi
 
 {% ingredient recipe_preview/marketing_campaign_download_tracking %}{%endingredient%}
 {% ingredient recipe_preview/personalized_invite_system %}{%endingredient%}
-{% ingredient recipe_preview/deeplinked_ads %}{%endingredient%}
+{% ingredient recipe_preview/deeplinked_ads %}{%override ending%} **(Skip Steps 1 and 3)**{%endoverride%}{%endingredient%}
 {% ingredient recipe_preview/incentivized_referral_program %}{%endingredient%}
 {% ingredient recipe_preview/app_content_share_with_deeplink %}{%endingredient%}
 {% ingredient recipe_preview/contact_us %}{%endingredient%}
+
