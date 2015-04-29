@@ -8,7 +8,7 @@ platforms:
 
 This quickstart guide will walk you through the minimum setup for an SDK integration. With only a few lines of code you'll have:
 
-* Download tracking by page and platform
+* Tracking installs by campaign and platform for marketing links that you create
 * 
 * 
 
@@ -44,4 +44,8 @@ This quickstart guide will walk you through the minimum setup for an SDK integra
 
 ## Conclusion
 
-TODO
+Now that you've completed the basic integration, you can skip steps one (Configuring the Dashboard) and two (Configuring the Client) in the following guides. With Branch, you can:
+
+{% ingredient recipe_preview/incentivized_referral_program %}{%endingredient%}
+{% ingredient recipe_preview/personalized_invite_system %}{%endingredient%}
+{% ingredient recipe_preview/contact_us %}{%endingredient%}
