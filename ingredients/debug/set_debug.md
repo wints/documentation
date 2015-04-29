@@ -11,8 +11,7 @@ To simulate a brand new user being referred from our perspective:
 1. Click a link in the browser
 1. Run your test app:
 
-	{% if page.ios %}
-
+{% if page.ios %}
 {% tabs %}
 {% tab objective-c %}
 {% highlight objc %}
