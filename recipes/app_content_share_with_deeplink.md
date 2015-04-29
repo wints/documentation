@@ -12,8 +12,8 @@ Imagine your app allows users to create and publish digital photo books. Let's s
 
 And you aren't limited to linking to content. In the example above:
 
-* you can link to James' profile by attaching a userId to the link. 
-* you can embed a promo code so that any of James' friends who click the link automatically get $10 off any books that they create and then print. 
+* you can link to James' profile by attaching a userId to the link.
+* you can embed a promo code so that any of James' friends who click the link automatically get $10 off any books that they create and then print.
 * you can show a custom splash screen when they first open the app, saying "Welcome to Photo Book App! James is glad you're here!"
 
 The possibilities extend far beyond this, but we wanted to give you some ideas to get started.
@@ -24,7 +24,7 @@ The possibilities extend far beyond this, but we wanted to give you some ideas t
 {% ingredient dashboard_setup/web_url %}{% endingredient %}
 {% ingredient dashboard_setup/store_or_custom_url %}{% endingredient %}
 {% ingredient dashboard_setup/uri_scheme %}
-	{%override client_uri %}For more details on finding/setting your URI scheme in the client, see the section below on [setting the client app's URI scheme](/recipes/app_content_share_with_deeplink/{{page.platform}}/#uri-scheme-1).{%endoverride%}
+	{% override client_uri %}For more details on finding/setting your URI scheme in the client, see the section below on [setting the client app's URI scheme](/recipes/app_content_share_with_deeplink/{{page.platform}}/#uri-scheme-1).{% endoverride %}
 {% endingredient %}
 {% ingredient dashboard_setup/end_required %}{% endingredient %}
 <!--- /Configuring the Dashboard-->
@@ -32,11 +32,11 @@ The possibilities extend far beyond this, but we wanted to give you some ideas t
 
 ## Configuring your {{ page.platform_formatted }} app
 {% ingredient sdk_setup/installing_the_sdk %}
-  {%override telephony%}[here](/recipes/app_content_share_with_deeplink/{{page.platform}}/#installing-the-sdk).{%endoverride%}
+  {% override telephony %}[here](/recipes/app_content_share_with_deeplink/{{page.platform}}/#installing-the-sdk).{% endoverride %}
 {% endingredient %}
-{% ingredient sdk_setup/branch_key %}{%override screenshot%}{%endoverride%}{% endingredient %}
+{% ingredient sdk_setup/branch_key %}{% override screenshot %}{% endoverride %}{% endingredient %}
 {% ingredient sdk_setup/uri_scheme %}
-  {%override dashboard_uri %}For more info on setting up a URI scheme on the Dashboard, check out the [section above](/recipes/app_content_share_with_deeplink/{{page.platform}}/#uri-scheme).{%endoverride%}
+  {% override dashboard_uri %}For more info on setting up a URI scheme on the Dashboard, check out the [section above](/recipes/app_content_share_with_deeplink/{{page.platform}}/#uri-scheme).{% endoverride %}
 {% endingredient %}
 {% ingredient sdk_setup/init_session %}{% endingredient %}
 {% ingredient sdk_setup/handle_deep_link %}{% endingredient %}
@@ -56,7 +56,7 @@ The possibilities extend far beyond this, but we wanted to give you some ideas t
   Store data about the content shared (and, optionally, the sharing user) in the data dictionary. Attaching information is as simple as including a dictionary at link creation time. If, for example, James is sharing a picture with Id `1234`, your code could do the following:
   {% endoverride %}
 
-  {% override example_code %}{% if page.ios %}@{@"pictureId": @"1234", @"referringUsername": @"James"}{% endif %}{% if page.android %}JSONObject obj = new JSONObject(); 
+  {% override example_code %}{% if page.ios %}@{@"pictureId": @"1234", @"referringUsername": @"James"}{% endif %}{% if page.android %}JSONObject obj = new JSONObject();
 try {
   obj.put("pictureId", "1234");
   obj.put("referringUsername", "James");
@@ -74,9 +74,9 @@ try {
 
 That's it! After integrating the SDK into your app, it boils down to [generating links](/recipes/app_content_share_with_deeplink/{{page.platform}}/#generating-links) and [routing](/recipes/app_content_share_with_deeplink/{{page.platform}}/#routing), as described above.
 
-{% ingredient recipe_preview/recipe_end_intro %}{%endingredient%}
-{% ingredient recipe_preview/incentivized_referral_program %}{%endingredient%}
-{% ingredient recipe_preview/personalized_invite_system %}{%endingredient%}
-{% ingredient recipe_preview/influencers %}{%endingredient%}
-{% ingredient recipe_preview/channel_tags %}{%endingredient%}
-{% ingredient recipe_preview/contact_us %}{%endingredient%}
+{% ingredient recipe_preview/recipe_end_intro %}{% endingredient %}
+{% ingredient recipe_preview/incentivized_referral_program %}{% endingredient %}
+{% ingredient recipe_preview/personalized_invite_system %}{% endingredient %}
+{% ingredient recipe_preview/influencers %}{% endingredient %}
+{% ingredient recipe_preview/channel_tags %}{% endingredient %}
+{% ingredient recipe_preview/contact_us %}{% endingredient %}

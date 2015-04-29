@@ -1,7 +1,7 @@
 
-{% section header %}### Mobile Web Smart Banner{%endsection%}
+{% section header %}### Mobile Web Smart Banner{% endsection %}
 
-Branch offers a highly customizable smart banner that works across platforms. Android and iOS users can install or open the app from one banner. Users can even be deep linked to content! Desktop users can choose to text themselves the app. 
+Branch offers a highly customizable smart banner that works across platforms. Android and iOS users can install or open the app from one banner. Users can even be deep linked to content! Desktop users can choose to text themselves the app.
 
 After configuring your app on the [Dashboard](https://dashboard.branch.io), you can simply add the following code somewhere inside the `<head> </head>` tags on your website. Note that the *only* thing you need to do is replace `YOUR-API-KEY` with your API Key inside the init() call.
 
@@ -15,15 +15,15 @@ branch.init('YOUR-API-KEY', function(err, data) {
         icon: 'http://icons.iconarchive.com/icons/wineass/ios7-redesign/512/Appstore-icon.png',
         title: 'Branch Demo App',
         description: 'The Branch demo app!',
-        openAppButtonText: 'Open',     
-        downloadAppButtonText: 'Download', 
+        openAppButtonText: 'Open',
+        downloadAppButtonText: 'Download',
         iframe: true,
-        showiOS: true,                     
-        showAndroid: true,                 
-        showDesktop: true,                 
-        disableHide: false,                
-        forgetHide: false,                 
-        make_new_link: false               
+        showiOS: true,
+        showAndroid: true,
+        showDesktop: true,
+        disableHide: false,
+        forgetHide: false,
+        make_new_link: false
     }
 
     branch.banner(options, {
@@ -52,31 +52,31 @@ var options = {
     description: 'The Branch demo app!',
 
     // Text to show on button if the user has the app installed
-    openAppButtonText: 'Open',     
+    openAppButtonText: 'Open',
 
     // Text to show on button if the user does not have the app installed
-    downloadAppButtonText: 'Download', 
-    
+    downloadAppButtonText: 'Download',
+
     // Show banner in an iframe, recomended to isolate Branch banner CSS
     iframe: true,
 
     // Should the banner be shown on iOS devices?
-    showiOS: true,                     
+    showiOS: true,
 
     // Should the banner be shown on Android devices?
-    showAndroid: true,                 
+    showAndroid: true,
 
     // Should the banner be shown on desktop devices?
-    showDesktop: true,                 
+    showDesktop: true,
 
     // Should the user have the ability to hide the banner? (show's X on left side)
-    disableHide: false,                
+    disableHide: false,
 
     // Should we remember or forget whether the user hid the banner?
-    forgetHide: false,                 
+    forgetHide: false,
 
     // Should the banner create a new link, even if a link already exists?
-    make_new_link: false               
+    make_new_link: false
 }
 {% endhighlight %}
 

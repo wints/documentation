@@ -14,7 +14,7 @@ Here's how to create your own Branch Links.
 On iOS, it's a rather simple method call.
 
 {% highlight objc %}
-[[Branch getInstance] getShortURLWithParams:{% section params %}@{@"foo": @"bar"}{%endsection%} andCallback:^(NSString *url, NSError *error) {
+[[Branch getInstance] getShortURLWithParams:{% section params %}@{@"foo": @"bar"}{% endsection %} andCallback:^(NSString *url, NSError *error) {
     if (!error) NSLog(@"got my Branch link to share: %@", url);
 }];
 {% endhighlight %}
