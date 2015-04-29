@@ -25,7 +25,7 @@ On iOS, it's a rather simple method call.
 {% highlight swift %}
 Branch.getInstance().getShortURLWithParams(["foo" : "bar"], andCallback: { (url: String?, error: NSError?) -> Void in
     if let urlToShare = url {
-        NSLog("got my Branch link to share: %@", urlToShare);
+        NSLog("got my Branch link to share: %@", urlToShare)
     }
 })
 {% endhighlight %}

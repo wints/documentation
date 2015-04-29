@@ -13,7 +13,7 @@ When a user doesn't have your app and clicks a link on iOS, by default the user 
 
 {% highlight objc %}
 [[Branch getInstance] getShortURLWithParams:@{@"$ios_url": @"http://myawesomesite.com/ios-app-landing-page"} andCallback:^(NSString *url, NSError *error) {
-    if (!error) NSLog(@"got my Branch link to share: %@", url);
+    if (!error) NSLog(@"got my Branch link to share: %@", url)
 }];
 {% endhighlight %}
 

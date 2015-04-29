@@ -19,7 +19,7 @@ No mysteries here:
 {% highlight swift %}
 Branch.getInstance().getShortURLWithParams(["foo": "bar"], andTags: ["any", "other", "tags", "you", "want"], andChannel: nil, andFeature: nil, andStage: nil, andCallback: { (url: String?, error: NSError?) -> Void in
     if let urlToShare = url {
-        NSLog("got my Branch link to share: %@", urlToShare);
+        NSLog("got my Branch link to share: %@", urlToShare)
     }
 })
 {% endhighlight %}
