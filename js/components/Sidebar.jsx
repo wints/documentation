@@ -20,8 +20,7 @@ var GroupPages = React.createClass({
 			if (page.platforms[self.props.platform]) {
 				path.push(self.props.platform);
 			}
-			return (
-				<li className={ cx({ 'active': isCurrentPath }) } key={ page.title }>
+			return (<li className={ cx({ 'active': isCurrentPath }) } key={ page.title }>
 					<a href={ '/' + path.join('/') }>{ page.title }</a>
 				</li>);
 		});
