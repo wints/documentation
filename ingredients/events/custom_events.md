@@ -15,9 +15,20 @@ Examples of what you may want to track:
 To track custom events, you can make a simple call to the SDK.
 
 {% if page.ios %}
+
+{% tabs %}
+{% tab objective-c %}
 {% highlight objc %}
 [[Branch getInstance] userCompletedAction:@"customAction"];
 {% endhighlight %}
+{% endtab %}
+{% tab swift %}
+{% highlight swift %}
+Branch.getInstance().userCompletedAction("customAction")
+{% endhighlight %}
+{% endtab %}
+{% endtabs %}
+
 {% endif %}
 <!--- /iOS -->
 
@@ -31,9 +42,20 @@ Branch.getInstance(getApplicationContext()).userCompletedAction("custom_action_1
 You can also include other information about the action, which is useful for [rewarding user actions](/domains/rewards/{{page.platform}}/) or receiving additional information via our [webhooks](/domains/webhooks/{{page.platform}}/). To include custom information, pass it up via the state dictionary:
 
 {% if page.ios %}
+
+{% tabs %}
+{% tab objective-c %}
 {% highlight objc %}
 [[Branch getInstance] userCompletedAction:@"purchase" withState:@{@"item":@"123-AB-456"}];
 {% endhighlight %}
+{% endtab %}
+{% tab swift %}
+{% highlight swift %}
+Branch.getInstance().userCompletedAction("purchase", withState: ["item" : "123-AB-456"])
+{% endhighlight %}
+{% endtab %}
+{% endtabs %}
+
 {% endif %}
 <!--- /iOS -->
 

@@ -15,7 +15,8 @@ If you want to tailor how a link will appear on social media, you should make us
 <!--- iOS -->
 {% if page.ios %}
 
-
+{% tabs %}
+{% tab objective-c %}
 {% highlight objc %}
 // Facebook OG tags -- this will overwrite any defaults you set up on the Branch Dashboard
 NSMutableDictionary *params = [NSMutableDictionary dictionary];
@@ -26,6 +27,21 @@ params[@"og_description"] = @"Out of all the apps disrupting apps, MyApp is with
    NSLog(@"url: %@", url);
 }];
 {% endhighlight %}
+{% endtab %}
+{% tab swift %}
+{% highlight swift %}
+params["$og_title"] = "MyApp is disrupting apps"
+params["og_description"] = "Out of all the apps disrupting apps, MyApp is without a doubt a leader. Check us out."
+Branch.getInstance().getShortURLWithParams(params, andCallback: { (url: String?, error: NSError?) -> Void in
+    if let urlToShare = url {
+        NSLog("got my Branch link to share: %@", urlToShare)
+    }
+})
+{% endhighlight %}
+{% endtab %}
+{% endtabs %}
+
+
 
 {% endif %}
 <!--- /iOS -->

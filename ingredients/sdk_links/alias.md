@@ -6,8 +6,10 @@ Utilize the appropriate short/long URL method with the parameter `alias` to set 
 
 <!--- iOS -->
 {% if page.ios %}
+{% tabs %}
+{% tab objective-c %}
 {% highlight objc %}
-[[Branch getInstance] getShortURLWithParams:@{}
+[[Branch getInstance] getShortURLWithParams:nil
                                  andChannel:nil
                                  andFeature:nil
                                    andStage:nil
@@ -16,6 +18,23 @@ Utilize the appropriate short/long URL method with the parameter `alias` to set 
     if (!error) NSLog(@"got my Branch link to share: %@", url);
 }];
 {% endhighlight %}
+{% endtab %}
+{% tab swift %}
+{% highlight swift %}
+Branch.getInstance().getShortURLWithParams( nil,
+                                            andChannel: nil,
+                                            andFeature: nil,
+                                            andStage: nil,
+                                            andAlias: "custom_ending",
+                                            andCallback: { (url: String?, error: NSError?) -> Void in
+    if let urlToShare = url {
+        NSLog("got my Branch link to share: %@", urlToShare)
+    }
+})
+{% endhighlight %}
+{% endtab %}
+{% endtabs %}
+
 {% endif %}
 <!--- /iOS -->
 

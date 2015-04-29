@@ -13,11 +13,28 @@ If your app is a game, stage could require to the user's current level.
 <!--- iOS -->
 {% if page.ios %}
 
+{% tabs %}
+{% tab objective-c %}
 {% highlight objc %}
 [[Branch getInstance] getShortURLWithParams:nil andTags:nil andChannel:nil andFeature:nil andStage:@"4" andAlias:nil andCallback:^(NSString *url, NSError *error) {
     if (!error) NSLog(@"got my Branch link to share: %@", url);
 }];
 {% endhighlight %}
+{% endtab %}
+{% tab swift %}
+{% highlight swift %}
+Branch.getInstance().getShortURLWithParams( nil,
+                                            andChannel: nil,
+                                            andFeature: nil,
+                                            andStage: "4",
+                                            andCallback: { (url: String?, error: NSError?) -> Void in
+    if let urlToShare = url {
+        NSLog("got my Branch link to share: %@", urlToShare)
+    }
+})
+{% endhighlight %}
+{% endtab %}
+{% endtabs %}
 
 {% endif %}
 <!--- /iOS -->

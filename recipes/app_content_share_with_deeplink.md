@@ -56,6 +56,8 @@ The possibilities extend far beyond this, but we wanted to give you some ideas t
   Store data about the content shared (and, optionally, the sharing user) in the data dictionary. Attaching information is as simple as including a dictionary at link creation time. If, for example, James is sharing a picture with Id `1234`, your code could do the following:
   {% endoverride %}
 
+  {%override alias_protip %}visit [Links and Sharing](/domains/links_and_sharing/ios/#alias---the-custom-ending){% endoverride %}
+
   {% override example_code %}{% if page.ios %}@{@"pictureId": @"1234", @"referringUsername": @"James"}{% endif %}{% if page.android %}JSONObject obj = new JSONObject(); 
 try {
   obj.put("pictureId", "1234");
