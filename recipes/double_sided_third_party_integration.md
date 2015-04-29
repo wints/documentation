@@ -1,9 +1,7 @@
 ---
 type: recipe
 title: 3rd Party Ad Integration
-platforms:
-- ios
-- android
+hide_platform_selector: true
 ---
 
 ## Double Sided Custom Ad Measurement Integrations
