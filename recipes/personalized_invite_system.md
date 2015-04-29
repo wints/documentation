@@ -4,6 +4,7 @@ title: Personalized Invite System
 platforms:
 - ios
 - android
+weight: -16
 ---
 
 Right now, when users open your app for the first time, chances are you have no idea where they came from or who they are. You have no idea if they were invited by a friend on Facebook, found your app randomly browsing through the App Store, saw an ad, or simply discovered it through word of mouth and decided to give it a shot. It's anybody's guess really.

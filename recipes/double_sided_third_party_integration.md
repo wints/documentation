@@ -4,6 +4,7 @@ title: 3rd Party Ad Integration
 platforms:
 - ios
 - android
+weight: -10
 ---
 
 ## Double Sided Custom Ad Measurement Integrations

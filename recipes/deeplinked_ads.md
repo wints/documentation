@@ -4,6 +4,7 @@ title: Deeplinked Ads
 platforms:
 - ios
 - android
+weight: -15
 ---
 
 Deeplinked ads are not a new breed--just a rare one. With Branch they're as easy as creating a link on the Dashboard and setting up your {{page.platform_formatted}} app to handle incoming deep links.
