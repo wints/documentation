@@ -12,12 +12,27 @@ To simulate a brand new user being referred from our perspective:
 1. Run your test app:
 
 	{% if page.ios %}
-    Branch *branch = [Branch getInstance];
 
-    [Branch setDebug];
-    
-    [branch initSession......]
-    {% endif %}
-    {% if page.android %}
-    Branch.getInstance(getApplicationContext()).setDebug();
-    {% endif %}
+{% tabs %}
+{% tab objective-c %}
+{% highlight objc %}
+[Branch setDebug];
+Branch *branch = [Branch getInstance];
+[branch initSession.....
+{% endhighlight %}
+{% endtab %}
+{% tab swift %}
+{% highlight swift %}
+Branch.setDebug()
+let branch: Branch = Branch.getInstance()
+branch.initSession.....
+{% endhighlight %}
+{% endtab %}
+{% endtabs %}
+{% endif %}
+
+{% if page.android %}
+{% highlight java %}
+Branch.getInstance(getApplicationContext()).setDebug();
+{% endhighlight %}
+{% endif %}
