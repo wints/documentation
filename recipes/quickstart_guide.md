@@ -6,11 +6,12 @@ platforms:
 - android
 ---
 
-This quickstart guide will walk you through the minimum setup for an SDK integration. With only a few lines of code you'll have:
+This quickstart guide will walk you through the minimum setup for an SDK integration. With only a few lines of code you'll have the ability to track installs by platform, campaign, etc. You can then also create links from the dashboard or add another line of code to programmatically create links via the SDKS.
 
-* Tracking installs by campaign and platform for marketing links that you create
-* 
-* 
+![the goal](/img/ingredients/analytics_and_custom_events/dashboard_summary.png)
+
+We don't cover link creation in this initial guide, so a natural place to start after completing it is [Step 3 of Marketing Campaign Download Tracking](/recipes/marketing_campaign_download_tracking/ios/#creating-your-link). 
+
 
 ## Configuring the Dashboard for your {{ page.platform_formatted }} app
 {% ingredient dashboard_setup/app_name %}{% endingredient %}
@@ -46,6 +47,9 @@ This quickstart guide will walk you through the minimum setup for an SDK integra
 
 Now that you've completed the basic integration, you can skip steps one (Configuring the Dashboard) and two (Configuring the Client) in the following guides. With Branch, you can:
 
-{% ingredient recipe_preview/incentivized_referral_program %}{%endingredient%}
+{% ingredient recipe_preview/marketing_campaign_download_tracking %}{%endingredient%}
 {% ingredient recipe_preview/personalized_invite_system %}{%endingredient%}
+{% ingredient recipe_preview/deeplinked_ads %}{%endingredient%}
+{% ingredient recipe_preview/incentivized_referral_program %}{%endingredient%}
+{% ingredient recipe_preview/app_content_share_with_deeplink %}{%endingredient%}
 {% ingredient recipe_preview/contact_us %}{%endingredient%}
