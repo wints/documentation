@@ -13,12 +13,12 @@ module Jekyll
                 '<h' + level.to_s + '><a class="anchor" name="' + id + '"></a><a href="#' + id + '">' + text + '</a></h' + level.to_s + '>'
             }
             nested_toc = _nested_toc(toc)
-            _render_toc(nested_toc) + "<hr />" + html
+            _render_toc(nested_toc, 1) + "<hr />" + html
         end
-        def _render_toc(toc)
+        def _render_toc(toc, level)
             if toc.length > 0 then
-                "<ol>\n" +
-                    toc.map { |item| '<li><a href="#' + item[:id] + '">' + item[:text] + _render_toc(item[:children]) + "</a></li>" }.join("\n") +
+                "<ol" + (level == 2 ? ' type="a"' : "") + ">\n" +
+                    toc.map { |item| '<li><a href="#' + item[:id] + '">' + item[:text] + _render_toc(item[:children], level + 1) + "</a></li>" }.join("\n") +
                     "</ol>\n"
             else
                 ""
