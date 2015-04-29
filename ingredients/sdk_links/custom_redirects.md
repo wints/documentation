@@ -11,11 +11,24 @@ When a user doesn't have your app and clicks a link on iOS, by default the user 
 <!---    iOS -->
 {% if page.ios %}
 
+{% tabs %}
+{% tab objective-c %}
 {% highlight objc %}
 [[Branch getInstance] getShortURLWithParams:@{@"$ios_url": @"http://myawesomesite.com/ios-app-landing-page"} andCallback:^(NSString *url, NSError *error) {
     if (!error) NSLog(@"got my Branch link to share: %@", url)
 }];
 {% endhighlight %}
+{% endtab %}
+{% tab swift %}
+{% highlight swift %}
+Branch.getInstance().getShortURLWithParams(["$ios_url": "http://myawesomesite.com/ios-app-landing-page"], andCallback: { (url: String?, error: NSError?) -> Void in
+    if let urlToShare = url {
+        NSLog("got my Branch link to share: %@", urlToShare)
+    }
+})
+{% endhighlight %}
+{% endtab %}
+{% endtabs %}
 
 {% endif %}
 <!---    /iOS -->
@@ -59,11 +72,24 @@ When a user doesn't have your app and clicks a link on Android, by default the u
 <!---    iOS -->
 {% if page.ios %}
 
+{% tabs %}
+{% tab objective-c %}
 {% highlight objc %}
 [[Branch getInstance] getShortURLWithParams:@{@"$android_url": @"http://myawesomesite.com/android-app-landing-page"} andCallback:^(NSString *url, NSError *error) {
     if (!error) NSLog(@"got my Branch link to share: %@", url);
 }];
 {% endhighlight %}
+{% endtab %}
+{% tab swift %}
+{% highlight swift %}
+Branch.getInstance().getShortURLWithParams(["$android_url": "http://myawesomesite.com/android-app-landing-page"], andCallback: { (url: String?, error: NSError?) -> Void in
+    if let urlToShare = url {
+        NSLog("got my Branch link to share: %@", urlToShare)
+    }
+})
+{% endhighlight %}
+{% endtab %}
+{% endtabs %}
 
 {% endif %}
 <!---    /iOS -->
@@ -110,11 +136,24 @@ This is especially useful if you want to serve up content on the web for users w
 <!---    iOS -->
 {% if page.ios %}
 
+{% tabs %}
+{% tab objective-c %}
 {% highlight objc %}
 [[Branch getInstance] getShortURLWithParams:@{@"$desktop_url": @"http://myawesomesite.com/content/the-desired-content"} andCallback:^(NSString *url, NSError *error) {
     if (!error) NSLog(@"got my Branch link to share: %@", url);
 }];
 {% endhighlight %}
+{% endtab %}
+{% tab swift %}
+{% highlight swift %}
+Branch.getInstance().getShortURLWithParams(["$desktop_url": "http://myawesomesite.com/content/the-desired-content"], andCallback: { (url: String?, error: NSError?) -> Void in
+    if let urlToShare = url {
+        NSLog("got my Branch link to share: %@", urlToShare)
+    }
+})
+{% endhighlight %}
+{% endtab %}
+{% endtabs %}
 
 {% endif %}
 <!---    /iOS -->
@@ -161,11 +200,25 @@ To override this behavior, you can either select "Always try to open the app" on
 <!---    iOS -->
 {% if page.ios %}
 
+{% tabs %}
+{% tab objective-c %}
 {% highlight objc %}
 [[Branch getInstance] getShortURLWithParams:@{@"$always_deeplink": @"true"} andCallback:^(NSString *url, NSError *error) {
     if (!error) NSLog(@"got my Branch link to share: %@", url);
 }];
 {% endhighlight %}
+{% endtab %}
+{% tab swift %}
+{% highlight swift %}
+Branch.getInstance().getShortURLWithParams(["$always_deeplink": "true"], andCallback: { (url: String?, error: NSError?) -> Void in
+    if let urlToShare = url {
+        NSLog("got my Branch link to share: %@", urlToShare)
+    }
+})
+{% endhighlight %}
+{% endtab %}
+{% endtabs %}
+
 
 {% endif %}
 <!---    /iOS -->
