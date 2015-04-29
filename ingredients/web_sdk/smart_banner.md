@@ -9,29 +9,14 @@ After configuring your app on the [Dashboard](https://dashboard.branch.io), you 
 <script type="text/javascript">
 {% ingredient web_sdk/_initialization %}{% endingredient %}
 
-branch.init('YOUR-BRANCH-KEY', function(err, data) {
-
-    var options = {
-        icon: 'http://icons.iconarchive.com/icons/wineass/ios7-redesign/512/Appstore-icon.png',
-        title: 'Branch Demo App',
-        description: 'The Branch demo app!',
-        openAppButtonText: 'Open',     
-        downloadAppButtonText: 'Download', 
-        iframe: true,
-        showiOS: true,                     
-        showAndroid: true,                 
-        showDesktop: true,                 
-        disableHide: false,                
-        forgetHide: false,                 
-        make_new_link: false               
-    }
-
-    branch.banner(options, {
-        phone: '9999999999',
-        type: 1,
-        data: {
-        }
-    });
+branch.init('YOUR-BRANCH-KEY');
+branch.banner({
+    icon: 'http://icons.iconarchive.com/icons/wineass/ios7-redesign/512/Appstore-icon.png',
+    title: 'Branch Demo App',
+    description: 'The Branch demo app!',
+    showiOS: true,
+    showAndroid: true,
+    showDesktop: true
 });
 </script>
 {% endhighlight %}
