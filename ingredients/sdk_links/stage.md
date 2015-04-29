@@ -28,8 +28,8 @@ Branch.getInstance().getShortURLWithParams( nil,
                                             andFeature: nil,
                                             andStage: "4",
                                             andCallback: { (url: String?, error: NSError?) -> Void in
-    if let urlToShare = url {
-        NSLog("got my Branch link to share: %@", urlToShare)
+    if error == nil {
+        NSLog("got my Branch link to share: %@", url!)
     }
 })
 {% endhighlight %}

@@ -22,8 +22,8 @@ When a user doesn't have your app and clicks a link on iOS, by default the user 
 {% tab swift %}
 {% highlight swift %}
 Branch.getInstance().getShortURLWithParams(["$ios_url": "http://myawesomesite.com/ios-app-landing-page"], andCallback: { (url: String?, error: NSError?) -> Void in
-    if let urlToShare = url {
-        NSLog("got my Branch link to share: %@", urlToShare)
+    if error == nil {
+        NSLog("got my Branch link to share: %@", url!)
     }
 })
 {% endhighlight %}
