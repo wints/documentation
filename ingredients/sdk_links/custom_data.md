@@ -29,8 +29,8 @@ Because we don't store data in the URL, you can create pretty links, like `bnc.l
 Branch.getInstance().getShortURLWithParams(["referringUsername": "James",
                                             "referringUserId": "1234",
                                             "contentId": "0987"], andCallback: { (url: String?, error: NSError?) -> Void in
-    if let urlToShare = url {
-        NSLog("got my Branch link to share: %@", urlToShare)
+    if error == nil {
+        NSLog("got my Branch link to share: %@", urlToShare!)
     }
 })
 {% endhighlight %}

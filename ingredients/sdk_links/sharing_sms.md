@@ -87,7 +87,7 @@ Branch.getInstance().getShortURLWithParams(params,
                                            andChannel: "SMS",
                                            andFeature: "Referral",
                                            andCallback: { (url: String!, error: NSError!) -> Void in
-    if (error == nil) {
+    if error == nil {
         if MFMessageComposeViewController.canSendText() {
             let messageComposer = MFMessageComposeViewController()
             messageComposer.body = String(format: "Check out MyApp -- use my link to get free  points: %@", url)
