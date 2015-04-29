@@ -3,13 +3,13 @@
 
 Branch offers a highly customizable smart banner that works across platforms. Android and iOS users can install or open the app from one banner. Users can even be deep linked to content! Desktop users can choose to text themselves the app. 
 
-After configuring your app on the [Dashboard](https://dashboard.branch.io), you can simply add the following code somewhere inside the `<head> </head>` tags on your website. Note that the *only* thing you need to do is replace `YOUR-API-KEY` with your API Key inside the init() call.
+After configuring your app on the [Dashboard](https://dashboard.branch.io), you can simply add the following code somewhere inside the `<head> </head>` tags on your website. Note that the *only* thing you need to do is replace `YOUR-BRANCH-KEY` with your Branch Key inside the init() call.
 
-{% highlight javascript %}
+{% highlight html %}
 <script type="text/javascript">
-(function(b,r,a,n,c,h,_,s,d,k){if(!b[n]||!b[n]._q){for(;s<_.length;)c(h,_[s++]);d=r.createElement(a);d.async=1;d.src="https://cdn.branch.io/branch-v1.3.3.min.js";k=r.getElementsByTagName(a)[0];k.parentNode.insertBefore(d,k);b[n]=h}})(window,document,"script","branch",function(b,r){b[r]=function(){b._q.push([r,arguments])}},{_q:[],_v:1},"init data setIdentity logout track link sendSMS referrals credits redeem banner".split(" "),0);
+{% ingredient web_sdk/_initialization %}{% endingredient %}
 
-branch.init('YOUR-API-KEY', function(err, data) {
+branch.init('YOUR-BRANCH-KEY', function(err, data) {
 
     var options = {
         icon: 'http://icons.iconarchive.com/icons/wineass/ios7-redesign/512/Appstore-icon.png',
@@ -35,10 +35,6 @@ branch.init('YOUR-API-KEY', function(err, data) {
 });
 </script>
 {% endhighlight %}
-
-We have deprecated the API Key in favor of the Branch Key, but this change is not yet active for the Web SDK. Please grab the API Key from the following location on the [Dashboard](https://dashboard.branch.io/#/settings)
-
-![deprecated API Key](/img/ingredients/web_specific/api_key.png)
 
 #### Smart Banner Options
 

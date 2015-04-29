@@ -24,7 +24,7 @@ If you also want to pass data through the install process or deep link straight 
 {% ingredient dashboard_setup/end_required %}{% endingredient %}
 
 ## The Smart Banner
-{% ingredient web_specific/smart_banner %}{%override header%}{%endoverride%}{% endingredient %}
+{% ingredient web_sdk/smart_banner %}{%override header%}{%endoverride%}{% endingredient %}
 
 ## (Optional) Configuring the Client for Deep Linking
 {% ingredient sdk_setup/installing_the_sdk %}
