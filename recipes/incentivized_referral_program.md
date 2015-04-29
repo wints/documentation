@@ -22,7 +22,7 @@ For a referral system, Branch provides:
 {% ingredient dashboard_setup/web_url %}{% endingredient %}
 {% ingredient dashboard_setup/store_or_custom_url %}{% endingredient %}
 {% ingredient dashboard_setup/uri_scheme %}
-  {%override client_uri %}For more details on finding/setting your URI scheme in the client, see the section below on [setting the client app's URI scheme](/recipes/incentivized_referral_program/{{page.platform}}/#uri-scheme-1).{%endoverride%}
+  {% override client_uri %}For more details on finding/setting your URI scheme in the client, see the section below on [setting the client app's URI scheme](/recipes/incentivized_referral_program/{{page.platform}}/#uri-scheme-1).{% endoverride %}
 {% endingredient %}
 {% ingredient dashboard_setup/end_required %}{% endingredient %}
 <!--- /Configuring the Dashboard-->
@@ -30,11 +30,11 @@ For a referral system, Branch provides:
 
 ## Configuring your {{ page.platform_formatted }} app
 {% ingredient sdk_setup/installing_the_sdk %}
-  {%override telephony%}[here](/recipes/app_content_share_with_deeplink/{{page.platform}}/#installing-the-sdk).{%endoverride%}
+  {% override telephony %}[here](/recipes/app_content_share_with_deeplink/{{page.platform}}/#installing-the-sdk).{% endoverride %}
 {% endingredient %}
-{% ingredient sdk_setup/branch_key %}{%override screenshot%}{%endoverride%}{% endingredient %}
+{% ingredient sdk_setup/branch_key %}{% override screenshot%}{% endoverride %}{% endingredient %}
 {% ingredient sdk_setup/uri_scheme %}
-  {%override dashboard_uri %}For more info on setting up a URI scheme on the Dashboard, check out the [section above](/recipes/incentivized_referral_program/{{page.platform}}/#uri-scheme).{%endoverride%}
+  {% override dashboard_uri %}For more info on setting up a URI scheme on the Dashboard, check out the [section above](/recipes/incentivized_referral_program/{{page.platform}}/#uri-scheme).{% endoverride %}
 {% endingredient %}
 {% ingredient sdk_setup/init_session %}{% endingredient %}
 {% ingredient sdk_setup/handle_deep_link %}{% endingredient %}
@@ -54,11 +54,11 @@ For a referral system, Branch provides:
   Links are the foundation to everything Branch offers. Branch's links offer the ability to deep link directly to content, to pass data through the install process, and to tell where users are coming from. In the case of a incentivized referral program, you don't need to attach any information. You simply need to make sure that you generate links for the user who will be sharing the link. Also, be sure that you make a `setIdentity` call as described above.
 
   That said, you can attach information about the user who is sharing the link. Then this information about this user--here "John" with id "1234"--is present anytime John's friends install the app after clicking his link.
-  {%endoverride%}
+  {% endoverride %}
 
   {% override params %}{% if page.ios %}@{@"referringUsername":@"John", @"referringUserId":@"1234"}{% endif %}{% if page.android %}JSONObject obj = new JSONObject();
 obj.putString("referringUserName", "John");
-obj.putString("referringUserId", "1234"));{% endif %}{%endoverride%}
+obj.putString("referringUserId", "1234"));{% endif %}{% endoverride %}
 {% endingredient %}
 
 Again, it's not imperative that you attach any information to the link. As long as you made a `setIdentity` call, anytime this link is shared we will know whose link it is and when to attribute an install to him.
@@ -79,11 +79,11 @@ Again, it's not imperative that you attach any information to the link. As long 
 	{% override more %}{% endoverride %}
 {% endingredient %}
 {% ingredient rewards/reward_example %}{% endingredient %}
-{% ingredient sdk_setup/is_referrable_protip %}{%endingredient%}
+{% ingredient sdk_setup/is_referrable_protip %}{% endingredient %}
 {% ingredient rewards/rewards_are_flexible %}{% endingredient %}
 
-{% ingredient rewards/get_credits %}{%override different_bucket%}{%endoverride%}{% endingredient %}
-{% ingredient rewards/redeem_credits %}{%override different_bucket%}{%endoverride%}{% endingredient %}
+{% ingredient rewards/get_credits %}{% override different_bucket %}{% endoverride %}{% endingredient %}
+{% ingredient rewards/redeem_credits %}{% override different_bucket %}{% endoverride %}{% endingredient %}
 <!--- /Incentives: Tracking and Rewarding-->
 
 
@@ -93,8 +93,8 @@ You now have an incentivized referral program. Like many popular promo-code syst
 
 This guide covered the basics. The following may be of interest to you, if you want to:
 
-{% ingredient recipe_preview/reward %}{%endingredient%}
-{% ingredient recipe_preview/personalized_invite_system %}{%endingredient%}
-{% ingredient recipe_preview/influencers %}{%endingredient%}
-{% ingredient recipe_preview/channel_tags %}{%endingredient%}
-{% ingredient recipe_preview/contact_us %}{%endingredient%}
+{% ingredient recipe_preview/reward %}{% endingredient %}
+{% ingredient recipe_preview/personalized_invite_system %}{% endingredient %}
+{% ingredient recipe_preview/influencers %}{% endingredient %}
+{% ingredient recipe_preview/channel_tags %}{% endingredient %}
+{% ingredient recipe_preview/contact_us %}{% endingredient %}

@@ -7,5 +7,5 @@ platforms:
 - web
 ---
 
-{% ingredient sdk_links/custom_redirects %}{%endingredient%}
+{% ingredient sdk_links/custom_redirects %}{% endingredient %}
 

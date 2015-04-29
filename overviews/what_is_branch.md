@@ -12,4 +12,4 @@ platforms:
 - swift
 ---
 
-{% ingredient sdk_links/sharing_sms %}{%endingredient%}
+{% ingredient sdk_links/sharing_sms %}{% endingredient %}

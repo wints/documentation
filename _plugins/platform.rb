@@ -58,16 +58,17 @@ module Jekyll
         site.data['site_map'][page.data['type']]['pages'][path] = {
           'path' => path,
           'title' => page.data['title'],
+          'weight' => page.data['weight'] || 0,
           'platforms' => Hash[page_platforms.zip(page_platforms.map {|i| true })]
         }
       end
 
-      site.data['site_layout'] = Marshal.load( Marshal.dump(site.data['site_map']) )
-      site.data['site_layout'].each do |key, value|
-        value['type'] = key
-        value['pages'] = value['pages'].values
-      end
-      site.data['site_layout'] = site.data['site_layout'].values
+      site.data['site_layout'] = site.data['site_map'].map { |k, v|
+        v.merge({
+          'type' => k,
+          'pages' => v['pages'].values.sort { |x, y| x['weight'] <=> y['weight'] }
+        })
+      }
     end
 
     def generate(site)

@@ -1,4 +1,4 @@
-{%if page.ios%}
+{% if page.ios %}
 ### Sharing via the Branch UIActivityItemProvider
 
 {% tabs %}
@@ -82,4 +82,4 @@ self.navigationController?.presentViewController(shareViewController,
 
 ![ios share sheet](/img/ingredients/sdk_links/ios_share_sheet.jpg)
 
-{%endif%}
+{% endif %}

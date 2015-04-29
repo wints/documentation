@@ -18,21 +18,21 @@ If you also want to pass data through the install process or deep link straight 
 {% ingredient dashboard_setup/web_url %}{% endingredient %}
 {% ingredient dashboard_setup/store_or_custom_url %}{% endingredient %}
 {% ingredient dashboard_setup/uri_scheme %}
-  	{%override client_uri %}For more details on finding/setting your URI scheme in the client, see the section below on [setting the client app's URI scheme](/recipes/mobile_web_smart_banner/{{page.platform}}/#uri-scheme-1).{%endoverride%}
-	{% override optional %}**Note**: this is required if you want your smart banner to open the app. If, however, you simply want a banner that links to the {% if platform.ios %}App{%endif%}{% if platform.android %}Play{%endif%} Store (on mobile) or that allows users to text themselves the app (on desktop), you can skip this step.{%endoverride%}
+  	{% override client_uri %}For more details on finding/setting your URI scheme in the client, see the section below on [setting the client app's URI scheme](/recipes/mobile_web_smart_banner/{{page.platform}}/#uri-scheme-1).{% endoverride %}
+	{% override optional %}**Note**: this is required if you want your smart banner to open the app. If, however, you simply want a banner that links to the {% if platform.ios %}App{% endif %}{% if platform.android %}Play{% endif %} Store (on mobile) or that allows users to text themselves the app (on desktop), you can skip this step.{% endoverride %}
 {% endingredient %}
 {% ingredient dashboard_setup/end_required %}{% endingredient %}
 
 ## The Smart Banner
-{% ingredient web_specific/smart_banner %}{%override header%}{%endoverride%}{% endingredient %}
+{% ingredient web_specific/smart_banner %}{% override header %}{% endoverride %}{% endingredient %}
 
 ## (Optional) Configuring the Client for Deep Linking
 {% ingredient sdk_setup/installing_the_sdk %}
-  {%override telephony%}[here](/recipes/app_content_share_with_deeplink/{{page.platform}}/#installing-the-sdk).{%endoverride%}
+  {% override telephony %}[here](/recipes/app_content_share_with_deeplink/{{page.platform}}/#installing-the-sdk).{% endoverride %}
 {% endingredient %}
-{% ingredient sdk_setup/branch_key %}{%override screenshot%}{%endoverride%}{% endingredient %}
+{% ingredient sdk_setup/branch_key %}{% override screenshot %}{% endoverride %}{% endingredient %}
 {% ingredient sdk_setup/uri_scheme %}
-  {%override dashboard_uri %}For more info on setting up a URI scheme on the Dashboard, check out the [section above](/recipes/mobile_web_smart_banner/{{page.platform}}/#uri-scheme).{%endoverride%}
+  {% override dashboard_uri %}For more info on setting up a URI scheme on the Dashboard, check out the [section above](/recipes/mobile_web_smart_banner/{{page.platform}}/#uri-scheme).{% endoverride %}
 {% endingredient %}
 {% ingredient sdk_setup/init_session %}{% endingredient %}
 {% ingredient sdk_setup/handle_deep_link %}{% endingredient %}
@@ -64,8 +64,8 @@ Deep linking has countless possibilities and we'd be happy to brainstorm use cas
 
 You've learned how to add a smart banner to your website with minimal configuration and some copying-and-pasting Javascript into your website. Perhaps the allure of passing data through install or deep linking to content caught your eye and you added the SDK to your {{page.platform_formatted}} app. There's a ton more that Branch can do. For example, you can:
 
-{% ingredient recipe_preview/incentivized_referral_program %}{%endingredient%}
-{% ingredient recipe_preview/personalized_invite_system %}{%endingredient%}
-{% ingredient recipe_preview/influencers %}{%endingredient%}
-{% ingredient recipe_preview/channel_tags %}{%endingredient%}
-{% ingredient recipe_preview/contact_us %}{%endingredient%}
+{% ingredient recipe_preview/incentivized_referral_program %}{% endingredient %}
+{% ingredient recipe_preview/personalized_invite_system %}{% endingredient %}
+{% ingredient recipe_preview/influencers %}{% endingredient %}
+{% ingredient recipe_preview/channel_tags %}{% endingredient %}
+{% ingredient recipe_preview/contact_us %}{% endingredient %}

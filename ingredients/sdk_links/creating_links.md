@@ -16,7 +16,7 @@ On iOS, it's a rather simple method call.
 {% tabs %}
 {% tab objective-c %}
 {% highlight objc %}
-[[Branch getInstance] getShortURLWithParams:{% section params %}@{@"foo": @"bar"}{%endsection%} andCallback:^(NSString *url, NSError *error) {
+[[Branch getInstance] getShortURLWithParams:{% section params %}@{@"foo": @"bar"}{% endsection %} andCallback:^(NSString *url, NSError *error) {
     if (!error) NSLog(@"got my Branch link to share: %@", url);
 }];
 {% endhighlight %}

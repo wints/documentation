@@ -4,6 +4,7 @@ title: Your First Link
 platforms:
 - ios
 - android
+weight: -1
 ---
 
 ## Getting Started
@@ -22,22 +23,22 @@ That's the end of the required setup for the Dashboard! The dashboard is incredi
 ## Creating your Link
 
 {% ingredient dashboard_links/creating_links %}
-	{%override screenshot_description%}One example description if you want to treat this guide is: "Marketing our launch on Facebook."{%endoverride%}
+	{% override screenshot_description %}One example description if you want to treat this guide is: "Marketing our launch on Facebook."{% endoverride %}
 {% endingredient %}
 
 {% ingredient dashboard_links/tags %}
-	{%override deep_link_data_url%}For information of the form *[key]*: *[value]* such as "product": "shoes", we recommend adding them below--see [Deep Link Data (Optional)](/recipes/your_first_link/{{page.platform}}/#deep-link-data-optional).
-    {%endoverride%}
+	{% override deep_link_data_url %}For information of the form *[key]*: *[value]* such as "product": "shoes", we recommend adding them below--see [Deep Link Data (Optional)](/recipes/your_first_link/{{page.platform}}/#deep-link-data-optional).
+    {% endoverride %}
 {% endingredient %}
 
 {% ingredient dashboard_links/alias %}
-	{%override optional%}(Optional -- highly recommended){%endoverride%}
+	{% override optional %}(Optional -- highly recommended){% endoverride %}
 {% endingredient %}
 
 {% ingredient dashboard_links/og_tags %}{% endingredient %}
 {% ingredient dashboard_links/custom_data %}
-	{%override advanced%}(Optional){%endoverride%}
-	{%override description%}This custom data can be anything you want and is part of Branch's secret sauce. For now you don't need to put anything here. In case you're interested, you add data at the bottom of the link creation process.{%endoverride%}
+	{% override advanced %}(Optional){% endoverride %}
+	{% override description %}This custom data can be anything you want and is part of Branch's secret sauce. For now you don't need to put anything here. In case you're interested, you add data at the bottom of the link creation process.{% endoverride %}
 {% endingredient %}
 {% ingredient dashboard_links/end %}{% endingredient %}
 <!--- /Creating your Link -->
@@ -45,10 +46,10 @@ That's the end of the required setup for the Dashboard! The dashboard is incredi
 
 ## Conclusion and Advanced Options
 
-{% ingredient dashboard_links/no_sdk %}{%endingredient%}
+{% ingredient dashboard_links/no_sdk %}{% endingredient %}
 
-{% ingredient recipe_preview/incentivized_referral_program %}{%endingredient%}
-{% ingredient recipe_preview/personalized_invite_system %}{%endingredient%}
-{% ingredient recipe_preview/influencers %}{%endingredient%}
-{% ingredient recipe_preview/channel_tags %}{%endingredient%}
-{% ingredient recipe_preview/contact_us %}{%endingredient%}
+{% ingredient recipe_preview/incentivized_referral_program %}{% endingredient %}
+{% ingredient recipe_preview/personalized_invite_system %}{% endingredient %}
+{% ingredient recipe_preview/influencers %}{% endingredient %}
+{% ingredient recipe_preview/channel_tags %}{% endingredient %}
+{% ingredient recipe_preview/contact_us %}{% endingredient %}
