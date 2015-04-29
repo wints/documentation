@@ -45,7 +45,7 @@ We don't cover link creation in this initial guide, so a natural place to start 
 
 ## Conclusion
 
-Now that you've completed the basic integration, you can skip steps one (Configuring the Dashboard) and two (Configuring the Client) in the following guides. With Branch, you can:
+Now that you've completed the basic integration, you can **skip steps one (Configuring the Dashboard) and two (Configuring the Client) in the following guides**. Next steps:
 
 {% ingredient recipe_preview/marketing_campaign_download_tracking %}{%endingredient%}
 {% ingredient recipe_preview/personalized_invite_system %}{%endingredient%}
