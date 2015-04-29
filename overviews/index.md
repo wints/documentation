@@ -14,7 +14,7 @@ In other words, Branch allows mobile apps to deeplink through install, meaning e
 
 # Guides
 
-We exist to help you grow your mobile app. More users, happier users, repeat users. Below is our list of "recipes" -- a list of things you can build thanks to Branch. They're meant to give you an idea of what's possible, and to provide the **minimum viable code** to inject these features into your app. These appear on the left menu under **Building with Branch**.
+We exist to help you grow your mobile app. More users, happier users, repeat users. Below is our list of "recipes" -- a list of things you can build thanks to Branch. They're meant to give you an idea of what's possible, and to provide the **minimum viable code** to inject these features into your app. These appear on the left menu under **Integration Guides**.
 
 
 ## Basic Integration Guides
@@ -63,21 +63,23 @@ We also have information separated into several individualized **Building Blocks
 {% ingredient recipe_preview/webhooks %}{% endingredient %}
 
 
-## Full Stack, Drop-in Feature SDKs (GitHub)
+# Additional Resources (GitHub)
+
+## Full Stack, Drop-in Feature SDKs
 
 * [**Branchified Overshare Sharing SDK**](https://github.com/BranchMetrics/overshare-deeplinking-kit)
 
 * [**Personalized Invite Feature SDK**](https://github.com/BranchMetrics/Branch-iOS-Invite-SDK)
 
 
-## Example Apps (GitHub)
+## Example Apps
 
 * [**Branchsters iOS**](https://github.com/BranchMetrics/Branchster-iOS) - app with sharing and deeplinking
 
 * [**Branchsters Android**](https://github.com/BranchMetrics/Branchster-Android) - app with sharing and deeplinking
 
 
-## Core SDK Repositories and Reference Docs (GitHub)
+## Core SDK Repositories and Reference Docs
 
 * [**Android SDK**](https://github.com/BranchMetrics/Branch-Android-SDK)
 
