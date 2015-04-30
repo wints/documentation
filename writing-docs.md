@@ -86,7 +86,28 @@ We actually have a few different tags:
 
 	This pattern is used extensively throughout the docs, so make sure you become familiar with it. Because pieces of ingredients can be overridden, there is coupling between ingredients and the recipes (& domains & overviews) that they are used in. This coupling may grow over time...
 	
-3. **If**. If is exclusively used for dealing with platform differences. So you will usually see {% if i %}say 
+3. **If**. If is exclusively used for dealing with platform differences. So you will usually see `{% if page.ios %}App{% endif %}{% if page.android %}Play{% endif %} Store` or some similar patter. This example results in either `App Store` or `Play Store` depending on the platform.
+
+4. **Protip**. This is for "quick hits" or warnings. We shouldn't go overboard on these. Here's one example:
+
+	```
+	{% protip title="Branch links work even on first install!" %}
+	With standard deeplinks, if a user doesn't have the app, the link fails. 
+	With Branch links, users without the app will be directed to the 
+	{% if page.ios %}App{% endif %}{% if page.android %}Play{% endif %} Store 
+	-- and upon opening the app can be deeplinked! This is called 
+	*Deferred Deep Linking*.{% endprotip %}
+	```
+	
+	I don't usually do new lines -- that was just for this example.
+	
+5. **Highlight%%. This is for code. It's good practice to specify the language. Here's an example:
+
+	```
+	{% highlight java %}
+   Branch.getInstance(getApplicationContext()).setDebug();
+	{% endhighlight %}
+	```
 
 6. **Tabs**. Example (see similar in ingredients/sdk_links/*):
 
