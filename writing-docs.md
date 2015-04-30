@@ -22,7 +22,7 @@ The documentation is its own system now. I'm going to start with various observa
 * Never edit anything inside the _site directory -- these are all generated files
 * Ask before editing files elsewhere unless you're extremely confident that you know what you're doing
 
-## What are ingredients and how do they fit in?
+## What are ingredients and how do they fit in? 
 
 * Ingredients are the little pieces that everything else is composed of
 * Ingredients are imported into the files for:
@@ -34,15 +34,50 @@ The documentation is its own system now. I'm going to start with various observa
 ```
 {% ingredient parent_folder/exact_ingredient_name %}{% endingredient %}
 ```
-* This is a form of markdown. Meaning these are tags. Meaning you can put things inside the tags. We actually have a few different tags:
-	* `{% ingredient %}{% endingredient %}`
-	* `{% section %}{% endsection %}` and `{% override %}{% endoverride %}`
-	* `{% if %}{% endif %}`
-	* 
+* This is a form of markdown. Meaning these are tags. Meaning you can put things inside the tags. And there are other tags...
 
 
-* Here is a concrete example from /recipes/deeplinked_ads.md that pulls in an ingredient:
+## Tags
+
+We actually have a few different tags:
+
+1. `{% ingredient %}{% endingredient %}`
+2. `{% section %}{% endsection %}` and `{% override %}{% endoverride %}`
+3. `{% if %}{% endif %}`
+4. `{% protip %}{% endprotip %}`
+5. `{% highlight %}{% endhighlight %}`
+6. `{% tabs %}{% endtabs %}`
+
+
+## Examples of the tags in actions
+
+1. Example with Ingredient (from /recipes/deeplinked_ads.md):
 
 ```
 {% ingredient dashboard_setup/app_name %}{% endingredient %}
+```
+
+
+
+
+
+6. Example with Tabs (see similar in ingredients/sdk_links/*)
+
+```
+{% tabs %}
+{% tab objective-c %}
+{% highlight objc %}
+
+// Objective C code here
+
+{% endhighlight %}
+{% endtab %}
+{% tab swift %}
+{% highlight swift %}
+
+// Swift code here
+
+{% endhighlight %}
+{% endtab %}
+{% endtabs %}
 ```
