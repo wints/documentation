@@ -23,9 +23,9 @@ We exist to help you grow your mobile app. More users, happier users, repeat use
 
 * [**Mobile Web Smart Banner**](/recipes/your_first_link/ios/) -- cross-platform, customizable web banner
 
-* [**iOS Quickstart Guide**](/recipes/quickstart/ios/) -- basic install tracking and deeplinking
+* [**iOS Quickstart Guide**](/recipes/quickstart_guide/ios/) -- basic install tracking and deeplinking
 
-* [**Android Quickstart Guide**](/recipes/quickstart/android/) -- basic install tracking and deeplinking
+* [**Android Quickstart Guide**](/recipes/quickstart_guide/android/) -- basic install tracking and deeplinking
 
 
 ## Feature Integration Guides

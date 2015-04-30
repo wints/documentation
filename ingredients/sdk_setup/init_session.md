@@ -65,7 +65,9 @@ branch.initSessionWithLaunchOptions(launchOptions, andRegisterDeepLinkHandler: {
 {% endtab %}
 {% endtabs %}
 
-
+{% protip title="Watch Out" %}
+If you are seeing a "Branch.h file not found" error but you've imported the SDK, [click here](http://support.branch.io/customer/portal/articles/1964901-xcode-error---branch-not-found).
+{% endprotip %}
 
 {% endif %}
 <!---    /iOS -->

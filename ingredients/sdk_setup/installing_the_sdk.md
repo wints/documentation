@@ -17,6 +17,10 @@ You will need to drag and drop the Branch.framework file that you downloaded int
 [[View Fullscreen](/img/ingredients/configuring_the_client/ios_core_telephony.gif)]
 ![importing Core Telephony](/img/ingredients/configuring_the_client/ios_core_telephony.gif){% endsection %}
 
+{% protip title="Most accurate matching" %}
+To get the best experience with Branch, you should import AdSupport.framework. This allows us to leverage the IDFA for more accurate matching, and we can also identify users who return later after uninstalling the app.
+{% endprotip %}
+
 {% endif %}
 <!---       /iOS-specific installing the SDK -->
 
