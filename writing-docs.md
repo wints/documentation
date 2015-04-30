@@ -22,7 +22,21 @@ The documentation is its own system now. I'm going to start with various observa
 * Never edit anything inside the _site directory -- these are all generated files
 * Ask before editing files elsewhere unless you're extremely confident that you know what you're doing
 
-## What are ingredients and how do they fit in? 
+
+## WTF is ingredient, domain, recipe, overview... gah
+
+* So our naming conventions will likely continue to evolve over time. But the original terms we used were ingredient and recipe. Ingredients are used in recipes.
+* Then we realized that ingredients could be usefully grouped together. We call these domains. @Alex doesn't like them so they may go away eventually. (If they do, then we will need to build out really great reference docs that also pull from the ingredients. We don't want code living in different places--then changes involve finding all the places that need to change and changing them.)
+* Tack on overviews and you now have the three primary groupings on the left menu:
+
+	1. Overviews
+	2. Recipes (called "Integration Guides")
+	3. Domains (called "Building Blocks")
+
+* again, all three are comprised of ingredients
+
+
+## Again, because I skipped the previous section, what are ingredients and how do they fit in? 
 
 * Ingredients are the little pieces that everything else is composed of
 * Ingredients are imported into the files for:
@@ -49,19 +63,32 @@ We actually have a few different tags:
 6. `{% tabs %}{% endtabs %}`
 
 
-## Examples of the tags in actions
+## Explanation/Examples of the tags in actions
 
-1. Example with Ingredient (from /recipes/deeplinked_ads.md):
+1. **Ingredient**. Example (from /recipes/deeplinked_ads.md):
 
-```
-{% ingredient dashboard_setup/app_name %}{% endingredient %}
-```
+	```
+	{% ingredient dashboard_setup/app_name %}{% endingredient %}
+	```
+	
+	These are used in overviews, recipes, and domains.
 
 
+2. **Section/Override**. Sometimes you'll want to change something inside an ingredient. Custom explanation for one guide, tweak where a link directs, etc. It's quite common. In order for this to be possible, you have to:
 
+	a. find the content inside the ingredient that you want to be able to "override" on a case-by-case basis when importing recipes => wrap it in the {% section %}{% endsection %} tags. Example (in ingredient):
+	
+		{% section header %}## Best Title Ever{% endsection %}
+		
+	b. then inside the overview, recipe or domain where you want to override part of the ingredient, use the {% override %}{% endoverride %} tags. Make sure you specify the same name that was used for the section. Example (in recipe, etc.):
+	
+		{% override header %}## Even Better Title!{% endoverride %}
 
+	This pattern is used extensively throughout the docs, so make sure you become familiar with it. Because pieces of ingredients can be overridden, there is coupling between ingredients and the recipes (& domains & overviews) that they are used in. This coupling may grow over time...
+	
+3. **If**. If is exclusively used for dealing with platform differences. So you will usually see {% if i %}say 
 
-6. Example with Tabs (see similar in ingredients/sdk_links/*)
+6. **Tabs**. Example (see similar in ingredients/sdk_links/*):
 
 ```
 {% tabs %}
