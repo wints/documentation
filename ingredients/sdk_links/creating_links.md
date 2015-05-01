@@ -1,4 +1,4 @@
-### Creating Links
+{% section header %}### Creating Links{% endsection %}
 
 {% section explanation %}
 Links are the foundation to everything Branch offers. Branch's links offer the ability to deep link directly to content, to pass data through the install process, and to tell where users are coming from. With Branch links, you can tell whether a user installed your app thanks to a Facebook ad, an email campaign or a personal invite from a friend.

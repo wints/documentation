@@ -44,8 +44,8 @@ module Jekyll
       group_pages = site.pages.select { |page| ['recipe', 'overview', 'domain', 'reference' ].include?(page.data['type']) }
       site.data['site_map'] = {
         'overview' => { 'title' => 'Overview', 'pages' => Hash.new },
-        'recipe' => { 'title' => 'Building with Branch (Guides)', 'pages' => Hash.new },
-        'domain' => { 'title' => 'Building Blocks (Features)', 'pages' => Hash.new },
+        'recipe' => { 'title' => 'Integration Guides', 'pages' => Hash.new },
+        'domain' => { 'title' => 'Building Blocks', 'pages' => Hash.new },
         'reference' => { 'title' => 'API Reference', 'pages' => Hash.new }
       }
 
