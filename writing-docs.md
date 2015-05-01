@@ -1,6 +1,8 @@
 Editing Documentation
 =====================
 
+[(who has time for a 20 minute video?)](http://youtu.be/UHejpjQOygQ)
+
 The documentation is its own system now. I'm going to start with various observations and maybe this will evolve into a better doc in the future.
 
 ## Viewing the docs
