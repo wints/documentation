@@ -26,7 +26,7 @@ module Jekyll
     end
 
     def render(context)
-      partial = File.read(File.join("learn-more/slides", @asset))
+      partial = File.read(File.join("learn_more/slides", @asset))
       context.registers[:slides].push('<Slide>' + partial + '</Slide>')
       ""
     end
