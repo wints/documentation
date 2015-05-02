@@ -40,6 +40,7 @@ If you also want to pass data through the install process or deep link straight 
 {% ingredient sdk_routing/routing %}{% endingredient %}
 
 
+
 ## (Optional) Routing: passing information from the Banner
 
 Now that you've added routing to your app, you can add information to the Smart Banner. If you've used the example Smart Banner code [above](/recipes/mobile_web_smart_banner/ios/#the-smart-banner), you simply need to insert any key-value pairs you'd like into the data dictionary.
