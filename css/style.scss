@@ -30,21 +30,18 @@ img {
 
 .main {
 	max-width: 1100px;
-	padding: 20px 0px;
+	padding: 80px 0px 20px 0px;
 }
 
 // padding, and margin
 
-.sidebar-group li { 
-	padding-top: 6px; 
+.sidebar-group li {
+	padding-top: 6px;
 }
 
-.p-b-20 {
-	padding-bottom: 20px;
-}
-
-.p-t-10 {
-	padding-top: 10px;
+.page-title {
+	padding-top: 0px;
+	margin-top: 0px;
 }
 
 pre {
@@ -56,5 +53,7 @@ pre {
 	}
 }
 
-
+a:hover, a:focus {
+	color: #5691AD;
+}
 

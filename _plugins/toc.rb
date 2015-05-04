@@ -2,7 +2,7 @@ module Jekyll
     module TOC
         def toc_generate(html)
             toc = []
-            levels = [2, 3]
+            levels = [2]
             html.gsub!(/<h([0-9]) id="(.*)">(.*)<\/h\d>/) { |m, tag, header|
                 level = Regexp.last_match[1].to_i
                 id = Regexp.last_match[2]
@@ -13,7 +13,8 @@ module Jekyll
                 '<h' + level.to_s + '><a class="anchor" name="' + id + '"></a><a href="#' + id + '">' + text + '</a></h' + level.to_s + '>'
             }
             nested_toc = _nested_toc(toc)
-            _render_toc(nested_toc, 1) + "<hr />" + html
+            steps = '<h4> Steps </h4>';
+            "<hr/>" + steps + _render_toc(nested_toc, 1) + "<hr />" + html
         end
         def _render_toc(toc, level)
             if toc.length > 0 then
