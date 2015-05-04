@@ -7,6 +7,14 @@ Live at: http://docs.branch.io.s3-website-us-west-1.amazonaws.com/
 ```
 gem install bundler
 ```
+### Install Xcode CLI Tools
+```
+xcode-select --install
+```
+### Install Nokogiri
+```
+sudo gem install nokogiri -v '1.6.6.2'
+```
 
 ### Init submodule
 
