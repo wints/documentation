@@ -5,14 +5,14 @@ root_index: true
 hide_platform_selector: true
 ---
 
-# Welcome to Branch!
+## Welcome to Branch!
 
 Branch is a **deeplinking and tracking technology** that helps mobile developers attribute organic and paid app installs, optimize and create drop-in invite & referral systems, and do smarter in-app sharing through our unique device fingerprinting and deeplinking technology. We dynamically generate short URLs on the fly that pass and track data from the originating source through install, across devices, and across platform.
 
 In other words, Branch allows mobile apps to deeplink through install, meaning even new users can get deeplinked to the specific content that originally caused them to download the app immediately after install (whether that content be a specific page associated with a direct marketing campaign, or a link to in-app content shared by a friend).
 
 
-# Guides
+## Guides
 
 We exist to help you grow your mobile app. More users, happier users, repeat users. Below is our list of "recipes" -- a list of things you can build thanks to Branch. They're meant to give you an idea of what's possible, and to provide the **minimum viable code** to inject these features into your app. These appear on the left menu under **Integration Guides**.
 
