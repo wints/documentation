@@ -34,6 +34,11 @@ git submodule update
 npm install && bundle install
 ```
 
+### Increase Open file Limit
+```
+ulimit -n 10000
+```
+
 ### Open another terminal console and start jekyll
 ```
 bundle exec jekyll serve --watch
