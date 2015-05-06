@@ -1,5 +1,11 @@
+@import "../_includes/branch-web-assets/styles/global";
+
 img {
 	max-width: 100%;
+}
+
+img.plugin:hover {
+	outline: 2px solid $link-color-hover;
 }
 
 img.left {
