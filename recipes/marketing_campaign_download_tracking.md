@@ -11,7 +11,7 @@ When you complete this guide, you will have the ability to run powerful marketin
 
 One screenshot is worth a million... dollars on spent on non-performant ads and expensive tools to track those ads:
 
-![the goal](/img/ingredients/analytics_and_custom_events/dashboard_summary.png)
+{% image src='/img/ingredients/analytics_and_custom_events/dashboard_summary.png' 3-quarters center alt='the goal' %}
 
 Let's get started. Seeing install numbers (as opposed to merely clicks) requires doing some setup both on the Dashboard and within your {{page.platform_formatted}} app.
 

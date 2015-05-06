@@ -8,10 +8,11 @@ To see this info, follow the required steps for configuring your {{page.platform
 Here's what your results should look like:
 
 ![influencers](/img/ingredients/analytics_and_custom_events/influencers.png)
+{% image src='/img/ingredients/analytics_and_custom_events/influencers.png' 3-quarters center alt='influencers' %}
 
-{% protip title='Identify your users!'  %}
+{% protip title='Identify your users!' %}
 You must [identify your users](/domains/configuring_client_apps/{{page.platform}}/#identifying-your-users) in order for the `User ID` column to be populated.
 {% endprotip %}
 
 
-The `Branch ID` refers to the internal Branch ID associated with that user. It is set automatically in the SDK. 
+The `Branch ID` refers to the internal Branch ID associated with that user. It is set automatically in the SDK.

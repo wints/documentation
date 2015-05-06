@@ -26,8 +26,8 @@ module Jekyll
 
     def initialize(tag_name, text, tokens)
       super
-      @position = /nofloat|right|left|center/.match(text).to_s
-      @width = /full|3-quarters|2-thirds|half|third|quarter|actual/.match(text).to_s
+      @position = /\s(nofloat|right|left|center)\s/.match(text).to_s.strip!
+      @width = /\s(full|3-quarters|2-thirds|half|third|quarter|actual)\s/.match(text).to_s.strip!
       @src = /src=['"]\S*['"]/.match(text).to_s
       @alt = /alt=['"].*['"]/.match(text).to_s
     end
@@ -43,7 +43,7 @@ module Jekyll
         'actual' => ''
       }
 
-      position = @position.length > 0 ? @position : 'nofloat'
+      position = @position ? @position : 'nofloat'
       image_width = @WIDTH_MAP[@width] || '100%'
       '<img '+replace(context, @src)+' '+@alt+' class="'+position+'" '+'width="'+image_width+'"/>'
     end

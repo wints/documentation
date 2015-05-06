@@ -22,7 +22,7 @@ Your app key can be retrieved on the [Settings](https://dashboard.branch.io/#/se
 #### Animated Gif
 
 [[View Fullscreen](/img/ingredients/sdk_setup/ios_branch_key_simple.gif)]
-![Setting Key in PList Demo](/img/ingredients/sdk_setup/ios_branch_key_simple.gif)
+{% image src='/img/ingredients/sdk_setup/ios_branch_key_simple.gif' alt='Setting Key in Plist Demo' %}
 
 {% endif %}
 <!---       /iOS-specific Branch Key -->

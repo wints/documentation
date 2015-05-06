@@ -5,13 +5,14 @@ To register a webhook on the Dashboard, open the [Webhooks](https://dashboard.br
 
 Click Add a new webhook to get started.
 
-![add webhook](/img/ingredients/webhooks/add.png)
+{% image src='/img/ingredients/webhooks/add.png' half alt='add a new webhook button' %}
 
-We've layed out the webhook registration in a sentence format. The format is:
+<div class="full-width">We've layed out the webhook registration in a sentence format. The format is:</div>
 
-Send a webhook to [ WEBHOOK URL ] [ EVERY TIME / THE FIRST TIME ] users trigger the event [ EVENT ].
+<div class="attention-grabber">Send a webhook to [ WEBHOOK URL ] [ EVERY TIME / THE FIRST TIME ] users trigger the event [ EVENT ].</div>
 
-![add webhook](/img/ingredients/webhooks/edit.png)
+{% image src='/img/ingredients/webhooks/edit.png' half center alt='add a new webhook' %}
+
 
 ### Enter your webhook URL
 
@@ -64,6 +65,7 @@ Any query parameter you add to Branch Links will be captured and stored. You wil
 
 ### Save and Confirm
 
+
 After you press `Add webhook`, you should see the webhook in the list of your reward rules.
 
-![add webhook](/img/ingredients/webhooks/added.png)
+{% image src='/img/ingredients/webhooks/added.png' 2-thirds alt='save and confirm' %}

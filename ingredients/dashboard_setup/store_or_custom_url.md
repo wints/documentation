@@ -4,8 +4,8 @@
 {% if page.web %}### [TODO] Doesn't work for web{% endif %}
 {% endsection %}
 
-<!---       Screenshot of App Store / Play Store -->
 {% image src='/img/ingredients/configuring_the_dashboard/{{page.platform}}_store.png' half right alt='Screen Shot of Store' %}
+
 Part of the magic of Branch Links is that you can have different configurations for iOS, Android, Fire... -- and it just works! In this section, you need to specify where the user can download your app.
 
 When setting up {% if page.ios %}an iOS{% endif %}{% if page.android %}an Android{% endif %} app, you need to locate your app in the {% if page.ios %}App{% endif %}{% if page.android %}Play{% endif %} Store. Start typing the name of your app and it should show up in the box.

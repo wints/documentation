@@ -1,7 +1,7 @@
 
-### Dashboard Summary 
+### Dashboard Summary
 
-![dashboard summary](/img/ingredients/analytics_and_custom_events/dashboard_summary.png)
+{% image src='/img/ingredients/analytics_and_custom_events/dashboard_summary.png' 3-quarters center alt='dashboard summary' %}
 
 The Dashboard's [Summary](https://dashboard.branch.io/#) page is quite powerful. You can see:
 

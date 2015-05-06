@@ -10,7 +10,7 @@ However, if you don't currently use Cocoapods, you can easily download and insta
 You will need to drag and drop the Branch.framework file that you downloaded into your project. Be sure that "Copy items if needed" is selected.
 
 [[View Fullscreen](/img/ingredients/configuring_the_client/ios_importing.gif)]
-![importing SDK](/img/ingredients/configuring_the_client/ios_importing.gif)
+{% image src='/img/ingredients/configuring_the_client/ios_importing.gif' alt='importing SDK' %}
 
 **You also need to import CoreTelephony**. See the graphic {% section telephony %}below:
 

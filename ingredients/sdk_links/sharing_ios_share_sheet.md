@@ -80,6 +80,7 @@ self.navigationController?.presentViewController(shareViewController,
 {% endtab %}
 {% endtabs %}
 
-![ios share sheet](/img/ingredients/sdk_links/ios_share_sheet.jpg)
+{% image src='/img/ingredients/sdk_links/ios_share_sheet.jpg' actual center alt='ios share sheet' %}
+
 
 {% endif %}

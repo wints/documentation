@@ -5,9 +5,9 @@ For debugging while still in a test environment, the Dashboard's [Debug](https:/
 
 * the user's identity
 * the current session
-* the device's digital fingerprint 
+* the device's digital fingerprint
 * the user's credits
 
-![dashboard debug](/img/ingredients/debug/dashboard_debug.png)
+{% image src='/img/ingredients/debug/dashboard_debug.png' 3-quarters center alt='dashboard debug' %}
 
 To make use of this feature, make sure you include the `setDebug` call. Then open the [Debug](https://dashboard.branch.io/#/debug) page and follow the directions to connect your phone.
