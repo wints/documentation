@@ -47,13 +47,13 @@ Now that you've added routing to your app, you can add information to the Smart 
 Using our example of routing above with the PicVC, you'd simply need to change the Web Banner code to the following:
 
 {% highlight javascript %}
-    branch.banner(options, {
-        phone: '9999999999',
-        type: 1,
-        data: {
-            'pictureId': '12345',
-        }
-    });
+branch.banner(options, {
+    phone: '9999999999',
+    type: 1,
+    data: {
+        'pictureId': '12345',
+    }
+});
 {% endhighlight %}
 
 Now when a user clicks on the Smart Banner on a mobile device, when they open your app they will be taken straight to a view controller to see picture with id "12345". It's that simple.
