@@ -4,4 +4,4 @@ While our [URL Creation Guide](https://github.com/BranchMetrics/Branch-Integrati
 
 For more information on the optimal format for the title and description, see Facebook's [Sharing Best Practices](https://developers.facebook.com/docs/sharing/best-practices#tags).
 
-![Dashboard Screenshot](/img/ingredients/dashboard_links/og_tags.png)
+{% image src="/img/ingredients/dashboard_links/og_tags.png" 3-quarters center alt="Social Media (OG) tags" %}

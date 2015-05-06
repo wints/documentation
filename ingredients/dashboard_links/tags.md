@@ -7,4 +7,6 @@ The more information you enter, the better you'll be able to segment data on the
 
 *Hint: Press the 'comma' or 'return' key after each tag.*
 
-{% section screenshot %}![Description](/img/ingredients/dashboard_links/tags.png){% endsection %}
+{% section screenshot %}
+{% image src="/img/ingredients/dashboard_links/tags.png" 3-quarters center alt="Link Tags" %}
+{% endsection %}

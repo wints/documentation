@@ -48,7 +48,7 @@ var Tabs = React.createClass({
 					{ this.props.children[this.state.active] }
 				</div>
 				<div className="row switcher">
-					<div className="float-right">
+					<div className="right">
 						{ optionButtons(this.state.options) }
 					</div>
 				</div>
