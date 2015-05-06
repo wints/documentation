@@ -7,6 +7,7 @@ $branch-font-path: "/font";
 @import "../_includes/branch-web-assets/components/footer/footer";
 @import "../_includes/branch-web-assets/components/navbar/navbar";
 @import "../_includes/branch-web-assets/components/header/header";
+@import "./headers";
 @import "./tabs";
 @import "./sidebar";
 @import "./protip";
@@ -46,13 +47,5 @@ pre {
 
 a:hover, a:focus {
 	color: #5691AD;
-}
-
-.content {
-	h2, h3, h4 {
-		margin-top: 30px;
-		display: inline-block;
-		width: 100%;
-	}
 }
 
