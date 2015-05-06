@@ -43,8 +43,9 @@ module Jekyll
         'actual' => ''
       }
 
+      position = @position.length > 0 ? @position : 'nofloat'
       image_width = @WIDTH_MAP[@width] || '100%'
-      '<img '+replace(context, @src)+' '+@alt+' class="plugin '+@position+'" '+'width="'+image_width+'"/>'
+      '<img '+replace(context, @src)+' '+@alt+' class="'+position+'" '+'width="'+image_width+'"/>'
     end
   end
 end

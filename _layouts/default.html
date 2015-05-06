@@ -20,7 +20,9 @@
 					</div>
 				</div>
 				{% if page.has_key?("overview") != true %}<p>{{ page.overview }}</p>{% endif %}
-				{{ content }}
+				<div class="content">
+					{{ content }}
+				</div>
 			</div>
 		</div>
 	</div>

@@ -13,7 +13,7 @@ module Jekyll
                 '<h' + level.to_s + '><a class="anchor" name="' + id + '"></a><a href="#' + id + '">' + text + '</a></h' + level.to_s + '>'
             }
             nested_toc = _nested_toc(toc)
-            steps = '<h4> Steps </h4>';
+            steps = '<h4 class="toc-steps"> Steps </h4>';
             "<hr/>" + steps + _render_toc(nested_toc, 1) + "<hr />" + html
         end
         def _render_toc(toc, level)
