@@ -2,7 +2,6 @@
 type: recipe
 title: 3rd Party Ad Integration
 hide_platform_selector: true
-weight: -10
 ---
 
 ## Double Sided Custom Ad Measurement Integrations

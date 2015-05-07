@@ -11,15 +11,17 @@ function getStateFromStore() {
 
 var GroupPages = React.createClass({
 	render: function() {
-		var self = this;
+		var props = this.props;
 		// overview pages live in root where as all other page types are in plural form. i.e. receipe -> recipes
-		var type = this.props.type != 'overview' ? this.props.type + 's': null;
+		var type = props.type != 'overview' ? props.type + 's': null;
+		var pages = R.map(function(page_key) {
+			var page = props.group_data[page_key];
+			if (!page) { throw 'ERROR: There is no PAGE: ' + page_key + ' with the TYPE: ' + props.type; }
 
-		var pages = R.map(function(page) {
-			var path = type ? [ type, page.path ] : [ page.path ];
-				isCurrentPath = self.props.current_path == path.join('/');
-			if (page.platforms[self.props.platform]) {
-				path.push(self.props.platform);
+			var path = type ? [ type, page_key ] : [ page_key ],
+				isCurrentPath = props.current_path == path.join('/');
+			if (page.platforms[props.platform]) {
+				path.push(props.platform);
 			}
 			return (
 				<li className={ cx({ 'active': isCurrentPath }) } key={ page.title }>
@@ -27,7 +29,7 @@ var GroupPages = React.createClass({
 				</li>);
 		});
 
-		return <ul>{ pages(this.props.pages) }</ul>
+		return <ul>{ pages(props.pages) }</ul>
 	}
 });
 
@@ -48,20 +50,22 @@ var Sidebar = React.createClass({
 		var self = this;
 		var groups = R.map(function(group) {
 			if (!group.pages.length) { return; }
+			// console.log(self.props.site_map[group.type])
 			return (
-				<div className="sidebar-group" key={ group.title }>
+				<div className="sidebar-group" key={ group.type }>
 					<div className="sidebar-title">{ group.title }</div>
 					<GroupPages
 						pages={ group.pages }
 						type={ group.type }
 						current_path={ self.props.current_path }
+						group_data={ self.props.site_map[group.type] }
 						platform={ self.state.platform }/>
 				</div>);
 		});
 
 		return (
 			<div className="sidebar">
-				{ groups(this.props.site_layout) }
+				{ groups(this.props.layout) }
 			</div>);
 	}
 });

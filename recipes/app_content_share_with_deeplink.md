@@ -4,7 +4,6 @@ title: App Content Share with Deeplink
 platforms:
 - ios
 - android
-weight: -14
 overview: "<p>Using Branch, your users can share links to content from your app -- and other users can be linked straight to that content!</p>
 <p>Imagine your app allows users to create and publish digital photo books. Let's say a user named James just finished creating a photo book with pictures from his adventure to Southeast Asia. He can share a Branch link to Facebook with the photo book's Id embedded in the link. Then when his friends click on these links and download the app, they will go straight to his Southeast Asia adventure photo book!</p>"
 ---

@@ -46,6 +46,7 @@ module Jekyll
       src = replace(context, @src)
       position = @position ? @position : 'nofloat'
       image_width = @WIDTH_MAP[@width] || '100%'
+
       '<a target="_blank" '+src.gsub('src', 'href')+'>
         <img '+src+' '+@alt+' class="plugin '+position+'" '+'width="'+image_width+'"/>
       </a>'

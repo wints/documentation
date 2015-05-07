@@ -4,7 +4,6 @@ title: Quickstart Guide
 platforms:
 - ios
 - android
-weight: -18
 overview: "This quickstart guide will walk you through the minimum setup for an SDK integration. With only a few lines of code you'll have the ability to track installs by platform, campaign, etc. You can then also create links from the dashboard or add another line of code to programmatically create links via the SDKS."
 ---
 

@@ -4,7 +4,6 @@ title: Your First Link
 platforms:
 - ios
 - android
-weight: -21
 ---
 
 ## Getting Started

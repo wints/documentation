@@ -1,5 +1,4 @@
 require 'json'
-require 'pp'
 
 module Jekyll
   class PlatformPage < Page
@@ -44,31 +43,25 @@ module Jekyll
     def buildSiteMap(site)
       group_pages = site.pages.select { |page| ['recipe', 'overview', 'domain', 'reference' ].include?(page.data['type']) }
       site.data['site_map'] = {
-        'overview' => { 'pages' => Hash.new },
-        'recipe' => { 'pages' => Hash.new },
-        'domain' => { 'pages' => Hash.new },
-        'reference' => { 'pages' => Hash.new }
+        'overview' => {},
+        'recipe' => {},
+        'domain' => {},
+        'reference' => {}
       }
 
       group_pages.each do |page|
-        page_platforms = if page.data['platforms'] then page.data['platforms'] else [] end
+        page_platforms = page.data['platforms'] || []
 
         path = page.name.split(".")[0]
         if path == 'index' then path = '' end
 
-        site.data['site_map'][page.data['type']]['pages'][path] = {
+        site.data['site_map'][page.data['type']][path] = {
           'path' => path,
           'title' => page.data['title'],
           'weight' => page.data['weight'] || 0,
           'platforms' => Hash[page_platforms.zip(page_platforms.map {|i| true })]
         }
       end
-
-      pp site.data['site_map']
-
-      site.data['site_layout'] = site.data['site_map'].map { |k, v|
-        v.merge({ 'type' => k });
-      }
     end
 
     def generate(site)

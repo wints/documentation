@@ -9,13 +9,15 @@ module Jekyll
     end
 
     def render(context)
-      site_layout = context.registers[:site].data['site_layout']
+      site_map = context.registers[:site].data['site_map']
+      layout = context.registers[:site].data['sidebar']
       current_path = context.environments.first['page']['current_path'] || '/'
 
       return BranchUtils.instance.react(
         '<Sidebar
           current_path="' + current_path + '"
-          site_layout=' + BranchUtils.instance.json_property(site_layout) + '/>')
+          site_map=' + BranchUtils.instance.json_property(site_map) + '
+          layout=' + BranchUtils.instance.json_property(layout) + '/>')
     end
   end
 

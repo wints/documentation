@@ -1,0 +1,34 @@
+---
+- type: overview
+  title: What is Branch?
+  pages:
+    - ''
+- type: recipe
+  title: Integration Guides
+  pages:
+    - your_first_link
+    - mobile_web_smart_banner
+    - text_me_the_app_page
+    - quickstart_guide
+    - marketing_campaign_download_tracking
+    - personalized_invite_system
+    - deeplinked_ads
+    - app_content_share_with_deeplink
+    - double_sided_third_party_integration
+    - incentivized_referral_program
+- type: domain
+  title: Building Blocks
+  pages:
+    - analytics_and_custom_events
+    - configuring_client_apps
+    - configuring_the_dashboard
+    - debug_tools
+    - links_and_sharing
+    - redirection
+    - rewards
+    - routing
+    - webhooks
+- type: reference
+  title: API Reference
+  pages:
+    - developer_updates
