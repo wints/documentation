@@ -1,11 +1,8 @@
 ---
-published: false
 type: reference
-title: iOS SDK
+title: iOS
 platforms:
 - ios
 ---
 
-# iOS SDK
-
-------
+{% include Branch-iOS-SDK/README.md %}

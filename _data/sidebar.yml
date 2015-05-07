@@ -32,3 +32,9 @@
   title: API Reference
   pages:
     - developer_updates
+    - ios_sdk
+    - android_sdk
+    - xamarin_sdk
+    - cordova_phonegap_sdk
+    - web_sdk
+

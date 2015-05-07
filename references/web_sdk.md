@@ -1,11 +1,9 @@
 ---
-published: false
 type: reference
-title: Web SDK
+title: Web
 platforms:
 - web
 ---
 
-# Web SDK
+{% include Web-SDK/README.md %}
 
-------

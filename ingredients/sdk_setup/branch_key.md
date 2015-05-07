@@ -16,11 +16,10 @@ Your app key can be retrieved on the [Settings](https://dashboard.branch.io/#/se
 {% section screenshot %}
 #### Screenshot
 [[View Fullscreen](/img/ingredients/sdk_setup/ios_branch_key_simple.png)]
-![Setting Key in PList Demo](/img/ingredients/sdk_setup/ios_branch_key_simple.png)
+{% image src='/img/ingredients/sdk_setup/ios_branch_key_simple.png' alt='Setting Key in Plist Demo' %}
 {% endsection %}
 
 #### Animated Gif
-
 [[View Fullscreen](/img/ingredients/sdk_setup/ios_branch_key_simple.gif)]
 {% image src='/img/ingredients/sdk_setup/ios_branch_key_simple.gif' alt='Setting Key in Plist Demo' %}
 

@@ -1,11 +1,8 @@
 ---
-published: false
 type: reference
-title: Android SDK
+title: Android
 platforms:
 - android
 ---
 
-# Android SDK
-
-------
+{% include Branch-Android-SDK/README.md %}

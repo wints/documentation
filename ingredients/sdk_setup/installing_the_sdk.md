@@ -9,13 +9,15 @@ However, if you don't currently use Cocoapods, you can easily download and insta
 
 You will need to drag and drop the Branch.framework file that you downloaded into your project. Be sure that "Copy items if needed" is selected.
 
-[[View Fullscreen](/img/ingredients/configuring_the_client/ios_importing.gif)]
+[[View Fullscreen](/img/ingredients/	configuring_the_client/ios_importing.gif)]
 {% image src='/img/ingredients/configuring_the_client/ios_importing.gif' alt='importing SDK' %}
 
 **You also need to import CoreTelephony**. See the graphic {% section telephony %}below:
 
 [[View Fullscreen](/img/ingredients/configuring_the_client/ios_core_telephony.gif)]
-![importing Core Telephony](/img/ingredients/configuring_the_client/ios_core_telephony.gif){% endsection %}
+{% image src='/img/ingredients/configuring_the_client/ios_core_telephony.gif' alt='importing Core Telephony' %}
+{% endsection %}
+
 
 {% protip title="Most accurate matching" %}
 To get the best experience with Branch, you should import AdSupport.framework. This allows us to leverage the IDFA for more accurate matching, and we can also identify users who return later after uninstalling the app.
