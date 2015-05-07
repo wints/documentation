@@ -123,4 +123,8 @@ branch.initSession(branchReferralInitListener, this.getIntent().getData(), this)
 
 As a quick reminder, make sure to properly close the session inside `onStop` with a `branch.closeSession()`.
 
+{% protip title="Use Branch in (almost!) all your activities" %}
+Every activity that will use Branch in some way should include Branch SDK methods in both `onStart()` and `onStop()`. Don't forget `closeSession()` in every activity with Branch! The one exception is short-lived activities like splash screens. Those shouldn't use Branch--it helps us avoid race conditions within the SDK. 
+{% endprotip %}
+
 {% endif %}
