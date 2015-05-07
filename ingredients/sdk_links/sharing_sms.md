@@ -131,6 +131,7 @@ func messageComposeViewController(controller: MFMessageComposeViewController!, d
 
 The above code allows you to quickly implement sharing via SMS. See the screenshot below!
 
-![sms screenshot](/img/ingredients/sdk_links/ios_sms.png)
+{% image src='/img/ingredients/sdk_links/ios_sms.png' quarter center alt='sms screenshot' %}
+
 
 {% endif %}

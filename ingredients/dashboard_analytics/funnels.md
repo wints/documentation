@@ -7,5 +7,5 @@ Simply select two or more events to see a conversion funnel. For example, if you
 
 This is how the funnel looks:
 
-![funnel](/img/ingredients/analytics_and_custom_events/funnel.png)
+{% image src="/img/ingredients/analytics_and_custom_events/funnel.png" center 3-quarters alt="funnel" %}
 

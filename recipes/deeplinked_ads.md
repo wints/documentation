@@ -34,14 +34,18 @@ With standard deeplinks, if a user doesn't have the app, the link fails. With Br
 ## Creating your Link
 
 {% ingredient dashboard_links/creating_links %}
+	{% override screenshot %}
+	{% image src='/img/ingredients/dashboard_links/fb_example_create.png' half right alt='Create Marketing Link' %}
+	{% endoverride %}
 	{% override screenshot_description%}One example description if you want to treat this guide is: "Facebook ad for blue sneakers - summer 2015."{% endoverride %}
-	{% override screenshot%}![Description](/img/ingredients/dashboard_links/fb_example_create.png){% endoverride %}
 {% endingredient %}
 
 {% ingredient dashboard_links/tags %}
+	{% override screenshot%}
+	{% image src='/img/ingredients/dashboard_links/fb_example_tags.png' half right %}
+	{% endoverride %}
 	{% override deep_link_data_url%}For information of the form *[key]*: *[value]* such as "product": "shoes", we recommend adding them to "Deep Link Data (Advanced)", discussed [below](/recipes/deeplinked_ads/ios/#deep-link-data-advanced).
     {% endoverride %}
-	{% override screenshot%}![Description](/img/ingredients/dashboard_links/fb_example_tags.png){% endoverride %}
 {% endingredient %}
 
 {% ingredient dashboard_links/alias %}
@@ -92,21 +96,21 @@ Navigate to [https://www.facebook.com/ads/create](https://www.facebook.com/ads/c
 
 Choose "Send people to your website". Unfortunately due to limitations with Facebook's API, you cannot currently run campaigns for app downloads through the option "Get installs of your app."
 
-![Description](/img/recipes/deeplink_ads/facebook_ad_1.png)
+{% image src='/img/recipes/deeplink_ads/facebook_ad_1.png' half 3-quarters alt='Facebook Example Ad' %}
 
 On the next page, you need to enter the Branch link that was generated in the last step. Here's a gif to help:
 
-![Description](/img/recipes/deeplink_ads/facebook_ad_2.gif)
+{% image src='/img/recipes/deeplink_ads/facebook_ad_2.gif' half 3-quarters alt='Facebook Example Ad' %}
 
 You can now customize your ad per the usual Facebook ad creation interface.
 
 Notice that any OG tag information your provided has prepopulated in the interface.
 
-![Description](/img/recipes/deeplink_ads/facebook_ad_3.png)
+{% image src='/img/recipes/deeplink_ads/facebook_ad_3.png' half 3-quarters alt='Facebook Example Ad' %}
 
 Last step is to make sure you target the mobile app, not the desktop! If you need help, see the gif below:
 
-![Description](/img/recipes/deeplink_ads/facebook_ad_4.gif)
+{% image src='/img/recipes/deeplink_ads/facebook_ad_4.gif' half 3-quarters alt='Facebook Example Ad' %}
 
 Now make sure you have a picture of the appropriate size, then order up that ad!
 

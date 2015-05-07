@@ -5,19 +5,20 @@ To register a webhook on the Dashboard, open the [Webhooks](https://dashboard.br
 
 Click Add a new webhook to get started.
 
-![add webhook](/img/ingredients/webhooks/add.png)
+{% image src='/img/ingredients/webhooks/add.png' half alt='add a new webhook button' %}
 
-We've layed out the webhook registration in a sentence format. The format is:
+<div class="full-width">We've layed out the webhook registration in a sentence format. The format is:</div>
 
-Send a webhook to [ WEBHOOK URL ] [ EVERY TIME / THE FIRST TIME ] users trigger the event [ EVENT ].
+<div class="attention-grabber">Send a webhook to [ WEBHOOK URL ] [ EVERY TIME / THE FIRST TIME ] users trigger the event [ EVENT ].</div>
 
-![add webhook](/img/ingredients/webhooks/edit.png)
+{% image src='/img/ingredients/webhooks/edit.png' half center alt='add a new webhook' %}
+
 
 ### Enter your webhook URL
 
 First, enter the webhook URL in your own web server URL that you would like the events to be posted to.
 
-For testing, you can try out using a URL from [RequestBin](http://requestb.in/). More information on that [below](/domains/webhooks/{{page.platform}}/#example-using-requestbin-to-test).
+For testing, you can try out using a URL from [RequestBin](http://requestb.in/). More information on that [below](/domains/webhooks/#example-using-requestbin-to-test).
 
 
 ### Choose frequency of webhook
@@ -45,8 +46,26 @@ Filters are a set of advanced features where basically you can choose to only re
 This is typically used for advanced integrations.
 
 
+### Add templates (optional)
+
+If you depend on branch links with certain query parameters appended such as unique IDs, we can send webhooks based off said ID.
+
+For example, let's say you have a click ID for one of your ad campaigns--dynamically generated, of course:
+
+*http://bnc.lt/l/campaignstuff?clickId=12345*
+
+And want to send a webhook using a `GET` with the same clickId inside the URL, you would use our Passthrough feature to make it happen:
+
+![template webhook](/img/ingredients/webhooks/templates.png)
+
+**What you can specify**
+
+Any query parameter you add to Branch Links will be captured and stored. You will need to follow this format: *session.link_click.query* and specify the key from the query string to pass through the value, as shown in the example above.
+
+
 ### Save and Confirm
+
 
 After you press `Add webhook`, you should see the webhook in the list of your reward rules.
 
-![add webhook](/img/ingredients/webhooks/added.png)
+{% image src='/img/ingredients/webhooks/added.png' 2-thirds alt='save and confirm' %}
