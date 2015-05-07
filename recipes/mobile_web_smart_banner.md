@@ -4,7 +4,7 @@ title: Mobile Web Smart Banner
 platforms:
 - ios
 - android
-weight: -19
+weight: -20
 ---
 
 
@@ -38,6 +38,7 @@ If you also want to pass data through the install process or deep link straight 
 {% ingredient sdk_setup/init_session %}{% endingredient %}
 {% ingredient sdk_setup/handle_deep_link %}{% endingredient %}
 {% ingredient sdk_routing/routing %}{% endingredient %}
+
 
 
 ## (Optional) Routing: passing information from the Banner
