@@ -4,6 +4,7 @@ title: Branded Text-Me-The-App Page
 platforms:
 - ios
 - android
+weight: -19
 ---
 
 When users click your links on desktop, they have the option to text themselves the app. We provide this by default--just [create a test marketing link](https://dashboard.branch.io/#/marketing) and click it on your computer.
@@ -27,4 +28,5 @@ The Branch Web SDK gives you the ability to quickly build a text-me-the-app feat
 {% ingredient web_sdk/_initialization %}{% endingredient %}
 
 {% ingredient web_sdk/send_sms %}{% endingredient %}
+{% ingredient web_sdk/send_sms_example %}{% endingredient %}
 
