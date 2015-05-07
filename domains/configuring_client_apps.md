@@ -23,3 +23,5 @@ platforms:
 ## Advanced Settings
 
 {% ingredient sdk_setup/is_referrable %}{% endingredient %}
+
+{% if page.ios %}{% ingredient sdk_setup/idfa %}{% endingredient %}{% endif %}
