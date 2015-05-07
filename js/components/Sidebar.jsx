@@ -12,7 +12,8 @@ function getStateFromStore() {
 var GroupPages = React.createClass({
 	render: function() {
 		var self = this;
-			type = this.props.type != 'overview' ? this.props.type + 's': null;
+		// overview pages live in root where as all other page types are in plural form. i.e. receipe -> recipes
+		var type = this.props.type != 'overview' ? this.props.type + 's': null;
 
 		var pages = R.map(function(page) {
 			var path = type ? [ type, page.path ] : [ page.path ];
@@ -20,10 +21,12 @@ var GroupPages = React.createClass({
 			if (page.platforms[self.props.platform]) {
 				path.push(self.props.platform);
 			}
-			return (<li className={ cx({ 'active': isCurrentPath }) } key={ page.title }>
+			return (
+				<li className={ cx({ 'active': isCurrentPath }) } key={ page.title }>
 					<a href={ '/' + path.join('/') }>{ page.title }</a>
 				</li>);
 		});
+
 		return <ul>{ pages(this.props.pages) }</ul>
 	}
 });

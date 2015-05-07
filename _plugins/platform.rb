@@ -1,4 +1,5 @@
 require 'json'
+require 'pp'
 
 module Jekyll
   class PlatformPage < Page
@@ -43,10 +44,10 @@ module Jekyll
     def buildSiteMap(site)
       group_pages = site.pages.select { |page| ['recipe', 'overview', 'domain', 'reference' ].include?(page.data['type']) }
       site.data['site_map'] = {
-        'overview' => { 'title' => 'Overview', 'pages' => Hash.new },
-        'recipe' => { 'title' => 'Integration Guides', 'pages' => Hash.new },
-        'domain' => { 'title' => 'Building Blocks', 'pages' => Hash.new },
-        'reference' => { 'title' => 'API Reference', 'pages' => Hash.new }
+        'overview' => { 'pages' => Hash.new },
+        'recipe' => { 'pages' => Hash.new },
+        'domain' => { 'pages' => Hash.new },
+        'reference' => { 'pages' => Hash.new }
       }
 
       group_pages.each do |page|
@@ -63,11 +64,10 @@ module Jekyll
         }
       end
 
+      pp site.data['site_map']
+
       site.data['site_layout'] = site.data['site_map'].map { |k, v|
-        v.merge({
-          'type' => k,
-          'pages' => v['pages'].values.sort { |x, y| x['weight'] <=> y['weight'] }
-        })
+        v.merge({ 'type' => k });
       }
     end
 
