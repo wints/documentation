@@ -5,4 +5,4 @@ platforms:
 - android
 ---
 
-{% include Branch-Android-SDK/README.md %}
+{% reference Branch-Android-SDK/README.md %}
