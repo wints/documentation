@@ -43,5 +43,6 @@
     - android_sdk
     - xamarin_sdk
     - cordova_phonegap_sdk
+    - http_api
     - web_sdk
 

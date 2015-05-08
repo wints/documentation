@@ -6,4 +6,4 @@ platforms:
 - android
 ---
 
-{% include Branch-Xamarin-SDK/README.md %}
+{% reference Branch-Xamarin-SDK/README.md %}

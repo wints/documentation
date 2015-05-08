@@ -4,6 +4,7 @@ machine:
 
 checkout:
   post:
+    - rm _config.yml && mv _config_live.yml _config.yml
     - git submodule update --init --remote
     - bundle install
     - npm install -g uglify-js

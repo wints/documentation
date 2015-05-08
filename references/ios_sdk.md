@@ -5,4 +5,4 @@ platforms:
 - ios
 ---
 
-{% include Branch-iOS-SDK/README.md %}
+{% reference Branch-iOS-SDK/README.md %}
