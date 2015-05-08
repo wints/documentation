@@ -12,7 +12,7 @@ module Jekyll
       file = File.read(File.join("_includes/", @asset))
 
       if context.environments.first['site']['environment'] == 'development' then
-        file = file.gsub(/```\s*(?<lang>[a-z_#]+)\n/, '{% highlight \k<lang> %}')
+        file = file.gsub(/```\s*(?<lang>[a-z]+)\n/, '{% highlight \k<lang> %}')
         file = file.gsub(/```\n/, '{% endhighlight %}')
       end
 

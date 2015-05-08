@@ -5,5 +5,4 @@ platforms:
 - web
 ---
 
-{% include Web-SDK/README.md %}
-
+{% reference Web-SDK/README.md %}

@@ -6,4 +6,3 @@ platforms:
 ---
 
 {% reference Branch-Android-SDK/README.md %}
-
