@@ -1,6 +1,6 @@
 ---
 type: recipe
-title: Deeplinked Ads
+title: "Advertising: Facebook"
 platforms:
 - ios
 - android
@@ -78,7 +78,7 @@ If you integrate our SDK into your app, you can:
 3. Track events and create funnels so you can see which ads are performing best on concrete measures such as # of completed signups or number/type of purchases even if the app was not previously installed.
 
 {% ingredient sdk_setup/installing_the_sdk %}
-  {% override telephony%}[here](/recipes/app_content_share_with_deeplink/{{page.platform}}/#installing-the-sdk).{% endoverride %}
+  {% override telephony %}[here](/domains/configuring_client_apps/{{page.platform}}/#installing-the-sdk).{% endoverride %}
 {% endingredient %}
 {% ingredient sdk_setup/branch_key %}{% override screenshot%}{% endoverride %}{% endingredient %}
 {% ingredient sdk_setup/uri_scheme %}

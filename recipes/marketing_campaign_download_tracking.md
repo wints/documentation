@@ -1,6 +1,6 @@
 ---
 type: recipe
-title: Marketing Campaign Download Tracking
+title: Measuring Installs
 platforms:
 - ios
 - android
@@ -27,7 +27,7 @@ Let's get started. Seeing install numbers (as opposed to merely clicks) requires
 
 ## Configuring your {{ page.platform_formatted }} app
 {% ingredient sdk_setup/installing_the_sdk %}
-  {% override telephony %}[here](/recipes/app_content_share_with_deeplink/{{page.platform}}/#installing-the-sdk).{% endoverride %}
+  {% override telephony %}[here](/domains/configuring_client_apps/{{page.platform}}/#installing-the-sdk).{% endoverride %}
 {% endingredient %}
 {% ingredient sdk_setup/branch_key %}{% override screenshot %}{% endoverride %}{% endingredient %}
 {% ingredient sdk_setup/uri_scheme %}
