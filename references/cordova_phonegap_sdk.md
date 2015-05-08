@@ -6,4 +6,4 @@ platforms:
 - android
 ---
 
-{% include Branch-PhoneGap-Cordova-SDK/README.md %}
+{% reference Branch-PhoneGap-Cordova-SDK/README.md %}

@@ -10,8 +10,10 @@ module Jekyll
     def render(context)
       file = File.read(File.join("_includes/", @asset))
 
-      file = file.gsub(/```\s*(?<lang>[a-z]+)\n/, '{% highlight \k<lang> %}')
+      file = file.gsub(/```\s*(?<lang>[a-z_#]+)\n/, '{% highlight \k<lang> %}')
       file = file.gsub(/```\n/, '{% endhighlight %}')
+
+      puts file
 
       Liquid::Template.parse(file).render!(context)
     end
