@@ -1,6 +1,6 @@
 ---
 type: recipe
-title: 3rd Party Ad Integration
+title: "Analytics: Adjust"
 hide_platform_selector: true
 ---
 

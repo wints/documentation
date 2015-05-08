@@ -1,6 +1,6 @@
 ---
 type: recipe
-title: Marketing Campaign Download Tracking
+title: Measuring Installs
 platforms:
 - ios
 - android

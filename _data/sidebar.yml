@@ -4,18 +4,25 @@
   pages:
     - ''
 - type: recipe
-  title: Integration Guides
+  title: Linking and Measuring
   pages:
     - your_first_link
+    - email_campaigns
+    - marketing_campaign_download_tracking
+- type: recipe
+  title: Deeplinked Features
+  pages:
     - mobile_web_smart_banner
     - text_me_the_app_page
     - quickstart_guide
-    - marketing_campaign_download_tracking
     - personalized_invite_system
-    - deeplinked_ads
     - app_content_share_with_deeplink
-    - double_sided_third_party_integration
     - incentivized_referral_program
+- type: recipe
+  title: Third-Party Integrations
+  pages:
+    - double_sided_third_party_integration
+    - deeplinked_ads
 - type: domain
   title: Building Blocks
   pages:

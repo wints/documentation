@@ -1,6 +1,6 @@
 ---
 type: recipe
-title: Deeplinked Ads
+title: "Advertising: Facebook"
 platforms:
 - ios
 - android
