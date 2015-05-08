@@ -75,7 +75,7 @@ Let users share in-app content. iHeartRadio’s shared links open straight to ra
 
 ## Building Blocks
 
-We also have information separated into several individualized **Building Blocks** pages, as you can see on the left. These list out the snippets that comprise our guides. Even if you don't work through one of the guides above, make sure you don't miss:
+We also have information separated into several individualized **Building Blocks** pages, as you can see on the left. These list out the snippets that comprise our guides. Make sure you don't miss:
 
 {% ingredient recipe_preview/influencers %}
 	{% override platform %}ios{% endoverride %}
