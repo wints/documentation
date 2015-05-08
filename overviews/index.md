@@ -51,15 +51,21 @@ Let users share in-app content. iHeartRadio’s shared links open straight to ra
 	{% override platform %}ios{% endoverride %}
 {% endingredient %}
 
-* [**Mobile Web Smart Banner**](/recipes/your_first_link/ios/) -- cross-platform, customizable web banner
+{% ingredient recipe_preview/mobile_web_smart_banner %}
+	{% override platform %}ios{% endoverride %}
+{% endingredient %}
 
-* [**Branded Text-Me-The-App Page**](/recipes/text-me-the-app/) -- your site, Branch's free text-me-the-app service
+{% ingredient recipe_preview/text_me_the_app_page %}
+	{% override platform %}ios{% endoverride %}
+{% endingredient %}
 
 
 
 ## Third-Party Integrations
 
-* [**Branch + Adjust**](/recipes/double_sided_third_party_integration/) -- a double-sided custom ad measurement integration
+{% ingredient recipe_preview/double_sided_third_party_integration %}
+	{% override platform %}ios{% endoverride %}
+{% endingredient %}
 
 {% ingredient recipe_preview/deeplinked_ads %}
 	{% override platform %}ios{% endoverride %}
