@@ -1,12 +1,13 @@
 module Jekyll
     module TOC
-        def toc_generate(html)
+        def toc_generate(html, title)
+            puts test
             _generate(html, true)
         end
         def toc_generate_no_title(html)
             _generate(html, false)
         end
-        def _generate(html, hasTitle)
+        def toc_generate(html, title)
             toc = []
             levels = [2]
             html.gsub!(/<h([0-9]) id="(.*)">(.*)<\/h\d>/) { |m, tag, header|
@@ -20,8 +21,8 @@ module Jekyll
             }
             nested_toc = _nested_toc(toc)
 
-            steps = hasTitle ? '<h4 class="toc-steps"> Steps </h4>' : ''
-            "<hr/>" + steps + _render_toc(nested_toc, 1) + "<hr />" + html
+            toc_title = title.length > 0 ? '<h4 class="toc-title"> ' + title + ' </h4>' : ''
+            "<hr/>" + toc_title + _render_toc(nested_toc, 1) + "<hr />" + html
         end
         def _render_toc(toc, level)
             if toc.length > 0 then
