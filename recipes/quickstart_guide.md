@@ -40,7 +40,7 @@ overview: "This quickstart guide will walk you through the minimum setup for an 
 <!--- /Configuring the Client-->
 
 
-## Creating Links (Optional)
+## Creating Links Programmatically
 
 {% ingredient sdk_links/creating_links %}{% override header %}{% endoverride %}{% endingredient %}
 
@@ -48,7 +48,7 @@ overview: "This quickstart guide will walk you through the minimum setup for an 
 You can also use the data to link directly to content! Instead of "foo": "bar", you could pass in "{% if page.ios %}pictureId{% endif %}{% if page.android %}picture_id{% endif %}": "1234", then when a user clicks on a link you can open the app straight to picture with Id 1234. Keep reading...
 {% endprotip %}
 
-## Routing within your {{page.platform_formatted}} App (Optional)
+## Routing within your {{page.platform_formatted}} App
 
 {% ingredient sdk_routing/routing %}{% endingredient %}
 

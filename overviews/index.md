@@ -21,9 +21,13 @@ We exist to help you grow your mobile app. More users, happier users, repeat use
 
 Branch links give you the ability to **redirect users to your app, the App/Play Store, your website and even a text-me-the-app page on desktop -- all with one link!** Plus you get powerful click tracking by campaign and platform.
 
-* [**Your First Link**](/recipes/your_first_link/ios/) -- direct users to your app from any platform **(no SDK required)**
+{% ingredient recipe_preview/your_first_link %}
+	{% override platform %}ios{% endoverride %}
+{% endingredient %}
 
-* [**Email Campaigns**](/recipes/email_campaigns/ios/) --  effortless email campaign tracking **(no SDK required)**
+{% ingredient recipe_preview/email_campaigns %}
+	{% override platform %}ios{% endoverride %}
+{% endingredient %}
 
 {% ingredient recipe_preview/marketing_campaign_download_tracking %}
 	{% override platform %}ios{% endoverride %}
@@ -35,7 +39,9 @@ Branch links give you the ability to **redirect users to your app, the App/Play 
 
 Let users share in-app content. iHeartRadio’s shared links open straight to radio stations, Allthecooks’ shared links open straight to recipes. Did we mention that links work across platforms?
 
-* [**Sharing and Deeplink Routing**](/recipes/quickstart_guide/ios/) -- basic install tracking and deeplinking
+{% ingredient recipe_preview/quickstart_guide %}
+	{% override platform %}ios{% endoverride %}
+{% endingredient %}
 
 {% ingredient recipe_preview/personalized_invite_system %}
 	{% override platform %}ios{% endoverride %}
