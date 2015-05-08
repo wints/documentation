@@ -17,34 +17,48 @@ In other words, Branch allows mobile apps to deeplink through install, meaning e
 We exist to help you grow your mobile app. More users, happier users, repeat users. Below is our list of "recipes" -- a list of things you can build thanks to Branch. They're meant to give you an idea of what's possible, and to provide the **minimum viable code** to inject these features into your app. These appear on the left menu under **Integration Guides**.
 
 
-## Basic Integration Guides
+## Linking and Measuring
 
-* [**Your First Link**](/recipes/your_first_link/ios/) -- an SDK-less integration, direct users to your app from any platform
+Branch links give you the ability to **redirect users to your app, the App/Play Store, your website and even a text-me-the-app page on desktop -- all with one link!** Plus you get powerful click tracking by campaign and platform.
 
-* [**Mobile Web Smart Banner**](/recipes/your_first_link/ios/) -- cross-platform, customizable web banner
+* [**Your First Link**](/recipes/your_first_link/ios/) -- direct users to your app from any platform **(no SDK required)**
 
-* [**iOS Quickstart Guide**](/recipes/quickstart_guide/ios/) -- basic install tracking and deeplinking
-
-* [**Android Quickstart Guide**](/recipes/quickstart_guide/android/) -- basic install tracking and deeplinking
-
-
-## Feature Integration Guides
+* [**Email Campaigns**](/recipes/email_campaigns/ios/) --  effortless email campaign tracking **(no SDK required)**
 
 {% ingredient recipe_preview/marketing_campaign_download_tracking %}
 	{% override platform %}ios{% endoverride %}
 {% endingredient %}
+
+
+
+## Deeplinked Features
+
+Let users share in-app content. iHeartRadio’s shared links open straight to radio stations, Allthecooks’ shared links open straight to recipes. Did we mention that links work across platforms?
+
+* [**Sharing and Deeplink Routing**](/recipes/quickstart_guide/ios/) -- basic install tracking and deeplinking
+
 {% ingredient recipe_preview/personalized_invite_system %}
 	{% override platform %}ios{% endoverride %}
 {% endingredient %}
-{% ingredient recipe_preview/deeplinked_ads %}
-	{% override platform %}ios{% endoverride %}
-{% endingredient %}
+
 {% ingredient recipe_preview/incentivized_referral_program %}
 	{% override platform %}ios{% endoverride %}
 {% endingredient %}
-{% ingredient recipe_preview/app_content_share_with_deeplink %}
+
+* [**Mobile Web Smart Banner**](/recipes/your_first_link/ios/) -- cross-platform, customizable web banner
+
+* [**Branded Text-Me-The-App Page**](/recipes/text-me-the-app/) -- your site, Branch's free text-me-the-app service
+
+
+
+## Third-Party Integrations
+
+* [**Branch + Adjust**](/recipes/double_sided_third_party_integration/) -- a double-sided custom ad measurement integration
+
+{% ingredient recipe_preview/deeplinked_ads %}
 	{% override platform %}ios{% endoverride %}
 {% endingredient %}
+
 
 
 ## Building Blocks

@@ -12,12 +12,11 @@
 - type: recipe
   title: Deeplinked Features
   pages:
-    - mobile_web_smart_banner
-    - text_me_the_app_page
     - quickstart_guide
     - personalized_invite_system
-    - app_content_share_with_deeplink
     - incentivized_referral_program
+    - mobile_web_smart_banner
+    - text_me_the_app_page
 - type: recipe
   title: Third-Party Integrations
   pages:
@@ -29,7 +28,6 @@
     - analytics_and_custom_events
     - configuring_client_apps
     - configuring_the_dashboard
-    - debug_tools
     - links_and_sharing
     - redirection
     - rewards
@@ -39,10 +37,10 @@
   title: API Reference
   pages:
     - developer_updates
+    - debug_tools
     - ios_sdk
     - android_sdk
     - xamarin_sdk
     - cordova_phonegap_sdk
     - http_api
     - web_sdk
-

@@ -1,1 +1,1 @@
-* Learn where every user is coming from thanks to our [**marketing campaign download tracking**](/recipes/marketing_campaign_download_tracking/{% section platform %}{{page.platform}}{% endsection %}/)
+*  [**Measure installs**](/recipes/marketing_campaign_download_tracking/{% section platform %}{{page.platform}}{% endsection %}/) and learn every user is coming from

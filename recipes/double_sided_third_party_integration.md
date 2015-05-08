@@ -4,18 +4,18 @@ title: "Analytics: Adjust"
 hide_platform_selector: true
 ---
 
-## Double Sided Custom Ad Measurement Integrations
+# Double Sided Custom Ad Measurement Integrations
 
 This section will describe exactly what needs to be done in order to put a Branch deep link in between a third party ad network and a third party measurement service. For example, this section applies to you if user flow chart looks like this:
 
 _Ad network -> **Branch** -> measurement partner (Adjust, etc)_
 
 {% ingredient dashboard_links/creating_links %}
-{% override title %}Step 1: Create A Marketing Link{% endoverride %}
+{% override title %}## Create A Marketing Link{% endoverride %}
 {% endingredient %}
 
 {% ingredient dashboard_links/custom_redirects %}
-{% override title %}Step 2: Customize the redirects to point to measurement partner{% endoverride %}
+{% override title %}## Customize the redirects to point to measurement partner{% endoverride %}
 {% override description %}In order to configure the links for this ad network integration, you'll need to point the Branch links to the measurement partner. To do this, you'll want to customize the endpoints for both Android and iOS. Let's take the example where you were previously using Adjust with the following template:
 
 1. **iOS:** _https://app.adjust.io/8x54yn?campaign=iOS_search_campaign&adgroup={keyword}&creative={matchtype}&google_network={network}_
@@ -26,7 +26,7 @@ You'd set the **custom URL for Android** to _https://app.adjust.io/3D24xy_ and t
 {% endingredient %}
 
 {% ingredient dashboard_links/custom_data %}
-{% override title %}Step 3: Customize deep link parameters {% endoverride %}
+{% override title %}## Customize deep link parameters {% endoverride %}
 {% override picture%}
 {% image src='/img/recipes/double_third_party/query_param_passthrough.png' half right alt='deep link parameters' %}
 {% endoverride %}
@@ -36,7 +36,7 @@ To do this, please add in the key '$query_param_passthrough' with the value of '
 {% override description_2%}Additionally, if you want specify any additional deep link data. You would append it in this list of keys and values. For example, if you wanted to route a user to a particular piece of content, here is where you would specify this information.{% endoverride %}
 {% endingredient %}
 
-### Step 4: Provide link to advertiser
+## Provide link to advertiser
 
 Click save to generate the URL - it will appear in the list of links.
 

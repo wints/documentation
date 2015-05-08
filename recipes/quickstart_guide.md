@@ -1,6 +1,6 @@
 ---
 type: recipe
-title: Quickstart Guide
+title: "Sharing & Deeplink Routing"
 platforms:
 - ios
 - android
@@ -8,8 +8,6 @@ overview: "This quickstart guide will walk you through the minimum setup for an 
 ---
 
 {% image src='/img/ingredients/analytics_and_custom_events/dashboard_summary.png' 3-quarters center alt='the goal' %}
-
-We don't cover link creation in this initial guide, so a natural place to start after completing it is [Step 3 of Marketing Campaign Download Tracking](/recipes/marketing_campaign_download_tracking/ios/#creating-your-link).
 
 
 ## Configuring the Dashboard for your {{ page.platform_formatted }} app
@@ -25,7 +23,7 @@ We don't cover link creation in this initial guide, so a natural place to start 
 
 ## Configuring your {{ page.platform_formatted }} app
 {% ingredient sdk_setup/installing_the_sdk %}
-  {%override telephony%}[here](/recipes/app_content_share_with_deeplink/{{page.platform}}/#installing-the-sdk).{%endoverride%}
+  {% override telephony %}[here](/domains/configuring_client_apps/{{page.platform}}/#installing-the-sdk).{% endoverride %}
 {% endingredient %}
 {% ingredient sdk_setup/branch_key %}{%override screenshot%}{%endoverride%}{% endingredient %}
 {% ingredient sdk_setup/uri_scheme %}
@@ -63,6 +61,5 @@ Now that you've completed the basic integration, you can **skip steps one (Confi
 {% ingredient recipe_preview/personalized_invite_system %}{%endingredient%}
 {% ingredient recipe_preview/deeplinked_ads %}{%override ending%} **(Skip Steps 1 and 3)**{%endoverride%}{%endingredient%}
 {% ingredient recipe_preview/incentivized_referral_program %}{%endingredient%}
-{% ingredient recipe_preview/app_content_share_with_deeplink %}{%endingredient%}
 {% ingredient recipe_preview/contact_us %}{%endingredient%}
 

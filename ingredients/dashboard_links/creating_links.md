@@ -1,5 +1,5 @@
 
-### {% section title %}Creating a link{% endsection %}
+{% section title %}### Creating a link{% endsection %}
 
 {% image src='/img/ingredients/dashboard_links/add.png' half right alt='Marketing Screen' %}
 

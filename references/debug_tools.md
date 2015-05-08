@@ -1,5 +1,5 @@
 ---
-type: domain
+type: reference
 title: Debug Tools
 platforms:
 - ios

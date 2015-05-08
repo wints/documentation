@@ -1,5 +1,5 @@
 
-### {% section title %}Deep Link Data {% section advanced %}(Advanced){% endsection %}{% endsection %}
+{% section title %}### Deep Link Data {% section advanced %}(Advanced){% endsection %}{% endsection %}
 
 {% section picture %}
 {% image src="/img/ingredients/dashboard_links/fb_example_custom_data.png" half right alt="Custom Data" %}
