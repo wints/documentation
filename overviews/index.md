@@ -14,7 +14,7 @@ In other words, Branch allows mobile apps to deeplink through install, meaning e
 
 ## Guides
 
-We exist to help you grow your mobile app. More users, happier users, repeat users. Below is our list of "recipes" -- a list of things you can build thanks to Branch. They're meant to give you an idea of what's possible, and to provide the **minimum viable code** to inject these features into your app. These appear on the left menu under **Integration Guides**.
+We exist to help you grow your mobile app. More users, happier users, repeat users. Below is our list of "recipes" -- a list of things you can measure and build thanks to Branch. They're meant to give you an idea of what's possible, and to provide the **minimum viable code** to inject these features into your app.
 
 
 ## Linking and Measuring
@@ -80,13 +80,8 @@ We also have information separated into several individualized **Building Blocks
 {% ingredient recipe_preview/influencers %}
 	{% override platform %}ios{% endoverride %}
 {% endingredient %}
-{% ingredient recipe_preview/channel_tags %}
-	{% override platform %}ios{% endoverride %}
-{% endingredient %}
-{% ingredient recipe_preview/reward %}
-	{% override platform %}ios{% endoverride %}
-{% endingredient %}
 {% ingredient recipe_preview/webhooks %}{% endingredient %}
+
 
 
 # Additional Resources (GitHub)

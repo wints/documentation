@@ -1,6 +1,6 @@
 ---
 type: recipe
-title: Incentivized Referral Program
+title: Incentivize Referrals
 platforms:
 - ios
 - android
