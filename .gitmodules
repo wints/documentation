@@ -6,19 +6,19 @@
 	url = https://github.com/BranchMetrics/sprint
 [submodule "_includes/Branch-iOS-SDK"]
 	path = _includes/Branch-iOS-SDK
-	url = git@github.com:BranchMetrics/Branch-iOS-SDK.git
+	url = https://github.com/BranchMetrics/Branch-iOS-SDK
 [submodule "_includes/Branch-Android-SDK"]
 	path = _includes/Branch-Android-SDK
-	url = git@github.com:BranchMetrics/Branch-Android-SDK.git
+	url = https://github.com/BranchMetrics/Branch-Android-SDK
 [submodule "_includes/Branch-Public-API"]
 	path = _includes/Branch-Public-API
-	url = git@github.com:BranchMetrics/Branch-Public-API.git
+	url = https://github.com/BranchMetrics/Branch-Public-API
 [submodule "_includes/Web-SDK"]
 	path = _includes/Web-SDK
-	url = git@github.com:BranchMetrics/Web-SDK.git
+	url = https://github.com/BranchMetrics/Web-SDK
 [submodule "_includes/Branch-PhoneGap-Cordova-SDK"]
 	path = _includes/Branch-PhoneGap-Cordova-SDK
-	url = git@github.com:BranchMetrics/Branch-PhoneGap-Cordova-SDK.git
+	url = https://github.com/BranchMetrics/Branch-PhoneGap-Cordova-SDK
 [submodule "_includes/Branch-Xamarin-SDK"]
 	path = _includes/Branch-Xamarin-SDK
-	url = git@github.com:BranchMetrics/Branch-Xamarin-SDK.git
+	url = https://github.com/BranchMetrics/Branch-Xamarin-SDK
