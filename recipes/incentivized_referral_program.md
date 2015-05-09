@@ -1,6 +1,6 @@
 ---
 type: recipe
-title: Incentivized Referral Program
+title: Incentivize Referrals
 platforms:
 - ios
 - android
@@ -30,7 +30,7 @@ For a referral system, Branch provides:
 
 ## Configuring your {{ page.platform_formatted }} app
 {% ingredient sdk_setup/installing_the_sdk %}
-  {% override telephony %}[here](/recipes/app_content_share_with_deeplink/{{page.platform}}/#installing-the-sdk).{% endoverride %}
+  {% override telephony %}[here](/domains/configuring_client_apps/{{page.platform}}/#installing-the-sdk).{% endoverride %}
 {% endingredient %}
 {% ingredient sdk_setup/branch_key %}{% override screenshot%}{% endoverride %}{% endingredient %}
 {% ingredient sdk_setup/uri_scheme %}

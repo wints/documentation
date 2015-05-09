@@ -14,53 +14,74 @@ In other words, Branch allows mobile apps to deeplink through install, meaning e
 
 ## Guides
 
-We exist to help you grow your mobile app. More users, happier users, repeat users. Below is our list of "recipes" -- a list of things you can build thanks to Branch. They're meant to give you an idea of what's possible, and to provide the **minimum viable code** to inject these features into your app. These appear on the left menu under **Integration Guides**.
+We exist to help you grow your mobile app. More users, happier users, repeat users. Below is our list of "recipes" -- a list of things you can measure and build thanks to Branch. They're meant to give you an idea of what's possible, and to provide the **minimum viable code** to inject these features into your app.
 
 
-## Basic Integration Guides
+## Linking and Measuring
 
-* [**Your First Link**](/recipes/your_first_link/ios/) -- an SDK-less integration, direct users to your app from any platform
+Branch links give you the ability to **redirect users to your app, the App/Play Store, your website and even a text-me-the-app page on desktop -- all with one link!** Plus you get powerful click tracking by campaign and platform.
 
-* [**Mobile Web Smart Banner**](/recipes/your_first_link/ios/) -- cross-platform, customizable web banner
+{% ingredient recipe_preview/your_first_link %}
+	{% override platform %}ios{% endoverride %}
+{% endingredient %}
 
-* [**iOS Quickstart Guide**](/recipes/quickstart_guide/ios/) -- basic install tracking and deeplinking
-
-* [**Android Quickstart Guide**](/recipes/quickstart_guide/android/) -- basic install tracking and deeplinking
-
-
-## Feature Integration Guides
+{% ingredient recipe_preview/email_campaigns %}
+	{% override platform %}ios{% endoverride %}
+{% endingredient %}
 
 {% ingredient recipe_preview/marketing_campaign_download_tracking %}
 	{% override platform %}ios{% endoverride %}
 {% endingredient %}
+
+
+
+## Deeplinked Features
+
+Let users share in-app content. iHeartRadio’s shared links open straight to radio stations, Allthecooks’ shared links open straight to recipes. Did we mention that links work across platforms?
+
+{% ingredient recipe_preview/quickstart_guide %}
+	{% override platform %}ios{% endoverride %}
+{% endingredient %}
+
 {% ingredient recipe_preview/personalized_invite_system %}
 	{% override platform %}ios{% endoverride %}
 {% endingredient %}
-{% ingredient recipe_preview/deeplinked_ads %}
-	{% override platform %}ios{% endoverride %}
-{% endingredient %}
+
 {% ingredient recipe_preview/incentivized_referral_program %}
 	{% override platform %}ios{% endoverride %}
 {% endingredient %}
-{% ingredient recipe_preview/app_content_share_with_deeplink %}
+
+{% ingredient recipe_preview/mobile_web_smart_banner %}
 	{% override platform %}ios{% endoverride %}
 {% endingredient %}
+
+{% ingredient recipe_preview/text_me_the_app_page %}
+	{% override platform %}ios{% endoverride %}
+{% endingredient %}
+
+
+
+## Third-Party Integrations
+
+{% ingredient recipe_preview/double_sided_third_party_integration %}
+	{% override platform %}ios{% endoverride %}
+{% endingredient %}
+
+{% ingredient recipe_preview/deeplinked_ads %}
+	{% override platform %}ios{% endoverride %}
+{% endingredient %}
+
 
 
 ## Building Blocks
 
-We also have information separated into several individualized **Building Blocks** pages, as you can see on the left. These list out the snippets that comprise our guides. Even if you don't work through one of the guides above, make sure you don't miss:
+We also have information separated into several individualized **Building Blocks** pages, as you can see on the left. These list out the snippets that comprise our guides. Make sure you don't miss:
 
 {% ingredient recipe_preview/influencers %}
 	{% override platform %}ios{% endoverride %}
 {% endingredient %}
-{% ingredient recipe_preview/channel_tags %}
-	{% override platform %}ios{% endoverride %}
-{% endingredient %}
-{% ingredient recipe_preview/reward %}
-	{% override platform %}ios{% endoverride %}
-{% endingredient %}
 {% ingredient recipe_preview/webhooks %}{% endingredient %}
+
 
 
 # Additional Resources (GitHub)
