@@ -1,1 +1,0 @@
-*  [**Measure installs**](/recipes/marketing_campaign_download_tracking/{% section platform %}{{page.platform}}{% endsection %}/) -- learn where every user is coming from
