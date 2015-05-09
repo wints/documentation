@@ -1,8 +1,8 @@
 ---
 type: reference
+repo: Web-SDK
+repo_url: https://github.com/BranchMetrics/Web-SDK
 title: Web
-platforms:
-- web
 ---
 
 {% reference Web-SDK/README.md %}
