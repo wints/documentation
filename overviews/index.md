@@ -28,7 +28,7 @@ Branch links give you the ability to **redirect users to your app, the App/Play 
 	{% override platform %}ios{% endoverride %}
 {% endingredient %}
 
-{% ingredient recipe_preview/marketing_campaign_download_tracking %}
+{% ingredient recipe_preview/measuring_installs %}
 	{% override platform %}ios{% endoverride %}
 {% endingredient %}
 
