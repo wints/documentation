@@ -1,5 +1,5 @@
 
-### Submitting to the App Store
+## Submitting to the App Store
 
 When submitting to the App Store, you may need to let Apple know that you use the IDFA. You should do so if:
 
