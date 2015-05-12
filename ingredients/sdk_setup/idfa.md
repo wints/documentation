@@ -1,7 +1,7 @@
 
-### When Submitting to the App Store...
+### Submitting to the App Store
 
-...you may need to let Apple know that you use the IDFA. You should do so if:
+When submitting to the App Store, you may need to let Apple know that you use the IDFA. You should do so if:
 
 1. You use the Branch cocoapod -- this automatically imports AdSupport.framework
 2. You have manually imported AdSupport.framework
