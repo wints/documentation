@@ -1,6 +1,6 @@
 ---
 type: domain
-title: Redirection
+title: Custom Link Redirection
 platforms:
 - ios
 - android
