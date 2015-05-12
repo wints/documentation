@@ -84,6 +84,7 @@ Again, it's not imperative that you attach any information to the link. As long 
 
 {% ingredient rewards/get_credits %}{% override different_bucket %}{% endoverride %}{% endingredient %}
 {% ingredient rewards/redeem_credits %}{% override different_bucket %}{% endoverride %}{% endingredient %}
+{% ingredient rewards/redeem_flow %}{% endingredient %}
 <!--- /Incentives: Tracking and Rewarding-->
 
 
