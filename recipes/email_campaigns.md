@@ -14,7 +14,7 @@ You can do this from the [Branch Dashboard](https://dashboard.branch.io/). We wi
 
 ## Basic Setup
 
-Note, if you already completed these steps in the guide [Your First Link](/recipes/your_first_link/{{page.platform}}/), then you can skip down to the next section, [Creating your Link](/recipes/email_campaigns/{{page.platform}}/#creating-your-link).
+Note, if you already completed these steps in the guide [Your First Link](/recipes/your_first_marketing_link/{{page.platform}}/), then you can skip down to the next section, [Creating your Link](/recipes/email_campaigns/{{page.platform}}/#creating-your-link).
 
 {% ingredient dashboard_setup/app_name %}{% endingredient %}
 {% ingredient dashboard_setup/web_url %}{% endingredient %}
@@ -33,7 +33,7 @@ That's the end of the required setup for the Dashboard! The dashboard is incredi
 {% endingredient %}
 
 {% ingredient dashboard_links/tags %}
-	{% override deep_link_data_url %}For information of the form *[key]*: *[value]* such as "product": "shoes", we recommend adding them below--see [Deep Link Data (Optional)](/recipes/your_first_link/{{page.platform}}/#deep-link-data-optional).
+	{% override deep_link_data_url %}For information of the form *[key]*: *[value]* such as "product": "shoes", we recommend adding them below--see [Deep Link Data (Optional)](/recipes/your_first_marketing_link/{{page.platform}}/#deep-link-data-optional).
     {% endoverride %}
     {% override screenshot %}{% image src="/img/ingredients/dashboard_links/tags_email.png" half right alt="Link Tags" %}
 	{% endoverride %}
