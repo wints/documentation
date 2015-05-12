@@ -32,6 +32,8 @@ Branch links give you the ability to **redirect users to your app, the App/Play 
 	{% override platform %}ios{% endoverride %}
 {% endingredient %}
 
+{% ingredient recipe_preview/dynamic_link_creation %}{% endingredient %}
+
 
 
 ## Deeplinked Features
@@ -119,4 +121,5 @@ We also have information separated into several individualized **Building Blocks
 ## Advanced
 
 * [**Branch Preferred Partners**](https://github.com/BranchMetrics/Branch-Integration-Guides/blob/master/bpp-guide.md) - leverage Branch links for your own client apps
+
 
