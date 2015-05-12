@@ -20,7 +20,7 @@ platforms:
 
 {% ingredient sdk_setup/identify_and_logout %}{% endingredient %}
 
-{% if page.ios %}{% ingredient sdk_setup/app_submission %}{% endingredient %}{% endif %}
+{% if page.ios %}{% ingredient sdk_setup/ios_app_submission %}{% endingredient %}{% endif %}
 {% if page.android %}{% ingredient sdk_setup/android_app_submission %}{% endingredient %}{% endif %}
 
 ## Advanced Settings
