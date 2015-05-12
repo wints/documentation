@@ -26,13 +26,13 @@
 - type: domain
   title: Building Blocks
   pages:
-    - analytics_and_custom_events
     - configuring_client_apps
     - configuring_the_dashboard
     - links_and_sharing
     - redirection
-    - rewards
     - routing
+    - rewards
+    - analytics_and_custom_events
     - webhooks
 - type: reference
   title: API Reference

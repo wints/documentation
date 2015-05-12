@@ -1,11 +1,12 @@
 ---
 type: domain
-title: Submitting to the App Store
+title: Submitting Apps
 platforms:
 - ios
 - android
 - web
 ---
+
 
 ## Required Steps for SDK Integration
 
