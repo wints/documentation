@@ -38,20 +38,18 @@ Branch.getInstance().getShortURLWithParams(["$ios_url": "http://myawesomesite.co
 {% if page.android %}
 
 {% highlight java %}
-JSONObject obj = new JSONObject();
-
+JSONObject params = new JSONObject();
 try {
-	obj.put("$ios_url", "http://myawesomesite.com/ios-app-landing-page");
-
-} catch (JSONException e) {
-    // no-op
-}
-Branch.getInstance(getApplicationContext()).getShortUrl(obj, new BranchLinkCreateListener() {
+    params.put("$ios_url", "http://myawesomesite.com/ios-app-landing-page");
+} catch (JSONException ex) { }
+Branch.getInstance(getApplicationContext()).getShortUrl(params, new BranchLinkCreateListener() {
     @Override
     public void onLinkCreate(String url, BranchError error) {
-        Log.i("Branch", "Created my URL w an iOS redirect!");
+        if (error == null) {
+            Log.i("Branch", "created a URL with a custom $ios_url");
+        }
     }
-});
+})
 {% endhighlight %}
 
 {% endif %}
@@ -99,20 +97,18 @@ Branch.getInstance().getShortURLWithParams(["$android_url": "http://myawesomesit
 {% if page.android %}
 
 {% highlight java %}
-JSONObject obj = new JSONObject();
-
+JSONObject params = new JSONObject();
 try {
-	obj.put("$android_url", "http://myawesomesite.com/android-app-landing-page");
-
-} catch (JSONException e) {
-    // no-op
-}
-Branch.getInstance(getApplicationContext()).getShortUrl(obj, new BranchLinkCreateListener() {
+    params.put("$android_url", "http://myawesomesite.com/android-app-landing-page");
+} catch (JSONException ex) { }
+Branch.getInstance(getApplicationContext()).getShortUrl(params, new BranchLinkCreateListener() {
     @Override
     public void onLinkCreate(String url, BranchError error) {
-        Log.i("Branch", "Created my URL w an Android redirect!");
+        if (error == null) {
+            Log.i("Branch", "created a URL with a custom $android_url");
+        }
     }
-});
+})
 {% endhighlight %}
 
 {% endif %}
@@ -163,20 +159,18 @@ Branch.getInstance().getShortURLWithParams(["$desktop_url": "http://myawesomesit
 {% if page.android %}
 
 {% highlight java %}
-JSONObject obj = new JSONObject();
-
+JSONObject params = new JSONObject();
 try {
-	obj.put("$desktop_url", "http://myawesomesite.com/the-desired-content");
-
-} catch (JSONException e) {
-    // no-op
-}
-Branch.getInstance(getApplicationContext()).getShortUrl(obj, new BranchLinkCreateListener() {
+    params.put("$desktop_url", "http://myawesomesite.com/the-desired-content");
+} catch (JSONException ex) { }
+Branch.getInstance(getApplicationContext()).getShortUrl(params, new BranchLinkCreateListener() {
     @Override
     public void onLinkCreate(String url, BranchError error) {
-        Log.i("Branch", "Created my URL w a desktop endpoint!");
+        if (error == null) {
+            Log.i("Branch", "created a URL with custom $desktop_url");
+        }
     }
-});
+})
 {% endhighlight %}
 
 {% endif %}
@@ -235,10 +229,9 @@ Branch.getInstance(getApplicationContext()).getShortUrl(params, new BranchLinkCr
 	@Override
 	public void onLinkCreate(String url, BranchError error) {
 		if (error == null) {
-			Log.i("Branch", "created an always_deeplink URL");
+			Log.i("Branch", "created a URL with $always_deeplink set to true");
 		}
 	}
-
 })
 {% endhighlight %}
 
@@ -295,10 +288,9 @@ Branch.getInstance(getApplicationContext()).getShortUrl(params, new BranchLinkCr
     @Override
     public void onLinkCreate(String url, BranchError error) {
         if (error == null) {
-            Log.i("Branch", "created a URL with $deeplink_path");
+            Log.i("Branch", "created a URL with a custom $deeplink_path");
         }
     }
-
 })
 {% endhighlight %}
 
