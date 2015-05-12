@@ -98,6 +98,8 @@ We also have information separated into several individualized **Building Blocks
 
 * [**Branchsters Android**](https://github.com/BranchMetrics/Branchster-Android) - app with sharing and deeplinking
 
+* [**Branchsters Web**](https://github.com/BranchMetrics/Branchster-Web) - app with sharing and deeplinking
+
 
 ## Core SDK Repositories and Reference Docs
 
