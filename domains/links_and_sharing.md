@@ -32,11 +32,18 @@ You should [identify your users](/domains/configuring_client_apps/{{page.platfor
 {% ingredient sdk_links/sharing_ios_share_sheet %}{% endingredient %}
 
 
+{% ingredient sdk_links/always_deeplink %}{% endingredient %}
+
+{% ingredient sdk_links/deeplink_path %}{% endingredient %}
+
+
 ## Additional Options
 
 {% ingredient sdk_links/stage %}{% endingredient %}
 {% ingredient sdk_links/match_duration %}{% endingredient %}
 
+
 ### Customizing Redirects
 
 Lastly, if you want to customize where links take users if they don't have the app installed, you should check out our page about [Redirection](/domains/redirection/{{page.platform}}/).
+
