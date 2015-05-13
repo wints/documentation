@@ -38,9 +38,10 @@ body {
 
 .slide__link-display--left {
 	margin: 0px;
+	float: left;
 }
 
-.center-me {
+.center-me-horizontally {
 	width: 80%;
 	margin: 0px auto;
 	text-align: center;
@@ -63,6 +64,10 @@ body {
 	border-color: #000000;
 	border-width: 1.5px;
 	border-style: solid;
+}
+
+.btn--deemphasize:hover {
+	color: #000000;
 }
 
 .progress-bar {
