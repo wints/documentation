@@ -19,7 +19,7 @@ var Slides = React.createClass({
 	},
 	_advance: function() {
 		var new_state = { i: this.state.i + 1 };
-		utils.setUrl('/learn-more/' + utils.buildUrlQuery(new_state));
+		utils.setUrl('/learn_more/' + utils.buildUrlQuery(new_state));
 		this.setState(new_state);
 	},
 	render: function() {
