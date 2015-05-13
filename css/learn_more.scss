@@ -25,7 +25,50 @@ body {
 	margin-right: auto;
 }
 
+.slide__header {
+	text-align: center;
+}
+
+.slide__link-display {
+	text-align: center;
+	border: #000000 solid 2px;
+	width: 250px;
+	margin: 20px auto;
+}
+
+.slide__link-display--left {
+	margin: 0px;
+}
+
+.center-me {
+	width: 80%;
+	margin: 0px auto;
+	text-align: center;
+}
+
+.slide__description {
+	text-align: center;
+}
+
+.btn--end-onboarding {
+	display: block;
+	padding: 10px 30px;
+	margin: 10px auto;
+	width: 250px;
+}
+
+.btn--deemphasize {
+	color: #000000;
+	background-color: #ffffff;
+	border-color: #000000;
+	border-width: 1.5px;
+	border-style: solid;
+}
+
 .progress-bar {
 	background: $link-color-hover;
 }
 
+em {
+	font-weight: bold;
+}
