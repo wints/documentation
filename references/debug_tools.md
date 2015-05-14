@@ -10,6 +10,8 @@ platforms:
 
 {%ingredient debug/test_app %}{% endingredient %}
 
+{%ingredient debug/question_mark_debug %}{% endingredient %}
+
 {%ingredient debug/set_debug %}{% endingredient %}
 
 {%ingredient debug/user_ids %}{% endingredient %}
