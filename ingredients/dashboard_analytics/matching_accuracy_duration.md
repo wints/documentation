@@ -8,7 +8,13 @@ You can also modify the 2 hour default expiration for browser-based digital fing
 One of the many methods in the iOS SDK:
 
 {% highlight obj-c %}
-- (void)getShortURLWithParams:(NSDictionary *)params andTags:(NSArray *)tags andChannel:(NSString *)channel andFeature:(NSString *)feature andStage:(NSString *)stage andMatchDuration:(NSUInteger)duration andCallback:(callbackWithUrl)callback;
+- (void)getShortURLWithParams:(NSDictionary *)params
+                      andTags:(NSArray *)tags
+                   andChannel:(NSString *)channel
+                   andFeature:(NSString *)feature
+                     andStage:(NSString *)stage
+             andMatchDuration:(NSUInteger)duration
+                  andCallback:(callbackWithUrl)callback;
 {% endhighlight %}
 
 #### On Android
@@ -16,6 +22,6 @@ One of the many methods in the iOS SDK:
 One of the many methods in the Android SDK:
 
 {% highlight java %}
-ic void getShortUrl(String channel, String feature, String stage, JSONObject params, int duration, BranchLinkCreateListener callback)
+public void getShortUrl(String channel, String feature, String stage, JSONObject params, int duration, BranchLinkCreateListener callback)
 {% endhighlight %}
 

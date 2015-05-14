@@ -10,4 +10,3 @@ hide_platform_selector: true
 {% ingredient dashboard_analytics/matching_accuracy_match_type %}{% endingredient %}
 {% ingredient dashboard_analytics/matching_accuracy_duration %}{% endingredient %}
 
-
