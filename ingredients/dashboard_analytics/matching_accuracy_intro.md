@@ -10,4 +10,3 @@ And most importantly...
 * "What control do I have over Branch's matching algorithms?"
 
 The following addresses all of these questions.
-
