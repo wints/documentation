@@ -9,6 +9,8 @@ While you may enjoy Branch, it doesn't mean you need to have bnc.lt as a part of
 
 ![always open app](/img/ingredients/dashboard_setup/custom_link_domain3.png)
 
+After you set this up, the custom subdomain you specify will be the basis of all Branch links created. As a side note, if a user types in your custom subdomain on its own (e.g. get.myapp.co), we will redirect to your Default URL as specified on the [Link Settings](https://dashboard.branch.io/#/settings/link) page.
+
 Lastly, if you want to use your root-level domain (like myapp.com), you will need to make use of a service like CloudFlare. Check out the following two articles:
 
 1. [https://blog.cloudflare.com/zone-apex-naked-domain-root-domain-cname-supp/](https://blog.cloudflare.com/zone-apex-naked-domain-root-domain-cname-supp/)
