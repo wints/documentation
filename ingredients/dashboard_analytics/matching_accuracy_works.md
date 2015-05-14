@@ -9,6 +9,6 @@ When the user opens the app after clicking a Branch link for the very first time
 
 On all subsequent Branch link clicks, we know who they are and can open the app directly and we will match the user <> link click every single time.
 
-The good news for you: if we've ever seen a user before across our entire network of apps, there is 100% accuracy matching them. No more magic needed.
+The good news for you: if we've ever seen a user before across our entire network of apps, then we match with 100% accuracy. No more magic needed.
 
 So we estimate that Branch links are accurate 98-99% of the time. But that number by itself isn't super helpful.
