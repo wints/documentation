@@ -40,7 +40,7 @@ Here is a fully-functional web page that you can use as a template for your text
     <body>
     	Send SMS
         <form onsubmit="sendSMS(this); return false;">
-        	<input id="phone" name="phone" type="tel" placeholder="(415) 555-1212" />
+        	<input id="phone" name="phone" type="tel" placeholder="(650) 123-4567" />
         	<br/>
         	<input type="submit"/>
         </form>

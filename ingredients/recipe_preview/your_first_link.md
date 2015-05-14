@@ -1,1 +1,0 @@
-* [**Your first link**](/recipes/your_first_link/{% section platform %}{{page.platform}}{% endsection %}/) -- direct users to your app from any platform. Bonus: analytics by campaign and channel! **(no SDK required)**

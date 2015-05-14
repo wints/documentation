@@ -1,8 +1,7 @@
 ---
 type: reference
 title: Developer Updates
-platforms:
-- android
+hide_platform_selector: true
 ---
 
 {% protip title="This is in beta" %}

@@ -19,7 +19,7 @@ Let's get started. Seeing install numbers (as opposed to merely clicks) requires
 {% ingredient dashboard_setup/web_url %}{% endingredient %}
 {% ingredient dashboard_setup/store_or_custom_url %}{% endingredient %}
 {% ingredient dashboard_setup/uri_scheme %}
-  {% override client_uri %}For more details on finding/setting your URI scheme in the client, see the section below on [setting the client app's URI scheme](/recipes/marketing_campaign_download_tracking/{{page.platform}}/#uri-scheme-1).{% endoverride %}
+  {% override client_uri %}For more details on finding/setting your URI scheme in the client, see the section below on [setting the client app's URI scheme](/recipes/measuring_installs/{{page.platform}}/#uri-scheme-1).{% endoverride %}
 {% endingredient %}
 {% ingredient dashboard_setup/end_required %}{% endingredient %}
 <!--- /Configuring the Dashboard-->
@@ -31,7 +31,7 @@ Let's get started. Seeing install numbers (as opposed to merely clicks) requires
 {% endingredient %}
 {% ingredient sdk_setup/branch_key %}{% override screenshot %}{% endoverride %}{% endingredient %}
 {% ingredient sdk_setup/uri_scheme %}
-  {% override dashboard_uri %}For more info on setting up a URI scheme on the Dashboard, check out the [section above](/recipes/marketing_campaign_download_tracking/{{page.platform}}/#uri-scheme).{% endoverride %}
+  {% override dashboard_uri %}For more info on setting up a URI scheme on the Dashboard, check out the [section above](/recipes/measuring_installs/{{page.platform}}/#uri-scheme).{% endoverride %}
 {% endingredient %}
 {% ingredient sdk_setup/init_session %}{% endingredient %}
 {% ingredient sdk_setup/handle_deep_link %}{% endingredient %}
@@ -45,7 +45,7 @@ Let's get started. Seeing install numbers (as opposed to merely clicks) requires
 {% endingredient %}
 
 {% ingredient dashboard_links/tags %}
-	{% override deep_link_data_url %}For information of the form *[key]*: *[value]* such as "product": "shoes", we recommend adding them below--see [Deep Link Data (Optional)](/recipes/marketing_campaign_download_tracking/{{page.platform}}/#deep-link-data-optional).
+	{% override deep_link_data_url %}For information of the form *[key]*: *[value]* such as "product": "shoes", we recommend adding them below--see [Deep Link Data (Optional)](/recipes/measuring_installs/{{page.platform}}/#deep-link-data-optional).
     {% endoverride %}
 {% endingredient %}
 

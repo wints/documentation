@@ -8,13 +8,13 @@ platforms:
 
 For a referral system, Branch provides:
 
-- _User attribution through a tracking, download URL._ In short, we tell you when an existing user who you empower with a Branch link, drives a new install.
+- _User attribution through a tracking, download URL._ In short, we tell you when an existing user--who you empower with a Branch link--drives a new install.
 
-- _(optional) Custom rewarding rules tied to events (install, signup, purchase, etc) in app._ We allow you to tie reward events to special
+- _(optional) Custom rewarding rules tied to events (install, signup, purchase, etc) in app._ We allow you to tie rewards to any events. You can reward users for referring users who not just install, but also signup, make purchases, etc.
 
 - _(optional) User reward tracking/storage (integer balance)._ We leave the actual user facing rewarding to you, but we store how many credits have been earned through our reward rules. This makes it easy so that you can just check the balance of credits in the app from us, give the user some reward, then clear the credit balance on our server.
 
-- _(optional) Credit transaction history._ At any time, via API or SDK, you can retrieve the full credit history of the user
+- _(optional) Credit transaction history._ At any time, via API or SDK, you can retrieve the full credit history of the user.
 
 
 ## Configuring the Dashboard for your {{ page.platform_formatted }} app

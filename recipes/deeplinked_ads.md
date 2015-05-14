@@ -33,16 +33,12 @@ With standard deeplinks, if a user doesn't have the app, the link fails. With Br
 ## Creating your Link
 
 {% ingredient dashboard_links/creating_links %}
-	{% override screenshot %}
-	{% image src='/img/ingredients/dashboard_links/fb_example_create.png' half right alt='Create Marketing Link' %}
-	{% endoverride %}
+	{% override screenshot %}{% image src='/img/ingredients/dashboard_links/fb_example_create.png' half right alt='Create Marketing Link' %}{% endoverride %}
 	{% override screenshot_description%}One example description if you want to treat this guide is: "Facebook ad for blue sneakers - summer 2015."{% endoverride %}
 {% endingredient %}
 
 {% ingredient dashboard_links/tags %}
-	{% override screenshot%}
-	{% image src='/img/ingredients/dashboard_links/fb_example_tags.png' half right %}
-	{% endoverride %}
+	{% override screenshot%}{% image src='/img/ingredients/dashboard_links/fb_example_tags.png' half right %}{% endoverride %}
 	{% override deep_link_data_url%}For information of the form *[key]*: *[value]* such as "product": "shoes", we recommend adding them to "Deep Link Data (Advanced)", discussed [below](/recipes/deeplinked_ads/ios/#deep-link-data-advanced).
     {% endoverride %}
 {% endingredient %}
