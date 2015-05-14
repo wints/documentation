@@ -113,7 +113,7 @@ public void onNewIntent(Intent intent) {
 }
 {% endhighlight %}
 
-Finally, init the session back inside `onStart`!
+Then, init the session back inside `onStart`!
 
 {% highlight java %}
 branch.initSession(branchReferralInitListener, this.getIntent().getData(), this);
@@ -121,7 +121,15 @@ branch.initSession(branchReferralInitListener, this.getIntent().getData(), this)
 
 **NOTE** if you're calling this inside a fragment, please use getActivity() instead of passing in `this`. Also, `this.getIntent().getData()` refers to the data associated with an incoming intent.
 
-As a quick reminder, make sure to properly close the session inside `onStop` with a `branch.closeSession()`.
+On Android, you also need to be sure to properly close the session inside `onStop` with a `branch.closeSession()`. This helps us manage a session across activities.
+
+{% highlight java %}
+@Override
+protected void onStop() {
+    super.onStop();
+    branch.closeSession();
+}
+{% endhighlight %}
 
 {% protip title="Use Branch in (almost!) all your activities" %}
 Every activity that will use Branch in some way should include Branch SDK methods in both `onStart()` and `onStop()`. Don't forget `closeSession()` in every activity with Branch! The one exception is short-lived activities like splash screens. Those shouldn't use Branch--it helps us avoid race conditions within the SDK. 
