@@ -26,6 +26,7 @@
 - type: domain
   title: Building Blocks
   pages:
+    - matching_accuracy
     - submitting_apps
     - configuring_the_dashboard
     - links_and_sharing
