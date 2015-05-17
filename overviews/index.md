@@ -72,6 +72,10 @@ Let users share in-app content. iHeartRadio’s shared links open straight to ra
 	{% override platform %}ios{% endoverride %}
 {% endingredient %}
 
+{% ingredint recipe_preview/mixpanel %}
+	{% override platform %}ios{% endoverride %}
+{% endingredient %}
+
 
 
 ## Building Blocks
