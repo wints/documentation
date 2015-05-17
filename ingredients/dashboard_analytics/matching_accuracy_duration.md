@@ -25,3 +25,10 @@ One of the many methods in the Android SDK:
 public void getShortUrl(String channel, String feature, String stage, JSONObject params, int duration, BranchLinkCreateListener callback)
 {% endhighlight %}
 
+#### Via the API
+
+Any time you request a link via the API, you can insert a 'duration' parameter with the integer value of the fingerprint expiration time you'd like for that link.
+
+#### On the Dashboard
+
+Lastly, you can specify the default timeout duration for all of your links on the Dashboard's [Link Settings](https://dashboard.branch.io/#/settings/link), under the Advanced Settings section.

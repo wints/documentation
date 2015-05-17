@@ -1,14 +1,24 @@
 
 ## How does Branch matching work?
 
-Branch collects information about devices both when a user is in the browser -- via a click on a Branch link -- and then after they open the app. This information includes **IP Address**, **OS**, **OS version**, **screen size** and other parameters. Branch also uses **unique device identifiers** when available. This is the user's **_digital fingerprint_** and can be obtained in the browser and in the app.
+There are _three_ mechanisms by which we pass data through to the app and attribute app sessions back to the source:
 
-When a user clicks a Branch link, in the browser we determine where the user should be directed. On desktop, this is to a text-me-the-app page or a custom Desktop URL. On a mobile app this is to the app if it's present or to the App Store / Play Store if not. Branch also drops a first-party cookie in the browser so that in all future trips through the browser Branch knows who the user is and whether they have the app.
+1) Direct deep linking
 
-When the user opens the app after clicking a Branch link for the very first time, we check the params to see if our servers have a digital fingerprint that matches. If we find a match, we know which link they clicked and what data is associated with us. This is Branch magic, and it's required because it isn't possible to pass data through the App Store.
+If the app is currently installed on the phone, and you've configured your Branch links with your app's URI scheme (myapp://), we will open the app immediately and pass a click identifier through to our native library. This click identifier is then sent to the Branch servers to retrieve the dictionary of data associated with the link.
 
-On all subsequent Branch link clicks, we know who they are and can open the app directly and we will match the user back to the link click every single time.
+For example, we'd call _myapp://open?link_click_id=123456_ to open the app immediately. The Branch native library parses out link_click_id: 123456 and passes it back to the Branch API to retrieve the link associated with that link click.
 
-The good news for you: if we've ever seen a user before across our entire network of apps, then we match with 100% accuracy. No more magic needed.
+2) 100% match browser-app profile hit
 
-So we estimate that Branch links are accurate 98-99% of the time. But that number by itself isn't super helpful.
+Because we set a first party browser cookie on the _bnc.lt_ (Branchlet) domain for any app that uses a Branch link which is deterministically matched up to the hardware id or IDFA retrieved via our native library on every link clikc, we can use this historical data to guarantee 100% accuracy on repeat users. So, when a user clicks a Branch link for your app, and we've seen them click a link for another app on our network, we've already matched them up to a corresponding app identifier. This means that when they install the app, we know with 100% certainty that they just came from that link click.
+
+The fact that we have such a global network of apps with hundreds of millions of users clicking links, means that when you join the platform, you can benefit from the crowd-sourced accuracy gained through all our apps contributing the browser-app profiles. 
+
+3) Browser to app fingerprint match
+
+Branch collects information about devices both when a user is in the browser -- via a click on a Branch link -- and then after they open the app. This information includes **IP Address**, **OS**, **OS version**, **device model**, **screen size** and other parameters. This is the user's **_digital fingerprint_** and can be obtained in the browser and in the app.
+
+We match the unqiue fingerprint collected in the app to the unique fingerprint collected in the browser to determine where user originated from if the prior two mechanisms were not used.
+
+Believe us, this very, _very_ accurate.
