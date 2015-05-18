@@ -23,6 +23,7 @@
   pages:
     - double_sided_third_party_integration
     - deeplinked_ads
+    - mixpanel
 - type: domain
   title: Building Blocks
   pages:
