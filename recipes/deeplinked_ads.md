@@ -6,6 +6,9 @@ platforms:
 - android
 ---
 
+{% protip title="Have you already integrated?" %}This guide assumes that you haven't already integrated Branch and provides full step-by-step instructions. However, if you've already completed Steps 1 and 2 of our quickstart guide, [Sharing & Deeplink Routing](/recipes/quickstart_guide/{{page.platform}}/), then you only need to complete Steps 2 & 4! Jump to Step 2, [Creating Your Link](/recipes/deeplinked_ads/{{page.platform}}/#creating-your-link).
+{% endprotip %}
+
 Deeplinked ads are not a new breed--just a rare one. With Branch they're as easy as creating a link on the Dashboard and setting up your {{page.platform_formatted}} app to handle incoming deep links.
 
 This makes the following possible:
@@ -60,6 +63,8 @@ With standard deeplinks, if a user doesn't have the app, the link fails. With Br
 <!--- /Creating your Link -->
 
 
+
+
 ## Configuring your app to track installs
 
 Based on what you've built so far, you will be able to track your ad campaign's clicks by device -- how many people on each platform (desktop, iOS, Android) have clicked your ads.
@@ -72,6 +77,9 @@ If you integrate our SDK into your app, you can:
    ii. automatically take the user to the same pair of shoes that were featured in the ad that was clicked on
    iii. apply a certain coupon towards a purchase of a new pair of shoes, with a coupon icon at the top of the screen
 3. Track events and create funnels so you can see which ads are performing best on concrete measures such as # of completed signups or number/type of purchases even if the app was not previously installed.
+
+{% protip title="Have you already integrated?" %}This guide assumes that you haven't already integrated Branch and provides full step-by-step instructions. However, if you've already completed Step 2 of our quickstart guide, [Sharing & Deeplink Routing](/recipes/quickstart_guide/{{page.platform}}/), then you can [skip to Step 4](/recipes/deeplinked_ads/{{page.platform}}/#example-facebook-ads).
+{% endprotip %}
 
 {% ingredient sdk_setup/installing_the_sdk %}
   {% override telephony %}[here](/domains/configuring_client_apps/{{page.platform}}/#installing-the-sdk).{% endoverride %}
