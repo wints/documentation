@@ -80,6 +80,7 @@ Again, it's not imperative that you attach any information to the link. As long 
 {% endingredient %}
 {% ingredient rewards/reward_example %}{% endingredient %}
 {% ingredient sdk_setup/is_referrable_protip %}{% endingredient %}
+{% ingredient sdk_setup/testing_rewards_protip %}{% endingredient %}
 {% ingredient rewards/rewards_are_flexible %}{% endingredient %}
 
 {% ingredient rewards/get_credits %}{% override different_bucket %}{% endoverride %}{% endingredient %}

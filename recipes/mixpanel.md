@@ -1,3 +1,9 @@
+---
+type: recipe
+title: "Analytics: Mixpanel"
+hide_platform_selector: true
+---
+
 ## Mixpanel
 
 We have two methods to synchronize data between services. The first is using Branch callbacks to make a call to Mixpanel. This is under Methodology 1. The second is using Templated Webhooks to deliver data to your backend, who then send that data to Mixpanel. This is under Methodology 2.

@@ -23,9 +23,11 @@
   pages:
     - double_sided_third_party_integration
     - deeplinked_ads
+    - mixpanel
 - type: domain
   title: Building Blocks
   pages:
+    - matching_accuracy
     - submitting_apps
     - configuring_the_dashboard
     - links_and_sharing
