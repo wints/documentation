@@ -65,9 +65,13 @@ branch.initSessionWithLaunchOptions(launchOptions, andRegisterDeepLinkHandler: {
 {% endtab %}
 {% endtabs %}
 
-{% protip title="Watch Out" %}
-If you are seeing a "Branch.h file not found" error but you've imported the SDK, [click here](http://support.branch.io/customer/portal/articles/1964901-xcode-error---branch-not-found).
+{% protip title="initSession is called 100% of the time" %}
+`initSession` is always called, whether or not the user clicked on a Branch link. If no Branch link was clicked, `params` will come back empty. Plan your application logic accordingly!
 {% endprotip %}
+
+**NOTE** If you are seeing a "Branch.h file not found" error but you've imported the SDK, or it's breaking during compiling--and you're **using Xcode 6.3 or newer**--[click here](http://support.branch.io/customer/portal/articles/1964901-xcode-error---branch-not-found).
+
+
 
 {% endif %}
 <!---    /iOS -->
