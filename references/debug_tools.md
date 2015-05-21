@@ -12,6 +12,11 @@ platforms:
 
 {%ingredient debug/question_mark_debug %}{% endingredient %}
 
+{% ingredient rewards/fraud_protection %}
+{% override header %}### A Word About Fraud Protection{% endoverride %}
+{% override setdebug %}[in the next section]{% endoverride %}
+{% endingredient %}
+
 {%ingredient debug/set_debug %}{% endingredient %}
 
 {%ingredient debug/user_ids %}{% endingredient %}
