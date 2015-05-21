@@ -9,6 +9,11 @@ Branch allows you to dynamically create URLs without using any SDKs. This is bes
 
 In every other situation we recommend using the public HTTP API or one of our client SDKs. The HTTP API is covered in the [second section](/recipes/dynamic_link_creation/#creating-a-deep-linking-url-via-the-http-api) and includes an example that you can run from the command line.
 
+{% protip title="Bulk Link Creation" %}
+We also offer the ability to create links in bulk. [Click here](/references/http_api/#bulk-creating-deep-linking-urls) to see the HTTP API endpoint. However, in general it is a good idea to use one of the two methods described below--a one-time investment in a flexible system is much better than bulk creating and distributing links on many separate occasions.
+{% endprotip %}
+
+
 {% ingredient http_api/structuring_dynamic_deeplink %}{% endingredient %}
 {% ingredient http_api/creating_deeplinks %}{% endingredient %}
 
