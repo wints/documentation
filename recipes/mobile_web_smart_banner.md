@@ -6,7 +6,7 @@ platforms:
 - android
 ---
 
-{% protip title="Have you already integrated?" %}This guide assumes that you haven't already integrated Branch and provides full step-by-step instructions. However, if you've already completed Steps 1 of our quickstart guide, [Sharing & Deeplink Routing](/recipes/quickstart_guide/{{page.platform}}/), then you can skip Step 1! Jump to Step 2, [The Smart Banner](/recipes/mobile_web_smart_banner/{{page.platform}}/#the-smart-banner). (You can also skip optional Step 3, Configuring the Client, if you've performed this step from the quickstart guide.)
+{% protip title="Have you already integrated?" %}This guide assumes that you haven't already integrated Branch and provides full step-by-step instructions. However, if you've already completed Step 1 of our quickstart guide, [Sharing & Deeplink Routing](/recipes/quickstart_guide/{{page.platform}}/), then you can skip Step 1! Jump to Step 2, [The Smart Banner](/recipes/mobile_web_smart_banner/{{page.platform}}/#the-smart-banner). (You can also skip optional Step 3, Configuring the Client, if you've performed this step from the quickstart guide.)
 {% endprotip %}
 
 The mobile web smart banner is a powerful tool--it brings users in from the web experience where they are more easily lost, to your native mobile experience. On desktop, the banner can even drive users to mobile via our text-me-the-app function.
