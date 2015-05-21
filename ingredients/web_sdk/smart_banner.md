@@ -8,7 +8,7 @@ Branch offers a highly customizable smart banner that works across platforms. An
     icon: 'http://icons.iconarchive.com/icons/wineass/ios7-redesign/512/Appstore-icon.png',
     title: 'Branch Demo App',
     description: 'The Branch demo app!'
-});
+}, {});
 {% endoverride %}
 {% endingredient %}
 
