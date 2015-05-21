@@ -27,6 +27,9 @@ If you also want to pass data through the install process or deep link straight 
 
 ## The Smart Banner
 {% ingredient web_sdk/smart_banner %}{% override header %}{% endoverride %}{% endingredient %}
+{% protip title="Deeplinking through Install" %}
+This data dictionary containing `foo: 'bar'` etc is where you put data that you want passed through install. This is discussed in the sections on [Handle Deep Link](recipes/mobile_web_smart_banner/{{page.platform}}/#handle-deep-link) and [Routing](/recipes/mobile_web_smart_banner/{{page.platform}}/#optional-routing-passing-information-from-the-banner) below.
+{% endprotip %} 
 
 ## (Optional) Configuring the Client for Deep Linking
 {% ingredient sdk_setup/installing_the_sdk %}
