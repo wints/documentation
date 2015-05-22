@@ -11,7 +11,7 @@ For example, we'd call _myapp://open?link_click_id=123456_ to open the app immed
 
 2) 100% match browser-app profile hit
 
-Because we set a first party browser cookie on the _bnc.lt_ (Branchlet) domain for any app that uses a Branch link which is deterministically matched up to the hardware id or IDFA retrieved via our native library on every link clikc, we can use this historical data to guarantee 100% accuracy on repeat users. So, when a user clicks a Branch link for your app, and we've seen them click a link for another app on our network, we've already matched them up to a corresponding app identifier. This means that when they install the app, we know with 100% certainty that they just came from that link click.
+Because we set a first party browser cookie on the _bnc.lt_ (Branchlet) domain for any app that uses a Branch link which is deterministically matched up to the hardware id or IDFA retrieved via our native library on every link click, we can use this historical data to guarantee 100% accuracy on repeat users. So, when a user clicks a Branch link for your app, and we've seen them click a link for another app on our network, we've already matched them up to a corresponding app identifier. This means that when they install the app, we know with 100% certainty that they just came from that link click.
 
 The fact that we have such a global network of apps with hundreds of millions of users clicking links, means that when you join the platform, you can benefit from the crowd-sourced accuracy gained through all our apps contributing the browser-app profiles. 
 
