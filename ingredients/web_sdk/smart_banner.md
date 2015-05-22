@@ -19,6 +19,15 @@ This short snippet of code below is enough to add a web banner to both your desk
 {% endingredient %}
 
 
+#### Closing the App Banner Programmatically
+
+The App Banner includes a close button the user can click, but you may want to close the banner with a timeout, or via some other user interaction with your web app. In this case, closing the banner is very simple by calling `Branch.closeBanner()`.
+
+```js
+branch.closeBanner();
+```
+
+
 #### Smart Banner Options, Link Options
 
 There are a lot of options here, but don't be scared. Specifying them is optional, although you'll probably want to do so to tailor it to your needs.
@@ -63,3 +72,8 @@ branch.banner({
     }
 });
 {% endhighlight %}
+
+
+
+
+
