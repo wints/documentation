@@ -20,7 +20,7 @@ We exist to help you grow your mobile app. More users, happier users, repeat use
 
 Branch links give you the ability to **redirect users to your app, the App/Play Store, your website and even a text-me-the-app page on desktop -- all with one link!** Plus you get powerful click tracking by campaign and platform.
 
-{% ingredient recipe_preview/your_first_link %}
+{% ingredient recipe_preview/your_first_marketing_link %}
 	{% override platform %}ios{% endoverride %}
 {% endingredient %}
 
@@ -31,6 +31,8 @@ Branch links give you the ability to **redirect users to your app, the App/Play 
 {% ingredient recipe_preview/measuring_installs %}
 	{% override platform %}ios{% endoverride %}
 {% endingredient %}
+
+{% ingredient recipe_preview/dynamic_link_creation %}{% endingredient %}
 
 
 
@@ -63,11 +65,13 @@ Let users share in-app content. iHeartRadio’s shared links open straight to ra
 ## Third-Party Integrations
 
 {% ingredient recipe_preview/double_sided_third_party_integration %}
-	{% override platform %}ios{% endoverride %}
 {% endingredient %}
 
 {% ingredient recipe_preview/deeplinked_ads %}
 	{% override platform %}ios{% endoverride %}
+{% endingredient %}
+
+{% ingredient recipe_preview/mixpanel %}
 {% endingredient %}
 
 
@@ -98,6 +102,8 @@ We also have information separated into several individualized **Building Blocks
 
 * [**Branchsters Android**](https://github.com/BranchMetrics/Branchster-Android) - app with sharing and deeplinking
 
+* [**Branchsters Web**](https://github.com/BranchMetrics/Branchster-Web) - app with sharing and deeplinking
+
 
 ## Core SDK Repositories and Reference Docs
 
@@ -117,4 +123,5 @@ We also have information separated into several individualized **Building Blocks
 ## Advanced
 
 * [**Branch Preferred Partners**](https://github.com/BranchMetrics/Branch-Integration-Guides/blob/master/bpp-guide.md) - leverage Branch links for your own client apps
+
 

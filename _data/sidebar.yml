@@ -6,9 +6,10 @@
 - type: recipe
   title: Linking and Measuring
   pages:
-    - your_first_link
+    - your_first_marketing_link
     - email_campaigns
     - measuring_installs
+    - dynamic_link_creation
 - type: recipe
   title: Deeplinked Features
   pages:
@@ -22,16 +23,18 @@
   pages:
     - double_sided_third_party_integration
     - deeplinked_ads
+    - mixpanel
 - type: domain
   title: Building Blocks
   pages:
-    - analytics_and_custom_events
-    - configuring_client_apps
+    - matching_accuracy
+    - submitting_apps
     - configuring_the_dashboard
     - links_and_sharing
     - redirection
-    - rewards
     - routing
+    - rewards
+    - analytics_and_custom_events
     - webhooks
 - type: reference
   title: API Reference

@@ -1,6 +1,6 @@
 ---
 type: recipe
-title: Your First Link
+title: Your First Marketing Link
 platforms:
 - ios
 - android
@@ -27,7 +27,7 @@ That's the end of the required setup for the Dashboard! The dashboard is incredi
 {% endingredient %}
 
 {% ingredient dashboard_links/tags %}
-	{% override deep_link_data_url %}For information of the form *[key]*: *[value]* such as "product": "shoes", we recommend adding them below--see [Deep Link Data (Optional)](/recipes/your_first_link/{{page.platform}}/#deep-link-data-optional).
+	{% override deep_link_data_url %}For information of the form *[key]*: *[value]* such as "product": "shoes", we recommend adding them below--see [Deep Link Data (Optional)](/recipes/your_first_marketing_link/{{page.platform}}/#deep-link-data-optional).
     {% endoverride %}
 {% endingredient %}
 

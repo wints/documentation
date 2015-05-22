@@ -1,6 +1,6 @@
 ---
 type: domain
-title: Redirection
+title: Custom Link Redirection
 platforms:
 - ios
 - android
@@ -8,4 +8,3 @@ platforms:
 ---
 
 {% ingredient sdk_links/custom_redirects %}{% endingredient %}
-

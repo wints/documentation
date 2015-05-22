@@ -16,6 +16,5 @@ The following sections will walk through various options and their implications.
 The first step in creating a marketing link is giving it a title.
 {% endsection %}
 
-{% section screenshot %}
-{% image src='/img/ingredients/dashboard_links/add_2.png' half right alt='Description' %}
+{% section screenshot %}{% image src='/img/ingredients/dashboard_links/add_2.png' half right alt='Description' %}
 {% endsection %}
