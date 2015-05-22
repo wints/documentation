@@ -22,7 +22,7 @@ This is especially useful if you want to serve up content on the web for users w
 {% highlight swift %}
 Branch.getInstance().getShortURLWithParams(["$desktop_url": "http://myawesomesite.com/content/the-desired-content"], andCallback: { (url: String?, error: NSError?) -> Void in
     if let urlToShare = url {
-        NSLog("got my Branch link to share: %@", urlToShare)
+        NSLog(@"got my Branch link to share: %@", urlToShare)
     }
 })
 {% endhighlight %}

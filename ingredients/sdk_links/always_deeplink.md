@@ -22,7 +22,7 @@ To override this behavior, you can either select "Always try to open the app" on
 {% highlight swift %}
 Branch.getInstance().getShortURLWithParams(["$always_deeplink": "true"], andCallback: { (url: String?, error: NSError?) -> Void in
     if let urlToShare = url {
-        NSLog("got my Branch link to share: %@", urlToShare)
+        NSLog(@"got my Branch link to share: %@", urlToShare)
     }
 })
 {% endhighlight %}

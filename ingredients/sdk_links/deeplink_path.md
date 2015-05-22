@@ -20,7 +20,7 @@ The value of the deeplink path that you'd like us to append to your URI. For exa
 {% highlight swift %}
 Branch.getInstance().getShortURLWithParams(["$deeplink_path": "radio/station/456"], andCallback: { (url: String?, error: NSError?) -> Void in
     if let urlToShare = url {
-        NSLog("got my Branch link to share: %@", urlToShare)
+        NSLog(@"got my Branch link to share: %@", urlToShare)
     }
 })
 {% endhighlight %}

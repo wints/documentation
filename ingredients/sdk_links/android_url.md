@@ -19,7 +19,7 @@ When a user doesn't have your app and clicks a link on Android, by default the u
 {% highlight swift %}
 Branch.getInstance().getShortURLWithParams(["$android_url": "http://myawesomesite.com/android-app-landing-page"], andCallback: { (url: String?, error: NSError?) -> Void in
     if let urlToShare = url {
-        NSLog("got my Branch link to share: %@", urlToShare)
+        NSLog(@"got my Branch link to share: %@", urlToShare)
     }
 })
 {% endhighlight %}

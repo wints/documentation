@@ -30,7 +30,7 @@ Branch.getInstance().getShortURLWithParams(["referringUsername": "James",
                                             "referringUserId": "1234",
                                             "contentId": "0987"], andCallback: { (url: String?, error: NSError?) -> Void in
     if error == nil {
-        NSLog("got my Branch link to share: %@", urlToShare!)
+        NSLog(@"got my Branch link to share: %@", urlToShare!)
     }
 })
 {% endhighlight %}

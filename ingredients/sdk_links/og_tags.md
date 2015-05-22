@@ -34,7 +34,7 @@ params["$og_title"] = "MyApp is disrupting apps"
 params["og_description"] = "Out of all the apps disrupting apps, MyApp is without a doubt a leader. Check us out."
 Branch.getInstance().getShortURLWithParams(params, andCallback: { (url: String?, error: NSError?) -> Void in
     if error == nil {
-        NSLog("got my Branch link to share: %@", url!)
+        NSLog(@"got my Branch link to share: %@", url!)
     }
 })
 {% endhighlight %}
