@@ -1,7 +1,7 @@
 Documentation
 =======
 
-Live at: http://docs.branch.io.s3-website-us-west-1.amazonaws.com/
+Live at: https://dev.branch.io
 
 ### Install Bundler
 ```
