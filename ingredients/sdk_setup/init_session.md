@@ -135,8 +135,8 @@ protected void onStop() {
 }
 {% endhighlight %}
 
-{% protip title="Use Branch in (almost!) all your activities" %}
-Every activity that will use Branch in some way should include Branch SDK methods in both `onStart()` and `onStop()`. Don't forget `closeSession()` in every activity with Branch! The one exception is short-lived activities like splash screens. Those shouldn't use Branch--it helps us avoid race conditions within the SDK. 
+{% protip title="Use Branch in all of your activities" %}
+Every activity that will use Branch in some way should include Branch SDK methods in both `onStart()` and `onStop()`. Don't forget `closeSession()` in every activity with Branch! 
 {% endprotip %}
 
 {% endif %}
