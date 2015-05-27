@@ -11,7 +11,7 @@ This section will describe exactly what needs to be done in order to put a Branc
 _Ad network -> **Branch** -> measurement partner (Adjust, etc)_
 
 {% ingredient dashboard_links/creating_links %}
-{% override title %}## Create A Marketing Link{% endoverride %}
+{% override title %}## Create a marketing link{% endoverride %}
 {% endingredient %}
 
 {% ingredient dashboard_links/custom_redirects %}
