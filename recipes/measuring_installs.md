@@ -71,7 +71,7 @@ Every *user click*, every *fresh install*, and every *subsequent open* can be at
 If you go the additional step of allowing users to share via Branch links, you can compare your campaigns to word-of-mouth. If this interests you, check out our guides on these topics and more:
 
 {% ingredient recipe_preview/incentivized_referral_program %}{% endingredient %}
-{% ingredient recipe_preview/personalized_invite_system %}{% endingredient %}
+{% ingredient recipe_preview/personalized_welcome %}{% endingredient %}
 {% ingredient recipe_preview/influencers %}{% endingredient %}
 {% ingredient recipe_preview/channel_tags %}{% endingredient %}
 {% ingredient recipe_preview/contact_us %}{% endingredient %}

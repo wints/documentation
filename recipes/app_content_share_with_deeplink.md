@@ -80,7 +80,7 @@ That's it! After integrating the SDK into your app, it boils down to [generating
 
 {% ingredient recipe_preview/recipe_end_intro %}{% endingredient %}
 {% ingredient recipe_preview/incentivized_referral_program %}{% endingredient %}
-{% ingredient recipe_preview/personalized_invite_system %}{% endingredient %}
+{% ingredient recipe_preview/personalized_welcome %}{% endingredient %}
 {% ingredient recipe_preview/influencers %}{% endingredient %}
 {% ingredient recipe_preview/channel_tags %}{% endingredient %}
 {% ingredient recipe_preview/contact_us %}{% endingredient %}

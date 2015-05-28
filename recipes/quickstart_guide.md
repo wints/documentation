@@ -58,7 +58,7 @@ You can also use the data to link directly to content! Instead of "foo": "bar", 
 Now that you've completed the basic integration, you can **skip steps one (Configuring the Dashboard) and two (Configuring the Client) in the following guides**. Next steps:
 
 {% ingredient recipe_preview/measuring_installs %}{%endingredient%}
-{% ingredient recipe_preview/personalized_invite_system %}{%endingredient%}
+{% ingredient recipe_preview/personalized_welcome %}{%endingredient%}
 {% ingredient recipe_preview/deeplinked_ads %}{%override ending%} **(Skip Steps 1 and 3)**{%endoverride%}{%endingredient%}
 {% ingredient recipe_preview/incentivized_referral_program %}{%endingredient%}
 {% ingredient recipe_preview/contact_us %}{%endingredient%}

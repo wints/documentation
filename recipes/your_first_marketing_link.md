@@ -49,7 +49,7 @@ That's the end of the required setup for the Dashboard! The dashboard is incredi
 {% ingredient dashboard_links/no_sdk %}{% endingredient %}
 
 {% ingredient recipe_preview/incentivized_referral_program %}{% endingredient %}
-{% ingredient recipe_preview/personalized_invite_system %}{% endingredient %}
+{% ingredient recipe_preview/personalized_welcome %}{% endingredient %}
 {% ingredient recipe_preview/influencers %}{% endingredient %}
 {% ingredient recipe_preview/channel_tags %}{% endingredient %}
 {% ingredient recipe_preview/contact_us %}{% endingredient %}

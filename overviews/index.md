@@ -44,7 +44,7 @@ Let users share in-app content. iHeartRadio’s shared links open straight to ra
 	{% override platform %}ios{% endoverride %}
 {% endingredient %}
 
-{% ingredient recipe_preview/personalized_invite_system %}
+{% ingredient recipe_preview/personalized_welcome %}
 	{% override platform %}ios{% endoverride %}
 {% endingredient %}
 

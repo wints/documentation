@@ -25,7 +25,7 @@ We covered two methods of dynamically creating links. But there's so much more y
 	{% override platform %}ios{% endoverride %}
 {% endingredient %}
 
-{% ingredient recipe_preview/personalized_invite_system %}
+{% ingredient recipe_preview/personalized_welcome %}
 	{% override platform %}ios{% endoverride %}
 {% endingredient %}
 
