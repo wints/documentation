@@ -1,0 +1,1 @@
+* [**Branch + Mixpanel**](/recipes/analytics_mixpanel/{% section platform %}{{page.platform}}{% endsection %}/) -- Recommended methods to send Branch data to Mixpanel
