@@ -33,7 +33,7 @@ We covered two methods of dynamically creating links. But there's so much more y
 	{% override platform %}ios{% endoverride %}
 {% endingredient %}
 
-{% ingredient recipe_preview/mobile_web_smart_banner %}
+{% ingredient recipe_preview/app_download_banner %}
 	{% override platform %}ios{% endoverride %}
 {% endingredient %}
 

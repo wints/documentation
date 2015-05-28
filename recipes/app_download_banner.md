@@ -6,21 +6,21 @@ platforms:
 - android
 ---
 
-{% protip title="Have you already integrated?" %}This guide assumes that you haven't already integrated Branch and provides full step-by-step instructions. However, if you've already completed Step 1 of our quickstart guide, [Sharing & Deeplink Routing](/recipes/quickstart_guide/{{page.platform}}/), then you can skip Step 1! Jump to Step 2, [The Smart Banner](/recipes/mobile_web_smart_banner/{{page.platform}}/#the-smart-banner). (You can also skip optional Step 3, Configuring the Client, if you've performed this step from the quickstart guide.)
+{% protip title="Have you already integrated?" %}This guide assumes that you haven't already integrated Branch and provides full step-by-step instructions. However, if you've already completed Step 1 of our quickstart guide, [Sharing & Deeplink Routing](/recipes/quickstart_guide/{{page.platform}}/), then you can skip Step 1! Jump to Step 2, [The Smart Banner](/recipes/app_download_banner/{{page.platform}}/#the-smart-banner). (You can also skip optional Step 3, Configuring the Client, if you've performed this step from the quickstart guide.)
 {% endprotip %}
 
 The mobile web smart banner is a powerful tool--it brings users in from the web experience where they are more easily lost, to your native mobile experience. On desktop, the banner can even drive users to mobile via our text-me-the-app function.
 
-It's highly customizable. If you want simple, cross-platform download links that just work, follow the first two sections on [configuring the dashboard](/recipes/mobile_web_smart_banner/{{page.platform}}/#configuring-the-dashboard-for-your-{{page.platform}}-app) and [The Smart Banner](/recipes/mobile_web_smart_banner/{{page.platform}}/#the-smart-banner).
+It's highly customizable. If you want simple, cross-platform download links that just work, follow the first two sections on [configuring the dashboard](/recipes/app_download_banner/{{page.platform}}/#configuring-the-dashboard-for-your-{{page.platform}}-app) and [The Smart Banner](/recipes/app_download_banner/{{page.platform}}/#the-smart-banner).
 
-If you also want to pass data through the install process or deep link straight to content, check out the optional 3rd and 4th sections on [Configuring the Client for Deep Linking](/recipes/mobile_web_smart_banner/{{page.platform}}/#optional-configuring-the-client-for-deep-linking) and [Routing: passing information from the Banner](/recipes/mobile_web_smart_banner/{{page.platform}}/#optional-routing-passing-information-from-the-banner).
+If you also want to pass data through the install process or deep link straight to content, check out the optional 3rd and 4th sections on [Configuring the Client for Deep Linking](/recipes/app_download_banner/{{page.platform}}/#optional-configuring-the-client-for-deep-linking) and [Routing: passing information from the Banner](/recipes/app_download_banner/{{page.platform}}/#optional-routing-passing-information-from-the-banner).
 
 ## Configuring the Dashboard for your {{ page.platform_formatted }} app
 {% ingredient dashboard_setup/app_name %}{% endingredient %}
 {% ingredient dashboard_setup/web_url %}{% endingredient %}
 {% ingredient dashboard_setup/store_or_custom_url %}{% endingredient %}
 {% ingredient dashboard_setup/uri_scheme %}
-  	{% override client_uri %}For more details on finding/setting your URI scheme in the client, see the section below on [setting the client app's URI scheme](/recipes/mobile_web_smart_banner/{{page.platform}}/#uri-scheme-1).{% endoverride %}
+  	{% override client_uri %}For more details on finding/setting your URI scheme in the client, see the section below on [setting the client app's URI scheme](/recipes/app_download_banner/{{page.platform}}/#uri-scheme-1).{% endoverride %}
 	{% override optional %}**Note**: this is required if you want your smart banner to open the app. If, however, you simply want a banner that links to the {% if page.ios %}App{% endif %}{% if page.android %}Play{% endif %} Store (on mobile) or that allows users to text themselves the app (on desktop), you can skip this step.{% endoverride %}
 {% endingredient %}
 {% ingredient dashboard_setup/end_required %}{% endingredient %}
@@ -28,7 +28,7 @@ If you also want to pass data through the install process or deep link straight 
 ## The Smart Banner
 {% ingredient web_sdk/smart_banner %}{% override header %}{% endoverride %}{% endingredient %}
 {% protip title="Deeplinking through Install" %}
-This data dictionary containing `foo: 'bar'` etc is where you put data that you want passed through install. This is discussed in the sections on [Handle Deep Link](recipes/mobile_web_smart_banner/{{page.platform}}/#handle-deep-link) and [Routing](/recipes/mobile_web_smart_banner/{{page.platform}}/#optional-routing-passing-information-from-the-banner) below.
+This data dictionary containing `foo: 'bar'` etc is where you put data that you want passed through install. This is discussed in the sections on [Handle Deep Link](recipes/app_download_banner/{{page.platform}}/#handle-deep-link) and [Routing](/recipes/app_download_banner/{{page.platform}}/#optional-routing-passing-information-from-the-banner) below.
 {% endprotip %} 
 
 ## (Optional) Configuring the Client for Deep Linking
@@ -37,7 +37,7 @@ This data dictionary containing `foo: 'bar'` etc is where you put data that you 
 {% endingredient %}
 {% ingredient sdk_setup/branch_key %}{% override screenshot %}{% endoverride %}{% endingredient %}
 {% ingredient sdk_setup/uri_scheme %}
-  {% override dashboard_uri %}For more info on setting up a URI scheme on the Dashboard, check out the [section above](/recipes/mobile_web_smart_banner/{{page.platform}}/#uri-scheme).{% endoverride %}
+  {% override dashboard_uri %}For more info on setting up a URI scheme on the Dashboard, check out the [section above](/recipes/app_download_banner/{{page.platform}}/#uri-scheme).{% endoverride %}
 {% endingredient %}
 {% ingredient sdk_setup/init_session %}{% endingredient %}
 {% ingredient sdk_setup/handle_deep_link %}{% endingredient %}
@@ -47,7 +47,7 @@ This data dictionary containing `foo: 'bar'` etc is where you put data that you 
 
 ## (Optional) Routing: passing information from the Banner
 
-Now that you've added routing to your app, you can add information to the Smart Banner. If you've used the example Smart Banner code [above](/recipes/mobile_web_smart_banner/ios/#the-smart-banner), you simply need to insert any key-value pairs you'd like into the data dictionary.
+Now that you've added routing to your app, you can add information to the Smart Banner. If you've used the example Smart Banner code [above](/recipes/app_download_banner/ios/#the-smart-banner), you simply need to insert any key-value pairs you'd like into the data dictionary.
 
 Using our example of routing above with the PicVC, you'd simply need to change the Web Banner code to the following:
 

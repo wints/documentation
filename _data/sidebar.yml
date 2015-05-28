@@ -15,7 +15,7 @@
     - content_sharing
     - personalized_welcome
     - referral_links_with_incentives
-    - mobile_web_smart_banner
+    - app_download_banner
     - text_me_the_app_page
 - type: recipe
   title: Testing and releasing

@@ -51,7 +51,7 @@ When a user clicks on a desktop, by default, we present them with a page that al
 
 Alternately, you can send desktop users to another web page by specifying a value for the key “$desktop_url” when creating a link. In that case, we will redirect users to the value for that key in the link’s data dictionary.
 
-If you want your users to retain the option of sending themselves the link they clicked via SMS, you can still use our [app download banner](/recipes/mobile_web_smart_banner/ios/) on your web page that shows an app banner with an SMS input, or you can use more advanced Web SDK JavaScript with your own HTML widget. If the user was routed to that Web SDK-enabled site from one of our links, we remember that referring link data and continue the link flow.
+If you want your users to retain the option of sending themselves the link they clicked via SMS, you can still use our [app download banner](/recipes/app_download_banner/ios/) on your web page that shows an app banner with an SMS input, or you can use more advanced Web SDK JavaScript with your own HTML widget. If the user was routed to that Web SDK-enabled site from one of our links, we remember that referring link data and continue the link flow.
 
 
 ## 4. iOS or Android clicks
