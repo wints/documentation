@@ -1,6 +1,6 @@
 ---
 type: recipe
-title: Mobile Web Smart Banner
+title: App Download Banner
 platforms:
 - ios
 - android
@@ -33,7 +33,7 @@ This data dictionary containing `foo: 'bar'` etc is where you put data that you 
 
 ## (Optional) Configuring the Client for Deep Linking
 {% ingredient sdk_setup/installing_the_sdk %}
-  {% override telephony %}[here](/domains/configuring_client_apps/{{page.platform}}/#installing-the-sdk).{% endoverride %}
+  {% override telephony %}[here](/recipes/configuring_client_apps/{{page.platform}}/#installing-the-sdk).{% endoverride %}
 {% endingredient %}
 {% ingredient sdk_setup/branch_key %}{% override screenshot %}{% endoverride %}{% endingredient %}
 {% ingredient sdk_setup/uri_scheme %}

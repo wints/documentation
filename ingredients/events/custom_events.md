@@ -1,7 +1,7 @@
 
 ### Custom Events
 
-You can track any custom user actions you wish. This is useful for analytics. From these events you can construct conversion funnels on the Dashboard's [Summary](https://dashboard.branch.io/#) page at the bottom. You can also be notified via a postback to your server every time that an event happens. Visit the [Webhooks](/domains/webhooks/) page for more information on receiving postbacks.
+You can track any custom user actions you wish. This is useful for analytics. From these events you can construct conversion funnels on the Dashboard's [Summary](https://dashboard.branch.io/#) page at the bottom. You can also be notified via a postback to your server every time that an event happens. Visit the [Webhooks](/recipes/webhooks/) page for more information on receiving postbacks.
 
 Examples of what you may want to track:
 
@@ -39,7 +39,7 @@ Branch.getInstance(getApplicationContext()).userCompletedAction("custom_action_1
 {% endif %}
 <!--- /Android -->
 
-You can also include other information about the action, which is useful for [rewarding user actions](/domains/rewards/{{page.platform}}/) or receiving additional information via our [webhooks](/domains/webhooks/). To include custom information, pass it up via the state dictionary:
+You can also include other information about the action, which is useful for [rewarding user actions](/recipes/rewards/{{page.platform}}/) or receiving additional information via our [webhooks](/recipes/webhooks/). To include custom information, pass it up via the state dictionary:
 
 {% if page.ios %}
 

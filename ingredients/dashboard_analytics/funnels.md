@@ -1,5 +1,5 @@
 
-### Funnels
+## Funnels
 
 You can construct conversion funnels of both Branch-defined events and custom events. At the bottom of the Dashboard's [Summary](https://dashboard.branch.io/#) page you can see Conversions.
 

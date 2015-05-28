@@ -1,6 +1,6 @@
 ---
-type: domain
-title: Webhooks
+type: recipe
+title: Webhooks and exporting data
 hide_platform_selector: true
 ---
 

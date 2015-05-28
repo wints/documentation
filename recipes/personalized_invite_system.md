@@ -1,6 +1,6 @@
 ---
 type: recipe
-title: Personalized Invites
+title: Personalized welcome
 platforms:
 - ios
 - android

@@ -1,1 +1,1 @@
-* [**Using Webhooks**](/domains/webhooks/) to build on the Branch event stream
+* [**Using Webhooks**](/recipes/webhooks/) to build on the Branch event stream

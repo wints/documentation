@@ -1,7 +1,7 @@
 <!--- $deeplink_path -->
 {% section deeplink_path %}
 
-## Specify a custom deeplink path - $deeplink_path
+### Specify a custom deeplink path - $deeplink_path
 
 The value of the deeplink path that you'd like us to append to your URI. For example, you could specify "$deeplink_path": "radio/station/456" and we'll open the app with the URI "yourapp://radio/station/456?link_click_id=branch-identifier". **This is primarily for supporting legacy deeplinking infrastructure.**
 

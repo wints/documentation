@@ -1,5 +1,5 @@
 ---
-type: domain
+type: recipe
 title: Submitting Apps
 platforms:
 - ios

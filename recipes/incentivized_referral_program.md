@@ -1,6 +1,6 @@
 ---
 type: recipe
-title: Incentivize Referrals
+title: Referral links (with incentives)
 platforms:
 - ios
 - android

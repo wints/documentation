@@ -1,5 +1,5 @@
 ---
-type: domain
+type: recipe
 title: Configuring Client Apps
 platforms:
 - ios

@@ -1,10 +1,10 @@
 ---
 type: recipe
-title: "Sharing & Deeplink Routing"
+title: "Integrating the SDK"
 platforms:
 - ios
 - android
-overview: "This quickstart guide will walk you through the minimum setup for an SDK integration. With only a few lines of code you'll have the ability to track installs by platform, campaign, etc. You can then also create links from the dashboard or add another line of code to programmatically create links via the SDKS."
+overview: "This quick-start guide will walk you through the minimum setup for an SDK integration. With only a few lines of code you'll have the ability to track installs by platform, campaign, etc. You can then also create links from the dashboard or add another line of code to programmatically create links via the SDKS."
 ---
 
 {% image src='/img/ingredients/analytics_and_custom_events/dashboard_summary.png' 3-quarters center alt='the goal' %}
@@ -23,7 +23,7 @@ overview: "This quickstart guide will walk you through the minimum setup for an 
 
 ## Configuring your {{ page.platform_formatted }} app
 {% ingredient sdk_setup/installing_the_sdk %}
-  {% override telephony %}[here](/domains/configuring_client_apps/{{page.platform}}/#installing-the-sdk).{% endoverride %}
+  {% override telephony %}[here](/recipes/configuring_client_apps/{{page.platform}}/#installing-the-sdk).{% endoverride %}
 {% endingredient %}
 {% ingredient sdk_setup/branch_key %}{%override screenshot%}{%endoverride%}{% endingredient %}
 {% ingredient sdk_setup/uri_scheme %}
@@ -40,7 +40,7 @@ overview: "This quickstart guide will walk you through the minimum setup for an 
 <!--- /Configuring the Client-->
 
 
-## Creating Links Programmatically
+## Creating Links Programmatically (Optional)
 
 {% ingredient sdk_links/creating_links %}{% override header %}{% endoverride %}{% endingredient %}
 
@@ -48,7 +48,7 @@ overview: "This quickstart guide will walk you through the minimum setup for an 
 You can also use the data to link directly to content! Instead of "foo": "bar", you could pass in "{% if page.ios %}pictureId{% endif %}{% if page.android %}picture_id{% endif %}": "1234", then when a user clicks on a link you can open the app straight to picture with Id 1234. Keep reading...
 {% endprotip %}
 
-## Routing within your {{page.platform_formatted}} App
+## Routing within your {{page.platform_formatted}} App (Optional)
 
 {% ingredient sdk_routing/routing %}{% endingredient %}
 

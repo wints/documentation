@@ -82,7 +82,7 @@ If you integrate our SDK into your app, you can:
 {% endprotip %}
 
 {% ingredient sdk_setup/installing_the_sdk %}
-  {% override telephony %}[here](/domains/configuring_client_apps/{{page.platform}}/#installing-the-sdk).{% endoverride %}
+  {% override telephony %}[here](/recipes/configuring_client_apps/{{page.platform}}/#installing-the-sdk).{% endoverride %}
 {% endingredient %}
 {% ingredient sdk_setup/branch_key %}{% override screenshot%}{% endoverride %}{% endingredient %}
 {% ingredient sdk_setup/uri_scheme %}

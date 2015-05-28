@@ -1,5 +1,5 @@
 ---
-type: reference
+type: recipe
 title: Debug Tools
 platforms:
 - ios

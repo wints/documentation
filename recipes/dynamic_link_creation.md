@@ -1,6 +1,6 @@
 ---
 type: recipe
-title: Dynamic Link Creation
+title: Dynamic link creation
 hide_platform_selector: true
 ---
 

@@ -1,5 +1,5 @@
 
-### "Always try to open the app"
+## "Always try to open the app"
 
 By default, Branch will take users to the {% if page.ios %}App{% endif %}{% if page.android %}Play{% endif %} Store if we do not know that the user has your app. So the first time a user clicks a link, we take him or her to the Store (or, on {{page.platform_formatted}}, {% if page.ios %}$ios_url{% endif %}{% if page.android %}$android_url{% endif %}).
 
