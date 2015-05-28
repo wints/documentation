@@ -59,7 +59,7 @@ Now that you've completed the basic integration, you can **skip steps one (Confi
 
 {% ingredient recipe_preview/measuring_installs %}{%endingredient%}
 {% ingredient recipe_preview/personalized_welcome %}{%endingredient%}
-{% ingredient recipe_preview/deeplinked_ads %}{%override ending%} **(Skip Steps 1 and 3)**{%endoverride%}{%endingredient%}
+{% ingredient recipe_preview/advertising_facebook %}{%override ending%} **(Skip Steps 1 and 3)**{%endoverride%}{%endingredient%}
 {% ingredient recipe_preview/incentivized_referral_program %}{%endingredient%}
 {% ingredient recipe_preview/contact_us %}{%endingredient%}
 
