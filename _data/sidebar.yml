@@ -29,8 +29,8 @@
     - dynamic_link_creation
     - email_campaigns
     - add_custom_link_data_and_routing
-    - rewards
-    - analytics_and_custom_events
+    - advanced_referral_incentives
+    - dashboard_pro_tips
     - webhooks_and_exporting_data
 - type: recipe
   title: Third-Party Integrations

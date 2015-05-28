@@ -39,7 +39,7 @@ Branch.getInstance(getApplicationContext()).userCompletedAction("custom_action_1
 {% endif %}
 <!--- /Android -->
 
-You can also include other information about the action, which is useful for [rewarding user actions](/recipes/rewards/{{page.platform}}/) or receiving additional information via our [webhooks](/recipes/webhooks_and_exporting_data/). To include custom information, pass it up via the state dictionary:
+You can also include other information about the action, which is useful for [rewarding user actions](/recipes/advanced_referral_actions/{{page.platform}}/#rewards) or receiving additional information via our [webhooks](/recipes/webhooks_and_exporting_data/). To include custom information, pass it up via the state dictionary:
 
 {% if page.ios %}
 
