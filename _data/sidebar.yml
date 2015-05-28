@@ -20,7 +20,7 @@
 - type: recipe
   title: Testing and releasing
   pages:
-    - debug_tools
+    - testing_your_integration
     - submitting_apps
 - type: recipe
   title: Customize Your Integration

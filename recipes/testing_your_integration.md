@@ -1,6 +1,6 @@
 ---
 type: recipe
-title: Debug Tools
+title: Testing your integration
 platforms:
 - ios
 - android
