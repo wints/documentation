@@ -18,7 +18,7 @@ Click Add a new webhook to get started.
 
 First, enter the webhook URL in your own web server URL that you would like the events to be posted to.
 
-For testing, you can try out using a URL from [RequestBin](http://requestb.in/). More information on that [below](/recipes/webhooks/#example-using-requestbin-to-test).
+For testing, you can try out using a URL from [RequestBin](http://requestb.in/). More information on that [below](/recipes/webhooks_and_exporting_data/#example-using-requestbin-to-test).
 
 
 ### Choose frequency of webhook

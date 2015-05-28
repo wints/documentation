@@ -31,7 +31,7 @@
     - add_custom_link_data_and_routing
     - rewards
     - analytics_and_custom_events
-    - webhooks
+    - webhooks_and_exporting_data
 - type: recipe
   title: Third-Party Integrations
   pages:
