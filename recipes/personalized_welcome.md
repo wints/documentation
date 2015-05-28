@@ -52,7 +52,7 @@ Adding a personalized invite system is as simple as creating Branch links, shari
 
 There's so much more though! With Branch, you can:
 
-{% ingredient recipe_preview/incentivized_referral_program %}{% endingredient %}
+{% ingredient recipe_preview/referral_links_with_incentives %}{% endingredient %}
 {% ingredient recipe_preview/influencers %}{% endingredient %}
 {% ingredient recipe_preview/channel_tags %}{% endingredient %}
 {% ingredient recipe_preview/contact_us %}{% endingredient %}

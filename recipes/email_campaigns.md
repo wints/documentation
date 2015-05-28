@@ -61,7 +61,7 @@ This powerful link will now track clicks across platforms. Users who have the ap
 
 {% ingredient dashboard_links/no_sdk %}{% endingredient %}
 
-{% ingredient recipe_preview/incentivized_referral_program %}{% endingredient %}
+{% ingredient recipe_preview/referral_links_with_incentives %}{% endingredient %}
 {% ingredient recipe_preview/personalized_welcome %}{% endingredient %}
 {% ingredient recipe_preview/influencers %}{% endingredient %}
 {% ingredient recipe_preview/channel_tags %}{% endingredient %}

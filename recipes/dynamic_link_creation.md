@@ -29,7 +29,7 @@ We covered two methods of dynamically creating links. But there's so much more y
 	{% override platform %}ios{% endoverride %}
 {% endingredient %}
 
-{% ingredient recipe_preview/incentivized_referral_program %}
+{% ingredient recipe_preview/referral_links_with_incentives %}
 	{% override platform %}ios{% endoverride %}
 {% endingredient %}
 
