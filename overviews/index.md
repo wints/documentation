@@ -64,7 +64,7 @@ Let users share in-app content. iHeartRadio’s shared links open straight to ra
 
 ## Third-Party Integrations
 
-{% ingredient recipe_preview/double_sided_third_party_integration %}
+{% ingredient recipe_preview/analytics_adjust %}
 {% endingredient %}
 
 {% ingredient recipe_preview/advertising_facebook %}

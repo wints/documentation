@@ -35,7 +35,7 @@
 - type: recipe
   title: Third-Party Integrations
   pages:
-    - double_sided_third_party_integration
+    - analytics_adjust
     - advertising_facebook
     - mixpanel
 - type: reference
