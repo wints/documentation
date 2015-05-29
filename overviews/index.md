@@ -78,6 +78,36 @@ We're developers, too so we know how fun this is. Test out your Branch integrati
 {% endingredient %}
 
 
+
+## Customize Your Integration
+
+We also have information separated into several individualized **Building Blocks** pages, as you can see on the left. These list out the snippets that comprise our guides. Make sure you don't miss:
+
+
+{% ingredient recipe_preview/matching_accuracy %}{% endingredient %}
+
+{% ingredient recipe_preview/dynamic_link_creation %}{% endingredient %}
+
+{% ingredient recipe_preview/email_campaigns %}
+	{% override platform %}ios{% endoverride %}
+{% endingredient %}
+
+{% ingredient recipe_preview/add_custom_link_data_and_routing %}
+	{% override platform %}ios{% endoverride %}
+{% endingredient %}
+
+{% ingredient recipe_preview/advanced_referral_incentives %}
+	{% override platform %}ios{% endoverride %}
+{% endingredient %}
+
+{% ingredient recipe_preview/dashboard_pro_tips %}
+	{% override platform %}ios{% endoverride %}
+{% endingredient %}
+
+{% ingredient recipe_preview/webhooks_and_exporting_data %}{% endingredient %}
+
+
+
 ## Third-Party Integrations
 
 {% ingredient recipe_preview/analytics_adjust %}
@@ -89,17 +119,6 @@ We're developers, too so we know how fun this is. Test out your Branch integrati
 
 {% ingredient recipe_preview/analytics_mixpanel %}
 {% endingredient %}
-
-
-
-## Building Blocks
-
-We also have information separated into several individualized **Building Blocks** pages, as you can see on the left. These list out the snippets that comprise our guides. Make sure you don't miss:
-
-{% ingredient recipe_preview/influencers %}
-	{% override platform %}ios{% endoverride %}
-{% endingredient %}
-{% ingredient recipe_preview/webhooks_and_exporting_data %}{% endingredient %}
 
 
 
