@@ -6,34 +6,37 @@ root_index: true
 
 ## Welcome to Branch!
 
-Branch is a **deeplinking and tracking technology** that helps mobile developers attribute organic and paid app installs, optimize and create drop-in invite & referral systems, and do smarter in-app sharing through our unique device fingerprinting and deeplinking technology. We dynamically generate short URLs on the fly that pass and track data from the originating source through install, across devices, and across platform.
+Branch is a **deeplinking and tracking technology** that helps mobile developers attribute organic and paid app installs, create drop-in invite & referral systems, and do smarter in-app sharing. We dynamically generate short URLs on the fly that pass and track data from the originating source through install, across devices, and across platform, identifying users through unique device fingerprinting. 
 
-In other words, Branch allows mobile apps to deeplink through install, meaning even new users can get deeplinked to the specific content that originally caused them to download the app immediately after install (whether that content be a specific page associated with a direct marketing campaign, or a link to in-app content shared by a friend).
+In other words, we allow you to create deeplinks that work through install - even first time app users can get deeplinked to the specific content that originally caused them to download the app (whether that content be a specific page associated with a direct marketing campaign, or a link to in-app content shared by a friend, or anywhere else the link sends them).
+
+With the data attached to the link you can customize your user experience as well. Any data you'd like to use can be passed through install or open using Branch links. That means you can greet your user with a personalized message or give them some money off their first purchase.
+
+Let's get going! 
 
 
 ## Guides
 
-We exist to help you grow your mobile app. More users, happier users, repeat users. Below is our list of "recipes" -- a list of things you can measure and build thanks to Branch. They're meant to give you an idea of what's possible, and to provide the **minimum viable code** to inject these features into your app.
+We exist to help you grow your mobile app. More users, happier users, engaged users. Below is a quick readme on what we have in our developer docs. They're meant to give you an idea of what's possible, and to provide the **minimum viable code** to inject these features into your app. If we're missing anything useful please drop us a line at support@branch.io. 
 
 
-## Linking and Measuring
+## Getting started
 
-Branch links give you the ability to **redirect users to your app, the App/Play Store, your website and even a text-me-the-app page on desktop -- all with one link!** Plus you get powerful click tracking by campaign and platform.
+In less than 15 minutes we'll guide you through creating a link with your preferred routing, installing the SDK so you can see activity on that link, and viewing that information in the dashboard.
+
+At the end you'll have your own Branch link with the ability to **redirect users to your app, the App/Play Store or your website and get powerful click, install and open metrics by campaign and platform.**
 
 {% ingredient recipe_preview/your_first_marketing_link %}
 	{% override platform %}ios{% endoverride %}
 {% endingredient %}
 
-{% ingredient recipe_preview/email_campaigns %}
+{% ingredient recipe_preview/quickstart_guide %}
 	{% override platform %}ios{% endoverride %}
 {% endingredient %}
 
 {% ingredient recipe_preview/measuring_installs %}
 	{% override platform %}ios{% endoverride %}
 {% endingredient %}
-
-{% ingredient recipe_preview/dynamic_link_creation %}{% endingredient %}
-
 
 
 ## Deeplinked Features
