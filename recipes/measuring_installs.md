@@ -1,6 +1,6 @@
 ---
 type: recipe
-title: Measuring Installs
+title: Link and install attribution
 platforms:
 - ios
 - android

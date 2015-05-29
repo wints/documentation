@@ -17,7 +17,7 @@ Let's get going!
 
 ## Guides
 
-We exist to help you grow your mobile app. More users, happier users, engaged users. Below is a quick readme on what we have in our developer docs. They're meant to give you an idea of what's possible, and to provide the **minimum viable code** to inject these features into your app. If we're missing anything useful please drop us a line at support@branch.io. 
+We exist to help you grow your mobile app. More users, happier users, engaged users. Below is a quick introduction to our developer docs. They're meant to give you an idea of what's possible, and to provide the **minimum viable code** to inject these features into your app. If we're missing anything useful please drop us a line at support@branch.io. 
 
 
 ## Getting started
@@ -67,7 +67,7 @@ Let users share in-app content. iHeartRadio’s shared links open straight to ra
  
 ## Testing and Releasing
 
-We're developers, too so we know how fun this is. Test out your Branch integration before releasing by following our helpful hints here.
+We're developers too, so we know how fun this is. Test out your Branch integration before releasing by following our helpful hints here.
 
 {% ingredient recipe_preview/testing_your_integration %}
 	{% override platform %}ios{% endoverride %}
@@ -81,7 +81,7 @@ We're developers, too so we know how fun this is. Test out your Branch integrati
 
 ## Customize Your Integration
 
-We also have information separated into several individualized **Building Blocks** pages, as you can see on the left. These list out the snippets that comprise our guides. Make sure you don't miss:
+Ready to take your links to the next level? Harness the full power of Branch's **customizable metadata**. You can find additional information, code snippets and advanced features in this section. Don't miss out on:
 
 
 {% ingredient recipe_preview/matching_accuracy %}{% endingredient %}
