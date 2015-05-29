@@ -43,7 +43,7 @@ At the end you'll have your own Branch link with the ability to **redirect users
 
 Let users share in-app content. iHeartRadio’s shared links open straight to radio stations, Allthecooks’ shared links open straight to recipes. Did we mention that links work across platforms?
 
-{% ingredient recipe_preview/quickstart_guide %}
+{% ingredient recipe_preview/content_sharing %}
 	{% override platform %}ios{% endoverride %}
 {% endingredient %}
 
@@ -63,6 +63,19 @@ Let users share in-app content. iHeartRadio’s shared links open straight to ra
 	{% override platform %}ios{% endoverride %}
 {% endingredient %}
 
+
+ 
+## Testing and Releasing
+
+We're developers, too so we know how fun this is. Test out your Branch integration before releasing by following our helpful hints here.
+
+{% ingredient recipe_preview/testing_your_integration %}
+	{% override platform %}ios{% endoverride %}
+{% endingredient %}
+
+{% ingredient recipe_preview/submitting_apps %}
+	{% override platform %}ios{% endoverride %}
+{% endingredient %}
 
 
 ## Third-Party Integrations
