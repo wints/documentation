@@ -24,7 +24,7 @@ We exist to help you grow your mobile app. More users, happier users, engaged us
 
 In less than 15 minutes we'll guide you through creating a link with your preferred routing, installing the SDK so you can see activity on that link, and viewing that information in the dashboard.
 
-At the end you'll have your own Branch link with the ability to **redirect users to your app, the App/Play Store or your website and get powerful click, install and open metrics by campaign and platform.**
+At the end you'll have your own Branch link with the ability to **redirect users** to your app, the App/Play Store or your website and **get powerful click, install and open metrics** by campaign and platform.
 
 {% ingredient recipe_preview/your_first_marketing_link %}
 	{% override platform %}ios{% endoverride %}
