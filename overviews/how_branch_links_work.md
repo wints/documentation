@@ -8,7 +8,7 @@ As you are implementing our links, here is a quick, step-by-step, guide on how t
 {% image src='/img/overview/how-links-work-1.png' alt='1' %}
 
 
-## 1. Creating the links
+## Creating the links
 
 {% image src='/img/overview/how-links-work-2.jpg' half right alt='2' %}
 
@@ -27,7 +27,7 @@ Regardless of how the link gets created, all links behave the same way. Links ca
 Our smart links detect the platform a user clicks from and takes them to the appropriate content. You don’t need separate links for iOS, Android or Desktop. You just tell us where the user needs to go and we make the routing happen, ensuring that your users convert at the highest possible level.
 
 
-## 2. Bundling data with the link
+## Bundling data with the link
 
 In order to actually pass data “through” install, you must specify the data you wish to be present after install when creating the link. We allow you to specify a free-form key-value dictionary of data (though certain keys carry special meanings that affect the behavior of the link - read on for more about that).
 
@@ -43,7 +43,7 @@ We do not limit the amount of data that can be stored in the link. We store it a
 You can also use our tagging system to tag links across a number of different parameters for fine-grained analytics. You can tag them by: feature within the app (e.g. “referral”, “sharing”, etc.), channel on which they are shared (e.g. “twitter”, “facebook”, etc.), and place in the app (e.g. “after_level_10”, “before_signup”, etc.). That way, our dashboard can answer questions like “How did conversions of users coming from Twitter shares after purchase compare to those before purchase?”
 
 
-## 3. Desktop behavior
+## Desktop behavior
 
 {% image src='/img/overview/how-links-work-3.jpg' half left alt='3' %}
 
@@ -54,7 +54,7 @@ Alternately, you can send desktop users to another web page by specifying a valu
 If you want your users to retain the option of sending themselves the link they clicked via SMS, you can still use our [app download banner](/recipes/app_download_banner/ios/) on your web page that shows an app banner with an SMS input, or you can use more advanced Web SDK JavaScript with your own HTML widget. If the user was routed to that Web SDK-enabled site from one of our links, we remember that referring link data and continue the link flow.
 
 
-## 4. iOS or Android clicks
+## iOS or Android clicks
 
 When a user clicks a Branch link on a mobile device, there are three places they can be redirected to: (i) deeplink into the app, (ii) deeplink into the app store (retaining the data post-install), or (iii) a custom/web destination.
 
@@ -69,7 +69,7 @@ Finally, the behavior around what to do when the user does not have the app (or 
 {% image src='/img/overview/how-links-work-4.jpg' alt='4' %}
 
 
-## 5. Getting the parameters after install or open
+## Getting the parameters after install or open
 
 Once the user has installed or opened your app, you can use the Branch SDK to retrieve the data dictionary associated with the link the user came from. You can use these parameters to route the user to the appropriate place within the app or for other analytics or messaging.
 
