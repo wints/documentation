@@ -4,10 +4,8 @@ title: "Integrating the SDK"
 platforms:
 - ios
 - android
-overview: "This quick-start guide will walk you through the minimum setup for an SDK integration. With only a few lines of code you'll have the ability to track installs by platform, campaign, etc. You can then also create links from the dashboard or add another line of code to programmatically create links via the SDKS."
+overview: "This quick-start guide will walk you through the minimum setup for an SDK integration. With only a few lines of code you'll have the ability to track installs by platform, campaign, etc. You can then also create links from the dashboard or add another line of code to programmatically create links via the SDK."
 ---
-
-{% image src='/img/ingredients/analytics_and_custom_events/dashboard_summary.png' 3-quarters center alt='the goal' %}
 
 
 ## Configuring the Dashboard for your {{ page.platform_formatted }} app
@@ -55,11 +53,7 @@ You can also use the data to link directly to content! Instead of "foo": "bar", 
 
 ## Conclusion
 
-Now that you've completed the basic integration, you can **skip steps one (Configuring the Dashboard) and two (Configuring the Client) in the following guides**. Next steps:
+Congratulations! You're now up and running with Branch. To finish up, we'll walk you through the data you're seeing in your dashboard in [Link and Install Attribution](/recipes/measuring_installs/{{page.platform}}/).
 
-{% ingredient recipe_preview/measuring_installs %}{%endingredient%}
-{% ingredient recipe_preview/personalized_welcome %}{%endingredient%}
-{% ingredient recipe_preview/advertising_facebook %}{%override ending%} **(Skip Steps 1 and 3)**{%endoverride%}{%endingredient%}
-{% ingredient recipe_preview/referral_links_with_incentives %}{%endingredient%}
 {% ingredient recipe_preview/contact_us %}{%endingredient%}
 

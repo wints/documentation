@@ -11,6 +11,6 @@ To configure the Web URL on an existing app, you will need to navigate to the Se
 
 <!---       Tip2 -->
 {% protip title='Tip:' %}
-You can customize this fallback URL on a per-platform or even per-link basis. After completing setup, you may want to check out our page on [Redirection](/recipes/redirection/{{page.platform}}/).
+You can customize this fallback URL on a per-platform or even per-link basis. After completing setup, you may want to check out our page on [Redirection](/recipes/add_custom_link_data_and_routing/#custom-redirects/{{page.platform}}/).
 {% endprotip %}
 <!---       /Tip2 -->
