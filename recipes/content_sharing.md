@@ -22,12 +22,6 @@ You use the data to link directly to content! Instead of "foo": "bar", you could
 
 {% ingredient sdk_routing/routing %}{% endingredient %}
 
-## Advanced sharing
-
-{% ingredient sdk_links/sharing_sms %}{% endingredient %}
-{% ingredient sdk_links/sharing_ios_share_sheet %}{% endingredient %}
-
-
 
 {% if page.ios %}
 ## Sharing Methods (Optional)
