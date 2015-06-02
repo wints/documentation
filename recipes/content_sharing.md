@@ -1,6 +1,6 @@
 ---
 type: recipe
-title: "Content Sharing"
+title: "Content sharing"
 platforms:
 - ios
 - android

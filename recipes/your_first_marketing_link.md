@@ -1,6 +1,6 @@
 ---
 type: recipe
-title: Your First Marketing Link
+title: Your first marketing link
 platforms:
 - ios
 - android
@@ -17,11 +17,11 @@ Please log in to the [Branch Dashboard](https://dashboard.branch.io/). First, en
 {% ingredient dashboard_setup/web_url %}{% endingredient %}
 {% ingredient dashboard_setup/store_or_custom_url %}{% endingredient %}
 
-That's the end of the required setup for the Dashboard! The dashboard is incredibly powerful, so if you want to dive in deeper, definitely check out [Configuring the Dashboard](/recipes/configuring_the_dashboard/{{page.platform}}/) for the full setup.
+That's the end of the required setup for the Dashboard! The dashboard is incredibly powerful, so if you want to dive in deeper, definitely check out [Dashboard pro tips](/recipes/dashboard_pro_tips/{{page.platform}}/) for the full setup.
 
 
 
-## Creating your Link
+## Creating Your Branch Link
 
 {% ingredient dashboard_links/creating_links %}
 	{% override screenshot_description %}One example description if you want to treat this guide is: "Marketing our launch on Facebook."{% endoverride %}
@@ -45,7 +45,7 @@ That's the end of the required setup for the Dashboard! The dashboard is incredi
 <!--- /Creating your Link -->
 
 
-## Conclusion and Advanced Options
+## Conclusion And Next Steps
 
 You now have a link that will track clicks based on the channel, campaign and any other tags you create. {% section alias %}It has a custom ending (as opposed to random characters).{% endsection %} It's properly formatted for social media.
 

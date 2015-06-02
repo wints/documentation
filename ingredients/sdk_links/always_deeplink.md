@@ -5,7 +5,7 @@
 
 In certain cases you may want to override the default Branch behavior, which uses cookies and communication with our backend to determine whether to open an app. Branch knows that a user has the app if that user has clicked a Branch link and opened the app. This means that the first time a user clicks a Branch link, even if the app is installed, we will direct the user to the App Store.
 
-To override this behavior, you can either select "Always try to open the app" on the [Dashboard](/recipes/configuring_the_dashboard/{{page.platform}}/#always-try-to-open-the-app), or you can specify "$always_deeplink" : "true" on a per-link basis.
+To override this behavior, you can either select "Always try to open the app" on the [Dashboard](/recipes/dashboard_pro_tips/{{page.platform}}/#always-try-to-open-the-app), or you can specify "$always_deeplink" : "true" on a per-link basis.
 
 <!---    iOS -->
 {% if page.ios %}

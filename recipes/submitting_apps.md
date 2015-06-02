@@ -1,6 +1,6 @@
 ---
 type: recipe
-title: Submitting Apps
+title: Submitting apps
 platforms:
 - ios
 - android

@@ -1,6 +1,6 @@
 ---
 type: recipe
-title: App Download Banner
+title: App download banner
 platforms:
 - ios
 - android

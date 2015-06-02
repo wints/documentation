@@ -1,6 +1,6 @@
 ---
 type: overview
-title: How Branch Links Work
+title: How Branch links work
 ---
 
 As you are implementing our links, here is a quick, step-by-step, guide on how the links work, for each use case and each device. [See the complete diagram here.](/img/overview/how-links-work-diagram.jpg) 

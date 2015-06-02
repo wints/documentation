@@ -6,7 +6,7 @@ platforms:
 - android
 overview: "This quick-start guide will walk you through the minimum setup for an SDK integration. With only a few lines of code you'll have the ability to track installs by platform, campaign, etc. You can then also create links from the dashboard or add another line of code to programmatically create links via the SDK."
 ---
-{% protip title='Skip a beat' %}If you've completed [Your First Marketing Link](/recipes/your_first_marketing_link/{{page.platform}}/) then you can skip straight down to [URI Scheme](/recipes/quickstart_guide/{{page.platform}}/#uri-scheme){% endprotip %}
+{% protip title='Skip a beat' %}If you've completed [Your first marketing link](/recipes/your_first_marketing_link/{{page.platform}}/) then you can skip straight down to [URI Scheme](/recipes/quickstart_guide/{{page.platform}}/#uri-scheme){% endprotip %}
 
 ## Configuring the Dashboard for your {{ page.platform_formatted }} app
 {% ingredient dashboard_setup/app_name %}{% endingredient %}
