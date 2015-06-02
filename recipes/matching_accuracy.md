@@ -1,6 +1,6 @@
 ---
-type: domain
-title: Matching Accuracy
+type: recipe
+title: Matching accuracy
 hide_platform_selector: true
 ---
 

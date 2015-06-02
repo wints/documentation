@@ -1,5 +1,5 @@
 
-### Setting a custom link domain
+## Setting a custom link domain
 
 While you may enjoy Branch, it doesn't mean you need to have bnc.lt as a part of every link you send out. If you want Branch links to use your custom subdomain, you need to follow a few simple steps.
 

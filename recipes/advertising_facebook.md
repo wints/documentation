@@ -6,7 +6,7 @@ platforms:
 - android
 ---
 
-{% protip title="Have you already integrated?" %}This guide assumes that you haven't already integrated Branch and provides full step-by-step instructions. However, if you've already completed Steps 1 and 2 of our quickstart guide, [Sharing & Deeplink Routing](/recipes/quickstart_guide/{{page.platform}}/), then you only need to complete Steps 2 & 4! Jump to Step 2, [Creating Your Link](/recipes/deeplinked_ads/{{page.platform}}/#creating-your-link).
+{% protip title="Have you already integrated?" %}This guide assumes that you haven't already integrated Branch and provides full step-by-step instructions. However, if you've already completed Steps 1 and 2 of our quickstart guide, [Integrating the SDK](/recipes/quickstart_guide/{{page.platform}}/), then you only need to complete Steps 2 & 4! Jump to Step 2, [Creating Your Link](/recipes/advertising_facebook/{{page.platform}}/#creating-your-link).
 {% endprotip %}
 
 Deeplinked ads are not a new breed--just a rare one. With Branch they're as easy as creating a link on the Dashboard and setting up your {{page.platform_formatted}} app to handle incoming deep links.
@@ -27,7 +27,7 @@ With standard deeplinks, if a user doesn't have the app, the link fails. With Br
 {% ingredient dashboard_setup/web_url %}{% endingredient %}
 {% ingredient dashboard_setup/store_or_custom_url %}{% endingredient %}
 {% ingredient dashboard_setup/uri_scheme %}
-	{% override client_uri %}For more details on finding/setting your URI scheme in the client, see the section below on [setting the client app's URI scheme](/recipes/deeplinked_ads/{{page.platform}}/#uri-scheme-1).{% endoverride %}
+	{% override client_uri %}For more details on finding/setting your URI scheme in the client, see the section below on [setting the client app's URI scheme](/recipes/advertising_facebook/{{page.platform}}/#uri-scheme-1).{% endoverride %}
 {% endingredient %}
 {% ingredient dashboard_setup/end_required %}{% endingredient %}
 <!--- /Basic Setup -->
@@ -42,7 +42,7 @@ With standard deeplinks, if a user doesn't have the app, the link fails. With Br
 
 {% ingredient dashboard_links/tags %}
 	{% override screenshot%}{% image src='/img/ingredients/dashboard_links/fb_example_tags.png' half right %}{% endoverride %}
-	{% override deep_link_data_url%}For information of the form *[key]*: *[value]* such as "product": "shoes", we recommend adding them to "Deep Link Data (Advanced)", discussed [below](/recipes/deeplinked_ads/ios/#deep-link-data-advanced).
+	{% override deep_link_data_url%}For information of the form *[key]*: *[value]* such as "product": "shoes", we recommend adding them to "Deep Link Data (Advanced)", discussed [below](/recipes/advertising_facebook/ios/#deep-link-data-advanced).
     {% endoverride %}
 {% endingredient %}
 
@@ -78,15 +78,15 @@ If you integrate our SDK into your app, you can:
    iii. apply a certain coupon towards a purchase of a new pair of shoes, with a coupon icon at the top of the screen
 3. Track events and create funnels so you can see which ads are performing best on concrete measures such as # of completed signups or number/type of purchases even if the app was not previously installed.
 
-{% protip title="Have you already integrated?" %}This guide assumes that you haven't already integrated Branch and provides full step-by-step instructions. However, if you've already completed Step 2 of our quickstart guide, [Sharing & Deeplink Routing](/recipes/quickstart_guide/{{page.platform}}/), then you can [skip to Step 4](/recipes/deeplinked_ads/{{page.platform}}/#example-facebook-ads).
+{% protip title="Have you already integrated?" %}This guide assumes that you haven't already integrated Branch and provides full step-by-step instructions. However, if you've already completed Step 2 of our quickstart guide, [Integrating the SDK](/recipes/quickstart_guide/{{page.platform}}/), then you can [skip to Step 4](/recipes/advertising_facebook/{{page.platform}}/#example-facebook-ads).
 {% endprotip %}
 
 {% ingredient sdk_setup/installing_the_sdk %}
-  {% override telephony %}[here](/domains/configuring_client_apps/{{page.platform}}/#installing-the-sdk).{% endoverride %}
+  {% override telephony %}[here](/recipes/configuring_client_apps/{{page.platform}}/#installing-the-sdk).{% endoverride %}
 {% endingredient %}
 {% ingredient sdk_setup/branch_key %}{% override screenshot%}{% endoverride %}{% endingredient %}
 {% ingredient sdk_setup/uri_scheme %}
-  {% override dashboard_uri %}For more info on setting up a URI scheme on the Dashboard, check out the [section above](/recipes/deeplinked_ads/{{page.platform}}/#uri-scheme).{% endoverride %}
+  {% override dashboard_uri %}For more info on setting up a URI scheme on the Dashboard, check out the [section above](/recipes/advertising_facebook/{{page.platform}}/#uri-scheme).{% endoverride %}
 {% endingredient %}
 {% ingredient sdk_setup/init_session %}{% endingredient %}
 {% ingredient sdk_setup/handle_deep_link %}{% endingredient %}
@@ -120,7 +120,7 @@ Now make sure you have a picture of the appropriate size, then order up that ad!
 
 ## (Optional) Routing to content based on the ad
 
-After you've added `handleDeepLink` call (discussed in the section [Handle Deep Link](/recipes/deeplinked_ads/{{page.platform}}/#handle-deep-link) above), you can add deep linking straight to content.
+After you've added `handleDeepLink` call (discussed in the section [Handle Deep Link](/recipes/advertising_facebook/{{page.platform}}/#handle-deep-link) above), you can add deep linking straight to content.
 
 <!--- CUSTOM DATA -->
 {% ingredient dashboard_links/custom_data %}{% endingredient %}
@@ -167,8 +167,8 @@ Now you need to customize the code in your deep link handler to route to content
 It's pretty simple! You need to configure the dashboard, generate links for your ads, and setup your {{page.platform_formatted}} app to track installs. You can optionally deep link straight to content based on the ad that the user clicked on!
 
 {% ingredient recipe_preview/recipe_end_intro %}{% endingredient %}
-{% ingredient recipe_preview/incentivized_referral_program %}{% endingredient %}
-{% ingredient recipe_preview/personalized_invite_system %}{% endingredient %}
+{% ingredient recipe_preview/referral_links_with_incentives %}{% endingredient %}
+{% ingredient recipe_preview/personalized_welcome %}{% endingredient %}
 {% ingredient recipe_preview/influencers %}{% endingredient %}
 {% ingredient recipe_preview/channel_tags %}{% endingredient %}
 {% ingredient recipe_preview/contact_us %}{% endingredient %}

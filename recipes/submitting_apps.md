@@ -1,6 +1,6 @@
 ---
-type: domain
-title: Submitting Apps
+type: recipe
+title: Submitting apps
 platforms:
 - ios
 - android

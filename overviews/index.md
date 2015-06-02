@@ -6,25 +6,31 @@ root_index: true
 
 ## Welcome to Branch!
 
-Branch is a **deeplinking and tracking technology** that helps mobile developers attribute organic and paid app installs, optimize and create drop-in invite & referral systems, and do smarter in-app sharing through our unique device fingerprinting and deeplinking technology. We dynamically generate short URLs on the fly that pass and track data from the originating source through install, across devices, and across platform.
+Branch is a **deeplinking and tracking technology** that helps mobile developers attribute organic and paid app installs, create drop-in invite & referral systems, and do smarter in-app sharing. We dynamically generate short URLs on the fly that pass and track data from the originating source through install, across devices, and across platform, identifying users through unique device fingerprinting. 
 
-In other words, Branch allows mobile apps to deeplink through install, meaning even new users can get deeplinked to the specific content that originally caused them to download the app immediately after install (whether that content be a specific page associated with a direct marketing campaign, or a link to in-app content shared by a friend).
+In other words, we allow you to create deeplinks that work through install - even first time app users can get deeplinked to the specific content that originally caused them to download the app (whether that content be a specific page associated with a direct marketing campaign, or a link to in-app content shared by a friend, or anywhere else the link sends them).
+
+With the data attached to the link you can customize your user experience as well. Any data you'd like to use can be passed through install or open using Branch links. That means you can greet your user with a personalized message or give them some money off their first purchase.
+
+Let's get going! 
 
 
 ## Guides
 
-We exist to help you grow your mobile app. More users, happier users, repeat users. Below is our list of "recipes" -- a list of things you can measure and build thanks to Branch. They're meant to give you an idea of what's possible, and to provide the **minimum viable code** to inject these features into your app.
+We exist to help you grow your mobile app. More users, happier users, engaged users. Below is a quick introduction to our developer docs. They're meant to give you an idea of what's possible, and to provide the **minimum viable code** to inject these features into your app. If we're missing anything useful please drop us a line at support@branch.io. 
 
 
-## Linking and Measuring
+## Getting started
 
-Branch links give you the ability to **redirect users to your app, the App/Play Store, your website and even a text-me-the-app page on desktop -- all with one link!** Plus you get powerful click tracking by campaign and platform.
+In less than 15 minutes we'll guide you through creating a link with your preferred routing, installing the SDK so you can see activity on that link, and viewing that information in the dashboard.
+
+At the end you'll have your own Branch link with the ability to **redirect users** to your app, the App/Play Store or your website and **get powerful click, install and open metrics** by campaign and platform.
 
 {% ingredient recipe_preview/your_first_marketing_link %}
 	{% override platform %}ios{% endoverride %}
 {% endingredient %}
 
-{% ingredient recipe_preview/email_campaigns %}
+{% ingredient recipe_preview/quickstart_guide %}
 	{% override platform %}ios{% endoverride %}
 {% endingredient %}
 
@@ -32,27 +38,24 @@ Branch links give you the ability to **redirect users to your app, the App/Play 
 	{% override platform %}ios{% endoverride %}
 {% endingredient %}
 
-{% ingredient recipe_preview/dynamic_link_creation %}{% endingredient %}
-
-
 
 ## Deeplinked Features
 
 Let users share in-app content. iHeartRadio’s shared links open straight to radio stations, Allthecooks’ shared links open straight to recipes. Did we mention that links work across platforms?
 
-{% ingredient recipe_preview/quickstart_guide %}
+{% ingredient recipe_preview/content_sharing %}
 	{% override platform %}ios{% endoverride %}
 {% endingredient %}
 
-{% ingredient recipe_preview/personalized_invite_system %}
+{% ingredient recipe_preview/personalized_welcome %}
 	{% override platform %}ios{% endoverride %}
 {% endingredient %}
 
-{% ingredient recipe_preview/incentivized_referral_program %}
+{% ingredient recipe_preview/referral_links_with_incentives %}
 	{% override platform %}ios{% endoverride %}
 {% endingredient %}
 
-{% ingredient recipe_preview/mobile_web_smart_banner %}
+{% ingredient recipe_preview/app_download_banner %}
 	{% override platform %}ios{% endoverride %}
 {% endingredient %}
 
@@ -61,29 +64,61 @@ Let users share in-app content. iHeartRadio’s shared links open straight to ra
 {% endingredient %}
 
 
+ 
+## Testing and Releasing
+
+We're developers too, so we know how fun this is. Test out your Branch integration before releasing by following our helpful hints here.
+
+{% ingredient recipe_preview/testing_your_integration %}
+	{% override platform %}ios{% endoverride %}
+{% endingredient %}
+
+{% ingredient recipe_preview/submitting_apps %}
+	{% override platform %}ios{% endoverride %}
+{% endingredient %}
+
+
+
+## Customize Your Integration
+
+Ready to take your links to the next level? Harness the full power of Branch's **customizable metadata**. You can find additional information, code snippets and advanced features in this section. Don't miss out on:
+
+
+{% ingredient recipe_preview/matching_accuracy %}{% endingredient %}
+
+{% ingredient recipe_preview/dynamic_link_creation %}{% endingredient %}
+
+{% ingredient recipe_preview/email_campaigns %}
+	{% override platform %}ios{% endoverride %}
+{% endingredient %}
+
+{% ingredient recipe_preview/add_custom_link_data_and_routing %}
+	{% override platform %}ios{% endoverride %}
+{% endingredient %}
+
+{% ingredient recipe_preview/advanced_referral_incentives %}
+	{% override platform %}ios{% endoverride %}
+{% endingredient %}
+
+{% ingredient recipe_preview/dashboard_pro_tips %}
+	{% override platform %}ios{% endoverride %}
+{% endingredient %}
+
+{% ingredient recipe_preview/webhooks_and_exporting_data %}{% endingredient %}
+
+
 
 ## Third-Party Integrations
 
-{% ingredient recipe_preview/double_sided_third_party_integration %}
+{% ingredient recipe_preview/analytics_adjust %}
 {% endingredient %}
 
-{% ingredient recipe_preview/deeplinked_ads %}
+{% ingredient recipe_preview/advertising_facebook %}
 	{% override platform %}ios{% endoverride %}
 {% endingredient %}
 
-{% ingredient recipe_preview/mixpanel %}
+{% ingredient recipe_preview/analytics_mixpanel %}
 {% endingredient %}
-
-
-
-## Building Blocks
-
-We also have information separated into several individualized **Building Blocks** pages, as you can see on the left. These list out the snippets that comprise our guides. Make sure you don't miss:
-
-{% ingredient recipe_preview/influencers %}
-	{% override platform %}ios{% endoverride %}
-{% endingredient %}
-{% ingredient recipe_preview/webhooks %}{% endingredient %}
 
 
 

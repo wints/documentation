@@ -1,6 +1,4 @@
-{% section header %}
-### IsReferrable
-{% endsection %}
+## IsReferrable
 
 
 {% section explanation %}

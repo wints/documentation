@@ -1,6 +1,6 @@
 ---
 type: recipe
-title: Branded Text-Me-The-App Page
+title: Text-Me-The-App page
 platforms:
 - ios
 - android

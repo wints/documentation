@@ -1,6 +1,6 @@
 ---
 type: recipe
-title: Email Campaigns
+title: Email campaigns
 platforms:
 - ios
 - android
@@ -20,7 +20,7 @@ Note, if you already completed these steps in the guide [Your First Link](/recip
 {% ingredient dashboard_setup/web_url %}{% endingredient %}
 {% ingredient dashboard_setup/store_or_custom_url %}{% endingredient %}
 
-That's the end of the required setup for the Dashboard! The dashboard is incredibly powerful, so if you want to dive in deeper, definitely check out [Configuring the Dashboard](/domains/configuring_the_dashboard/{{page.platform}}/) for the full setup.
+That's the end of the required setup for the Dashboard! The dashboard is incredibly powerful, so if you want to dive in deeper, definitely check out [Configuring the Dashboard](/recipes/dashboard_pro_tips/{{page.platform}}/) for the full setup.
 
 
 ## Creating your Link
@@ -61,8 +61,8 @@ This powerful link will now track clicks across platforms. Users who have the ap
 
 {% ingredient dashboard_links/no_sdk %}{% endingredient %}
 
-{% ingredient recipe_preview/incentivized_referral_program %}{% endingredient %}
-{% ingredient recipe_preview/personalized_invite_system %}{% endingredient %}
+{% ingredient recipe_preview/referral_links_with_incentives %}{% endingredient %}
+{% ingredient recipe_preview/personalized_welcome %}{% endingredient %}
 {% ingredient recipe_preview/influencers %}{% endingredient %}
 {% ingredient recipe_preview/channel_tags %}{% endingredient %}
 {% ingredient recipe_preview/contact_us %}{% endingredient %}

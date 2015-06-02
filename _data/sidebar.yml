@@ -3,44 +3,46 @@
   title: What is Branch?
   pages:
     - ''
+    - how_branch_links_work
 - type: recipe
-  title: Linking and Measuring
+  title: Getting started with Branch
   pages:
     - your_first_marketing_link
-    - email_campaigns
-    - measuring_installs
-    - dynamic_link_creation
-- type: recipe
-  title: Deeplinked Features
-  pages:
     - quickstart_guide
-    - personalized_invite_system
-    - incentivized_referral_program
-    - mobile_web_smart_banner
+    - measuring_installs
+- type: recipe
+  title: Deeplinked features
+  pages:
+    - content_sharing
+    - personalized_welcome
+    - referral_links_with_incentives
+    - app_download_banner
     - text_me_the_app_page
+- type: recipe
+  title: Testing and releasing
+  pages:
+    - testing_your_integration
+    - submitting_apps
+- type: recipe
+  title: Customize Your Integration
+  pages:
+    - matching_accuracy
+    - dynamic_link_creation
+    - email_campaigns
+    - add_custom_link_data_and_routing
+    - advanced_referral_incentives
+    - dashboard_pro_tips
+    - webhooks_and_exporting_data
 - type: recipe
   title: Third-Party Integrations
   pages:
-    - double_sided_third_party_integration
-    - deeplinked_ads
-    - mixpanel
-- type: domain
-  title: Building Blocks
-  pages:
-    - matching_accuracy
-    - submitting_apps
-    - configuring_the_dashboard
-    - links_and_sharing
-    - redirection
-    - routing
-    - rewards
-    - analytics_and_custom_events
-    - webhooks
+    - analytics_adjust
+    - advertising_facebook
+    - analytics_mixpanel
 - type: reference
   title: API Reference
   pages:
     - developer_updates
-    - debug_tools
     - ios_sdk
     - android_sdk
     - xamarin_sdk
