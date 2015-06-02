@@ -5,7 +5,14 @@ When users spend credits, you can make a simple call to redeem their credits. On
 
 {% if page.ios %}
 {% highlight objc %}
-[[Branch getInstance] redeemRewards:5];
+[[Branch getInstance] redeemRewards:5 callback:^(BOOL success, NSError *error) {
+    if (success) {
+        NSLog(@"Redeemed 5 credits!");
+    }
+    else {
+        NSLog(@"Failed to redeem credits: %@", error);
+    }
+}];
 {% endhighlight %}
 {% endif %}
 {% if page.android %}
@@ -21,7 +28,14 @@ If you want to redeem credits in a custom bucket you've specified, such as `myBu
 <!-- iOS -->
 {% if page.ios %}
 {% highlight objc %}
-[[Branch getInstance] redeemRewards:5 forBucket:@"myBucket"];
+[[Branch getInstance] redeemRewards:5 forBucket:@"myBucket" callback:^(BOOL success, NSError *error) {
+    if (success) {
+        NSLog(@"Redeemed 5 credits for myBucket!");
+    }
+    else {
+        NSLog(@"Failed to redeem credits: %@", error);
+    }
+}];
 {% endhighlight %}
 {% endif %}
 <!-- end iOS -->
