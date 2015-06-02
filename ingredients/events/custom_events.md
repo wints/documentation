@@ -1,11 +1,11 @@
 
 ### Custom Events
 
-You can track any custom user actions you wish. This is useful for analytics. From these events you can construct conversion funnels on the Dashboard's [Summary](https://dashboard.branch.io/#) page at the bottom. You can also be notified via a postback to your server every time that an event happens. Visit the [Webhooks](/recipes/webhooks_and_exporting_data/) page for more information on receiving postbacks.
+You can track any custom user actions you wish. This is useful for analytics. From these events you can construct [conversion funnels](/recipes/dashboard_pro_tips/ios/#funnels) on the Dashboard's [Summary](https://dashboard.branch.io/#) page at the bottom. You can also be notified via a postback to your server every time that an event happens. Visit the [Webhooks](/recipes/webhooks_and_exporting_data/) page for more information on receiving postbacks.
 
 Examples of what you may want to track:
 
-* signup (especially if you have multiple steps)
+* sign up (especially if you have multiple steps)
 * purchases
 * content shares
 * referrals sent
