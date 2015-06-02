@@ -35,13 +35,6 @@ You should [identify your users](/recipes/configuring_client_apps/{{page.platfor
 
 
 
-## Sharing
-
-{% ingredient sdk_links/sharing_sms %}{% endingredient %}
-{% ingredient sdk_links/sharing_ios_share_sheet %}{% endingredient %}
-
-
-
 ## Routing
 
 Your app can deliver users a custom experience based on the Branch link they clicked on that directed them to the app.

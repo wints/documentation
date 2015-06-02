@@ -23,6 +23,14 @@ You use the data to link directly to content! Instead of "foo": "bar", you could
 {% ingredient sdk_routing/routing %}{% endingredient %}
 
 
+{% if page.ios %}
+## Sharing Methods (Optional)
+
+{% ingredient sdk_links/sharing_sms %}{% endingredient %}
+{% ingredient sdk_links/sharing_ios_share_sheet %}{% endingredient %}
+{% endif %}
+
+
 ## Conclusion
 
 Now that you've completed the basic integration, you can **skip steps one (Configuring the Dashboard) and two (Configuring the Client) in the following guides**. Next steps:
