@@ -25,6 +25,13 @@ You should [identify your users](/recipes/configuring_client_apps/{{page.platfor
 
 
 
+## Events
+
+{% ingredient events/standard_events %}{% endingredient %}
+{% ingredient events/custom_events %}{% endingredient %}
+
+
+
 ## Custom Redirects 
 
 {% ingredient sdk_links/ios_url %}{% endingredient %}
@@ -32,13 +39,6 @@ You should [identify your users](/recipes/configuring_client_apps/{{page.platfor
 {% ingredient sdk_links/desktop_url %}{% endingredient %}
 {% ingredient sdk_links/always_deeplink %}{% endingredient %}
 {% ingredient sdk_links/deeplink_path %}{% endingredient %}
-
-
-
-## Sharing
-
-{% ingredient sdk_links/sharing_sms %}{% endingredient %}
-{% ingredient sdk_links/sharing_ios_share_sheet %}{% endingredient %}
 
 
 
