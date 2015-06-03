@@ -44,6 +44,13 @@ ulimit -n 10000
 bundle exec jekyll serve --watch
 ```
 
+
+Updating the submodule reference guides on dev portal
+=======
+
+`git submodule foreach git pull origin master`
+
+
 Future todos
 =======
 
