@@ -22,4 +22,6 @@ platforms:
 {% ingredient rewards/rewards_are_flexible %}{% endingredient %}
 
 
+{% ingredient rewards/promo_codes %}{% endingredient %}
+
 {% ingredient sdk_setup/is_referrable %}{% endingredient %}
