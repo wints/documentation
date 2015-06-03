@@ -7,7 +7,7 @@ Imagine how URLs are used on the Internet... now you have the same power inside 
 This data is stored on our backend and presented again when the user clicks on a link via the `deepLinkHandler` -- it's not simply appended to the end of the URL.
 
 {% protip title="Tip: Aliasing Links" %}
-Because we don't store data in the URL, you can create pretty links, like `bnc.lt/bob`. For information on custom aliases for links, {%section alias_protip %}see the section below, [Alias -- The Custom Ending](/recipes/links_and_sharing/ios/#alias---the-custom-ending){% endsection %}.
+Because we don't store data in the URL, you can create pretty links, like `bnc.lt/bob`. For information on custom aliases for links, {%section alias_protip %}see the section below, [Alias -- The Custom Ending](/recipes/add_custom_link_data_and_routing/{{page.platform}}/#alias---the-custom-ending){% endsection %}.
 {% endprotip %}
 
 {% section example_explanation %}Store data about both the sharing user and the content shared in the data dictionary. Attaching information is as simple as including a dictionary at link creation time. If, for example, James is inviting friends to check out your app, you could do the following:{% endsection %}
