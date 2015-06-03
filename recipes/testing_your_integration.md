@@ -23,3 +23,4 @@ platforms:
 
 {%ingredient debug/dashboard_debug %}{% endingredient %}
 
+{%ingredient debug/connectivity %}{% endingredient %}
