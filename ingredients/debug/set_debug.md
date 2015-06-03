@@ -1,5 +1,5 @@
 
-### Use setDebug To Simulate Fresh Installs
+## Use setDebug To Simulate Fresh Installs
 
 One challenge aspect testing Branch's service is simulating a fresh install. We intentionally add a lot of restrictions to prevent 'install' events from being triggered on app updates or uninstall/reinstall. 
 

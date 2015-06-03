@@ -13,7 +13,7 @@ platforms:
 {%ingredient debug/question_mark_debug %}{% endingredient %}
 
 {% ingredient rewards/fraud_protection %}
-{% override header %}### A Word About Fraud Protection{% endoverride %}
+{% override header %}## A Word About Fraud Protection{% endoverride %}
 {% override setdebug %}[in the next section]{% endoverride %}
 {% endingredient %}
 

@@ -1,5 +1,5 @@
 
-### Use the Test App on the Branch Dashboard
+## Use the Test App on the Branch Dashboard
 
 At the top right of the dashboard, for any given app you see "Live" and "Test". Use the "Test" app and be sure that the [Link Settings](http://dashboard.branch.io/#/settings/link) are properly configured. Use this so as to not pollute your production app's Branch data.
 
