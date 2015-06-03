@@ -25,13 +25,6 @@ You should [identify your users](/recipes/configuring_client_apps/{{page.platfor
 
 
 
-## Events
-
-{% ingredient events/standard_events %}{% endingredient %}
-{% ingredient events/custom_events %}{% endingredient %}
-
-
-
 ## Custom Redirects 
 
 {% ingredient sdk_links/ios_url %}{% endingredient %}
