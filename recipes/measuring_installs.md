@@ -16,6 +16,11 @@ One screenshot is worth a million... dollars on spent on poorly performing ads a
 
 {% image src='/img/ingredients/analytics_and_custom_events/dashboard_summary.png' 3-quarters center alt='the goal' %}
 
+
+{% ingredient dashboard_analytics/install_versus_open %}{% endingredient %}
+
+
+
 ## Dashboard tips
 
 Here's some handy advice for getting the most out of your dashboard:
