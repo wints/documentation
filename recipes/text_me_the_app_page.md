@@ -8,6 +8,19 @@ platforms:
 
 When users click your links on desktop, they have the option to text themselves the app. We provide this by default--just [create a test marketing link](https://dashboard.branch.io/#/marketing) and click it on your computer.
 
+#### Default text-me-the-app page
+
+{% image src="/img/recipes/text_me_the_app/default.png" 2-thirds center alt="Default Page" %}
+
+#### Customized text-me-the-app page
+
+Using the code on this page, you can create your own fully-branded text-me-the-app page!
+
+The page below was created by Drafted and can be viewed [here](http://drft.us/l/5Rfz8GU0yO).
+
+{% image src="/img/recipes/text_me_the_app/drafted.png" 2-thirds center alt="Default Page" %}
+
+
 Better yet, you can completely customize the text-me-the-app page. To do so you must first have an app setup, then you'll need to use our handy Web SDK. Let's check it out!
 
 ## Dashboard Setup
