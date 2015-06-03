@@ -16,3 +16,6 @@ Lastly, if you want to use your root-level domain (like myapp.com), you will nee
 1. [https://blog.cloudflare.com/zone-apex-naked-domain-root-domain-cname-supp/](https://blog.cloudflare.com/zone-apex-naked-domain-root-domain-cname-supp/)
 2. [https://support.cloudflare.com/hc/en-us/articles/200169056-CNAME-Flattening-RFC-compliant-support-for-CNAME-at-the-root](https://support.cloudflare.com/hc/en-us/articles/200169056-CNAME-Flattening-RFC-compliant-support-for-CNAME-at-the-root)
 
+{% protip title='Changing subdomains is painful' %}
+Changing between custom subdomains (e.g. from get.myapp.com to download.myapp.com) is painful and should be avoided at all costs. Some links will be migrated, others will stop working. We recommend you pick a subdomain you like and stick with it for the long haul!
+{% endprotip %}
