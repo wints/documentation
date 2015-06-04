@@ -14,7 +14,7 @@ Here is a fully-functional web page that you can use as a template for your text
 
             branch.init('YOUR-BRANCH-KEY');
             function sendSMS(form) {
-                var phone = form.phone.value.replace(/\D/g,'');
+                var phone = form.phone.value;
                 var linkData = {
                     tags: [],
                     channel: 'Website',
