@@ -58,7 +58,7 @@ branch.initSessionWithLaunchOptions(launchOptions, andRegisterDeepLinkHandler: {
         // params are the deep linked params associated with the link that the user clicked -> was re-directed to this app
         // params will be empty if no data found
         // ... insert custom logic here ...
-        NSLog(@"params: %@", params.description)
+        NSLog("params: %@", params.description)
     }
 })
 {% endhighlight %}
@@ -88,23 +88,19 @@ Inside your `onStart`, do the following, where the variable `branch` is created 
 @Override
 protected void onStart() {
     super.onStart();
-
-    branch = Branch.getInstance(this.getApplicationContext());
-    ...
-}
-{% endhighlight %}
-
-Next, initialize a session via the `initSession` call. We notify you via callback of type `BranchReferralInitListener`. Go ahead and create that first as follows: 
-
-{% highlight java %}
-Branch branchReferralInitListener = new BranchReferralInitListener() {
-    @Override
-    public void onInitFinished(JSONObject referringParams, BranchError error) {
-
-        // Do this when a response is returned.
-        ...
-
-    }
+    Branch branch = Branch.getInstance(getApplicationContext());
+    branch.initSession(new BranchReferralInitListener(){
+        @Override
+        public void onInitFinished(JSONObject referringParams, BranchError error) {
+            if (error == null) {
+                // params are the deep linked params associated with the link that the user clicked -> was re-directed to this app
+                // params will be empty if no data found
+                // ... insert custom logic here ...
+            } else {
+                Log.i("MyApp", error.getMessage());
+            }
+        }
+    }, this.getIntent().getData(), this);
 }
 {% endhighlight %}
 
@@ -117,7 +113,7 @@ public void onNewIntent(Intent intent) {
 }
 {% endhighlight %}
 
-Then, init the session back inside `onStart`!
+
 
 {% highlight java %}
 branch.initSession(branchReferralInitListener, this.getIntent().getData(), this);
