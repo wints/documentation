@@ -37,8 +37,8 @@
 - type: recipe
   title: Third-Party Integrations
   pages:
-    - analytics_adjust
     - advertising_facebook
+    - analytics_adjust
     - analytics_mixpanel
 - type: reference
   title: API Reference
