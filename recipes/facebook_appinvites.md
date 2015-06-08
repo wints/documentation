@@ -52,15 +52,15 @@ NSMutableDictionary *branchDict = [[NSMutableDictionary alloc] init];
 
 {% highlight objc %}
 // add these methods in if you extend your sharing view controller with <FBSDKAppInviteDialogDelegate>
-- (void)appInviteDialog:(FBSDKAppInviteDialog *)appInviteDialog 
-			didCompleteWithResults:(NSDictionary *)results {
-	[[Branch getInstance] userCompletedAction:@"completed_share"];
+- (void)appInviteDialog:(FBSDKAppInviteDialog *)appInviteDialog
+ didCompleteWithResults:(NSDictionary *)results {
+    [[Branch getInstance] userCompletedAction:@"completed_share"];
     NSLog(@"app invite dialog did complete");
 }
 
 - (void)appInviteDialog:(FBSDKAppInviteDialog *)appInviteDialog
-			didFailWithError:(NSError *)error {
-[[Branch getInstance] userCompletedAction:@"cancelled_share"];
+       didFailWithError:(NSError *)error {
+    [[Branch getInstance] userCompletedAction:@"cancelled_share"];
     NSLog(@"app invite dialog did fail");
 }
 {% endhighlight %}
@@ -130,29 +130,27 @@ Here's how to build it:
 {% endhighlight %}
 
 {% highlight objc %}
-- (BOOL)application:(UIApplication *)application 
-			didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
-{
-	[[Branch getInstance] initSessionWithLaunchOptions:launchOptions 
-							andRegisterDeepLinkHandler:^(NSDictionary *params, NSError *error) {
-		if ([[params objectForKey:@"+clicked_branch_link"] boolValue]) {
-			NSLog(@"new session was referred by %@", [params objectForKey:@"referring_user_name"]);
-			// show personal welcome view controller
-		}
-	}];
+- (BOOL)application:(UIApplication *)application
+            openURL:(NSURL *)url
+  sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
+    BOOL wasHandled = [[Branch getInstance] handleDeepLink:url];
+    if (!wasHandled)
+        [[FBSDKApplicationDelegate sharedInstance] application:application
+                                                       openURL:url
+                                             sourceApplication:sourceApplication
+                                                    annotation:annotation];
     
-    return [[FBSDKApplicationDelegate sharedInstance] application:application
-                                    didFinishLaunchingWithOptions:launchOptions];
+    return wasHandled;
 }
 
 {% endhighlight %}
 
 {% highlight objc %}
-- (BOOL)application:(UIApplication *)application 
-			openURL:(NSURL *)url 
-			sourceApplication:(NSString *)sourceApplication 
-			annotation:(id)annotation {
-	// NOTE: Branch must come first
+- (BOOL)application:(UIApplication *)application
+            openURL:(NSURL *)url
+  sourceApplication:(NSString *)sourceApplication
+         annotation:(id)annotation {
+    // NOTE: Branch must come first
     BOOL wasHandled = [[Branch getInstance] handleDeepLink:url];
     if (!wasHandled)
         [[FBSDKApplicationDelegate sharedInstance] application:application
