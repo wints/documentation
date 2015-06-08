@@ -40,12 +40,12 @@ NSMutableDictionary *branchDict = [[NSMutableDictionary alloc] init];
                                  andFeature:@"app_invite"
                                 andCallback:^(NSString *url, NSError* error) {
     if ([FBSDKAppInviteDialog canShow]) {
-		FBSDKAppInviteContent *content =[[FBSDKAppInviteContent alloc] init];
-		content.appLinkURL = [NSURL URLWithString:url];
-		content.appInvitePreviewImageURL = [NSURL URLWithString:@"https://s3-us-west-1.amazonaws.com/host/zackspic.png"];
+        FBSDKAppInviteContent *content =[[FBSDKAppInviteContent alloc] init];
+        content.appLinkURL = [NSURL URLWithString:url];
+        content.appInvitePreviewImageURL = [NSURL URLWithString:@"https://s3-us-west-1.amazonaws.com/host/zackspic.png"];
 	    
-		[FBSDKAppInviteDialog showWithContent:content
-	                                 delegate:self];
+        [FBSDKAppInviteDialog showWithContent:content
+                                     delegate:self];
 	}
 }];
 {% endhighlight %}
@@ -173,17 +173,17 @@ import Branch
 
 {% highlight swift %}
 func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-	branch.initSessionWithLaunchOptions(launchOptions, andRegisterDeepLinkHandler: { params, error in
-	    if (params["+clicked_branch_link"]) {
-	    	NSLog("new session was referred by %@", params["referring_user_name"])
-	    	// show personal welcome view controller
-	    }
-	})
+    branch.initSessionWithLaunchOptions(launchOptions, andRegisterDeepLinkHandler: { params, error in
+        if (params["+clicked_branch_link"]) {
+            NSLog("new session was referred by %@", params["referring_user_name"])
+            // show personal welcome view controller
+        }
+    })
 
-	// We're not sure how to init the Facebook SDK in Swift
+    // We're not sure how to init the Facebook SDK in Swift
     // if you know, please make a pull request on this repo https://github.com/BranchMetrics/documentation/blob/master/recipes/facebook_appinvites.md
 
-	return true
+    return true
 }
 {% endhighlight %}
 
@@ -196,6 +196,7 @@ func application(application: UIApplication, openURL url: NSURL, sourceApplicati
 
     // We're not sure how to init the Facebook SDK in Swift
     // if you know, please make a pull request on this repo https://github.com/BranchMetrics/documentation/blob/master/recipes/facebook_appinvites.md
+
     return true
 }
 
