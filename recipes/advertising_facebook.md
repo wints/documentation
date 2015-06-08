@@ -4,7 +4,7 @@ title: "Advertising: Facebook Ads"
 hide_platform_selector: true
 ---
 
-{% protip title="Still need to integrate Branch?" %}This guide assumes that you have already integrated Branch and are just curious how to use Branch with App Invites. If you need to integrate Branch still, jump to "[Integrating the SDK](/recipes/quickstart_guide/ios/)".
+{% protip title="Still need to integrate Branch?" %}This guide assumes that you have already integrated Branch and are just curious how to use Branch with Facebook app install ads. If you need to integrate Branch still, jump to "[Integrating the SDK](/recipes/quickstart_guide/ios/)".
 {% endprotip %}
 
 Deeplinked ads are not a new breed--just a rare one. With Branch they're as easy as creating a link on the Dashboard and setting up your {{page.platform_formatted}} app to handle incoming deep links.
