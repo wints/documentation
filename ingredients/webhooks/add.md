@@ -69,7 +69,7 @@ Any query parameter you add to Branch Links will be captured and stored. You wil
 
 If you want to add other fields, like **device** ID, event name or metadata, and more, you can do that as well. For example, let's say you have an endpoint that accepts a `GET`, and one of the required parameters are `device.id`, and `event.name`. In this case, that would look like the following:
 
-*http://mybackend.com/attribute?device.id={{ device.hardware_id }}&event={{ event.name }}*
+![template non query webhook](/img/ingredients/webhooks/templates2.png)
 
 These values are all pulled from our database and sent to you as a passthrough, so you can dump all device IDs you see in realtime, or anything else. These are the following supported parameters:
 
