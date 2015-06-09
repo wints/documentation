@@ -80,7 +80,7 @@ var SidebarCollection = React.createClass({
                     layout={self.props.layout[key]} />);
 		});
 		return (
-			<div className="sidebarCollection">
+			<div className="sidebar-collection">
 				{sidebars}
 			</div>);
 	}
