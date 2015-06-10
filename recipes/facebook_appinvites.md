@@ -28,13 +28,6 @@ Every Branch link automatically comes packed with all of the AppLinks to automat
 {% endhighlight %}
 
 {% highlight objc %}
-// to initiate the share, drop this code in the method that responds to the share button
-[[Branch getInstance] userCompletedAction:@"started_share"];
-
-NSMutableDictionary *branchDict = [[NSMutableDictionary alloc] init];
-[branchDict setObject:@"referring_user_id" forKey:@"1234"];
-[branchDict setObject:@"referring_user_name" forKey:@"Zack Zuckerberg"];
-
 [[Branch getInstance] getShortURLWithParams:branchDict
                                  andChannel:@"facebook"
                                  andFeature:@"app_invite"
@@ -43,10 +36,10 @@ NSMutableDictionary *branchDict = [[NSMutableDictionary alloc] init];
         FBSDKAppInviteContent *content =[[FBSDKAppInviteContent alloc] init];
         content.appLinkURL = [NSURL URLWithString:url];
         content.appInvitePreviewImageURL = [NSURL URLWithString:@"https://s3-us-west-1.amazonaws.com/host/zackspic.png"];
-	    
+                                        
         [FBSDKAppInviteDialog showWithContent:content
                                      delegate:self];
-	}
+    }
 }];
 {% endhighlight %}
 

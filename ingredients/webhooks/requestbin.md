@@ -24,7 +24,7 @@ Choose `Install` for the event.
 
 Now every time someone opens the app, the webhook you've configured on Branch will send a request to your RequestBin. Give it a shot!
 
-<div class="full-width">After tapping a marketing link–visit our <a href="/recipes/advertising_facebook/ios/">Advertising on Facebook</a> guide to see how this link was constructed–RequestBin shows the following response:</div>
+<div class="full-width">After tapping a marketing link–visit our <a href="/recipes/advertising_facebook/">Advertising on Facebook</a> guide to see how this link was constructed–RequestBin shows the following response:</div>
 
 {% image src='/img/ingredients/webhooks/requestbin_response.png' half center alt='requestbin create' %}
 
