@@ -9,3 +9,4 @@ window.Sidebar = require('./components/Sidebar');
 window.PlatformSelector = require('./components/PlatformSelector');
 window.React = require('react');
 window.PlatformActions = require('./actions/PlatformActions');
+require('../_includes/branch-web-assets/components/navbar/navbar');
