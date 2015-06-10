@@ -61,7 +61,6 @@ var Sidebar = React.createClass({
 						platform={ self.state.platform }/>
 				</div>);
 		});
-
 		return (
 			<div className="sidebar">
 				{ groups(this.props.layout) }
@@ -69,4 +68,22 @@ var Sidebar = React.createClass({
 	}
 });
 
-module.exports = Sidebar;
+var SidebarCollection = React.createClass({
+	render: function(){
+		var self = this,
+			sidebars = [];
+		Object.keys(self.props.layout).forEach(function(key){
+			sidebars.push(
+				<Sidebar key={key}
+					current_path={self.props.current_path}
+                    site_map={self.props.site_map}
+                    layout={self.props.layout[key]} />);
+		});
+		return (
+			<div className="sidebar-collection">
+				{sidebars}
+			</div>);
+	}
+});
+
+module.exports = SidebarCollection;
