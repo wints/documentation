@@ -111,14 +111,12 @@ Ready to take your links to the next level? Harness the full power of Branch's *
 ## Third-Party Integrations
 
 {% ingredient recipe_preview/analytics_adjust %}
-{% endingredient %}
-
-{% ingredient recipe_preview/advertising_facebook %}
 	{% override platform %}ios{% endoverride %}
 {% endingredient %}
 
-{% ingredient recipe_preview/analytics_mixpanel %}
-{% endingredient %}
+{% ingredient recipe_preview/advertising_facebook %}{% endingredient %}
+
+{% ingredient recipe_preview/analytics_mixpanel %}{% endingredient %}
 
 
 
@@ -152,8 +150,11 @@ Ready to take your links to the next level? Harness the full power of Branch's *
 
 * [**PhoneGap (Cordova)**](https://github.com/BranchMetrics/Branch_PhoneGap_SDK)
 
-* [**Xamarin and Xamarin Forms**](Xamarin and Xamarin Forms)
+* [**Xamarin SDK**](https://github.com/BranchMetrics/Branch-Xamarin-SDK)
 
+* [**Unity SDK**](https://github.com/BranchMetrics/Branch-Unity-SDK)
+
+* [**Adobe AIR SDK**](https://github.com/BranchMetrics/Branch-AIR-ANE-SDK)
 
 ## Advanced
 

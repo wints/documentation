@@ -1,51 +1,54 @@
 ---
-- type: overview
-  title: What is Branch?
-  pages:
-    - ''
-    - how_branch_links_work
-- type: recipe
-  title: Getting started with Branch
-  pages:
-    - your_first_marketing_link
-    - quickstart_guide
-    - measuring_installs
-- type: recipe
-  title: Deeplinked features
-  pages:
-    - content_sharing
-    - personalized_welcome
-    - referral_links_with_incentives
-    - app_download_banner
-    - text_me_the_app_page
-- type: recipe
-  title: Testing and releasing
-  pages:
-    - testing_your_integration
-    - submitting_apps
-- type: recipe
-  title: Customize Your Integration
-  pages:
-    - matching_accuracy
-    - dynamic_link_creation
-    - email_campaigns
-    - add_custom_link_data_and_routing
-    - advanced_referral_incentives
-    - dashboard_pro_tips
-    - webhooks_and_exporting_data
-- type: recipe
-  title: Third-Party Integrations
-  pages:
-    - analytics_adjust
-    - advertising_facebook
-    - analytics_mixpanel
-- type: reference
-  title: API Reference
-  pages:
-    - developer_updates
-    - ios_sdk
-    - android_sdk
-    - xamarin_sdk
-    - cordova_phonegap_sdk
-    - http_api
-    - web_sdk
+-
+  - type: overview
+    title: What is Branch?
+    pages:
+      - ''
+      - how_branch_links_work
+  - type: recipe
+    title: Getting started with Branch
+    pages:
+      - your_first_marketing_link
+      - quickstart_guide
+      - measuring_installs
+  - type: recipe
+    title: Deeplinked features
+    pages:
+      - content_sharing
+      - personalized_welcome
+      - referral_links_with_incentives
+      - facebook_appinvites
+      - app_download_banner
+      - text_me_the_app_page
+  - type: recipe
+    title: Testing and releasing
+    pages:
+      - testing_your_integration
+      - submitting_apps
+-
+  - type: recipe
+    title: Customize Your Integration
+    pages:
+      - matching_accuracy
+      - dynamic_link_creation
+      - email_campaigns
+      - add_custom_link_data_and_routing
+      - advanced_referral_incentives
+      - dashboard_pro_tips
+      - webhooks_and_exporting_data
+  - type: recipe
+    title: Third-Party Integrations
+    pages:
+      - advertising_facebook
+      - analytics_adjust
+      - analytics_mixpanel
+  - type: reference
+    title: API Reference
+    pages:
+      - developer_updates
+      - ios_sdk
+      - android_sdk
+      - xamarin_sdk
+      - cordova_phonegap_sdk
+      - http_api
+      - web_sdk

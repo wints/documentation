@@ -1,17 +1,15 @@
 ---
 type: recipe
-title: "Advertising: Facebook"
-platforms:
-- ios
-- android
+title: "Advertising: Facebook Ads"
+hide_platform_selector: true
 ---
 
-{% protip title="Have you already integrated?" %}This guide assumes that you haven't already integrated Branch and provides full step-by-step instructions. However, if you've already completed Steps 1 and 2 of our quickstart guide, [Integrating the SDK](/recipes/quickstart_guide/{{page.platform}}/), then you only need to complete Steps 2 & 4! Jump to Step 2, [Creating Your Link](/recipes/advertising_facebook/{{page.platform}}/#creating-your-link).
+{% protip title="Still need to integrate Branch?" %}This guide assumes that you have already integrated Branch and are just curious how to use Branch with Facebook app install ads. If you need to integrate Branch still, jump to "[Integrating the SDK](/recipes/quickstart_guide/ios/)".
 {% endprotip %}
 
 Deeplinked ads are not a new breed--just a rare one. With Branch they're as easy as creating a link on the Dashboard and setting up your {{page.platform_formatted}} app to handle incoming deep links.
 
-This makes the following possible:
+Here are some examples:
 
 * A user clicks on an ad for 20% off all purchases before the end of the week, and upon opening the app sees the coupon and has it automatically added to the shopping cart.
 * A user clicks on an ad for blue sneakers. You show him the blue sneakers as soon as he opens the app.
@@ -19,152 +17,82 @@ This makes the following possible:
 * You know that users clicking on your ads are already familiar with your product. So in your app you reduce the carousel shown to new users from 5 to 2 if they've come in through an ad.
 
 {% protip title="Branch links work even on first install!" %}
-With standard deeplinks, if a user doesn't have the app, the link fails. With Branch links, users without the app will be directed to the {% if page.ios %}App{% endif %}{% if page.android %}Play{% endif %} Store -- and upon opening the app can be deeplinked! This is called *Deferred Deep Linking*.{% endprotip %}
+With standard deeplinks, if a user doesn't have the app, the link fails. With Branch links, users without the app will be directed to the {% if page.ios %}App{% endif %}{% if page.android %}Play{% endif %} Store -- and upon opening the app can be deeplinked! Facebook calls this deferred deep linking, but Branch links do this plus way more and refer to the whole process as *contextual deep linking*.{% endprotip %}
 
-## Configuring the Dashboard for your {{ page.platform_formatted }} app
+## One time configuration
 
-{% ingredient dashboard_setup/app_name %}{% endingredient %}
-{% ingredient dashboard_setup/web_url %}{% endingredient %}
-{% ingredient dashboard_setup/store_or_custom_url %}{% endingredient %}
-{% ingredient dashboard_setup/uri_scheme %}
-	{% override client_uri %}For more details on finding/setting your URI scheme in the client, see the section below on [setting the client app's URI scheme](/recipes/advertising_facebook/{{page.platform}}/#uri-scheme-1).{% endoverride %}
-{% endingredient %}
-{% ingredient dashboard_setup/end_required %}{% endingredient %}
-<!--- /Basic Setup -->
+In order for Branch to properly run a Facebook deeplinked ad campaign, you must first send Branch your app token. This is easy to get, and you can find the step by step instructions on how to do so below. 
+
+1. Log in to Facebook, navigate to [developers.facebook.com/apps](http://developers.facebook.com/apps) and choose your app. You'll need the App ID and Client Secret. 
+
+{% image src='/img/recipes/deeplink_ads/fb_auth_fb.png' half center alt='Facebook Auth' %}
+
+2. On the Branch Dashboard, go to Settings > [Link Settings](https://dashboard.branch.io/#/settings/link) and scroll down to 'Authenticate for Facebook Install Ads'. Enter your App ID and Client Secret from Facebook.
+
+{% image src='/img/recipes/deeplink_ads/fb_auth_branch.png' half center alt='Facebook Auth' %}
+
+3. Press 'Authenticate'. That's it!
 
 
 ## Creating your Link
 
 {% ingredient dashboard_links/creating_links %}
-	{% override screenshot %}{% image src='/img/ingredients/dashboard_links/fb_example_create.png' half right alt='Create Marketing Link' %}{% endoverride %}
-	{% override screenshot_description%}One example description if you want to treat this guide is: "Facebook ad for blue sneakers - summer 2015."{% endoverride %}
+	{% override screenshot %}{% image src='/img/ingredients/dashboard_links/fb_example_create.png' third left alt='Create Marketing Link' %}{% endoverride %}
+	{% override description %}{% endoverride %}
+	{% override screenshot_description%}The first step is to come up with a label for your link so that you can recognize it when you visit later on. For example: "Facebook ad for blue sneakers - summer 2015."{% endoverride %}
 {% endingredient %}
 
 {% ingredient dashboard_links/tags %}
-	{% override screenshot%}{% image src='/img/ingredients/dashboard_links/fb_example_tags.png' half right %}{% endoverride %}
-	{% override deep_link_data_url%}For information of the form *[key]*: *[value]* such as "product": "shoes", we recommend adding them to "Deep Link Data (Advanced)", discussed [below](/recipes/advertising_facebook/ios/#deep-link-data-advanced).
-    {% endoverride %}
+	{% override screenshot%}{% image src='/img/ingredients/dashboard_links/fb_example_tags.png' third nofloat %}{% endoverride %}
 {% endingredient %}
 
-{% ingredient dashboard_links/alias %}
-	{% override explanation %}This is more important for links that will be visible. For ads, this URL will be buried in the add and most users won't see it. However, you still have the option to customize it.{% endoverride %}
-	{% override screenshot %}{% endoverride %}
-{% endingredient %}
-
-{% ingredient dashboard_links/custom_redirects %}{% endingredient %}
-{% ingredient dashboard_links/og_tags %}{% endingredient %}
-{% ingredient dashboard_links/end %}{% endingredient %}
-
-### So Far, So Good
-{% ingredient dashboard_links/no_sdk %}
-	{% override alias %}{% endoverride %}
-	{% override more_power %}keep reading.{% endoverride %}
-{% endingredient %}
-<!--- /Creating your Link -->
-
-
-
-
-## Configuring your app to track installs
-
-Based on what you've built so far, you will be able to track your ad campaign's clicks by device -- how many people on each platform (desktop, iOS, Android) have clicked your ads.
-
-If you integrate our SDK into your app, you can:
-
-1. See exactly how many people are installing your app based on each of your ads.
-2. Personalize a user's experience after clicking on an ad. This works regardless of whether the user previously had your app installed. Examples include:
-   i. display a campaign-specific message
-   ii. automatically take the user to the same pair of shoes that were featured in the ad that was clicked on
-   iii. apply a certain coupon towards a purchase of a new pair of shoes, with a coupon icon at the top of the screen
-3. Track events and create funnels so you can see which ads are performing best on concrete measures such as # of completed signups or number/type of purchases even if the app was not previously installed.
-
-{% protip title="Have you already integrated?" %}This guide assumes that you haven't already integrated Branch and provides full step-by-step instructions. However, if you've already completed Step 2 of our quickstart guide, [Integrating the SDK](/recipes/quickstart_guide/{{page.platform}}/), then you can [skip to Step 4](/recipes/advertising_facebook/{{page.platform}}/#example-facebook-ads).
-{% endprotip %}
-
-{% ingredient sdk_setup/installing_the_sdk %}
-  {% override telephony %}[here](/recipes/configuring_client_apps/{{page.platform}}/#installing-the-sdk).{% endoverride %}
-{% endingredient %}
-{% ingredient sdk_setup/branch_key %}{% override screenshot%}{% endoverride %}{% endingredient %}
-{% ingredient sdk_setup/uri_scheme %}
-  {% override dashboard_uri %}For more info on setting up a URI scheme on the Dashboard, check out the [section above](/recipes/advertising_facebook/{{page.platform}}/#uri-scheme).{% endoverride %}
-{% endingredient %}
-{% ingredient sdk_setup/init_session %}{% endingredient %}
-{% ingredient sdk_setup/handle_deep_link %}{% endingredient %}
-<!--- /Creating your Link -->
-
-
-## Example: Facebook Ads
-
-Navigate to [https://www.facebook.com/ads/create](https://www.facebook.com/ads/create) while logged in to your Facebook page. (If you don't yet have a Facebook page, you will need to create one before advertising on Facebook.)
-
-Choose "Send people to your website". Unfortunately due to limitations with Facebook's API, you cannot currently run campaigns for app downloads through the option "Get installs of your app."
-
-{% image src='/img/recipes/deeplink_ads/facebook_ad_1.png' half 3-quarters alt='Facebook Example Ad' %}
-
-On the next page, you need to enter the Branch link that was generated in the last step. Here's a gif to help:
-
-{% image src='/img/recipes/deeplink_ads/facebook_ad_2.gif' half 3-quarters alt='Facebook Example Ad' %}
-
-You can now customize your ad per the usual Facebook ad creation interface.
-
-Notice that any OG tag information your provided has prepopulated in the interface.
-
-{% image src='/img/recipes/deeplink_ads/facebook_ad_3.png' half 3-quarters alt='Facebook Example Ad' %}
-
-Last step is to make sure you target the mobile app, not the desktop! If you need help, see the gif below:
-
-{% image src='/img/recipes/deeplink_ads/facebook_ad_4.gif' half 3-quarters alt='Facebook Example Ad' %}
-
-Now make sure you have a picture of the appropriate size, then order up that ad!
-
-
-## (Optional) Routing to content based on the ad
-
-After you've added `handleDeepLink` call (discussed in the section [Handle Deep Link](/recipes/advertising_facebook/{{page.platform}}/#handle-deep-link) above), you can add deep linking straight to content.
-
-<!--- CUSTOM DATA -->
 {% ingredient dashboard_links/custom_data %}{% endingredient %}
 
-<!--- ROUTING -->
-
-### Routing within your {{page.platform_formatted}} App
-
-{% ingredient sdk_routing/routing %}
-
-{% override ios_explanation %}
-Inside of the `deepLinkHandler`, you will want to examine the params dictionary to determine whether the user clicked on a link to content. Regardless of whether your app involves pictures, videos, text or whatever novel content your app contains, you likely have an internal system of identifiers.
-
-In this case, we want to handle users clicking on ads. When creating an ad, you specified an `ad_id`. If a user clicks a link to a from an ad, this Id will show up in the params dictionary in the deepLinkHandler.
-
-Now you need to customize the code in your deep link handler to route to content based on the `ad_id`. In the example below, we push to a special view controller to content based on ads inside the app. It can show an offer (e.g. 20% off), a product (e.g. blue shoes!) or anything you want.
-{% endoverride %}
-
-{% override android_explanation %}
-
-Inside of the `BranchReferralInitListener` from the `initSession` callback, you will want to examine the params dictionary to determine whether the user clicked on a link to content. Regardless of whether your app involves pictures, videos, text or whatever novel content your app contains, you likely have an internal system of identifiers.
-
-In this case, we want to handle users clicking on ads. When creating an ad, you specified an `ad_id`. If a user clicks a link to a from an ad, this Id will show up in the params dictionary in the deepLinkHandler.
-
-Now you need to customize the code in your deep link handler to route to content based on the `ad_id`. In the example below, we push to a special view controller to content based on ads inside the app. It can show an offer (e.g. 20% off), a product (e.g. blue shoes!) or anything you want.
-{% endoverride %}
+{% ingredient dashboard_links/end %}{% endingredient %}
 
 
-{% override ios_key %}ad_id{% endoverride %}
-{% override ios_comment %}// then load the ad screen with the appropriate content{% endoverride %}
-{% override ios_key_U %}AdId{% endoverride %}
-{% override vc_name %}adVC{% endoverride %}
+## Creating a Branch powered Facebook ad
 
-<!-- Android -->
-{% override akeyL %}ad_id{% endoverride %}
-{% override akeyU %}AdId{% endoverride %}
-<!-- End Android -->
+Here is the flow on how to create a Branch deep linked install ad!
 
-{% endingredient %}
+First, navigate to [https://www.facebook.com/ads/create](https://www.facebook.com/ads/create) while logged in to your account that owns the Facebook app. If you don't have a Facebook app yet, you'll need to visit [https://developers.facebook.com/apps/](https://developers.facebook.com/apps/) and create a new Facebook app for your mobile app.
+
+Choose **Get installs of your app**. Then scroll down and select Facebook app that you wish to advertise.
+
+{% image src='/img/recipes/deeplink_ads/fb_ad_installs.png' half nofloat alt='Facebook Example Ad' %}
+
+After you choose your audience and customize the display of the link, you can now specify the Deep Link in the following section.
+
+{% image src='/img/recipes/deeplink_ads/fb_ad_deep_link_area.png' half no float alt='Facebook Example Ad' %}
+
+Paste the Branch link from the dashboard into the **Deep Link** field
+
+{% image src='/img/recipes/deeplink_ads/fb_ad_deep_link_branch.png' half nofloat alt='Facebook Example Ad' %}
+
+You're all set to go!
+
+## View your data
+
+Now that you've set up your campaign and have everything all running, let's analyze the data! There are many changes in the works to the Branch dashboard, but if you'd like to see something, please send us a request.
+
+First, visit the marketing tab to see the performance of the individual link. You can find your link listed in the table with a quick summary of the _total_ clicks and installs. Unfortunately, Facebook prevents us from measurement the number of clicks on their ads, so this number is not accurate for Facebook ads.
+
+{% image src='/img/recipes/deeplink_ads/marketing_link_row.png' full nofloat alt='Facebook Example Ad' %}
+
+To view more details stats, click the _small button that looks like a bar chart_ on the far right. The first important note is that these stats are **limited to the date range** at the top. You can expand the range if you'd like.
+
+The first chart is what we call the _Click Flow_. From a Facebook installs perspective, this will just report for you the number of installs and reopens from the link. Currently, clicks is not accurate through this ad format.
+
+{% image src='/img/recipes/deeplink_ads/click_flow_analytics.png' half nofloat alt='Facebook Example Ad' %}
+
+The second chart is for measuring conversion funnels for this ad. If you setup a conversion funnel here, you can measure the total number of down funnel events that have occurred from this link in particular. It's useful for calculating conversion rate by each ad.
+
+{% image src='/img/recipes/deeplink_ads/conversion_funnel.png' full nofloat alt='Facebook Example Ad' %}
 
 
 ## Conclusion
 
-It's pretty simple! You need to configure the dashboard, generate links for your ads, and setup your {{page.platform_formatted}} app to track installs. You can optionally deep link straight to content based on the ad that the user clicked on!
+It's pretty simple! You need to configure the dashboard, generate links for your ads, and setup your app to track installs. You can optionally deep link straight to content based on the ad that the user clicked on!
 
 {% ingredient recipe_preview/recipe_end_intro %}{% endingredient %}
 {% ingredient recipe_preview/referral_links_with_incentives %}{% endingredient %}
