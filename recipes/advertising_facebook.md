@@ -21,15 +21,18 @@ With standard deeplinks, if a user doesn't have the app, the link fails. With Br
 
 ## One time configuration
 
-In order for Branch to properly run a Facebook deeplinked ad campaign, you must first send Branch your app token. This is easy to get, and you can find the step by step instructions on how to do so below. We'll add a button to the dashboard soon that does this automatically.
+In order for Branch to properly run a Facebook deeplinked ad campaign, you must first send Branch your app token. This is easy to get, and you can find the step by step instructions on how to do so below. 
 
-1. Create a URL using the app id and app secret from your Facebook app dashboard (developers.facebook.com -> Apps)
-https://graph.facebook.com/v2.3/oauth/access_token?client_id=**your_app_id**&client_secret=**your_app_secret**&grant_type=client_credentials
-2. Paste the created link into your browser and hit enter
-3. Send me the result - it should look something like this:
-_288726397999326|xgy43Bt4gVHWaY51VtImt_Meh_U_
+1. Log in to Facebook, navigate to [developers.facebook.com/apps](http://developers.facebook.com/apps) and choose your app. You'll need the App ID and Client Secret. 
 
-Send this key to alex@branch.io
+{% image src='/img/recipes/deeplink_ads/fb_auth_fb.png' half center alt='Facebook Auth' %}
+
+2. On the Branch Dashboard, go to Settings > [Link Settings](https://dashboard.branch.io/#/settings/link) and scroll down to 'Authenticate for Facebook Install Ads'. Enter your App ID and Client Secret from Facebook.
+
+{% image src='/img/recipes/deeplink_ads/fb_auth_branch.png' half center alt='Facebook Auth' %}
+
+3. Press 'Authenticate'. That's it!
+
 
 ## Creating your Link
 
