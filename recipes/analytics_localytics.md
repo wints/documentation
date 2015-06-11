@@ -6,7 +6,7 @@ hide_platform_selector: true
 
 # Sending Branch Install Data to Localytics
 
-We've partnered with Localytics to provide an easy way to deliver Branch install data to your Localytics dashboard. 
+We've partnered with Localytics to provide an easy way to deliver Branch install data to your Localytics dashboard.
 
 ## How It Works
 
@@ -14,13 +14,21 @@ Through webhooks, we can send all install data that Branch is responsible for. B
 
 Note: We rely on the device ID to filter an install between Branch, so if a Branch link click leads to an install, that user (or device) will be sent to Localytics.
 
-## Getting Started
+## Getting Started and Setup
 
-Before you can start sending data, you need to ensure a few things are completed:
+Before you can start sending data, we'll walk you through a minimum of what is needed.
 
-- [Localytics SDK Integrated](http://docs.localytics.com/)
-- [Branch SDK Integrated](https://dev.branch.io/recipes/quickstart_guide/ios/)
-- Localytics account set up with and a **Localytics Profile API Key**
+### Set Up Localytics
+
+This guide assumes you have an account with Localytics already. First, navigate to your account on Localytics, and grab the SDK, and register an application.
+
+After [integrating the SDK](http://docs.localytics.com/), we'll need your API key to allow us to attribute. Navigate to the `Attribution` section, and click the `...` (overflow) section, and select `Settings`:
+
+![overflow](img/recipes/localytics/localytics-more.png)
+
+Once there, you'll need to add your **iTunes ID**, and under the section `Ad Tracking Setup`, check the box labeled `Third-party Attribution`. This will enable an Attribution ID for you. Copy it, and have it handy for the next steps:
+
+![settings](img/recipes/localytics/localytics-attr-settings.png)
 
 ## Configure Dashboard
 
