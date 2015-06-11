@@ -30,7 +30,7 @@
         - submitting_apps
 -
   settings:
-    className: sidebar-border-blumine
+    className: sidebar-border-hippie_blue
   navigation:
     - type: recipe
       title: Customize Your Integration
@@ -60,7 +60,7 @@
         - web_sdk
 -
   settings:
-    className: sidebar-border-sea_buckthorn
+    className: sidebar-border-blumine
   navigation:
     - type: link
       title: Contact
