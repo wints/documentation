@@ -19,9 +19,10 @@ overview: "This quick-start guide will walk you through the minimum setup for an
 <!--- /Configuring the Dashboard-->
 
 
+
 ## Configuring your {{ page.platform_formatted }} app
 {% ingredient sdk_setup/installing_the_sdk %}
-  {% override telephony %}[here](/recipes/configuring_client_apps/{{page.platform}}/#installing-the-sdk).{% endoverride %}
+  {% override telephony %}[here](/img/ingredients/configuring_the_client/ios_core_telephony.gif).{% endoverride %}
 {% endingredient %}
 {% ingredient sdk_setup/branch_key %}{%override screenshot%}{%endoverride%}{% endingredient %}
 {% ingredient sdk_setup/uri_scheme %}
