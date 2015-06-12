@@ -44,6 +44,13 @@ ulimit -n 10000
 bundle exec jekyll serve --watch
 ```
 
+Testing for broken links, etc.
+=======
+
+Make sure you have htmlproof installed -- if not you should run `bundle`
+
+`htmlproof --href-ignore /^$/ ./_site/`
+
 
 Updating the submodule reference guides on dev portal
 =======

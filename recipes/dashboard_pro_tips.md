@@ -4,7 +4,6 @@ title: Dashboard pro tips
 platforms:
 - ios
 - android
-- web
 ---
 
 {% ingredient dashboard_setup/always_open_app %}{% endingredient %}

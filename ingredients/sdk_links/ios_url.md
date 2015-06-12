@@ -2,7 +2,7 @@
 {% section ios_url %}
 ### iOS App Store override - $ios_url
 
-When a user doesn't have your app and clicks a link on iOS, by default the user is taken to the [App Store or Custom URL](/recipes/dashboard_pro_tips/#app-store-or-custom-url) that you specified on the Dashboard. If you want to specify a different destination on a per-link basis, include a value for the `$ios_url`.
+When a user doesn't have your app and clicks a link on iOS, by default the user is taken to the [App Store or Custom URL](/recipes/quickstart_guide/#app-store-or-custom-url) that you specified on the Dashboard. If you want to specify a different destination on a per-link basis, include a value for the `$ios_url`.
 
 <!---    iOS -->
 {% if page.ios %}

@@ -43,7 +43,7 @@ In order for Branch to properly run a Facebook deeplinked ad campaign, you must 
 {% endingredient %}
 
 {% ingredient dashboard_links/tags %}
-	{% override screenshot%}{% image src='/img/ingredients/dashboard_links/fb_example_tags.png' third nofloat %}{% endoverride %}
+	{% override screenshot%}{% image src='/img/ingredients/dashboard_links/fb_example_tags.png' third nofloat alt='tags' %}{% endoverride %}
 {% endingredient %}
 
 {% ingredient dashboard_links/custom_data %}{% endingredient %}

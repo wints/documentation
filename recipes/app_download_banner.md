@@ -28,12 +28,12 @@ If you also want to pass data through the install process or deep link straight 
 ## The Smart Banner
 {% ingredient web_sdk/smart_banner %}{% override header %}{% endoverride %}{% endingredient %}
 {% protip title="Deeplinking through Install" %}
-This data dictionary containing `foo: 'bar'` etc is where you put data that you want passed through install. This is discussed in the sections on [Handle Deep Link](recipes/app_download_banner/{{page.platform}}/#handle-deep-link) and [Routing](/recipes/app_download_banner/{{page.platform}}/#optional-routing-passing-information-from-the-banner) below.
+This data dictionary containing `foo: 'bar'` etc is where you put data that you want passed through install. This is discussed in the sections on [Handle Deep Link](recipes/app_download_banner/{{page.platform}}/#optional-configuring-the-client-for-deep-linking) and [Routing](/recipes/app_download_banner/{{page.platform}}/#optional-routing-passing-information-from-the-banner) below.
 {% endprotip %} 
 
 ## (Optional) Configuring the Client for Deep Linking
 {% ingredient sdk_setup/installing_the_sdk %}
-  {% override telephony %}[here](/recipes/configuring_client_apps/{{page.platform}}/#installing-the-sdk).{% endoverride %}
+  {% override telephony %}[here](/img/ingredients/configuring_the_client/ios_core_telephony.gif).{% endoverride %}
 {% endingredient %}
 {% ingredient sdk_setup/branch_key %}{% override screenshot %}{% endoverride %}{% endingredient %}
 {% ingredient sdk_setup/uri_scheme %}
