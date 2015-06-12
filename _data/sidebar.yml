@@ -41,6 +41,7 @@
     pages:
       - advertising_facebook
       - analytics_adjust
+      - analytics_localytics
       - analytics_mixpanel
   - type: reference
     title: API Reference
