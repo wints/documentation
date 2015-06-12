@@ -29,7 +29,7 @@ Here's some handy advice for getting the most out of your dashboard:
 
 * Use a Branch link for every download you want to drive (looking at you [app download banner](/recipes/app_download_banner/{{page.platform}}/)) so you have context for every source
 
-* Set up [custom events](/recipes/add_custom_link_data_and_routing/{{page.platform}}/#custom-events) to create [conversion funnels](/recipes/dashboard_pro_tips/{{page.platform}}/#funnels)
+* Set up [custom events](/recipes/advanced_referral_incentives/{{page.platform}}/#custom-events) to create [conversion funnels](/recipes/dashboard_pro_tips/{{page.platform}}/#funnels)
 
 * See who your power users are by implementing [referral links](/recipes/referral_links_with_incentives/{{page.platform}}/) then viewing [data about your top users](/recipes/dashboard_pro_tips/{{page.platform}}/#influencers-your-best-users)
 

@@ -4,7 +4,6 @@ title: Advanced referral incentives
 platforms:
 - ios
 - android
-- web
 ---
 
 ## Tracking Events

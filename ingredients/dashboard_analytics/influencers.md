@@ -3,7 +3,7 @@
 
 Branch allows you to easily see which users are driving the most actual installs -- not just pressing the share button the most.
 
-To see this info, follow the required steps for configuring your {{page.platform_formatted}} app, both [in the app](/recipes/configuring_client_apps/{{page.platform}}/) and [on the Dashboard](/recipes/configuring_the_dashboard/ios/). After you have done this and users start to invite other users, you will see the [Influencers](https://dashboard.branch.io/#/referrals/influencers) page, which is part of the Referrals section.
+To see this info, follow the required steps for configuring your {{page.platform_formatted}} app, which can be found in our quick-start guide [Integrating the SDK](/recipes/quickstart_guide/{{page.platform}}/). After you have done this and users start to invite other users, you will see the [Influencers](https://dashboard.branch.io/#/referrals/influencers) page, which is part of the Referrals section.
 
 Here's what your results should look like:
 
