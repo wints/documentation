@@ -13,11 +13,11 @@ Yes, in order to have synchronization between Branch and Mixpanel, you need both
 
 In case you leverage Mixpanel to track in-app events, or want to segment users from Branch installs and calculate LTV, or any other unique use case, we can support you through a couple of methodologies.
 
-We have two methods to synchronize data between services. The first is using Branch callbacks to make a call to Mixpanel. This is under Methodology 1. The second is using Templated Webhooks to deliver data to your backend, which can then send that data to Mixpanel. This is under Methodology 2.
+We have two methods to synchronize data between services. The first is using Branch callbacks to make a call to Mixpanel. This is under methodology 1, Track Through SDK. The second is using Templated Webhooks to deliver data to your backend, which can then send that data to Mixpanel. This is under methodology 2, Track Through Webhooks.
 
 Methodology 1 is a simpler integration, but provides less flexibility. Methodology 2 is an advanced integration, but provides a bit more flexibility.
 
-## Methodology 1
+## Track Through SDK
 
 	Pre-Reqs:
     Successful integration of both the Mixpanel and Branch SDKs
@@ -44,9 +44,9 @@ Let's say you want to take it a step further and track Branch specific installs 
 
 - After a successful Branch session, set an [identity]().
 - Set an identity in Mixpanel
-- Track events 
+- Track events //todo
 
-## Methodology 2
+## Track Through Webhooks
 	
 	Pre-Reqs:
     A server that accepts GET or POST commands
