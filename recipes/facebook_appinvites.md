@@ -64,9 +64,24 @@ Every Branch link automatically comes packed with all of the AppLinks to automat
 params["referring_user_id"] = "1234"
 params["referring_user_name"] = "Zack Zuckerberg"
 Branch.getInstance().getShortURLWithParams(params, "facebook", "app_invite" andCallback: { (url: String?, error: NSError?) -> Void in
-    // We're not sure how to create app invites in Swift
-    // if you know, please make a pull request on this repo https://github.com/BranchMetrics/documentation/blob/master/recipes/facebook_appinvites.md
+    var inviteContent: FBSDKAppInviteContent = FBSDKAppInviteContent()
+                
+    inviteContent.appLinkURL = NSURL(String: url!)!
+    
+    inviteDialog.content = inviteContent
+    inviteDialog.delegate = self
+    inviteDialog.show()
 })
+{% endhighlight %}
+
+{% highlight swift %}
+func appInviteDialog(appInviteDialog: FBSDKAppInviteDialog!, didCompleteWithResults results: [NSObject : AnyObject]!) {
+    println("Complete invite without error")
+}
+
+func appInviteDialog(appInviteDialog: FBSDKAppInviteDialog!, didFailWithError error: NSError!) {
+    println("Error in invite \(error)")
+}
 {% endhighlight %}
 {% endtab %}
 {% endtabs %}
@@ -173,8 +188,8 @@ func application(application: UIApplication, didFinishLaunchingWithOptions launc
         }
     })
 
-    // We're not sure how to init the Facebook SDK in Swift
-    // if you know, please make a pull request on this repo https://github.com/BranchMetrics/documentation/blob/master/recipes/facebook_appinvites.md
+    let permissions = ["public_profile", "user_friends", "publish_actions"]   
+    FBSession.openActiveSessionWithPublishPermissions(permissions, defaultAudience: FBSessionDefaultAudience.Everyone, allowLoginUI: true)
 
     return true
 }
