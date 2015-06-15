@@ -71,6 +71,26 @@ branch.initSessionWithLaunchOptions(launchOptions, andRegisterDeepLinkHandler: {
 
 **NOTE** If you are seeing a "Branch.h file not found" error but you've imported the SDK, or it's breaking during compiling--and you're **using Xcode 6.3 or newer**--[click here](http://support.branch.io/customer/portal/articles/1964901-xcode-error---branch-not-found).
 
+#### Branch-provided data parameters in callback
+
+Previously, Branch did not return any information to the app if `initSession` was called but the user hadn't clicked on a link. Now Branch returns explicit parameters every time. Here is a list, and a description of what each represents.
+
+* `~` denotes analytics
+* `+` denotes information added by Branch
+* (for the curious, `$` denotes reserved keywords used for controlling how the Branch service behaves)
+
+
+| **Parameter** | **Meaning**
+| ~channel | The channel on which the link was shared, specified at link creation time
+| ~feature | The feature, such as `invite` or `share`, specified at link creation time
+| ~tags | Any tags, specified at link creation time
+| ~campaign | The campaign the link is associated with, specified at link creation time
+| ~stage | The stage, specified at link creation time
+| ~creation_source | Where the link was created ('API', 'Dashboard', 'SDK', 'iOS SDK', 'Android SDK', or 'Web SDK')
+| +referrer | The referrer for the link click, if a link was clicked
+| +phone_number | The phone number of the user, if the user texted himself/herself the app
+| +is_first_session | Denotes whether this is the first session (install) or any other session (open)
+| +clicked_branch_link | Denotes whether or not the user clicked a Branch link that triggered this session
 
 
 {% endif %}
@@ -121,23 +141,7 @@ branch.initSession(branchReferralInitListener, this.getIntent().getData(), this)
 
 **NOTE** if you're calling this inside a fragment, please use getActivity() instead of passing in `this`. Also, `this.getIntent().getData()` refers to the data associated with an incoming intent.
 
-On Android, you also need to be sure to properly close the session inside `onStop` with a `branch.closeSession()`. This helps us manage a session across activities.
-
-{% highlight java %}
-@Override
-protected void onStop() {
-    super.onStop();
-    branch.closeSession();
-}
-{% endhighlight %}
-
-{% protip title="Use Branch in all of your activities" %}
-Every activity that will use Branch in some way should include Branch SDK methods in both `onStart()` and `onStop()`. Don't forget `closeSession()` in every activity with Branch! 
-{% endprotip %}
-
-{% endif %}
-
-#### Branch-provided data parameters
+#### Branch-provided data parameters in callback
 
 Previously, Branch did not return any information to the app if `initSession` was called but the user hadn't clicked on a link. Now Branch returns explicit parameters every time. Here is a list, and a description of what each represents.
 
@@ -157,3 +161,71 @@ Previously, Branch did not return any information to the app if `initSession` wa
 | +phone_number | The phone number of the user, if the user texted himself/herself the app
 | +is_first_session | Denotes whether this is the first session (install) or any other session (open)
 | +clicked_branch_link | Denotes whether or not the user clicked a Branch link that triggered this session
+
+#### Automatic Session Management
+
+Starting from Branch SDK version 1.5.7, there is no need for initialising and closing session with the new _automatic session management_. Automatic session management can work only with API level 14 and above, so make sure that your `minSdkVersion` is 14 or above.
+
+**Requirement**
+```xml
+<uses-sdk
+    android:minSdkVersion="14"
+       ------------        />
+```
+
+Once you do any of the below, there is no need to close or init sessions in your Activities. Branch SDK will do all that for you. You can get your Branch instance at any time as follows.
+
+```java
+  Branch branch = Branch.getInstance();
+```
+
+Branch SDK can do session management for you if you do one of the following:
+
+##### Common: you do not use Application class
+
+If you are not creating or using an Application class throughout your project, all you need to do is declare `BranchApp` as your application class in your manifest.
+
+```xml
+ <application
+-----
+android:name="io.branch.referal.BranchApp">
+```
+
+##### Rarer: you already use the Application class
+
+If you already have an Application class then extend your application class with `BranchApp`.
+
+```java
+public class YourApplication extends BranchApp
+```
+
+##### Very rare: you already use and extend the Application class
+
+If you already have an Application class and don't want to extend it from `BranchApp` then create a Branch instance in your Application's `onCreate()` method.
+
+```java
+public void onCreate() {
+    super.onCreate();
+    if (!isDebug) {
+        Branch.getInstance(this);
+    } else {
+        Branch.getTestInstance(this);
+    }
+}
+```
+
+#### Close session (session tracking to support for minSdkVersion < 14)
+
+Note: There is no need to use this method if you use _automatic session management_ as described above and only support minSdkVersion >= 14
+
+Required: Every activity that will use Branch in some way should include Branch SDK methods in both `onStart()` and `onStop()`. Don't forget `closeSession()` in every activity with Branch!
+
+{% highlight java %}
+@Override
+protected void onStop() {
+    super.onStop();
+    branch.closeSession();
+}
+{% endhighlight %}
+
+{% endif %}
