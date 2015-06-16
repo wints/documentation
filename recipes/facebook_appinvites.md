@@ -138,19 +138,18 @@ Here's how to build it:
 {% endhighlight %}
 
 {% highlight objc %}
-- (BOOL)application:(UIApplication *)application
-            openURL:(NSURL *)url
-  sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
-    BOOL wasHandled = [[Branch getInstance] handleDeepLink:url];
-    if (!wasHandled)
-        [[FBSDKApplicationDelegate sharedInstance] application:application
-                                                       openURL:url
-                                             sourceApplication:sourceApplication
-                                                    annotation:annotation];
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+{
+    [[Branch getInstance] initSessionWithLaunchOptions:launchOptions
+                            andRegisterDeepLinkHandler:^(NSDictionary *params, NSError *error) {
+        if ([[params objectForKey:@"+clicked_branch_link"] boolValue]) {
+            // show personal welcome
+        }
+    }];
     
-    return wasHandled;
+    return [[FBSDKApplicationDelegate sharedInstance] application:application
+                                    didFinishLaunchingWithOptions:launchOptions];
 }
-
 {% endhighlight %}
 
 {% highlight objc %}
