@@ -133,7 +133,7 @@ public void onNewIntent(Intent intent) {
 }
 {% endhighlight %}
 
-
+Side note: This is a requirement because of the new Facebook AppLinks change. Facebook doesn't open up the browser anymore and just calls the URI to open the app directly. This prevented Branch clicks from being registered. To support it, we pass that link click id through the URI scheme to Branch, and send that back to the app, creating a 'click' without actually seeing a click. Android does a very poor job of clearing out intents that were previously called, so this helps ensure that once a URI scheme is called and consumed, it won't trigger deep linking anymore.
 
 {% highlight java %}
 branch.initSession(branchReferralInitListener, this.getIntent().getData(), this);
