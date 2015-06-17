@@ -10,7 +10,7 @@ Facebook launched it's new App Invites feature as an alternative to sharing to t
 
 {% image src='/img/recipes/appinvites/appinvite.png' third center alt='app invite' %}
 
-{% protip title="Still need to integrate Branch or Facebook?" %}This guide assumes that you have already integrated Branch and are just curious how to use Branch with App Invites. If you need to integrate Branch still, jump to "[Integrating the SDK](/recipes/quickstart_guide/{{page.platform}}/)". If you need integrate Facebook, you can find instructions {% if page.ios %}[in this guide](https://developers.facebook.com/docs/ios/getting-started).{% endif %}{% if page.android %}[in this guide](https://developers.facebook.com/docs/android/getting-started).{% endif %}
+{% protip title="Still need to integrate Branch or Facebook?" %}This guide assumes that you have 1. already [integrated Branch](/recipes/quickstart_guide/ios/) and 2. configured your app to [send IDFA or GAID](/recipes/submitting_apps/ios/). These are prerequisites to install ads, so please do them first. If you need integrate Facebook, you can find instructions {% if page.ios %}[in this guide](https://developers.facebook.com/docs/ios/getting-started).{% endif %}{% if page.android %}[in this guide](https://developers.facebook.com/docs/android/getting-started).{% endif %}
 {% endprotip %}
 
 ## One time configuration
