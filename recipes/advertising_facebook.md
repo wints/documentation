@@ -90,6 +90,10 @@ The second chart is for measuring conversion funnels for this ad. If you setup a
 {% image src='/img/recipes/deeplink_ads/conversion_funnel.png' full nofloat alt='Facebook Example Ad' %}
 
 
+
+{% ingredient dashboard_setup/facebook_auth_issues %}{% endingredient %}
+
+
 ## Conclusion
 
 It's pretty simple! You need to configure the dashboard, generate links for your ads, and setup your app to track installs. You can optionally deep link straight to content based on the ad that the user clicked on!
