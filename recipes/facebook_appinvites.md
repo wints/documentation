@@ -293,3 +293,6 @@ If Facebook is having trouble reading the AppLinks from the Branch link, you mig
 [OG tag tester](https://developers.facebook.com/tools/debug/og/object)
 
 If your OG tags look fine and you're still getting this error, please reach out to support@branch.io immediately.
+
+
+{% ingredient dashboard_setup/facebook_auth_issues %}{% override header %}### Common issues with Facebook Authentication{% endoverride %}{% endingredient %}
