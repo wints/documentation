@@ -75,7 +75,7 @@ The most common case is that you used the wrong key. You'll need to use the **At
 
 **My Localytics webhook returned a 404, but I have the correct ID**
 
-It takes 10 minutes to attribute after you enable the **Attribution ID**. Wait 10 minutes, then try again.
+It takes 10 minutes to attribute after you enable the **Attribution ID**. This means your Attribution ID is correct, despite the 404. Localytics just hasn't enabled 3rd party attribution as the 10 minutes haven't passed. Wait 10 minutes, then try again.
 
 **Branch shows a 202 but I don't see it in Localytics**
 
