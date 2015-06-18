@@ -23,9 +23,11 @@ Methodology 1 is a simpler integration, but provides less flexibility. Methodolo
     Successful integration of both the Mixpanel and Branch SDKs
     Methods mapped out inside apps that want to event data sent to Mixpanel
 
-The easiest way to send event data that comes in from Branch is to invoke `[Mixpanel track:@”my_event” properties:@{ @”key”: “value }];` inside any Branch callback. 
+The easiest way to send event data that comes in from Branch is to invoke the Mixpanel event tracking function inside any Branch callback.
 
 In this example, we'll take an instance of an install responsible by Branch. We let you know if an install (or referred session if a user already had the app) was caused by Branch, by examining the `referred` parameter.
+
+{% if page.ios %}
 
     [branch initSessionWithLaunchOptions:launchOptions andRegisterDeepLinkHandler:^(NSDictionary *params, NSError *error) {
         if (!error) {
@@ -36,15 +38,54 @@ In this example, we'll take an instance of an install responsible by Branch. We 
         }
 	}];
 
+{% endif %}
+
+{% if page.android %}
+
+    String projectToken = YOUR-PROJECT-TOKEN // given via Mixpanel.
+
+    Branch.getInstance().initSession(new BranchReferralInitListener(){
+        @Override
+        public void onInitFinished(JSONObject referringParams, Branch.BranchError error) {
+            if (error == null) {
+                MixpanelAPI mp = MixpanelAPI.getInstance(getContext(), projectToken);
+                if (params.optBoolean("referred")) {
+                    mp.track("install", referringParams);
+                }
+            }
+        }
+
+{% endif %}
+
 Mixpanel would then receive the Branch install event, and you would know Branch is responsible because `referred` would equal `true` inside the `properties` argument.
 
 ### Identity And Customer Segments / Profiles
 
 Let's say you want to take it a step further and track Branch specific installs and users inside your segments for Mixpanel. We have support for that as well. The way to leverage that would be with the following:
 
-- After a successful Branch session, set an [identity]().
-- Set an identity in Mixpanel
-- Track events //todo
+- After a successful Branch session, set an [identity](https://dev.branch.io/recipes/quickstart_guide/ios/#identifying-your-users-optional-but-recommended).
+- Set an identity in [Mixpanel](http://mixpanel.github.io/mixpanel-android/com/mixpanel/android/mpmetrics/MixpanelAPI.html#identify-java.lang.String-)
+- Track events.
+
+Since you set identity depending on your user authentication flow, we'd recommend taking care of that first. When that's done, all you need to do is the following:
+
+{% if page.ios %}
+
+    [[Branch getInstance] userCompletedAction:@"purchase" withState:@{@"item":@"123-AB-456"}];
+    [[Mixpanel sharedInstance] track:@"purchase" properties:@{@"item":@"123-AB-456"}];
+
+{% endif %}
+
+{% if page.android %}
+
+    JSONObject data = new JSONObject();
+    data.put("item", "123-AB-456");
+
+	Branch.getInstance().userCompletedAction(“purchase”, data);
+	Mixpanel.getInstance().track("purchase", data);
+
+{% endif %}
+
 
 ## Track Through Webhooks
 	
