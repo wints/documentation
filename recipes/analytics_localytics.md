@@ -73,6 +73,10 @@ We'll address some commonly asked questions here.
 
 The most common case is that you used the wrong key. You'll need to use the **Attribution Id**, found under the Attribution Settings section of your Localytics dashboard. Navigate to the `Set Up Localytics` section for more information.
 
+**My Localytics webhook returned a 404, but I have the correct ID**
+
+It takes 10 minutes to attribute after you enable the **Attribution ID**. Wait 10 minutes, then try again.
+
 **Branch shows a 202 but I don't see it in Localytics**
 
 This is likely because 10 minutes haven't passed yet. Since your Localytics account is configred to accept 3rd party attributions, they have a 10 minute time window to accept, and will only display data after the 10 minute window has passed.
