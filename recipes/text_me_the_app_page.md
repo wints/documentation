@@ -30,4 +30,4 @@ The Branch Web SDK gives you the ability to quickly build a text-me-the-app feat
 {% ingredient web_sdk/send_sms_example %}{% endingredient %}
 
 ## Customizing SMS Messages
-{% ingredient sms_customization/SMS_Customization_Doc %}{% endingredient %}
+{% ingredient dashboard_setup/sms_customization %}{% endingredient %}
