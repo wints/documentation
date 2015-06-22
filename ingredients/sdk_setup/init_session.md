@@ -167,17 +167,17 @@ Previously, Branch did not return any information to the app if `initSession` wa
 Starting from Branch SDK version 1.5.7, there is no need for initialising and closing session with the new _automatic session management_. Automatic session management can work only with API level 14 and above, so make sure that your `minSdkVersion` is 14 or above.
 
 **Requirement**
-```xml
+{% highlight xml %}
 <uses-sdk
     android:minSdkVersion="14"
        ------------        />
-```
+{% endhighlight %}
 
 Once you do any of the below, there is no need to close or init sessions in your Activities. Branch SDK will do all that for you. You can get your Branch instance at any time as follows.
 
-```java
+{% highlight java %}
   Branch branch = Branch.getInstance();
-```
+{% endhighlight %}
 
 Branch SDK can do session management for you if you do one of the following:
 
@@ -185,34 +185,34 @@ Branch SDK can do session management for you if you do one of the following:
 
 If you are not creating or using an Application class throughout your project, all you need to do is declare `BranchApp` as your application class in your manifest.
 
-```xml
+{% highlight xml %}
  <application
 -----
 android:name="io.branch.referal.BranchApp">
-```
+{% endhighlight %}
 
 ##### Rarer: you already use the Application class
 
 If you already have an Application class then extend your application class with `BranchApp`.
 
-```java
+{% highlight java %}
 public class YourApplication extends BranchApp
-```
+{% endhighlight %}
 
 ##### Very rare: you already use and extend the Application class
 
 If you already have an Application class and don't want to extend it from `BranchApp` then create a Branch instance in your Application's `onCreate()` method.
 
-```java
+{% highlight java %}
 public void onCreate() {
     super.onCreate();
-    if (!isDebug) {
+    if (!BuildConfig.DEBUG) {
         Branch.getInstance(this);
     } else {
         Branch.getTestInstance(this);
     }
 }
-```
+{% endhighlight %}
 
 #### Close session (session tracking to support for minSdkVersion < 14)
 
