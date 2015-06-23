@@ -169,19 +169,13 @@ Starting from Branch SDK version 1.5.7, there is no need for initialising and cl
 **Requirement**
 
 {% highlight xml %}
-
-<uses-sdk
-    android:minSdkVersion="14"
-       ------------        />
-
+<uses-sdk android:minSdkVersion="14" />
 {% endhighlight %}
 
 Once you do any of the below, there is no need to close or init sessions in your Activities. Branch SDK will do all that for you. You can get your Branch instance at any time as follows.
 
 {% highlight java %}
-
 Branch branch = Branch.getInstance();
-
 {% endhighlight %}
 
 Branch SDK can do session management for you if you do one of the following:
@@ -191,9 +185,7 @@ Branch SDK can do session management for you if you do one of the following:
 If you are not creating or using an Application class throughout your project, all you need to do is declare `BranchApp` as your application class in your manifest.
 
 {% highlight xml %}
-
- <application android:name="io.branch.referal.BranchApp">
-
+<application android:name="io.branch.referal.BranchApp">
 {% endhighlight %}
 
 ##### Rarer: you already use the Application class
@@ -201,9 +193,7 @@ If you are not creating or using an Application class throughout your project, a
 If you already have an Application class then extend your application class with `BranchApp`.
 
 {% highlight java %}
-
 public class YourApplication extends BranchApp
-
 {% endhighlight %}
 
 ##### Very rare: you already use and extend the Application class
