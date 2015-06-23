@@ -53,9 +53,8 @@ You can set _isReferrable_ to **@YES** or **@NO** (Swift: **true** or **false**)
 
 1. **@YES** (_Swift_ **true**): Now a connection can be established between a referring user and a referred user during _any_ session, not just the very first time a user opens the app. This means that if a user signs up without clicking on a shared Branch link but later clicks on a link, the referring-referred connection is established. (In the example in part 3 below, if Bob's friend Amy had already found and opened the app on her own but later came back to it because Bob sent her a link, Bob is the referring user and Amy is the referred user.) There can only be one referring user for any given user (e.g. as soon as Amy clicks a link from Bob, Bob is her referrer and no subsequent shared Branch links will change that). There are specific use cases where you may want this flexibility--feel free to reach out if you have questions.
 
-2. **@NO** (_Swift_ **false**): If _isReferrable_ is set to **@NO**, your app will never track the relationship between referring users and referred users. While we're not sure why you wouldn't want such valuable information, it is certainly an option.
+2. **@NO** (_Swift_ **false**): If _isReferrable_ is set to **@NO**, your app will not allow attribution after the initial install event. This is the same as the default of omitting this option from the `initSession` call.
 
-Note that the default behavior when _isReferrable_ is not set is different from both @YES and @NO. It relates the current user to a referring user ONLY for the very first open (aka "Install").
 {% endsection %}
 <!---    /iOS explanation 2 -->
 
@@ -88,9 +87,8 @@ You can set the `isReferrable` argument to **true** or **false**, and the behavi
 
 1. **true** Now a connection can be established between a referring user and a referred user during _any_ session, not just the very first time a user opens the app. This means that if a user signs up without clicking on a shared Branch link but later clicks on a link, the referring-referred connection is established. (In the example in part 3 below, if Bob's friend Amy had already found and opened the app on her own but later came back to it because Bob sent her a link, Bob is the referring user and Amy is the referred user.) There can only be one referring user for any given user (e.g. as soon as Amy clicks a link from Bob, Bob is her referrer and no subsequent shared Branch links will change that). There are specific use cases where you may want this flexibility--feel free to reach out if you have questions.
 
-2. **false**: If _isReferrable_ is set to **false**, your app will never track the relationship between referring users and referred users. While we're not sure why you wouldn't want such valuable information, it is certainly an option.
+2. **false**: If _isReferrable_ is set to **false**, your app will not allow attribution after the initial install event. This is the same as the default of omitting this option from the `initSession` call.
 
-Note that the default behavior when _isReferrable_ is not set is different from both @YES and @NO. It relates the current user to a referring user ONLY for the very first open (aka "Install").
 {% endsection %}
 
 {% endif %}
