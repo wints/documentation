@@ -20,7 +20,7 @@ For ads in Germany:
 `Klicken Sie auf das FlowerPower hier herunterladen {{ link }}`
 
 ####2. Custom Default for All Messages
-You can create your own custom default message that will be sent if the specific link someone clicks doesn't have a customized message itself. To customize the default message, edit the form under the *Text me the app page* tab in the general settings	.
+You can create your own custom default message that will be sent if the specific link someone clicks doesn't have a customized message itself. To customize the default message, edit the form under the *Text me the app page* tab in the general settings	.  
 ![Default Text](/img/ingredients/dashboard_setup/default_message.png)
 
 _Example:_  
@@ -36,4 +36,27 @@ If a developer doesn't specify a link specific message or a custom default, SMS 
 #### Reference:
 - The tag _\{\{ link \}\}_ is replaced with your Branch link when sent
 - The key `$custom_sms_text` is used for creating link specific custom SMSs
-- *Advanced:* In both the link specific custom messages and the custom default message, there is support for other liquid tags like _\{\{ link.channel \}\}_ or _\{\{ link.campaign \}\}_
+
+#### Advanced: Other Liquid Tags
+In both the link specific custom messages and the custom default message, there is support for other liquid tags like   _\{\{ link.channel \}\}_ or _\{\{ link.campaign \}\}_. The customization options are only limited to your imagination.
+
+Make sure to format the liquid tag with the link.data prefix before your key value.
+
+E.g. _\{\{ link.data.title \}\}_
+
+_Example:_  
+Dmitri is creating Branch links to deeplink to each of the different flowers in his app FlowerPower. He creates each link with a key/value pair of the key _flower_ and the flower name. 
+
+E.g. `Flower : Rose`, `Flower : Tulip`
+
+He wants to customize his SMS messages based on name of the flower so he sets his custom link messages as:  
+
+_\{\{ link.data.flower \}\}s on the mind? Click here to buy some for your home on FlowerPower! \{\{ link \}\}_  
+![Key/Value Pair](/img/ingredients/dashboard_setup/key_value.png)
+
+#### Advanced: Default Replacements for Liquid Tags
+If a specific tag isn't always going to be filled, you can use a `|` character to specify a default to fallback on if the tag is missing from your link dictionary.
+
+E.g. _\{\{ link.data.author \| default:"Alex" \}\}_
+
+If the _link.data.author_ information isn't found, the tag will just be replaced with _Alex_ instead of being replaced by an empty string.
