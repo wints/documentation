@@ -1,6 +1,6 @@
 ---
 type: recipe
-title: Your First Marketing Link
+title: Your first marketing link
 platforms:
 - ios
 - android
@@ -8,19 +8,20 @@ platforms:
 
 ## Getting Started
 
-Branch Links enable deep linking, install attribution, and in-depth analytics. While configuring your apps--whether Android, iOS or web--enables you to be much more powerful, basic links can be set up before writing a line of code.
+Branch links can be created and shared without writing a line of code. Once you've built a link, we'll walk you through [installing the Branch SDK](/recipes/quickstart_guide/{{page.platform}}/) for powerful data insights.
 
-You can do this from the [Branch Dashboard](https://dashboard.branch.io/). We will first walk you through creating an app, then proceed to link creation.
+Please log in to the [Branch Dashboard](https://dashboard.branch.io/). First, enter a little information about your app and where to send users on different platforms, then we'll generate the link.
 
 ## Basic Setup
 {% ingredient dashboard_setup/app_name %}{% endingredient %}
 {% ingredient dashboard_setup/web_url %}{% endingredient %}
 {% ingredient dashboard_setup/store_or_custom_url %}{% endingredient %}
 
-That's the end of the required setup for the Dashboard! The dashboard is incredibly powerful, so if you want to dive in deeper, definitely check out [Configuring the Dashboard](/domains/configuring_the_dashboard/{{page.platform}}/) for the full setup.
+That's the end of the required setup for the Dashboard! The dashboard is incredibly powerful, so if you want to dive in deeper, definitely check out [Dashboard pro tips](/recipes/dashboard_pro_tips/{{page.platform}}/) for the full setup.
 
 
-## Creating your Link
+
+## Creating Your Branch Link
 
 {% ingredient dashboard_links/creating_links %}
 	{% override screenshot_description %}One example description if you want to treat this guide is: "Marketing our launch on Facebook."{% endoverride %}
@@ -44,12 +45,13 @@ That's the end of the required setup for the Dashboard! The dashboard is incredi
 <!--- /Creating your Link -->
 
 
-## Conclusion and Advanced Options
+## Conclusion And Next Steps
 
-{% ingredient dashboard_links/no_sdk %}{% endingredient %}
+You now have a link that will track clicks based on the channel, campaign and any other tags you create. {% section alias %}It has a custom ending (as opposed to random characters).{% endsection %} It's properly formatted for social media.
 
-{% ingredient recipe_preview/incentivized_referral_program %}{% endingredient %}
-{% ingredient recipe_preview/personalized_invite_system %}{% endingredient %}
-{% ingredient recipe_preview/influencers %}{% endingredient %}
-{% ingredient recipe_preview/channel_tags %}{% endingredient %}
-{% ingredient recipe_preview/contact_us %}{% endingredient %}
+The Dashboard's [Summary](https://dashboard.branch.io/#) page, specifically the "Click Flow" chart, can now show you meaningful results! Note all the filters in the screenshot below:
+
+The next step is [integrating the SDK](/recipes/quickstart_guide/{{page.platform}}/) where we'll set up deeplinking and collect statistics on app installs and opens. 
+
+{% image src="/img/ingredients/dashboard_links/click_flow_no_sdk.png" 3-quarters center alt="click flow no open/install" %}
+

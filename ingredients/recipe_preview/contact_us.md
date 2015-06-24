@@ -1,2 +1,2 @@
 
-And as always, please email us at [contact@branchmetrics.io](mailto:contact@branchmetrics.io) if you have any questions!
+Questions, comments and love letters are always welcome at [support@branchmetrics.io](mailto:support@branchmetrics.io).

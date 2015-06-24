@@ -1,6 +1,6 @@
 ---
 type: recipe
-title: Dynamic Link Creation
+title: Dynamic link creation
 hide_platform_selector: true
 ---
 
@@ -25,15 +25,15 @@ We covered two methods of dynamically creating links. But there's so much more y
 	{% override platform %}ios{% endoverride %}
 {% endingredient %}
 
-{% ingredient recipe_preview/personalized_invite_system %}
+{% ingredient recipe_preview/personalized_welcome %}
 	{% override platform %}ios{% endoverride %}
 {% endingredient %}
 
-{% ingredient recipe_preview/incentivized_referral_program %}
+{% ingredient recipe_preview/referral_links_with_incentives %}
 	{% override platform %}ios{% endoverride %}
 {% endingredient %}
 
-{% ingredient recipe_preview/mobile_web_smart_banner %}
+{% ingredient recipe_preview/app_download_banner %}
 	{% override platform %}ios{% endoverride %}
 {% endingredient %}
 

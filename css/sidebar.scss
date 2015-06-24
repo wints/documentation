@@ -1,10 +1,23 @@
 .sidebar {
 	background-color: #F4F4F4;
+	border-left: 3px solid #F4F4F4;
 	padding: 15px;
+	margin-bottom:15px;
+}
+
+.sidebar.sidebar-border-cornflower {
+	border-color: #83C8E4;
+}
+
+.sidebar.sidebar-border-hippie_blue {
+	border-color: #5691AD;
+}
+
+.sidebar.sidebar-border-blumine {
+	border-color: #205E72;
 }
 
 .sidebar-group {
-
 	ul {
 		padding-left: 20px;
 		list-style-type: none;

@@ -1,1 +1,1 @@
-* [**See a list of your top influencers**](/domains/analytics_and_custom_events/{% section platform %}{{page.platform}}{% endsection %}/#influencers-your-best-users) whose shared links are driving the most installs
+* [**See a list of your top influencers**](/recipes/dashboard_pro_tips/{% section platform %}{{page.platform}}{% endsection %}/#influencers-your-best-users) whose shared links are driving the most installs

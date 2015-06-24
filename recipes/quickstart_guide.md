@@ -1,14 +1,12 @@
 ---
 type: recipe
-title: "Sharing & Deeplink Routing"
+title: "Integrating the SDK"
 platforms:
 - ios
 - android
-overview: "This quickstart guide will walk you through the minimum setup for an SDK integration. With only a few lines of code you'll have the ability to track installs by platform, campaign, etc. You can then also create links from the dashboard or add another line of code to programmatically create links via the SDKS."
+overview: "This quick-start guide will walk you through the minimum setup for an SDK integration. With only a few lines of code you'll have the ability to track installs by platform, campaign, etc. You can then also create links from the dashboard or add another line of code to programmatically create links via the SDK."
 ---
-
-{% image src='/img/ingredients/analytics_and_custom_events/dashboard_summary.png' 3-quarters center alt='the goal' %}
-
+{% protip title='Skip a beat' %}If you've completed [Your first marketing link](/recipes/your_first_marketing_link/{{page.platform}}/) then you can skip straight down to [URI Scheme](/recipes/quickstart_guide/{{page.platform}}/#uri-scheme){% endprotip %}
 
 ## Configuring the Dashboard for your {{ page.platform_formatted }} app
 {% ingredient dashboard_setup/app_name %}{% endingredient %}
@@ -21,9 +19,10 @@ overview: "This quickstart guide will walk you through the minimum setup for an 
 <!--- /Configuring the Dashboard-->
 
 
+
 ## Configuring your {{ page.platform_formatted }} app
 {% ingredient sdk_setup/installing_the_sdk %}
-  {% override telephony %}[here](/domains/configuring_client_apps/{{page.platform}}/#installing-the-sdk).{% endoverride %}
+  {% override telephony %}[here](/img/ingredients/configuring_the_client/ios_core_telephony.gif).{% endoverride %}
 {% endingredient %}
 {% ingredient sdk_setup/branch_key %}{%override screenshot%}{%endoverride%}{% endingredient %}
 {% ingredient sdk_setup/uri_scheme %}
@@ -40,7 +39,7 @@ overview: "This quickstart guide will walk you through the minimum setup for an 
 <!--- /Configuring the Client-->
 
 
-## Creating Links Programmatically
+## Creating Links Programmatically (Optional)
 
 {% ingredient sdk_links/creating_links %}{% override header %}{% endoverride %}{% endingredient %}
 
@@ -48,18 +47,14 @@ overview: "This quickstart guide will walk you through the minimum setup for an 
 You can also use the data to link directly to content! Instead of "foo": "bar", you could pass in "{% if page.ios %}pictureId{% endif %}{% if page.android %}picture_id{% endif %}": "1234", then when a user clicks on a link you can open the app straight to picture with Id 1234. Keep reading...
 {% endprotip %}
 
-## Routing within your {{page.platform_formatted}} App
+## Routing within your {{page.platform_formatted}} App (Optional)
 
 {% ingredient sdk_routing/routing %}{% endingredient %}
 
 
 ## Conclusion
 
-Now that you've completed the basic integration, you can **skip steps one (Configuring the Dashboard) and two (Configuring the Client) in the following guides**. Next steps:
+Congratulations! You're now up and running with Branch. To finish up, we'll walk you through the data you're seeing in your dashboard in [Link and Install Attribution](/recipes/measuring_installs/{{page.platform}}/).
 
-{% ingredient recipe_preview/measuring_installs %}{%endingredient%}
-{% ingredient recipe_preview/personalized_invite_system %}{%endingredient%}
-{% ingredient recipe_preview/deeplinked_ads %}{%override ending%} **(Skip Steps 1 and 3)**{%endoverride%}{%endingredient%}
-{% ingredient recipe_preview/incentivized_referral_program %}{%endingredient%}
 {% ingredient recipe_preview/contact_us %}{%endingredient%}
 
