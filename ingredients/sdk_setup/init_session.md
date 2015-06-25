@@ -253,4 +253,5 @@ Previously, Branch did not return any information to the app if `initSession` wa
 | +is_first_session | Denotes whether this is the first session (install) or any other session (open)
 | +clicked_branch_link | Denotes whether or not the user clicked a Branch link that triggered this session
 
+
 {% endif %}
