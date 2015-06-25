@@ -100,11 +100,11 @@ Previously, Branch did not return any information to the app if `initSession` wa
 
 Branch must be notified when the app opens and when it closes, so that we know when to query the API for a new deep link. We recently discovered an Android mechanism that was exposed in version 14, that allows us to track behind-the-scenes when the app is opened and closed. It makes the integration **a lot** easier, so we've split it out from the legacy integration.
 
-If you support below 14
+If you support below 14, you'll want to skip this section and head to [this one right below](initialization-to-support-android-pre-14-harder).
 
 ### Initialization to support Android 14+ (4.0+) (easy)
 
-To receive the deep link parameters from the Branch SDK, call initSession and pass in the BranchReferralInitListener. This will return the dictionary of referringParams associated with the link that was just clicked. You can call this anywhere at any time to get the params. I
+To receive the deep link parameters from the Branch SDK, call initSession and pass in the BranchReferralInitListener. This will return the dictionary of referringParams associated with the link that was just clicked. You can call this anywhere at any time to get the params.
 
 #### Initialize Branch lifecycle
 
@@ -118,24 +118,24 @@ Once you do any of the below, there is no need to close or init sessions in your
 
 Branch SDK can do session management for you if you do one of the following:
 
-##### Most common: you do not use Application class
-
+{% tabs %}
+{% tab common %}
 If you are not creating or using an Application class throughout your project, all you need to do is declare `BranchApp` as your application class in your manifest.
 
 {% highlight xml %}
  <application
     android:name="io.branch.referal.BranchApp">
 {% endhighlight %}
-
-##### Rarer: you already use the Application class
-
+{% endtab %}
+{% tab uncommon %}
 If you already have an Application class then extend your application class with `BranchApp`.
 
 {% highlight java %}
 public class YourApplication extends BranchApp
 {% endhighlight %}
-
-OR If you already have an Application class and don't want to extend it from `BranchApp` then create a Branch instance in your Application's `onCreate()` method.
+{% endtab %}
+{% tab rare %}
+If you already have an Application class and don't want to extend it from `BranchApp` then create a Branch instance in your Application's `onCreate()` method.
 
 {% highlight java %}
 public void onCreate() {
@@ -143,6 +143,8 @@ public void onCreate() {
     Branch.getInstance(this);
 }
 {% endhighlight %}
+{% endtab %}
+{% endtabs %}
 
 #### Register deep link router
 
