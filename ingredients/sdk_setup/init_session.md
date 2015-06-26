@@ -124,7 +124,7 @@ If you are not creating or using an Application class throughout your project, a
 
 {% highlight xml %}
  <application
-    android:name="io.branch.referal.BranchApp">
+    android:name="io.branch.referral.BranchApp">
 {% endhighlight %}
 {% endtab %}
 {% tab uncommon %}
