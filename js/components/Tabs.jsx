@@ -44,7 +44,7 @@ var Tabs = React.createClass({
 
 		return (
 			<div className="tabs">
-				<div className="row">
+				<div>
 					{ this.props.children[this.state.active] }
 				</div>
 				<div className="row switcher">
