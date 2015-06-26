@@ -18,7 +18,7 @@ For **Swift**, you will need to add a bridging header in order to use Branch in 
 There are a few pieces that **must** be in place. First, open your project's **AppDelegate.m** (or **AppDelegate.swift**) file.
 
 * Add `#import "Branch.h"` at the top of the file (Objective-C only)
-* Find the line which reads: 
+* Find the line which reads:
 
 {% tabs %}
 {% tab objective-c %}
@@ -33,7 +33,7 @@ func application(application: UIApplication, didFinishLaunchingWithOptions launc
 {% endtab %}
 {% endtabs %}
 
-and paste the following right below it: 
+and paste the following right below it:
 
 {% tabs %}
 {% tab objective-c %}
@@ -135,7 +135,7 @@ public class YourApplication extends BranchApp
 {% endhighlight %}
 {% endtab %}
 {% tab rare %}
-If you already have an Application class and don't want to extend it from `BranchApp` then create a Branch instance in your Application's `onCreate()` method.
+If you already have an Application class and don\'t want to extend it from `BranchApp` then create a Branch instance in your Application\'s `onCreate()` method.
 
 {% highlight java %}
 public void onCreate() {
@@ -177,7 +177,7 @@ public void onNewIntent(Intent intent) {
 
 Side note: This is a requirement because of the new Facebook AppLinks change. Facebook doesn't open up the browser anymore and just calls the URI to open the app directly. This prevented Branch clicks from being registered. To support it, we pass that link click id through the URI scheme to Branch, and send that back to the app, creating a 'click' without actually seeing a click. Android does a very poor job of clearing out intents that were previously called, so this helps ensure that once a URI scheme is called and consumed, it won't trigger deep linking anymore.
 
-### Initialization to support Android pre-14 (harder) 
+### Initialization to support Android pre-14 (harder)
 
 Note: There is no need to use this section if you use _automatic session management_ as described above and only support minSdkVersion >= 14. Please skip to the [next section](#identifying-your-users-optional-but-recommended) and proceed. This section is only needed if you want to support pre-14.
 
