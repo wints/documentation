@@ -19,6 +19,7 @@ var LinkInternal = React.createClass({
 		}
 		var path = props.type ? [props.type, page_key] : [page_key],
 			isCurrentPath = props.current_path == path.join('/');
+
 		if (page.platforms[props.platform]) {
 			path.push(props.platform);
 		}
@@ -45,13 +46,21 @@ var GroupPages = React.createClass({
 		var pages = R.map(function(page) {
 			if(type == 'links'){
 				return (
-					<LinkExternal key={page.label} label={page.label}
-		                href={page.href} target={page.target} />);
+					<LinkExternal
+						key={page.label}
+						label={page.label}
+		                href={page.href}
+		                target={page.target} />);
 			}
 			else {
 				return (
-					<LinkInternal key={page} type={type} page_key={page}
-						group_data={props.group_data} current_path={props.current_path} />);
+					<LinkInternal
+						key={page}
+						type={type}
+						page_key={page}
+						group_data={props.group_data}
+						platform={props.platform}
+						current_path={props.current_path}/>);
 			}
 		});
 
@@ -76,7 +85,6 @@ var Sidebar = React.createClass({
 		var self = this;
 		var groups = R.map(function(group) {
 			if (!group.pages.length) { return; }
-			// console.log(self.props.site_map[group.type]);
 			return (<div className="sidebar-group" key={ group.title }>
 					<div className="sidebar-title">{ group.title }</div>
 					<GroupPages
