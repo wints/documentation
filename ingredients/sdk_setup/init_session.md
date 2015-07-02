@@ -17,7 +17,7 @@ There are a few pieces of code that must be in place. First, open your project's
 {% tabs %}
 {% tab objective-c %}
 {% highlight objc %}
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:....
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:...
 {% endhighlight %}
 {% endtab %}
 {% tab swift %}
@@ -44,7 +44,7 @@ Branch *branch = [Branch getInstance];
 {% endhighlight %}
 {% endtab %}
 {% tab swift %}
-For **Swift**, you will need to add a bridging header in order to use Branch in your project's files. For help on adding a bridging header, see [this StackOverflow answer](http://stackoverflow.com/a/28486246/1914567).
+For **Swift, you will need to add a bridging header in order to use Branch in your project. For help on adding a bridging header, see [this StackOverflow answer](http://stackoverflow.com/a/28486246/1914567).
 
 {% highlight swift %}
 let branch: Branch = Branch.getInstance()
@@ -69,7 +69,7 @@ branch.initSessionWithLaunchOptions(launchOptions, andRegisterDeepLinkHandler: {
 
 Open up your **splash activity** (or the activity you registered the intent for above), then add the onStart lifecycle method:
 
-% highlight java %}
+{% highlight java %}
 @Override
 public void onStart() {
 {% endhighlight %}

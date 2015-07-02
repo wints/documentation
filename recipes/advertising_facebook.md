@@ -48,8 +48,6 @@ In order for Branch to properly run a Facebook deeplinked ad campaign, you must 
 
 {% ingredient dashboard_links/custom_data %}{% endingredient %}
 
-{% ingredient dashboard_links/end %}{% endingredient %}
-
 
 ## Creating a Branch powered Facebook ad
 
