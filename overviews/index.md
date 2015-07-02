@@ -8,10 +8,10 @@ root_index: true
 
 Branch is a smart link for mobile apps with the following features:
 
-- *Deep linking* if the app is present or even for fresh installs
-- *Smart redirecting* from any platform like Facebook, Twitter, Pinterest, Email, SMS, Whatsapp, Messenger and anything you can imagine
-- *Lists content on app search portals* like Google App Indexing, Bing search through Facebook AppLinks, Apple Spotlight and more
-- *Measures clicks and downloads* so that you know how to optimize for growth
+- **Deep linking** if the app is present or even for fresh installs
+- **Smart redirecting** from any platform like Facebook, Twitter, Pinterest, Email, SMS, Whatsapp, Messenger and anything you can imagine
+- **Lists content on app search portals** like Google App Indexing, Bing search through Facebook AppLinks, Apple Spotlight and more
+- **Measures clicks and downloads** so that you know how to optimize for growth
 
 The links just work. In every situation.
 
