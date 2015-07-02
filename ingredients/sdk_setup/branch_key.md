@@ -13,14 +13,6 @@ Your app key can be retrieved on the [Settings](https://dashboard.branch.io/#/se
 1. In the newly added row, fill in "branch_key" for its key, leave type as String, and enter your app key obtained in above steps in its value column.
 1. Save the plist file.
 
-{% section screenshot %}
-#### Screenshot
-{% image src='/img/ingredients/sdk_setup/ios_branch_key_simple.png' alt='Setting Key in Plist Demo' %}
-{% endsection %}
-
-#### Animated Gif
-{% image src='/img/ingredients/sdk_setup/ios_branch_key_simple.gif' alt='Setting Key in Plist Demo' %}
-
 {% endif %}
 <!---       /iOS-specific Branch Key -->
 
@@ -36,7 +28,6 @@ Your app key can be retrieved on the [Settings](https://dashboard.branch.io/#/se
 <application>
     <!-- Other existing entries -->
 
-    <!-- Add this meta-data below; DO NOT change the android:value -->
     <meta-data android:name="io.branch.sdk.BranchKey" android:value="key_live_jbgnjxvlhSb6PGH23BhO4hiflcp3y8kx" />
     <meta-data android:name="io.branch.sdk.BranchKey.test" android:value="key_test_jkptOCZtmtxhOMZ11ynbXecdDCd93cbr" />
 </application>

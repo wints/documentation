@@ -16,7 +16,7 @@ You should [identify your users](/recipes/quickstart_guide/{{page.platform}}/#id
 
  
 ## Customizing and Tagging Links
-
+  
 {% ingredient sdk_links/channel %}{% endingredient %}
 {% ingredient sdk_links/tags %}{% endingredient %}
 {% ingredient sdk_links/feature %}{% endingredient %}

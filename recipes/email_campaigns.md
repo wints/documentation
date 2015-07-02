@@ -51,8 +51,6 @@ That's the end of the required setup for the Dashboard! The dashboard is incredi
 {% override picture %}{% image src="/img/ingredients/dashboard_links/custom_data_email.png" half right alt="Custom Data" %}{% endoverride %}
 {% endingredient %}
 
-{% ingredient dashboard_links/end %}{% endingredient %}
-
 This powerful link will now track clicks across platforms. Users who have the app (perhaps you beta testers if you're just launching!) will be linked straight to the app. Users who don't have the app will be taken to the {% if page.ios %}App{% endif %}{% if page.android %}Play{% endif %} Store to download your app. And any users who click this link on Desktop will be given the option to text themselves the app!
 <!--- /Creating your Link -->
 

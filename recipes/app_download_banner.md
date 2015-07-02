@@ -15,33 +15,11 @@ It's highly customizable. If you want simple, cross-platform download links that
 
 If you also want to pass data through the install process or deep link straight to content, check out the optional 3rd and 4th sections on [Configuring the Client for Deep Linking](/recipes/app_download_banner/{{page.platform}}/#optional-configuring-the-client-for-deep-linking) and [Routing: passing information from the Banner](/recipes/app_download_banner/{{page.platform}}/#optional-routing-passing-information-from-the-banner).
 
-## Configuring the Dashboard for your {{ page.platform_formatted }} app
-{% ingredient dashboard_setup/app_name %}{% endingredient %}
-{% ingredient dashboard_setup/web_url %}{% endingredient %}
-{% ingredient dashboard_setup/store_or_custom_url %}{% endingredient %}
-{% ingredient dashboard_setup/uri_scheme %}
-  	{% override client_uri %}For more details on finding/setting your URI scheme in the client, see the section below on [setting the client app's URI scheme](/recipes/app_download_banner/{{page.platform}}/#uri-scheme-1).{% endoverride %}
-	{% override optional %}**Note**: this is required if you want your smart banner to open the app. If, however, you simply want a banner that links to the {% if page.ios %}App{% endif %}{% if page.android %}Play{% endif %} Store (on mobile) or that allows users to text themselves the app (on desktop), you can skip this step.{% endoverride %}
-{% endingredient %}
-{% ingredient dashboard_setup/end_required %}{% endingredient %}
-
 ## The Smart Banner
 {% ingredient web_sdk/smart_banner %}{% override header %}{% endoverride %}{% endingredient %}
 {% protip title="Deeplinking through Install" %}
 This data dictionary containing `foo: 'bar'` etc is where you put data that you want passed through install. This is discussed in the sections on [Handle Deep Link](recipes/app_download_banner/{{page.platform}}/#optional-configuring-the-client-for-deep-linking) and [Routing](/recipes/app_download_banner/{{page.platform}}/#optional-routing-passing-information-from-the-banner) below.
 {% endprotip %} 
-
-## (Optional) Configuring the Client for Deep Linking
-{% ingredient sdk_setup/installing_the_sdk %}
-  {% override telephony %}[here](/img/ingredients/configuring_the_client/ios_core_telephony.gif).{% endoverride %}
-{% endingredient %}
-{% ingredient sdk_setup/branch_key %}{% override screenshot %}{% endoverride %}{% endingredient %}
-{% ingredient sdk_setup/uri_scheme %}
-  {% override dashboard_uri %}For more info on setting up a URI scheme on the Dashboard, check out the [section above](/recipes/app_download_banner/{{page.platform}}/#uri-scheme).{% endoverride %}
-{% endingredient %}
-{% ingredient sdk_setup/init_session %}{% endingredient %}
-{% ingredient sdk_setup/handle_deep_link %}{% endingredient %}
-{% ingredient sdk_routing/routing %}{% endingredient %}
 
 
 
