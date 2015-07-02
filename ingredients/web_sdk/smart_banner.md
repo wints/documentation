@@ -3,8 +3,6 @@
 
 {% image src='/img/ingredients/web_sdk/banner.png' 2-thirds center alt='Facebook block' %}
 
-Branch offers a highly customizable smart banner that works across platforms. Android and iOS users can install or open the app from one banner. Users can even be deep linked to content! Desktop users can choose to text themselves the app.
-
 {% protip title="This just works!" %}
 This short snippet of code below is enough to add a web banner to both your desktop and mobile web pages! Of course, you'll want to configure it, so check out both the **Smart Banner Options** and **Link Options** below.
 {% endprotip %}

@@ -2,7 +2,7 @@
 {% section android_url %}
 ### Android Play Store override - $android_url
 
-When a user doesn't have your app and clicks a link on Android, by default the user is taken to the [Play Store or Custom URL](/recipes/quickstart_guide/android/#play-store-or-custom-url) that you specified on the Dashboard. If you want to specify a different destination on a per-link basis, include a value for the `$android_url`.
+When a user doesn't have your app and clicks a link on Android, by default the user is taken to the Play Store or Custom URL that you specified on the Dashboard's [Link Settings](https://dashboard.branch.io/#/settings/link) page. If you want to specify a different destination on a per-link basis, include a value for the `$android_url`.
 
 <!---    iOS -->
 {% if page.ios %}

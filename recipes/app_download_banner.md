@@ -6,21 +6,18 @@ platforms:
 - android
 ---
 
-{% protip title="Have you already integrated?" %}This guide assumes that you haven't already integrated Branch and provides full step-by-step instructions. However, if you've already completed Step 1 of our quickstart guide, [Integrating the SDK](/recipes/quickstart_guide/{{page.platform}}/), then you can skip Step 1! Jump to Step 2, [The Smart Banner](/recipes/app_download_banner/{{page.platform}}/#the-smart-banner). (You can also skip optional Step 3, Configuring the Client, if you've performed this step from the quickstart guide.)
-{% endprotip %}
-
 The mobile web smart banner is a powerful tool--it brings users in from the web experience where they are more easily lost, to your native mobile experience. On desktop, the banner can even drive users to mobile via our text-me-the-app function.
 
-It's highly customizable. If you want simple, cross-platform download links that just work, follow the first two sections on [configuring the dashboard](/recipes/app_download_banner/{{page.platform}}/#configuring-the-dashboard-for-your-{{page.platform}}-app) and [The Smart Banner](/recipes/app_download_banner/{{page.platform}}/#the-smart-banner).
+First, make sure you've configured your links on the Dashboard using the [Branch link configuration tool](https://start.branch.io/), then check out the code below.
 
-If you also want to pass data through the install process or deep link straight to content, check out the optional 3rd and 4th sections on [Configuring the Client for Deep Linking](/recipes/app_download_banner/{{page.platform}}/#optional-configuring-the-client-for-deep-linking) and [Routing: passing information from the Banner](/recipes/app_download_banner/{{page.platform}}/#optional-routing-passing-information-from-the-banner).
+If you also want to pass data through the install process or deep link straight to content, check out the optional 2nd section, [Routing: passing information from the Banner](/recipes/app_download_banner/{{page.platform}}/#optional-routing-passing-information-from-the-banner).
+
 
 ## The Smart Banner
 {% ingredient web_sdk/smart_banner %}{% override header %}{% endoverride %}{% endingredient %}
 {% protip title="Deeplinking through Install" %}
-This data dictionary containing `foo: 'bar'` etc is where you put data that you want passed through install. This is discussed in the sections on [Handle Deep Link](recipes/app_download_banner/{{page.platform}}/#optional-configuring-the-client-for-deep-linking) and [Routing](/recipes/app_download_banner/{{page.platform}}/#optional-routing-passing-information-from-the-banner) below.
+This data dictionary containing `foo: 'bar'` etc is where you put data that you want passed through install. This is discussed in the next section on [Routing](/recipes/app_download_banner/{{page.platform}}/#optional-routing-passing-information-from-the-banner).
 {% endprotip %} 
-
 
 
 ## (Optional) Routing: passing information from the Banner
