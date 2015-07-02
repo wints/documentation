@@ -17,12 +17,12 @@ There are a few pieces of code that must be in place. First, open your project's
 {% tabs %}
 {% tab objective-c %}
 {% highlight objc %}
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:...
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:
 {% endhighlight %}
 {% endtab %}
 {% tab swift %}
 {% highlight swift %}
-func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions:...
+func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions:
 {% endhighlight %}
 {% endtab %}
 {% endtabs %}
