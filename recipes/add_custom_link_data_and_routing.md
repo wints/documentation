@@ -10,7 +10,7 @@ platforms:
 {% ingredient sdk_links/custom_data %}{% endingredient %}
 
 {% protip title='Tip: Identify your users!'  %}
-You should [identify your users](/recipes/quickstart_guide/{{page.platform}}/#identifying-your-users-optional-but-recommended) so that you know who is sharing--and who is effectively driving the most installs and engagement.
+You should [identify your users](/recipes/quickstart_guide/{{page.platform}}/#identifying-your-users) so that you know who is sharing--and who is effectively driving the most installs and engagement.
 {% endprotip %}
 
 
