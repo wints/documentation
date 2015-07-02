@@ -18,6 +18,9 @@ To set up your URI Scheme, you'll need to open your project in XCode and complet
 1. Find URL Types and click the right arrow. (If it doesn't exist, right click anywhere and choose Add Row. Scroll down and choose URL Types)
 1. Add `myapp`, where _myapp_ is a unique string for your app, as an item in URL Schemes as below:
 
+{% image src='/img/ingredients/configuring_the_client/ios_uri_scheme.png' half center alt='URI in plist' %}
+
+
 {% endif %}
 <!---       /iOS-specific Branch Key -->
 
