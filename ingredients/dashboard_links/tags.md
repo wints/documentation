@@ -1,13 +1,14 @@
 
-### Tags: Channel, Campaign, Etc. (Optional -- highly recommended)
+### Analytics: Channel, Campaign, Etc
 
-The more information you enter, the better you'll be able to segment data on the Dashboard and in exports. We recommend setting Channel and Campaign. Tags allow you to easily add tags that don't need to be categorized.
+**optional** 
+
+The more information you enter, the better you'll be able to segment data on the Dashboard and in exports. We recommend setting Channel and Campaign. Tags is free form.
 
 {% section screenshot %}
-{% image src="/img/ingredients/dashboard_links/tags.png" half center alt="Link Tags" %}
+{% image src="/img/ingredients/dashboard_links/tags.png" half left alt="Link Tags" %}
 {% endsection %}
 
 {% section deep_link_data_url %}{% endsection %}
 
-*Hint: Press the 'comma' or 'return' key after each tag.*
 

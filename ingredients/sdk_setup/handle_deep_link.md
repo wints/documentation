@@ -1,7 +1,7 @@
 {% if page.ios %}
 ### Handle Deep Link
 
-In order for your app to properly handle deep links, and to allow Branch to work its magic and call the deepLinkHandler, you will need to add the following code within `application:openURL:sourceApplication:annotation:`:
+This method is necessary to receive a Branch parameter when the URI scheme is called and the app open immediately. It will automatically call the **Deep Link Handler** registered above. `application:openURL:sourceApplication:annotation:`:
 
 {% tabs %}
 {% tab objective-c %}
