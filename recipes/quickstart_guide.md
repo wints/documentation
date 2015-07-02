@@ -1,6 +1,6 @@
 ---
 type: recipe
-title: "Integrating the SDK"
+title: "Step 2: SDK Integration"
 platforms:
 - ios
 - android
