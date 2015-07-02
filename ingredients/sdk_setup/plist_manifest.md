@@ -1,7 +1,3 @@
-{% section explanation %}
-Now you need to add the Branch Key that you received on the Dashboard into your app.
-{% endsection %}
-
 {% if page.ios %}
 ### PList configuration
 
@@ -15,6 +11,12 @@ Your app key can be retrieved on the [Settings](https://dashboard.branch.io/#/se
 1. Save the plist file.
 
 #### Configure for deep linking
+
+To set up your URI Scheme, you'll need to open your project in XCode and complete the following.
+
+1. Click on YourProject-Info.plist on the left (or in Swift, Info.plist).
+1. Find URL Types and click the right arrow. (If it doesn't exist, right click anywhere and choose Add Row. Scroll down and choose URL Types)
+1. Add `myapp`, where _myapp_ is a unique string for your app, as an item in URL Schemes as below:
 
 {% endif %}
 <!---       /iOS-specific Branch Key -->

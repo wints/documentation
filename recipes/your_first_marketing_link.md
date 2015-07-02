@@ -1,6 +1,6 @@
 ---
 type: recipe
-title: Your first marketing link
+title: "Step 1: Your Branch links"
 platforms:
 - ios
 - android

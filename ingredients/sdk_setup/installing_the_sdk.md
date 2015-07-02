@@ -6,14 +6,10 @@
 For iOS, the easiest way to install the SDK is via Cocoapods. Add `pod "Branch"` to your podfile and run `pod install` from the command line.
 
 However, if you don't currently use Cocoapods, you can easily download and install our SDK.
+
 - To download an open-source copy, [grab the zip here](https://github.com/BranchMetrics/Branch-ios-sdk) or [clone our repo here](https://github.com/BranchMetrics/branch-ios-sdk).
 - You will need to drag and drop the Branch.framework file that you downloaded into your project. Be sure that "Copy items if needed" is selected.
 - Please import CoreTelephony.framework and AdSupport.framework
-
-{% protip title="Most accurate matching" %}
-To get the best experience with Branch, you should import AdSupport.framework. This allows us to leverage the IDFA for more accurate matching, and we can also identify users who return later after uninstalling the app.
-{% endprotip %}
-
 {% endif %}
 <!---       /iOS-specific installing the SDK -->
 

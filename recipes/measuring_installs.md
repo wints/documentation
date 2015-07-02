@@ -1,6 +1,6 @@
 ---
 type: recipe
-title: Link and install attribution
+title: "Step 3: The dashboard"
 platforms:
 - ios
 - android

@@ -1,15 +1,15 @@
 ---
 type: recipe
-title: "Integrating the SDK"
+title: "Step 2: SDK Integration"
 platforms:
 - ios
 - android
 overview: "After a few lines of code, you'll be ready to start using Branch links for deep linking and tracking downloads"
 ---
 
-## Configuring the links for your {{ page.platform_formatted }} app
+## Configuring the links
 
-First, please visit the [Branch link configuration tool](https://start.branch.io/) to setup all the redirection logic. It's an easy step by step guide.
+First, please visit the [Branch link configuration tool](https://start.branch.io/) to setup all the redirection logic.
 
 <!--- /Configuring the Dashboard-->
 

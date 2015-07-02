@@ -6,40 +6,26 @@ root_index: true
 
 ## Welcome to Branch!
 
-Branch is a **deeplinking and tracking technology** that helps mobile developers attribute organic and paid app installs, create drop-in invite & referral systems, and do smarter in-app sharing. We dynamically generate short URLs on the fly that pass and track data from the originating source through install, across devices, and across platform, identifying users through unique device fingerprinting. 
+Branch is a smart link for mobile apps with the following features:
 
-In other words, we allow you to create deeplinks that work through install - even first time app users can get deeplinked to the specific content that originally caused them to download the app (whether that content be a specific page associated with a direct marketing campaign, or a link to in-app content shared by a friend, or anywhere else the link sends them).
+- **Deep linking** if the app is present or even for fresh installs
+- **Smart redirecting** from any platform like Facebook, Twitter, Pinterest, Email, SMS, Whatsapp, Messenger and anything you can imagine
+- **Lists content on app search portals** like Google App Indexing, Bing search through Facebook AppLinks, Apple Spotlight and more
+- **Measures clicks and downloads** so that you know how to optimize for growth
 
-With the data attached to the link you can customize your user experience as well. Any data you'd like to use can be passed through install or open using Branch links. That means you can greet your user with a personalized message or give them some money off their first purchase.
+The links just work. In every situation.
 
-Let's get going! 
-
-
-## Guides
-
-We exist to help you grow your mobile app. More users, happier users, engaged users. Below is a quick introduction to our developer docs. They're meant to give you an idea of what's possible, and to provide the **minimum viable code** to inject these features into your app. If we're missing anything useful please drop us a line at support@branch.io. 
-
+[![Intro vid](/img/general/vid_preview.png)](https://www.youtube.com/watch?v=MXgLQ8QDXk8)
 
 ## Getting started
 
-In less than 15 minutes we'll guide you through creating a link with your preferred routing, installing the SDK so you can see activity on that link, and viewing that information in the dashboard.
+In less than 15 minutes you'll have your own Branch link with the ability to **redirect users** to your app, the App/Play Store or your website and **get powerful click, install and open metrics** by campaign and platform.
 
-At the end you'll have your own Branch link with the ability to **redirect users** to your app, the App/Play Store or your website and **get powerful click, install and open metrics** by campaign and platform.
+1. [**Your first link**](/recipes/your_first_marketing_link/{% section platform %}{{page.platform}}{% endsection %}/) -- create smart deep link for click analytics
+2. [**Integrate the SDK**](/recipes/quickstart_guide/{% section platform %}{{page.platform}}{% endsection %}/) -- basic install tracking and deeplinking through install
+3. [**Link and install attribution**](/recipes/measuring_installs/{% section platform %}{{page.platform}}{% endsection %}/) -- a dashboard introduction
 
-{% ingredient recipe_preview/your_first_marketing_link %}
-	{% override platform %}ios{% endoverride %}
-{% endingredient %}
-
-{% ingredient recipe_preview/quickstart_guide %}
-	{% override platform %}ios{% endoverride %}
-{% endingredient %}
-
-{% ingredient recipe_preview/measuring_installs %}
-	{% override platform %}ios{% endoverride %}
-{% endingredient %}
-
-
-## Deeplinked Features
+## What to build next
 
 Let users share in-app content. iHeartRadio’s shared links open straight to radio stations, Allthecooks’ shared links open straight to recipes. Did we mention that links work across platforms?
 
@@ -63,9 +49,8 @@ Let users share in-app content. iHeartRadio’s shared links open straight to ra
 	{% override platform %}ios{% endoverride %}
 {% endingredient %}
 
-
  
-## Testing and Releasing
+## Testing and releasing
 
 We're developers too, so we know how fun this is. Test out your Branch integration before releasing by following our helpful hints here.
 
@@ -78,8 +63,7 @@ We're developers too, so we know how fun this is. Test out your Branch integrati
 {% endingredient %}
 
 
-
-## Customize Your Integration
+## Details for advanced users
 
 Ready to take your links to the next level? Harness the full power of Branch's **customizable metadata**. You can find additional information, code snippets and advanced features in this section. Don't miss out on:
 
@@ -107,8 +91,7 @@ Ready to take your links to the next level? Harness the full power of Branch's *
 {% ingredient recipe_preview/webhooks_and_exporting_data %}{% endingredient %}
 
 
-
-## Third-Party Integrations
+## Third-party integrations
 
 {% ingredient recipe_preview/analytics_adjust %}
 	{% override platform %}ios{% endoverride %}
@@ -121,17 +104,16 @@ Ready to take your links to the next level? Harness the full power of Branch's *
 {% ingredient recipe_preview/analytics_mixpanel %}{% endingredient %}
 
 
+## Additional resources and references
 
-# Additional Resources (GitHub)
-
-## Full Stack, Drop-in Feature SDKs
+### Full Stack, Drop-in Feature SDKs
 
 * [**Branchified Overshare Sharing SDK**](https://github.com/BranchMetrics/overshare-deeplinking-kit)
 
 * [**Personalized Invite Feature SDK**](https://github.com/BranchMetrics/Branch-iOS-Invite-SDK)
 
 
-## Example Apps
+### Example Apps
 
 * [**Branchsters iOS**](https://github.com/BranchMetrics/Branchster-iOS) - app with sharing and deeplinking
 
@@ -140,7 +122,7 @@ Ready to take your links to the next level? Harness the full power of Branch's *
 * [**Branchsters Web**](https://github.com/BranchMetrics/Branchster-Web) - app with sharing and deeplinking
 
 
-## Core SDK Repositories and Reference Docs
+### Core SDK Repositories and Reference Docs
 
 * [**Android SDK**](https://github.com/BranchMetrics/Branch-Android-SDK)
 
@@ -158,7 +140,7 @@ Ready to take your links to the next level? Harness the full power of Branch's *
 
 * [**Adobe AIR SDK**](https://github.com/BranchMetrics/Branch-AIR-ANE-SDK)
 
-## Advanced
+### Advanced
 
 * [**Branch Preferred Partners**](https://github.com/BranchMetrics/Branch-Integration-Guides/blob/master/bpp-guide.md) - leverage Branch links for your own client apps
 
