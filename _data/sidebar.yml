@@ -46,6 +46,7 @@
       title: Third-Party Integrations
       pages:
         - advertising_facebook
+        - advertising_google
         - analytics_adjust
         - analytics_localytics
         - analytics_mixpanel
