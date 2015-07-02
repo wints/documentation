@@ -15,7 +15,7 @@ Branch is a smart link for mobile apps with the following features:
 
 The links just work. In every situation.
 
-[![Intro vid](/img/general/vid_preview.png)](https://www.youtube.com/watch?v=MXgLQ8QDXk8)
+{% youtube MXgLQ8QDXk8 %}
 
 ## Getting started
 
