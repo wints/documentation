@@ -69,14 +69,14 @@ Find the Activity you want to open up when a link is clicked (normally your spla
 
 #### Subclass the Branch activity
 
-Branch can automatically track the Android app lifecycle on API level 14 and above, so make sure that your `minSdkVersion` is 14. If you need to support pre-14, please see section about [session management below](#initialization-to-support-Android-pre-14).
+Branch can automatically track the Android app lifecycle on API level 14 and above, so make sure that your `minSdkVersion` is 14. If you need to support pre-14, please see section about [session management below](/recipes/quickstart_guide/android/#initialization-to-support-android-pre-14).
 
 {% highlight xml %}
  <application
     android:name="io.branch.referral.BranchApp">
 {% endhighlight %}
 
-If you already use an Application class or don't want to subclass your Application, you can choose from [the alternatives listed here](alternatives-to-application-subclass).
+If you already use an Application class or don't want to subclass your Application, you can choose from [the alternatives listed here](/recipes/quickstart_guide/android/#alternatives-to-application-subclass).
 
 {% endif %}
 <!---       /Android-specific Branch Key -->
