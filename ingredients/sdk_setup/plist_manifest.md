@@ -18,6 +18,9 @@ To set up your URI Scheme, you'll need to open your project in XCode and complet
 1. Find URL Types and click the right arrow. (If it doesn't exist, right click anywhere and choose Add Row. Scroll down and choose URL Types)
 1. Add `myapp`, where _myapp_ is a unique string for your app, as an item in URL Schemes as below:
 
+{% image src='/img/ingredients/configuring_the_client/ios_uri_scheme.png' half center alt='URI in plist' %}
+
+
 {% endif %}
 <!---       /iOS-specific Branch Key -->
 
@@ -69,14 +72,14 @@ Find the Activity you want to open up when a link is clicked (normally your spla
 
 #### Subclass the Branch activity
 
-Branch can automatically track the Android app lifecycle on API level 14 and above, so make sure that your `minSdkVersion` is 14. If you need to support pre-14, please see section about [session management below](#initialization-to-support-Android-pre-14).
+Branch can automatically track the Android app lifecycle on API level 14 and above, so make sure that your `minSdkVersion` is 14. If you need to support pre-14, please see section about [session management below](/recipes/quickstart_guide/android/#initialization-to-support-android-pre-14).
 
 {% highlight xml %}
  <application
     android:name="io.branch.referral.BranchApp">
 {% endhighlight %}
 
-If you already use an Application class or don't want to subclass your Application, you can choose from [the alternatives listed here](alternatives-to-application-subclass).
+If you already use an Application class or don't want to subclass your Application, you can choose from [the alternatives listed here](/recipes/quickstart_guide/android/#alternatives-to-application-subclass).
 
 {% endif %}
 <!---       /Android-specific Branch Key -->

@@ -48,6 +48,7 @@
         - advertising_facebook
         - advertising_google
         - analytics_adjust
+        - analytics_ga
         - analytics_localytics
         - analytics_mixpanel
     - type: reference

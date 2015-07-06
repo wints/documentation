@@ -33,7 +33,7 @@ If you already have an Application class and don\'t want to extend it from `Bran
 {% highlight java %}
 public void onCreate() {
     super.onCreate();
-    Branch.getInstance(this);
+    Branch.getAutoInstance(this);
 }
 {% endhighlight %}
 {% endtab %}

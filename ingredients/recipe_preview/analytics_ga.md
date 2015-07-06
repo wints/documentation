@@ -1,0 +1,1 @@
+* [**Branch + Google Analytics**](/recipes/analytics_ga/) -- Send Branch data to your Google Analytics dashboard. {% section ending %}{% endsection %}

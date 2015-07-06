@@ -21,9 +21,9 @@ The links just work. In every situation.
 
 In less than 15 minutes you'll have your own Branch link with the ability to **redirect users** to your app, the App/Play Store or your website and **get powerful click, install and open metrics** by campaign and platform.
 
-1. [**Your first link**](/recipes/your_first_marketing_link/{% section platform %}{{page.platform}}{% endsection %}/) -- create smart deep link for click analytics
-2. [**Integrate the SDK**](/recipes/quickstart_guide/{% section platform %}{{page.platform}}{% endsection %}/) -- basic install tracking and deeplinking through install
-3. [**Link and install attribution**](/recipes/measuring_installs/{% section platform %}{{page.platform}}{% endsection %}/) -- a dashboard introduction
+1. [**Your first link**](/recipes/your_first_marketing_link/{% section platform %}{{page.platform}}{% endsection %}) -- create smart deep link for click analytics
+2. [**Integrate the SDK**](/recipes/quickstart_guide/{% section platform %}{{page.platform}}{% endsection %}) -- basic install tracking and deeplinking through install
+3. [**Link and install attribution**](/recipes/measuring_installs/{% section platform %}{{page.platform}}{% endsection %}) -- a dashboard introduction
 
 ## What to build next
 
@@ -98,6 +98,8 @@ Ready to take your links to the next level? Harness the full power of Branch's *
 {% endingredient %}
 
 {% ingredient recipe_preview/advertising_facebook %}{% endingredient %}
+
+{% ingredient recipe_preview/analytics_ga %}{% endingredient %}
 
 {% ingredient recipe_preview/analytics_localytics %}{% endingredient %}
 
