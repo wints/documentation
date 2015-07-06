@@ -1,9 +1,7 @@
 
 ### SendSMS()
 
-You can read more about the SendSMS() method [here](https://github.com/BranchMetrics/web-sdk#sendsmsphone-linkdata-options-callback). 
-
-The main thing you need to know is that your web page should invoke this method with the following parameters:
+Now that you've initialized Branch, you can invoke the `SendSMS()` method when a user enters his or her phone number. Here are the parameters `sendSMS()` can take:
 
 {% highlight javascript %}
 branch.sendSMS(
@@ -29,9 +27,11 @@ branch.sendSMS(
             foo: 'bar'
         }
     },
-    { make_new_link: true }, // Default: false. If set to true, sendSMS will generate a new link even if one already exists.
+    { make_new_link: false }, // Default: false. If set to true, sendSMS will generate a new link even if one already exists.
     function(err) { console.log(err); }
 });
 {% endhighlight %}
 
-It really is that simple! 
+_You can read more about the SendSMS() method [here](https://github.com/BranchMetrics/web-sdk#sendsmsphone-linkdata-options-callback)._
+
+The example below includes all the code you need to add to your website in one snippet.

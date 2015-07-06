@@ -6,41 +6,34 @@ platforms:
 - android
 ---
 
-When users click your links on desktop, they have the option to text themselves the app. We provide this by default--just [create a test marketing link](https://dashboard.branch.io/#/marketing) and click it on your computer.
+When users click your links on desktop, they have the option to text themselves the app. We provide this by default--just [create a test marketing link](https://dashboard.branch.io/#/marketing) and click it on your computer. You can also use the [code on this page](/recipes/text_me_the_app_page/{{page.platform}}#sendsms-example) to create your own fully-branded text-me-the-app page. 
 
-#### Default text-me-the-app page
+_**LEFT:** This default page is provided by Branch. **RIGHT:** This page was created by Drafted and can be viewed [here](http://drft.us/l/5Rfz8GU0yO)._
 
-{% image src="/img/recipes/text_me_the_app/default.png" 2-thirds center alt="Default Page" %}
+{% image src="/img/recipes/text_me_the_app/default_and_drafted.png" center alt="Default Page" %}
 
-#### Customized text-me-the-app page
+The two-step setup process is simple:
 
-Using the code on this page, you can create your own fully-branded text-me-the-app page!
+1. Visit the [Branch link configuration tool](https://start.branch.io/). For `Desktop URL`, enter the page on your site that will include a text-me-the-app option.
+2. Use the customizable [code snippet below](/recipes/text_me_the_app_page/{{page.platform}}#sendsms-example) on any page(s) on your website to allow users to text themselves the app.
 
-The page below was created by Drafted and can be viewed [here](http://drft.us/l/5Rfz8GU0yO).
-
-{% image src="/img/recipes/text_me_the_app/drafted.png" 2-thirds center alt="Default Page" %}
-
-
-Better yet, you can completely customize the text-me-the-app page. To do so you must first have an app setup, then you'll need to use our handy Web SDK. Let's check it out!
-
-## Dashboard Setup
-
-{% ingredient dashboard_setup/app_name %}{% endingredient %}
-{% ingredient dashboard_setup/web_url %}{% endingredient %}
-{% ingredient dashboard_setup/store_or_custom_url %}{% endingredient %}
-{% ingredient dashboard_setup/custom_landing_page %}{% endingredient %}
-{% ingredient dashboard_setup/end_required %}{% endingredient %}
-
+{% protip title="Supports international SMS" %}
+Branch uses Twilio for our text-me-the-app feature. Thanks to Twilio, users can text themselves your app around the world!
+{% endprotip %}
 
 ## Web Setup
 
-The Branch Web SDK gives you the ability to quickly build a text-me-the-app feature. First you will need to initialize Branch via a snippet of code, then you will need to invoke the `SendSMS()` method when a user enters his or her phone number.
+**TL;DR** -- You can skip to the [code snippet below](/recipes/text_me_the_app_page/{{page.platform}}#sendsms-example) to implement this feature immediately.
+
 
 ### Initializing Branch on Your Web Page
+
 {% ingredient web_sdk/_initialization %}{% endingredient %}
 
 {% ingredient web_sdk/send_sms %}{% endingredient %}
 {% ingredient web_sdk/send_sms_example %}{% endingredient %}
+
+
 {% ingredient web_sdk/referring_link %}{% endingredient %}
 
 ## Customizing SMS Messages
