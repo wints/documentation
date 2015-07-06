@@ -99,7 +99,7 @@ Ready to take your links to the next level? Harness the full power of Branch's *
 
 {% ingredient recipe_preview/advertising_facebook %}{% endingredient %}
 
-{% ingredient recipe_preview/advertising_ga %}{% endingredient %}
+{% ingredient recipe_preview/analytics_ga %}{% endingredient %}
 
 {% ingredient recipe_preview/analytics_localytics %}{% endingredient %}
 
