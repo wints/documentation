@@ -1,4 +1,4 @@
-### Advanced: Filters
+## Advanced: Filters
 
 Filters allow you to specify when a webhook gets sent to your back-end based off criteria matches. The filters you choose are specified from the metadata found inside an event.
 

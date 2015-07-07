@@ -16,6 +16,7 @@ This short snippet of code below is enough to add a web banner to both your desk
 {% endoverride %}
 {% endingredient %}
 
+That's all you need to add the smart banner to your website! The rest of this page covers advanced options.
 
 #### Closing the App Banner Programmatically
 
