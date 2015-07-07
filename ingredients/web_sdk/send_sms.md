@@ -24,7 +24,6 @@ branch.sendSMS(
         channel: 'facebook',
         feature: 'dashboard',
         stage: 'new user',
-        type: 1,
         data: {
             foo: 'bar'
         }
