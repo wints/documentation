@@ -3,24 +3,36 @@ var fs = require('fs'),
 	B = require('bluebird'),
 	path = require('path');
 
+var platformTerms = require('./platform_terms');
+
 var utils = {};
+
+// Merges two objects where all values are arrays and keys are the same
+utils.mergeObject = function(originObject, mergeObject) {
+	var temp = originObject;
+	for (key in temp) {
+		temp[key] = temp[key].concat(mergeObject[key]);
+	}
+	return temp;
+}
 
 utils.walk = function(directoryPath) {
 	var results = [],
-		to_check = [];
+		to_check = [],
+		final_indexes = {'deflt': [], 'ios': [], 'android': []};
 	if (to_check.length < 1) { to_check = to_check.concat(fs.readdirSync(directoryPath)); }
 	if (to_check.indexOf('index.html') > -1) {
-		// console.log('Index added');
-		results = results.concat(utils.convertSubsectionsToJSON(directoryPath + '/index.html'));
+		if (path.basename(directoryPath) == 'ios') { final_indexes.ios = final_indexes.ios.concat(utils.convertSubsectionsToJSON(directoryPath + '/index.html')); }
+		else if (path.basename(directoryPath) == 'android') { final_indexes.android = final_indexes.android.concat(utils.convertSubsectionsToJSON(directoryPath + '/index.html')); }
+		else { final_indexes.deflt = final_indexes.deflt.concat(utils.convertSubsectionsToJSON(directoryPath + '/index.html')); }
 	}
 	for (var i = 0; i < to_check.length; i++) {
 		if (fs.lstatSync(directoryPath + '/' + to_check[i]).isDirectory()) {
-			results = results.concat(utils.walk(directoryPath + '/' + to_check[i]));
+			final_indexes = utils.mergeObject(final_indexes, (utils.walk(directoryPath + '/' + to_check[i])));
 		}
 	}
 	to_check = to_check.shift();
-	// console.log('results', results);
-	return results;
+	return final_indexes;
 }
 
 // Reads files and parses by h2/h3/h4 into JSON objects
@@ -33,7 +45,7 @@ utils.convertSubsectionsToJSON = function(filePath) {
 	var JSON_data = [];
 	var data = fs.readFileSync(filePath);
 	var $ = cheerio.load(data.toString());
-	$('h2, h3, h4').each(function(i, elem) {
+	$('h2, h3').each(function(i, elem) {
 		var JSON_obj = {};
 
 		dev_url = 'http://dev.branch.io';
@@ -47,7 +59,7 @@ utils.convertSubsectionsToJSON = function(filePath) {
 		// console.log('Link: ' + JSON_obj.id);
 
 		// Gets all elements between each header and outputs their text
-		JSON_obj.body = $(this).nextUntil('h2, h3, h4').not('script').text();
+		JSON_obj.body = $(this).nextUntil('h2, h3').not('script').text();
 		// console.log('Body: ' + JSON_obj.body);
 
 		JSON_data.push(JSON_obj);
@@ -72,4 +84,22 @@ utils.debounce = function(func, wait, immediate) {
 	};
 };
 
-module.exports = utils
+// Take in the form data and returns whether any of the words are ios/android specific to choose which index to search
+utils.platformFromQuery = function(query) {
+	var words = query.split(' ');
+	for (var i = 0; i < words.length; i++) {
+		if (platformTerms.ios.indexOf(words[i]) > -1) {
+			return 'ios';
+		}
+		else if (platformTerms.android.indexOf(words[i]) > -1) {
+			return 'android'
+		}
+	}
+	return 'none';
+}
+
+utils.firstWord = function(query) {
+	return query.split(' ')[0];
+}
+
+ module.exports = utils;
