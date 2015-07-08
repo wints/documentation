@@ -3,19 +3,20 @@ var lunr = require('lunr'),
 	path = require('path'),
 	R = require('ramda');
 
-var utils = require('./utils.js');
+var utils = require('./utils');
 
-var directoryPaths = ['../../_site/recipes', '../../_site/references', '../../_site/overviews'];
+var directoryPaths = ['./_site/recipes', './_site/references', './_site/overviews'];
 
 // Creates an object of three different arrays of objects for default, ios, and android
 // directories: the directories to gather JSON data from, defaults to recipes, references, and overviews
-function outPutJSONData(directories) {
+function outPutJSONData(directories, callback) {
 	var JSON_data = {'deflt': [], 'ios': [], 'android': []};
 	for (var i = 0; i < directories.length; i++) {
 		JSON_data = utils.mergeObject(JSON_data, utils.walk(directories[i]));
 	};
 	fs.writeFileSync('./JSON_data.json', JSON.stringify(JSON_data));
-	console.log('JSON data stored.');
+	console.log('1. JSON data stored.');
+	callback();
 }
 
 // Create the index
@@ -29,27 +30,22 @@ function buildIndex(output, key) {
 	    this.field('body');
 	});
 
-	fs.readFile('./JSON_data.json', function (err, data) {
-		if (err) throw err;
+	var data = fs.readFileSync('./JSON_data.json')
+	var raw = JSON.parse(data)[key];
 
-		var raw = JSON.parse(data)[key];
-
-		raw.forEach(function(section) {
-			index.add(section);
-		})
-
-		fs.writeFile(output, JSON.stringify(index), function(err) {
-			if (err) throw err;
-			console.log('Index outputted');
-		})
+	raw.forEach(function(section) {
+		index.add(section);
 	})
+	fs.writeFileSync(output, JSON.stringify(index));
 }
 
 // Builds indexes for all platforms
-function buildAllIndexes() {
+function buildAllIndexes(callback) {
 	buildIndex('./index_default.json', 'deflt');
 	buildIndex('./index_ios.json', 'ios');
 	buildIndex('./index_android.json', 'android');
+	console.log('2. Indexes created');
+	callback();
 }
 
 // Scrapes the words used on the pages for a platform from its index
@@ -80,8 +76,17 @@ function comparePlatformTerms() {
 	fs.writeFileSync('./platform_terms.json', 
 		results
 	);
+	console.log('3. Platform terms created');
 }
 
-// comparePlatformTerms();
-// outPutJSONData(directoryPaths);
-// buildAllIndexes();
+function build() {
+	outPutJSONData(directoryPaths, function(err) {
+		if (err) throw err;
+		buildAllIndexes(function(err) {
+			if (err) throw err;
+			comparePlatformTerms();
+		});
+	});
+}
+
+build();
