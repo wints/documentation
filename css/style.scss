@@ -13,6 +13,7 @@ $branch-font-path: "/font";
 @import "./protip";
 @import "./toc";
 @import "./image";
+@import "./search";
 
 .btn-inactive {
 	border-color: white;
@@ -64,109 +65,4 @@ a:hover, a:focus {
 	margin: 20px 0px;
 	font-weight: 600;
 	text-align: center;
-}
-
-.search {
-	clear: right;
-	float: right;
-	width: 400px;
-	padding-left: 5px;
-}
-
-.search-result {
-	width: 397px;
-	height: 80px;
-	position: relative;
-	overflow: hidden;
-	border-style: solid;
-	border-width: 1px;
-	border-color: #e6e6e6;
-}
-
-.search-result:hover {
-	background-color: #C1E6F0;
-}
-
-.search-div {
-	clear: left;
-	float: left;
-	border-style: solid;
-	border-color: #58585B;
-	position: relative;
-	z-index: 1;
-	background-color: white;
-	border-width: thin;
-}
-
-.search-div:empty {
-	border-style: hidden;
-}
-
-.search-link {
-	font-size: 14px;
-	padding-left: 15px;
-	white-space: nowrap;
-	vertical-align: middle;
-	display: table-cell;
-	height: 30px;
-}
-
-.search-link:hover {
-	color: black;
-	text-decoration: none;
-}
-
-.search-span {
-	position:absolute; 
-	width: 100%;
-	height: 100%;
-	top: 0;
-	left: 0;
-	z-index: 1;
-}
-
-.search-bar {
-	float: left;
-	padding-top: 12px;
-}
-
-select:active, select:hover {
-  outline: none
-}	
-
-#search-img {
-	width: 75%;
-	z-index: 5;
-}
-
-#search-img-div {
-	position: absolute;
-	width: 30px;
-	height: 30px;
-	margin-top: 17px;
-	margin-left: 360px;
-}
-
-.search-bar-div {
-	position: relative;
-}
-
-input[type="text"], textarea {
-	outline: none;
-	box-shadow:none !important;
-	border:1px solid #ccc !important;
-}
-
-.search-origin {
-	font-size: 11px;
-	padding-left: 20px;
-	padding-right: 20px;
-	display: block;
-}
-
-.search-context {
-	font-size: 10px;
-	padding-left: 20px;
-	padding-right: 20px;
-	display: block;
 }

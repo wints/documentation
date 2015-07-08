@@ -16,6 +16,7 @@ utils.mergeObject = function(originObject, mergeObject) {
 	return temp;
 }
 
+// Traverses a directory looking for index.html files
 utils.walk = function(directoryPath) {
 	var results = [],
 		to_check = [],
@@ -40,7 +41,6 @@ utils.walk = function(directoryPath) {
 // body: all text between headers excluding tags
 // id: dev.branch.io + og:url + href
 // 1. Read file 2. Split by header tag 3. Grab title information/href 4. Split by other header tag 5. Remove tags and add information to body
-
 utils.convertSubsectionsToJSON = function(filePath) {
 	var JSON_data = [];
 	var data = fs.readFileSync(filePath);
@@ -68,22 +68,6 @@ utils.convertSubsectionsToJSON = function(filePath) {
 	return JSON_data
 };
 
-
-utils.debounce = function(func, wait, immediate) {
-	var timeout;
-	return function() {
-		var context = this, args = arguments;
-		var later = function() {
-			timeout = null;
-			if (!immediate) func.prototype.apply(context, args);
-		};
-		var callNow = immediate && !timeout;
-		clearTimeout(timeout);
-		timeout = setTimeout(later, wait);
-		if (callNow) func.apply(context, args);
-	};
-};
-
 // Take in the form data and returns whether any of the words are ios/android specific to choose which index to search
 utils.platformFromQuery = function(query) {
 	var words = query.split(' ');
@@ -100,6 +84,15 @@ utils.platformFromQuery = function(query) {
 
 utils.firstWord = function(query) {
 	return query.split(' ')[0];
+}
+
+utils.isSubstringArray = function(arr, term) {
+	for (var i = 0; i < arr.length; i++) {
+		if (arr[i].toLowerCase().indexOf(term) > -1) {
+			return arr[i];
+		}
+	}
+	return null;
 }
 
  module.exports = utils;

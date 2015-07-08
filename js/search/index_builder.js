@@ -7,10 +7,8 @@ var utils = require('./utils.js');
 
 var directoryPaths = ['../../_site/recipes', '../../_site/references', '../../_site/overviews'];
 
-// console.log('Working?', utils.walk('../_site/recipes'));
-// console.log(utils.convertSubsectionsToJSON('../_site/recipes/analytics_adjust/index.html'));
-
 // Creates an object of three different arrays of objects for default, ios, and android
+// directories: the directories to gather JSON data from, defaults to recipes, references, and overviews
 function outPutJSONData(directories) {
 	var JSON_data = {'deflt': [], 'ios': [], 'android': []};
 	for (var i = 0; i < directories.length; i++) {
@@ -47,12 +45,14 @@ function buildIndex(output, key) {
 	})
 }
 
+// Builds indexes for all platforms
 function buildAllIndexes() {
 	buildIndex('./index_default.json', 'deflt');
 	buildIndex('./index_ios.json', 'ios');
 	buildIndex('./index_android.json', 'android');
 }
 
+// Scrapes the words used on the pages for a platform from its index
 function getPlatformTerms(index) {
 	var terms = [];
 	var data = JSON.parse(fs.readFileSync(index));
@@ -72,6 +72,7 @@ function getPlatformTerms(index) {
 	return terms;
 }
 
+// Compares the words used between platforms and find the platform specific terms
 function comparePlatformTerms() {
 	var ios_terms = getPlatformTerms('./index_ios.json').sort();
 	var android_terms = getPlatformTerms('./index_android.json').sort();
@@ -81,7 +82,6 @@ function comparePlatformTerms() {
 	);
 }
 
-comparePlatformTerms();
-
+// comparePlatformTerms();
 // outPutJSONData(directoryPaths);
 // buildAllIndexes();

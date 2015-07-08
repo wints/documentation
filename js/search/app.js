@@ -6,10 +6,11 @@ var data = require('./JSON_data'),
 	indexDumpDefault = require('./index_default'),
 	indexDumpIos = require('./index_ios'),
 	indexDumpAndroid = require('./index_android');
-	utils = require('./utils.js');
+	utils = require('./utils');
 
 var app = {};
 
+// Returns whether the current query is platform specific
 app.indexSource = function(term) {
 	if (utils.platformFromQuery(term) == 'ios') {
 		return [indexDumpIos, 'ios'];
@@ -40,6 +41,7 @@ app.search = function(term) {
 	return results;
 }
 
+// Returns the top 5 results of search
 app.top5 = function(term) {
 	var results = app.search(term);
 
@@ -50,32 +52,7 @@ app.top5 = function(term) {
 	return top5;
 }
 
-app.debounced_search = function(term) {
-	return underscore.debounce(function() {
-		var index = lunr.Index.load(indexDump);
-		console.log('Index created');
-
-	 	var subsections = data.map(function(raw) {
-		    return {
-		      id: raw.id,
-		      title: raw.title,
-		      body: raw.body,
-		    }
-	 	});
-	 	console.log('subsections found');
-		var results = index.search(term).map(function(result) {
-			return subsections.filter(function (q) { return q.id === result.ref })[0]
-		});
-		var top5 = []
-
-		for (var i = 0; i < 5; i++) {
-			top5.push(results[i]);
-		}
-		console.log(top5);
-		return top5;
-	}, 250)();
-}
-
+// Gives the title of the page that the result is on
 app.getResultOrigin = function(result) {
 	var origin = path.basename(path.dirname(result.id));
 	if (origin == 'ios' || origin == 'android') {
@@ -88,12 +65,17 @@ app.getResultOrigin = function(result) {
 	return parts.capitalize();
 }
 
+// Gives a context to the first search term within the result
 app.getContext = function(result, accuracy, query) {
 	var term = utils.firstWord(query);
 	var body = result.title.split(' ').concat(result.body.split(' '));
 	var index_term = body.indexOf(term);
 	var pre_context = [],
 		post_context = [];
+	if (index_term == -1) {
+		term = utils.isSubstringArray(body, term);
+		index_term = body.indexOf(term);
+	}
 	for (var i = 0; i < accuracy; i++) {
 		pre_context.push(body[index_term - (accuracy - i)]);
 	}
