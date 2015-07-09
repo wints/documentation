@@ -43,35 +43,36 @@ Before we can tell Google Analytics of an event, we need to save the event to th
 
 {% if page.ios %}
 
-    NSDictionary *state = @{
-        @"v":@"1",
-        @"tid":@"12345",
-        @"cid":@"67890",
-        @"t":@"event",
-        @"ec":@"commerce",
-        @"ea": @"purchase",
-        @"el": @"red_shoes", /* event label */
-        @"ea": 300 /* event value */ };
+{% highlight objc %}
+NSDictionary *state = @{
+    @"v":@"1",
+    @"tid":@"12345",
+    @"cid":@"67890",
+    @"t":@"event",
+    @"ec":@"commerce",
+    @"ea": @"purchase",
+    @"el": @"red_shoes", /* event label */
+    @"ea": 300 /* event value */ };
 
-    // event tracking via our SDK
-    [[Branch getInstance] userCompletedAction:@"purchase" withState:state];
-
+// event tracking via our SDK
+[[Branch getInstance] userCompletedAction:@"purchase" withState:state];
+{% endhighlight %}
 {% endif %}
 
 {% if page.android %}
+{% highlight java %}
+JSONObject data = new JSONObject();
+data.put("v", "1");
+data.put("tid", "12345");
+data.put("cid", "67890");
+data.put("t", "event");
+data.put("ec", "commerce");
+data.put("ea", "purchase");
+data.put("el", "red_shoes"); // event label
+data.put("ea", "300"); // event value
 
-    JSONObject data = new JSONObject();
-    data.put("v", "1");
-    data.put("tid", "12345");
-    data.put("cid", "67890");
-    data.put("t", "event");
-    data.put("ec", "commerce");
-    data.put("ea", "purchase");
-    data.put("el", "red_shoes"); // event label
-    data.put("ea", "300"); // event value
-
-    Branch.getInstance().userCompletedAction(“purchase”, data);
-
+Branch.getInstance().userCompletedAction(“purchase”, data);
+{% endhighlight %}
 {% endif %}
 
 Once you have saved these events inside your application, Branch will track the counts of each time the event `purchase` occurred, with the exact user, and will retain meta data for each user-event. 
@@ -92,13 +93,14 @@ The base endpoint url is:
 ```
 http://www.google-analytics.com/collect
 ```
+
 ```
 GET /collect?payload_data
 ```
 
 You will append payload data as needed as a query string after collect.
 
-### Tempalates
+### Templates
 
 Because you will not know the values of the specified keys when inputting the url into the webhook box, you will need to use templates.
 
