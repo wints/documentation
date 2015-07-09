@@ -27,14 +27,14 @@ You'd set the **custom URL for Android** to _https://app.adjust.io/3D24xy_ and t
 
 ## Customize deep link parameters
 
-{% ingredient dashboard_links/custom_data %}{% endingredient %}
+{% ingredient dashboard_links/custom_data %}
+{% override title %}{% endoverride %}
+{% endingredient %}
 
 In order to properly link the ad network to the measurement partner, you must configure the Branch link to pass through any additional query parameters through to the measurement partner. 
 
 To do this, please add in the key '$query_param_passthrough' with the value of 'true'. You can see an example below:
 {% image src='/img/recipes/double_third_party/query_param_passthrough.png' half center alt='deep link parameters' %}
-
-Additionally, if you want specify any additional deep link data. You would append it in this list of keys and values. For example, if you wanted to route a user to a particular piece of content, here is where you would specify this information.
 
 ## Provide link to advertiser
 
