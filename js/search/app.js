@@ -7,9 +7,14 @@ var data = require('./JSON_data'),
 	indexDumpIos = require('./index_ios'),
 	indexDumpAndroid = require('./index_android'),
 	utils = require('./utils'),
-	platformTerms = require('./platform_terms');
+	platformTerms = require('./platform_terms'),
+	customSWF = require('./custom_stop_word_filter');
 
 var app = {};
+
+app.register = function() {
+	lunr.Pipeline.registerFunction(customSWF, 'customSWF');
+}
 
 // Take in the form data and returns whether any of the words are ios/android specific to choose which index to search
 app.platformFromQuery = function(query) {

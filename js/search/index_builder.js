@@ -29,9 +29,9 @@ function buildIndex(output, key) {
 	    // boost increases the importance of words found in this field
 	    this.field('title', {boost: 10});
 	    this.field('body');
+		
+		this.pipeline.add(customSWF);
 	});
-
-
 
 	var data = fs.readFileSync(path.resolve(__dirname, 'JSON_data.json'))
 	var raw = JSON.parse(data)[key];

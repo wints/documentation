@@ -3,6 +3,7 @@ var app = require('../search/app')
 
 var SearchBar = React.createClass({
 	getInitialState: function() {
+		app.register();
 		return {blurred: true, field: '', data: []};
 	},
 	inputChanged: function(event) {
