@@ -3,8 +3,6 @@ var fs = require('fs'),
 	B = require('bluebird'),
 	path = require('path');
 
-var platformTerms = require('./platform_terms');
-
 var utils = {};
 
 // Merges two objects where all values are arrays and keys are the same
@@ -68,20 +66,6 @@ utils.convertSubsectionsToJSON = function(filePath) {
 	return JSON_data
 };
 
-// Take in the form data and returns whether any of the words are ios/android specific to choose which index to search
-utils.platformFromQuery = function(query) {
-	var words = query.split(' ');
-	for (var i = 0; i < words.length; i++) {
-		if (platformTerms.ios.indexOf(words[i]) > -1) {
-			return 'ios';
-		}
-		else if (platformTerms.android.indexOf(words[i]) > -1) {
-			return 'android'
-		}
-	}
-	return 'none';
-}
-
 utils.firstWord = function(query) {
 	return query.split(' ')[0];
 }
@@ -93,6 +77,38 @@ utils.isSubstringArray = function(arr, term) {
 		}
 	}
 	return null;
+}
+
+utils.mode = function(array)
+{
+    if(array.length == 0)
+    	return null;
+    var modeMap = {};
+    var maxEl = array[0], maxCount = 1;
+    for(var i = 0; i < array.length; i++)
+    {
+    	var el = array[i];
+    	if(modeMap[el] == null)
+    		modeMap[el] = 1;
+    	else
+    		modeMap[el]++;	
+    	if(modeMap[el] > maxCount)
+    	{
+    		maxEl = el;
+    		maxCount = modeMap[el];
+    	}
+    }
+    return maxEl;
+}
+
+utils.removeAllFromArray = function(arr, val) {
+	for (var i = 0; i < arr.length; i++) {
+		if (arr[i] == val) {
+			arr.splice(i, 1);
+			i--;
+		}
+	}
+	return arr;
 }
 
  module.exports = utils;

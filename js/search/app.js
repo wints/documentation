@@ -5,17 +5,32 @@ var lunr = require('lunr'),
 var data = require('./JSON_data'),
 	indexDumpDefault = require('./index_default'),
 	indexDumpIos = require('./index_ios'),
-	indexDumpAndroid = require('./index_android');
-	utils = require('./utils');
+	indexDumpAndroid = require('./index_android'),
+	utils = require('./utils'),
+	platformTerms = require('./platform_terms');
 
 var app = {};
 
+// Take in the form data and returns whether any of the words are ios/android specific to choose which index to search
+app.platformFromQuery = function(query) {
+	var words = query.split(' ');
+	for (var i = 0; i < words.length; i++) {
+		if (platformTerms.ios.indexOf(words[i]) > -1) {
+			return 'ios';
+		}
+		else if (platformTerms.android.indexOf(words[i]) > -1) {
+			return 'android'
+		}
+	}
+	return 'none';
+}
+
 // Returns whether the current query is platform specific
 app.indexSource = function(term) {
-	if (utils.platformFromQuery(term) == 'ios') {
+	if (app.platformFromQuery(term) == 'ios') {
 		return [indexDumpIos, 'ios'];
 	}
-	else if (utils.platformFromQuery(term) == 'android') {
+	else if (app.platformFromQuery(term) == 'android') {
 		return [indexDumpAndroid, 'android'];
 	}
 	else {

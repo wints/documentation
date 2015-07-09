@@ -3,9 +3,10 @@ var lunr = require('lunr'),
 	path = require('path'),
 	R = require('ramda');
 
-var utils = require('./utils');
+var utils = require('./utils'),
+	customSWF = require('./custom_stop_word_filter');
 
-var directoryPaths = ['./_site/recipes', './_site/references', './_site/overviews'];
+var directoryPaths = [path.resolve(__dirname, '../../_site/recipes'), path.resolve(__dirname, '../../_site/references'), path.resolve(__dirname, '../../_site/overviews')];
 
 // Creates an object of three different arrays of objects for default, ios, and android
 // directories: the directories to gather JSON data from, defaults to recipes, references, and overviews
@@ -14,7 +15,7 @@ function outPutJSONData(directories, callback) {
 	for (var i = 0; i < directories.length; i++) {
 		JSON_data = utils.mergeObject(JSON_data, utils.walk(directories[i]));
 	};
-	fs.writeFileSync('./JSON_data.json', JSON.stringify(JSON_data));
+	fs.writeFileSync(path.resolve(__dirname, 'JSON_data.json'), JSON.stringify(JSON_data));
 	console.log('1. JSON data stored.');
 	callback();
 }
@@ -30,7 +31,9 @@ function buildIndex(output, key) {
 	    this.field('body');
 	});
 
-	var data = fs.readFileSync('./JSON_data.json')
+
+
+	var data = fs.readFileSync(path.resolve(__dirname, 'JSON_data.json'))
 	var raw = JSON.parse(data)[key];
 
 	raw.forEach(function(section) {
@@ -41,9 +44,9 @@ function buildIndex(output, key) {
 
 // Builds indexes for all platforms
 function buildAllIndexes(callback) {
-	buildIndex('./index_default.json', 'deflt');
-	buildIndex('./index_ios.json', 'ios');
-	buildIndex('./index_android.json', 'android');
+	buildIndex(path.resolve(__dirname, 'index_default.json'), 'deflt');
+	buildIndex(path.resolve(__dirname, 'index_ios.json'), 'ios');
+	buildIndex(path.resolve(__dirname, 'index_android.json'), 'android');
 	console.log('2. Indexes created');
 	callback();
 }
@@ -70,10 +73,10 @@ function getPlatformTerms(index) {
 
 // Compares the words used between platforms and find the platform specific terms
 function comparePlatformTerms() {
-	var ios_terms = getPlatformTerms('./index_ios.json').sort();
-	var android_terms = getPlatformTerms('./index_android.json').sort();
+	var ios_terms = getPlatformTerms(path.resolve(__dirname, 'index_ios.json')).sort();
+	var android_terms = getPlatformTerms(path.resolve(__dirname, 'index_android.json')).sort();
 	var results = JSON.stringify({'ios': R.difference(ios_terms, android_terms), 'android': R.difference(android_terms, ios_terms)});
-	fs.writeFileSync('./platform_terms.json', 
+	fs.writeFileSync(path.resolve(__dirname, 'platform_terms.json'), 
 		results
 	);
 	console.log('3. Platform terms created');
