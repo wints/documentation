@@ -4,18 +4,18 @@ var app = require('../search/runScripts/app')
 var SearchBar = React.createClass({
 	getInitialState: function() {
 		// app.register();
-		return {blurred: true, field: '', data: []};
+		return { blurred: true, field: '', data: [] };
 	},
 	inputChanged: function(event) {
-		this.setState({field: event.target.value}, function(err) {
-			if (err) throw err;
+		this.setState({ field: event.target.value }, function(err) {
+			if (err) { throw err; }
 			var searched = app.top5(this.state.field);
-			if (this.state.field.length <= 1) { this.setState({data: []}); }
-			else if (searched && searched[0]) { this.setState({data: searched}); }
+			if (this.state.field.length <= 1) { this.setState({ data: [] }); }
+			else if (searched && searched[0]) { this.setState({ data: searched }); }
 		});
 	},
 	handleClick: function() {
-		this.setState({blurred: false});
+		this.setState({ blurred: false });
 	},
 	render: function() {
 			var results = [];
@@ -38,7 +38,7 @@ var SearchBar = React.createClass({
 				</div>
 				<div className="search-div">
 					{results}
-				</div>	
+				</div>
 			</div>
 		);
 	}

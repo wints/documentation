@@ -6,7 +6,7 @@ var ProgressBar = React.createClass({
 		var width = Math.floor(((this.props.i + 1) / this.props.length) * 100);
 		return (
 			<div className="progress">
-				<div className="progress-bar" style={{width: width + '%'}}></div>
+				<div className="progress-bar" style={{ width: width + '%' }}></div>
 			</div>)
 	}
 });

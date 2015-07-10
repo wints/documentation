@@ -1,28 +1,24 @@
 var lunr = require('lunr'),
-	path = require('path');
+	path = require('path'),
+	fs = require('fs');
 
-var data = require('../builtFiles/JSON_data'),
-	indexDumpDefault = require('../builtFiles/index_default'),
-	indexDumpIos = require('../builtFiles/index_ios'),
-	indexDumpAndroid = require('../builtFiles/index_android'),
-	utils = require('../utils'),
-	platformTerms = require('../builtFiles/platform_terms'),
-	customSWF = require('../custom_stop_word_filter');
+var utils = require('../utils'),
+	master = require('../builtFiles/master_data');
 
 var app = {};
 
 app.register = function() {
-	lunr.Pipeline.registerFunction(customSWF, 'customSWF');
+		lunr.Pipeline.registerFunction(customSWF, 'customSWF');
 };
 
 // Take in the form data and returns whether any of the words are ios/android specific to choose which index to search
 app.platformFromQuery = function(query) {
 	var words = query.split(' ');
 	for (var i = 0; i < words.length; i++) {
-		if (platformTerms.ios.indexOf(words[i]) > -1) {
+		if (master.platform_terms.ios.indexOf(words[i]) > -1) {
 			return 'ios';
 		}
-		else if (platformTerms.android.indexOf(words[i]) > -1) {
+		else if (master.platform_terms.android.indexOf(words[i]) > -1) {
 			return 'android';
 		}
 	}
@@ -32,20 +28,20 @@ app.platformFromQuery = function(query) {
 // Returns whether the current query is platform specific
 app.indexSource = function(term) {
 	if (app.platformFromQuery(term) == 'ios') {
-		return [ indexDumpIos, 'ios' ];
+		return [ master.indexes.ios, 'ios' ];
 	}
 	else if (app.platformFromQuery(term) == 'android') {
-		return [ indexDumpAndroid, 'android' ];
+		return [ master.indexes.android, 'android' ];
 	}
 	else {
-		return [ indexDumpDefault, 'deflt' ];
+		return [ master.indexes['default'], 'default' ];
 	}
 };
 
 app.search = function(term) {
 	var dump = app.indexSource(term);
 	var index = lunr.Index.load(dump[0]);
-	var subsections = data[dump[1]].map(function(raw) {
+	var subsections = master.JSON_data[dump[1]].map(function(raw) {
 		return {
 			id: raw.id,
 			title: raw.title,

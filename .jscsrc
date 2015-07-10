@@ -38,5 +38,7 @@
 	"safeContextKeyword": [ "self" ],
 	"disallowYodaConditions": true,
 	"requireSpaceAfterLineComment": true,
-	"disallowNewlineBeforeBlockStatements": true
+	"disallowNewlineBeforeBlockStatements": true,
+	"esprima": "esprima-fb",
+	"excludeFiles": ["./js/all.js"]
 }

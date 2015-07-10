@@ -2,22 +2,20 @@
   "name": "documentation",
   "version": "1.0.0",
   "dependencies": {
+    "esprima-fb": "^15001.1.0-dev-harmony-fb",
+    "jscs": "^1.13.1",
     "lunr": "0.5.11"
   },
   "scripts": {
     "build_search": "node ./js/search/buildScripts/index_builder.js",
     "lint": "eslint ./js",
-    "validate": "npm ls",
-    "test": "jscs ./js --config=./jscs.json"
+    "test": "jscs ./js"
   },
   "pre-commit": [
     "lint",
     "validate",
     "test"
   ],
-  "dependencies": {
-    "lunr": "0.5.11"
-    },
   "devDependencies": {
     "babel-eslint": "^3.1.23",
     "precommit-hook": "1.0.7"

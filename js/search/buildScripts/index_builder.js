@@ -12,20 +12,19 @@ var directoryPaths = [ path.resolve(__dirname, '../../../_site/recipes'), path.r
 
 // Creates an object of three different arrays of objects for default, ios, and android
 // directories: the directories to gather JSON data from, defaults to recipes, references, and overviews
-function outPutJSONData(directories, callback) {
-	var JSON_data = { 'deflt': [], 'ios': [], 'android': [] };
+function outPutJSONData(directories) {
+	var JSON_data = { 'default': [], 'ios': [], 'android': [] };
 	for (var i = 0; i < directories.length; i++) {
 		JSON_data = utils.mergeObject(JSON_data, utils.walk(directories[i]));
 	}
-	fs.writeFileSync(path.resolve(__dirname, '../builtFiles/JSON_data.json'), JSON.stringify(JSON_data));
 	console.log('1. JSON data stored.');
-	callback();
+	return JSON_data;
 }
 
 // Create the index
 // output: the file to put the index into
-// ind: the key of JSON data to use {deflt, ios, android}
-function buildIndex(output, key) {
+// ind: the key of JSON data to use {default, ios, android}
+function buildIndex(key, JSON_data) {
 	var index = lunr(function() {
 		this.ref('id');
 		// boost increases the importance of words found in this field
@@ -37,22 +36,22 @@ function buildIndex(output, key) {
 		// this.pipeline.add(customSWF);
 	});
 
-	var data = fs.readFileSync(path.resolve(__dirname, '../builtFiles/JSON_data.json'));
-	var raw = JSON.parse(data)[key];
+	var raw = JSON_data[key];
 
 	raw.forEach(function(section) {
 		index.add(section);
 	});
-	fs.writeFileSync(output, JSON.stringify(index));
+	return index;
 }
 
 // Builds indexes for all platforms
-function buildAllIndexes(callback) {
-	buildIndex(path.resolve(__dirname, '../builtFiles/index_default.json'), 'deflt');
-	buildIndex(path.resolve(__dirname, '../builtFiles/index_ios.json'), 'ios');
-	buildIndex(path.resolve(__dirname, '../builtFiles/index_android.json'), 'android');
+function buildAllIndexes(JSON_data) {
+	var indexes = {};
+	indexes['default'] = buildIndex('default', JSON_data);
+	indexes.ios = buildIndex('ios', JSON_data);
+	indexes.android = buildIndex('android', JSON_data);
 	console.log('2. Indexes created');
-	callback();
+	return indexes;
 }
 
 // Scrapes the words used on the pages for a platform from its index
@@ -76,24 +75,23 @@ function getPlatformTerms(index) {
 }
 
 // Compares the words used between platforms and find the platform specific terms
-function comparePlatformTerms() {
+function comparePlatformTerms(callback) {
 	var ios_terms = getPlatformTerms(path.resolve(__dirname, '../builtFiles/index_ios.json')).sort();
 	var android_terms = getPlatformTerms(path.resolve(__dirname, '../builtFiles/index_android.json')).sort();
-	var results = JSON.stringify({ 'ios': R.difference(ios_terms, android_terms), 'android': R.difference(android_terms, ios_terms) });
-	fs.writeFileSync(path.resolve(__dirname, '../builtFiles/platform_terms.json'),
-		results
-	);
+	var results = { 'ios': R.difference(ios_terms, android_terms), 'android': R.difference(android_terms, ios_terms) };
 	console.log('3. Platform terms created');
+	return results;
 }
 
 function build() {
-	outPutJSONData(directoryPaths, function(err) {
+	var masterFile = {};
+	masterFile.JSON_data = outPutJSONData(directoryPaths)
+	masterFile.indexes = buildAllIndexes(masterFile.JSON_data);
+	masterFile.platform_terms = comparePlatformTerms();
+	fs.writeFile(path.resolve(__dirname, '../builtFiles/master_data.json'), JSON.stringify(masterFile),'utf-8', function(err) {
 		if (err) { throw err; }
-		buildAllIndexes(function(err2) {
-			if (err2) { throw err2; }
-			comparePlatformTerms();
-		});
-	});
+		console.log('Master written.');
+	})
 }
 
 build();
