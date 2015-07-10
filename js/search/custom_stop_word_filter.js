@@ -1,6 +1,4 @@
-var lunr = require('lunr')
-
-var customStopWordFilter = function (token, tokenIndex, tokens) {
+var customStopWordFilter = function(token) {
   var stopWords = [
       'branch',
     // 'link',
@@ -100,11 +98,11 @@ var customStopWordFilter = function (token, tokenIndex, tokens) {
     // 'initi',
     'we’ll',
     'give',
-    'base',
+    'base'
     // 'below'
   ];
 
-      if (stopWords.indexOf(token) === -1) return token     
-}
+      if (stopWords.indexOf(token) === -1) { return token; }
+};
 
 module.exports = customStopWordFilter;

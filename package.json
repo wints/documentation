@@ -2,17 +2,24 @@
   "name": "documentation",
   "version": "1.0.0",
   "dependencies": {
-    "accum": "^0.3.6",
-    "alt": "^0.15.4",
-    "browserify": "^9.0.7",
-    "ramda": "^0.13.0",
-    "react": "^0.13.1",
-    "react-tools": "^0.13.1",
-    "reactify": "^1.1.0",
-    "through2": "^0.6.3",
-    "uglify-js": "^2.4.20"
+    "lunr": "0.5.11"
   },
   "scripts": {
-    "build_search" : "node ./js/search/index_builder.js"
+    "build_search": "node ./js/search/buildScripts/index_builder.js",
+    "lint": "eslint ./js",
+    "validate": "npm ls",
+    "test": "jscs ./js --config=./jscs.json"
+  },
+  "pre-commit": [
+    "lint",
+    "validate",
+    "test"
+  ],
+  "dependencies": {
+    "lunr": "0.5.11"
+    },
+  "devDependencies": {
+    "babel-eslint": "^3.1.23",
+    "precommit-hook": "1.0.7"
   }
 }

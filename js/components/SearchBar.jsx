@@ -1,9 +1,9 @@
 var React = require('react');
-var app = require('../search/app')
+var app = require('../search/runScripts/app')
 
 var SearchBar = React.createClass({
 	getInitialState: function() {
-		app.register();
+		// app.register();
 		return {blurred: true, field: '', data: []};
 	},
 	inputChanged: function(event) {
@@ -19,9 +19,11 @@ var SearchBar = React.createClass({
 	},
 	render: function() {
 			var results = [];
+			var link = '';
 			if (this.state.data[0] && !this.state.blurred) {
 				for (var i = 0; i < this.state.data.length; i++) {
-					results.push(<SearchResult title={this.state.data[i].title} link={this.state.data[i].id} origin={app.getResultOrigin(this.state.data[i])} context={app.getContext(this.state.data[i], 7, this.state.field)}/>);
+					url = 'http://dev.branch.io' + this.state.data[i].url;
+					results.push(<SearchResult title={this.state.data[i].title} link={url} origin={app.getResultOrigin(this.state.data[i])} context={app.getContext(this.state.data[i], 7, this.state.field)} key={this.state.data[i].id} />);
 				}
 			}
 		return (
@@ -44,11 +46,6 @@ var SearchBar = React.createClass({
 
 var SearchResult = React.createClass({
 	render: function() {
-		var divStyle = {
-			'borderStyle': 'solid',
-			'borderColor': 'black',
-			'width': '200px'
-		};
 		return (<div className="search-result">
 					<a href={this.props.link} className="search-link">{this.props.title}
 						<span className="search-span"></span>

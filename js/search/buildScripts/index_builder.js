@@ -3,19 +3,21 @@ var lunr = require('lunr'),
 	path = require('path'),
 	R = require('ramda');
 
-var utils = require('./utils'),
-	customSWF = require('./custom_stop_word_filter');
+var utils = require('../utils');
+	// customSWF = require('../custom_stop_word_filter');
 
-var directoryPaths = [path.resolve(__dirname, '../../_site/recipes'), path.resolve(__dirname, '../../_site/references'), path.resolve(__dirname, '../../_site/overviews')];
+var __dirname;
+
+var directoryPaths = [ path.resolve(__dirname, '../../../_site/recipes'), path.resolve(__dirname, '../../../_site/references'), path.resolve(__dirname, '../../../_site/overviews') ];
 
 // Creates an object of three different arrays of objects for default, ios, and android
 // directories: the directories to gather JSON data from, defaults to recipes, references, and overviews
 function outPutJSONData(directories, callback) {
-	var JSON_data = {'deflt': [], 'ios': [], 'android': []};
+	var JSON_data = { 'deflt': [], 'ios': [], 'android': [] };
 	for (var i = 0; i < directories.length; i++) {
 		JSON_data = utils.mergeObject(JSON_data, utils.walk(directories[i]));
-	};
-	fs.writeFileSync(path.resolve(__dirname, 'JSON_data.json'), JSON.stringify(JSON_data));
+	}
+	fs.writeFileSync(path.resolve(__dirname, '../builtFiles/JSON_data.json'), JSON.stringify(JSON_data));
 	console.log('1. JSON data stored.');
 	callback();
 }
@@ -24,29 +26,31 @@ function outPutJSONData(directories, callback) {
 // output: the file to put the index into
 // ind: the key of JSON data to use {deflt, ios, android}
 function buildIndex(output, key) {
-	var index = lunr(function(){
+	var index = lunr(function() {
 		this.ref('id');
-	    // boost increases the importance of words found in this field
-	    this.field('title', {boost: 10});
-	    this.field('body');
-		
-		this.pipeline.add(customSWF);
+		// boost increases the importance of words found in this field
+
+		this.field('title', { boost: 10 });
+		this.field('body');
+		this.field('url');
+
+		// this.pipeline.add(customSWF);
 	});
 
-	var data = fs.readFileSync(path.resolve(__dirname, 'JSON_data.json'))
+	var data = fs.readFileSync(path.resolve(__dirname, '../builtFiles/JSON_data.json'));
 	var raw = JSON.parse(data)[key];
 
 	raw.forEach(function(section) {
 		index.add(section);
-	})
+	});
 	fs.writeFileSync(output, JSON.stringify(index));
 }
 
 // Builds indexes for all platforms
 function buildAllIndexes(callback) {
-	buildIndex(path.resolve(__dirname, 'index_default.json'), 'deflt');
-	buildIndex(path.resolve(__dirname, 'index_ios.json'), 'ios');
-	buildIndex(path.resolve(__dirname, 'index_android.json'), 'android');
+	buildIndex(path.resolve(__dirname, '../builtFiles/index_default.json'), 'deflt');
+	buildIndex(path.resolve(__dirname, '../builtFiles/index_ios.json'), 'ios');
+	buildIndex(path.resolve(__dirname, '../builtFiles/index_android.json'), 'android');
 	console.log('2. Indexes created');
 	callback();
 }
@@ -73,10 +77,10 @@ function getPlatformTerms(index) {
 
 // Compares the words used between platforms and find the platform specific terms
 function comparePlatformTerms() {
-	var ios_terms = getPlatformTerms(path.resolve(__dirname, 'index_ios.json')).sort();
-	var android_terms = getPlatformTerms(path.resolve(__dirname, 'index_android.json')).sort();
-	var results = JSON.stringify({'ios': R.difference(ios_terms, android_terms), 'android': R.difference(android_terms, ios_terms)});
-	fs.writeFileSync(path.resolve(__dirname, 'platform_terms.json'), 
+	var ios_terms = getPlatformTerms(path.resolve(__dirname, '../builtFiles/index_ios.json')).sort();
+	var android_terms = getPlatformTerms(path.resolve(__dirname, '../builtFiles/index_android.json')).sort();
+	var results = JSON.stringify({ 'ios': R.difference(ios_terms, android_terms), 'android': R.difference(android_terms, ios_terms) });
+	fs.writeFileSync(path.resolve(__dirname, '../builtFiles/platform_terms.json'),
 		results
 	);
 	console.log('3. Platform terms created');
@@ -84,9 +88,9 @@ function comparePlatformTerms() {
 
 function build() {
 	outPutJSONData(directoryPaths, function(err) {
-		if (err) throw err;
-		buildAllIndexes(function(err) {
-			if (err) throw err;
+		if (err) { throw err; }
+		buildAllIndexes(function(err2) {
+			if (err2) { throw err2; }
 			comparePlatformTerms();
 		});
 	});
