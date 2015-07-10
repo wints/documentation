@@ -1,8 +1,8 @@
 var lunr = require('lunr'),
-	path = require('path'),
-	fs = require('fs');
+	path = require('path');
 
 var utils = require('../utils'),
+	customSWF = require('../custom_stop_word_filter'),
 	master = require('../builtFiles/master_data');
 
 var app = {};
@@ -34,7 +34,7 @@ app.indexSource = function(term) {
 		return [ master.indexes.android, 'android' ];
 	}
 	else {
-		return [ master.indexes['default'], 'default' ];
+		return [ master.indexes.default, 'default' ];
 	}
 };
 

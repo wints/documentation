@@ -47,7 +47,7 @@ function buildIndex(key, JSON_data) {
 // Builds indexes for all platforms
 function buildAllIndexes(JSON_data) {
 	var indexes = {};
-	indexes['default'] = buildIndex('default', JSON_data);
+	indexes.default = buildIndex('default', JSON_data);
 	indexes.ios = buildIndex('ios', JSON_data);
 	indexes.android = buildIndex('android', JSON_data);
 	console.log('2. Indexes created');
@@ -75,7 +75,7 @@ function getPlatformTerms(index) {
 }
 
 // Compares the words used between platforms and find the platform specific terms
-function comparePlatformTerms(callback) {
+function comparePlatformTerms() {
 	var ios_terms = getPlatformTerms(path.resolve(__dirname, '../builtFiles/index_ios.json')).sort();
 	var android_terms = getPlatformTerms(path.resolve(__dirname, '../builtFiles/index_android.json')).sort();
 	var results = { 'ios': R.difference(ios_terms, android_terms), 'android': R.difference(android_terms, ios_terms) };
@@ -85,13 +85,13 @@ function comparePlatformTerms(callback) {
 
 function build() {
 	var masterFile = {};
-	masterFile.JSON_data = outPutJSONData(directoryPaths)
+	masterFile.JSON_data = outPutJSONData(directoryPaths);
 	masterFile.indexes = buildAllIndexes(masterFile.JSON_data);
 	masterFile.platform_terms = comparePlatformTerms();
-	fs.writeFile(path.resolve(__dirname, '../builtFiles/master_data.json'), JSON.stringify(masterFile),'utf-8', function(err) {
+	fs.writeFile(path.resolve(__dirname, '../builtFiles/master_data.json'), JSON.stringify(masterFile), 'utf-8', function(err) {
 		if (err) { throw err; }
 		console.log('Master written.');
-	})
+	});
 }
 
 build();

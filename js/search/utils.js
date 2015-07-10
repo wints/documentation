@@ -21,7 +21,7 @@ utils.walk = function(directoryPath) {
 	if (to_check.indexOf('index.html') > -1) {
 		if (path.basename(directoryPath) == 'ios') { final_indexes.ios = final_indexes.ios.concat(utils.convertSubsectionsToJSON(directoryPath + '/index.html')); }
 		else if (path.basename(directoryPath) == 'android') { final_indexes.android = final_indexes.android.concat(utils.convertSubsectionsToJSON(directoryPath + '/index.html')); }
-		else { final_indexes['default'] = final_indexes['default'].concat(utils.convertSubsectionsToJSON(directoryPath + '/index.html')); }
+		else { final_indexes.default = final_indexes.default.concat(utils.convertSubsectionsToJSON(directoryPath + '/index.html')); }
 	}
 	for (var i = 0; i < to_check.length; i++) {
 		if (fs.lstatSync(directoryPath + '/' + to_check[i]).isDirectory()) {
