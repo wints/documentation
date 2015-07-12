@@ -48,7 +48,11 @@ When you're growing your app, you need links that _route your user to the best p
 
 {% image src='/img/overview/smart_redirects.png' 3-quarters center alt='2' %}
 
+To summarize the above, Branch handles all the different to take your user to the right place. Here's the breakdown:
 
+- If app **is** installed -> route to _the app_
+- If app **is not** installed -> route to _fallback URL_
+	- The fallback URL is set as the default to the app store, but can be set to any http URL.
 
 Here is a list of browsers and platforms where we have slaved for many hours to ensure the links still work:
 
@@ -90,15 +94,22 @@ Common keys/values stored in deep link dictionaries:
 
 ## Deepviews with web SDK
 
+A deepview is a preview outside of app of content that is visible and consumable inside an app. It's usually accompanied by a deeplink that will route the user to that page in the app when clicked. You can use the Branch web SDK convert your mobile website into a deepview. _A deepview should be only shown if the user does not have the app_.
 
+1. Use the [deep linked app banner](/recipes/app_download_banner/ios/)
+2. Create your own interstitial and power it with a Branch [link created from the web SDK](https://github.com/BranchMetrics/Web-SDK/blob/master/WEB_GUIDE.md#linkdata-callback)
+
+When a user hits the mobile web deepview, they could arrive there organically or they could be redirected there from a Branch link if you configured the fallback URL to point to the deepview. If they came from a Branch link, the smart banner will automatically use the original link to carry through attribution. If you are powering you own interstitial, you can grab the _referring_link_ from the web SDK initialization.
 
 ## Desktop landing page with SMS
 
-{% image src='/img/overview/how-links-work-3.jpg' half left alt='3' %}
+No matter how many people use smart phones, you will always have desktop users. If you're an app business, you want to get them to your app quickly. Here are the different options you have:
 
-When a user clicks on a desktop, by default, we present them with a page that allows them to resend themselves the link via SMS. Alternately, you can send desktop users to another web page by specifying a value for the key “$desktop_url” when creating a link. In that case, we will redirect users to the value for that key in the link’s data dictionary.
+- (default) all Branch links route to a hosted *SMS to download* feature  
+- Use your own desktop website and use the [Branch web SDK](/recipes/text_me_the_app_page/ios/) to power your SMS to download
+- Use your own desktop website and [use your own SMS](/recipes/recipes/text_me_the_app_page/ios/#using-your-own-sms-service-advanced) with a Branch link
+- Use your own desktop website with our [SMS to download smart banner](/recipes/app_download_banner/ios/#the-smart-banner)
 
-If you want your users to retain the option of sending themselves the link they clicked via SMS, you can still use our [app download banner](/recipes/app_download_banner/ios/) on your web page that shows an app banner with an SMS input, or you can use more advanced Web SDK JavaScript with your own HTML widget. If the user was routed to that Web SDK-enabled site from one of our links, we remember that referring link data and continue the link flow.
+If you use our SMS methods, we will even pay for the Twilio fees. Shh. Don't tell anyone.
 
-## Desktop behavior
-
+{% image src='/img/overview/how-links-work-3.jpg' half center alt='4' %}
