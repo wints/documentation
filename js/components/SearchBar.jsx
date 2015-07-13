@@ -1,26 +1,43 @@
 var React = require('react');
-var app = require('../search/runScripts/app')
+
+var app = require('../search/runScripts/app'),
+	SearchStore = require('../stores/SearchStore'),
+	SearchActions = require('../actions/SearchActions');
+
+function getStateFromStore() {
+	return SearchStore.getState();
+}
 
 var SearchBar = React.createClass({
 	getInitialState: function() {
-		// app.register();
-		return { blurred: true, field: '', data: [] };
+		app.register();
+		return SearchStore.getState();
+	},
+	componentDidMount: function() {
+		SearchStore.listen(this._onChange);
+	},
+	componentWillUnmount: function() {
+		SearchStore.unlisten(this._onChange);
+	},
+	_onChange: function() {
+		this.setState(getStateFromStore());
 	},
 	inputChanged: function(event) {
 		this.setState({ field: event.target.value }, function(err) {
 			if (err) { throw err; }
-			var searched = app.top5(this.state.field);
+			if (!this.state.isLoaded) { return; } // TODO
+			var searched = app.top5(this.state.field, JSON.parse(this.state.indexes));
 			if (this.state.field.length <= 1) { this.setState({ data: [] }); }
 			else if (searched && searched[0]) { this.setState({ data: searched }); }
 		});
 	},
 	handleClick: function() {
-		this.setState({ blurred: false });
+		SearchActions.loadIndex();
 	},
 	render: function() {
 			var results = [];
 			var link = '';
-			if (this.state.data[0] && !this.state.blurred) {
+			if (this.state.data[0]) {
 				for (var i = 0; i < this.state.data.length; i++) {
 					url = 'http://dev.branch.io' + this.state.data[i].url;
 					results.push(<SearchResult title={this.state.data[i].title} link={url} origin={app.getResultOrigin(this.state.data[i])} context={app.getContext(this.state.data[i], 7, this.state.field)} key={this.state.data[i].id} />);

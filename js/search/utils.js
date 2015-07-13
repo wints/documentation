@@ -1,6 +1,7 @@
 var fs = require('fs'),
 	cheerio = require('cheerio'),
-	path = require('path');
+	path = require('path'),
+	http = require('http');
 
 var utils = {};
 
@@ -54,7 +55,7 @@ utils.convertSubsectionsToJSON = function(filePath) {
 
 		if ($(this).children('a[href^="#"]').attr('href')) { JSON_obj.url = '' + og_url + $(this).children('a[href^="#"]').attr('href'); }
 		else { JSON_obj.url = '' + og_url; }
-		// console.log('Link: ' + JSON_obj.id);
+		// console.log('Link: ' + JSON_obj.url);
 
 		// Gets all elements between each header and outputs their text
 		JSON_obj.body = $(this).nextUntil('h2, h3').not('script').text();

@@ -2,23 +2,22 @@ var lunr = require('lunr'),
 	path = require('path');
 
 var utils = require('../utils'),
-	customSWF = require('../custom_stop_word_filter'),
-	master = require('../builtFiles/master_data');
+	customSWF = require('../custom_stop_word_filter');
 
 var app = {};
 
 app.register = function() {
-		lunr.Pipeline.registerFunction(customSWF, 'customSWF');
+	lunr.Pipeline.registerFunction(customSWF, 'customSWF');
 };
 
 // Take in the form data and returns whether any of the words are ios/android specific to choose which index to search
-app.platformFromQuery = function(query) {
+app.platformFromQuery = function(query, data) {
 	var words = query.split(' ');
 	for (var i = 0; i < words.length; i++) {
-		if (master.platform_terms.ios.indexOf(words[i]) > -1) {
+		if (data.platform_terms.ios.indexOf(words[i]) > -1) {
 			return 'ios';
 		}
-		else if (master.platform_terms.android.indexOf(words[i]) > -1) {
+		else if (data.platform_terms.android.indexOf(words[i]) > -1) {
 			return 'android';
 		}
 	}
@@ -26,22 +25,22 @@ app.platformFromQuery = function(query) {
 };
 
 // Returns whether the current query is platform specific
-app.indexSource = function(term) {
-	if (app.platformFromQuery(term) == 'ios') {
-		return [ master.indexes.ios, 'ios' ];
+app.indexSource = function(term, data) {
+	if (app.platformFromQuery(term, data) == 'ios') {
+		return [ data.indexes.ios, 'ios' ];
 	}
-	else if (app.platformFromQuery(term) == 'android') {
-		return [ master.indexes.android, 'android' ];
+	else if (app.platformFromQuery(term, data) == 'android') {
+		return [ data.indexes.android, 'android' ];
 	}
 	else {
-		return [ master.indexes.default, 'default' ];
+		return [ data.indexes.default, 'default' ];
 	}
 };
 
-app.search = function(term) {
-	var dump = app.indexSource(term);
+app.search = function(term, data) {
+	var dump = app.indexSource(term, data);
 	var index = lunr.Index.load(dump[0]);
-	var subsections = master.JSON_data[dump[1]].map(function(raw) {
+	var subsections = data.JSON_data[dump[1]].map(function(raw) {
 		return {
 			id: raw.id,
 			title: raw.title,
@@ -58,8 +57,8 @@ app.search = function(term) {
 };
 
 // Returns the top 5 results of search
-app.top5 = function(term) {
-	var results = app.search(term);
+app.top5 = function(term, data) {
+	var results = app.search(term, data);
 
 	var top5 = [];
 	for (var i = 0; i < 5 && i < results.length; i++) {
@@ -98,5 +97,29 @@ app.getContext = function(result, accuracy, query) {
 	}
 	return [ pre_context.toString().replace(/,/g, ' ') + ' ', term, ' ' + post_context.toString().replace(/,/g, ' ') ];
 };
+
+// Adapted from http://youmightnotneedjquery.com/#json
+app.loadData = function(term) {
+	var data;
+	var request = new XMLHttpRequest();
+	request.open('GET', '/js/search/builtFiles/master_data.json', true);
+	request.onload = function() {
+		if (request.status >= 200 && request.status < 400) {
+			// Success!
+			data = JSON.parse(request.responseText);
+			console.log('loaded');
+			}
+		else {
+			// We reached our target server, but it returned an error
+			console.log('Reach but error!');
+			return 0
+		}
+	};
+	request.onerror = function() {
+	  // There was a connection error of some sort
+	  console.log('ERROR');
+	};
+	request.send();
+}
 
 module.exports = app;

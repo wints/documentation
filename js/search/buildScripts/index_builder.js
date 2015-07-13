@@ -4,11 +4,11 @@ var lunr = require('lunr'),
 	R = require('ramda');
 
 var utils = require('../utils');
-	// customSWF = require('../custom_stop_word_filter');
+	customSWF = require('../custom_stop_word_filter');
 
 var __dirname;
 
-var directoryPaths = [ path.resolve(__dirname, '../../../_site/recipes'), path.resolve(__dirname, '../../../_site/references'), path.resolve(__dirname, '../../../_site/overviews') ];
+var directoryPaths = [ path.resolve(__dirname, '../../../_site/recipes'), path.resolve(__dirname, '../../../_site/references') ];
 
 // Creates an object of three different arrays of objects for default, ios, and android
 // directories: the directories to gather JSON data from, defaults to recipes, references, and overviews
@@ -25,6 +25,7 @@ function outPutJSONData(directories) {
 // output: the file to put the index into
 // ind: the key of JSON data to use {default, ios, android}
 function buildIndex(key, JSON_data) {
+	lunr.Pipeline.registerFunction(customSWF, 'customSWF');
 	var index = lunr(function() {
 		this.ref('id');
 		// boost increases the importance of words found in this field
@@ -33,7 +34,7 @@ function buildIndex(key, JSON_data) {
 		this.field('body');
 		this.field('url');
 
-		// this.pipeline.add(customSWF);
+		this.pipeline.add(customSWF);
 	});
 
 	var raw = JSON_data[key];
