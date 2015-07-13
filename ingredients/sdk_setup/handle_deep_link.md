@@ -8,9 +8,9 @@ This method is necessary to receive a Branch parameter when the URI scheme is ca
 {% highlight objc %}
 - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
     // pass the url to the handle deep link call
-    if (![[Branch getInstance] handleDeepLink:url]) {
-        // do other deep link routing for the Facebook SDK, Pinterest SDK, etc
-    }
+    [[Branch getInstance] handleDeepLink:url];
+
+    // do other deep link routing for the Facebook SDK, Pinterest SDK, etc
     return YES;
 }
 {% endhighlight %}
@@ -19,10 +19,9 @@ This method is necessary to receive a Branch parameter when the URI scheme is ca
 {% highlight swift %}
 func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject?) -> Bool {
     // pass the url to the handle deep link call
-    if (!Branch.getInstance().handleDeepLink(url)) {
-        // do other deep link routing for the Facebook SDK, Pinterest SDK, etc
-    }
-    
+    Branch.getInstance().handleDeepLink(url);
+
+    // do other deep link routing for the Facebook SDK, Pinterest SDK, etc
     return true
 }
 {% endhighlight %}
