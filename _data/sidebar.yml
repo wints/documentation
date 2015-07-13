@@ -8,6 +8,7 @@
       pages:
         - ''
         - how_branch_links_work
+        - link_creation_guide
     - type: recipe
       title: Getting started with Branch
       pages:
