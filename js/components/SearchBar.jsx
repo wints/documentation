@@ -50,7 +50,7 @@ var SearchBar = React.createClass({
 						<input type="text" name="search" className="search-bar__input" autoComplete="off" onChange={this.inputChanged} onClick={this.handleClick} value={this.state.field} />
 					</form>
 				</div>
-				<div className="search-bar__img">
+				<div className="search-icon">
 					<i className="fa fa-search"></i>
 				</div>
 				<div className="search-results">

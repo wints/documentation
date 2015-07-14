@@ -20,7 +20,7 @@ var SearchStore = function() {
 		},
 
 		onIndexLoad: function(index) {
-			localStorage.setItem('index', index);
+			localStorage.setItem('index', 'loaded');
 			this.state.indexes = index.text;
 		}
 	};
