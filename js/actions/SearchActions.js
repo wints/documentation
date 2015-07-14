@@ -6,7 +6,7 @@ var SearchActions = function() {
 	return {
 		loadIndex: function() {
 			var self = this;
-			superagent.get('../js/search/built_files/master_data.json').end(function(err, res) {
+			superagent.get('/js/search/built_files/master_data.json').end(function(err, res) {
 				if (err) { throw err; }
 				self.dispatch(res);
 			});
