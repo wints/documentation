@@ -3,7 +3,7 @@ var lunr = require('lunr'),
 	path = require('path'),
 	R = require('ramda');
 
-var utils = require('../utils');
+var utils = require('../utils'),
 	customSWF = require('../custom_stop_word_filter');
 
 var __dirname;

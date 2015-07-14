@@ -26,7 +26,6 @@ var SearchBar = React.createClass({
 		this.setState({ field: event.target.value }, function(err) {
 			if (err) { throw err; }
 			if (!this.state.isLoaded) { return; } // TODO
-			console.log(JSON.parse(this.state.indexes), this.state.field);
 			var searched = app.top5(this.state.field, JSON.parse(this.state.indexes));
 			if (this.state.field.length <= 1) { this.setState({ data: [] }); }
 			else if (searched && searched[0]) { this.setState({ data: searched }); }

@@ -13,7 +13,7 @@ var SearchStore = function() {
 		},
 
 		state: {
-			field: '', 
+			field: '',
 			data: [],
 			isLoaded: getLoaded(),
 			indexes: null
