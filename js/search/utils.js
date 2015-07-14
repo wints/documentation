@@ -36,7 +36,7 @@ utils.walk = function(directoryPath) {
 // Reads files and parses by h2/h3/h4 into JSON objects
 // title: text inside of <a> tag with href="#..."
 // body: all text between headers excluding tags
-// id: dev.branch.io + og:url + href
+// url: og:url + href
 // 1. Read file 2. Split by header tag 3. Grab title information/href 4. Split by other header tag 5. Remove tags and add information to body
 var id_counter = 0;
 utils.convertSubsectionsToJSON = function(filePath) {
@@ -44,25 +44,15 @@ utils.convertSubsectionsToJSON = function(filePath) {
 	var data = fs.readFileSync(filePath);
 	var $ = cheerio.load(data.toString());
 	$('h2, h3').each(function() {
-		var JSON_obj = {};
-
 		var og_url = $('meta[property="og:url"]').attr('content');
-
-		JSON_obj.title = $(this).text();
-		// console.log('Title: ' + JSON_obj.title);
-
-		JSON_obj.id = id_counter++;
-
-		if ($(this).children('a[href^="#"]').attr('href')) { JSON_obj.url = '' + og_url + $(this).children('a[href^="#"]').attr('href'); }
-		else { JSON_obj.url = '' + og_url; }
-		// console.log('Link: ' + JSON_obj.url);
-
-		// Gets all elements between each header and outputs their text
-		JSON_obj.body = $(this).nextUntil('h2, h3').not('script').text();
-		// console.log('Body: ' + JSON_obj.body);
-
+		var JSON_obj = {
+			title: $(this).text(),
+			id: id_counter++,
+			// Gets all elements between each header and outputs their text
+			body: $(this).nextUntil('h2, h3').not('script').text(),
+			url: ($(this).children('a[href^="#"]').attr('href')) ? '' + og_url + $(this).children('a[href^="#"]').attr('href') : '' + og_url
+		};
 		JSON_data.push(JSON_obj);
-		// console.log ('JSON_data', JSON_data);
 	});
 	return JSON_data;
 };

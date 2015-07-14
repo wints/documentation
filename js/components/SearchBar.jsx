@@ -1,7 +1,7 @@
-var React = require('react');
+var React = require('react'),
+	R = require('ramda');
 
-var app = require('../search/run_scripts/app'),
-	SearchStore = require('../stores/SearchStore'),
+var SearchStore = require('../stores/SearchStore'),
 	SearchActions = require('../actions/SearchActions');
 
 function getStateFromStore() {
@@ -13,7 +13,7 @@ var SearchBar = React.createClass({
 		return SearchStore.getState();
 	},
 	componentDidMount: function() {
-		app.register();
+		SearchActions.registerCustomSWF();
 		SearchStore.listen(this._onChange);
 	},
 	componentWillUnmount: function() {
@@ -25,8 +25,8 @@ var SearchBar = React.createClass({
 	inputChanged: function(event) {
 		this.setState({ field: event.target.value }, function(err) {
 			if (err) { throw err; }
-			if (!this.state.isLoaded) { return; } // TODO
-			var searched = app.top5(this.state.field, JSON.parse(this.state.indexes));
+			if (!this.state.isLoaded) { return; }
+			var searched = SearchActions.top5(this.state.field, JSON.parse(this.state.indexes));
 			if (this.state.field.length <= 1) { this.setState({ data: [] }); }
 			else if (searched && searched[0]) { this.setState({ data: searched }); }
 		});
@@ -35,19 +35,30 @@ var SearchBar = React.createClass({
 		SearchActions.loadIndex();
 	},
 	render: function() {
-		var results = [];
-		var link = '';
 		if (this.state.data[0]) {
-			for (var i = 0; i < this.state.data.length; i++) {
-				url = 'http://dev.branch.io' + this.state.data[i].url;
-				results.push(<SearchResult title={this.state.data[i].title} link={url} origin={app.getResultOrigin(this.state.data[i])} context={app.getContext(this.state.data[i], 7, this.state.field)} key={this.state.data[i].id} />);
-			}
+			var self = this;
+			var results = R.map(function(result) {
+				return (
+					<SearchResult
+						title={result.title}
+						link={'http://dev.branch.io' + result.url}
+						origin={SearchActions.getResultOrigin(result)}
+						context={SearchActions.getContext(result, 7, self.state.field)}
+						key={result.id} />);
+			}, this.state.data);
 		}
 		return (
 			<div>
 				<div className="search-bar">
 					<form className="search-bar__form simplebox">
-						<input type="text" name="search" className="search-bar__input" autoComplete="off" onChange={this.inputChanged} onClick={this.handleClick} value={this.state.field} />
+						<input 
+							type="text"
+							name="search"
+							className="search-bar__input"
+							autoComplete="off"
+							onChange={this.inputChanged}
+							onClick={this.handleClick}
+							value={this.state.field} />
 					</form>
 				</div>
 				<div className="search-icon">
