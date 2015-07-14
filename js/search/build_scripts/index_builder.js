@@ -87,7 +87,7 @@ function build() {
 	masterFile.JSON_data = outPutJSONData(directoryPaths);
 	masterFile.indexes = buildAllIndexes(masterFile.JSON_data);
 	masterFile.platform_terms = comparePlatformTerms(masterFile.indexes);
-	fs.writeFile(path.resolve(__dirname, '../builtFiles/master_data.json'), JSON.stringify(masterFile), 'utf-8', function(err) {
+	fs.writeFile(path.resolve(__dirname, '../built_files/master_data.json'), JSON.stringify(masterFile), 'utf-8', function(err) {
 		if (err) { throw err; }
 		console.log('Master written.');
 	});

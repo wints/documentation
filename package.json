@@ -7,7 +7,7 @@
     "lunr": "0.5.11"
   },
   "scripts": {
-    "build_search": "node ./js/search/buildScripts/index_builder.js",
+    "build_search": "node ./js/search/build_scripts/index_builder.js",
     "lint": "eslint ./js",
     "test": "jscs ./js"
   },

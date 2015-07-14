@@ -15,8 +15,7 @@ function findAllWords() {
 function findStopWords() {
 	var words = findAllWords();
 	if (words.length < 100) {
-		console.log('ERROR');
-		return;
+		throw new Error('Less than 100 words to check for stop words');
 	}
 	var stop_words = [];
 	var mode = '';

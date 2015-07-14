@@ -7,16 +7,16 @@ platforms:
 ---
 
 {% ingredient sdk_links/creating_links %}{% endingredient %}
-{% ingredient sdk_links/custom_data %}{% endingredient %} 
+{% ingredient sdk_links/custom_data %}{% endingredient %}
 
 {% protip title='Tip: Identify your users!'  %}
 You should [identify your users](/recipes/quickstart_guide/{{page.platform}}/#identifying-your-users) so that you know who is sharing--and who is effectively driving the most installs and engagement.
 {% endprotip %}
 
 
- 
+
 ## Customizing and Tagging Links
-  
+
 {% ingredient sdk_links/channel %}{% endingredient %}
 {% ingredient sdk_links/tags %}{% endingredient %}
 {% ingredient sdk_links/feature %}{% endingredient %}
@@ -25,7 +25,7 @@ You should [identify your users](/recipes/quickstart_guide/{{page.platform}}/#id
 
 
 
-## Custom Redirects
+## Custom Redirects 
 
 {% ingredient sdk_links/ios_url %}{% endingredient %}
 {% ingredient sdk_links/android_url %}{% endingredient %}

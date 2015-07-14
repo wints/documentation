@@ -1,6 +1,6 @@
 var React = require('react');
 
-var app = require('../search/runScripts/app'),
+var app = require('../search/run_scripts/app'),
 	SearchStore = require('../stores/SearchStore'),
 	SearchActions = require('../actions/SearchActions');
 
@@ -10,10 +10,10 @@ function getStateFromStore() {
 
 var SearchBar = React.createClass({
 	getInitialState: function() {
-		app.register();
 		return SearchStore.getState();
 	},
 	componentDidMount: function() {
+		app.register();
 		SearchStore.listen(this._onChange);
 	},
 	componentWillUnmount: function() {
@@ -45,15 +45,15 @@ var SearchBar = React.createClass({
 			}
 		return (
 			<div>
-				<div className="search-bar-div">
-					<form className="search-bar simplebox">
-						<input type="text" name="search" className="search" autoComplete="off" onChange={this.inputChanged} onClick={this.handleClick} value={this.state.field} />
+				<div className="search-bar">
+					<form className="search-bar__form simplebox">
+						<input type="text" name="search" className="search-bar__input" autoComplete="off" onChange={this.inputChanged} onClick={this.handleClick} value={this.state.field} />
 					</form>
 				</div>
 				<div id="search-img-div">
-					<img id="search-img" src='http://www.skill-capped.com/images/icons/glyphicons/glyphicons_027_search@2x.png' alt='Search Symbol' className='search' />
+					<img id="search-img" src='http://www.skill-capped.com/images/icons/glyphicons/glyphicons_027_search@2x.png' alt='Search Symbol' className='search-bar__input' />
 				</div>
-				<div className="search-div">
+				<div className="search-results">
 					{results}
 				</div>
 			</div>
@@ -63,12 +63,12 @@ var SearchBar = React.createClass({
 
 var SearchResult = React.createClass({
 	render: function() {
-		return (<div className="search-result">
-					<a href={this.props.link} className="search-link">{this.props.title}
-						<span className="search-span"></span>
+		return (<div className="search-results__result">
+					<a href={this.props.link} className="search-results__result__link">{this.props.title}
+						<span className="search-results__result_span"></span>
 					</a>
-					<span className="search-origin">{this.props.origin}</span>
-					<span className="search-context">{this.props.context[0]}<strong>{this.props.context[1]}</strong>{this.props.context[2]}</span>
+					<span className="search-results__result__origin">{this.props.origin}</span>
+					<span className="search-results__result__context">{this.props.context[0]}<strong>{this.props.context[1]}</strong>{this.props.context[2]}</span>
 				</div>);
 	}
 });
