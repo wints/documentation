@@ -3,61 +3,113 @@ type: overview
 title: How Branch links work
 ---
 
-Our smart links detect the platform a user clicks from and takes them to the appropriate content. You don’t need separate links for iOS, Android or Desktop. You just tell us where the user needs to go and we make the routing happen, ensuring that your users convert.
-[See the complete diagram here.](/img/overview/how-links-work-diagram.jpg) 
+## A Branch link is the only link you need
 
-{% image src='/img/overview/how-links-work-1.png' alt='1' %}
+From supporting Facebook's App Links to smart redirects on all platforms to download measurement, you get it all in the Branch tool. Because every platform or operating system is constantly changing standards, trust us to keep you up to date and insure that you've got a constant flow of new users.
 
+In this guide, I'll explain the high level concepts and how the technology works.
 
-## Creating the links
+## Supports all standards
 
-{% image src='/img/overview/how-links-work-2.jpg' half right alt='2' %}
+As app developers ourselves, _it was really annoying how many different metatags were necessary for links that work everywhere_. We were constantly updating it to support new standards as well. With Branch, we just wanted to make it easy.
 
-Regardless of how the link gets created, all links behave the same way. Links can be created in the following ways:
+### Link display formatting standards
 
-* **Mobile SDKs**: every time a user clicks to share or invite another user, it is best practice to create a new link for that action.
+Branch allows you to customize the app default and the settings for each individual link.
 
-* **Web SDK**: you can create links on the fly on your web page that can persist data through an install of your mobile app.
+- Facebook open graph tags (ogp.me)
+	- this covers nearly everything (Slack, Messenger, WhatsApp, etc..)
+- Twitter cards
+- Pinterest pins
 
-* **HTTP API**: a common use case is to batch-create links customized to each of your users for a specific campaign.
+### Deep linking standards
 
-* **String builder**: you can just take link and append deep link parameters
+Branch handles all standards adoption automatically for you, so you don't need to do any work.
 
-* **Dashboard**: you can manually create custom links that can be tracked and analyzed. Additionally, we support two forms of white-labeling links:
-	- using a custom domain name.
-	- customizing the URL path, e.g. http://bnc.lt/fall2014discount.
+- Facebook App Links
+- Facebook Deferred Deeplinking
+- Facebook App Invites
+- Apple Spotlight
+- Apple Universal Links
+- Twitter App Cards (optional)
+- Pinterest App Cards (optional)
 
-## Bundling metadata with the link
+### App search portals
 
-In order to actually pass data “through” install, you must specify the data you wish to be present after install when creating the link. We allow you to specify a free-form key-value dictionary of data (though certain keys carry special meanings that affect the behavior of the link - read on for more about that).
+Branch makes every link scrapable and indexable by the following search engines:
 
-Examples of data often present in the dictionary includes (depending on use case):
+- Google App Indexing
+- Bing App Search
+- Apple Spotlight Cloud Search
 
-- referring user IDs
-- channel
-- the place in the app where the link was shared
-- the content you want the user taken to
-- amount of credits you want to award them
+## Smart, contextual redirects
 
-## Desktop behavior
+When you're growing your app, you need links that _route your user to the best possible user experience_. This is what Branch links do. Here's a quick diagram to describe how they work. 
 
-{% image src='/img/overview/how-links-work-3.jpg' half left alt='3' %}
+{% image src='/img/overview/smart_redirects.png' 3-quarters center alt='2' %}
 
-When a user clicks on a desktop, by default, we present them with a page that allows them to resend themselves the link via SMS. Alternately, you can send desktop users to another web page by specifying a value for the key “$desktop_url” when creating a link. In that case, we will redirect users to the value for that key in the link’s data dictionary.
+To summarize the above, Branch handles all the different to take your user to the right place. Here's the breakdown:
 
-If you want your users to retain the option of sending themselves the link they clicked via SMS, you can still use our [app download banner](/recipes/app_download_banner/ios/) on your web page that shows an app banner with an SMS input, or you can use more advanced Web SDK JavaScript with your own HTML widget. If the user was routed to that Web SDK-enabled site from one of our links, we remember that referring link data and continue the link flow.
+- If app **is** installed -> route to _the app_
+- If app **is not** installed -> route to _fallback URL_
+	- The fallback URL is set as the default to the app store, but can be set to any http URL.
 
-## iOS or Android clicks
+Here is a list of browsers and platforms where we have slaved for many hours to ensure the links still work:
 
-When a user clicks a Branch link on a mobile device, there are three places they can be redirected to:
+- Email
+	- Gmail, Yahoo, etc
+- Social networks
+	- Facebook, Pinterest, Twitter, etc
+- Messaging
+	- SMS, MMS, Messenger, WhatsApp, etc 
+- iOS browsers
+	- Safari, Chrome, etc
+- Android browsers
+	- Stock, Chrome, Firefox, UC, etc
+- Windows mobile OS browsers
+- Amazon Kindle, Fire browsers
+- Blackberry browsers
+- Desktop Chrome, Internet Explorer, Firefox
 
-- deeplink into the app
-- deeplink into the app store
-- a custom/web destination (“$ios_url” or “$android_url”)
+## Deep linking made easy
 
-{% image src='/img/overview/how-links-work-4.jpg' alt='4' %}
+To create a deep link, you just need to:
 
-## Getting the parameters after install or open
+1. Assemble a dictionary of keys and values
+	- NSDictionary, JSONObject, json, etc
+2. Pass it to Branch
+	- SDK, Web SDK, API or dashboard can receive these
+3. Branch creates and returns deep link
+	- https://bnc.lt/m/12345 or your white labeled http://your.domain.com/m/12345
 
-Once the user has installed or opened your app, you can use the Branch SDK to retrieve the data dictionary associated with the link the user came from. You can use these parameters to route the user to the appropriate place within the app or for other analytics or messaging.
+_After a link is clicked, the Branch deep link handler in your app (native SDKs) or on your website (web SDK) will return the dictionary of keys and values that was mapped to the link._ **We deep link through the app stores** in addition to when the app is already installed. Branch built a complicated [fingerprinting system](/recipes/matching_accuracy/) that allows the link to pass this dictionary of data through any app store.
 
+{% image src='/img/overview/easy_deeplinking.png' half center alt='3' %}
+
+Common keys/values stored in deep link dictionaries:
+
+- data identifiers (user id, article id, photo id, etc..)
+- coupon codes
+- other metadata that you want to use in the deep link handler
+
+## Deepviews with web SDK
+
+A deepview is a preview outside of app of content that is visible and consumable inside an app. It's usually accompanied by a deeplink that will route the user to that page in the app when clicked. You can use the Branch web SDK convert your mobile website into a deepview. _A deepview should be only shown if the user does not have the app_.
+
+1. Use the [deep linked app banner](/recipes/app_download_banner/ios/)
+2. Create your own interstitial and power it with a Branch [link created from the web SDK](https://github.com/BranchMetrics/Web-SDK/blob/master/WEB_GUIDE.md#linkdata-callback)
+
+When a user hits the mobile web deepview, they could arrive there organically or they could be redirected there from a Branch link if you configured the fallback URL to point to the deepview. If they came from a Branch link, the smart banner will automatically use the original link to carry through attribution. If you are powering you own interstitial, you can grab the _referring_link_ from the web SDK initialization.
+
+## Desktop landing page with SMS
+
+No matter how many people use smart phones, you will always have desktop users. If you're an app business, you want to get them to your app quickly. Here are the different options you have:
+
+- (default) all Branch links route to a hosted *SMS to download* feature  
+- Use your own desktop website and use the [Branch web SDK](/recipes/text_me_the_app_page/ios/) to power your SMS to download
+- Use your own desktop website and [use your own SMS](/recipes/recipes/text_me_the_app_page/ios/#using-your-own-sms-service-advanced) with a Branch link
+- Use your own desktop website with our [SMS to download smart banner](/recipes/app_download_banner/ios/#the-smart-banner)
+
+If you use our SMS methods, we will even pay for the Twilio fees. Shh. Don't tell anyone.
+
+{% image src='/img/overview/how-links-work-3.jpg' half center alt='4' %}

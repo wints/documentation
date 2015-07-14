@@ -15,3 +15,6 @@ var SearchActions = function() {
 };
 
 module.exports = alt.createActions(SearchActions());
+
+//
+//http://dev.branch.io.s3-website-us-west-1.amazonaws.com/js/master_data.json

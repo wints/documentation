@@ -42,7 +42,7 @@ Branch.getInstance().getShortURLWithParams(["foo" : "bar"], andChannel: "sms", a
 
 {% highlight java %}
 {% section params %}JSONObject obj = new JSONObject(); obj.putString("foo", "bar");{% endsection %}
-branch.getShortUrl(obj, new BranchLinkCreateListener() {
+branch.getShortUrl(obj, "sms", "share", new BranchLinkCreateListener() {
 	@Override
 	public void onLinkCreate(String url, BranchError error) {
 		Log.i(TAG, "Ready to share my link = " + url);

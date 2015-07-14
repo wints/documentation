@@ -98,28 +98,5 @@ app.getContext = function(result, accuracy, query) {
 	return [ pre_context.toString().replace(/,/g, ' ') + ' ', term, ' ' + post_context.toString().replace(/,/g, ' ') ];
 };
 
-// Adapted from http://youmightnotneedjquery.com/#json
-app.loadData = function(term) {
-	var data;
-	var request = new XMLHttpRequest();
-	request.open('GET', '/js/search/builtFiles/master_data.json', true);
-	request.onload = function() {
-		if (request.status >= 200 && request.status < 400) {
-			// Success!
-			data = JSON.parse(request.responseText);
-			console.log('loaded');
-			}
-		else {
-			// We reached our target server, but it returned an error
-			console.log('Reach but error!');
-			return 0
-		}
-	};
-	request.onerror = function() {
-	  // There was a connection error of some sort
-	  console.log('ERROR');
-	};
-	request.send();
-}
 
 module.exports = app;

@@ -15,6 +15,8 @@ Branch is a smart link for mobile apps with the following features:
 
 The links just work. In every situation.
 
+{% youtube MXgLQ8QDXk8 %}
+
 ## Getting started
 
 In less than 15 minutes you'll have your own Branch link with the ability to **redirect users** to your app, the App/Play Store or your website and **get powerful click, install and open metrics** by campaign and platform.

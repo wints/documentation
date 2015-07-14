@@ -58,16 +58,14 @@ function buildAllIndexes(JSON_data) {
 // Scrapes the words used on the pages for a platform from its index
 function getPlatformTerms(index) {
 	var terms = [];
-	var data = JSON.parse(fs.readFileSync(index));
+	var data = index;
 	var docs = data.documentStore.store;
 	for (var key in docs) {
-		if (docs.hasOwnProperty(key)) {
-			for (var i = 0; i < docs[key].length; i++) {
-				var keywords = docs[key][i].split(/[.:()@,\"\/;<>\'“"]/);
-				for (var j = 0; j < keywords.length; j++) {
-					if (terms.indexOf(keywords[j]) == -1) {
+		for (var i = 0; i < docs[key].length; i++) {
+			var keywords = docs[key].elements[i].split(/[.:()@,\"\/;<>\'“"\[\]^]/);
+			for (var j = 0; j < keywords.length; j++) {
+				if (terms.indexOf(keywords[j]) == -1) {
 					terms.push(keywords[j]);
-					}
 				}
 			}
 		}
@@ -76,9 +74,9 @@ function getPlatformTerms(index) {
 }
 
 // Compares the words used between platforms and find the platform specific terms
-function comparePlatformTerms() {
-	var ios_terms = getPlatformTerms(path.resolve(__dirname, '../builtFiles/index_ios.json')).sort();
-	var android_terms = getPlatformTerms(path.resolve(__dirname, '../builtFiles/index_android.json')).sort();
+function comparePlatformTerms(indexes) {
+	var ios_terms = getPlatformTerms(indexes.ios).sort();
+	var android_terms = getPlatformTerms(indexes.android).sort();
 	var results = { 'ios': R.difference(ios_terms, android_terms), 'android': R.difference(android_terms, ios_terms) };
 	console.log('3. Platform terms created');
 	return results;
@@ -88,7 +86,7 @@ function build() {
 	var masterFile = {};
 	masterFile.JSON_data = outPutJSONData(directoryPaths);
 	masterFile.indexes = buildAllIndexes(masterFile.JSON_data);
-	masterFile.platform_terms = comparePlatformTerms();
+	masterFile.platform_terms = comparePlatformTerms(masterFile.indexes);
 	fs.writeFile(path.resolve(__dirname, '../builtFiles/master_data.json'), JSON.stringify(masterFile), 'utf-8', function(err) {
 		if (err) { throw err; }
 		console.log('Master written.');
