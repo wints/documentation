@@ -1,4 +1,4 @@
-var	superagent = require('superagent');
+var superagent = require('superagent');
 
 var alt = require('../support/alt');
 

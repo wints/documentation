@@ -35,14 +35,14 @@ var SearchBar = React.createClass({
 		SearchActions.loadIndex();
 	},
 	render: function() {
-			var results = [];
-			var link = '';
-			if (this.state.data[0]) {
-				for (var i = 0; i < this.state.data.length; i++) {
-					url = 'http://dev.branch.io' + this.state.data[i].url;
-					results.push(<SearchResult title={this.state.data[i].title} link={url} origin={app.getResultOrigin(this.state.data[i])} context={app.getContext(this.state.data[i], 7, this.state.field)} key={this.state.data[i].id} />);
-				}
+		var results = [];
+		var link = '';
+		if (this.state.data[0]) {
+			for (var i = 0; i < this.state.data.length; i++) {
+				url = 'http://dev.branch.io' + this.state.data[i].url;
+				results.push(<SearchResult title={this.state.data[i].title} link={url} origin={app.getResultOrigin(this.state.data[i])} context={app.getContext(this.state.data[i], 7, this.state.field)} key={this.state.data[i].id} />);
 			}
+		}
 		return (
 			<div>
 				<div className="search-bar">
@@ -63,13 +63,14 @@ var SearchBar = React.createClass({
 
 var SearchResult = React.createClass({
 	render: function() {
-		return (<div className="search-results__result">
-					<a href={this.props.link} className="search-results__result__link">{this.props.title}
-						<span className="search-results__result_span"></span>
-					</a>
-					<span className="search-results__result__origin">{this.props.origin}</span>
-					<span className="search-results__result__context">{this.props.context[0]}<strong>{this.props.context[1]}</strong>{this.props.context[2]}</span>
-				</div>);
+		return (
+			<div className="search-results__result">
+				<a href={this.props.link} className="search-results__result__link">{this.props.title}
+					<span className="search-results__result_span"></span>
+				</a>
+				<span className="search-results__result__origin">{this.props.origin}</span>
+				<span className="search-results__result__context">{this.props.context[0]}<strong>{this.props.context[1]}</strong>{this.props.context[2]}</span>
+			</div>);
 	}
 });
 
