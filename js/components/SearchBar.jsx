@@ -48,14 +48,15 @@ var SearchBar = React.createClass({
 			}, this.state.results);
 		}
 		return (
-			<div>
+			<div className="search">
 				<div className="search-bar">
-					<form className="search-bar__form simplebox">
+					<form className="navbar-form">
 						<input
 							type="text"
 							name="search"
-							className="search-bar__input"
+							className="form-control"
 							autoComplete="off"
+							placeholder="Search"
 							onChange={this.inputChanged}
 							onClick={this.handleClick}
 							value={this.state.field} />

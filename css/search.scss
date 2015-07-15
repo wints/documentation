@@ -1,15 +1,21 @@
+@media screen and (max-width: 900px) {
+	.search {
+		margin-bottom: -10px;
+	}
+}
+
 .search-bar {
 	position: relative;
 
-	.search-bar__form {
+	.navbar-form {
 		float: left;
 		padding-top: 12px;
 	}
 
-	.search-bar__input {
+	.form-control {
 		clear: right;
 		float: right;
-		width: 400px;
+		width: 350px;
 		padding-left: 5px;
 		outline: none;
 		box-shadow:none !important;
@@ -30,7 +36,7 @@
 	border-top: 0;
 
 	.search-results__result {
-		width: 398px;
+		width: 348px;
 		height: 80px;
 		position: relative;
 		overflow: hidden;
@@ -89,16 +95,9 @@
 	width: 50px;
 	height: 50px;
 	margin-top: 13px;
-	margin-left: 375px;
+	margin-left: 325px;
 }
 
 select:active, select:hover {
   outline: none
 }
-
-@media screen and (max-width: 900px) {
-	.search-bar, .search-icon {
-		display: none;
-	}
-}
-
