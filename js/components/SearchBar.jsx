@@ -1,8 +1,10 @@
 var React = require('react'),
-	R = require('ramda');
+	R = require('ramda'),
+	lunr = require('lunr');
 
 var SearchStore = require('../stores/SearchStore'),
-	SearchActions = require('../actions/SearchActions');
+	SearchActions = require('../actions/SearchActions'),
+	customSWF = require('../search/custom_stop_word_filter');
 
 function getStateFromStore() {
 	return SearchStore.getState();
@@ -10,10 +12,10 @@ function getStateFromStore() {
 
 var SearchBar = React.createClass({
 	getInitialState: function() {
-		return SearchStore.getState();
+		return R.merge({ field: '' }, SearchStore.getState());
 	},
 	componentDidMount: function() {
-		SearchActions.registerCustomSWF();
+		lunr.Pipeline.registerFunction(customSWF, 'customSWF');
 		SearchStore.listen(this._onChange);
 	},
 	componentWillUnmount: function() {
@@ -26,32 +28,30 @@ var SearchBar = React.createClass({
 		this.setState({ field: event.target.value }, function(err) {
 			if (err) { throw err; }
 			if (!this.state.isLoaded) { return; }
-			var searched = SearchActions.top5(this.state.field, JSON.parse(this.state.indexes));
-			if (this.state.field.length <= 1) { this.setState({ data: [] }); }
-			else if (searched && searched[0]) { this.setState({ data: searched }); }
+			SearchActions.top5(this.state.field, this.state.indexes);
 		});
 	},
 	handleClick: function() {
-		SearchActions.loadIndex();
+		if (!this.state.isLoaded) { SearchActions.loadIndex(); }
 	},
 	render: function() {
-		if (this.state.data[0]) {
+		if (this.state.results.length) {
 			var self = this;
 			var results = R.map(function(result) {
 				return (
 					<SearchResult
 						title={result.title}
 						link={'http://dev.branch.io' + result.url}
-						origin={SearchActions.getResultOrigin(result)}
-						context={SearchActions.getContext(result, 7, self.state.field)}
+						origin={result.origin}
+						context={result.context}
 						key={result.id} />);
-			}, this.state.data);
+			}, this.state.results);
 		}
 		return (
 			<div>
 				<div className="search-bar">
 					<form className="search-bar__form simplebox">
-						<input 
+						<input
 							type="text"
 							name="search"
 							className="search-bar__input"

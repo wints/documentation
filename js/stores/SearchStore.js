@@ -1,27 +1,27 @@
 var alt = require('../support/alt'),
 	SearchActions = require('../actions/SearchActions');
 
-function getLoaded() {
-	return (typeof localStorage !== 'undefined');
-}
-
 var SearchStore = function() {
 	return {
 		displayName: 'SearchStore',
 		bindListeners: {
-			onIndexLoad: SearchActions.loadIndex
+			onIndexLoad: SearchActions.loadIndex,
+			onTop5: SearchActions.top5
 		},
 
 		state: {
-			field: '',
-			data: [],
-			isLoaded: getLoaded(),
-			indexes: null
+			results: [],
+			indexes: {},
+			isLoaded: false
 		},
 
 		onIndexLoad: function(index) {
-			localStorage.setItem('index', 'loaded');
-			this.state.indexes = index.text;
+			this.state.indexes = index;
+			this.state.isLoaded = true;
+		},
+
+		onTop5: function(top5) {
+			this.state.results = top5;
 		}
 	};
 };
