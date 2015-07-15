@@ -52,7 +52,7 @@ function search(term, data) {
 }
 
 // Returns the top 5 results of search
-function top5(term, data) {
+function getTop5Results(term, data) {
 	var results = search(term, data);
 
 	var top5_results = [];
@@ -100,7 +100,7 @@ var SearchStore = function() {
 		bindListeners: {
 			onIndexLoad: SearchActions.loadIndex,
 			onLoading: SearchActions.loading,
-			onTop5: SearchActions.top5
+			onSearch: SearchActions.search
 		},
 
 		state: {
@@ -119,14 +119,14 @@ var SearchStore = function() {
 			this.state.isLoading = true;
 		},
 
-		onTop5: function(query) {
+		onSearch: function(query) {
 			// Checks if the query is empty
 			if (!query.length) {
 				this.state.results = [];
 			}
 			// Makes sure results stay showing if the next letter added/removed from the query doesn't turn up any search results
 			else {
-				var results = top5(query, this.state.indexes);
+				var results = getTop5Results(query, this.state.indexes);
 				if (results.length) {
 					this.state.results = results;
 				}

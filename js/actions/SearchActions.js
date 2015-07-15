@@ -17,7 +17,7 @@ var SearchActions = function() {
 			});
 		},
 
-		top5: function(query) {
+		search: function(query) {
 			this.dispatch(query);
 		}
 	};

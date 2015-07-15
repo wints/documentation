@@ -28,7 +28,7 @@ var SearchBar = React.createClass({
 		this.setState({ field: event.target.value }, function(err) {
 			if (err) { throw err; }
 			if (!this.state.isLoaded) { return; }
-			SearchActions.top5(this.state.field, this.state.indexes);
+			SearchActions.search(this.state.field, this.state.indexes);
 		});
 	},
 	handleClick: function() {
@@ -74,9 +74,12 @@ var SearchBar = React.createClass({
 });
 
 var SearchResult = React.createClass({
+	_onClick: function() {
+		window.location = this.props.link;
+	},
 	render: function() {
 		return (
-			<div className="search-results__result">
+			<div className="search-results__result" onClick={this._onClick}>
 				<a href={this.props.link} className="search-results__result__link">{this.props.title}
 					<span className="search-results__result_span"></span>
 				</a>
