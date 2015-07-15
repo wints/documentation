@@ -18,18 +18,16 @@ _Ad network -> **Branch** -> measurement partner (Adjust, etc)_
 {% override title %}## Customize the redirects to point to measurement partner{% endoverride %}
 {% override description %}In order to configure the links for this ad network integration, you'll need to point the Branch links to the measurement partner. To do this, you'll want to customize the endpoints for both Android and iOS. Let's take the example where you were previously using Adjust with the following template:
 
-1. **iOS:** _https://app.adjust.io/8x54yn?campaign=iOS_search_campaign&adgroup={keyword}&creative={matchtype}&google_network={network}_
-1. **Android:** _https://app.adjust.io/3D24xy?campaign=Android_search_campaign&adgroup={keyword}&creative={matchtype}&google_network={network}_
+1. **iOS:** _https://app.adjust.io/abc123?campaign=iOS_search_campaign&adgroup={keyword}&creative={matchtype}&google_network={network}_
+1. **Android:** _https://app.adjust.io/abc123?campaign=Android_search_campaign&adgroup={keyword}&creative={matchtype}&google_network={network}_
 
-You'd set the **custom URL for Android** to _https://app.adjust.io/3D24xy_ and the **custom URL for iOS** to _https://app.adjust.io/8x54yn_. This would tell Branch where to send the user for the specific OS. Don't worry about the additional query parameters (the stuff after '?'). We'll carry that through Branch automatically.
+You'd set the **custom URL for Android** to _https://app.adjust.io/abc123_ and the **custom URL for iOS** to _https://app.adjust.io/abc123_. This would tell Branch where to send the user for the specific OS. Don't worry about the additional query parameters (the stuff after '?'). We'll carry that through Branch automatically.
 {% endoverride %}
 {% endingredient %}
 
 ## Customize deep link parameters
 
-{% ingredient dashboard_links/custom_data %}
-{% override title %}{% endoverride %}
-{% endingredient %}
+Here is where you can specify the custom parameters to add to a link that will be deep linked into the app. You might want to put a coupon code or a page identifier here to route the user.
 
 In order to properly link the ad network to the measurement partner, you must configure the Branch link to pass through any additional query parameters through to the measurement partner. 
 
