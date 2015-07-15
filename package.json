@@ -2,9 +2,11 @@
   "name": "documentation",
   "version": "1.0.0",
   "dependencies": {
+    "cheerio": "^0.19.0",
     "esprima-fb": "^15001.1.0-dev-harmony-fb",
     "jscs": "^1.13.1",
-    "lunr": "0.5.11"
+    "lunr": "0.5.11",
+    "superagent": "^1.2.0"
   },
   "scripts": {
     "build_search": "node ./js/search/build_scripts/index_builder.js",
