@@ -96,3 +96,9 @@ select:active, select:hover {
   outline: none
 }
 
+@media screen and (max-width: 900px) {
+	.search-bar, .search-icon {
+		display: none;
+	}
+}
+
