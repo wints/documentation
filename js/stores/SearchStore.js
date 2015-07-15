@@ -20,8 +20,15 @@ var SearchStore = function() {
 			this.state.isLoaded = true;
 		},
 
-		onTop5: function(top5) {
-			this.state.results = top5;
+		onTop5: function(top5_term) {
+			// Checks if the query is empty
+			if (!top5_term[1].length) {
+				this.state.results = [];
+			}
+			// Makes sure results stay showing if the next letter added/removed from the query doesn't turn up any search results
+			else if (top5_term[0].length) {
+				this.state.results = top5_term[0];
+			}
 		}
 	};
 };

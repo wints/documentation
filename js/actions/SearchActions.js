@@ -94,20 +94,15 @@ var SearchActions = function() {
 
 		// Returns the top 5 results of search
 		top5: function(term, data) {
-			if (term.length <= 1) {
-				this.dispatch({});
-			}
-			else {
-				var results = search(term, data);
+			var results = search(term, data);
 
-				var top5 = [];
-				for (var i = 0; i < 5 && i < results.length; i++) {
-					top5.push(results[i]);
-					results[i].origin = getResultOrigin(results[i]);
-					results[i].context = getContext(results[i], 7, term);
-				}
-				this.dispatch(top5);
+			var top5 = [];
+			for (var i = 0; i < 5 && i < results.length; i++) {
+				top5.push(results[i]);
+				results[i].origin = getResultOrigin(results[i]);
+				results[i].context = getContext(results[i], 7, term);
 			}
+			this.dispatch([ top5, term ]);
 		}
 	};
 };
