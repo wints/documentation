@@ -40,10 +40,10 @@ Click save to generate the URL - it will appear in the list of links.
 
 Lastly, you need to deliver the proper link to the advertiser. To do this, you probably are used to sending the advertiser a link with the templated fields. For example, here is a typical link for Adjust:
 
-_https://app.adjust.io/abc123??campaign={campaign_id}&adgroup={creative_id}_
+_https://app.adjust.io/abc123?campaign={campaign_id}&adgroup={creative_id}_
 
 To create the link for the advertiser, you simply need to replace the base URL (everything before the '?'), with the Branch provided link. So, keeping with the same example, you would change 'https://app.adjust.io/8x54yn' with 'https://bnc.lt/l/125AdD-F' to make the link like so:
 
-_https://bnc.lt/l/125AdD-F??campaign={campaign_id}&adgroup={creative_id}_
+_https://bnc.lt/l/125AdD-F?campaign={campaign_id}&adgroup={creative_id}_
 
 This is the link to provide to the advertiser.
