@@ -99,18 +99,24 @@ var SearchStore = function() {
 		displayName: 'SearchStore',
 		bindListeners: {
 			onIndexLoad: SearchActions.loadIndex,
+			onLoading: SearchActions.loading,
 			onTop5: SearchActions.top5
 		},
 
 		state: {
 			results: [],
 			indexes: {},
+			isLoading: false,
 			isLoaded: false
 		},
 
 		onIndexLoad: function(index) {
 			this.state.indexes = index;
 			this.state.isLoaded = true;
+		},
+
+		onLoading: function() {
+			this.state.isLoading = true;
 		},
 
 		onTop5: function(query) {
@@ -126,7 +132,6 @@ var SearchStore = function() {
 				}
 			}
 		}
-
 	};
 };
 

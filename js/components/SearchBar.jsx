@@ -32,7 +32,7 @@ var SearchBar = React.createClass({
 		});
 	},
 	handleClick: function() {
-		if (!this.state.isLoaded) { SearchActions.loadIndex(); }
+		if (!this.state.isLoaded && !this.state.isLoading) { SearchActions.loadIndex(); }
 	},
 	render: function() {
 		if (this.state.results.length) {

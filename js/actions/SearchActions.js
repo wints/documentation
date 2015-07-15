@@ -4,13 +4,19 @@ var alt = require('../support/alt');
 
 var SearchActions = function() {
 	return {
+		loading: function() {
+			this.dispatch();
+		},
+
 		loadIndex: function() {
 			var self = this;
+			this.actions.loading();
 			superagent.get('/js/search/built_files/master_data.json').end(function(err, res) {
 				if (err) { throw err; }
 				self.dispatch(JSON.parse(res.text));
 			});
 		},
+
 		top5: function(query) {
 			this.dispatch(query);
 		}
