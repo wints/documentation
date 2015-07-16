@@ -10,7 +10,6 @@ branch.sendSMS(
 );
 {% endhighlight %}
 
-<<<<<<< HEAD
 So, for example, your call to this method, once filled in with the user's phone number, could look like the following:
 
 {% highlight javascript %}

@@ -5,7 +5,7 @@ var React = require('react'),
 var TabsStore = require('../stores/TabsStore'),
 	TabsActions = require('../actions/TabsActions');
 
-var getOptionsFromChildren = R.map(R.path(['props', 'name']));
+var getOptionsFromChildren = R.map(R.path([ 'props', 'name' ]));
 
 function getState(options) {
 	return { active: TabsStore.getActive(options), options: options };
@@ -34,7 +34,7 @@ var Tabs = React.createClass({
 	render: function() {
 		var self = this;
 
-		var optionButtons = R.mapIndexed(function(val , i) {
+		var optionButtons = R.mapIndexed(function(val, i) {
 			var classes = {
 				'btn btn-default': true,
 				'btn-inactive': i != self.state.active
