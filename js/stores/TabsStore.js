@@ -1,7 +1,7 @@
 var alt = require('../support/alt'),
 	TabsActions = require('../actions/TabsActions');
 
-var serialize = function(options) { return options.sort().join(','); }
+var serialize = function(options) { return options.sort().join(','); };
 
 function getActiveState(options) {
 	var active_tab;
@@ -15,7 +15,7 @@ var TabsStore = function() {
 	return {
 		displayName: 'TabsStore',
 		bindListeners: {
-		  onUpdate: TabsActions.update
+			onUpdate: TabsActions.update
 		},
 
 		state: {
@@ -32,7 +32,7 @@ var TabsStore = function() {
 			localStorage.setItem(serialize(data.options), data.i);
 			this.state.active_tabs[serialize(data.options)] = data.i;
 		}
-	}
-}
+	};
+};
 
 module.exports = alt.createStore(TabsStore());

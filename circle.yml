@@ -19,5 +19,6 @@ deployment:
     branch: master
     commands:
       - bundle exec jekyll build
+      - npm run build_search
       - uglifyjs _site/js/all.js -c -o _site/js/all.js
       - bundle exec s3_website push

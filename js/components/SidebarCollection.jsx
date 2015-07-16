@@ -10,14 +10,14 @@ function getStateFromStore() {
 }
 
 var LinkInternal = React.createClass({
-	render: function(){
+	render: function() {
 		var props = this.props,
 			page_key = props.page_key,
 			page = props.group_data[page_key];
 		if (!page) {
 			throw 'ERROR: There is no PAGE: ' + page_key + ' with the TYPE: ' + props.type;
 		}
-		var path = props.type ? [props.type, page_key] : [page_key],
+		var path = props.type ? [ props.type, page_key ] : [ page_key ],
 			isCurrentPath = props.current_path == path.join('/');
 
 		if (page.platforms[props.platform]) {
@@ -30,7 +30,7 @@ var LinkInternal = React.createClass({
 });
 
 var LinkExternal = React.createClass({
-	render: function(){
+	render: function() {
 		var target = this.props.target || '_self';
 		return (<li>
 				<a href={ this.props.href } target={target}>{ this.props.label }</a>
@@ -42,9 +42,9 @@ var GroupPages = React.createClass({
 	render: function() {
 		var props = this.props;
 		// overview pages live in root where as all other page types are in plural form. i.e. receipe -> recipes
-		var type = props.type != 'overview' ? props.type + 's': null;
+		var type = props.type != 'overview' ? props.type + 's' : null;
 		var pages = R.map(function(page) {
-			if(type == 'links'){
+			if (type == 'links') {
 				return (
 					<LinkExternal
 						key={page.label}
@@ -95,8 +95,8 @@ var Sidebar = React.createClass({
 						platform={ self.state.platform }/>
 				</div>);
 		});
-		var classes = ['sidebar'];
-		if(self.props.settings.className){
+		var classes = [ 'sidebar' ];
+		if (self.props.settings.className) {
 			classes.push(self.props.settings.className);
 		}
 		return (
@@ -107,11 +107,11 @@ var Sidebar = React.createClass({
 });
 
 var SidebarCollection = React.createClass({
-	render: function(){
+	render: function() {
 		var self = this,
 			props = self.props,
 			sidebars = [];
-		Object.keys(props.layout).forEach(function(key){
+		Object.keys(props.layout).forEach(function(key) {
 			sidebars.push(
 				<Sidebar key={key}
 					current_path={props.current_path}
