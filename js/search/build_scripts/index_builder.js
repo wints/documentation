@@ -8,7 +8,7 @@ var utils = require('../utils'),
 
 var __dirname;
 
-var directoryPaths = [ path.resolve(__dirname, '../../../_site/recipes'), path.resolve(__dirname, '../../../_site/references') ];
+var directoryPaths = [ path.resolve(__dirname, '../../../recipes'), path.resolve(__dirname, '../../../references') ];
 
 // Creates an object of three different arrays of objects for default, ios, and android
 // directories: the directories to gather JSON data from, defaults to recipes, references, and overviews

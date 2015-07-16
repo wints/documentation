@@ -9,7 +9,7 @@
     "superagent": "^1.2.0"
   },
   "scripts": {
-    "build_search": "node ./js/search/build_scripts/index_builder.js",
+    "build_search": "node ./_site/js/search/build_scripts/index_builder.js",
     "lint": "eslint ./js",
     "test": "jscs ./js"
   },
