@@ -35,6 +35,7 @@ var SearchBar = React.createClass({
 		if (!this.state.isLoaded && !this.state.isLoading) { SearchActions.loadIndex(); }
 	},
 	render: function() {
+		var field = this.state.field;
 		if (this.state.results.length) {
 			var self = this;
 			var results = R.map(function(result) {
@@ -44,7 +45,8 @@ var SearchBar = React.createClass({
 						link={'http://dev.branch.io' + result.url}
 						origin={result.origin}
 						context={result.context}
-						key={result.id} />);
+						key={result.id}
+						term={field} />);
 			}, this.state.results);
 		}
 		return (
@@ -75,6 +77,7 @@ var SearchBar = React.createClass({
 
 var SearchResult = React.createClass({
 	_onClick: function() {
+		mixpanel.track("Clicked Search Result", { "Link": this.props.link, "Search Term": this.props.term, "Section": "Navbar" });
 		window.location = this.props.link;
 	},
 	render: function() {
