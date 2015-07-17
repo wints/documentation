@@ -15,7 +15,7 @@ We've partnered with Localytics to provide an easy way to deliver Branch install
 
 Through webhooks, we can send all install data that Branch is responsible for. Building on top of Webhooks, we have built a custom integration to automatically send said data without any extra work on your side (besides integrating both SDKs). We just need some configuration information from your Localytics account, and we'll take care of the rest.
 
-{% protip title="How do we differntiate a Localytics install vs Branch?" %}We rely on a Branch link being clicked which leads to an install. This sets an internal boolean that an install came from Branch, which then fires our webhook.{% endprotip %}
+{% protip title="How do we differentiate a Localytics install vs Branch?" %}We rely on a Branch link being clicked which leads to an install. This sets an internal boolean that an install came from Branch, which then fires our webhook.{% endprotip %}
 
 Before you can start sending data, we'll walk you through a minimum of what is needed.
 
