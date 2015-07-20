@@ -4,7 +4,8 @@ var React = require('react'),
 
 var SearchStore = require('../stores/SearchStore'),
 	SearchActions = require('../actions/SearchActions'),
-	customSWF = require('../search/custom_stop_word_filter');
+	customSWF = require('../search/custom_stop_word_filter'),
+	utils = require('../search/utils');
 
 function getStateFromStore() {
 	return SearchStore.getState();
@@ -14,8 +15,12 @@ var SearchBar = React.createClass({
 	getInitialState: function() {
 		return R.merge({ field: '' }, SearchStore.getState());
 	},
+	termTracking: function(term) {
+		mixpanel.track("Typed in Search Term", { "Search Term": term, "Section": "Search" });
+	},
 	componentDidMount: function() {
 		lunr.Pipeline.registerFunction(customSWF, 'customSWF');
+		this.termTracking = utils.debounce(this.termTracking, 1000)
 		SearchStore.listen(this._onChange);
 	},
 	componentWillUnmount: function() {
@@ -29,6 +34,7 @@ var SearchBar = React.createClass({
 			if (err) { throw err; }
 			if (!this.state.isLoaded) { return; }
 			SearchActions.search(this.state.field, this.state.indexes);
+			if (this.state.field.length) { this.termTracking(this.state.field); }
 		});
 	},
 	handleClick: function() {
@@ -77,7 +83,7 @@ var SearchBar = React.createClass({
 
 var SearchResult = React.createClass({
 	_onClick: function() {
-		mixpanel.track("Clicked Search Result", { "Link": this.props.link, "Search Term": this.props.term, "Section": "Navbar" });
+		mixpanel.track("Clicked Search Result", { "Link": this.props.link, "Search Term": this.props.term, "Section": "Search" });
 		window.location = this.props.link;
 	},
 	render: function() {
