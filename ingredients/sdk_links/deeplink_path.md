@@ -8,6 +8,8 @@ The value of the deeplink path that you'd like us to append to your URI. For exa
 <!---    iOS -->
 {% if page.ios %}
 
+You can make this platform specific by replacing **$deeplink_path** with **$ios_deeplink_path** or **$android_deeplink_path**. 
+
 {% tabs %}
 {% tab objective-c %}
 {% highlight objc %}
@@ -34,6 +36,9 @@ Branch.getInstance().getShortURLWithParams(["$deeplink_path": "radio/station/456
 
 <!---    Android -->
 {% if page.android %}
+
+You can make this platform specific by replacing **$deeplink_path** with **$android_deeplink_path** or **$ios_deeplink_path**. 
+
 {% highlight java %}
 JSONObject params = new JSONObject();
 try {
