@@ -15,9 +15,6 @@ var SearchBar = React.createClass({
 	getInitialState: function() {
 		return R.merge({ field: '' }, SearchStore.getState());
 	},
-	termTracking: function(term) {
-		mixpanel.track("Typed in Search Term", { "Search Term": term, "Section": "Search" });
-	},
 	componentDidMount: function() {
 		lunr.Pipeline.registerFunction(customSWF, 'customSWF');
 		this.termTracking = utils.debounce(this.termTracking, 1000)
@@ -31,10 +28,28 @@ var SearchBar = React.createClass({
 	},
 	inputChanged: function(event) {
 		this.setState({ field: event.target.value }, function(err) {
+			var timeOnChange = (new Date()).getTime(),
+				tracked = false,
+				term = this.state.field;
+
 			if (err) { throw err; }
 			if (!this.state.isLoaded) { return; }
+
 			SearchActions.search(this.state.field, this.state.indexes);
-			if (this.state.field.length) { this.termTracking(this.state.field); }
+
+			if (this.state.field.length) {
+				while (!tracked) {
+					var currentTime = (new Date().getTime());
+					if (currentTime - timeOnChange >= 250) {
+						mixpanel.track("Typed in Search Term", { "Search Term": term, "Section": "Search" });
+						tracked = true;
+					}
+				}
+			}
+			// while ((new Date()).getTime() - timeOnChange < 250) {
+			// 	console.log('fml');
+			// }
+			console.log('done');
 		});
 	},
 	handleClick: function() {
