@@ -53,20 +53,12 @@ branch.banner({
     customCSS: '.title { color: #F00; }',   // Add your own custom styles to the banner that load last, and are gauranteed to take precedence, even if you leave the banner in an iframe
     make_new_link: false                    // Should the banner create a new link, even if a link already exists?
 }, {
-    tags: ['tag1', 'tag2'],
-    feature: 'dashboard',
-    stage: 'new user',
+    tags: ['version12', 'trial-b'],
+    feature: 'smart_banner',
+    stage: 'shoe_page'
     data: {
-        mydata: 'something',
-        foo: 'bar',
-        '$desktop_url': 'http://myappwebsite.com',
-        '$ios_url': 'http://myappwebsite.com/ios',
-        '$ipad_url': 'http://myappwebsite.com/ipad',
-        '$android_url': 'http://myappwebsite.com/android',
-        '$og_app_id': '12345',
-        '$og_title': 'My App',
-        '$og_description': 'My app\'s description.',
-        '$og_image_url': 'http://myappwebsite.com/image.png'
+        deeplink: 'data',
+        username: 'Alex',
     }
 });
 {% endhighlight %}
