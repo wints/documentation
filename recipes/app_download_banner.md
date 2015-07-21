@@ -38,7 +38,7 @@ branch.banner(options, {
 
 Now when a user clicks on the Smart Banner on a mobile device, when they open your app they will be taken straight to a view controller to see picture with id "12345". It's that simple.
 
-Deep linking has countless possibilities and we'd be happy to brainstorm use cases for your specific app. Happy building!
+Deep linking has countless possibilities and we'd be happy to brainstorm use cases for your specific app.
 
 ## (Optional) Events: Listening for Banner specific events
 
