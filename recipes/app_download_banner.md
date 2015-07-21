@@ -38,7 +38,38 @@ branch.banner(options, {
 
 Now when a user clicks on the Smart Banner on a mobile device, when they open your app they will be taken straight to a view controller to see picture with id "12345". It's that simple.
 
-Deep linking has countless possibilities and we'd be happy to brainstorm use cases for your specific app. Happy building!
+Deep linking has countless possibilities and we'd be happy to brainstorm use cases for your specific app.
+
+## (Optional) Events: Listening for Banner specific events
+
+If you would like your app to listen for and react to Banner events, the Web SDK includes a simple event listener that currently only publishes events for Branch.banner() events.
+
+Available Branch.banner() Events include:
+
+- **willShowBanner**
+- **willNotShowBanner**
+- **didShowBanner**
+- **willCloseBanner**
+- **willSendBannerSMS**
+- **sendBannerSMSError**
+- **didSendBannerSMS**
+
+Here's an example of listening for the **willShowBanner** event:
+
+{% highlight javascript %}
+var listener = function(event) { console.log(event); }
+branch.addListener('willShowBanner', listener);
+branch.banner({
+    icon: 'http://icons.iconarchive.com/icons/wineass/ios7-redesign/512/Appstore-icon.png',
+    title: 'Branch Demo App',
+    description: 'The Branch demo app!'
+}, {});
+{% endhighlight %}
+
+Now you can adjust your page's CSS when the Banner is about to be displayed. 
+
+For more information on Banner events, please visit our [web guide](https://github.com/BranchMetrics/Web-SDK/blob/master/WEB_GUIDE.md#addlistenerevent-listener)!
+
 
 
 ## Conclusion
