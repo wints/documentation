@@ -68,7 +68,7 @@ branch.banner({
 
 Now you can adjust your page's CSS when the Banner is about to be displayed. 
 
-For more information on Banner Events, please visit our [web guide](https://github.com/BranchMetrics/Web-SDK/blob/master/WEB_GUIDE.md#addlistenerevent-listener)!
+For more information on Banner events, please visit our [web guide](https://github.com/BranchMetrics/Web-SDK/blob/master/WEB_GUIDE.md#addlistenerevent-listener)!
 
 
 
