@@ -1,1 +1,1 @@
-* [**Dashboard pro tips**](/recipes/dashboard_pro_tips/{% section platform %}{{page.platform}}{% endsection %}/) --  viewing influencers, specifying a custom link domain, and more
+* [**Dashboard pro tips**](/recipes/dashboard_pro_tips/{% section platform %}{{page.platform}}{% endsection %}) --  viewing influencers, specifying a custom link domain, and more
