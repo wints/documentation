@@ -87,6 +87,27 @@ The second chart is for measuring conversion funnels for this ad. If you setup a
 
 {% image src='/img/recipes/deeplink_ads/conversion_funnel.png' full nofloat alt='Facebook Example Ad' %}
 
+## A note on testing
+
+### Demo/preview ads do not deep link
+
+Unfortunately, Facebook uses a different mechanism for showing the preview ads that you send to your phone that **prevents you from testng deep linking**. Do not waste time trying to get this to work. We've confirmed with 2 separate Facebook representatives that it's broken.
+
+### Liked live ads do not deep link
+
+If you see that someone liked your ad, do not bother trying to click and test it. Clicking your own ad that shows up in notifications **will not deep link**.
+
+### Use the deep link tester
+
+The only way to test the deep linking functionality is outside of the actual ads system. Follow these instructions to test the deep linking functionality:
+
+1. Head to the [Ads tester tool](https://developers.facebook.com/tools/app-ads-helper/)
+2. Choose the app that you're advertising with
+3. Scroll down to the button that says 'Test Deep Link'
+4. Paste in the Branch link
+5. Check 'Send Deferred'
+6. Click 'Send to iOS/Android'
+7. Install the app and it should deep link!
 
 
 {% ingredient dashboard_setup/facebook_auth_issues %}{% endingredient %}
