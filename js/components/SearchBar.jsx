@@ -7,6 +7,22 @@ var SearchStore = require('../stores/SearchStore'),
 	customSWF = require('../search/custom_stop_word_filter'),
 	utils = require('../search/utils');
 
+function checkForPause(func, wait) {
+	var timeout;
+    return function() {
+        var self = this,
+            args = arguments;
+
+        if (timeout) {
+			clearTimeout(timeout);
+        }
+
+        timeout = setTimeout(function() {
+			func.apply(self, args);
+        }, wait);
+    };
+}
+
 function getStateFromStore() {
 	return SearchStore.getState();
 }
@@ -25,6 +41,7 @@ var SearchBar = React.createClass({
 	_onChange: function() {
 		this.setState(getStateFromStore());
 	},
+
 	inputChanged: function(event) {
 		this.setState({ field: event.target.value }, function(err) {
 			var timeOnChange = (new Date()).getTime(),
@@ -35,20 +52,16 @@ var SearchBar = React.createClass({
 			if (!this.state.isLoaded) { return; }
 
 			SearchActions.search(this.state.field, this.state.indexes);
-
 			if (this.state.field.length) {
-				while (!tracked) {
-					var currentTime = (new Date().getTime());
-					if (currentTime - timeOnChange >= 250) {
+				if (!this._checkForPause) {
+					this._checkForPause = checkForPause(function(term) {
 						mixpanel.track("Typed in Search Term", { "Search Term": term, "Section": "Search" });
-						tracked = true;
-					}
+						console.log('Tracked');
+					}, 1000);
+
 				}
+				this._checkForPause(term);
 			}
-			// while ((new Date()).getTime() - timeOnChange < 250) {
-			// 	console.log('fml');
-			// }
-			console.log('done');
 		});
 	},
 	handleClick: function() {
