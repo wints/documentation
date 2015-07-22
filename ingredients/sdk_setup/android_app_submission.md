@@ -11,4 +11,10 @@ Google has provided an instructional section on [their site](https://developer.a
 
 2. Add in the Google Play service libproject or jar to your app project. You can find it in __yoursdkfolder/sdk/extras/google/google_play_services/__
 
-3. Branch will handle the rest!
+3. Add the following line in your proguard settings
+
+{% highlight xml %}
+-keep class com.google.android.gms.ads.identifier.** { *; }
+{% endhighlight %}
+
+4. Branch will handle the rest!

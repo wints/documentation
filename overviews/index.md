@@ -1,7 +1,9 @@
 ---
 type: overview
-title: Overview
+title: Documentation and Getting Started
 root_index: true
+description: Get started with your Branch Metrics SDK integration. We help you to set up your customized deep link integration in less than 15 minutes
+keywords: Contextual Deep Linking, Deep links, Deeplinks, Deep Linking, Deeplinking, Deferred Deep Linking, Deferred Deeplinking, Google App Indexing, Google App Invites, Apple Universal Links, Apple Spotlight Search, Facebook App Links, AppLinks, Deepviews, Deep views, Personalized Onboarding, App Invites, SMS to download, Text the app, Universal banner, smart app banner for Android, documentation, manual, guide, how to, references, resources, integration
 ---
 
 ## Welcome to Branch!
