@@ -17,7 +17,6 @@ var SearchBar = React.createClass({
 	},
 	componentDidMount: function() {
 		lunr.Pipeline.registerFunction(customSWF, 'customSWF');
-		this.termTracking = utils.debounce(this.termTracking, 1000)
 		SearchStore.listen(this._onChange);
 	},
 	componentWillUnmount: function() {
