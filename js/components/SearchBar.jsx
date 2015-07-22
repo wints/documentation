@@ -39,7 +39,7 @@ var SearchBar = React.createClass({
 				if (this.timeout) { clearTimeout(this.timeout); }
 				this.timeout = setTimeout(function() {
 					mixpanel.track("Typed in Search Term", { "Search Term": term, "Section": "Search" });
-				}, 1000);
+				}, 500);
 			}
 		});
 	},
