@@ -1,9 +1,11 @@
 ---
 type: overview
-title: How Branch links work
+title: How Branch Deep Links Work
+description: Learn how Branch deep links work to pass data through install and support all open standards (Google App Indexing, Facebook App Links, Apple Spotlight), delivering the most feature packed deep link on the planet.
+keywords: Contextual Deep Linking, Deep links, Deeplinks, Deep Linking, Deeplinking, Deferred Deep Linking, Deferred Deeplinking, Google App Indexing, Google App Invites, Apple Universal Links, Apple Spotlight Search, Facebook App Links, AppLinks
 ---
 
-## A Branch link is the only link you need
+## A Branch deep link is the only link you need
 
 From supporting Facebook's App Links to smart redirects on all platforms to download measurement, you get it all in the Branch tool. Because every platform or operating system is constantly changing standards, trust us to keep you up to date and insure that you've got a constant flow of new users.
 

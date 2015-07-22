@@ -1,6 +1,8 @@
 ---
 type: overview
-title: How to create links
+title: Guide to Create Deep Links
+description: Learn how Branch deep links work to pass data through install and support all open standards (Google App Indexing, Facebook App Links, Apple Spotlight), delivering the most feature packed deep link on the planet.
+keywords: Contextual Deep Linking, Deep links, Deeplinks, Deep Linking, Deeplinking, Deferred Deep Linking, Deferred Deeplinking, howto, guide, instruction, configurationg, creation
 ---
 
 Regardless of how the link gets created, all links behave the same way. Links can be created in the following ways:
