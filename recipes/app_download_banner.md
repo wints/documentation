@@ -19,6 +19,20 @@ If you also want to pass data through the install process or deep link straight 
 This data dictionary containing `foo: 'bar'` etc is where you put data that you want passed through install. This is discussed in the next section on [Routing](/recipes/app_download_banner/{{page.platform}}/#optional-routing-passing-information-from-the-banner).
 {% endprotip %} 
 
+#### Styling the banner using the custom css property
+Set the `iframe` property to false to inspect the Smart Banner's html structure and use the `customCSS` property to style its elements. 
+
+Property Syntax: 
+
+`customCSS : '#div and or .classname {property-to-style:value;}'`
+
+Examples:
+
+To set the color of title text to red use: `customCSS:'.title{ color: #F00; }'`
+
+To set the background color of the entire Banner to green use: 
+
+`customCSS:'#branch-banner .content{background-color:green;}'`
 
 ## (Optional) Routing: passing information from the Banner
 
