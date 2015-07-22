@@ -7,22 +7,6 @@ var SearchStore = require('../stores/SearchStore'),
 	customSWF = require('../search/custom_stop_word_filter'),
 	utils = require('../search/utils');
 
-function checkForPause(func, wait) {
-	var timeout;
-    return function() {
-        var self = this,
-            args = arguments;
-
-        if (timeout) {
-			clearTimeout(timeout);
-        }
-
-        timeout = setTimeout(function() {
-			func.apply(self, args);
-        }, wait);
-    };
-}
-
 function getStateFromStore() {
 	return SearchStore.getState();
 }
@@ -44,23 +28,18 @@ var SearchBar = React.createClass({
 
 	inputChanged: function(event) {
 		this.setState({ field: event.target.value }, function(err) {
-			var timeOnChange = (new Date()).getTime(),
-				tracked = false,
-				term = this.state.field;
+			var term = this.state.field;
 
 			if (err) { throw err; }
 			if (!this.state.isLoaded) { return; }
 
 			SearchActions.search(this.state.field, this.state.indexes);
-			if (this.state.field.length) {
-				if (!this._checkForPause) {
-					this._checkForPause = checkForPause(function(term) {
-						mixpanel.track("Typed in Search Term", { "Search Term": term, "Section": "Search" });
-						console.log('Tracked');
-					}, 1000);
 
-				}
-				this._checkForPause(term);
+			if (this.state.field.length) {
+				if (this.timeout) { clearTimeout(this.timeout); }
+				this.timeout = setTimeout(function() {
+					mixpanel.track("Typed in Search Term", { "Search Term": term, "Section": "Search" });
+				}, 1000);
 			}
 		});
 	},
