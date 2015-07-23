@@ -4,7 +4,8 @@ var React = require('react'),
 
 var SearchStore = require('../stores/SearchStore'),
 	SearchActions = require('../actions/SearchActions'),
-	customSWF = require('../search/custom_stop_word_filter');
+	customSWF = require('../search/custom_stop_word_filter'),
+	utils = require('../search/utils');
 
 function getStateFromStore() {
 	return SearchStore.getState();
@@ -24,17 +25,29 @@ var SearchBar = React.createClass({
 	_onChange: function() {
 		this.setState(getStateFromStore());
 	},
+
 	inputChanged: function(event) {
 		this.setState({ field: event.target.value }, function(err) {
+			var term = this.state.field;
+
 			if (err) { throw err; }
 			if (!this.state.isLoaded) { return; }
+
 			SearchActions.search(this.state.field, this.state.indexes);
+
+			if (this.state.field.length) {
+				if (this.timeout) { clearTimeout(this.timeout); }
+				this.timeout = setTimeout(function() {
+					mixpanel.track("Typed in Search Term", { "Search Term": term, "Section": "Search" });
+				}, 500);
+			}
 		});
 	},
 	handleClick: function() {
 		if (!this.state.isLoaded && !this.state.isLoading) { SearchActions.loadIndex(); }
 	},
 	render: function() {
+		var field = this.state.field;
 		if (this.state.results.length) {
 			var self = this;
 			var results = R.map(function(result) {
@@ -44,7 +57,8 @@ var SearchBar = React.createClass({
 						link={'http://dev.branch.io' + result.url}
 						origin={result.origin}
 						context={result.context}
-						key={result.id} />);
+						key={result.id}
+						term={field} />);
 			}, this.state.results);
 		}
 		return (
@@ -75,6 +89,7 @@ var SearchBar = React.createClass({
 
 var SearchResult = React.createClass({
 	_onClick: function() {
+		mixpanel.track("Clicked Search Result", { "Link": this.props.link, "Search Term": this.props.term, "Section": "Search" });
 		window.location = this.props.link;
 	},
 	render: function() {
