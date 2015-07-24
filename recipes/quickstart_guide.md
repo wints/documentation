@@ -1,6 +1,12 @@
 ---
 type: recipe
 title: "Step 2: SDK Integration"
+ios_page_title: How to configure iOS Apps for Deep Links
+android_page_title: How to configure Android Apps for Deep Links
+ios_description: How to install the Branch SDK and configure your iOS app for deep links. Add a few lines of code and you can begin deep linking and tracking installs.
+android_description: How to install the Branch SDK and configure your Android app for deep links. Add a few lines of code and you can begin deep linking and tracking installs.
+ios_keywords: Contextual Deep Linking, Deep links, Deeplinks, Deep Linking, Deeplinking, Deferred Deep Linking, Deferred Deeplinking, Google App Indexing, Google App Invites, Apple Universal Links, Apple Spotlight Search, Facebook App Links, AppLinks, Deepviews, Deep views, SDK, SDK Integration, iOS Configuration, iOS, objective-c, swift
+android_keywords: Contextual Deep Linking, Deep links, Deeplinks, Deep Linking, Deeplinking, Deferred Deep Linking, Deferred Deeplinking, Google App Indexing, Google App Invites, Apple Universal Links, Apple Spotlight Search, Facebook App Links, AppLinks, Deepviews, Deep views, SDK, SDK Integration, Android Configuration, Android
 platforms:
 - ios
 - android

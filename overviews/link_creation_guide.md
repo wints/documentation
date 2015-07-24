@@ -1,8 +1,9 @@
 ---
 type: overview
 title: Guide to Create Deep Links
-description: Learn how Branch deep links work to pass data through install and support all open standards (Google App Indexing, Facebook App Links, Apple Spotlight), delivering the most feature packed deep link on the planet.
-keywords: Contextual Deep Linking, Deep links, Deeplinks, Deep Linking, Deeplinking, Deferred Deep Linking, Deferred Deeplinking, howto, guide, instruction, configurationg, creation
+page_title: How to create mobile deep links for apps
+description: Learn how to create fully customized deep links for apps in Android and iOS and what properties and customizations are available when using Branch Metrics.
+keywords: Contextual Deep Linking, Deep links, Deeplinks, Deep Linking, Deeplinking, Deferred Deep Linking, Deferred Deeplinking, Google App Indexing, Google App Invites, Apple Universal Links, Apple Spotlight Search, Facebook App Links, AppLinks, Deepviews, Deep views, Link Properties, Redirect Customization, Mobile SDK, Web SDK, HTTP API
 ---
 
 Regardless of how the link gets created, all links behave the same way. Links can be created in the following ways:

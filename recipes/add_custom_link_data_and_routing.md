@@ -1,6 +1,12 @@
 ---
 type: recipe
 title: Add custom link data and routing
+ios_page_title: Add custom link data and routing for iOS
+android_page_title: Add custom Android link data and routing
+ios_description: How to add custom data to your Branch deep link that gets delivered to the app with the clicking user. We also cover custom redirects and routing.
+android_description: How to add custom data to your Branch deep link that gets delivered to the app with the clicking user. We also cover custom redirects and routing.
+ios_keywords: Contextual Deep Linking, Deep links, Deeplinks, Deep Linking, Deeplinking, Deferred Deep Linking, Deferred Deeplinking, Google App Indexing, Google App Invites, Apple Universal Links, Apple Spotlight Search, Facebook App Links, AppLinks, Deepviews, Deep views, custom data, tags, OG tags, custom redirects
+android_keywords: Contextual Deep Linking, Deep links, Deeplinks, Deep Linking, Deeplinking, Deferred Deep Linking, Deferred Deeplinking, Google App Indexing, Google App Invites, Apple Universal Links, Apple Spotlight Search, Facebook App Links, AppLinks, Deepviews, Deep views,custom data, tags, OG tags, custom redirects, Android
 platforms:
 - ios
 - android
