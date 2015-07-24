@@ -52,7 +52,7 @@ Let users share in-app content. iHeartRadio’s shared links open straight to ra
 	{% override platform %}ios{% endoverride %}
 {% endingredient %}
 
- 
+
 ## Testing and releasing
 
 We're developers too, so we know how fun this is. Test out your Branch integration before releasing by following our helpful hints here.

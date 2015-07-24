@@ -62,6 +62,7 @@
         - xamarin_sdk
         - cordova_phonegap_sdk
         - unity_sdk
+        - adobe_air_sdk
         - titanium_sdk
         - http_api
 -
