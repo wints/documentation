@@ -1,8 +1,9 @@
 ---
 type: overview
-title: How Branch Deep Links Work
-description: Learn how Branch deep links work to pass data through install and support all open standards (Google App Indexing, Facebook App Links, Apple Spotlight), delivering the most feature packed deep link on the planet.
-keywords: Contextual Deep Linking, Deep links, Deeplinks, Deep Linking, Deeplinking, Deferred Deep Linking, Deferred Deeplinking, Google App Indexing, Google App Invites, Apple Universal Links, Apple Spotlight Search, Facebook App Links, AppLinks
+title:  How Branch Links Work
+page_title: How Branch Metrics Deep Links Work
+description: How Branch Metrics deep links handle all deep linking standards and app portals automatically – whether its Facebook, Apple, Twitter or Pinterest.
+keywords: Contextual Deep Linking, Deep links, Deeplinks, Deep Linking, Deeplinking, Deferred Deep Linking, Deferred Deeplinking, Google App Indexing, Google App Invites, Apple Universal Links, Apple Spotlight Search, Facebook App Links, AppLinks, Deepviews, Deep views, Documentation, Docs, How to, Standards, Web SDK, SDK
 ---
 
 ## A Branch deep link is the only link you need

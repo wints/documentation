@@ -1,6 +1,9 @@
 ---
 type: recipe
 title: Dynamic link creation
+page_title: Create a dynamic deep linking URL
+description: Learn how to dynamically create deep linking URLs without using any SDKs and when using the public HTTP API or one of our client SDKs.
+keywords: Contextual Deep Linking, Deep links, Deeplinks, Deep Linking, Deeplinking, Deferred Deep Linking, Deferred Deeplinking, Google App Indexing, Google App Invites, Apple Universal Links, Apple Spotlight Search, Facebook App Links, AppLinks, Deepviews, Deep views, link creation, dynamic link creation, HTTP API, link structure
 hide_platform_selector: true
 ---
 
