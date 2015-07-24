@@ -60,6 +60,8 @@
         - android_sdk
         - xamarin_sdk
         - cordova_phonegap_sdk
+        - unity_sdk
+        - adobe_air_sdk
         - http_api
         - web_sdk
 -
