@@ -1,7 +1,7 @@
 ---
 type: reference
-title: iOS
-repo: iOS-Deferred-Deep-Linking-SDK
+title: Unity
+repo: Unity-Deferred-Deep-Linking-SDK
 hide_platform_selector: true
 ---
 

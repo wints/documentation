@@ -5,11 +5,12 @@ email: info@branchmetrics.io
 description: "Helping apps grow through seamless referrals, sharing and deep linking across install."
 url: "http://localhost:4000"
 baseurl: ""
-environment: development
+environment: production
 permalink: pretty
 markdown: kramdown
 highlighter: pygments
 dashboard_url: "http://localhost:3000"
+branch_github_url: "https://github.com/BranchMetrics"
 
 exclude:
 - vendor
