@@ -41,7 +41,10 @@ Branch.getInstance().getShortURLWithParams(["foo" : "bar"], andChannel: "sms", a
 {% if page.android %}
 
 {% highlight java %}
-{% section params %}JSONObject obj = new JSONObject(); obj.putString("foo", "bar");{% endsection %}
+{% section params %}
+JSONObject obj = new JSONObject();
+obj.putString("foo", "bar");
+{% endsection %}
 branch.getShortUrl(obj, "sms", "share", new BranchLinkCreateListener() {
 	@Override
 	public void onLinkCreate(String url, BranchError error) {

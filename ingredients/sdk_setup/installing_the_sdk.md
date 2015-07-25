@@ -21,7 +21,7 @@ For Android, the easiest way to add the SDK to your project is by adding the Bra
 - Select `Open Module Settings`.
 - Within the Dependencies tab, click the + button at the bottom of the window and select Library Dependency.
 - Type branch, and hit the enter key to search Maven Central for the Branch SDK Library.
-- Select the latest io.branch.sdk.android:library item listed.
+- Select the latest `io.branch.sdk.android:library` item listed.
 
 In case you'd like to use our .jar instead, here's a [link](https://s3-us-west-1.amazonaws.com/branchhost/Branch-Android-SDK.zip) that always points to our latest.
 

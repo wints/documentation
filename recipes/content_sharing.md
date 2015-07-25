@@ -14,8 +14,6 @@ platforms:
 
 {% ingredient quickstart_preview/quickstart_preview %}{% endingredient %}
 
-If you've completed optional Steps 3 & 4 of our quickstart guide, then you already know how to share content and deeplink straight to it. This guide can serve as a refresher.
-
 ## Creating links programmatically to share content
 
 {% ingredient sdk_links/creating_links %}{% override header %}{% endoverride %}{% endingredient %}

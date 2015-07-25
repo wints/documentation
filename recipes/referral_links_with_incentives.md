@@ -30,9 +30,7 @@ Let's get started!
 
 {% ingredient sdk_links/creating_links %}
   {% override explanation %}
-  Links are the foundation to everything Branch offers. Branch's links offer the ability to deep link directly to content, to pass data through the install process, and to tell where users are coming from. In the case of a incentivized referral program, you don't need to attach any information. You simply need to make sure that you generate links for the user who will be sharing the link. Also, be sure that you make a `setIdentity` call as described above.
-
-  That said, you can attach information about the user who is sharing the link. Then this information about this user--here "John" with id "1234"--is present anytime John's friends install the app after clicking his link.
+  You can attach information about the user who is sharing the link. Then this information about this user--here "John" with id "1234"--is present anytime John's friends install the app after clicking his link.
   {% endoverride %}
 
   {% override params %}{% if page.ios %}@{@"referringUsername":@"John", @"referringUserId":@"1234"}{% endif %}{% if page.android %}JSONObject obj = new JSONObject();
