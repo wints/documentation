@@ -72,8 +72,6 @@ Again, it's not imperative that you attach any information to the link. As long 
 
 ## Conclusion: So Much More
 
-You now have an incentivized referral program. Like many popular promo-code systems, you can reward both the user who shares a link and the user who clicks the link and installs the app. With Branch links, the magic is built in, so there's no need for a promo code. Because we want to empower developers, we also offer the ability to reward users with credits, track those credits and redeem them--all with a few lines of code.
-
 This guide covered the basics. The following may be of interest to you, if you want to:
 
 {% ingredient recipe_preview/advanced_referral_incentives %}{% endingredient %}

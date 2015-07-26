@@ -37,9 +37,9 @@ First, please visit the [Branch link configuration tool](https://start.branch.io
 <!--- /Creating your Link -->
 
 
-## Conclusion And Next Steps
+## Congratulations!
 
-The Dashboard's [Summary](https://dashboard.branch.io/#) page, specifically the "Click Flow" chart, can now show you meaningful click results! To track downloads and deep link through the install, the next step is [integrating the SDK](/recipes/quickstart_guide/{{page.platform}}/).
+**Head to [Step 2: integrating the SDK](/recipes/quickstart_guide/{{page.platform}}/)**.
 
-{% image src="/img/ingredients/dashboard_links/click_flow_no_sdk.png" 3-quarters left alt="click flow no open/install" %}
+{% ingredient recipe_preview/contact_us %}{%endingredient%}
 

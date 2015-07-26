@@ -36,9 +36,9 @@ You can also use the data to link directly to content! Instead of "foo": "bar", 
 
 -----
 
-## Conclusion
+## Congratulations!
 
-Congratulations! You're now up and running with Branch. To finish up, we'll walk you through the data you're seeing in your dashboard in [Link and Install Attribution](/recipes/measuring_installs/{{page.platform}}/).
+**Head to [Step 3: A dashboard introduction](/recipes/measuring_installs/{{page.platform}}/).**
 
 {% ingredient recipe_preview/contact_us %}{%endingredient%}
 
