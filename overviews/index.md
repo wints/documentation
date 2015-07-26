@@ -1,6 +1,6 @@
 ---
 type: overview
-page_title: Documentation and Getting Started
+page_title: Documentation and getting started
 title: Getting Started
 root_index: true
 description: Get started with your Branch Metrics SDK integration. We help you to set up your customized deep link integration in less than 15 minutes

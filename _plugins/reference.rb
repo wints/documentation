@@ -20,7 +20,7 @@ module Jekyll
         file = response.body.force_encoding('utf-8')
 
         # replace start of comment with highlight liquid tag
-        file = file.gsub(/```\s*(?<lang>[a-z0-9\-]+)\n/, '{% highlight \k<lang> %}')
+        file = file.gsub(/```\s*(?<lang>[a-z0-9]+)\n/, '{% highlight \k<lang> %}')
         # replace end of code comment with highlight liquid tag
         file = file.gsub(/```\n/, '{% endhighlight %}')
         # remove Title from readme (i.e. # Web SDK)

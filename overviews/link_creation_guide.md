@@ -1,16 +1,16 @@
 ---
 type: overview
-title: Guide to Create Deep Links
+title: Deep link creation guide
 page_title: How to create mobile deep links for apps
 description: Learn how to create fully customized deep links for apps in Android and iOS and what properties and customizations are available when using Branch Metrics.
 keywords: Contextual Deep Linking, Deep links, Deeplinks, Deep Linking, Deeplinking, Deferred Deep Linking, Deferred Deeplinking, Google App Indexing, Google App Invites, Apple Universal Links, Apple Spotlight Search, Facebook App Links, AppLinks, Deepviews, Deep views, Link Properties, Redirect Customization, Mobile SDK, Web SDK, HTTP API
 ---
 
-Regardless of how the link gets created, all links behave the same way. Links can be created in the following ways:
+Regardless of how the link gets created, all links behave the same way.
 
 ## General properties of all links
 
-The following sections describe properties and customizations that are available in nearly all methods of link creation. In every method listed below this section, there is way to customize these individual properties.
+The following sections describe properties and customizations that are available in nearly all methods of link creation. In every method listed below this section, there is a way to customize these individual properties.
 
 ### Analytics labels for data organization
 
