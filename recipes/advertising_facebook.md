@@ -116,13 +116,8 @@ The only way to test the deep linking functionality is outside of the actual ads
 {% ingredient dashboard_setup/facebook_auth_issues %}{% endingredient %}
 
 
-## Conclusion
+## What's next?
 
-It's pretty simple! You need to configure the dashboard, generate links for your ads, and setup your app to track installs. You can optionally deep link straight to content based on the ad that the user clicked on!
+{% ingredient recipe_preview/easy_deep_linking %}{% endingredient %}
 
-{% ingredient recipe_preview/recipe_end_intro %}{% endingredient %}
-{% ingredient recipe_preview/referral_links_with_incentives %}{% endingredient %}
-{% ingredient recipe_preview/personalized_welcome %}{% endingredient %}
-{% ingredient recipe_preview/influencers %}{% endingredient %}
-{% ingredient recipe_preview/channel_tags %}{% endingredient %}
 {% ingredient recipe_preview/contact_us %}{% endingredient %}

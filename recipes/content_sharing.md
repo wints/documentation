@@ -22,6 +22,8 @@ platforms:
 You use the data to link directly to content! Instead of "foo": "bar", you could pass in "{% if page.ios %}pictureId{% endif %}{% if page.android %}picture_id{% endif %}": "1234", then when a user clicks on a link you can open the app straight to picture with Id 1234. Keep reading...
 {% endprotip %}
 
+-----
+
 ## Routing to content within your {{page.platform_formatted}} app
 
 {% ingredient sdk_routing/routing %}{% endingredient %}
@@ -34,6 +36,7 @@ You use the data to link directly to content! Instead of "foo": "bar", you could
 {% ingredient sdk_links/sharing_ios_share_sheet %}{% endingredient %}
 {% endif %}
 
+-----
 
 ## Conclusion
 
@@ -43,5 +46,8 @@ What's next?
 {% ingredient recipe_preview/personalized_welcome %}{%endingredient%}
 {% ingredient recipe_preview/advertising_facebook %}{%endingredient%}
 {% ingredient recipe_preview/referral_links_with_incentives %}{%endingredient%}
+
+-----
+
 {% ingredient recipe_preview/contact_us %}{%endingredient%}
 

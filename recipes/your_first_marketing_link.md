@@ -16,30 +16,49 @@ platforms:
 
 First, please visit the [Branch link configuration tool](https://start.branch.io/) to setup all the redirection.
 
+-----
+
 ## Creating Your Branch Link
 
 {% ingredient dashboard_links/creating_links %}
 	{% override title %}{% endoverride %}
 {% endingredient %}
 
+-----
+
 {% ingredient dashboard_links/tags %}{% endingredient %}
+
+-----
 
 {% ingredient dashboard_links/alias %}
 	{% override optional %}{% endoverride %}
 {% endingredient %}
 
+-----
+
 {% ingredient dashboard_links/og_tags %}
 {% override screenshot %}{% endoverride %}
 {% endingredient %}
+
+-----
+
+{% ingredient dashboard_links/custom_redirects %}
+{% endingredient %}
+
+-----
+
 {% ingredient dashboard_links/custom_data %}
 	{% override advanced %}{% endoverride %}
 {% endingredient %}
 <!--- /Creating your Link -->
 
+-----
 
-## Congratulations!
+## What's next?
 
-**Head to [Step 2: integrating the SDK](/recipes/quickstart_guide/{{page.platform}}/)**.
+### [Head to Step 2: integrating the SDK](/recipes/quickstart_guide/{{page.platform}}/)
+
+-----
 
 {% ingredient recipe_preview/contact_us %}{%endingredient%}
 

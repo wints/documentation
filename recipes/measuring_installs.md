@@ -18,9 +18,11 @@ You've created a link and integrated the SDK - now it's time to dive into your d
 
 {% image src='/img/ingredients/analytics_and_custom_events/dashboard_summary.png' 3-quarters center alt='the goal' %}
 
+-----
 
 {% ingredient dashboard_analytics/install_versus_open %}{% endingredient %}
 
+-----
 
 ## Dashboard tips
 
@@ -35,13 +37,19 @@ Here's some handy advice for getting the most out of your dashboard:
 * Build your own services on top of Branch attribution data using our [webhook system](/recipes/webhooks_and_exporting_data/)
 
 
+
 ## What's next?
 
 You've got the basics, but let's take your integration to the next level:
 
 {% ingredient recipe_preview/easy_deep_linking %}{% endingredient %}
 {% ingredient recipe_preview/content_sharing %}{% endingredient %}
-{% ingredient recipe_preview/personalized_welcome %}{% endingredient %}
-{% ingredient recipe_preview/referral_links_with_incentives %}{% endingredient %}
 {% ingredient recipe_preview/app_download_banner %}{% endingredient %}
 {% ingredient recipe_preview/text_me_the_app_page %}{% endingredient %}
+{% ingredient recipe_preview/facebook_appinvites %}{% endingredient %}
+{% ingredient recipe_preview/personalized_welcome %}{% endingredient %}
+{% ingredient recipe_preview/referral_links_with_incentives %}{% endingredient %}
+
+-----
+
+{% ingredient recipe_preview/contact_us %}{%endingredient%}

@@ -1,0 +1,143 @@
+
+Branch handle all the deep link routing for you if you leverage the automatic deeplinking functionality described below. Here's how to build on it:
+
+{% if page.ios %}
+
+### Configure your UIViewController to as a delegate for BranchDeepLinkingController
+
+The work in this section will take place in the view controller that you want to appear when a user clicks a link. For example, this could be a view to show a product.
+
+#### Import the proper header
+
+In the view controller that will display on link click, first import `Branch.h`.
+
+{% highlight objc %}
+#import "Branch.h"
+{% endhighlight %}
+
+
+-----
+
+#### Register for the delegate
+
+Make your view controller conform to the delegate `BranchDeepLinkingController`.
+
+{% highlight objc %}
+@interface ExampleDeepLinkingController : UIViewController <BranchDeepLinkingController>
+{% endhighlight %}
+
+-----
+
+#### Configure your view on load
+
+Receive the delegate method that will be called when the view controller is loaded from a link click.
+
+{% highlight objc %}
+- (void)configureControlWithData:(NSDictionary *)data {
+	 NSString *pictureUrl = data[@"product_picture"];
+
+	 // show the picture
+	 dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        NSData *imageData = [NSData dataWithContentsOfURL:[NSURL URLWithString:pictureUrl]];
+        UIImage *image = [UIImage imageWithData:imageData];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            self.productImageView.image = image;
+        });
+    });
+
+}
+{% endhighlight %}
+
+-----
+
+#### Add a close button
+
+Since the view controller is displayed modally, you should add a close button that let's the user minimize to continue the remainder of your flow.
+
+{% highlight objc %}
+- (IBAction)closePressed {
+    [self.completionDelegate deepLinkingControllerCompleted];
+}
+{% endhighlight %}
+
+-----
+
+### Register your UIViewController for a specific key
+
+Lastly, you need to tell Branch which view controller you will use and which key to respond to. In this case we're using `product_picture` as above.
+
+**Note**: If you don't know what this key is, see [Creating Links](/recipes/quickstart_guide/{% section platform %}{{page.platform}/#creating-links}{% endsection %})
+
+{% highlight objc %}
+- (BOOL)application:(UIApplication *)application
+    didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+
+    Branch *branch = [Branch getInstance];
+
+    ExampleDeepLinkingController *controller = [[UIStoryboard storyboardWithName:@"Main"
+                                                                          bundle:[NSBundle mainBundle]]
+                                                instantiateViewControllerWithIdentifier:@"DeepLinkingController"];
+
+    [branch registerDeepLinkController:controller forKey:@"product_picture"];
+  	[branch initSessionWithLaunchOptions:launchOptions automaticallyDisplayDeepLinkController:YES];
+
+
+	return YES;
+}
+{% endhighlight %}
+
+{% endif %}
+
+{% if page.android %}
+
+### Register your Activity for a specific key
+
+Most of the configuration for the auto deep link feature will happen in the Manifest file, so let's start there.
+
+#### List the key you want
+
+In your Manifest file, it's easy to specify which deep link keys you want to trigger the Activity to load. Just add this additional metadata for `io.branch.sdk.auto_link_keys` to the Activity you want to use. Let's use `product_picture` in this example
+
+**Note**: If you don't know what this key is, see [Creating Links](/recipes/quickstart_guide/{% section platform %}{{page.platform}/#creating-links}{% endsection %})
+
+{% highlight xml %}
+<activity android:name="com.myapp.AutoDeepLinkExampleActivity">
+    <meta-data android:name="io.branch.sdk.auto_link_keys" android:value="product_picture" />
+    <!-- your other activity stuff -->
+</activity>
+{% endhighlight %}
+
+
+#### Optional: Add in a request code for tracking 
+
+If you register your base activity to receive `onActivityResult` you can specify a custom code for the deep link activity like so.
+
+{% highlight xml %}
+<meta-data android:name="io.branch.sdk.auto_link_request_code" android:value="@integer/AutoDeeplinkRequestCode" />
+{% endhighlight %}
+
+-----
+
+### Setup your Activity for deep linking
+
+Once a link has been clicked, a Branch session has been initialized and the deep link key is detected, the Activity will show. The following code snippet shows an example of how to configure said Activity. For example, this could be an Activty used to show a product.
+
+{% highlight java %}
+@Override
+protected void onResume() {
+    super.onResume();
+    if (Branch.isAutoDeepLinkLaunch(this)) {
+        try {
+            String autoDeeplinkedValue = Branch.getInstance().getLatestReferringParams().getString("auto_deeplink_key_1");
+            launch_mode_txt.setText("Launched by Branch on auto deep linking!"
+                    + "\n\n" + autoDeeplinkedValue);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+    } else {
+        launch_mode_txt.setText("Launched by normal application flow");
+    }
+}
+{% endhighlight %}
+
+{% endif %}

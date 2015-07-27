@@ -1,1 +1,1 @@
-* [**Branch + Facebook**](/recipes/advertising_facebook/) -- give users a custom experience based on the ad that brought them to your app! {% section ending %}{% endsection %}
+* [**Branch + Facebook ads**](/recipes/advertising_facebook/) -- give users a custom experience based on the ad! {% section ending %}{% endsection %}

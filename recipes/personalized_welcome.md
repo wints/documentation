@@ -14,7 +14,7 @@ platforms:
 
 {% ingredient quickstart_preview/quickstart_preview %}{% endingredient %}
 
-Right now, when users open your app for the first time, chances are you have no idea where they came from or who they are. You have no idea if they were invited by a friend on Facebook, found your app randomly browsing through the App Store, saw an ad, or simply discovered it through word of mouth and decided to give it a shot. It's anybody's guess really.
+Right now, when users open your app for the first time, chances are you have no idea where they came from or who they are. You have no idea if they were invited by a friend on Facebook, found your app randomly browsing through the App Store, saw an ad, or simply discovered it through word of mouth and decided to give it a shot.
 
 **With Branch you can finally tailor the onboarding flow for new users.** Let's get started!
 
@@ -29,6 +29,7 @@ Right now, when users open your app for the first time, chances are you have no 
   {% override params %}@{@"referringUsername":@"John", @"referringUserId":@"1234"}{% endoverride %}{% endingredient %}
 {% ingredient sdk_links/sharing_teaser %}{% endingredient %}
 
+-----
 
 ## The Personal Touch: A Welcome Screen
 {% ingredient sdk_routing/routing %}
@@ -37,14 +38,17 @@ Right now, when users open your app for the first time, chances are you have no 
   {% override vc_name %}userId{% endoverride %}
 {% endingredient %}
 
+-----
 
-## Conclusion: There's So Much More
+## What's next?
 
-Adding a personalized invite system is as simple as creating Branch links, sharing them and then examining the custom `params` dictionary that is present when a new user opens the app.
+Now that you've got the personalized welcome finalized, here are some other things you might be interested in:
 
-There's so much more though! With Branch, you can:
-
+{% ingredient recipe_preview/facebook_appinvites %}{% endingredient %}
 {% ingredient recipe_preview/referral_links_with_incentives %}{% endingredient %}
+{% ingredient recipe_preview/app_download_banner %}{% endingredient %}
 {% ingredient recipe_preview/influencers %}{% endingredient %}
-{% ingredient recipe_preview/channel_tags %}{% endingredient %}
+
+-----
+
 {% ingredient recipe_preview/contact_us %}{% endingredient %}

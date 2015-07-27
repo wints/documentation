@@ -6,9 +6,7 @@ Routing to content is *highly app-specific*, since mobile apps vary widely in ho
 {% if page.ios %}
 
 {% section ios_explanation %}
-Inside of the deepLinkHandler, you will want to examine the params dictionary to determine whether the user clicked on a link to content. Regardless of whether your app involves pictures, videos, text or whatever novel content your app contains, you likely have an internal system of identifiers.
-
-Let's assume your app revolves around pictures and each one is tagged with a picture Id. When a user shares a picture, simply attach a picture Id to the Branch link being created. If a user clicks a link to a specific picture, this Id will show up in the params dictionary in the deepLinkHandler.
+Inside of the deepLinkHandler, you will want to examine the params dictionary to determine whether the user clicked on a link to content. Below is an example assuming that the links correspond to pictures.
 {% endsection %}
 
 {% highlight objc %}
@@ -45,9 +43,7 @@ Let's assume your app revolves around pictures and each one is tagged with a pic
 {% if page.android %}
 
 {% section android_explanation %}
-Inside `onStart`, when Branch is initialized, you will want to examine the dictionary we pass to you from our callback. This will allow you to know whether or not a link click with context was made. You'll likely have many entry points based off different parameters.
-
-Let's assume your app revolves around pictures, and each picture has an ID. When user A decides to share a picture, attach that ID to the shortUrl or LongURL being created. When User B downloads (or opens the app if they already have it), the call to initSession will inform you of the parameters user A sent. Unpack em, and route away to the right view!
+Inside `onStart`, when Branch is initialized, you will want to examine the dictionary we pass to you from our callback. Below is an example assuming that the links correspond to pictures.
 {% endsection %}
 
 {% highlight java %}
@@ -77,8 +73,6 @@ public void onStart() {
             }
         }
     }, this.getIntent().getData(), this);
-    // if you want to specify isReferrable, then comment out the above line and uncomment this line:
-    // }, true, this.getIntent().getData(), this);
 }
 {% endhighlight %}
 
