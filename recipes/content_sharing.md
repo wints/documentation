@@ -24,17 +24,15 @@ You use the data to link directly to content! Instead of "foo": "bar", you could
 
 -----
 
+## Sharing Methods (Optional)
+
+{% ingredient sdk_links/sharing_links %}{% endingredient %}
+
+-----
+
 ## Routing to content within your {{page.platform_formatted}} app
 
 {% ingredient sdk_routing/routing %}{% endingredient %}
-
-
-{% if page.ios %}
-## Sharing Methods (Optional)
-
-{% ingredient sdk_links/sharing_sms %}{% endingredient %}
-{% ingredient sdk_links/sharing_ios_share_sheet %}{% endingredient %}
-{% endif %}
 
 -----
 
@@ -42,10 +40,9 @@ You use the data to link directly to content! Instead of "foo": "bar", you could
 
 What's next?
 
-{% ingredient recipe_preview/measuring_installs %}{%endingredient%}
-{% ingredient recipe_preview/personalized_welcome %}{%endingredient%}
 {% ingredient recipe_preview/advertising_facebook %}{%endingredient%}
-{% ingredient recipe_preview/referral_links_with_incentives %}{%endingredient%}
+{% ingredient recipe_preview/app_download_banner %}{% endingredient %}
+{% ingredient recipe_preview/text_me_the_app_page %}{% endingredient %}
 
 -----
 

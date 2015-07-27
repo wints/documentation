@@ -34,17 +34,16 @@ Receive the delegate method that will be called when the view controller is load
 
 {% highlight objc %}
 - (void)configureControlWithData:(NSDictionary *)data {
-	 NSString *pictureUrl = data[@"product_picture"];
+	NSString *pictureUrl = data[@"product_picture"];
 
-	 // show the picture
-	 dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        NSData *imageData = [NSData dataWithContentsOfURL:[NSURL URLWithString:pictureUrl]];
-        UIImage *image = [UIImage imageWithData:imageData];
-        dispatch_async(dispatch_get_main_queue(), ^{
-            self.productImageView.image = image;
-        });
-    });
-
+	// show the picture
+	dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+		NSData *imageData = [NSData dataWithContentsOfURL:[NSURL URLWithString:pictureUrl]];
+		UIImage *image = [UIImage imageWithData:imageData];
+		dispatch_async(dispatch_get_main_queue(), ^{
+			self.productImageView.image = image;
+		});
+	});
 }
 {% endhighlight %}
 
@@ -66,7 +65,7 @@ Since the view controller is displayed modally, you should add a close button th
 
 Lastly, you need to tell Branch which view controller you will use and which key to respond to. In this case we're using `product_picture` as above.
 
-**Note**: If you don't know what this key is, see [Creating Links](/recipes/quickstart_guide/{% section platform %}{{page.platform}/#creating-links}{% endsection %})
+**Note**: If you don't know what this key is, see [Creating Links](/recipes/quickstart_guide/{% section platform %}{{page.platform}}/#creating-links}{% endsection %})
 
 {% highlight objc %}
 - (BOOL)application:(UIApplication *)application
@@ -78,8 +77,8 @@ Lastly, you need to tell Branch which view controller you will use and which key
                                                                           bundle:[NSBundle mainBundle]]
                                                 instantiateViewControllerWithIdentifier:@"DeepLinkingController"];
 
-    [branch registerDeepLinkController:controller forKey:@"product_picture"];
-  	[branch initSessionWithLaunchOptions:launchOptions automaticallyDisplayDeepLinkController:YES];
+	[branch registerDeepLinkController:controller forKey:@"product_picture"];
+	[branch initSessionWithLaunchOptions:launchOptions automaticallyDisplayDeepLinkController:YES];
 
 
 	return YES;
@@ -98,7 +97,7 @@ Most of the configuration for the auto deep link feature will happen in the Mani
 
 In your Manifest file, it's easy to specify which deep link keys you want to trigger the Activity to load. Just add this additional metadata for `io.branch.sdk.auto_link_keys` to the Activity you want to use. Let's use `product_picture` in this example
 
-**Note**: If you don't know what this key is, see [Creating Links](/recipes/quickstart_guide/{% section platform %}{{page.platform}/#creating-links}{% endsection %})
+**Note**: If you don't know what this key is, see [Creating Links](/recipes/quickstart_guide/{% section platform %}{{page.platform}}/#creating-links}{% endsection %})
 
 {% highlight xml %}
 <activity android:name="com.myapp.AutoDeepLinkExampleActivity">
@@ -120,7 +119,11 @@ If you register your base activity to receive `onActivityResult` you can specify
 
 ### Setup your Activity for deep linking
 
-Once a link has been clicked, a Branch session has been initialized and the deep link key is detected, the Activity will show. The following code snippet shows an example of how to configure said Activity. For example, this could be an Activty used to show a product.
+Once a link has been clicked, a Branch session has been initialized and the deep link key is detected, the Activity will show. For example, this could be an Activty used to show a product.
+
+#### Retrieve parameters on Activity start
+
+The following code snippet shows an example of how to configure said Activity.
 
 {% highlight java %}
 @Override
@@ -137,6 +140,25 @@ protected void onResume() {
     } else {
         launch_mode_txt.setText("Launched by normal application flow");
     }
+}
+{% endhighlight %}
+
+#### Optional: Be notified when Activity finishes
+
+You can be notified when the deep link activity finishes by using the onActivityResult parameter. Just check for the code you inserted in the Manifest.
+
+{% highlight java %}
+@Override
+protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+	super.onActivityResult(requestCode, resultCode, data);
+
+	//Checking if the previous activity is launched on branch Auto deep link.
+	if(requestCode == getResources().getInteger(R.integer.AutoDeeplinkRequestCode)){
+		//Decide here where  to navigate  when an auto deep linked activity finishes.
+		//For e.g. Go to HomeActivity or a  SignUp Activity.
+		Intent i = new Intent(getApplicationContext(), CreditHistoryActivity.class);
+		startActivity(i);
+	}
 }
 {% endhighlight %}
 

@@ -1,6 +1,6 @@
 {% section intro %}
 
-Routing to content is *highly app-specific*, since mobile apps vary widely in how they are structured. That said, we want to give a concrete example of how you can use Branch links to route straight to content within your app.
+This section will describe a routing example in an abstract way. In case you want the simple version, Branch can handle routing for you automatically. Just check out the section on [**simplified deep link routing**](/recipes/easy_deep_linking/{% section platform %}{{page.platform}}{% endsection %}).
 {% endsection %}
 
 {% if page.ios %}
