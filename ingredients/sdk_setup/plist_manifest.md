@@ -7,7 +7,7 @@ Your app key can be retrieved on the [Settings](https://dashboard.branch.io/#/se
 
 1. In plist file, mouse hover "Information Property List" which is the root item under the Key column.
 1. After about half a second, you will see a "+" sign appear. Click it.
-1. In the newly added row, fill in "branch_key" for its key, leave type as String, and enter your app key obtained in above steps in its value column.
+1. In the newly added row, fill in `branch_key` for its key, leave type as String, and enter your app key obtained in above steps in its value column.
 1. Save the plist file.
 
 #### Configure for deep linking

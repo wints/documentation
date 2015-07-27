@@ -1,2 +1,2 @@
 
-Questions, comments and love letters are always welcome at [support@branchmetrics.io](mailto:support@branchmetrics.io).
+_Questions, comments and love letters are always welcome at [support@branch.io](mailto:support@branch.io)._

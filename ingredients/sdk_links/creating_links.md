@@ -6,7 +6,7 @@ Links are the foundation to everything Branch offers. There are many different a
 - Embed key/value deep link metadata. We'll make sure this gets delivered to the app with the clicking user
 - Label feature and channel for analytics on the dashboard
 
-Here's how to create your own Branch Links.
+Here's how to create your own Branch Links. In order to share these links, we've built a _native share sheet for Android_ and implemented a simple way to use _UIActivityViewController on iOS_. Check out the section on [**content sharing**](/recipes/content_sharing/{% section platform %}{{page.platform}}{% endsection %}).
 {% endsection %}
 
 <!--- iOS -->
@@ -41,7 +41,10 @@ Branch.getInstance().getShortURLWithParams(["foo" : "bar"], andChannel: "sms", a
 {% if page.android %}
 
 {% highlight java %}
-{% section params %}JSONObject obj = new JSONObject(); obj.putString("foo", "bar");{% endsection %}
+{% section params %}
+JSONObject obj = new JSONObject();
+obj.putString("foo", "bar");
+{% endsection %}
 branch.getShortUrl(obj, "sms", "share", new BranchLinkCreateListener() {
 	@Override
 	public void onLinkCreate(String url, BranchError error) {
