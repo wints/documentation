@@ -45,12 +45,14 @@ utils.convertSubsectionsToJSON = function(filePath) {
 	var $ = cheerio.load(data.toString());
 	$('h2, h3').each(function() {
 		var og_url = $('meta[property="og:url"]').attr('content');
+		var url = ($(this).children('a[href^="#"]').attr('href')) ? '' + og_url + $(this).children('a[href^="#"]').attr('href') : '' + og_url;
 		var JSON_obj = {
 			title: $(this).text(),
 			id: id_counter++,
 			// Gets all elements between each header and outputs their text
 			body: $(this).nextUntil('h2, h3').not('script').text(),
-			url: ($(this).children('a[href^="#"]').attr('href')) ? '' + og_url + $(this).children('a[href^="#"]').attr('href') : '' + og_url
+			url: url,
+			origin: utils.getOrigin(url)
 		};
 		JSON_data.push(JSON_obj);
 	});
@@ -97,4 +99,15 @@ utils.removeAllFromArray = function(arr, val) {
 	return arr;
 };
 
- module.exports = utils;
+// Gives the title of the page that the result is on
+utils.getOrigin = function(url) {
+	var origin = path.basename(path.dirname(url));
+	if (origin == 'ios' || origin == 'android') {
+		origin = path.basename(path.dirname(path.dirname(url)));
+	}
+	var parts = origin.replace(/_/g, ' ');
+
+	return parts.replace(/(?:^|\s)\S/g, function(a) { return a.toUpperCase(); });
+};
+
+module.exports = utils;
