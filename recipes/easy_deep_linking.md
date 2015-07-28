@@ -1,6 +1,6 @@
 ---
 type: recipe
-title: "Easy Deep Link Routing"
+title: "Easy deep link routing"
 ios_page_title: Simple Deep Link Routing for iOS Apps
 android_page_title: Simple Deep Link Routing for Android Apps
 ios_description: How to simply add deep linking to your iOS app without complex routing.

@@ -28,3 +28,23 @@ In case you'd like to use our .jar instead, here's a [link](https://s3-us-west-1
 Finally, you can always clone our [Android SDK](https://github.com/BranchMetrics/branch-android-sdk) project and import it into your workspace for maximum visibility.
 {% endif %}
 <!---       /Android-specific installing the SDK -->
+
+{% if page.cordova %}
+
+{% endif %}
+
+{% if page.xamarin %}
+
+{% endif %}
+
+{% if page.unity %}
+
+{% endif %}
+
+{% if page.adobe %}
+
+{% endif %}
+
+{% if page.titanium %}
+
+{% endif %}

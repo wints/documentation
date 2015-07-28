@@ -10,7 +10,11 @@ android_keywords: Contextual Deep Linking, Deep links, Deeplinks, Deep Linking, 
 platforms:
 - ios
 - android
-overview: "After a few lines of code, you'll be ready to start using Branch links for deep linking and tracking downloads"
+- cordova
+- xamarin
+- unity
+- adobe
+- titanium
 ---
 
 ## Configuring the links
