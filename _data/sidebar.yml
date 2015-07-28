@@ -51,6 +51,7 @@
         - analytics_ga
         - analytics_localytics
         - analytics_mixpanel
+        - analytics_kahuna
     - type: reference
       title: API Reference
       pages:
