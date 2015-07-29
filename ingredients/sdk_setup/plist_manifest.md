@@ -32,8 +32,7 @@ To set up your URI Scheme, you'll need to open your project in XCode and complet
 
 Your app key can be retrieved on the [Settings](https://dashboard.branch.io/#/settings) page of the dashboard. Now you need to add it to your project workspace.
 
-1. Navigate to to res/values/strings.xml
-2. Navigate to AndroidManifest.xml and add the following `<meta-data` tag:
+Navigate to AndroidManifest.xml and add the following `<meta-data` tag:
 
 {% highlight xml %}
 <application>
