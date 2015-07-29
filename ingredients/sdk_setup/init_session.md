@@ -78,7 +78,7 @@ Initialize the session and register your deep link router:
 
 {% highlight java %}
 Branch branch = Branch.getInstance(getApplicationContext());
-branch.initSession(new BranchReferralInitListener(){
+branch.initSession(new Branch.BranchReferralInitListener(){
     @Override
     public void onInitFinished(JSONObject referringParams, BranchError error) {
         if (error == null) {

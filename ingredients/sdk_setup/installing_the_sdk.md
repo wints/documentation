@@ -30,11 +30,29 @@ Finally, you can always clone our [Android SDK](https://github.com/BranchMetrics
 <!---       /Android-specific installing the SDK -->
 
 {% if page.cordova %}
+For Cordova/Ionic, the easiest way to install the SDK is via the Cordova plugin command line tool. 
 
+- cd into your project directory
+- Run `cordova plugin add https://github.com/BranchMetrics/Cordova-Ionic-PhoneGap-Deferred-Deep-Linking-SDK` from the command line
+
+If you're on PhoneGap, you'll need to use us NPM now:
+
+- cd into your project directory
+- Run `npm install branch-cordova-sdk` from the command line
 {% endif %}
 
 {% if page.xamarin %}
+The Branch Xamarin SDK is available as a [NuGet package](https://www.nuget.org/packages/Branch-Xamarin-Linking-SDK). You will need to add the package to your Android, iOS and Forms (if applicable) projects.
 
+- Right click on each project and select Add->Add NuGet Package or double click on the Packages folder to bring up the NuGet package dialog in Xamarin Studio.
+- Find the `Branch Xamarin Linking SDK` and select it. This will add the required assemblies to your projects. 
+- You need to do this for each project that will use Branch calls. This include the Android and iOS projects even if this is a Forms based app since an initialization call needs to be added to each of the platform specific projects.
+
+If you would rather build and reference the assemblies directly, you can clone this repository to your local machine and add:
+
+- Add the BranchXamarinSDK project to your solution and reference it from your Android, iOS and Forms (if applicable) project.
+- Add the BranchXamarinSDK.Droid project to your solution and reference it from your Android project, if any.
+- Add the BranchXamarinSDK.iOS project and reference it from you iOS project, if any.
 {% endif %}
 
 {% if page.unity %}
