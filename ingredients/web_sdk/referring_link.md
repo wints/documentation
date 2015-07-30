@@ -11,7 +11,7 @@ branch.init('YOUR-BRANCH-KEY', function(err, data) {
 });
 {% endhighlight %}
 
-This referring_link will be null if the user came to the page without clicking on a Branch link. Otherwise it will be of the form `bnc.lt/c/XXX` -- the `/c/` indicates that this is not the original link but rather points back to the original link.
+This referring_link will be null if the user came to the page without clicking on a Branch link. Otherwise it will be of the form `bnc.lt/d/XXX` -- the `/d/` indicates that this is not the original link but rather points back to the original link.
 
 So, to roll your own SMS service, your logic should be as follows:
 
