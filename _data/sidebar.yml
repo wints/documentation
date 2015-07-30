@@ -7,7 +7,9 @@
       title: What is Branch?
       pages:
         - ''
+        - supported_standards
         - how_branch_links_work
+        - link_configuration
         - link_creation_guide
     - type: recipe
       title: Getting started with Branch
