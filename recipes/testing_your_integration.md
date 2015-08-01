@@ -9,6 +9,11 @@ android_keywords: Contextual Deep Linking, Deep links, Deeplinks, Deep Linking, 
 platforms:
 - ios
 - android
+- cordova
+- xamarin
+- unity
+- adobe
+- titanium
 ---
 
 {%ingredient debug/intro %}{% endingredient %}

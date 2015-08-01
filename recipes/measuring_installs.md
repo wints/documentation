@@ -7,9 +7,7 @@ ios_description: The Branch Metrics dashboard shows you all the analytics for yo
 android_description: The Branch Metrics dashboard has all the analytics for your Android deep links. Track install attribution, measure marketing channels and ad campaigns.
 ios_keywords: Contextual Deep Linking, Deep links, Deeplinks, Deep Linking, Deeplinking, Deferred Deep Linking, Deferred Deeplinking, Google App Indexing, Google App Invites, Apple Universal Links, Apple Spotlight Search, Facebook App Links, AppLinks, Deepviews, Deep views, Attribution, Analytics, Dashboard, App Install, App Open, Conversion, iOS, objective-c, swift
 android_keywords: Contextual Deep Linking, Deep links, Deeplinks, Deep Linking, Deeplinking, Deferred Deep Linking, Deferred Deeplinking, Google App Indexing, Google App Invites, Apple Universal Links, Apple Spotlight Search, Facebook App Links, AppLinks, Deepviews, Deep views, Attribution, Analytics, Dashboard, App Install, App Open, Conversion, Android
-platforms:
-- ios
-- android
+hide_platform_selector: true
 ---
 
 ## Welcome to your dashboard

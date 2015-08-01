@@ -7,9 +7,7 @@ ios_description: Give your web users the option to text themselves your app with
 android_description: Give your web users the option to text themselves your app with a Text-Me-The-App landing page. Learn how to set it up and use our code for Android apps.
 ios_keywords: Contextual Deep Linking, Deep links, Deeplinks, Deep Linking, Deeplinking, Deferred Deep Linking, Deferred Deeplinking, Google App Indexing, Google App Invites, Apple Universal Links, Apple Spotlight Search, Facebook App Links, AppLinks, Deepviews, Deep views, Text-Me-The-App, landing page, SMS, text an app
 android_keywords: Contextual Deep Linking, Deep links, Deeplinks, Deep Linking, Deeplinking, Deferred Deep Linking, Deferred Deeplinking, Google App Indexing, Google App Invites, Apple Universal Links, Apple Spotlight Search, Facebook App Links, AppLinks, Deepviews, Deep views,Text-Me-The-App, landing page, SMS, text an app, Android
-platforms:
-- ios
-- android
+hide_platform_selector: true
 ---
 
 When users click your links on desktop, they have the option to text themselves the app. We provide this by default--just [create a test marketing link](https://dashboard.branch.io/#/marketing) and click it on your computer. You can also use the [code on this page](/recipes/text_me_the_app_page/{{page.platform}}#sendsms-example) to create your own fully-branded text-me-the-app page. 
@@ -55,3 +53,10 @@ Branch uses Twilio for our text-me-the-app feature. Thanks to Twilio, users can 
 
 ## Customizing SMS Messages
 {% ingredient dashboard_setup/sms_customization %}{% endingredient %}
+
+## What's next
+
+{% ingredient recipe_preview/app_download_banner %}{% endingredient %}
+{% ingredient recipe_preview/easy_deep_linking %}{% endingredient %}
+{% ingredient recipe_preview/content_sharing %}{% endingredient %}
+{% ingredient recipe_preview/personalized_welcome %}{% endingredient %}

@@ -112,9 +112,9 @@ The only way to test the deep linking functionality is outside of the actual ads
 6. Click 'Send to iOS/Android'
 7. Install the app and it should deep link!
 
+{% ingredient app_links/applinks_issues %}{% override header %}### Issues Reading App Links{% endoverride %}{% endingredient %}
 
 {% ingredient dashboard_setup/facebook_auth_issues %}{% endingredient %}
-
 
 ## What's next?
 

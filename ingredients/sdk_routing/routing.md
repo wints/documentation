@@ -77,3 +77,96 @@ public void onStart() {
 {% endhighlight %}
 
 {% endif %}
+
+{% if page.cordova %}
+
+Inside the callback, when Branch is initialized, you will want to examine the dictionary we pass to you from our callback. Below is an example assuming that the links correspond to pictures.
+
+{% highlight js %}
+branch.init("YOUR BRANCH KEY HERE", function(err, data) {
+    if (!err && data.data_parsed['+clicked_branch_link']) {
+        if (data.data_parsed['picture_id']) {
+            // load the view to show the picture
+        } else {
+            // load your normal view
+        }
+    } 
+});
+{% endhighlight %}
+{% endif %}
+
+{% if page.xamarin %}
+Inside the `InitSessionComplete` callback, when Branch is initialized, you will want to examine the dictionary we pass to you from our callback. Below is an example assuming that the links correspond to pictures.
+
+{% highlight c# %}
+public class App : Application, IBranchSessionInterface
+{
+    public void InitSessionComplete (Dictionary<string, object> data)
+    {
+        if (data.ContainsKey("picture_id") {
+            // load the view to show the picture
+        } else {
+            // load your normal view
+        }
+    }
+}
+{% endhighlight %}
+
+{% endif %}
+
+{% if page.unity %}
+Inside the `initSession` callback, when Branch is initialized, you will want to examine the dictionary we pass to you from our callback. Below is an example assuming that the links correspond to pictures.
+
+{% highlight c# %}
+public class MyCoolBehaviorScript : MonoBehaviour {
+    void Start () {
+        Branch.initSession(delegate(Dictionary<string, object> parameters, string error) {
+            if (parameters.ContainsKey("picture_id") {
+                // load the view to show the picture
+            } else {
+                // load your normal view
+            }
+        });
+    }
+}
+{% endhighlight %}
+{% endif %}
+
+{% if page.adobe %}
+Inside the `initSuccessed` callback, when Branch is initialized, you will want to examine the dictionary we pass to you from our callback. Below is an example assuming that the links correspond to pictures.
+
+{% highlight java %}
+private function initSuccessed(bEvt:BranchEvent):void {
+    var referringParams:Object = JSON.parse(bEvt.informations);
+    if (referringParams.picture_id) {
+        // load the view to show the picture
+    } else {
+        // load your normal view
+    }
+}
+{% endhighlight %}
+
+Once is done, initialize the SDK:
+
+{% highlight java %}
+branch.init();
+{% endhighlight %}
+
+Be sure to have the INIT_SUCCESSED event called, otherwise read the bEvt.informations from the INIT_FAILED event.
+{% endif %}
+
+{% if page.titanium %}
+Inside the callback, when Branch is initialized, you will want to examine the dictionary we pass to you from our callback. Below is an example assuming that the links correspond to pictures.
+
+{% highlight js %}
+branch.init("YOUR BRANCH KEY HERE", function(err, data) {
+    if (!err && data.data_parsed['+clicked_branch_link']) {
+        if (data.data_parsed['picture_id']) {
+            // load the view to show the picture
+        } else {
+            // load your normal view
+        }
+    } 
+});
+{% endhighlight %}
+{% endif %}

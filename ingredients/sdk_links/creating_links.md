@@ -55,3 +55,86 @@ branch.getShortUrl(obj, "sms", "share", new BranchLinkCreateListener() {
 
 {% endif %}
 <!--- /Android -->
+
+{% if page.cordova %}
+
+{% highlight js %}
+branch.link({
+    channel: 'sms',
+    feature: 'share',
+    data: {
+        foo: 'bar'
+    }
+}, function(err, link) {
+	if (!err) {
+    	console.log("Ready to share my " + link);
+	}
+});
+{% endhighlight %}
+{% endif %}
+
+{% if page.xamarin %}
+
+{% highlight c# %}
+var data = new Dictionary<string, object>(); 
+data.Add("foo", "bar");
+
+Branch branch = Branch.GetInstance ();
+await branch.GetShortUrlAsync(this, data, "sms", "share");
+{% endhighlight %}
+{% endif %}
+
+{% if page.unity %}
+{% highlight c# %}
+Dictionary<string, object> parameters = new Dictionary<string, object>
+{
+    { "foo", "bar" }
+}
+
+string channel = "sms";
+string feature = "share";
+Branch.getShortURLWithTags(parameters, channel, feature, delegate(string url, string error) {
+    // show the link to the user or share it immediately
+});
+{% endhighlight %}
+{% endif %}
+
+{% if page.adobe %}
+
+{% highlight java %}
+//be sure to add the event listeners:
+branch.addEventListener(BranchEvent.GET_SHORT_URL_FAILED, getShortUrlFailed);
+branch.addEventListener(BranchEvent.GET_SHORT_URL_SUCCESSED, getShortUrlSuccessed);
+
+private function getShortUrlSuccessed(bEvt:BranchEvent):void {
+    trace("BranchEvent.GET_SHORT_URL_SUCCESSED", "my short url is: " + bEvt.informations);
+}
+
+private function getShortUrlFailed(bEvt:BranchEvent):void {
+    trace("BranchEvent.GET_SHORT_URL_FAILED", bEvt.informations);
+}
+
+var dataToInclude:Object = {
+    foo:"bar"
+};
+
+branch.getShortUrl(tags, "sms", BranchConst.FEATURE_TAG_SHARE, JSON.stringify(dataToInclude));
+{% endhighlight %}
+{% endif %}
+
+{% if page.titanium %}
+
+{% highlight js %}
+branch.link({
+    channel: 'sms',
+    feature: 'share',
+    data: {
+        foo: 'bar'
+    }
+}, function(err, link) {
+	if (!err) {
+    	console.log("Ready to share my " + link);
+	}
+});
+{% endhighlight %}
+{% endif %}

@@ -7,9 +7,7 @@ ios_description: Insert this short code snippet to add a smart app download bann
 android_description: Insert this short code snippet to add a smart app download banner to both your desktop and mobile web pages and drive Android app downloads.
 ios_keywords: Contextual Deep Linking, Deep links, Deeplinks, Deep Linking, Deeplinking, Deferred Deep Linking, Deferred Deeplinking, Google App Indexing, Google App Invites, Apple Universal Links, Apple Spotlight Search, Facebook App Links, AppLinks, Deepviews, Deep views, Smart Banner, App Download Banner, Banner
 android_keywords: Contextual Deep Linking, Deep links, Deeplinks, Deep Linking, Deeplinking, Deferred Deep Linking, Deferred Deeplinking, Google App Indexing, Google App Invites, Apple Universal Links, Apple Spotlight Search, Facebook App Links, AppLinks, Deepviews, Deep views,Smart Banner, App Download Banner, Banner
-platforms:
-- ios
-- android
+hide_platform_selector: true
 ---
 
 The mobile web smart banner is a powerful tool--it brings users in from the web experience where they are more easily lost, to your native mobile experience. On desktop, the banner can even drive users to mobile via our text-me-the-app function.
@@ -92,12 +90,8 @@ For more information on Banner events, please visit our [web guide](https://gith
 
 
 
-## Conclusion
+## What's next
 
-You've learned how to add a smart banner to your website with minimal configuration and some copying-and-pasting Javascript into your website. Perhaps the allure of passing data through install or deep linking to content caught your eye and you added the SDK to your {{page.platform_formatted}} app. There's a ton more that Branch can do. For example, you can:
-
-{% ingredient recipe_preview/referral_links_with_incentives %}{% endingredient %}
+{% ingredient recipe_preview/easy_deep_linking %}{% endingredient %}
 {% ingredient recipe_preview/personalized_welcome %}{% endingredient %}
-{% ingredient recipe_preview/influencers %}{% endingredient %}
-{% ingredient recipe_preview/channel_tags %}{% endingredient %}
 {% ingredient recipe_preview/contact_us %}{% endingredient %}
