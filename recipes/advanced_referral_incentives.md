@@ -1,6 +1,6 @@
 ---
 type: recipe
-title: Advanced referral incentives
+title: Advanced referral rewards
 ios_page_title: Set up referral incentives for iOS Apps
 android_page_title: Referral incentives for Android Apps
 ios_description: Branch allows you to reward app users with credits, track those credits, and redeem them when appropriate. Learn how to reward users without promo codes.
@@ -10,6 +10,11 @@ android_keywords: Contextual Deep Linking, Deep links, Deeplinks, Deep Linking, 
 platforms:
 - ios
 - android
+- cordova
+- xamarin
+- unity
+- adobe
+- titanium
 ---
 
 ## Tracking Events

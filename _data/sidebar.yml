@@ -41,7 +41,6 @@
       title: Customize Your Integration
       pages:
         - matching_accuracy
-        - dynamic_link_creation
         - email_campaigns
         - add_custom_link_data_and_routing
         - advanced_referral_incentives

@@ -17,14 +17,14 @@ On iOS, it's a rather simple method call.
 {% tabs %}
 {% tab objective-c %}
 {% highlight objc %}
-[[Branch getInstance] getShortURLWithParams:{% section params %}@{@"foo": @"bar"}{% endsection %} andChannel:@"sms" andFeature:BRANCH_FEATURE_TAG_SHARE andCallback:^(NSString *url, NSError *error) {
+[[Branch getInstance] getShortURLWithParams:{% section params %}@{@"article_id": @"1234", @"$og_title": @"Hot off the presses!", @"$og_image_url": @"mysite.com/image.png", @"$desktop_url": @"mysite.com/article1234"}{% endsection %} andChannel:@"sms" andFeature:BRANCH_FEATURE_TAG_SHARE andCallback:^(NSString *url, NSError *error) {
     if (!error) NSLog(@"got my Branch link to share: %@", url);
 }];
 {% endhighlight %}
 {% endtab %}
 {% tab swift %}
 {% highlight swift %}
-Branch.getInstance().getShortURLWithParams(["foo" : "bar"], andChannel: "sms", andFeature: BRANCH_FEATURE_TAG_SHARE, andCallback: { (url: String?, error: NSError?) -> Void in
+Branch.getInstance().getShortURLWithParams(["article_id": "1234", "$og_title":"Hot off the presses!", "$og_image_url": "mysite.com/image.png", "$desktop_url": "mysite.com/article1234"], andChannel: "sms", andFeature: BRANCH_FEATURE_TAG_SHARE, andCallback: { (url: String?, error: NSError?) -> Void in
     if error == nil {
         NSLog(@"got my Branch link to share: %@", url!)
     }
@@ -43,7 +43,10 @@ Branch.getInstance().getShortURLWithParams(["foo" : "bar"], andChannel: "sms", a
 {% highlight java %}
 {% section params %}
 JSONObject obj = new JSONObject();
-obj.putString("foo", "bar");
+obj.putString("article_id", "1234");
+obj.putString("$og_title", "Hot off the presses!");
+obj.putString("$og_image_url", "mysite.com/image.png");
+obj.putString("$desktop_url", "mysite.com/article1234");
 {% endsection %}
 branch.getShortUrl(obj, "sms", "share", new BranchLinkCreateListener() {
 	@Override
@@ -63,7 +66,10 @@ branch.link({
     channel: 'sms',
     feature: 'share',
     data: {
-        foo: 'bar'
+		"article_id": "1234",
+		"$og_title": "Hot off the presses!",
+		"$og_image_url": "mysite.com/image.png",
+		"$desktop_url": "mysite.com/article1234"
     }
 }, function(err, link) {
 	if (!err) {
@@ -74,13 +80,27 @@ branch.link({
 {% endif %}
 
 {% if page.xamarin %}
-
 {% highlight c# %}
 var data = new Dictionary<string, object>(); 
-data.Add("foo", "bar");
+data.Add("article_id", "1234");
+data.Add("$og_title", "Hot off the presses!");
+data.Add("$og_image_url", "mysite.com/image.png");
+data.Add("$desktop_url", "mysite.com/article1234");
 
 Branch branch = Branch.GetInstance ();
 await branch.GetShortUrlAsync(this, data, "sms", "share");
+{% endhighlight %}
+
+After you've registered the class as a delegate of `IBranchUrlInterface`
+
+{% highlight c# %}
+#region IBranchUrlInterface implementation
+
+public void ReceivedUrl (Uri uri)
+{
+    // Do something with the new link...
+}
+#endregion
 {% endhighlight %}
 {% endif %}
 
@@ -88,7 +108,10 @@ await branch.GetShortUrlAsync(this, data, "sms", "share");
 {% highlight c# %}
 Dictionary<string, object> parameters = new Dictionary<string, object>
 {
-    { "foo", "bar" }
+	{ "article_id", "1234" },
+	{ "$og_title", "Hot off the presses!" },
+	{ "$og_image_url", "mysite.com/image.png" },
+	{ "$desktop_url", "mysite.com/article1234" }
 }
 
 string channel = "sms";
@@ -115,7 +138,10 @@ private function getShortUrlFailed(bEvt:BranchEvent):void {
 }
 
 var dataToInclude:Object = {
-    foo:"bar"
+	"article_id": "1234",
+	"$og_title": "Hot off the presses!",
+	"$og_image_url": "mysite.com/image.png",
+	"$desktop_url": "mysite.com/article1234"
 };
 
 branch.getShortUrl(tags, "sms", BranchConst.FEATURE_TAG_SHARE, JSON.stringify(dataToInclude));
@@ -129,7 +155,10 @@ branch.link({
     channel: 'sms',
     feature: 'share',
     data: {
-        foo: 'bar'
+		"article_id": "1234",
+		"$og_title": "Hot off the presses!",
+		"$og_image_url": "mysite.com/image.png",
+		"$desktop_url": "mysite.com/article1234"
     }
 }, function(err, link) {
 	if (!err) {

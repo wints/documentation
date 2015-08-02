@@ -7,8 +7,10 @@ keywords: Contextual Deep Linking, Deep links, Deeplinks, Deep Linking, Deeplink
 hide_platform_selector: true
 ---
 
-# How to Enable Universal Links in Branch for iOS9
+## How to Enable Universal Links in Branch for iOS9
 
 **Note as of 7/30**
 
 Universal Links are still broken in iOS 9 beta versions. More to come as they are fixed in future betas.
+
+You can read a blog post we wrote on the subject [here](https://blog.branch.io/how-to-setup-universal-links-to-deep-link-on-apple-ios-9) for now.

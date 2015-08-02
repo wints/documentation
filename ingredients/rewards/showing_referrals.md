@@ -1,7 +1,8 @@
+{% if page.ios %}
 ### Showing Referrals
 
 <!-- iOS -->
-{% if page.ios %}
+
 If you're using the [Branch Invite SDK](https://github.com/BranchMetrics/Branch-iOS-Invite-SDK), displaying referrals, earned credits, and credit transactions to your users is super easy. It handles all the logic of determining which transactions are referrals for you as well, so there is no confusing logic. If desired, you can provide a customized view that will have the data fed into it.
 
 For the most basic integration, using the default Branch styled view, you can add the following controller, which can be shown modally or within a tab / navigation controller. Note that the delegate requires you to provide a User ID that can be used to determine transactions where the current user was the referring user.

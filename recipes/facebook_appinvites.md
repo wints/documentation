@@ -289,15 +289,19 @@ protected void onStop() {
 {% endif %}
 <!--- /Android -->
 
+-----
 
 ## Troubleshooting
 {% ingredient app_links/applinks_issues %}{% override header %}### Issues Reading App Links{% endoverride %}{% endingredient %}
 
 {% ingredient dashboard_setup/facebook_auth_issues %}{% override header %}### Common issues with Facebook Authentication{% endoverride %}{% endingredient %}
 
+-----
 
 ## What's next?
 
 {% ingredient recipe_preview/personalized_welcome %}{% endingredient %}
+
+-----
 
 {% ingredient recipe_preview/contact_us %}{%endingredient%}
