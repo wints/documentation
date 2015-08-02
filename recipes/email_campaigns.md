@@ -26,7 +26,7 @@ First, please visit the [Branch link configuration tool](https://start.branch.io
 {% endingredient %}
 
 {% ingredient dashboard_links/tags %}
-	{% override deep_link_data_url %}For information of the form *[key]*: *[value]* such as "product": "shoes", we recommend adding them below--see [Deep Link Data (Optional)](/recipes/your_first_marketing_link/{{page.platform}}/#deep-link-data).
+	{% override deep_link_data_url %}For information of the form *[key]*: *[value]* such as "product": "shoes", we recommend adding them below--see [Deep Link Data (Optional)](/recipes/your_first_marketing_link/#deep-link-data).
     {% endoverride %}
     {% override screenshot %}{% image src="/img/ingredients/dashboard_links/tags_email.png" half right alt="Link Tags" %}
 	{% endoverride %}

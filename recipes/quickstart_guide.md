@@ -52,7 +52,7 @@ You can also use the data to link directly to content! Instead of "foo": "bar", 
 
 ## What's next?
 
-### [Head to Step 3: A dashboard introduction](/recipes/measuring_installs/{{page.platform}}/)
+### [Head to Step 3: A dashboard introduction](/recipes/measuring_installs/)
 
 -----
 

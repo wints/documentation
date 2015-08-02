@@ -29,6 +29,6 @@ branch.sendSMS(
 });
 {% endhighlight %}
 
-_You can read more about the SendSMS() method [here](https://github.com/BranchMetrics/web-sdk#sendsmsphone-linkdata-options-callback)._ 
+_You can read more about the SendSMS() method [here](https://github.com/BranchMetrics/Smart-App-Banner-Deep-Linking-Web-SDK/blob/master/WEB_GUIDE.md#sendsmsphone-linkdata-options-callback)._ 
 
 The example below includes all the code you need to add to your website in one snippet.

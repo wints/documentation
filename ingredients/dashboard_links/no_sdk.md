@@ -5,4 +5,4 @@ The Dashboard's [Summary](https://dashboard.branch.io/#) page, specifically the 
 
 {% image src="/img/ingredients/dashboard_links/click_flow_no_sdk.png" 3-quarters center alt="click flow no open/install" %}
 
-To start collecting statistics regarding installs, opens, referred installs -- and to add powerful, deferred deep links -- You should [integrate the SDK](/recipes/quickstart_guide/ios/)
+To start collecting statistics regarding installs, opens, referred installs -- and to add powerful, deferred deep links -- You should [integrate the SDK](/recipes/quickstart_guide/{{page.platform}}/)
