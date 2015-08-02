@@ -107,7 +107,7 @@ public void onNewIntent(Intent intent) {
 
 {% if page.cordova %}
 
-Initialize the session and register your deep link router. The callback here will contain the deeplink data associated with the link you clicked.
+Initialize the session and register your deep link router. You should call this when the ‘deviceready’ event fires and each time the ‘resume’ event fires. The callback here will contain the deeplink data associated with the link you clicked.
 
 {% highlight js %}
 branch.init("YOUR BRANCH KEY HERE", function(err, data) {
