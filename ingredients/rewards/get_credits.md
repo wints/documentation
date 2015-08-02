@@ -76,7 +76,20 @@ Branch.loadRewards(delegate(bool changed, string error) {
 {% endif %}
 
 {% if page.adobe %}
-Not currently supported in the ANE.
+{% highlight java %}
+private function creditSuccess(bEvt:BranchEvent):void {
+	// Credits will be string in bEvt.informations.
+	trace(bEvt.type, bEvt.informations);
+}
+{% endhighlight %}
+
+Then register the callback and call `getCredits`
+
+{% highlight java %}
+var branch:Branch = Branch.getInstance();
+branch.addEventListener(BranchEvent.GET_CREDITS_SUCCESSED, creditSuccess);
+branch.getCredits();
+{% endhighlight %}
 {% endif %}
 
 {% if page.titanium %}
@@ -159,8 +172,20 @@ Branch.loadRewards(delegate(bool changed, string error) {
 {% endif %}
 
 {% if page.adobe %}
+{% highlight java %}
+private function creditSuccess(bEvt:BranchEvent):void {
+	// Credits will be string in bEvt.informations.
+	trace(bEvt.type, bEvt.informations);
+}
+{% endhighlight %}
 
-Not currently supported in the ANE.
+Then register the callback and call `getCredits`
+
+{% highlight java %}
+var branch:Branch = Branch.getInstance();
+branch.addEventListener(BranchEvent.GET_CREDITS_SUCCESSED, creditSuccess);
+branch.getCredits("myBucket");
+{% endhighlight %}
 {% endif %}
 
 {% if page.titanium %}

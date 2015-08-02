@@ -58,7 +58,17 @@ Branch.redeemRewards(5);
 {% endif %}
 
 {% if page.adobe %}
-Not currently supported in the ANE.
+private function redeemSuccess(bEvt:BranchEvent):void {
+    // Successful redemption
+}
+{% endhighlight %}
+
+Then register the callback and call `redeemRewards`
+
+{% highlight java %}
+var branch:Branch = Branch.getInstance();
+branch.addEventListener(BranchEvent.REDEEM_REWARDS_SUCCESSED, redeemSuccess);
+branch.redeemRewards(5);
 {% endif %}
 
 {% if page.titanium %}
@@ -122,7 +132,11 @@ Branch.redeemRewards(5, "myBucket");
 {% endif %}
 
 {% if page.adobe %}
-Not currently supported in the ANE.
+{% highlight java %}
+var branch:Branch = Branch.getInstance();
+branch.addEventListener(BranchEvent.REDEEM_REWARDS_SUCCESSED, redeemSuccess);
+branch.redeemRewards(5, "myBucket");
+{% endhighlight %}
 {% endif %}
 
 {% if page.titanium %}
