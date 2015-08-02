@@ -7,22 +7,20 @@ ios_description: Insert this short code snippet to add a smart app download bann
 android_description: Insert this short code snippet to add a smart app download banner to both your desktop and mobile web pages and drive Android app downloads.
 ios_keywords: Contextual Deep Linking, Deep links, Deeplinks, Deep Linking, Deeplinking, Deferred Deep Linking, Deferred Deeplinking, Google App Indexing, Google App Invites, Apple Universal Links, Apple Spotlight Search, Facebook App Links, AppLinks, Deepviews, Deep views, Smart Banner, App Download Banner, Banner
 android_keywords: Contextual Deep Linking, Deep links, Deeplinks, Deep Linking, Deeplinking, Deferred Deep Linking, Deferred Deeplinking, Google App Indexing, Google App Invites, Apple Universal Links, Apple Spotlight Search, Facebook App Links, AppLinks, Deepviews, Deep views,Smart Banner, App Download Banner, Banner
-platforms:
-- ios
-- android
+hide_platform_selector: true
 ---
 
 The mobile web smart banner is a powerful tool--it brings users in from the web experience where they are more easily lost, to your native mobile experience. On desktop, the banner can even drive users to mobile via our text-me-the-app function.
 
 First, make sure you've configured your links on the Dashboard using the [Branch link configuration tool](https://start.branch.io/), then check out the code below.
 
-If you also want to pass data through the install process or deep link straight to content, check out the optional 2nd section, [Routing: passing information from the Banner](/recipes/app_download_banner/{{page.platform}}/#optional-routing-passing-information-from-the-banner).
+If you also want to pass data through the install process or deep link straight to content, check out the optional 2nd section, [Routing: passing information from the Banner](/recipes/app_download_banner/#optional-routing-passing-information-from-the-banner).
 
 
 ## The Smart Banner
 {% ingredient web_sdk/smart_banner %}{% override header %}{% endoverride %}{% endingredient %}
 {% protip title="Deeplinking through Install" %}
-This data dictionary containing `foo: 'bar'` etc is where you put data that you want passed through install. This is discussed in the next section on [Routing](/recipes/app_download_banner/{{page.platform}}/#optional-routing-passing-information-from-the-banner).
+This data dictionary containing `foo: 'bar'` etc is where you put data that you want passed through install. This is discussed in the next section on [Routing](/recipes/app_download_banner/#optional-routing-passing-information-from-the-banner).
 {% endprotip %} 
 
 #### Styling the banner using the custom css property
@@ -42,7 +40,7 @@ To set the background color of the entire Banner to green use:
 
 ## (Optional) Routing: passing information from the Banner
 
-Now that you've added routing to your app, you can add information to the Smart Banner. If you've used the example Smart Banner code [above](/recipes/app_download_banner/ios/#the-smart-banner), you simply need to insert any key-value pairs you'd like into the data dictionary.
+Now that you've added routing to your app, you can add information to the Smart Banner. If you've used the example Smart Banner code [above](/recipes/app_download_banner/#the-smart-banner), you simply need to insert any key-value pairs you'd like into the data dictionary.
 
 Using our example of routing above with the PicVC, you'd simply need to change the Web Banner code to the following:
 
@@ -92,12 +90,11 @@ For more information on Banner events, please visit our [web guide](https://gith
 
 
 
-## Conclusion
+## What's next
 
-You've learned how to add a smart banner to your website with minimal configuration and some copying-and-pasting Javascript into your website. Perhaps the allure of passing data through install or deep linking to content caught your eye and you added the SDK to your {{page.platform_formatted}} app. There's a ton more that Branch can do. For example, you can:
-
-{% ingredient recipe_preview/referral_links_with_incentives %}{% endingredient %}
+{% ingredient recipe_preview/easy_deep_linking %}{% endingredient %}
 {% ingredient recipe_preview/personalized_welcome %}{% endingredient %}
-{% ingredient recipe_preview/influencers %}{% endingredient %}
-{% ingredient recipe_preview/channel_tags %}{% endingredient %}
+
+-----
+
 {% ingredient recipe_preview/contact_us %}{% endingredient %}

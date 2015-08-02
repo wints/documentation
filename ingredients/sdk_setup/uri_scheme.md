@@ -43,4 +43,4 @@ However, you can have many `intent-filters`. It all depends on how you architech
 {% endif %}
 <!---       /Android-specific URI Scheme -->
 
-Go do a quick double-check that this is the same URI scheme listed on the Dashboard, where it should be `myapp://`). {% section dashboard_uri %}For more info on setting up a URI scheme on the Dashboard, [click here](/recipes/dashboard_pro_tips/{{page.platform}}/#uri-scheme).{% endsection %}
+Go do a quick double-check that this is the same URI scheme listed on the Dashboard, where it should be `myapp://`). {% section dashboard_uri %}For more info on setting up a URI scheme on the Dashboard, [click here](/recipes/dashboard_pro_tips/#uri-scheme).{% endsection %}

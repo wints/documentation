@@ -10,6 +10,11 @@ android_keywords: Contextual Deep Linking, Deep links, Deeplinks, Deep Linking, 
 platforms:
 - ios
 - android
+- cordova
+- xamarin
+- unity
+- adobe
+- titanium
 ---
 
 ## Configuring the links
@@ -47,7 +52,7 @@ You can also use the data to link directly to content! Instead of "foo": "bar", 
 
 ## What's next?
 
-### [Head to Step 3: A dashboard introduction](/recipes/measuring_installs/{{page.platform}}/)
+### [Head to Step 3: A dashboard introduction](/recipes/measuring_installs/)
 
 -----
 
@@ -70,3 +75,5 @@ You can also use the data to link directly to content! Instead of "foo": "bar", 
 -----
 
 {% ingredient sdk_setup/pre_14_android %}{% endingredient %}
+
+{% ingredient sdk_setup/xamarin_without_forms %}{% endingredient %}

@@ -13,7 +13,7 @@ On mobile, Branch routes the user based on whether or not they have the app:
 - If the app **is** installed, we open it and deep link directly to right app page. 
 - If the app **is not** installed, you can choose to:
 	- Route to the right app store (based on automatic detection of the device)
-	- Route to a fallback url that you set (try our [smart app banner](/recipes/app_download_banner/ios/#the-smart-banner))
+	- Route to a fallback url that you set (try our [smart app banner](/recipes/app_download_banner/#the-smart-banner))
 	- Show a deepview, a web preview of the app content with a link to the app store
 
 Lastly, if the user installs, deep link to the right app page as soon as they open.
@@ -27,9 +27,9 @@ Lastly, if the user installs, deep link to the right app page as soon as they op
 On desktop, Branch lets you choose to:
 
 - Route users to a Branch-hosted page where users can text themselves the app
-	- Use our template or [customize/build your own SMS page](/recipes/text_me_the_app_page/ios/)
+	- Use our template or [customize/build your own SMS page](/recipes/text_me_the_app_page/)
 	- The texted link routes on mobile as described above
-- Route users to the value of the key $desktop_url (say, the relevant page on your website) in the link’s data dictionary ([add SMS to it](/recipes/text_me_the_app_page/ios/))
+- Route users to the value of the key $desktop_url (say, the relevant page on your website) in the link’s data dictionary ([add SMS to it](/recipes/text_me_the_app_page/))
 
 {% image src='/img/overview/how-links-work-3.jpg' half center alt='4' %}
 

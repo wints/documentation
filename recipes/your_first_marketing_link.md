@@ -7,9 +7,7 @@ ios_description: How to set up your first iOS deep link on the Branch Dashboard.
 android_description: How to set up your first Android deep link on the Branch Dashboard. Select the data to pass through the install of your app and set up the analytics.
 ios_keywords: Contextual Deep Linking, Deep links, Deeplinks, Deep Linking, Deeplinking, Deferred Deep Linking, Deferred Deeplinking, Google App Indexing, Google App Invites, Apple Universal Links, Apple Spotlight Search, Facebook App Links, AppLinks, Deepviews, Deep views, Link configuration, Analytics, Custom Link, Deep Link Data, iOS, objective-c, swift
 android_keywords: Contextual Deep Linking, Deep links, Deeplinks, Deep Linking, Deeplinking, Deferred Deep Linking, Deferred Deeplinking, Google App Indexing, Google App Invites, Apple Universal Links, Apple Spotlight Search, Facebook App Links, AppLinks, Deepviews, Deep views, Link configuration, Analytics, Custom Link, Deep Link Data, Android
-platforms:
-- ios
-- android
+hide_platform_selector: true
 ---
 
 ## Link configuration

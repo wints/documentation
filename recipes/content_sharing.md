@@ -10,6 +10,11 @@ android_keywords: Contextual Deep Linking, Deep links, Deeplinks, Deep Linking, 
 platforms:
 - ios
 - android
+- cordova
+- xamarin
+- unity
+- adobe
+- titanium
 ---
 
 {% ingredient quickstart_preview/quickstart_preview %}{% endingredient %}
@@ -21,11 +26,12 @@ platforms:
 {% protip title="Data is for Deeplinking" %}
 You use the data to link directly to content! Instead of "foo": "bar", you could pass in "{% if page.ios %}pictureId{% endif %}{% if page.android %}picture_id{% endif %}": "1234", then when a user clicks on a link you can open the app straight to picture with Id 1234. Keep reading...
 {% endprotip %}
+{% if page.ios or page.android %}
 
 -----
 
 ## Sharing Methods (Optional)
-
+{% endif %}
 {% ingredient sdk_links/sharing_links %}{% endingredient %}
 
 -----

@@ -10,6 +10,11 @@ android_keywords: Contextual Deep Linking, Deep links, Deeplinks, Deep Linking, 
 platforms:
 - ios
 - android
+- cordova
+- xamarin
+- unity
+- adobe
+- titanium
 ---
 
 {% ingredient quickstart_preview/quickstart_preview %}{% endingredient %}
@@ -78,4 +83,7 @@ This guide covered the basics. The following may be of interest to you, if you w
 {% ingredient recipe_preview/personalized_welcome %}{% endingredient %}
 {% ingredient recipe_preview/influencers %}{% endingredient %}
 {% ingredient recipe_preview/channel_tags %}{% endingredient %}
+
+-----
+
 {% ingredient recipe_preview/contact_us %}{% endingredient %}
