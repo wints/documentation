@@ -58,6 +58,7 @@ Branch.redeemRewards(5);
 {% endif %}
 
 {% if page.adobe %}
+{% highlight c# %}
 private function redeemSuccess(bEvt:BranchEvent):void {
     // Successful redemption
 }
@@ -69,6 +70,7 @@ Then register the callback and call `redeemRewards`
 var branch:Branch = Branch.getInstance();
 branch.addEventListener(BranchEvent.REDEEM_REWARDS_SUCCESSED, redeemSuccess);
 branch.redeemRewards(5);
+{% endhighlight %}
 {% endif %}
 
 {% if page.titanium %}
