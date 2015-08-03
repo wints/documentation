@@ -1,6 +1,9 @@
 ---
 type: recipe
-title: "Analytics: Kahuna"
+title: "Marketing: Kahuna"
+platforms:
+- ios
+- android
 ---
 
 # Sending Branch Install Data to Kahuna
@@ -32,7 +35,22 @@ Now that you have all the required information, you'll need to navigate to the *
 
 ## Configure Branch SDK
 
-One of the necessary components of our integration with Kahuna is that we need to be able to access the same user credential you track users by in Kahuna. Therefore in your Branch SDK, {% if page.ios %}[set up a custom *register* event](https://dev.branch.io/references/ios_sdk/#register-custom-events){% endif %}{% if page.android %}[set up a custom *register* event](https://dev.branch.io/references/android_sdk/#register-custom-events){% endif %}.
+One of the necessary components of our integration with Kahuna is that we need to be able to access the same user credential you track users by in Kahuna. Therefore in your Branch SDK, {% if page.ios %}[set up a custom *register* event](https://dev.branch.io/references/ios_sdk/#register-custom-events){% endif %}{% if page.android %}[set up a custom *register* event](https://dev.branch.io/references/android_sdk/#register-custom-events){% endif %}. This custom _register_ event allows us to collect user credentials passed in by you as parameters.
+
+{% if page.ios %}
+{% highlight objc %}
+[[Branch getInstance] userCompletedAction:@"register" withState:@{ @"kahuna_id": @"mike@branch.io" }];
+{% endhighlight %}
+{% endif %}
+{% if page.android %}
+{% highlight java %}
+JSONObject appState = new JSONObject();
+try {
+    appState.put("kahuna+id", "max@branch.io");
+} catch (JSONException e) { }
+branch.userCompletedAction("register", appState);
+{% endhighlight %}
+{% endif %}
 
 You should pass into the event a key value pair of the string `"kahuna_id"` and a string of your user credential whether you decided on an email (alex@branch.io), a username (alex123), or an anonymous ID (12345678).
 
