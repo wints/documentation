@@ -29,5 +29,6 @@ InstallListener listener = new InstallListener();
 listener.onReceive(context, intent);
 {% endhighlight %}
 {% endtab %}
+{% endtabs %}
 
 {% endif %}
