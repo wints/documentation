@@ -12,7 +12,7 @@ hide_platform_selector: true
 
 ## Welcome to your dashboard
 
-You've created a link and integrated the SDK - now it's time to dive into your data with the [Branch Dashboard](https://dashboard.branch.io). One screenshot is worth a million... dollars on spent on poorly performing ads and expensive tools to track those ads:
+You've created a link and integrated the SDK - now it's time to dive into your data with the [Branch Dashboard](https://dashboard.branch.io). One screenshot is worth a million... dollars spent on poorly performing ads and expensive tools to track those ads:
 
 {% image src='/img/ingredients/analytics_and_custom_events/dashboard_summary.png' 3-quarters center alt='the goal' %}
 
