@@ -1,18 +1,16 @@
 ---
 type: recipe
 title: "Step 3: The dashboard"
-ios_page_title: App attribution and analytics for iOS
-android_page_title: App attribution and analytics for Android
-ios_description: The Branch Metrics dashboard shows you all the analytics for your iOS deep links. Track install attribution, measure marketing channels and ad campaigns.
-android_description: The Branch Metrics dashboard has all the analytics for your Android deep links. Track install attribution, measure marketing channels and ad campaigns.
-ios_keywords: Contextual Deep Linking, Deep links, Deeplinks, Deep Linking, Deeplinking, Deferred Deep Linking, Deferred Deeplinking, Google App Indexing, Google App Invites, Apple Universal Links, Apple Spotlight Search, Facebook App Links, AppLinks, Deepviews, Deep views, Attribution, Analytics, Dashboard, App Install, App Open, Conversion, iOS, objective-c, swift
+page_title: App attribution and analytics for iOS and Android
+description: The Branch Metrics dashboard shows you all the analytics for your iOS deep links. Track install attribution, measure marketing channels and ad campaigns.
+keywords: Contextual Deep Linking, Deep links, Deeplinks, Deep Linking, Deeplinking, Deferred Deep Linking, Deferred Deeplinking, Google App Indexing, Google App Invites, Apple Universal Links, Apple Spotlight Search, Facebook App Links, AppLinks, Deepviews, Deep views, Attribution, Analytics, Dashboard, App Install, App Open, Conversion, iOS, objective-c, swift
 android_keywords: Contextual Deep Linking, Deep links, Deeplinks, Deep Linking, Deeplinking, Deferred Deep Linking, Deferred Deeplinking, Google App Indexing, Google App Invites, Apple Universal Links, Apple Spotlight Search, Facebook App Links, AppLinks, Deepviews, Deep views, Attribution, Analytics, Dashboard, App Install, App Open, Conversion, Android
 hide_platform_selector: true
 ---
 
 ## Welcome to your dashboard
 
-You've created a link and integrated the SDK - now it's time to dive into your data with the [Branch Dashboard](https://dashboard.branch.io). One screenshot is worth a million... dollars spent on poorly performing ads and expensive tools to track those ads:
+You've created a link and integrated the SDK - now it's time to dive into your data with the [Branch Dashboard](https://dashboard.branch.io). One screenshot is worth a million... dollars spent on poorly performing ads and expensive tools to track them:
 
 {% image src='/img/ingredients/analytics_and_custom_events/dashboard_summary.png' 3-quarters center alt='the goal' %}
 
