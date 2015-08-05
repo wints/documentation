@@ -69,3 +69,11 @@ Grab a Branch link from your dashboard, paste it in mobile safari, and hit go. O
 Navigate back to the *Webhooks* section of our dashboard, and click your Kahuna webhook you're testing. If it worked, you'll notice a successful webhook sent, with a response code of `202`. This is what it would look like:
 
 {% image src="/img/recipes/kahuna/kahuna_webhook_records.png" 3-quarters center alt="Kahuna Webhook Records" %}
+
+## Troubleshooting
+
+**My Kahuna webhook is returning a 404**
+Configuration issues to check:
+- Are your API key and Secret key correctly entered in the dashboard?
+- Is your _register_ event's key in its state "kahuna_id"?
+- Are you properly sending your user credential to that register event's value for "kahuna_id"?
