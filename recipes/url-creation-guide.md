@@ -4,9 +4,10 @@ title: "Branch URL Creation Guide"
 page_title: Branch URL Creation Guide
 description: Quick start guide to creating new deeplink UL's on Branch.io.  Use cross-platform deep links to drive discovery and re-engagement with your app, free of charge! 
 keywords: cross-platform, mobile to web, Contextual Deep Linking, Deep links, Deeplinks, Deep Linking, Deeplinking, Deferred Deep Linking, Deferred Deeplinking, Google App Indexing, Google App Invites, Apple Universal Links, Apple Spotlight Search, Facebook App Links, AppLinks, Deepviews, Deep views
+hide_platform_selector: true
 ---
 
----Branch URL Creation Guide
+Branch URL Creation Guide
 =========================
 
 With each Branch link, we pack in as much functionality and measurement as possible. You get the powerful deep linking functionality in addition to the all the install and reengagement attribution, all in one link.
@@ -367,20 +368,3 @@ This will return a dictionary like so, with your specific link.
 	}
 
 If the link was already created, and you don't specify an exact match for the remaining parameters (campaign, channel, app_id, etc..), this call will return an HTTP 409 error code.
-
-
-# FAQ
-
-**Why is my link always redirecting to the App Store / Play Store, even though I have everything configured correctly? -OR- What is $always_deeplink?**
-
-A: First, working through a Quick Start guide ([iOS](https://dev.branch.io/recipes/quickstart_guide/ios/), [Android](https://dev.branch.io/recipes/quickstart_guide/android/)) is the fastest way to catch anything you may have missed, both in configuring the app and correctly generating a link. Second, please take a look at these frequent mistakes: ([iOS](https://github.com/BranchMetrics/Branch-iOS-SDK#faq), [Android](https://github.com/BranchMetrics/Branch-Android-SDK#faq)).
-
-Even if you have followed all of these steps, it is possible that the link will redirect to the App Store / Play Store on a device that Branch's servers have not yet seen. By default, we only open the app if we've seen a user initiate a session in your app from a Branch link (has been cookied and deep linked by Branch). If we have not seen the user initiate a session, we will re-direct to the App Store. However, you have the option to override the default behavior. 
-
-By setting the key-value pair **"$always_deeplink": "true"** as a part of the data associated with a link, you can force a link to try to open your app first every time. However, this configuration has a downside. If "$always_deeplink" is set to "true" but a user does not have your app on his/her phone, an ugly error message may be triggered for a split second before the phone redirects to the App Store / Play Store. So there are tradeoffs to this approach. 
-
-By setting the key-value pair **"$always_deeplink": "false"** as part of the data associated with a link, you can force a link to always re-direct to the App Store. This option is not frequently used, but it is available.
-
-Note that "true" and "false" are strings.
-
-$always_deeplink can be set on both an app-wide and an individual-link basis. Above, we mentioned setting it in the link's data. You can also request that $always_deeplink be set explicitly on the backend, and we plan to add this to our [Dashboard](https://dashboard.branch.io) in the near future.
