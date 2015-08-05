@@ -1,4 +1,12 @@
-Branch URL Creation Guide
+---
+type: recipe
+title: "Branch URL Creation Guide"
+page_title: Branch URL Creation Guide
+description: Quick start guide to creating new deeplink UL's on Branch.io.  Use cross-platform deep links to drive discovery and re-engagement with your app, free of charge! 
+keywords: cross-platform, mobile to web, Contextual Deep Linking, Deep links, Deeplinks, Deep Linking, Deeplinking, Deferred Deep Linking, Deferred Deeplinking, Google App Indexing, Google App Invites, Apple Universal Links, Apple Spotlight Search, Facebook App Links, AppLinks, Deepviews, Deep views
+---
+
+---Branch URL Creation Guide
 =========================
 
 With each Branch link, we pack in as much functionality and measurement as possible. You get the powerful deep linking functionality in addition to the all the install and reengagement attribution, all in one link.
