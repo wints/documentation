@@ -1,5 +1,4 @@
-var lunr = require('lunr'),
-	path = require('path');
+var lunr = require('lunr');
 
 var alt = require('../support/alt'),
 	utils = require('../search/utils'),
@@ -22,25 +21,24 @@ function platformFromQuery(query, data) {
 // Returns whether the current query is platform specific
 function indexSource(term, data) {
 	if (platformFromQuery(term, data) == 'ios') {
-		return [ data.indexes.ios, 'ios' ];
+		return 'ios';
 	}
 	else if (platformFromQuery(term, data) == 'android') {
-		return [ data.indexes.android, 'android' ];
-	}
-	else {
-		return [ data.indexes.default, 'default' ];
+		return 'android';
 	}
 }
 
 function search(term, data) {
-	var dump = indexSource(term, data);
-	var index = lunr.Index.load(dump[0]);
-	var subsections = data.JSON_data[dump[1]].map(function(raw) {
+	var dump = data.indexes;
+	var index = lunr.Index.load(dump);
+	var subsections = data.JSON_data.map(function(raw) {
 		return {
 			id: raw.id,
 			title: raw.title,
 			body: raw.body,
-			url: raw.url
+			url: raw.url,
+			origin: raw.origin,
+			os: raw.os
 		};
 	});
 
@@ -56,23 +54,21 @@ function getTop5Results(term, data) {
 	var results = search(term, data);
 
 	var top5_results = [];
-	for (var i = 0; i < 5 && i < results.length; i++) {
-		results[i].origin = getResultOrigin(results[i]);
-		results[i].context = getContext(results[i], 7, term);
-		top5_results.push(results[i]);
+	var top5_titles = [];
+	var i = 0;
+
+	while (top5_results.length < 5 && results[0] && i < 20) {
+		if (results[0].os == indexSource(term, data) || results[0].os == 'default') {
+			if (top5_titles.indexOf(results[0].title) == -1) {
+				results[0].context = getContext(results[0], 7, term);
+				top5_results.push(results[0]);
+				top5_titles.push(results[0].title);
+			}
+		}
+		results.shift();
+		i++;
 	}
 	return top5_results;
-}
-
-// Gives the title of the page that the result is on
-function getResultOrigin(result) {
-	var origin = path.basename(path.dirname(result.url));
-	if (origin == 'ios' || origin == 'android') {
-		origin = path.basename(path.dirname(path.dirname(result.url)));
-	}
-	var parts = origin.replace(/_/g, ' ');
-
-	return parts.replace(/(?:^|\s)\S/g, function(a) { return a.toUpperCase(); });
 }
 
 // Gives a context to the first search term within the result
@@ -81,16 +77,21 @@ function getContext(result, accuracy, query) {
 	var body = result.title.split(' ').concat(result.body.split(' '));
 	var index_term = body.indexOf(term);
 	var pre_context = [],
-		post_context = [];
+		post_context = [],
+		word = ' ';
 	if (index_term == -1) {
 		term = utils.isSubstringArray(body, term);
 		index_term = body.indexOf(term);
 	}
 	for (var i = 0; i < accuracy; i++) {
-		pre_context.push(body[index_term - (accuracy - i)]);
+		if (body[index_term - (accuracy - i)]) { word = body[index_term - (accuracy - i)]; }
+		if (word.length > 20) { word = word.substring(0, 20) + '...'; }
+		pre_context.push(word);
 	}
 	for (var j = 0; j < accuracy; j++) {
-		post_context.push(body[index_term + j + 1]);
+		if (body[index_term + j + 1]) { word = body[index_term + j + 1]; }
+		if (word.length > 20) { word = word.substring(0, 20) + '...'; }
+		post_context.push(word);
 	}
 	return [ pre_context.toString().replace(/,/g, ' ') + ' ', term, ' ' + post_context.toString().replace(/,/g, ' ') ];
 }

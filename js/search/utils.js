@@ -4,29 +4,27 @@ var fs = require('fs'),
 
 var utils = {};
 
-// Merges two objects where all values are arrays and keys are the same
-utils.mergeObject = function(originObject, mergeObject) {
-	var temp = originObject;
-	for (var key in temp) {
-		temp[key] = temp[key].concat(mergeObject[key]);
-	}
-	return temp;
-};
-
 // Traverses a directory looking for index.html files
 utils.walk = function(directoryPath) {
 	var to_check = [],
-		final_indexes = { 'default': [], 'ios': [], 'android': [] };
+		final_indexes = [];
 	if (to_check.length < 1) { to_check = to_check.concat(fs.readdirSync(directoryPath)); }
 	if (to_check.indexOf('index.html') > -1) {
-		if (path.basename(directoryPath) == 'ios') { final_indexes.ios = final_indexes.ios.concat(utils.convertSubsectionsToJSON(directoryPath + '/index.html')); }
-		else if (path.basename(directoryPath) == 'android') { final_indexes.android = final_indexes.android.concat(utils.convertSubsectionsToJSON(directoryPath + '/index.html')); }
+		var subsections = utils.convertSubsectionsToJSON(directoryPath + '/index.html');
+		if (path.basename(directoryPath) == 'ios') {
+			utils.addPlatform(subsections, 'ios');
+			final_indexes = final_indexes.concat(subsections);
+		}
+		else if (path.basename(directoryPath) == 'android') {
+			utils.addPlatform(subsections, 'android');
+			final_indexes = final_indexes.concat(subsections); }
 		else {
-			final_indexes.default = final_indexes.default.concat(utils.convertSubsectionsToJSON(directoryPath + '/index.html')); }
+			utils.addPlatform(subsections, 'default');
+			final_indexes = final_indexes.concat(subsections); }
 	}
 	for (var i = 0; i < to_check.length; i++) {
 		if (fs.lstatSync(directoryPath + '/' + to_check[i]).isDirectory()) {
-			final_indexes = utils.mergeObject(final_indexes, (utils.walk(directoryPath + '/' + to_check[i])));
+			final_indexes = final_indexes.concat(utils.walk(directoryPath + '/' + to_check[i]));
 		}
 	}
 	to_check = to_check.shift();
@@ -108,6 +106,13 @@ utils.getOrigin = function(url) {
 	var parts = origin.replace(/_/g, ' ');
 
 	return parts.replace(/(?:^|\s)\S/g, function(a) { return a.toUpperCase(); });
+};
+
+utils.addPlatform = function(subsections, platform) {
+	for (var i = 0; i < subsections.length; i++) {
+		subsections[i].os = platform;
+	}
+	return subsections;
 };
 
 module.exports = utils;
