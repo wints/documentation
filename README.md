@@ -41,7 +41,7 @@ ulimit -n 10000
 
 ### Open another terminal console and start jekyll
 ```
-bundle exec jekyll serve --watch
+sudo bundle exec jekyll serve --watch
 ```
 
 Testing for broken links, etc.
