@@ -1,9 +1,20 @@
 ---
 type: recipe
 title: "Referral/Invite Links"
+ios_page_title: App Invites & Referral Links for iOS Apps
+android_page_title: App Invites & Referral Links for Android
+ios_description: How to set up App Invites, Referral Links and Reward Schemes for iOS apps using deep links. With objective-c and swift code snippets.
+android_description: How to set up App Invites, Referral Links and Reward Schemes for Android apps using deep links. With Java code snippets.
+ios_keywords: Contextual Deep Linking, Deep links, Deeplinks, Deep Linking, Deeplinking, Deferred Deep Linking, Deferred Deeplinking, Google App Indexing, Google App Invites, Apple Universal Links, Apple Spotlight Search, Facebook App Links, AppLinks, Deepviews, Deep views, Referral Links, App Invites, Reward Schemes, Promotion codes, iOS, objective-c, swift
+android_keywords: Contextual Deep Linking, Deep links, Deeplinks, Deep Linking, Deeplinking, Deferred Deep Linking, Deferred Deeplinking, Google App Indexing, Google App Invites, Apple Universal Links, Apple Spotlight Search, Facebook App Links, AppLinks, Deepviews, Deep views, Referral Links, App Invites, Reward Schemes, Promotion codes, Android
 platforms:
 - ios
 - android
+- cordova
+- xamarin
+- unity
+- adobe
+- titanium
 ---
 
 {% ingredient quickstart_preview/quickstart_preview %}{% endingredient %}
@@ -24,9 +35,7 @@ Let's get started!
 
 {% ingredient sdk_links/creating_links %}
   {% override explanation %}
-  Links are the foundation to everything Branch offers. Branch's links offer the ability to deep link directly to content, to pass data through the install process, and to tell where users are coming from. In the case of a incentivized referral program, you don't need to attach any information. You simply need to make sure that you generate links for the user who will be sharing the link. Also, be sure that you make a `setIdentity` call as described above.
-
-  That said, you can attach information about the user who is sharing the link. Then this information about this user--here "John" with id "1234"--is present anytime John's friends install the app after clicking his link.
+  You can attach information about the user who is sharing the link. Then this information about this user--here "John" with id "1234"--is present anytime John's friends install the app after clicking his link.
   {% endoverride %}
 
   {% override params %}{% if page.ios %}@{@"referringUsername":@"John", @"referringUserId":@"1234"}{% endif %}{% if page.android %}JSONObject obj = new JSONObject();
@@ -68,12 +77,13 @@ Again, it's not imperative that you attach any information to the link. As long 
 
 ## Conclusion: So Much More
 
-You now have an incentivized referral program. Like many popular promo-code systems, you can reward both the user who shares a link and the user who clicks the link and installs the app. With Branch links, the magic is built in, so there's no need for a promo code. Because we want to empower developers, we also offer the ability to reward users with credits, track those credits and redeem them--all with a few lines of code.
-
 This guide covered the basics. The following may be of interest to you, if you want to:
 
 {% ingredient recipe_preview/advanced_referral_incentives %}{% endingredient %}
 {% ingredient recipe_preview/personalized_welcome %}{% endingredient %}
 {% ingredient recipe_preview/influencers %}{% endingredient %}
 {% ingredient recipe_preview/channel_tags %}{% endingredient %}
+
+-----
+
 {% ingredient recipe_preview/contact_us %}{% endingredient %}

@@ -7,7 +7,9 @@
       title: What is Branch?
       pages:
         - ''
+        - supported_standards
         - how_branch_links_work
+        - link_configuration
         - link_creation_guide
     - type: recipe
       title: Getting started with Branch
@@ -18,12 +20,14 @@
     - type: recipe
       title: Deeplinked features
       pages:
+        - easy_deep_linking
         - content_sharing
         - personalized_welcome
         - referral_links_with_incentives
         - facebook_appinvites
         - app_download_banner
         - text_me_the_app_page
+        - branch_universal_links
     - type: recipe
       title: Testing and releasing
       pages:
@@ -37,7 +41,6 @@
       title: Customize Your Integration
       pages:
         - matching_accuracy
-        - dynamic_link_creation
         - email_campaigns
         - add_custom_link_data_and_routing
         - advanced_referral_incentives
@@ -47,6 +50,7 @@
       title: Third-Party Integrations
       pages:
         - advertising_facebook
+        - advertising_twitter
         - analytics_adjust
         - analytics_ga
         - analytics_localytics
@@ -57,10 +61,13 @@
         - developer_updates
         - ios_sdk
         - android_sdk
+        - web_sdk
         - xamarin_sdk
         - cordova_phonegap_sdk
+        - unity_sdk
+        - adobe_air_sdk
+        - titanium_sdk
         - http_api
-        - web_sdk
 -
   settings:
     className: sidebar-border-blumine

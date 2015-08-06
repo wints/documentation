@@ -1,95 +1,22 @@
 ---
 type: overview
-title: Guide to Create Deep Links
-description: Learn how Branch deep links work to pass data through install and support all open standards (Google App Indexing, Facebook App Links, Apple Spotlight), delivering the most feature packed deep link on the planet.
-keywords: Contextual Deep Linking, Deep links, Deeplinks, Deep Linking, Deeplinking, Deferred Deep Linking, Deferred Deeplinking, howto, guide, instruction, configurationg, creation
+title: Link creation
+page_title: How to create mobile deep links for apps
+description: Learn how to create fully customized deep links for apps in Android and iOS and what properties and customizations are available when using Branch Metrics.
+keywords: Contextual Deep Linking, Deep links, Deeplinks, Deep Linking, Deeplinking, Deferred Deep Linking, Deferred Deeplinking, Google App Indexing, Google App Invites, Apple Universal Links, Apple Spotlight Search, Facebook App Links, AppLinks, Deepviews, Deep views, Link Properties, Redirect Customization, Mobile SDK, Web SDK, HTTP API
 ---
 
-Regardless of how the link gets created, all links behave the same way. Links can be created in the following ways:
-
-## General properties of all links
-
-The following sections describe properties and customizations that are available in nearly all methods of link creation. In every method listed below this section, there is way to customize these individual properties.
-
-### Analytics labels for data organization
-
-Use our analytics tags to help _organize your data_. Track updates, run A/B tests and measure the effectiveness of different channels using these labels.
-
-- **channel**: Use channel to tag the _route_ that your link reaches users. For example, tag links with ‘Facebook’ or ‘LinkedIn’ to help track clicks and installs through those paths separately.
-
-- **feature**: This is the feature of the customer’s product that the link might be associated with. For example, if you had built a referral program, you would label links with the feature ‘referral’.
-
-- **campaign** :Use this field to organize the links by actual campaign. For example, if you launched a new feature or product and want to run a campaign around that.
-
-- **stage**: Use this to categorize the progress or category of a user when the link was generated. For example, if you had an invite system accessible on level 1, level 3 and 5, you could differentiate links generated at each level with this parameter
-
-- **tags**: This is more a free form entry with unlimited values. Use it to organize your link data with labels that don't fit within the bounds of the above.
-
-
-### Redirect customization
-
-Every link that you create is completely customizable from a functionality perspective. Here are the key variables for customization.
-
-#### Endpoint customization
-
-- **$desktop_url**: Change the redirect endpoint on desktops. Default is set to a Branch hosted SMS to download page.
-
-- **$ios_url**: Change the redirect endpoint for iOS. Default is set to the App Store page for your app.
-
-- **$android_url**: Change the redirect endpoint for Android. Default is set to the Play Store page for your app.
-
-- **$windows_phone_url**: Change the redirect endpoint for Windows OS. Default is set to the default URL set [on the dashboard](https://dashboard.branch.io/#/settings/link).
-
-- **$blackberry_url**:  Change the redirect endpoint for Blackberry OS. Default is set to the default URL set [on the dashboard](https://dashboard.branch.io/#/settings/link).
-
-- **$fire_url**:  Change the redirect endpoint for Amazon Fire OS. Default is set to the default URL set [on the dashboard](https://dashboard.branch.io/#/settings/link).
-
-#### Deep link customization
-
-- **$deeplink_path**:  With this key, use value of the deep link path that you'd like us to append to your URI. For example, you could specify "$deeplink_path": "radio/station/456" and we'll open the app with the URI "yourapp://radio/station/456?link_click_id=branch-identifier". Default is 'open?link_click_id=1234'.
-
-- **duration**: Lets you control the fingerprinting match timeout (the time that a click will wait for an app open to match) also known as attribution window. Default is 2 hours.
-
-#### Advanced control parameters
-
-- **$query_param_passthrough**: Set value to 'true' so make sure that any query parameters appended to the Branch link will pass through to the redirect endpoint. Default is off.
-
-- **$always_deeplink**: A value to indicate if we should try to open up the app on mobile link click. Default is set to 'true'.
-
-- **$android_deeplink_path**: Same as normal deeplink path but only for Android clicks
-
-- **&ios_deeplink_path**: Same as normal deeplink path but only for iOS clicks
-
-- **$ios_redirect_timeout**: Control the timeout in ms that the client side JS waits after trying to open up the app before redirecting to the App Store. Default is 750 ms.
-
-- **$android_redirect_timeout**: Control the timeout in ms that the client side JS waits after trying to open up the app before redirecting to the Play Store. Default is 750 ms.
-
-### Display customization
-
-If no open graph tags are specified in the links, we will redirect to the desktop URL to retrieve them. 
-
-- **$og_title**: Set the title of the link as it will be seen in social media displays.
-
-- **$og_description**: Set the description of the link as it will be seen in social media displays.
-
-- **$og_image_url**: Set the image of the link as it will be seen in social media displays.
-
-- **$og_video**: Set a video as it will be seen in social media displays.
-
-- **$og_url**: Set the base URL of the link as it will be seen in social media displays.
-
-- **$og_type**: Set the type of custom card format link as it will be seen in social media displays.
-
-- **$og_redirect**: Set a custom URL that we redirect the social media robots to in order to retrieve all the appropriate tags.
+There are many, many ways to create links!
 
 ## Mobile SDKs
 
-- [iOS documentation](https://github.com/BranchMetrics/Branch-iOS-SDK#shortened-links)
-- [Android documentation](https://github.com/BranchMetrics/Branch-Android-SDK#shortened-links)
-- [Cordova/Ionic documentation](https://github.com/BranchMetrics/Web-SDK/blob/master/CORDOVA_GUIDE.md#linkdata-callback)
-- [Xamarin documentation](https://github.com/BranchMetrics/Branch-Xamarin-SDK#shortened-links)
-- [Unity documentation](https://github.com/BranchMetrics/Branch-Unity-SDK#shortened-links)
-- [Titanium documentation](https://github.com/BranchMetrics/Web-SDK/blob/master/TITANIUM_GUIDE.md#linkdata-callback)
+- [iOS documentation](https://github.com/BranchMetrics/iOS-Deferred-Deep-Linking-SDK#shortened-links)
+- [Android documentation](https://github.com/BranchMetrics/Android-Deferred-Deep-Linking-SDK#shortened-links)
+- [Cordova/Ionic documentation](https://github.com/BranchMetrics/Cordova-Ionic-PhoneGap-Deferred-Deep-Linking-SDK#linkdata-callback)
+- [Xamarin documentation](https://github.com/BranchMetrics/Xamarin-Deferred-Deep-Linking-SDK#shortened-links)
+- [Unity documentation](https://github.com/BranchMetrics/Unity-Deferred-Deep-Linking-SDK#shortened-links)
+- [Titanium documentation](https://github.com/BranchMetrics/Titanium-Deferred-Deep-Linking-SDK#linkdata-callback)
+- [Air ANE documentation](https://github.com/BranchMetrics/AIR-ANE-Deferred-Deep-Linking-SDK#shortened-links)
 
 Here is an example URL creation call in iOS. This would be called after using the initSession call with the appropriate app key to register the native library for your app.
 
@@ -111,7 +38,9 @@ Branch *branch = [Branch getInstance:@"Your app key"];
 }];
 {% endhighlight %}
 
-## Appending parameters
+-----
+
+## Appending query parameters
 
 - [More detailed docs](https://github.com/BranchMetrics/Branch-Public-API#structuring-a-dynamic-deeplink)
 
@@ -128,11 +57,13 @@ Here's an example of a finalized one:
 
 	https://bnc.lt/a/key_live_jbgnjxvlhSb6PGH23BhO4hiflcp3y7ky?has_app=yes&channel=facebook&stage=level4&feature=affiliate&deeplinkdata=mydata
 
+-----
+
 ## Web SDK
 
-- [Web link documentation](https://github.com/BranchMetrics/Web-SDK/blob/master/WEB_GUIDE.md#linkdata-callback)
-- [Smart banner documentation](https://github.com/BranchMetrics/Web-SDK/blob/master/WEB_GUIDE.md#banneroptions-data)
-- [SMS link documentation](https://github.com/BranchMetrics/Web-SDK/blob/master/WEB_GUIDE.md#sendsmsphone-linkdata-options-callback)
+- [Web link documentation](https://github.com/BranchMetrics/Smart-App-Banner-Deep-Linking-Web-SDK/blob/master/WEB_GUIDE.md#linkdata-callback)
+- [Smart banner documentation](https://github.com/BranchMetrics/Smart-App-Banner-Deep-Linking-Web-SDK/blob/master/WEB_GUIDE.md#banneroptions-data)
+- [SMS link documentation](https://github.com/BranchMetrics/Smart-App-Banner-Deep-Linking-Web-SDK/blob/master/WEB_GUIDE.md#sendsmsphone-linkdata-options-callback)
 
 Here's some example code to show the smart banner on your mobile website.
 
@@ -166,6 +97,8 @@ branch.banner({
 });
 {% endhighlight %}
 
+-----
+
 ## HTTP API
 
 - [URL endpoint](https://github.com/BranchMetrics/Branch-Public-API#creating-a-deep-linking-url)
@@ -187,6 +120,8 @@ Here is an example CURL call to create a link with some example parameters. You 
 This will return a dictionary like so, with your specific link.
 
 	{'url’ : ‘https://bnc.lt/ADaEf23-0’}
+
+-----
 
 ## Dashboard
 

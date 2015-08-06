@@ -33,6 +33,75 @@ Branch.getInstance(getApplicationContext()).loadRewards(new BranchReferralStateC
 {% endif %}
 <!-- end Android -->
 
+{% if page.cordova %}
+{% highlight js %}
+branch.credits(function(err, data) {
+	if (!err) {
+		// will return the balance of the current user's credits
+    	var credits = data['default'];
+	}
+});
+{% endhighlight %}
+{% endif %}
+
+{% if page.xamarin %}
+{% highlight c# %}
+Branch branch = Branch.GetInstance ();
+await branch.LoadRewardsAsync(this);
+{% endhighlight %}
+
+After you've registered the class as a delegate of `IBranchRewardsInterface`
+
+{% highlight c# %}
+#region IBranchRewardsInterface implementation
+
+public void RewardsLoaded ()
+{
+    Device.BeginInvokeOnMainThread (() => {
+    	// will return the balance of the current user's credits
+        int credits = Branch.GetInstance().Credits["default"];
+    });
+}
+#endregion
+{% endhighlight %}
+{% endif %}
+
+{% if page.unity %}
+{% highlight c# %}
+Branch.loadRewards(delegate(bool changed, string error) {
+	// will return the balance of the current user's credits
+    int credits = Branch.getCredits();
+});
+{% endhighlight %}
+{% endif %}
+
+{% if page.adobe %}
+{% highlight java %}
+private function creditSuccess(bEvt:BranchEvent):void {
+	// Credits will be string in bEvt.informations.
+	trace(bEvt.type, bEvt.informations);
+}
+{% endhighlight %}
+
+Then register the callback and call `getCredits`
+
+{% highlight java %}
+var branch:Branch = Branch.getInstance();
+branch.addEventListener(BranchEvent.GET_CREDITS_SUCCESSED, creditSuccess);
+branch.getCredits();
+{% endhighlight %}
+{% endif %}
+
+{% if page.titanium %}
+{% highlight js %}
+branch.credits(function(err, data) {
+	if (!err) {
+		// will return the balance of the current user's credits
+    	var credits = data['default'];
+	}
+});
+{% endhighlight %}
+{% endif %}
 
 {% section different_bucket %}
 If you want to see the number of credits in a custom bucket you've specified, such as `myBucket`, then you can do the following:
@@ -66,3 +135,66 @@ Branch.getInstance(getApplicationContext()).loadRewards(new BranchReferralStateC
 {% endif %}
 
 {% endsection %}
+
+{% if page.cordova %}
+{% highlight js %}
+branch.credits(function(err, data) {
+	if (!err) {
+		// will return the balance of the current user's credits
+    	var credits = data['myBucket'];
+	}
+});
+{% endhighlight %}
+{% endif %}
+
+{% if page.xamarin %}
+{% highlight c# %}
+#region IBranchRewardsInterface implementation
+
+public void RewardsLoaded ()
+{
+    Device.BeginInvokeOnMainThread (() => {
+    	// will return the balance of the current user's credits
+        int credits = Branch.GetInstance().Credits["myBucket"];
+    });
+}
+#endregion
+{% endhighlight %}
+{% endif %}
+
+{% if page.unity %}
+{% highlight c# %}
+Branch.loadRewards(delegate(bool changed, string error) {
+    // will return the balance of the current user's credits
+    int credits = Branch.getCredits("myBucket");
+});
+{% endhighlight %}
+{% endif %}
+
+{% if page.adobe %}
+{% highlight java %}
+private function creditSuccess(bEvt:BranchEvent):void {
+	// Credits will be string in bEvt.informations.
+	trace(bEvt.type, bEvt.informations);
+}
+{% endhighlight %}
+
+Then register the callback and call `getCredits`
+
+{% highlight java %}
+var branch:Branch = Branch.getInstance();
+branch.addEventListener(BranchEvent.GET_CREDITS_SUCCESSED, creditSuccess);
+branch.getCredits("myBucket");
+{% endhighlight %}
+{% endif %}
+
+{% if page.titanium %}
+{% highlight js %}
+branch.credits(function(err, data) {
+	if (!err) {
+		// will return the balance of the current user's credits
+    	var credits = data['myBucket'];
+	}
+});
+{% endhighlight %}
+{% endif %}

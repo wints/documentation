@@ -1,6 +1,9 @@
 ---
 type: recipe
 title: "Advertising: Facebook Ads"
+page_title: "Advertising with Deep Links: Facebook Ads"
+description: Learn how to create Facebook ads that are powered by Branch Metrics deep links. It’s simple - configure the dashboard, generate links and set up your app.
+keywords: Contextual Deep Linking, Deep links, Deeplinks, Deep Linking, Deeplinking, Deferred Deep Linking, Deferred Deeplinking, Google App Indexing, Google App Invites, Apple Universal Links, Apple Spotlight Search, Facebook App Links, AppLinks, Deepviews, Deep views, Advertising, Ads, Facebook Ads, Facebook Authentication
 hide_platform_selector: true
 ---
 
@@ -109,17 +112,12 @@ The only way to test the deep linking functionality is outside of the actual ads
 6. Click 'Send to iOS/Android'
 7. Install the app and it should deep link!
 
+{% ingredient app_links/applinks_issues %}{% override header %}### Issues Reading App Links{% endoverride %}{% endingredient %}
 
 {% ingredient dashboard_setup/facebook_auth_issues %}{% endingredient %}
 
+## What's next?
 
-## Conclusion
+{% ingredient recipe_preview/easy_deep_linking %}{% endingredient %}
 
-It's pretty simple! You need to configure the dashboard, generate links for your ads, and setup your app to track installs. You can optionally deep link straight to content based on the ad that the user clicked on!
-
-{% ingredient recipe_preview/recipe_end_intro %}{% endingredient %}
-{% ingredient recipe_preview/referral_links_with_incentives %}{% endingredient %}
-{% ingredient recipe_preview/personalized_welcome %}{% endingredient %}
-{% ingredient recipe_preview/influencers %}{% endingredient %}
-{% ingredient recipe_preview/channel_tags %}{% endingredient %}
 {% ingredient recipe_preview/contact_us %}{% endingredient %}

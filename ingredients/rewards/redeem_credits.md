@@ -21,6 +21,67 @@ Branch.getInstance(getApplicationContext()).redeemRewards(5);
 {% endhighlight %}
 {% endif %}
 
+{% if page.cordova %}
+{% highlight js %}
+branch.redeem(
+    5,          // Amount of credits to be redeemed
+    "default"  // String of bucket name to redeem credits from
+);
+{% endhighlight %}
+{% endif %}
+
+{% if page.xamarin %}
+{% highlight c# %}
+Branch branch = Branch.GetInstance ();
+await branch.RedeemRewardsAsync(this, 5, "default");
+{% endhighlight %}
+
+After you've registered the class as a delegate of `IBranchRewardsInterface`
+
+{% highlight c# %}
+#region IBranchRewardsInterface implementation
+
+public void RewardsRedeemed (string bucket, int count)
+{
+    Device.BeginInvokeOnMainThread (() => {
+        // Do something with the data...
+    });
+}
+#endregion
+{% endhighlight %}
+{% endif %}
+
+{% if page.unity %}
+{% highlight c# %}
+Branch.redeemRewards(5);
+{% endhighlight %}
+{% endif %}
+
+{% if page.adobe %}
+{% highlight c# %}
+private function redeemSuccess(bEvt:BranchEvent):void {
+    // Successful redemption
+}
+{% endhighlight %}
+
+Then register the callback and call `redeemRewards`
+
+{% highlight java %}
+var branch:Branch = Branch.getInstance();
+branch.addEventListener(BranchEvent.REDEEM_REWARDS_SUCCESSED, redeemSuccess);
+branch.redeemRewards(5);
+{% endhighlight %}
+{% endif %}
+
+{% if page.titanium %}
+{% highlight js %}
+branch.redeem(
+    5,          // Amount of credits to be redeemed
+    "default"  // String of bucket name to redeem credits from
+);
+{% endhighlight %}
+{% endif %}
+
 {% section different_bucket %}
 
 If you want to redeem credits in a custom bucket you've specified, such as `myBucket`, then you can do the following:
@@ -49,3 +110,42 @@ Branch.getInstance(getApplicationContext()).redeemRewards("myBucket", 5)
 <!-- end Android -->
 
 {% endsection %}
+
+{% if page.cordova %}
+{% highlight js %}
+branch.redeem(
+    5,          // Amount of credits to be redeemed
+    "myBucket"  // String of bucket name to redeem credits from
+);
+{% endhighlight %}
+{% endif %}
+
+{% if page.xamarin %}
+{% highlight c# %}
+Branch branch = Branch.GetInstance ();
+await branch.RedeemRewardsAsync(this, 5, "myBucket");
+{% endhighlight %}
+{% endif %}
+
+{% if page.unity %}
+{% highlight c# %}
+Branch.redeemRewards(5, "myBucket");
+{% endhighlight %}
+{% endif %}
+
+{% if page.adobe %}
+{% highlight java %}
+var branch:Branch = Branch.getInstance();
+branch.addEventListener(BranchEvent.REDEEM_REWARDS_SUCCESSED, redeemSuccess);
+branch.redeemRewards(5, "myBucket");
+{% endhighlight %}
+{% endif %}
+
+{% if page.titanium %}
+{% highlight js %}
+branch.redeem(
+    5,          // Amount of credits to be redeemed
+    "myBucket"  // String of bucket name to redeem credits from
+);
+{% endhighlight %}
+{% endif %}

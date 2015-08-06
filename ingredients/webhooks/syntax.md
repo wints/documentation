@@ -12,7 +12,9 @@ Here is the format of what we post to you
 	    metadata: ‘event metadata’ - specified in userCompletedAction withState
 	    event_timestamp: 'time stamp for the event'
 	    hardware_id: 'IDFA' (iOS) | 'Android ID' (Android)
+	    google_advertising_id: 'GAID' (Android if present)
 	    os: 'iOS' | 'Android'
+	    os_version: 'the OS version'
 
 	    // optionally included:
 	    identity: ‘user ID’ - specified in setIdentity

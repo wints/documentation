@@ -1,6 +1,12 @@
 ---
 type: recipe
 title: "Facebook App Invites"
+ios_page_title: Set up Facebook App Invites for iOS Apps
+android_page_title: Facebook App Invites for Android Apps
+ios_description: How to set up Facebook App Invites and ad campaigns for your iOS app using Branch deep links. With objective-c and swift code snippets.
+android_description: How to set up Facebook App Invites and ad campaigns for your Android app using Branch deep links. With Java code snippets.
+ios_keywords: Contextual Deep Linking, Deep links, Deeplinks, Deep Linking, Deeplinking, Deferred Deep Linking, Deferred Deeplinking, Google App Indexing, Google App Invites, Apple Universal Links, Apple Spotlight Search, Facebook App Links, AppLinks, Deepviews, Deep views, Facebook App Invites, App Invites, iOS, objective-c, swift
+android_keywords: Contextual Deep Linking, Deep links, Deeplinks, Deep Linking, Deeplinking, Deferred Deep Linking, Deferred Deeplinking, Google App Indexing, Google App Invites, Apple Universal Links, Apple Spotlight Search, Facebook App Links, AppLinks, Deepviews, Deep views,Facebook App Invites, App Invites, Android
 platforms:
 - ios
 - android
@@ -283,16 +289,19 @@ protected void onStop() {
 {% endif %}
 <!--- /Android -->
 
+-----
 
 ## Troubleshooting
-
-{% image src='/img/recipes/appinvites/missing_applinks.png' quarter right alt='troubleshooting' %}
-
-If Facebook is having trouble reading the AppLinks from the Branch link, you might see this message while trying to test out the flow. This means that there is something corrupted in the OG tags causing Facebook to not parse it. You can test the OG tags using the following tool provided by Facebook:
-
-[OG tag tester](https://developers.facebook.com/tools/debug/og/object)
-
-If your OG tags look fine and you're still getting this error, please reach out to support@branch.io immediately.
-
+{% ingredient app_links/applinks_issues %}{% override header %}### Issues Reading App Links{% endoverride %}{% endingredient %}
 
 {% ingredient dashboard_setup/facebook_auth_issues %}{% override header %}### Common issues with Facebook Authentication{% endoverride %}{% endingredient %}
+
+-----
+
+## What's next?
+
+{% ingredient recipe_preview/personalized_welcome %}{% endingredient %}
+
+-----
+
+{% ingredient recipe_preview/contact_us %}{%endingredient%}

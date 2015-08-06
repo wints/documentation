@@ -1,19 +1,24 @@
 ---
 type: recipe
-title: Add custom link data and routing
+title: Deeplink data and routing
+ios_page_title: Add custom link data and routing for iOS
+android_page_title: Add custom Android link data and routing
+ios_description: How to add custom data to your Branch deep link that gets delivered to the app with the clicking user. We also cover custom redirects and routing.
+android_description: How to add custom data to your Branch deep link that gets delivered to the app with the clicking user. We also cover custom redirects and routing.
+ios_keywords: Contextual Deep Linking, Deep links, Deeplinks, Deep Linking, Deeplinking, Deferred Deep Linking, Deferred Deeplinking, Google App Indexing, Google App Invites, Apple Universal Links, Apple Spotlight Search, Facebook App Links, AppLinks, Deepviews, Deep views, custom data, tags, OG tags, custom redirects
+android_keywords: Contextual Deep Linking, Deep links, Deeplinks, Deep Linking, Deeplinking, Deferred Deep Linking, Deferred Deeplinking, Google App Indexing, Google App Invites, Apple Universal Links, Apple Spotlight Search, Facebook App Links, AppLinks, Deepviews, Deep views,custom data, tags, OG tags, custom redirects, Android
 platforms:
 - ios
 - android
 ---
 
 {% ingredient sdk_links/creating_links %}{% endingredient %}
-{% ingredient sdk_links/custom_data %}{% endingredient %}
 
 {% protip title='Tip: Identify your users!'  %}
 You should [identify your users](/recipes/quickstart_guide/{{page.platform}}/#identifying-your-users) so that you know who is sharing--and who is effectively driving the most installs and engagement.
 {% endprotip %}
 
-
+-----
 
 ## Customizing and Tagging Links
 
@@ -23,7 +28,7 @@ You should [identify your users](/recipes/quickstart_guide/{{page.platform}}/#id
 {% ingredient sdk_links/og_tags %}{% endingredient %}
 {% ingredient sdk_links/alias %}{% endingredient %}
 
-
+-----
 
 ## Custom Redirects 
 
@@ -33,7 +38,7 @@ You should [identify your users](/recipes/quickstart_guide/{{page.platform}}/#id
 {% ingredient sdk_links/always_deeplink %}{% endingredient %}
 {% ingredient sdk_links/deeplink_path %}{% endingredient %}
 
-
+-----
 
 ## Routing
 
@@ -50,13 +55,10 @@ Branch is able to pass data through install. When the user first opens the app, 
 
 ### Example Code
 
-{% if page.ios or page.android %}
+
 {% ingredient sdk_routing/routing %}{% endingredient %}
-{% endif %}
 
-For a concrete example of giving users a customized experience via Branch links, check out our [Branchster Example]({% if page.ios %}https://github.com/BranchMetrics/Branchster-iOS{% endif %}{% if page.android %}https://github.com/BranchMetrics/Branchster-Android{% endif %}{% if page.web %}https://github.com/BranchMetrics/Branchster-Web{% endif %}).
-
-
+For a concrete example of giving users a customized experience via Branch links, check out our [Branchster Android Example](https://github.com/BranchMetrics/Branchster-iOS) or [Branchster iOS Example](https://github.com/BranchMetrics/Branchster-Android) and the [Branchster Web Example](https://github.com/BranchMetrics/Branchster-Web).
 
 ## Additional Options
 

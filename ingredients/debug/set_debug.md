@@ -35,3 +35,33 @@ branch.initSession.....
 Branch.getInstance(getApplicationContext()).setDebug();
 {% endhighlight %}
 {% endif %}
+
+{% if page.cordova %}
+{% highlight js %}
+branch.setDebug(true);
+{% endhighlight %}
+{% endif %}
+
+{% if page.xamarin %}
+{% highlight c# %}
+Branch.GetInstance().Debug = true;
+{% endhighlight %}
+{% endif %}
+
+{% if page.unity %}
+{% highlight c# %}
+Branch.setDebug();
+{% endhighlight %}
+{% endif %}
+
+{% if page.adobe %}
+{% highlight java %}
+Currently not supported :(
+{% endhighlight %}
+{% endif %}
+
+{% if page.titanium %}
+{% highlight js %}
+branch.setDebug(true);
+{% endhighlight %}
+{% endif %}
