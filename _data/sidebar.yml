@@ -55,6 +55,7 @@
         - analytics_ga
         - analytics_localytics
         - analytics_mixpanel
+        - referrals_referral_saasquatch
     - type: reference
       title: API Reference
       pages:
