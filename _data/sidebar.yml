@@ -21,6 +21,7 @@
       title: Deeplinked features
       pages:
         - easy_deep_linking
+        - deepviews
         - content_sharing
         - personalized_welcome
         - referral_links_with_incentives
