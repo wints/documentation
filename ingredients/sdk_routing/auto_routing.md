@@ -71,9 +71,9 @@ Lastly, you need to tell Branch which view controller you will use and which key
 - (BOOL)application:(UIApplication *)application
     didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 
-    Branch *branch = [Branch getInstance];
+	Branch *branch = [Branch getInstance];
 
-    ExampleDeepLinkingController *controller = [[UIStoryboard storyboardWithName:@"Main"
+	ExampleDeepLinkingController *controller = [[UIStoryboard storyboardWithName:@"Main"
                                                                           bundle:[NSBundle mainBundle]]
                                                 instantiateViewControllerWithIdentifier:@"DeepLinkingController"];
 

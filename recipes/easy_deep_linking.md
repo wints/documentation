@@ -24,6 +24,12 @@ It’s complicated. This guide will show you to how setup deep link routing in t
 
 -----
 
+## Advanced: Supporting Existing Routes
+
+{% ingredient sdk_routing/support_existing_routes %}{% endingredient %}
+
+-----
+
 ## What's next?
 
 Now you're set up for deep linking, but let's take your integration to the next level:

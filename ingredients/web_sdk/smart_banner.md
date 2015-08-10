@@ -1,7 +1,7 @@
 
 {% section header %}### Mobile Web Smart Banner{% endsection %}
 
-{% image src='/img/ingredients/web_sdk/banner.png' 2-thirds center alt='Facebook block' %}
+{% image src='/img/ingredients/web_sdk/banner.png' half center alt='Facebook block' %}
 
 {% protip title="This just works!" %}
 This short snippet of code below is enough to add a web banner to both your desktop and mobile web pages! Of course, you'll want to configure it, so check out both the **Smart Banner Options** and **Link Options** below.
@@ -25,7 +25,6 @@ The App Banner includes a close button the user can click, but you may want to c
 ```js
 branch.closeBanner();
 ```
-
 
 #### Smart Banner Options, Link Options
 
