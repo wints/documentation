@@ -37,7 +37,7 @@ Now you're set up for deep linking, but let's take your integration to the next 
 {% ingredient recipe_preview/content_sharing %}{% endingredient %}
 {% ingredient recipe_preview/app_download_banner %}{% endingredient %}
 {% ingredient recipe_preview/personalized_welcome %}{% endingredient %}
-{% ingredient recipe_preview/referral_links_with_incentives %}{% endingredient %}
+{% ingredient recipe_preview/deepviews %}{% endingredient %}
 
 -----
 
