@@ -36,7 +36,7 @@ branch.initSession.....
 
 {% if page.android %}
 {% highlight java %}
-```<meta-data android:name="io.branch.sdk.TestMode" android:value="true" />```
+<meta-data android:name="io.branch.sdk.TestMode" android:value="true" />
 {% endhighlight %}
 {% endif %}
 
