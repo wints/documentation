@@ -1,9 +1,8 @@
 ---
 type: recipe
 title: Text-Me-The-App page
-ios_page_title: Text-Me-The-App web pages for iOS Apps
-android_page_title: Text-Me-The-App pages for Android Apps
-ios_description: Give your web users the option to text themselves your app with a Text-Me-The-App landing page. Learn how to set up the page and use our code for iOS apps.
+page_title: Text-Me-The-App web pages for iOS or Android Apps
+description: Give your web users the option to text themselves your app with a Text-Me-The-App landing page. Learn how to set up the page and use our code for iOS apps.
 android_description: Give your web users the option to text themselves your app with a Text-Me-The-App landing page. Learn how to set it up and use our code for Android apps.
 ios_keywords: Contextual Deep Linking, Deep links, Deeplinks, Deep Linking, Deeplinking, Deferred Deep Linking, Deferred Deeplinking, Google App Indexing, Google App Invites, Apple Universal Links, Apple Spotlight Search, Facebook App Links, AppLinks, Deepviews, Deep views, Text-Me-The-App, landing page, SMS, text an app
 android_keywords: Contextual Deep Linking, Deep links, Deeplinks, Deep Linking, Deeplinking, Deferred Deep Linking, Deferred Deeplinking, Google App Indexing, Google App Invites, Apple Universal Links, Apple Spotlight Search, Facebook App Links, AppLinks, Deepviews, Deep views,Text-Me-The-App, landing page, SMS, text an app, Android
