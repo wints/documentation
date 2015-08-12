@@ -93,7 +93,7 @@ The default template is simply controlled by three different variables: _title_,
 
 ### Hosting your own OG tags
 
-If you want to host your own OG tags, so that you can later customize them, all you need to do is specify a **$desktop_url** when you create the link. Branch as a scraper that will retrieve the OG tags and populate the deepview based on the content of your site.
+If you want to host your own OG tags, so that you can later customize them, all you need to do is specify a **$desktop_url** when you create the link. Branch has a scraper that will retrieve the OG tags and populate the deepview based on the content of your site.
 
 -----
 
