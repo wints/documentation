@@ -26,8 +26,8 @@ Branch *branch = [Branch getInstance];
 {% endtab %}
 {% tab swift %}
 {% highlight swift %}
-Branch.setDebug()
 let branch: Branch = Branch.getInstance()
+branch.setDebug()
 branch.initSession.....
 {% endhighlight %}
 {% endtab %}
