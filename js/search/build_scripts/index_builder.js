@@ -1,3 +1,8 @@
+/* Creates a master file including the
+ * 1. JSON_data - aggregate data of all subsections of pages
+ * 2. Index - search index
+ * 3. Platform Terms - platform specific terms */
+
 var lunr = require('lunr'),
 	fs = require('fs'),
 	path = require('path'),
