@@ -1,14 +1,12 @@
 {% section intro %}
 
-Routing to content is *highly app-specific*, since mobile apps vary widely in how they are structured. That said, we want to give a concrete example of how you can use Branch links to route straight to content within your app.
+This section will describe a routing example in an abstract way. In case you want the simple version, Branch can handle routing for you automatically. Just check out the section on [**simplified deep link routing**](/recipes/easy_deep_linking/{% section platform %}{{page.platform}}{% endsection %}).
 {% endsection %}
 
 {% if page.ios %}
 
 {% section ios_explanation %}
-Inside of the deepLinkHandler, you will want to examine the params dictionary to determine whether the user clicked on a link to content. Regardless of whether your app involves pictures, videos, text or whatever novel content your app contains, you likely have an internal system of identifiers.
-
-Let's assume your app revolves around pictures and each one is tagged with a picture Id. When a user shares a picture, simply attach a picture Id to the Branch link being created. If a user clicks a link to a specific picture, this Id will show up in the params dictionary in the deepLinkHandler.
+Inside of the deepLinkHandler, you will want to examine the params dictionary to determine whether the user clicked on a link to content. Below is an example assuming that the links correspond to pictures.
 {% endsection %}
 
 {% highlight objc %}
@@ -45,9 +43,7 @@ Let's assume your app revolves around pictures and each one is tagged with a pic
 {% if page.android %}
 
 {% section android_explanation %}
-Inside `onStart`, when Branch is initialized, you will want to examine the dictionary we pass to you from our callback. This will allow you to know whether or not a link click with context was made. You'll likely have many entry points based off different parameters.
-
-Let's assume your app revolves around pictures, and each picture has an ID. When user A decides to share a picture, attach that ID to the shortUrl or LongURL being created. When User B downloads (or opens the app if they already have it), the call to initSession will inform you of the parameters user A sent. Unpack em, and route away to the right view!
+Inside `onStart`, when Branch is initialized, you will want to examine the dictionary we pass to you from our callback. Below is an example assuming that the links correspond to pictures.
 {% endsection %}
 
 {% highlight java %}
@@ -77,9 +73,100 @@ public void onStart() {
             }
         }
     }, this.getIntent().getData(), this);
-    // if you want to specify isReferrable, then comment out the above line and uncomment this line:
-    // }, true, this.getIntent().getData(), this);
 }
 {% endhighlight %}
 
+{% endif %}
+
+{% if page.cordova %}
+
+Inside the callback, when Branch is initialized, you will want to examine the dictionary we pass to you from our callback. Below is an example assuming that the links correspond to pictures.
+
+{% highlight js %}
+branch.init("YOUR BRANCH KEY HERE", function(err, data) {
+    if (!err && data.data_parsed['+clicked_branch_link']) {
+        if (data.data_parsed['picture_id']) {
+            // load the view to show the picture
+        } else {
+            // load your normal view
+        }
+    } 
+});
+{% endhighlight %}
+{% endif %}
+
+{% if page.xamarin %}
+Inside the `InitSessionComplete` callback, when Branch is initialized, you will want to examine the dictionary we pass to you from our callback. Below is an example assuming that the links correspond to pictures.
+
+{% highlight c# %}
+public class App : Application, IBranchSessionInterface
+{
+    public void InitSessionComplete (Dictionary<string, object> data)
+    {
+        if (data.ContainsKey("picture_id") {
+            // load the view to show the picture
+        } else {
+            // load your normal view
+        }
+    }
+}
+{% endhighlight %}
+
+{% endif %}
+
+{% if page.unity %}
+Inside the `initSession` callback, when Branch is initialized, you will want to examine the dictionary we pass to you from our callback. Below is an example assuming that the links correspond to pictures.
+
+{% highlight c# %}
+public class MyCoolBehaviorScript : MonoBehaviour {
+    void Start () {
+        Branch.initSession(delegate(Dictionary<string, object> parameters, string error) {
+            if (parameters.ContainsKey("picture_id") {
+                // load the view to show the picture
+            } else {
+                // load your normal view
+            }
+        });
+    }
+}
+{% endhighlight %}
+{% endif %}
+
+{% if page.adobe %}
+Inside the `initSuccessed` callback, when Branch is initialized, you will want to examine the dictionary we pass to you from our callback. Below is an example assuming that the links correspond to pictures.
+
+{% highlight java %}
+private function initSuccessed(bEvt:BranchEvent):void {
+    var referringParams:Object = JSON.parse(bEvt.informations);
+    if (referringParams.picture_id) {
+        // load the view to show the picture
+    } else {
+        // load your normal view
+    }
+}
+{% endhighlight %}
+
+Once is done, initialize the SDK:
+
+{% highlight java %}
+branch.init();
+{% endhighlight %}
+
+Be sure to have the INIT_SUCCESSED event called, otherwise read the bEvt.informations from the INIT_FAILED event.
+{% endif %}
+
+{% if page.titanium %}
+Inside the callback, when Branch is initialized, you will want to examine the dictionary we pass to you from our callback. Below is an example assuming that the links correspond to pictures.
+
+{% highlight js %}
+branch.init("YOUR BRANCH KEY HERE", function(err, data) {
+    if (!err && data.data_parsed['+clicked_branch_link']) {
+        if (data.data_parsed['picture_id']) {
+            // load the view to show the picture
+        } else {
+            // load your normal view
+        }
+    } 
+});
+{% endhighlight %}
 {% endif %}

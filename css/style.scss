@@ -13,6 +13,7 @@ $branch-font-path: "/font";
 @import "./protip";
 @import "./toc";
 @import "./image";
+@import "./platform_selector";
 
 .btn-inactive {
 	border-color: white;
@@ -43,6 +44,11 @@ pre {
 	code {
 		white-space: pre;
 	}
+}
+
+body {
+	font-size: 16px; 
+	line-height: 1.5;
 }
 
 a:hover, a:focus {

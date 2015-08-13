@@ -1,77 +1,51 @@
 ---
 type: recipe
-title: Measuring Installs
-platforms:
-- ios
-- android
+title: "Step 3: The dashboard"
+page_title: App attribution and analytics for iOS and Android
+description: The Branch Metrics dashboard shows you all the analytics for your iOS deep links. Track install attribution, measure marketing channels and ad campaigns.
+keywords: Contextual Deep Linking, Deep links, Deeplinks, Deep Linking, Deeplinking, Deferred Deep Linking, Deferred Deeplinking, Google App Indexing, Google App Invites, Apple Universal Links, Apple Spotlight Search, Facebook App Links, AppLinks, Deepviews, Deep views, Attribution, Analytics, Dashboard, App Install, App Open, Conversion, iOS, objective-c, swift
+android_keywords: Contextual Deep Linking, Deep links, Deeplinks, Deep Linking, Deeplinking, Deferred Deep Linking, Deferred Deeplinking, Google App Indexing, Google App Invites, Apple Universal Links, Apple Spotlight Search, Facebook App Links, AppLinks, Deepviews, Deep views, Attribution, Analytics, Dashboard, App Install, App Open, Conversion, Android
+hide_platform_selector: true
 ---
 
-When you complete this guide, you will have the ability to run powerful marketing campaigns with download tracking. You will know how many installs are being driven by word of mouth versus ad campaigns, and how well Facebook does compared to Twitter and SMS. You can do analysis comparing your marketing links to individualized links shared by your users.
+## Welcome to your dashboard
 
-One screenshot is worth a million... dollars on spent on non-performant ads and expensive tools to track those ads:
+You've created a link and integrated the SDK - now it's time to dive into your data with the [Branch Dashboard](https://dashboard.branch.io). One screenshot is worth a million... dollars spent on poorly performing ads and expensive tools to track them:
 
 {% image src='/img/ingredients/analytics_and_custom_events/dashboard_summary.png' 3-quarters center alt='the goal' %}
 
-Let's get started. Seeing install numbers (as opposed to merely clicks) requires doing some setup both on the Dashboard and within your {{page.platform_formatted}} app.
+-----
 
-## Configuring the Dashboard for your {{ page.platform_formatted }} app
-{% ingredient dashboard_setup/app_name %}{% endingredient %}
-{% ingredient dashboard_setup/web_url %}{% endingredient %}
-{% ingredient dashboard_setup/store_or_custom_url %}{% endingredient %}
-{% ingredient dashboard_setup/uri_scheme %}
-  {% override client_uri %}For more details on finding/setting your URI scheme in the client, see the section below on [setting the client app's URI scheme](/recipes/measuring_installs/{{page.platform}}/#uri-scheme-1).{% endoverride %}
-{% endingredient %}
-{% ingredient dashboard_setup/end_required %}{% endingredient %}
-<!--- /Configuring the Dashboard-->
+{% ingredient dashboard_analytics/install_versus_open %}{% endingredient %}
 
+-----
 
-## Configuring your {{ page.platform_formatted }} app
-{% ingredient sdk_setup/installing_the_sdk %}
-  {% override telephony %}[here](/domains/configuring_client_apps/{{page.platform}}/#installing-the-sdk).{% endoverride %}
-{% endingredient %}
-{% ingredient sdk_setup/branch_key %}{% override screenshot %}{% endoverride %}{% endingredient %}
-{% ingredient sdk_setup/uri_scheme %}
-  {% override dashboard_uri %}For more info on setting up a URI scheme on the Dashboard, check out the [section above](/recipes/measuring_installs/{{page.platform}}/#uri-scheme).{% endoverride %}
-{% endingredient %}
-{% ingredient sdk_setup/init_session %}{% endingredient %}
-{% ingredient sdk_setup/handle_deep_link %}{% endingredient %}
-<!--- /Configuring the Client-->
+## Dashboard tips
+
+Here's some handy advice for getting the most out of your dashboard:
+
+* Label your links by the proper `feature`, `campaign`, `channel` and `tags` so that you properly separate out different types of links and app versions from one another
+
+* Set up [custom events](/recipes/advanced_referral_incentives/{{page.platform}}/#custom-events) to create [conversion funnels](/recipes/dashboard_pro_tips/{{page.platform}}/#funnels)
+
+* See who your power users are by implementing [referral links](/recipes/referral_links_with_incentives/{{page.platform}}/) then viewing [data about your top users](/recipes/dashboard_pro_tips/{{page.platform}}/#influencers-your-best-users)
+
+* Build your own services on top of Branch attribution data using our [webhook system](/recipes/webhooks_and_exporting_data/)
 
 
-## Creating your Link
 
-{% ingredient dashboard_links/creating_links %}
-	{% override screenshot_description %}One example description if you want to treat this guide is: "Marketing our launch on Facebook."{% endoverride %}
-{% endingredient %}
+## What's next?
 
-{% ingredient dashboard_links/tags %}
-	{% override deep_link_data_url %}For information of the form *[key]*: *[value]* such as "product": "shoes", we recommend adding them below--see [Deep Link Data (Optional)](/recipes/measuring_installs/{{page.platform}}/#deep-link-data-optional).
-    {% endoverride %}
-{% endingredient %}
+You've got the basics, but let's take your integration to the next level:
 
-{% ingredient dashboard_links/alias %}
-	{% override optional %}(Optional -- highly recommended){% endoverride %}
-{% endingredient %}
+{% ingredient recipe_preview/easy_deep_linking %}{% endingredient %}
+{% ingredient recipe_preview/content_sharing %}{% endingredient %}
+{% ingredient recipe_preview/app_download_banner %}{% endingredient %}
+{% ingredient recipe_preview/text_me_the_app_page %}{% endingredient %}
+{% ingredient recipe_preview/facebook_appinvites %}{% endingredient %}
+{% ingredient recipe_preview/personalized_welcome %}{% endingredient %}
+{% ingredient recipe_preview/referral_links_with_incentives %}{% endingredient %}
 
-{% ingredient dashboard_links/og_tags %}{% endingredient %}
-{% ingredient dashboard_links/custom_data %}
-	{% override advanced %}(Optional){% endoverride %}
-	{% override description %}This custom data can be anything you want and is part of Branch's secret sauce. For now you don't need to put anything here. In case you're interested, you add data at the bottom of the link creation process.{% endoverride %}
-{% endingredient %}
-{% ingredient dashboard_links/end %}{% endingredient %}
-<!--- /Creating your Link -->
+-----
 
-
-## Conclusion and Advanced Options
-
-That's it! You now have *campaign- and channel-specific links* that can be shared on social media, pushed out via email, or embedded in ad campaigns.
-
-Every *user click*, every *fresh install*, and every *subsequent open* can be attributed back to an individual link.
-
-If you go the additional step of allowing users to share via Branch links, you can compare your campaigns to word-of-mouth. If this interests you, check out our guides on these topics and more:
-
-{% ingredient recipe_preview/incentivized_referral_program %}{% endingredient %}
-{% ingredient recipe_preview/personalized_invite_system %}{% endingredient %}
-{% ingredient recipe_preview/influencers %}{% endingredient %}
-{% ingredient recipe_preview/channel_tags %}{% endingredient %}
-{% ingredient recipe_preview/contact_us %}{% endingredient %}
+{% ingredient recipe_preview/contact_us %}{%endingredient%}

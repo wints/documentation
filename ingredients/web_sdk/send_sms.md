@@ -1,9 +1,5 @@
 
-### SendSMS()
-
-You can read more about the SendSMS() method [here](https://github.com/BranchMetrics/web-sdk#sendsmsphone-linkdata-options-callback). 
-
-The main thing you need to know is that your web page should invoke this method with the following parameters:
+### SendSMS() parameters.
 
 {% highlight javascript %}
 branch.sendSMS(
@@ -24,7 +20,6 @@ branch.sendSMS(
         channel: 'facebook',
         feature: 'dashboard',
         stage: 'new user',
-        type: 1,
         data: {
             foo: 'bar'
         }
@@ -34,4 +29,6 @@ branch.sendSMS(
 });
 {% endhighlight %}
 
-It really is that simple! 
+_You can read more about the SendSMS() method [here](https://github.com/BranchMetrics/Smart-App-Banner-Deep-Linking-Web-SDK/blob/master/WEB_GUIDE.md#sendsmsphone-linkdata-options-callback)._ 
+
+The example below includes all the code you need to add to your website in one snippet.

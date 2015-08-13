@@ -1,7 +1,7 @@
 <!--- $desktop_url -->
 {% section desktop_url %}
 
-## Desktop override - $desktop_url
+### Desktop override - $desktop_url
 
 When a user clicks a Branch link from a desktop, by default the user is taken to a text-me-the-app page or whichever custom page you specify on the Dashboard's [Link Settings](https://dashboard.branch.io/#/settings/link) page. If you want to specify a different web page on a per-link basis, include a value for $desktop_url.
 

@@ -3,8 +3,6 @@
 
 {% image src='/img/ingredients/web_sdk/banner.png' 2-thirds center alt='Facebook block' %}
 
-Branch offers a highly customizable smart banner that works across platforms. Android and iOS users can install or open the app from one banner. Users can even be deep linked to content! Desktop users can choose to text themselves the app.
-
 {% protip title="This just works!" %}
 This short snippet of code below is enough to add a web banner to both your desktop and mobile web pages! Of course, you'll want to configure it, so check out both the **Smart Banner Options** and **Link Options** below.
 {% endprotip %}
@@ -18,6 +16,7 @@ This short snippet of code below is enough to add a web banner to both your desk
 {% endoverride %}
 {% endingredient %}
 
+That's all you need to add the smart banner to your website! The rest of this page covers advanced options.
 
 #### Closing the App Banner Programmatically
 
@@ -54,21 +53,12 @@ branch.banner({
     customCSS: '.title { color: #F00; }',   // Add your own custom styles to the banner that load last, and are gauranteed to take precedence, even if you leave the banner in an iframe
     make_new_link: false                    // Should the banner create a new link, even if a link already exists?
 }, {
-    tags: ['tag1', 'tag2'],
-    feature: 'dashboard',
-    stage: 'new user',
-    type: 1,
+    tags: ['version12', 'trial-b'],
+    feature: 'smart_banner',
+    stage: 'shoe_page'
     data: {
-        mydata: 'something',
-        foo: 'bar',
-        '$desktop_url': 'http://myappwebsite.com',
-        '$ios_url': 'http://myappwebsite.com/ios',
-        '$ipad_url': 'http://myappwebsite.com/ipad',
-        '$android_url': 'http://myappwebsite.com/android',
-        '$og_app_id': '12345',
-        '$og_title': 'My App',
-        '$og_description': 'My app\'s description.',
-        '$og_image_url': 'http://myappwebsite.com/image.png'
+        deeplink: 'data',
+        username: 'Alex',
     }
 });
 {% endhighlight %}

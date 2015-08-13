@@ -45,6 +45,8 @@ You can customize the Facebook OG tags of each URL if you want to dynamically sh
 | "$og_url" | The URL you'd like to appear
 | "$og_redirect" | If you want to bypass our OG tags and use your own, use this key with the URL that contains your site's metadata.
 
+Similar tags are available for [Twitter Cards](https://dev.twitter.com/cards/markup). Twitter also provides [a link debugging tool](https://cards-dev.twitter.com/validator) to check that params come through as expected.
+
 Also, you can set custom redirection by inserting the following optional keys in the dictionary:
 
 | Key | Value

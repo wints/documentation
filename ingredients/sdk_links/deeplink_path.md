@@ -1,12 +1,14 @@
 <!--- $deeplink_path -->
 {% section deeplink_path %}
 
-## Specify a custom deeplink path - $deeplink_path
+### Specify a custom deeplink path - $deeplink_path
 
 The value of the deeplink path that you'd like us to append to your URI. For example, you could specify "$deeplink_path": "radio/station/456" and we'll open the app with the URI "yourapp://radio/station/456?link_click_id=branch-identifier". **This is primarily for supporting legacy deeplinking infrastructure.**
 
 <!---    iOS -->
 {% if page.ios %}
+
+You can make this platform specific by replacing **$deeplink_path** with **$ios_deeplink_path** or **$android_deeplink_path**. 
 
 {% tabs %}
 {% tab objective-c %}
@@ -34,6 +36,9 @@ Branch.getInstance().getShortURLWithParams(["$deeplink_path": "radio/station/456
 
 <!---    Android -->
 {% if page.android %}
+
+You can make this platform specific by replacing **$deeplink_path** with **$android_deeplink_path** or **$ios_deeplink_path**. 
+
 {% highlight java %}
 JSONObject params = new JSONObject();
 try {

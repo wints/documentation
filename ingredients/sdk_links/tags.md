@@ -1,6 +1,6 @@
 ### Adding Tags
 
-Are you a tag person? You can add as many simply tags as you want to a link. Note that these are **not** key-value pairs -- those belong in the [custom data dictionary](/domains/links_and_sharing/{{page.platform}}/#attaching-custom-data-to-links).
+Are you a tag person? You can add as many simply tags as you want to a link. Note that these are **not** key-value pairs -- those belong in the [custom data dictionary](/recipes/add_custom_link_data_and_routing/{{page.platform}}/#attaching-custom-data-to-links).
 
 <!--- iOS -->
 {% if page.ios %}

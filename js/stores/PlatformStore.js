@@ -13,8 +13,8 @@ var PlatformStore = function() {
 	return {
 		displayName: 'PlatformStore',
 		bindListeners: {
-		  onUpdatePlatform: PlatformActions.updatePlatform,
-		  onLoadDefaulted: PlatformActions.loadDefaulted
+			onUpdatePlatform: PlatformActions.updatePlatform,
+			onLoadDefaulted: PlatformActions.loadDefaulted
 		},
 
 		state: {
@@ -32,7 +32,7 @@ var PlatformStore = function() {
 				this.onUpdatePlatform(data.current_platform);
 			}
 		}
-	}
-}
+	};
+};
 
 module.exports = alt.createStore(PlatformStore());

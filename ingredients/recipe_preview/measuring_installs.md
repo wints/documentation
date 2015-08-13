@@ -1,1 +1,1 @@
-*  [**Measure installs**](/recipes/measuring_installs/{% section platform %}{{page.platform}}{% endsection %}/) -- learn where every user is coming from
+*  [**Link and install attribution**](/recipes/measuring_installs/) -- learn where every user is coming from

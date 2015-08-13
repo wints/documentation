@@ -15,14 +15,10 @@ test:
     - echo "Tests are super broken"
 
 deployment:
-  production:
-    branch: production
-    commands:
-      - bundle exec jekyll build
-      - bundle exec s3_website push
   master:
     branch: master
     commands:
       - bundle exec jekyll build
+      - npm run build_search
       - uglifyjs _site/js/all.js -c -o _site/js/all.js
       - bundle exec s3_website push

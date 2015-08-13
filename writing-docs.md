@@ -67,7 +67,7 @@ We actually have a few different tags:
 
 ## Explanation/Examples of the tags in actions
 
-1. **Ingredient**. Example (from /recipes/deeplinked_ads.md):
+1. **Ingredient**. Example (from /recipes/advertising_facebook.md):
 
 	```
 	{% ingredient dashboard_setup/app_name %}{% endingredient %}

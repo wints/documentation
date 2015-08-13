@@ -1,5 +1,5 @@
 
-### Debugging with the Dashboard
+## Debugging with the Dashboard
 
 For debugging while still in a test environment, the Dashboard's [Debug](https://dashboard.branch.io/#/debug) page offers a transparent look at what is happening behind the scenes. It includes data about:
 

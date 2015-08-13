@@ -1,5 +1,5 @@
 
-### Use setDebug To Simulate Fresh Installs
+## Use setDebug To Simulate Fresh Installs
 
 One challenge aspect testing Branch's service is simulating a fresh install. We intentionally add a lot of restrictions to prevent 'install' events from being triggered on app updates or uninstall/reinstall. 
 
@@ -33,5 +33,35 @@ branch.initSession.....
 {% if page.android %}
 {% highlight java %}
 Branch.getInstance(getApplicationContext()).setDebug();
+{% endhighlight %}
+{% endif %}
+
+{% if page.cordova %}
+{% highlight js %}
+branch.setDebug(true);
+{% endhighlight %}
+{% endif %}
+
+{% if page.xamarin %}
+{% highlight c# %}
+Branch.GetInstance().Debug = true;
+{% endhighlight %}
+{% endif %}
+
+{% if page.unity %}
+{% highlight c# %}
+Branch.setDebug();
+{% endhighlight %}
+{% endif %}
+
+{% if page.adobe %}
+{% highlight java %}
+Currently not supported :(
+{% endhighlight %}
+{% endif %}
+
+{% if page.titanium %}
+{% highlight js %}
+branch.setDebug(true);
 {% endhighlight %}
 {% endif %}
