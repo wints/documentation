@@ -91,6 +91,10 @@ The default template is simply controlled by three different variables: _title_,
 | "$og_description" | The description you'd like to appear on the deepview
 | "$og_image_url" | The URL for the image you'd like to appear on the deepview
 
+### Customizing Deepview content on the Dashboard
+
+If you're creating a link on the dashboard, *you cannot specify `$og_title`, `$og_description` and `$og_image_url`* in the _Deep Link Data (Advanced)_. You will need to instead edit the Title, Description and Image URL in the _Social Media Description_ section. [Click here](/img/deepviews/deepviews_social_media_description.png) to view a screenshot of how Social Media Description appears on the Marketing page.
+
 ### Hosting your own OG tags
 
 If you want to host your own OG tags, so that you can later customize them, all you need to do is specify a **$desktop_url** when you create the link. Branch has a scraper that will retrieve the OG tags and populate the deepview based on the content of your site.
