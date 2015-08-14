@@ -50,6 +50,10 @@ It's important that you create a Localytics webhook for each **mobile applicatio
 
 That's it! You have configured an integration between Branch and Localytics!
 
+## Configure your Branch Link
+
+When creating a Branch link to drive installs and send the data back to Localytics, be sure to specify the **campaign**. This will appear on the Localytics dashboard.  
+
 ## Testing
 
 Now that your Branch account is configured to send data to Localytics, we'll tell you the best strategy to test.
