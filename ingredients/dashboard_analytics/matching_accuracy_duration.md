@@ -31,4 +31,4 @@ Any time you request a link via the API, you can insert a 'duration' parameter w
 
 #### On the Dashboard
 
-Lastly, you can specify the default timeout duration for all of your links on the Dashboard's [Link Settings](https://dashboard.branch.io/#/settings/link), under the Advanced Settings section.
+Lastly, you can specify the default timeout duration for all of your links on the Dashboard's [Link Settings](https://dashboard.branch.io/#/settings/link), under the Advanced Settings section. See also the image above.
