@@ -119,6 +119,8 @@ branch.init("YOUR BRANCH KEY HERE", function(err, data) {
 });
 {% endhighlight %}
 
+If data is null and err contains a string denoting a request timeout then inspect your app's [content security policies](https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy) as they may block your app from communicating with Branch's servers.
+
 Structure of the callback `data_parsed` object:
 
 {% highlight js %}
