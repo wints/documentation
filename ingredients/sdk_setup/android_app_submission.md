@@ -7,11 +7,9 @@ Google has provided an instructional section on [their site](https://developer.a
 
 ### Steps to collect Google AID
 
-1. Make sure you have downloaded Google Play Services from the Android SDK Manager. This is usually at the very bottom listed as "Google Play services".
+1. Just add `compile 'com.google.android.gms:play-services:7.5.0'` to the dependencies section of your build.gradle file.
 
-2. Add in the Google Play service libproject or jar to your app project. You can find it in __yoursdkfolder/sdk/extras/google/google_play_services/__
-
-3. Add the following line in your proguard settings
+2. Add the following line in your proguard settings
 
 {% highlight xml %}
 -keep class com.google.android.gms.ads.identifier.** { *; }

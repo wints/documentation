@@ -77,4 +77,6 @@ If no open graph tags are specified in the links, we will redirect to the deskto
 
 - **$og_type**: Set the type of custom card format link as it will be seen in social media displays.
 
+- **$twitter_card**: Set the Twitter card type of the link
+
 - **$og_redirect**: Set a custom URL that we redirect the social media robots to in order to retrieve all the appropriate tags.

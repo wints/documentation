@@ -19,9 +19,8 @@ On iOS, it's a rather simple method call.
 {% highlight objc %}
 NSMutableDictionary *params = [NSMutableDictionary dictionary];
 params[@"article_id"] = @"1234";
-params[@"$og_title"] = @"MyApp is disrupting apps";
-params[@"$og_image_url"] = @"http://yoursite.com/pics/987666.png";
-params[@"$desktop_url"] = @"mysite.com/article1234";
+params[@"$ios_deepview"] = @"default_template";
+params[@"$android_deepview"] = @"default_template";
 
 [[Branch getInstance] getShortURLWithParams:params andChannel:@"sms" andFeature:BRANCH_FEATURE_TAG_SHARE andCallback:^(NSString *url, NSError *error) {
     if (!error) NSLog(@"got my Branch link to share: %@", url);
@@ -31,9 +30,8 @@ params[@"$desktop_url"] = @"mysite.com/article1234";
 {% tab swift %}
 {% highlight swift %}
 params["article_id"] = "1234"
-params["$og_title"] = "MyApp is disrupting apps"
-params["$og_image_url"] = "http://yoursite.com/pics/987666.png";
-params["$desktop_url"] = "mysite.com/article1234"
+params["$ios_deepview"] = "default_template"
+params["$android_deepview"] = "default_template"
 
 Branch.getInstance().getShortURLWithParams(params, andChannel: "sms", andFeature: BRANCH_FEATURE_TAG_SHARE, andCallback: { (url: String?, error: NSError?) -> Void in
     if error == nil {
@@ -54,12 +52,9 @@ Branch.getInstance().getShortURLWithParams(params, andChannel: "sms", andFeature
 {% highlight java %}
 {% section params %}
 JSONObject obj = new JSONObject();
-try {
-	obj.putString("article_id", "1234");
-	obj.putString("$og_title", "Hot off the presses!");
-	obj.putString("$og_image_url", "mysite.com/image.png");
-	obj.putString("$desktop_url", "mysite.com/article1234");
-} catch (Exception ignore) { }
+obj.putString("article_id", "1234");
+obj.putString("$ios_deepview", "default_template");
+obj.putString("$android_deepview", "default_template");
 {% endsection %}
 
 branch.getShortUrl(obj, "sms", "share", new BranchLinkCreateListener() {
@@ -81,9 +76,8 @@ branch.link({
     feature: 'share',
     data: {
 		"article_id": "1234",
-		"$og_title": "Hot off the presses!",
-		"$og_image_url": "mysite.com/image.png",
-		"$desktop_url": "mysite.com/article1234"
+		"$ios_deepview": "default_template",
+		"$android_deepview": "default_template"
     }
 }, function(err, link) {
 	if (!err) {
@@ -97,9 +91,8 @@ branch.link({
 {% highlight c# %}
 var data = new Dictionary<string, object>(); 
 data.Add("article_id", "1234");
-data.Add("$og_title", "Hot off the presses!");
-data.Add("$og_image_url", "mysite.com/image.png");
-data.Add("$desktop_url", "mysite.com/article1234");
+data.Add("$ios_deepview", "default_template");
+data.Add("$android_deepview", "default_template");
 
 Branch branch = Branch.GetInstance ();
 await branch.GetShortUrlAsync(this, data, "sms", "share");
@@ -123,9 +116,8 @@ public void ReceivedUrl (Uri uri)
 Dictionary<string, object> parameters = new Dictionary<string, object>
 {
 	{ "article_id", "1234" },
-	{ "$og_title", "Hot off the presses!" },
-	{ "$og_image_url", "mysite.com/image.png" },
-	{ "$desktop_url", "mysite.com/article1234" }
+	{ "$ios_deepview", "default_template" },
+	{ "$android_deepview", "default_template" }
 }
 
 string channel = "sms";
@@ -153,9 +145,8 @@ private function getShortUrlFailed(bEvt:BranchEvent):void {
 
 var dataToInclude:Object = {
 	"article_id": "1234",
-	"$og_title": "Hot off the presses!",
-	"$og_image_url": "mysite.com/image.png",
-	"$desktop_url": "mysite.com/article1234"
+	"$ios_deepview": "default_template",
+	"$android_deepview": "default_template"
 };
 
 branch.getShortUrl(tags, "sms", BranchConst.FEATURE_TAG_SHARE, JSON.stringify(dataToInclude));
@@ -170,9 +161,8 @@ branch.link({
     feature: 'share',
     data: {
 		"article_id": "1234",
-		"$og_title": "Hot off the presses!",
-		"$og_image_url": "mysite.com/image.png",
-		"$desktop_url": "mysite.com/article1234"
+		"$ios_deepview": "default_template",
+		"$android_deepview": "default_template"
     }
 }, function(err, link) {
 	if (!err) {

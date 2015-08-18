@@ -5,7 +5,11 @@ One challenge aspect testing Branch's service is simulating a fresh install. We 
 
 To simulate a brand new user being referred from our perspective:
 
-1. use the setDebug call before you call initSession in the AppDelegate (see below):
+{% if page.android %}
+1. Add the below to the Manifest near the Branch key. Remember to flip it to false before release!
+{% else %}
+1. use the setDebug call before you call initSession (see below). Remember to delete it before release!
+{% endif %}
 1. Uninstall your test app
 1. Clear your browser cookies
 1. Click a link in the browser
@@ -32,7 +36,7 @@ branch.initSession.....
 
 {% if page.android %}
 {% highlight java %}
-Branch.getInstance(getApplicationContext()).setDebug();
+<meta-data android:name="io.branch.sdk.TestMode" android:value="true" />
 {% endhighlight %}
 {% endif %}
 

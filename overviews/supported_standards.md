@@ -13,7 +13,7 @@ A Branch Link is the only link you need- we handle all the changing standards fo
 Branch allows you to customize the app default and the settings for each individual link.
 
 - Facebook open graph tags (ogp.me)
-	- this covers nearly everything (Slack, Messenger, WhatsApp, etc..)
+	- this covers nearly everything (Slack, Messenger, WhatsApp, Snapchat, etc..)
 - Twitter cards
 - Pinterest pins
 

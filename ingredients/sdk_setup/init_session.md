@@ -111,9 +111,9 @@ Initialize the session and register your deep link router. You should call this 
 
 {% highlight js %}
 branch.init("YOUR BRANCH KEY HERE", function(err, data) {
-    if (!err && data.data_parsed['+clicked_branch_link']) {
-        // data_parsed are the deep linked params associated with the link that the user clicked -> was re-directed to this app
-        // data_parsed will be empty if no data found
+    if (!err && data.data['+clicked_branch_link']) {
+        // data are the deep linked params associated with the link that the user clicked -> was re-directed to this app
+        // data will be empty if no data found
         // ... insert custom routing logic here ...
     } 
 });
@@ -123,7 +123,7 @@ Structure of the callback `data` object:
 
 {% highlight js %}
 {
-    data_parsed: { 
+    data: { 
         '+clicked_branch_link': true | false,
         '+is_first_session': true | false,
         // If the user was referred from a link, and the link has associated data, the data is passed in here.
@@ -313,9 +313,9 @@ Initialize the session and register your deep link router. The callback here wil
 
 {% highlight js %}
 branch.init("YOUR BRANCH KEY HERE", function(err, data) {
-    if (!err && data.data_parsed['+clicked_branch_link']) {
-        // data_parsed are the deep linked params associated with the link that the user clicked -> was re-directed to this app
-        // data_parsed will be empty if no data found
+    if (!err && data.data['+clicked_branch_link']) {
+        // data are the deep linked params associated with the link that the user clicked -> was re-directed to this app
+        // data will be empty if no data found
         // ... insert custom routing logic here ...
     } 
 });
@@ -325,7 +325,7 @@ Structure of the callback `data` object:
 
 {% highlight js %}
 {
-    data_parsed: { 
+    data: { 
         '+clicked_branch_link': true | false,
         '+is_first_session': true | false,
         // If the user was referred from a link, and the link has associated data, the data is passed in here.

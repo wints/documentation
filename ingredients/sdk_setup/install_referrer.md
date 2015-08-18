@@ -9,7 +9,7 @@ Branch can leverage the install referrer broadcast to guarantee 100% accuracy of
 <receiver android:name="io.branch.referral.InstallListener" android:exported="true">
 	<intent-filter>
 		<action android:name="com.android.vending.INSTALL_REFERRER" />
-	<intent-filter>
+	</intent-filter>
 </receiver>
 {% endhighlight %}
 {% endtab %}
@@ -29,5 +29,6 @@ InstallListener listener = new InstallListener();
 listener.onReceive(context, intent);
 {% endhighlight %}
 {% endtab %}
+{% endtabs %}
 
 {% endif %}

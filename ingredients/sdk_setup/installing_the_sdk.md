@@ -15,7 +15,7 @@ However, if you don't currently use Cocoapods, you can easily download and insta
 
 
 {% if page.android %}
-Just add `compile 'io.branch.sdk.android:library:1.0.+'` to the dependencies section of your `build.gradle` file.
+Just add `compile 'io.branch.sdk.android:library:1.+'` to the dependencies section of your `build.gradle` file.
 
 [optional] In case you'd like to use our .jar instead, here's a [link](https://s3-us-west-1.amazonaws.com/branchhost/Branch-Android-SDK.zip) that always points to our latest or you can always clone our [Android SDK](https://github.com/BranchMetrics/branch-android-sdk) project and import it into your workspace.
 {% endif %}
