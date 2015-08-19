@@ -12,14 +12,14 @@ platforms:
 
 We've partnered with Apptimize to seamlessly provide different onboarding flows for users arriving through Branch links. You can design and test different user flows based off the data a Branch deeplink returns to you. 
 
-Have a theory that users clicking Branch links right into a product page convert better than users clicking Branch links but must authenticate first? With our integration, you can define, measure, and prove your hypothesis.
+Have a theory that users clicking Branch links right into a product page convert better than users clicking Branch links but must authenticate first? With our integration, you can define, measure, and prove your hypothesis!
 
 {% protip title="Still need to integrate Branch?" %}This guide assumes that you have already integrated Branch. If you need to integrate Branch still, jump to "[Integrating the SDK](/recipes/quickstart_guide/ios/)".
 {% endprotip %}
 
 ## How It Works
 
-Currently, both the Branch and Apptimize SDK are required to be integrated inside your mobile application. What happens is that you pre-define different routes through the Apptimize SDK, and when certain data surfaces through the Branch callback, Apptimize will trigger the code block tied to it, accordingly. 
+Currently, both the Branch and Apptimize SDK are required to be integrated inside your mobile application. Right now, you can define a campaign on Apptimize's dashboard, and have it filter and segment on values that come from the deeplink data of a Branch link. The easiest way to do this is to have an Apptimize call to send data inside the Branch initSesssion callback. **However, as long as Apptimize is aware of Branch data before an experiment is ran, you can define this however you'd like.**
 
 ## Set Up Apptimize
 
@@ -83,3 +83,30 @@ This would be the easiest, as you simply define who the user is if they came fro
 
 As you may have noticed from earlier screen shots, the `[Apptimize runTest: withBaseline: andVariations:]` takes the parameters we have defined from campaign creation. The `runTest` parameter takes the string *Branch Experiment*, which corresponds to what we named our campaign inside the Apptimize dashboard. The baseline and variation values correspond to the string value specified in the campaign dashboard, as well.
 
+#### Save a goal
+
+Like Branch, you can track events with Apptimize. You'd do this to measure conversions from different flows; an appropriate goal to track here would be purchases from the initial product.
+
+You'd save a goal like so:
+
+{% highlight objc %}
+[Apptimize track:@"completed_purchase"];
+{% endhighlight %}
+
+## FAQ / Testing
+
+After setting the campaign up, you're on your way to testing user flows. In order to test different flows from a Branch link click, we recommend the following steps:
+
+- Run your app locally on the XCode simulator
+- Take the Branch link you'll be testing and copy and paste inside the simulator
+- Run the application afterwards
+- Once you've tested the code block, hit 'Reset Content and Settings' inside the iOS simulator
+- Repeat to try your second variation
+
+**My code variations aren't showing!**
+
+One thing to note is that it takes **10** minutes to propogate a campaign change. Please check after 10 minutes.
+
+**How do I tell Apptimize about my Branch channel data?**
+
+Currently, the easiest way to do this is to define it before you release a campaign. After you create a branch link and know your segment, tell Apptimize about it through the SDK, and then you can filter on it. This will be modified.
