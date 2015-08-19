@@ -1,3 +1,6 @@
+/* Used to find list of most common words in docs
+ * Run `node tuning.js` to log the 100 most common words */
+
 var fs = require('fs');
 
 var utils = require('./utils');

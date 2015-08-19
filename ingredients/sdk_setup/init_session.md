@@ -111,19 +111,21 @@ Initialize the session and register your deep link router. You should call this 
 
 {% highlight js %}
 branch.init("YOUR BRANCH KEY HERE", function(err, data) {
-    if (!err && data.data['+clicked_branch_link']) {
+    if (!err && data.data_parsed['+clicked_branch_link']) {
         // data are the deep linked params associated with the link that the user clicked -> was re-directed to this app
         // data will be empty if no data found
         // ... insert custom routing logic here ...
-    } 
+    }
 });
 {% endhighlight %}
 
-Structure of the callback `data` object:
+If data is null and err contains a string denoting a request timeout then inspect your app's [content security policies](https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy) as they may block your app from communicating with Branch's servers.
+
+Structure of the callback `data_parsed` object:
 
 {% highlight js %}
 {
-    data: { 
+    data_parsed: {
         '+clicked_branch_link': true | false,
         '+is_first_session': true | false,
         // If the user was referred from a link, and the link has associated data, the data is passed in here.
@@ -313,7 +315,7 @@ Initialize the session and register your deep link router. The callback here wil
 
 {% highlight js %}
 branch.init("YOUR BRANCH KEY HERE", function(err, data) {
-    if (!err && data.data['+clicked_branch_link']) {
+    if (!err && data.data_parsed['+clicked_branch_link']) {
         // data are the deep linked params associated with the link that the user clicked -> was re-directed to this app
         // data will be empty if no data found
         // ... insert custom routing logic here ...
@@ -321,11 +323,11 @@ branch.init("YOUR BRANCH KEY HERE", function(err, data) {
 });
 {% endhighlight %}
 
-Structure of the callback `data` object:
+Structure of the callback `data_parsed` object:
 
 {% highlight js %}
 {
-    data: { 
+    data_parsed: {
         '+clicked_branch_link': true | false,
         '+is_first_session': true | false,
         // If the user was referred from a link, and the link has associated data, the data is passed in here.

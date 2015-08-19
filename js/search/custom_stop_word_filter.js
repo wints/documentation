@@ -68,7 +68,7 @@ var customStopWordFilter = function(token) {
     // 'callback',
     // 'store',
     'allow',
-    'ad',
+    // 'ad',
     'more',
     // 'param',
     // 'start',
