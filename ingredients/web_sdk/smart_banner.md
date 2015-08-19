@@ -57,7 +57,7 @@ branch.banner({
     stage: 'shoe_page'
     data: {
         deeplink: 'data',
-        username: 'Alex',
+        username: 'Alex'
     }
 });
 {% endhighlight %}
