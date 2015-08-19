@@ -22,7 +22,7 @@ Here is the format of what we post to you
 	    // the referrer who created the new user
 	    first_referring_click_timestamp: the first click timestamp
 	    first_referring_identity: ‘user ID’ - specified in setIdentity
-	    first_hardware_id: ‘IDFA’
+	    first_referring_hardware_id: ‘IDFA’
 	    first_referring_link_data: { link data dictionary - see below }
 
 	    // the referrer who referred this session

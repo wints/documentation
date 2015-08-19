@@ -52,7 +52,7 @@ Every Branch link automatically comes packed with all of the AppLinks to automat
                                  andChannel:@"facebook"
                                  andFeature:@"app_invite"
                                 andCallback:^(NSString *url, NSError* error) {
-    if ([FBSDKAppInviteDialog canShow]) {
+    if ([[FBSDKAppInviteDialog new] canShow]) {
         FBSDKAppInviteContent *content =[[FBSDKAppInviteContent alloc] init];
         content.appLinkURL = [NSURL URLWithString:url];
         content.appInvitePreviewImageURL = [NSURL URLWithString:@"https://s3-us-west-1.amazonaws.com/host/zackspic.png"];
