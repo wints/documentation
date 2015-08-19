@@ -26,23 +26,48 @@ If you want to add other fields, like **device** ID, event name or metadata, and
 
 These values are all pulled from our database and sent to you as a passthrough, so you can dump all device IDs you see in realtime, or anything else. These are the following supported parameters:
 
+
 	event.name // name of custom event tracked through SDK
 	event.metadata.key // metadata saved for your key
 	event.date // timestamp of event save
-	identity.id // unique Branch ID of device
-	identity.link_click.date // date of unique user clicking link
-	identity.referring_identity.id // id of referrer
-	identity.link // link that user clicked
-	identity.referring_device.hardware_id // device id of referrer
-	session.link_click.date // date of session start after link_click
-	session.referring_identity.id // Id of referrer (branch Id)
-	session.link // link that started session
-	session.referring_device.hardware_id // device id that started session
-	device.hardware_id // device id per event
-	device.google_advertising_id // google ad-id per event
+
 	browser.branch_id // our branch id for a browser
 	browser.metadata.userAgent // user agent for browser
+
+	device.hardware_id // device id per event
+	device.google_advertising_id // google ad-id per event
 	device.metadata.os // os
 	device.metadata.os_version // os version
+
+	identity.id // unique identifier of your user as set be setIdentity
+
+	// session referrals - ongoing with multiple link clicks
+
+	session.link_click.date // date of link click that referred a session
+	session.link_click.query // query parameters appened to link when clicked
+
+	session.link.data // link data that user clicked
+	session.link.channel 
+	session.link.campaign
+	session.link.feature
+	session.link.tags
+
+	session.referring_identity.id // unique identifier of your user as set be setIdentity
+	session.referring_device.hardware_id // device id that started session
+
+	// identity referrals - the first referring event
+
+	identity.link_click.date // date of unique user clicking link
+	identity.link_click.query // query parameters appended to link when clicked
+
+	identity.referring_identity.id // unique identifier of your user as set be setIdentity
+	identity.referring_device.hardware_id // device id of referrer
+
+	identity.link.data // link data that user clicked
+	identity.link.channel 
+	identity.link.campaign
+	identity.link.feature
+	identity.link.tags
+
 
 **NOTE** This is the structure for sending `GET` requets, with dynamic URLs. In case you need this data to be in the body of a `POST`, then it would work the same.

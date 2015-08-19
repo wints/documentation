@@ -23,7 +23,7 @@
         - easy_deep_linking
         - content_sharing
         - personalized_welcome
-        - referral_links_with_incentives
+        - deepviews
         - facebook_appinvites
         - app_download_banner
         - text_me_the_app_page
@@ -43,6 +43,7 @@
         - matching_accuracy
         - email_campaigns
         - add_custom_link_data_and_routing
+        - referral_links_with_incentives
         - advanced_referral_incentives
         - dashboard_pro_tips
         - webhooks_and_exporting_data
@@ -55,6 +56,7 @@
         - analytics_ga
         - analytics_localytics
         - analytics_mixpanel
+        - referrals_referral_saasquatch
     - type: reference
       title: API Reference
       pages:
