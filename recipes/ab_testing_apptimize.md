@@ -52,6 +52,8 @@ Once you've completed the previous steps, we have two remaining items left befor
 
 #### AppDelegate.m
 
+This would be the easiest, as you simply define who the user is if they came from a Branch link.
+
 {% highlight objc %}
 
 -(BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
@@ -68,9 +70,13 @@ Once you've completed the previous steps, we have two remaining items left befor
 
         [Apptimize runTest:@"Facebook vs Twitter #1" withBaseline:^{
             // baseline
-            [MonsterPreferences setMonsterName:@"not exciting monster!"];
+            UINavigationController *navController = (UINavigationController *)self.window.rootViewController;
+            AuthViewController *vc = [[AuthViewController alloc] init];
+            [navController setViewControllers:@[vc] animated:YES];
         } andVariations:@{@"Call-to-Action variant": ^{
-            [MonsterPreferences setMonsterName:@"exciting monster!"];
+            UINavigationController *navController = (UINavigationController *)self.window.rootViewController;
+            ProductViewController *vc = [[ProductViewController alloc] initWithItem:[params objectForKey:@"product_id"]];
+            [navController setViewControllers:@[vc] animated:YES];
         }}];
     }];
 }
