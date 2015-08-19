@@ -6,8 +6,7 @@ description: Branch has partnered with Apptimize to seamlessly A/B test user flo
 keywords: abtesting, apptimize
 platforms:
 - ios
-- android
----
+----
 
 # Apptimize and Branch
 
@@ -68,7 +67,7 @@ This would be the easiest, as you simply define who the user is if they came fro
             [Apptimize setUserAttributeString:@"facebook" forKey:@"channel"];
         }
 
-        [Apptimize runTest:@"Facebook vs Twitter #1" withBaseline:^{
+        [Apptimize runTest:@"Branch Experiment" withBaseline:^{
             // baseline
             UINavigationController *navController = (UINavigationController *)self.window.rootViewController;
             AuthViewController *vc = [[AuthViewController alloc] init];
@@ -81,4 +80,6 @@ This would be the easiest, as you simply define who the user is if they came fro
     }];
 }
 {% endhighlight %}
+
+As you may have noticed from earlier screen shots, the `[Apptimize runTest: withBaseline: andVariations:]` takes the parameters we have defined from campaign creation. The `runTest` parameter takes the string *Branch Experiment*, which corresponds to what we named our campaign inside the Apptimize dashboard. The baseline and variation values correspond to the string value specified in the campaign dashboard, as well.
 
