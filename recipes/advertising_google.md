@@ -17,13 +17,13 @@ If you're running Google AdWords campaigns, whether they're of the Search or Dis
 
 {% ingredient dashboard_links/creating_links %}{% endingredient %}
 
-### Google AdWords Search Campaigns
+## Google AdWords Search Campaigns
 
 We'll walk you through the steps required to set up a Google AdWords campaign using Branch links. Because the *final URL* for you app install campaigns must match your domain, you can no longer put a Branch link in that box. However, capturing installs and deeplinking users through content is very straight forward.
 
 First, grab your iTunes URL or Google Play Store URL, in addition to the Branch link you created from the earlier step.
 
-#### Create an Ad
+### Create an Ad
 
 After you've added your headline and description for the ad units, navigate to the *Final URL* and *Ad URL options* section.
 
@@ -31,10 +31,13 @@ In the *Final URL*, you will put your iTunes App Store URL, or Google Play Store
 
 Expand *Ad URL options*. Here is where you will place the Branch link from the first step. No need to add any extra parameters.
 
-{% image src='/img/recipes/google_ads/ad-links.png' half nofloat alt='Google Example Ad' %}
+{% image src='/img/recipes/google_ads/ad-links.png' half center alt='Google Example Ad' %}
 
-#### Finished
+### Finished
 
 That's it! Users clicking your links and downloading to deeplinked content will now display on your Branch dashboard.
+`
 
-### Google Display Network Campaigns
+## Google Display Network Campaigns
+
+Coming Soon!
