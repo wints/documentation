@@ -55,11 +55,11 @@ Branch.getInstance().getShortURLWithParams(params, andChannel: "sms", andFeature
 {% section params %}
 JSONObject obj = new JSONObject();
 try {
-	obj.putString("article_id", "1234");
-	obj.putString("$og_title", "Hot off the presses!");
-	obj.putString("$og_image_url", "mysite.com/image.png");
-	obj.putString("$desktop_url", "mysite.com/article1234");
-} catch (Exception ignore) { }
+	obj.put("article_id", "1234");
+	obj.put("$og_title", "Hot off the presses!");
+	obj.put("$og_image_url", "mysite.com/image.png");
+	obj.put("$desktop_url", "mysite.com/article1234");
+} catch (JSONException e) { }
 {% endsection %}
 
 branch.getShortUrl(obj, "sms", "share", new BranchLinkCreateListener() {
