@@ -1,6 +1,6 @@
 ---
 type: recipe
-title: "Advertising: Google Ads - Search and Display"
+title: "Advertising: Google Search Ads"
 page_title: "Advertising with Deep Links: Google Ads - Search and Display"
 description: 
 hide_platform_selector: true
@@ -36,8 +36,7 @@ Expand *Ad URL options*. Here is where you will place the Branch link from the f
 ### Finished
 
 That's it! Users clicking your links and downloading to deeplinked content will now display on your Branch dashboard.
-`
 
 ## Google Display Network Campaigns
 
-Coming Soon!
+Like Search cammpaigns, Google Display Network campaigns allow you to place Branch links and direct traffic to mobile conversions. We're in testing stages of Google Display. When we are 100% on our finalized integration, we will provide steps here.

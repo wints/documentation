@@ -51,6 +51,7 @@
       title: Third-Party Integrations
       pages:
         - advertising_facebook
+        - advertising_google
         - advertising_twitter
         - analytics_adjust
         - analytics_ga
