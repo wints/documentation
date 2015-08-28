@@ -30,28 +30,33 @@ To set up your URI Scheme, you'll need to open your project in XCode and complet
 
 #### Add your Branch key
 
-Your app key can be retrieved on the [Settings](https://dashboard.branch.io/#/settings) page of the dashboard. Now you need to add it to your project workspace.
+Your Branch Key can be retrieved on the [Settings](https://dashboard.branch.io/#/settings) page of the dashboard. Now you need to add it to your project workspace.
 
-Navigate to AndroidManifest.xml and add the following `<meta-data` tag:
+Navigate to AndroidManifest.xml and add the following `<meta-data>` tags:
 
 {% highlight xml %}
+
 <application>
     <!-- Other existing entries -->
 
-	<meta-data android:name="io.branch.sdk.TestMode" android:value="true" /> <!-- Set to true to use Branch_Test_Key -->
-    <meta-data android:name="io.branch.sdk.BranchKey" android:value="key_live_jbgnjxvlhSb6PGH23BhO4hiflcp3y8kx" />
-    <meta-data android:name="io.branch.sdk.BranchKey.test" android:value="key_test_jkptOCZtmtxhOMZ11ynbXecdDCd93cbr" />
+    <!-- Set to true to use Branch_Test_Key -->
+    <meta-data android:name="io.branch.sdk.TestMode" android:value="true" />
+    <meta-data android:name="io.branch.sdk.BranchKey" android:value="key_live_abc123" />
+    <meta-data android:name="io.branch.sdk.BranchKey.test" android:value="key_test_abc123" />
+
 </application>
+
 {% endhighlight %}
 
 #### Configure for deep linking
 
-Find the Activity you want to open up when a link is clicked (normally your splash Activity) and do the following:
+Find the `Activity` you want to open up when a link is clicked. This is typically your `SplashActivity` or a `BaseActivity` that all other activities inherit from. Inside your `AndroidManifest.xml` where the `Activity` is defined, do the following:
 
 1. Copy in the intent filter as seen below with VIEW/DEFAULT/BROWSABLE in it.
-2. Change _yourapp_ to a URI scheme representative of your app
+2. Change _yourapp_ under `android:scheme` to the URI scheme you've registered with us.
 
 {% highlight xml %}
+
 <activity
 	android:name="com.yourapp.SplashActivity"
 	android:label="@string/app_name" >
@@ -68,18 +73,25 @@ Find the Activity you want to open up when a link is clicked (normally your spla
 		<category android:name="android.intent.category.BROWSABLE" />
 	</intent-filter>
 </activity>
+
 {% endhighlight %}
 
 #### Subclass the Branch activity
 
-Branch can automatically track the Android app lifecycle on API level 14 and above, so make sure that your `minSdkVersion` is 14. If you need to support pre-14, please see section about [session management below](/recipes/quickstart_guide/android/#initialization-to-support-android-pre-14).
+Branch can automatically track the Android app lifecycle on API level 14 and above, so make sure that your `minSdkVersion` is 14. This means that you do not need to manually start and stop a session.
+
+If you need to support pre-14, please see our section about [session management below](/recipes/quickstart_guide/android/#initialization-to-support-android-pre-14).
+
+The final step in setting up the Branch SDK is as follows:
 
 {% highlight xml %}
  <application
     android:name="io.branch.referral.BranchApp">
 {% endhighlight %}
 
-If you already use an Application class or don't want to subclass your Application, you can choose from [the alternatives listed here](/recipes/quickstart_guide/android/#alternatives-to-application-subclass).
+In case you already have an `Application` class, or cannot use our provided `Application` class, here are all three options to setting up Branch with your `Application` class:
+
+{% ingredient sdk_setup/android_app_alternatives %}{% endingredient %}
 
 {% endif %}
 <!---       /Android-specific Branch Key -->

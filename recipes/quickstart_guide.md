@@ -70,10 +70,6 @@ You can also use the data to link directly to content! Instead of "foo": "bar", 
 
 -----
 
-{% ingredient sdk_setup/android_app_alternatives %}{% endingredient %}
-
------
-
 {% ingredient sdk_setup/pre_14_android %}{% endingredient %}
 
 {% ingredient sdk_setup/install_referrer %}{% endingredient %}
