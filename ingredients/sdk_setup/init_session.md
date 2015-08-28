@@ -72,12 +72,20 @@ Open up your **splash activity** (or the activity you registered the intent for 
 {% highlight java %}
 @Override
 public void onStart() {
+    super.onStart();
+    // Lifecycle callback method
+}
 {% endhighlight %}
 
-Initialize the session and register your deep link router:
+Initialize the session and register your deep link router. Take note of how the insatnce is retrieved. If you are **not** using automatic session management, then you will need to use `getInstance(Context context)`.
 
 {% highlight java %}
-Branch branch = Branch.getInstance(getApplicationContext());
+
+Branch branch = Branch.getInstance();
+
+// ONLY use the line below IF you ARE NOT using automatic session management.
+// Branch branch = Branch.getInstance(getApplicationContext());
+
 branch.initSession(new Branch.BranchReferralInitListener(){
     @Override
     public void onInitFinished(JSONObject referringParams, BranchError error) {
@@ -90,6 +98,7 @@ branch.initSession(new Branch.BranchReferralInitListener(){
         }
     }
 }, this.getIntent().getData(), this);
+
 {% endhighlight %}
 
 **NOTE** if you're calling this inside a fragment, please use getActivity() instead of passing in `this`. Also, `this.getIntent().getData()` refers to the data associated with an incoming intent.

@@ -78,9 +78,9 @@ Find the `Activity` you want to open up when a link is clicked. This is typicall
 
 #### Subclass the Branch activity
 
-Branch can automatically track the Android app lifecycle on API level 14 and above, so make sure that your `minSdkVersion` is 14. This means that you do not need to manually start and stop a session.
+The last piece is to register our `Application` class, as Branch can automatically track the Android app lifecycle on API level 14 and above. Verify that your `minSdkVersion` is 14 or above.
 
-If you need to support pre-14, please see our section about [session management below](/recipes/quickstart_guide/android/#initialization-to-support-android-pre-14).
+{% protip title="What if I support pre14 Android?" %} If you need to support pre-14, please see our section about [session management below](/recipes/quickstart_guide/android/#initialization-to-support-android-pre-14). {% endprotip %}
 
 The final step in setting up the Branch SDK is as follows:
 
@@ -89,7 +89,7 @@ The final step in setting up the Branch SDK is as follows:
     android:name="io.branch.referral.BranchApp">
 {% endhighlight %}
 
-In case you already have an `Application` class, or cannot use our provided `Application` class, here are all three options to setting up Branch with your `Application` class:
+In case you already have an `Application` class, or cannot use our provided `Application` class, here are all three options to setting up Branch with your `Application` class.
 
 {% ingredient sdk_setup/android_app_alternatives %}{% endingredient %}
 
