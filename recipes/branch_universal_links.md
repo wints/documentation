@@ -25,7 +25,7 @@ With Branch, you can enable Universal Links without all of the complicated serve
 
 In order to enable your app for Universal Links, you'll need to register your bundle ID for an official App ID and request the `Associated Domains` entitlement. 
 
-If you have done this already, please click [here](http://localhost:4000/recipes/branch_universal_links/#add-the-entitlement-in-xcode) to skip to the next section.
+If you have done this already, please click [here](/recipes/branch_universal_links/#add-the-entitlement-in-xcode) to skip to the next section.
 
 ### Register your app on developers.apple.com
 
@@ -106,7 +106,7 @@ This is what our Universal Link settings look like after going through steps 1 -
 {% image src='/img/recipes/universal_links/dashboard_enable_universal_links.png' half center alt='xcode add domains' %}
 
 
-With your [Apple Developer Account](http://localhost:4000/recipes/branch_universal_links/#configure-developerapplecom), [Xcode project](http://localhost:4000/recipes/branch_universal_links/#add-the-entitlement-in-xcode) and [Branch dashboard](http://localhost:4000/recipes/branch_universal_links/#enable-universal-links-on-the-branch-dashboard) configured correctly, all of your Branch links will immediately begin to function as Universal Links as soon as your users upgrade to iOS9.
+With your [Apple Developer Account](/recipes/branch_universal_links/#configure-developerapplecom), [Xcode project](/recipes/branch_universal_links/#add-the-entitlement-in-xcode) and [Branch dashboard](/recipes/branch_universal_links/#enable-universal-links-on-the-branch-dashboard) configured correctly, all of your Branch links will immediately begin to function as Universal Links as soon as your users upgrade to iOS9.
 
 
 ## What's next?
