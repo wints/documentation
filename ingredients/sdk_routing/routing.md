@@ -52,7 +52,11 @@ Inside `onStart`, when Branch is initialized, you will want to examine the dicti
 public void onStart() {
     super.onStart();
 
-    Branch branch = Branch.getInstance(getApplicationContext());
+    Branch branch = Branch.getInstance();
+
+    // If NOT using automatic session management
+    // Branch branch = Branch.getInstance(getApplicationContext());
+
     branch.initSession(new BranchReferralInitListener(){
         @Override
         public void onInitFinished(JSONObject referringParams, Branch.BranchError error) {
