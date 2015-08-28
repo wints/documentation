@@ -101,12 +101,12 @@ For the final and easiest part of the configuration process:
 4. Type in your Apple Team ID (found from Organization Profile > Account Summary on Apple's Developer Portal).
 5. Scroll down and click on the Save button.
 
-This is what our Universal Link settings look like after going through steps 1 - 4:
+This is what our Universal Link settings look like after going through steps 1 - 5:
 
 {% image src='/img/recipes/universal_links/dashboard_enable_universal_links.png' half center alt='xcode add domains' %}
 
 
-With your [Apple Developer Account](http://localhost:4000/recipes/branch_universal_links/#configure-developerapplecom), [Xcode](http://localhost:4000/recipes/branch_universal_links/#add-the-entitlement-in-xcode) and [Branch dashboard](http://localhost:4000/recipes/branch_universal_links/#enable-universal-links-on-the-branch-dashboard) configured correctly, all of your Branch links will immediately begin to function as Universal Links as soon as your users upgrade to iOS9.
+With your [Apple Developer Account](http://localhost:4000/recipes/branch_universal_links/#configure-developerapplecom), [Xcode project](http://localhost:4000/recipes/branch_universal_links/#add-the-entitlement-in-xcode) and [Branch dashboard](http://localhost:4000/recipes/branch_universal_links/#enable-universal-links-on-the-branch-dashboard) configured correctly, all of your Branch links will immediately begin to function as Universal Links as soon as your users upgrade to iOS9.
 
 
 ## What's next?
