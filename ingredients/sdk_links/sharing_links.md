@@ -117,7 +117,8 @@ new Branch.ShareLinkBuilder(MainActivity.this, obj)
     .addTag("version_213")
     .setDefaultURL("https://play.google.com/store/apps/details?id=com.ecommerce")
     .setCallback(new Branch.BranchLinkShareListener() {
-	    @Override
+
+        @Override
         public void onShareLinkDialogLaunched() {
             Log.i("Branch", "onShareLinkDialogLaunched()");
         }
