@@ -107,31 +107,41 @@ try {
 }
 
 new Branch.ShareLinkBuilder(MainActivity.this, obj)
-	.addPreferredSharingOption(SharingHelper.SHARE_WITH.FACEBOOK)
-	.addPreferredSharingOption(SharingHelper.SHARE_WITH.EMAIL)
-	.addPreferredSharingOption(SharingHelper.SHARE_WITH.MESSAGE)
-	.addPreferredSharingOption(SharingHelper.SHARE_WITH.TWITTER)
-	.setMessage("Check out these shoes!")
-	.setStage("post_purchase")
-	.setFeature("share")
-	.addTag("version_213")
-	.setDefaultURL("https://play.google.com/store/apps/details?id=com.ecommerce")
-	.setCallback(new Branch.BranchLinkShareListener() {
-		@Override
-		public void onLinkShareResponse(String sharedLink, String sharedChannel, BranchError error) {
-			if (error != null) {
-				Log.i("BranchTestBed", "onLinkShareResponse... " + sharedLink + " " + sharedChannel + " " + error.getMessage());
-			} else {
-				Log.i("BranchTestBed", "onLinkShareResponse... " + sharedLink + " " + sharedChannel);
-			}
-		}
+    .addPreferredSharingOption(SharingHelper.SHARE_WITH.FACEBOOK)
+    .addPreferredSharingOption(SharingHelper.SHARE_WITH.EMAIL)
+    .addPreferredSharingOption(SharingHelper.SHARE_WITH.MESSAGE)
+    .addPreferredSharingOption(SharingHelper.SHARE_WITH.TWITTER)
+    .setMessage("Check out these shoes!")
+    .setStage("post_purchase")
+    .setFeature("share")
+    .addTag("version_213")
+    .setDefaultURL("https://play.google.com/store/apps/details?id=com.ecommerce")
+    .setCallback(new Branch.BranchLinkShareListener() {
+	    @Override
+        public void onShareLinkDialogLaunched() {
+            Log.i("Branch", "onShareLinkDialogLaunched()");
+        }
 
-		@Override
-		public void onChannelSelected(String channelName) {
-			Log.i("BranchTestBed", "onChannelSelected... " + channelName);
-		}
-	})
-	.shareLink();
+        @Override
+        public void onShareLinkDialogDismissed() {
+            Log.i("Branch", "onShareLinkDialogDismissed()");
+        }
+
+        @Override
+        public void onLinkShareResponse(String sharedLink, String sharedChannel, BranchError error) {
+            if (error != null) {
+                Log.i("Branch", "onLinkShareResponse... " + sharedLink + " " + sharedChannel + " " + error.getMessage());
+            } else {
+                Log.i("Branch", "onLinkShareResponse... " + sharedLink + " " + sharedChannel);
+            }
+        }
+
+        @Override
+        public void onChannelSelected(String channelName) {
+            Log.i("Branch", "onChannelSelected... " + channelName);
+        }
+    })
+    .shareLink();
 {% endhighlight %}
 
 {% endif %}
