@@ -20,7 +20,7 @@ Branch *branch = [Branch getInstance];
 [branch createDiscoverableContentWithTitle:@"Kindred"
                                description:@"My app is disrupting apps"
                               thumbnailUrl:[NSURL URLWithString:@"https://s3-us-west-1.amazonaws.com/branchhost/mosaic_og.png"]
-                                  userInfo:@{@"object_id": @"1234",
+                                linkParams:@{@"object_id": @"1234",
                               				 @"deeplink": @"data"}
                          publiclyIndexable:YES];
 {% endhighlight %}
@@ -29,11 +29,11 @@ Branch *branch = [Branch getInstance];
 {% highlight swift %}
 let branch: Branch = Branch.getInstance()
 branch.createDiscoverableContentWithTitle("Kindred",
-                                        description: "My app is disrupting apps",
-                                        thumbnailUrl: NSUrl.init("https://s3-us-west-1.amazonaws.com/branchhost/mosaic_og.png"),
-                                        userInfo: ["deeplink": "data",
-                                                   "object_id": "1234"],
-                                        publiclyIndexable: true)
+                              description: "My app is disrupting apps",
+                             thumbnailUrl: NSUrl.init("https://s3-us-west-1.amazonaws.com/branchhost/mosaic_og.png"),
+                               linkParams: ["deeplink": "data",
+                                            "object_id": "1234"],
+                        publiclyIndexable: true)
 {% endhighlight %}
 {% endtab %}
 {% endtabs %}
