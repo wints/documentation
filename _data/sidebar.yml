@@ -42,6 +42,7 @@
       pages:
         - matching_accuracy
         - email_campaigns
+        - spotlight_indexing
         - add_custom_link_data_and_routing
         - referral_links_with_incentives
         - advanced_referral_incentives
