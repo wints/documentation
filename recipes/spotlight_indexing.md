@@ -38,6 +38,34 @@ branch.createDiscoverableContentWithTitle("Kindred",
 {% endtab %}
 {% endtabs %}
 
+## Tracking clicks and deep linking
+
+This section assumes that you've already [setup the SDK](/recipes/quickstart_guide). In order to properly receive a click from Spotlight when your app is installed, just let Branch handle th complexity. Parameters associated with the deep link will appear in the **Deep Link Handler** that you registered in initSession.
+
+{% tabs %}
+{% tab objective-c %}
+{% highlight objc %}
+- (BOOL)application:(UIApplication *)application
+continueUserActivity:(NSUserActivity *)userActivity
+ restorationHandler:(void (^)(NSArray *restorableObjects))restorationHandler {
+    BOOL handledByBranch = [[Branch getInstance] continueUserActivity:userActivity];
+    
+    return handledByBranch;
+}
+{% endhighlight %}
+{% endtab %}
+{% tab swift %}
+{% highlight swift %}
+func application(application: UIApplication, continueUserActivity: userActivity, restorationHandler: ([AnyObject]!) -> Void) -> Bool {
+    // pass the url to the handle deep link call
+    Branch.getInstance().continueUserActivity(userActivity);
+
+    return true
+}
+{% endhighlight %}
+{% endtab %}
+{% endtabs %}
+
 ## Other tips and best practices
 
 ### Deep link from Spotlight
