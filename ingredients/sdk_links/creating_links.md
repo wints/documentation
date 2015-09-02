@@ -51,23 +51,38 @@ Branch.getInstance().getShortURLWithParams(params, andChannel: "sms", andFeature
 <!--- Android -->
 {% if page.android %}
 
-{% highlight java %}
-{% section params %}
-JSONObject obj = new JSONObject();
-try {
-	obj.putString("article_id", "1234");
-	obj.putString("$og_title", "Hot off the presses!");
-	obj.putString("$og_image_url", "mysite.com/image.png");
-	obj.putString("$desktop_url", "mysite.com/article1234");
-} catch (Exception ignore) { }
-{% endsection %}
+When building a Branch link, we recommend you use our builder method to generate a Branch link. Generating a Branch link via our singleton is **deprecated**.
 
-branch.getShortUrl(obj, "sms", "share", new BranchLinkCreateListener() {
-	@Override
-	public void onLinkCreate(String url, BranchError error) {
-		Log.i(TAG, "Ready to share my link = " + url);
-	}
-});
+**Generate a Branch link via our builder class:**
+
+{% highlight java %}
+
+BranchShortLinkBuilder shortUrlBuilder = new BranchShortLinkBuilder(MainActivity.this)
+                        .addTag("tag1")
+                        .addTag("tag2")
+                        .setChannel("channel1")
+                        .setFeature("feature1")
+                        .setStage("1")
+                        .addParameters("name", "test name") // deeplink data - anything you want!
+                        .addParameters("message", "hello there with short url")
+                        .addParameters("$og_title", "this is a title")
+                        .addParameters("$og_description", "this is a description")
+                        .addParameters("$og_image_url", "https://imgurl.com/img.png");
+
+                // Get URL Asynchronously
+                shortUrlBuilder.generateShortUrl(new Branch.BranchLinkCreateListener() {
+                    @Override
+                    public void onLinkCreate(String url, BranchError error) {
+                        if (error != null) {
+                            Log.e("Branch Error", "Branch create short url failed. Caused by -" + error.getMessage());
+                        } else {
+                            Log.i("Branch", "Got a Branch URL " + url);
+                        }
+                    }
+                });
+                // OR Get the URL synchronously
+                String myUrl = shortUrlBuilder.getShortUrl();
+
 {% endhighlight %}
 
 {% endif %}

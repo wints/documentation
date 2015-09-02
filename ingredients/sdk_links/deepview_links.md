@@ -52,9 +52,11 @@ Branch.getInstance().getShortURLWithParams(params, andChannel: "sms", andFeature
 {% highlight java %}
 {% section params %}
 JSONObject obj = new JSONObject();
-obj.putString("article_id", "1234");
-obj.putString("$ios_deepview", "default_template");
-obj.putString("$android_deepview", "default_template");
+try {
+    obj.put("article_id", "1234");
+    obj.put("$ios_deepview", "default_template");
+    obj.put("$android_deepview", "default_template");
+} catch (JSONException e) { }
 {% endsection %}
 
 branch.getShortUrl(obj, "sms", "share", new BranchLinkCreateListener() {
