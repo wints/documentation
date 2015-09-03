@@ -9,6 +9,10 @@ hide_platform_selector: true
 
 Listing your app content on Apple's new Spotlight search with Branch is easy. Note that this guide will list on both _cloud search_ in addition to _local spotlight search_.
 
+{% protip title="iOS 9 SDK is in beta" %}
+To use the iOS 9 compatible SDK, please download either the source files or the .framework from [this branch](https://github.com/BranchMetrics/iOS-Deferred-Deep-Linking-SDK/tree/ios-9-content-discovery). This will emerge from beta when iOS 9 is out of beta.
+{% endprotip %}
+
 ## Listing your content
 
 Content can be added to Spotlight search with a single line of code. We'd recommend that you put this on every page that renders a piece of content for your users. This way, a user could rediscover a previous thing that they had viewed.
