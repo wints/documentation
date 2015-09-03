@@ -11,6 +11,10 @@ Universal Links allow users visiting your website to route straight to your app 
 
 With Branch, you can enable Universal Links without all of the complicated server hosting and JSON signing. You simply need to add an entitlement to your app project.
 
+{% protip title="iOS 9 SDK is in beta" %}
+To use the iOS 9 compatible SDK, please download either the source files or the .framework from [this branch](https://github.com/BranchMetrics/iOS-Deferred-Deep-Linking-SDK/tree/ios-9-content-discovery). This will emerge from beta when iOS 9 is out of beta.
+{% endprotip %}
+
 -----
 
 ## Prerequisites for using Universal Links
