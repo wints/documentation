@@ -11,7 +11,7 @@ Here is a fully-functional web page that you can use as a template for your text
 		<script type="text/javascript">
 
 		{% ingredient web_sdk/_src %}{% endingredient %}
-    branch.init('YOUR-BRANCH-KEY');
+		branch.init('YOUR-BRANCH-KEY');
 		function sendSMS(form) {
 			var phone = form.phone.value;
 			var linkData = {
