@@ -1,4 +1,3 @@
-
 ### SendSMS() Example
 
 Here is a fully-functional web page that you can use as a template for your text-me-the-app page.
