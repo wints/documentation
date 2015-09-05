@@ -95,6 +95,13 @@ Lastly, for some reason, Xcode 7 did not include my entitlements file in my buil
 
 -----
 
+## Integrate code snippet with AppDelegate
+
+Integrate the following code snippet with **AppDelegate.m** or **AppDelegate.swift**
+
+{% ingredient sdk_setup/ios9_restoration_handler %}{% endingredient %}
+-----
+
 ## Enable Universal Links on the Branch dashboard
 
 For the final and easiest part of the configuration process:
