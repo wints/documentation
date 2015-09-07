@@ -83,7 +83,7 @@ Additionally, the Xcode project template for Unity 4.6.x (tested with 4.6.1, but
 {% if page.titanium %}
 #### Acquire the files
 
-All the files you need are included in [our repository](https://github.com/BranchMetrics/Unity-Deferred-Deep-Linking-SDK), so go ahead and clone it.
+All the files you need are included in [our repository](https://github.com/BranchMetrics/Titanium-Deferred-Deep-Linking-SDK), so go ahead and clone it.
 
 #### Building the SDK modules
 

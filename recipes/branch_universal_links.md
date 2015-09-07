@@ -11,6 +11,10 @@ Universal Links allow users visiting your website to route straight to your app 
 
 With Branch, you can enable Universal Links without all of the complicated server hosting and JSON signing. You simply need to add an entitlement to your app project.
 
+{% protip title="iOS 9 SDK is in beta" %}
+To use the iOS 9 compatible SDK, please download either the source files or the .framework from [this branch](https://github.com/BranchMetrics/iOS-Deferred-Deep-Linking-SDK/tree/ios-9-content-discovery). This will emerge from beta when iOS 9 is out of beta. Please be sure to add CoreSpotlight and SafariServices to your linked frameworks.
+{% endprotip %}
+
 -----
 
 ## Prerequisites for using Universal Links
@@ -89,6 +93,13 @@ If you're just using `bnc.lt` for all of your Branch links, you only need to add
 
 Lastly, for some reason, Xcode 7 did not include my entitlements file in my build after I added it. In the project browser, verify that your new entitlements file is selected for membership to the right targets so that it’s built.
 
+-----
+
+## Integrate code snippet with AppDelegate
+
+Integrate the following code snippet with **AppDelegate.m** or **AppDelegate.swift**
+
+{% ingredient sdk_setup/ios9_restoration_handler %}{% endingredient %}
 -----
 
 ## Enable Universal Links on the Branch dashboard

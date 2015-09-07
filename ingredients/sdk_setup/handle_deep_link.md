@@ -30,28 +30,6 @@ func application(application: UIApplication, openURL url: NSURL, sourceApplicati
 
 Additionally, in iOS9, if you list content in Spotlight with Branch, you'll want to receive those parameters in this App Delegate callback.
 
-{% tabs %}
-{% tab objective-c %}
-{% highlight objc %}
-- (BOOL)application:(UIApplication *)application
-continueUserActivity:(NSUserActivity *)userActivity
- restorationHandler:(void (^)(NSArray *restorableObjects))restorationHandler {
-    BOOL handledByBranch = [[Branch getInstance] continueUserActivity:userActivity];
-    
-    return handledByBranch;
-}
-{% endhighlight %}
-{% endtab %}
-{% tab swift %}
-{% highlight swift %}
-func application(application: UIApplication, continueUserActivity: userActivity, restorationHandler: ([AnyObject]!) -> Void) -> Bool {
-    // pass the url to the handle deep link call
-    Branch.getInstance().continueUserActivity(userActivity);
-
-    return true
-}
-{% endhighlight %}
-{% endtab %}
-{% endtabs %}
+{% ingredient sdk_setup/ios9_restoration_handler %}{% endingredient %}
 
 {% endif %}

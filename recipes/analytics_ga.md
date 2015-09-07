@@ -29,7 +29,7 @@ Because you can track events through Branch's SDK, you can specify all event met
 
 ## Set Up
 
-Before we can start sending data to Google Analytics, we need **4** properties found on your account. The following properties are:
+Before we can start sending data to Google Analytics, we need **6** properties found on your account. The following properties are:
 
 - v - *refers to version*
 - tid - *refers to your tracking or property ID*
