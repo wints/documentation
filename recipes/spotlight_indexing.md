@@ -93,27 +93,28 @@ If the available options are not good enough for you, and you want to do some ad
                                     @"$og_thumb": @"https://s3-us-west-1.amazonaws.com/branchhost/mosaic_og.png",
                                     @"object_id": @"1234"}
                          callback:^(NSDictionary *params, NSError *error) {
-    
-    // params will contain @"url" and @"spotlight_identifier"
-    // the example below shows where to use them
-
-    CSSearchableItemAttributeSet *attributes = [[CSSearchableItemAttributeSet alloc] initWithItemContentType:@"public.content"];
-    attributes.identifier = params[@"spotlight_identifer"];
-    attributes.relatedUniqueIdentifier = params[@"spotlight_identifer"];
-    attributes.contentURL = [NSURL URLWithString:params[@"url"]]; // The content url links back to our web content
-    
-    // Index via the NSUserActivity strategy
-    // Currently (iOS 9 Beta 4) we need a strong reference to this, or it isn't indexed
-    NSUserActivity *currentUserActivity = [[NSUserActivity alloc] initWithActivityType:params[@"spotlight_identifer"]];
-    currentUserActivity.webpageURL = [NSURL URLWithString:params[@"url"]];
-                             
-    // Index via the CoreSpotlight strategy
-    CSSearchableItem *item = [[CSSearchableItem alloc] initWithUniqueIdentifier:params[@"spotlight_identifer"] domainIdentifier:@"branchified_content" attributeSet:attributes];
-    [[CSSearchableIndex defaultSearchableIndex] indexSearchableItems:@[ item ] completionHandler:^(NSError *indexError) {
-        if (!indexError) {
-            NSLog(@"success!");
-        }
-    }];
+    if (!error) {
+        // params will contain @"url" and @"spotlight_identifier"
+        // the example below shows where to use them
+        
+        CSSearchableItemAttributeSet *attributes = [[CSSearchableItemAttributeSet alloc] initWithItemContentType:@"public.content"];
+        attributes.identifier = params[@"spotlight_identifer"];
+        attributes.relatedUniqueIdentifier = params[@"spotlight_identifer"];
+        attributes.contentURL = [NSURL URLWithString:params[@"url"]]; // content url links back to our web content
+        
+        // Index via the NSUserActivity strategy
+        // Currently (iOS 9 Beta 5) we need a strong reference to this, or it isn't indexed
+        NSUserActivity *currentUserActivity = [[NSUserActivity alloc] initWithActivityType:params[@"spotlight_identifer"]];
+        currentUserActivity.webpageURL = [NSURL URLWithString:params[@"url"]];
+        
+        // Index via the CoreSpotlight strategy
+        CSSearchableItem *item = [[CSSearchableItem alloc] initWithUniqueIdentifier:params[@"spotlight_identifier"] domainIdentifier:@"branchified_content" attributeSet:attributes];
+        [[CSSearchableIndex defaultSearchableIndex] indexSearchableItems:@[ item ] completionHandler:^(NSError *indexError) {
+            if (!indexError) {
+                NSLog(@"success!");
+            }
+        }];
+    }
 }];
 {% endhighlight %}
 
