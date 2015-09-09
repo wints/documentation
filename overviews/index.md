@@ -9,7 +9,7 @@ keywords: Contextual Deep Linking, Deep links, Deeplinks, Deep Linking, Deeplink
 
 ## What does Branch do?
 
-Branch is the most robust deep linking platform for your your mobile app. We handle every edge case for you - if you need something we don’t support, let us know and we’ll fix it.
+Branch is the most robust deep linking platform for your mobile app. We handle every edge case for you - if you need something we don’t support, let us know and we’ll fix it.
 
 - **Deep link** to specific content, even through install on iOS and Android
 - **Pass data through install** with embedded parameters

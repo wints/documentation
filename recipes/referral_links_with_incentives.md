@@ -39,8 +39,8 @@ Let's get started!
   {% endoverride %}
 
   {% override params %}{% if page.ios %}@{@"referringUsername":@"John", @"referringUserId":@"1234"}{% endif %}{% if page.android %}JSONObject obj = new JSONObject();
-obj.putString("referringUserName", "John");
-obj.putString("referringUserId", "1234"));{% endif %}{% endoverride %}
+obj.put("referringUserName", "John");
+obj.put("referringUserId", "1234"));{% endif %}{% endoverride %}
 {% endingredient %}
 
 Again, it's not imperative that you attach any information to the link. As long as you made a `setIdentity` call, anytime this link is shared we will know whose link it is and when to attribute an install to him.

@@ -60,7 +60,7 @@ branch.initSessionWithLaunchOptions(launchOptions, andRegisterDeepLinkHandler: {
 {% endtab %}
 {% endtabs %}
 
-**NOTE** If you are seeing a "Branch.h file not found" error but you've imported the SDK, or it's breaking during compiling--and you're **using Xcode 6.3 or newer**--[click here](http://support.branch.io/customer/portal/articles/1964901-xcode-error---branch-not-found).
+**NOTE** If you are seeing a "Branch.h file not found" error but you've imported the SDK, or it's breaking during compiling--and you're **using Xcode 6.3 or newer**--[click here](https://support.branch.io/discussions/topics/6000008855).
 
 {% endif %}
 <!---    /iOS -->
@@ -72,12 +72,20 @@ Open up your **splash activity** (or the activity you registered the intent for 
 {% highlight java %}
 @Override
 public void onStart() {
+    super.onStart();
+    // Lifecycle callback method
+}
 {% endhighlight %}
 
-Initialize the session and register your deep link router:
+Initialize the session and register your deep link router. Take note of how the insatnce is retrieved. If you are **not** using automatic session management, then you will need to use `getInstance(Context context)`.
 
 {% highlight java %}
-Branch branch = Branch.getInstance(getApplicationContext());
+
+Branch branch = Branch.getInstance();
+
+// ONLY use the line below IF you ARE NOT using automatic session management.
+// Branch branch = Branch.getInstance(getApplicationContext());
+
 branch.initSession(new Branch.BranchReferralInitListener(){
     @Override
     public void onInitFinished(JSONObject referringParams, BranchError error) {
@@ -90,6 +98,7 @@ branch.initSession(new Branch.BranchReferralInitListener(){
         }
     }
 }, this.getIntent().getData(), this);
+
 {% endhighlight %}
 
 **NOTE** if you're calling this inside a fragment, please use getActivity() instead of passing in `this`. Also, `this.getIntent().getData()` refers to the data associated with an incoming intent.

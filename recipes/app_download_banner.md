@@ -88,6 +88,15 @@ Now you can adjust your page's CSS when the Banner is about to be displayed.
 
 For more information on Banner events, please visit our [web guide](https://github.com/BranchMetrics/Web-SDK/blob/master/WEB_GUIDE.md#addlistenerevent-listener)!
 
+## FAQ
+
+**Q: Can I use the App Smart Banner on non mobile-optimized pages?**
+
+A: Yes, you can. However, you are responsible for handling the resizing of the banner whenever a user zooms in or zooms out. The smart banner is meant for mobile-optimized pages.
+
+**Q: How does Branch determine whether the banner says download or open?**
+
+A: Initially, if we've never determined a device has your application, we will default to *download* (or whatever custom text you've set for when a user doesn't have the app). If they have clicked one of your links before and consequently opened the application, we will switch the text to say *open* (or whatever custom text you've set for when a user has your app).
 
 
 ## What's next

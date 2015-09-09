@@ -11,10 +11,18 @@ The work in this section will take place in the view controller that you want to
 
 In the view controller that will display on link click, first import `Branch.h`.
 
+{% tabs %}
+{% tab objective-c %}
 {% highlight objc %}
 #import "Branch.h"
 {% endhighlight %}
-
+{% endtab %}
+{% tab swift %}
+{% highlight swift %}
+import Branch
+{% endhighlight %}
+{% endtab %}
+{% endtabs %}
 
 -----
 
@@ -22,9 +30,18 @@ In the view controller that will display on link click, first import `Branch.h`.
 
 Make your view controller conform to the delegate `BranchDeepLinkingController`.
 
+{% tabs %}
+{% tab objective-c %}
 {% highlight objc %}
 @interface ExampleDeepLinkingController : UIViewController <BranchDeepLinkingController>
 {% endhighlight %}
+{% endtab %}
+{% tab swift %}
+{% highlight swift %}
+class ExampleDeepLinkingController: UIViewController, BranchDeepLinkingController {
+{% endhighlight %}
+{% endtab %}
+{% endtabs %}
 
 -----
 
@@ -32,6 +49,8 @@ Make your view controller conform to the delegate `BranchDeepLinkingController`.
 
 Receive the delegate method that will be called when the view controller is loaded from a link click.
 
+{% tabs %}
+{% tab objective-c %}
 {% highlight objc %}
 - (void)configureControlWithData:(NSDictionary *)data {
 	NSString *pictureUrl = data[@"product_picture"];
@@ -46,6 +65,17 @@ Receive the delegate method that will be called when the view controller is load
 	});
 }
 {% endhighlight %}
+{% endtab %}
+{% tab swift %}
+{% highlight swift %}
+func configureControlWithData(data) {
+	var pictureUrl = data["product_picture"]
+
+	// show the picture
+}
+{% endhighlight %}
+{% endtab %}
+{% endtabs %}
 
 -----
 
@@ -53,11 +83,22 @@ Receive the delegate method that will be called when the view controller is load
 
 Since the view controller is displayed modally, you should add a close button that let's the user minimize to continue the remainder of your flow.
 
+{% tabs %}
+{% tab objective-c %}
 {% highlight objc %}
 - (IBAction)closePressed {
     [self.completionDelegate deepLinkingControllerCompleted];
 }
 {% endhighlight %}
+{% endtab %}
+{% tab swift %}
+{% highlight swift %}
+func closePressed() {
+    self.completionDelegate.deepLinkingControllerCompleted()
+}
+{% endhighlight %}
+{% endtab %}
+{% endtabs %}
 
 -----
 
@@ -67,6 +108,8 @@ Lastly, you need to tell Branch which view controller you will use and which key
 
 **Note**: If you don't know what this key is, see [Creating Links](/recipes/quickstart_guide/{% section platform %}{{page.platform}}/#creating-links}{% endsection %})
 
+{% tabs %}
+{% tab objective-c %}
 {% highlight objc %}
 - (BOOL)application:(UIApplication *)application
     didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
@@ -84,6 +127,21 @@ Lastly, you need to tell Branch which view controller you will use and which key
 	return YES;
 }
 {% endhighlight %}
+{% endtab %}
+{% tab swift %}
+{% highlight swift %}
+func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+    let branch: Branch = Branch.getInstance()
+
+    var controller = UIStoryboard.init("Main", NSBundle.mainBundle()).instantiateViewControllerWithIdentifier("DeepLinkingController")
+
+    branch.registerDeepLinkController(controller, forKey: "product_picture")
+    branch.initSessionWithLaunchOptions(launchOptions, automaticallyDisplayDeepLinkController: true)
+    return true
+}
+{% endhighlight %}
+{% endtab %}
+{% endtabs %}
 
 {% endif %}
 

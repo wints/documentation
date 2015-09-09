@@ -17,7 +17,9 @@ However, if you don't currently use Cocoapods, you can easily download and insta
 {% if page.android %}
 Just add `compile 'io.branch.sdk.android:library:1.+'` to the dependencies section of your `build.gradle` file.
 
-[optional] In case you'd like to use our .jar instead, here's a [link](https://s3-us-west-1.amazonaws.com/branchhost/Branch-Android-SDK.zip) that always points to our latest or you can always clone our [Android SDK](https://github.com/BranchMetrics/branch-android-sdk) project and import it into your workspace.
+_alternative #1 - use our .jar:_ In case you'd like to use our .jar instead, here's a [link](https://s3-us-west-1.amazonaws.com/branchhost/Branch-Android-SDK.zip) that always points to our latest. 
+
+_alternative #2 - download our code:_ In case you'd like full control, here is our [Android SDK](https://github.com/BranchMetrics/branch-android-sdk) project, including a full test-suite. Feel free to submodule and import into your workspace.
 {% endif %}
 <!---       /Android-specific installing the SDK -->
 
@@ -81,7 +83,7 @@ Additionally, the Xcode project template for Unity 4.6.x (tested with 4.6.1, but
 {% if page.titanium %}
 #### Acquire the files
 
-All the files you need are included in [our repository](https://github.com/BranchMetrics/Unity-Deferred-Deep-Linking-SDK), so go ahead and clone it.
+All the files you need are included in [our repository](https://github.com/BranchMetrics/Titanium-Deferred-Deep-Linking-SDK), so go ahead and clone it.
 
 #### Building the SDK modules
 

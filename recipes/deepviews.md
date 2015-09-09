@@ -55,7 +55,9 @@ There are a few things to make sure you've done prior to leveraging deepviews
 If you don't want to enable Deepviews globally, you can do it on a per link basis by inserting custom control parameters into the **data** dictionary.
 
 **$ios_deepview**: The name of the template to use for iOS. [default: `default_template`].
+
 **$android_deepview**: The name of the template to use for Android. [default: `default_template`].
+
 **$desktop_deepview**: The name of the template to use for the desktop. [default: `default_template`].
 
 #### Dynamic link control

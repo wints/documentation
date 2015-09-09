@@ -1,7 +1,7 @@
 {% if page.ios %}
 ### Handle Deep Link
 
-This method is necessary to receive a Branch parameter when the URI scheme is called and the app open immediately. It will automatically call the **Deep Link Handler** registered above. `application:openURL:sourceApplication:annotation:`:
+This method is necessary to receive a Branch parameter when the URI scheme is called and the app open immediately. It will automatically call the **Deep Link Handler** registered above:
 
 {% tabs %}
 {% tab objective-c %}
@@ -27,5 +27,9 @@ func application(application: UIApplication, openURL url: NSURL, sourceApplicati
 {% endhighlight %}
 {% endtab %}
 {% endtabs %}
+
+Additionally, in iOS9, if you list content in Spotlight with Branch, you'll want to receive those parameters in this App Delegate callback.
+
+{% ingredient sdk_setup/ios9_restoration_handler %}{% endingredient %}
 
 {% endif %}

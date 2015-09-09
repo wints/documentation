@@ -13,7 +13,7 @@ For Android add the call to the `onCreate` of either your Application class or t
 Make sure to add the call to `onStop` as well. This call will clear the deep link parameters when the app is closed, so they can be refreshed after a new link is clicked or the app is reopened.
 
 {% highlight c# %}
-public class MainActivity
+public class MainActivity: Activity, IBranchSessionInterface
 {
     protected override void OnCreate (Bundle savedInstanceState)
     {
@@ -71,7 +71,7 @@ The iOS device specific code can register notification listeners to handle the i
 
 {% highlight c# %}
 [Register ("AppDelegate")]
-public class AppDelegate
+public class AppDelegate : UIApplicationDelegate, IBranchSessionInterface
 {
     public override bool FinishedLaunching (UIApplication uiApplication, NSDictionary launchOptions)
     {
