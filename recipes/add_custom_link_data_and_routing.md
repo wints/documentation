@@ -58,7 +58,7 @@ Branch is able to pass data through install. When the user first opens the app, 
 
 {% ingredient sdk_routing/routing %}{% endingredient %}
 
-For a concrete example of giving users a customized experience via Branch links, check out our [Branchster Android Example](https://github.com/BranchMetrics/Branchster-iOS) or [Branchster iOS Example](https://github.com/BranchMetrics/Branchster-Android) and the [Branchster Web Example](https://github.com/BranchMetrics/Branchster-Web).
+For a concrete example of giving users a customized experience via Branch links, check out our [Branchster iOS Example](https://github.com/BranchMetrics/Branchster-iOS) or [Branchster Android Example](https://github.com/BranchMetrics/Branchster-Android) and the [Branchster Web Example](https://github.com/BranchMetrics/Branchster-Web).
 
 ## Additional Options
 
