@@ -5,11 +5,22 @@
 {% if page.ios %}
 For iOS, the easiest way to install the SDK is via Cocoapods. Add `pod "Branch"` to your podfile and run `pod install` from the command line.
 
-However, if you don't currently use Cocoapods, you can easily download and install our SDK.
+However, if you don't use Cocoapods, you can easily download and install our SDK.
 
 - To download an open-source copy, [grab the zip here](https://github.com/BranchMetrics/Branch-ios-sdk) or [clone our repo here](https://github.com/BranchMetrics/branch-ios-sdk).
 - You will need to drag and drop the Branch.framework file that you downloaded into your project. Be sure that "Copy items if needed" is selected.
-- Please import CoreTelephony.framework and AdSupport.framework
+- Import the following frameworks under `Build Phases` for your app target: `AdSupport.framework`, `CoreTelephony.framework`, `CoreSpotlight.framework`, `MobileCoreServices.framework`, `SafariServices.framework`
+
+#### If You Aren't Using XCode 7 Yet
+
+Branch's latest SDKs (0.11.0+) are now compiled for XCode 7 / iOS 9. If you are working in a pre XCode 7 / iOS 9 environment, please use the following [release](https://github.com/BranchMetrics/iOS-Deferred-Deep-Linking-SDK/releases/tag/0.10.9). If you'd like to use Cocoapods instead, simply do the following:
+
+{% highlight objc %}
+pod 'Branch', '0.10.9'
+{% endhighlight %}
+
+You will only need to import `AdSupport.framework`, and `CoreTelephony.framework`.
+
 {% endif %}
 <!---       /iOS-specific installing the SDK -->
 
