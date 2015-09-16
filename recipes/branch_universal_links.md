@@ -89,7 +89,7 @@ For this example, we've whitelabeled our Branch links with `link.customapp.com`,
 
 We recommend you use Cloudflare and head to the Crypo section of your dashboard there. Make your Crypto settings match this screenshot.
 
-{% image src='/img/recipes/universal_links/add_domains.png' quarter center alt='cloudflare TLS' %}
+{% image src='/img/recipes/universal_links/ssl.png' third center alt='cloudflare TLS' %}
 
 #### Non white label
 
