@@ -74,12 +74,24 @@ If you see an error like this, make sure:
 
 In the domains section, add the appropriate domain tags for `bnc.lt` as well as your `white label domain` if you use one. You must prefix it with `applinks:`.
 
+#### White label domains
+
+##### Add in both domains
+
 For this example, we've whitelabeled our Branch links with `link.customapp.com`, so we need to add two domains:
 
 - `applinks:bnc.lt`
 - `applinks:link.customapp.com`
 
 {% image src='/img/recipes/universal_links/add_domains.png' half center alt='xcode add domains' %}
+
+##### Support TLS with your DNS
+
+We recommend you use Cloudflare and head to the Crypo section of your dashboard there. Make your Crypto settings match this screenshot.
+
+{% image src='/img/recipes/universal_links/ssl.png' third center alt='cloudflare TLS' %}
+
+#### Non white label
 
 If you're just using `bnc.lt` for all of your Branch links, you only need to add a single domain:
 
@@ -88,6 +100,14 @@ If you're just using `bnc.lt` for all of your Branch links, you only need to add
 ### Step 3: Make sure entitlements file is included
 
 Lastly, for some reason, Xcode 7 did not include my entitlements file in my build after I added it. In the project browser, verify that your new entitlements file is selected for membership to the right targets so that it’s built.
+
+-----
+
+## Integrate code snippet with AppDelegate
+
+Integrate the following code snippet with **AppDelegate.m** or **AppDelegate.swift**
+
+{% ingredient sdk_setup/ios9_restoration_handler %}{% endingredient %}
 
 -----
 
@@ -108,6 +128,7 @@ This is what our Universal Link settings look like after going through steps 1 -
 
 With your [Apple Developer Account](/recipes/branch_universal_links/#configure-developerapplecom), [Xcode project](/recipes/branch_universal_links/#add-the-entitlement-in-xcode) and [Branch dashboard](/recipes/branch_universal_links/#enable-universal-links-on-the-branch-dashboard) configured correctly, all of your Branch links will immediately begin to function as Universal Links as soon as your users upgrade to iOS9.
 
+-----
 
 ## What's next?
 

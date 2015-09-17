@@ -2,12 +2,14 @@
 type: recipe
 title: "iOS9 Spotlight Deep Links"
 page_title: "Index and track your content in iOS 9 Spotlight"
-description: Learn how to list your content in Apple's new Spotlight searhc.
+description: Learn how to list your content in Apple's new Spotlight search.
 keywords: Contextual Deep Linking, Deep links, Deeplinks, Deep Linking, Deeplinking, Deferred Deep Linking, Deferred Deeplinking, iOS9, iOS 9, Apple Spotlight Search
 hide_platform_selector: true
 ---
 
 Listing your app content on Apple's new Spotlight search with Branch is easy. Note that this guide will list on both _cloud search_ in addition to _local spotlight search_.
+
+Note that some older devices cannot index content. iPad minis, for example, cannot user CoreSpotlight. The SDK includes a check for these devices and will return an error message if you attempt to index content on them.
 
 ## Listing your content
 
@@ -78,6 +80,41 @@ What's more delightful than searching for a particular something on your phone, 
 ### Use deepviews for user acquisition
 
 If the user doesn't have the app installed and finds your content through search, Spotlight will open up the browser. You can show a deepview, which is an automatically-generated, mobile web render of the app content. [**Here's how to set it up.**](/recipes/deepviews/ios)
+
+## Advanced: Further customizations
+
+If the available options are not good enough for you, and you want to do some advanced customizations of the content. You can use our identifier when indexing so that Branch will 
+
+{% highlight objc %}
+[branch getSpotlightUrlWithParams:@{@"$og_title": @"My App",
+                                    @"$og_description": @"My app is disrupting apps",
+                                    @"$og_thumb": @"https://s3-us-west-1.amazonaws.com/branchhost/mosaic_og.png",
+                                    @"object_id": @"1234"}
+                         callback:^(NSDictionary *params, NSError *error) {
+    if (!error) {
+        // params will contain @"url" and @"spotlight_identifier"
+        // the example below shows where to use them
+        
+        CSSearchableItemAttributeSet *attributes = [[CSSearchableItemAttributeSet alloc] initWithItemContentType:@"public.content"];
+        attributes.identifier = params[@"spotlight_identifer"];
+        attributes.relatedUniqueIdentifier = params[@"spotlight_identifer"];
+        attributes.contentURL = [NSURL URLWithString:params[@"url"]]; // content url links back to our web content
+        
+        // Index via the NSUserActivity strategy
+        // Currently (iOS 9 Beta 5) we need a strong reference to this, or it isn't indexed
+        NSUserActivity *currentUserActivity = [[NSUserActivity alloc] initWithActivityType:params[@"spotlight_identifer"]];
+        currentUserActivity.webpageURL = [NSURL URLWithString:params[@"url"]];
+        
+        // Index via the CoreSpotlight strategy
+        CSSearchableItem *item = [[CSSearchableItem alloc] initWithUniqueIdentifier:params[@"spotlight_identifier"] domainIdentifier:@"branchified_content" attributeSet:attributes];
+        [[CSSearchableIndex defaultSearchableIndex] indexSearchableItems:@[ item ] completionHandler:^(NSError *indexError) {
+            if (!indexError) {
+                NSLog(@"success!");
+            }
+        }];
+    }
+}];
+{% endhighlight %}
 
 -----
 

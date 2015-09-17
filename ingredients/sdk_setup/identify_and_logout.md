@@ -7,7 +7,7 @@ Branch automatically tracks unique devices. However, to make full use of our pow
 
 {% if page.ios %}
 
-Add a `setIdentity:` call wherever you create or login a user.
+Add a `setIdentity:` call wherever you create or login a user. This should be done after you have successfully initialized a session.
 
 {% tabs %}
 {% tab objective-c %}
@@ -44,18 +44,18 @@ Branch.getInstance().logout()
 <!--- iOS identify and logout -->
 
 {% if page.android %}
-Invoke the `setIdentity` call whenever you create or login a user.
+Invoke the `setIdentity` call whenever you create or login a user. This should be done after you have successfully initialized a session.
 
 {% highlight java %}
-Branch.getInstance(getApplicationContext()).setIdentity("your user identity");
+// your app's userId, 127 chars or less
+Branch.getInstance().setIdentity("your user identity");
 {% endhighlight %}
 
 
 Add a `logout` call anywhere you allow the user to logout. 
 
 {% highlight java %}
-// your app's userId, 127 chars or less
-Branch.getInstance(getApplicationContext()).logout();
+Branch.getInstance().logout();
 {% endhighlight %}
 {% endif %}
 <!--- Android identify and logout -->
@@ -66,7 +66,7 @@ Branch.getInstance(getApplicationContext()).logout();
 
 {% if page.cordova %}
 
-Invoke the `setIdentity` call whenever you create or login a user.
+Invoke the `setIdentity` call whenever you create or login a user. This should be done after you have successfully initialized a session.
 
 {% highlight js %}
 branch.setIdentity(
@@ -86,7 +86,7 @@ Structure of the callback `data` object:
 }
 {% endhighlight %}
 
-Add a `logout` call anywhere you allow the user to logout. 
+Add a `logout` call anywhere you allow the user to logout.
 
 {% highlight js %}
 branch.logout(
@@ -97,7 +97,7 @@ branch.logout(
 
 {% if page.xamarin %}
 
-Invoke the `SetIdentityAsync` call whenever you create or login a user.
+Invoke the `SetIdentityAsync` call whenever you create or login a user. This should be done after you have successfully initialized a session.
 
 {% highlight c# %}
 Branch branch = Branch.GetInstance ();
@@ -113,7 +113,7 @@ Branch.GetInstance(getApplicationContext()).LogoutAsync(this); // Where this imp
 {% endif %}
 
 {% if page.unity %}
-Invoke the `setIdentity` call whenever you create or login a user.
+Invoke the `setIdentity` call whenever you create or login a user. This should be done after you have successfully initialized a session.
 
 {% highlight c# %}
 Branch.setIdentity("your user id");
@@ -127,7 +127,7 @@ Branch.logout();
 {% endif %}
 
 {% if page.adobe %}
-Invoke the `setIdentity` call whenever you create or login a user.
+Invoke the `setIdentity` call whenever you create or login a user. This should be done after you have successfully initialized a session.
 
 {% highlight java %}
 branch.setIdentity("your user id");
@@ -141,7 +141,7 @@ branch.logout();
 {% endif %}
 
 {% if page.titanium %}
-Invoke the `setIdentity` call whenever you create or login a user.
+Invoke the `setIdentity` call whenever you create or login a user. This should be done after you have successfully initialized a session.
 
 {% highlight js %}
 branch.setIdentity(

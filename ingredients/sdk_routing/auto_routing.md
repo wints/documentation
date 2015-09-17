@@ -68,7 +68,7 @@ Receive the delegate method that will be called when the view controller is load
 {% endtab %}
 {% tab swift %}
 {% highlight swift %}
-func configureControlWithData(data) {
+func configureControlWithData(data: [NSObject : AnyObject]!) {
 	var pictureUrl = data["product_picture"]
 
 	// show the picture
@@ -93,8 +93,9 @@ Since the view controller is displayed modally, you should add a close button th
 {% endtab %}
 {% tab swift %}
 {% highlight swift %}
+var deepLinkingCompletionDelegate: BranchDeepLinkingControllerCompletionDelegate?
 func closePressed() {
-    self.completionDelegate.deepLinkingControllerCompleted()
+    self.deepLinkingCompletionDelegate!.deepLinkingControllerCompleted()
 }
 {% endhighlight %}
 {% endtab %}
