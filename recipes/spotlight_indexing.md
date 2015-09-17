@@ -99,6 +99,8 @@ If the available options are not good enough for you, and you want to do some ad
         attributes.identifier = params[@"spotlight_identifer"];
         attributes.relatedUniqueIdentifier = params[@"spotlight_identifer"];
         attributes.contentURL = [NSURL URLWithString:params[@"url"]]; // content url links back to our web content
+        attributes.title = @"My awesome content!";
+        attributes.contentDescription = @"Note that this property is contentDescription, not description";
         
         // Index via the NSUserActivity strategy
         // Currently (iOS 9 Beta 5) we need a strong reference to this, or it isn't indexed
