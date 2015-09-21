@@ -91,6 +91,18 @@ We recommend you use Cloudflare and head to the Crypo section of your dashboard 
 
 {% image src='/img/recipes/universal_links/ssl.png' third center alt='cloudflare TLS' %}
 
+##### Troubleshooting 
+
+The following error message will appear in your OS-level logs if your domain doesn't have TLS set up properly:
+
+{% highlight javascript %}
+Sep 21 14:27:01 Derricks-iPhone swcd[2044] <Notice>: 2015-09-21 02:27:01.878907 PM [SWC] ### Rejecting URL 'https://examplecustomdomain.com/apple-app-site-association' for auth method 'NSURLAuthenticationMethodServerTrust': -6754/0xFFFFE59E kAuthenticationErr
+{% endhighlight %}
+
+These logs can be found for physical devices connected to Xcode by navigating to Window > Devices > choosing your device and then clicking the "up" arrow in the bottom left corner of the main view.
+
+Note that you have to delete the app and reinstall to trigger the iOS scrape of the apple-app-site-association file—re-running an installed app doesn't trigger the scrape.
+
 #### Non white label
 
 If you're just using `bnc.lt` for all of your Branch links, you only need to add a single domain:
