@@ -6,7 +6,8 @@ description: Branch has partnered with Apptimize to seamlessly A/B test user flo
 keywords: abtesting, apptimize
 platforms:
 - ios
-----
+- android
+---
 
 # Apptimize and Branch
 
@@ -39,7 +40,7 @@ Now that you've imported the Apptimize SDK into your project, it's time to think
 
 ### Set Targeting (Apptimize dashboard)
 
-Next, you'll need to segment users based off *custom attributes* on the Apptimize dashbaord. This is done using `[Apptimize setUserAttributeString: forKey:]`, which we'll explain in the section below. In the future, Apptimize will import Branch data, so that you may bypass this step.
+Next, you'll need to segment users based off *custom attributes* on the Apptimize dashbaord. This is done using {% if page.ios %}`[Apptimize setUserAttributeString: forKey:]`{% endif %}{% if page.android %} `Apptimize.setUserAttribute("Key", "Value")` {% endif %}, which we'll explain in the section below. In the future, Apptimize will import Branch data, so that you may bypass this step.
 
 For now, we have set a **custom attribute** of channel, and value of **facebook**, meaning that if someone comes from a Branch link with the channel set to Facebook, they will automatically be a part of your campaign, and subject to different flows you've defined. You can choose any custom attribute value.
 
@@ -47,7 +48,10 @@ For now, we have set a **custom attribute** of channel, and value of **facebook*
 
 ### Set Targeting (Code)
 
-Once you've completed the previous steps, we have two remaining items left before you're set in testing all your user flows. You'll first need to define *where* you define a user attribute from the earlier step. Branch recommends setting this based off the callback found inside your `AppDelegate.m`, but you can do it anywhere. We provide examples of both:
+Once you've completed the previous steps, we have two remaining items left before you're set in testing all your user flows. You'll first need to define *where* you define a user attribute from the earlier step. Branch recommends setting this based off the callback found inside your {% if page.ios %}`AppDelegate.m`{% endif %}{% if page.android %} `BaseActivity` or `SplashActivity`{% endif %}, but you can do it anywhere. We provide examples of both:
+
+
+{% if page.ios %}
 
 #### AppDelegate.m
 
@@ -80,6 +84,48 @@ This would be the easiest, as you simply define who the user is if they came fro
     }];
 }
 {% endhighlight %}
+{% endif %}
+
+{% if page.android %}
+
+#### Activity#onCreate()
+
+The easiest thing to do is to set your experiment up after you've successfully initiailized a session with Branch.
+
+{% highlight java %}
+
+    Branch branch = Branch.getInstance();
+    branch.initSession(new BranchReferralInitListener() {
+        @Override
+        public void onInitFinished(JSONObject referringParams, BranchError error) {
+            if (error == null) {
+                if (referringParams.has("facebook")) {
+                    Apptimize.setUserAttribute("channel", "facebook");
+                }
+
+                Bundle extras = new Bundle();
+                try {
+                    extras.putString("product_id", referringParams.getString("product_id"));
+                } catch (JSONException e) { //no-op }
+
+                Apptimize.runTest("Red Button Test", new ApptimizeTest() {
+                    @Override
+                    public void baseline() {
+                        // take user through auth flow, then product
+                        startActivity(new Intent(getApplicationContext(), AuthActivity.class), extras)
+                    }
+
+                    @SuppressWarnings("unused")
+                    public void variation1() {
+                        // Variant: Take user directly to product
+                        startActivity(new Intent(getApplicationContext(), ProductActivity.class), extras)
+                    }
+                });
+            }
+        }, this.getIntent().getData(), this);
+{% endhighlight %}
+
+{% endif %}
 
 As you may have noticed from earlier screen shots, the `[Apptimize runTest: withBaseline: andVariations:]` takes the parameters we have defined from campaign creation. The `runTest` parameter takes the string *Branch Experiment*, which corresponds to what we named our campaign inside the Apptimize dashboard. The baseline and variation values correspond to the string value specified in the campaign dashboard, as well.
 
@@ -89,9 +135,25 @@ Like Branch, you can track events with Apptimize. You'd do this to measure conve
 
 You'd save a goal like so:
 
+{% if page.ios %}
+
 {% highlight objc %}
+
 [Apptimize track:@"completed_purchase"];
+
 {% endhighlight %}
+
+{% endif %}
+
+{% if page.android %}
+
+{% highlight java %}
+
+Apptimize.getInstance().track("completed_purchase");
+
+{% endhighlight %}
+
+{% endif %}
 
 ## FAQ / Testing
 
