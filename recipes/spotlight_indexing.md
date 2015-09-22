@@ -2,16 +2,14 @@
 type: recipe
 title: "iOS9 Spotlight Deep Links"
 page_title: "Index and track your content in iOS 9 Spotlight"
-description: Learn how to list your content in Apple's new Spotlight searhc.
+description: Learn how to list your content in Apple's new Spotlight search.
 keywords: Contextual Deep Linking, Deep links, Deeplinks, Deep Linking, Deeplinking, Deferred Deep Linking, Deferred Deeplinking, iOS9, iOS 9, Apple Spotlight Search
 hide_platform_selector: true
 ---
 
 Listing your app content on Apple's new Spotlight search with Branch is easy. Note that this guide will list on both _cloud search_ in addition to _local spotlight search_.
 
-{% protip title="iOS 9 SDK is in beta" %}
-To use the iOS 9 compatible SDK, please download either the source files or the .framework from [this branch](https://github.com/BranchMetrics/iOS-Deferred-Deep-Linking-SDK/tree/ios-9-content-discovery). This will emerge from beta when iOS 9 is out of beta. Please be sure to add CoreSpotlight and SafariServices to your linked frameworks.
-{% endprotip %}
+Note that some older devices cannot index content. iPad minis, for example, cannot user CoreSpotlight. The SDK includes a check for these devices and will return an error message if you attempt to index content on them.
 
 ## Listing your content
 
@@ -60,7 +58,7 @@ continueUserActivity:(NSUserActivity *)userActivity
 {% endtab %}
 {% tab swift %}
 {% highlight swift %}
-func application(application: UIApplication, continueUserActivity: userActivity, restorationHandler: ([AnyObject]!) -> Void) -> Bool {
+func application(application: UIApplication, continueUserActivity: userActivity, restorationHandler: ([AnyObject]?) -> Void) -> Bool {
     // pass the url to the handle deep link call
     Branch.getInstance().continueUserActivity(userActivity);
 
@@ -101,6 +99,8 @@ If the available options are not good enough for you, and you want to do some ad
         attributes.identifier = params[@"spotlight_identifer"];
         attributes.relatedUniqueIdentifier = params[@"spotlight_identifer"];
         attributes.contentURL = [NSURL URLWithString:params[@"url"]]; // content url links back to our web content
+        attributes.title = @"My awesome content!";
+        attributes.contentDescription = @"Note that this property is contentDescription, not description";
         
         // Index via the NSUserActivity strategy
         // Currently (iOS 9 Beta 5) we need a strong reference to this, or it isn't indexed
