@@ -22,6 +22,12 @@ Have a theory that users clicking Branch links right into a product page convert
 
 Currently, both the Branch and Apptimize SDK are required to be integrated inside your mobile application. Right now, you can define a campaign on Apptimize's dashboard, and have it filter and segment on values that come from the deeplink data of a Branch link. The easiest way to do this is to have an Apptimize call to send data inside the Branch initSesssion callback. **However, as long as Apptimize is aware of Branch data before an experiment is ran, you can define this however you'd like.**
 
+## The Why
+
+With Branch and Apptimize, you can effectively segment and measure your users coming from deeplinked campaigns, and figure out what the best UX flow is for your users. Here's a sample flow chart that may convert at different rates:
+
+![flowchart](/img/recipes/apptimize/campaign-flow.png)
+
 ## Set Up Apptimize
 
 This guide assumes you have an account with Apptimize already. If not, please go to the [Apptimize dashboard](https://apptimize.com/admin/sign-up?p=20) and register for an account. Once there, [install](https://apptimize.com/admin/help) the SDK. For this guide, we will assume the following as the example:
@@ -108,7 +114,7 @@ The easiest thing to do is to set your experiment up after you've successfully i
                     extras.putString("product_id", referringParams.getString("product_id"));
                 } catch (JSONException e) { //no-op }
 
-                Apptimize.runTest("Red Button Test", new ApptimizeTest() {
+                Apptimize.runTest("Branch Experiment", new ApptimizeTest() {
                     @Override
                     public void baseline() {
                         // take user through auth flow, then product
@@ -127,7 +133,7 @@ The easiest thing to do is to set your experiment up after you've successfully i
 
 {% endif %}
 
-As you may have noticed from earlier screen shots, the `[Apptimize runTest: withBaseline: andVariations:]` takes the parameters we have defined from campaign creation. The `runTest` parameter takes the string *Branch Experiment*, which corresponds to what we named our campaign inside the Apptimize dashboard. The baseline and variation values correspond to the string value specified in the campaign dashboard, as well.
+As you may have noticed from earlier screen shots, the {% if page.ios %}`[Apptimize runTest: withBaseline: andVariations:]`{% endif %}{% if page.android %} Apptimize.runTest("Branch Experiment", ...){% endif %} takes the parameters we have defined from campaign creation. The `runTest` parameter takes the string *Branch Experiment*, which corresponds to what we named our campaign inside the Apptimize dashboard. The baseline and variation values correspond to the string value specified in the campaign dashboard, as well.
 
 #### Save a goal
 
@@ -149,7 +155,7 @@ You'd save a goal like so:
 
 {% highlight java %}
 
-Apptimize.getInstance().track("completed_purchase");
+Apptimize.track("completed_purchase");
 
 {% endhighlight %}
 
@@ -159,10 +165,10 @@ Apptimize.getInstance().track("completed_purchase");
 
 After setting the campaign up, you're on your way to testing user flows. In order to test different flows from a Branch link click, we recommend the following steps:
 
-- Run your app locally on the XCode simulator
-- Take the Branch link you'll be testing and copy and paste inside the simulator
+- Run your app locally on the XCode simulator / local Android Phone
+- Take the Branch link you'll be testing and copy and paste inside the simulator / local Android Phone
 - Run the application afterwards
-- Once you've tested the code block, hit 'Reset Content and Settings' inside the iOS simulator
+- Once you've tested the code block, hit 'Reset Content and Settings' inside the iOS simulator or Reset Google IDFA
 - Repeat to try your second variation
 
 **My code variations aren't showing!**
