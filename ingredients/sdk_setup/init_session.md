@@ -38,7 +38,7 @@ Branch *branch = [Branch getInstance];
         // params are the deep linked params associated with the link that the user clicked -> was re-directed to this app
         // params will be empty if no data found
         // ... insert custom logic here ...
-        NSLog(@"params: %@", params.description)
+        NSLog(@"params: %@", params.description);
     }
 }];
 {% endhighlight %}
