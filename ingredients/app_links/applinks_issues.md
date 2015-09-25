@@ -16,7 +16,7 @@ The last step typically resolves this problem if you are certain that your Branc
 
 If the OG tag tester continues to report problems, we suggest that you:
 
-1. Examine your [Link Settings](https://dashboard.branch.io/#/settings/link) and ensure that for all platforms (for which an app is available), that a URI scheme and a link to the app in the Play/App Store is configured.
+1. Examine your [Link Settings](https://dashboard.branch.io/#/settings/link) and ensure that for all platforms (for which an app is available), that a URI scheme and a link to the app in the Play/App Store is configured. If you are using a Custom URL for your iOS Redirect then you need to append ?id<App Store Id> to the URL.
 2. If errors from the output window pertain to OG tags i.e. missing title, description etc. then examine per link OG tags from [Marketing links](https://dev.branch.io/recipes/add_custom_link_data_and_routing/#og-tags---looking-good-on-social-media) or from [programatically created links](https://dev.branch.io/recipes/add_custom_link_data_and_routing/#og-tags---looking-good-on-social-media) by appending ?debug=true from a seperate tab in your broswer with Dashboard open. 
 3. Alternatively, if you haven't set OG tags on a per link level, then please check your Dashboard's global Social Media Display Customization settings from the [Link Settings](https://dashboard.branch.io/#/settings/link) page.
 
