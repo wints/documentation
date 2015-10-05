@@ -12,7 +12,7 @@ continueUserActivity:(NSUserActivity *)userActivity
 {% endtab %}
 {% tab swift %}
 {% highlight swift %}
-func application(application: UIApplication, continueUserActivity: userActivity, restorationHandler: ([AnyObject]?) -> Void) -> Bool {
+func application(application: UIApplication, continueUserActivity userActivity: NSUserActivity, restorationHandler: ([AnyObject]?) -> Void) -> Bool {
     // pass the url to the handle deep link call
     Branch.getInstance().continueUserActivity(userActivity);
 
