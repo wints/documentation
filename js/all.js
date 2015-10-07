@@ -8,6 +8,7 @@ window.Slide = require('./components/Slide');
 window.SidebarCollection = require('./components/SidebarCollection');
 window.PlatformSelector = require('./components/PlatformSelector');
 window.SearchBar = require('./components/SearchBar');
+window.AnchorHeader = require('./components/AnchorHeader');
 
 window.React = require('react');
 
