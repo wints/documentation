@@ -60,6 +60,16 @@ function sendSMS(form) {
 ## Customizing SMS Messages
 {% ingredient dashboard_setup/sms_customization %}{% endingredient %}
 
+## FAQ
+
+**Q: I've sent myself multiple texts just now and only received the first few, what's going on?** 
+
+A: This occurs when a carrier filters you SMS out due to spam. We try our hardest to rate limit a specific user, however, if bypassed, carriers may block your SMS. The reason is that carriers will agressively block content if it's similar and repeatedly sent to the same number. The solution is to wait 24-48 hours.
+
+**Q: How come my (non US) phone number isn't working?**
+
+A: With full numbers, you are required to use the "+" and the country code. If you know your users are only in a certain country, you could automatically append the + and the country code so that they only need to append their number without the country code.
+
 ## What's next
 
 {% ingredient recipe_preview/app_download_banner %}{% endingredient %}
