@@ -1,3 +1,5 @@
+require_relative '_utils.rb'
+
 module Jekyll
     module TOC
         def toc_generate(html, title)
@@ -10,7 +12,14 @@ module Jekyll
 
                 if levels.find_index(level) then toc.push({ :level => level, :id => id, :text => text, :children => [] }) end
 
-                '<AnchorHeader><a class="anchor" name="' + id + '"></a><a href="#' + id + '">' + text + '</a></AnchorHeader>'
+                # What's happening here is the text values are jacking up the compile. You'll probably get the following error:
+                #          Liquid Exception: incompatible character encodings: ASCII-8BIT and UTF-8 in _layouts/recipe.html
+                # If you replacing the text var it will compile.
+                # It seems to be having problems with apostrophies and quotes. some how we need to get it to play nicely
+                # by escaping the troublesome characters
+                content = '<a class="anchor" name="' + id + '"></a><a href="#' + id + '">' + text + '</a>'
+                puts content
+                BranchUtils.instance.react('<AnchorHeader>' + content + '</AnchorHeader>')
             }
             nested_toc = _nested_toc(toc)
 
