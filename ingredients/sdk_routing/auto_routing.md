@@ -52,6 +52,7 @@ Receive the delegate method that will be called when the view controller is load
 {% tabs %}
 {% tab objective-c %}
 {% highlight objc %}
+@synthesize deepLinkingCompletionDelegate;
 - (void)configureControlWithData:(NSDictionary *)data {
 	NSString *pictureUrl = data[@"product_picture"];
 
@@ -87,7 +88,7 @@ Since the view controller is displayed modally, you should add a close button th
 {% tab objective-c %}
 {% highlight objc %}
 - (IBAction)closePressed {
-    [self.completionDelegate deepLinkingControllerCompleted];
+    [self.deepLinkingCompletionDelegate deepLinkingControllerCompleted];
 }
 {% endhighlight %}
 {% endtab %}
