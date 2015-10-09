@@ -19,7 +19,7 @@ If you're running Google AdWords campaigns, whether they're of the Search or Dis
 
 ## Google AdWords Search Campaigns
 
-We'll walk you through the steps required to set up a Google AdWords campaign using Branch links. Because the *final URL* for you app install campaigns must match your domain, you can no longer put a Branch link in that box. However, capturing installs and deeplinking users through content is very straight forward.
+We'll walk you through the steps required to set up a Google AdWords campaign using Branch links. Because the *final URL* for your app install campaigns must match your domain, you can no longer put a Branch link in that box. However, capturing installs and deeplinking users through content is very straight forward.
 
 First, grab your iTunes URL or Google Play Store URL, in addition to the Branch link you created from the earlier step.
 
