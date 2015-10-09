@@ -22,11 +22,13 @@ Have a theory that users clicking Branch links right into a product page convert
 
 Currently, both the Branch and Apptimize SDK are required to be integrated inside your mobile application. Right now, you can define a campaign on Apptimize's dashboard, and have it filter and segment on values that come from the deeplink data of a Branch link. The easiest way to do this is to have an Apptimize call to send data inside the Branch initSesssion callback. **However, as long as Apptimize is aware of Branch data before an experiment is ran, you can define this however you'd like.**
 
-## The Why
+## Use Case & Benefits
 
 With Branch and Apptimize, you can effectively segment and measure your users coming from deeplinked campaigns, and figure out what the best UX flow is for your users. Here's a sample flow chart that may convert at different rates:
 
 ![flowchart](/img/recipes/apptimize/campaign-flow.png)
+
+You'll also add organic segments to your Apptimize dashboard. With Branch, your organic users will increase, and you'll want to make sure Apptimize is aware. With Apptimize's toolset, you can filter and figure out how your organic users stack against users from other channels.
 
 ## Set Up Apptimize
 
