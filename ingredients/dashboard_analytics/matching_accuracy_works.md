@@ -21,4 +21,4 @@ Branch collects information about devices both when a user is in the browser -- 
 
 We match the unqiue fingerprint collected in the app to the unique fingerprint collected in the browser to determine where user originated from if the prior two mechanisms were not used.
 
-Believe us, this very, _very_ accurate.
+Believe us, this is very, _very_ accurate.
