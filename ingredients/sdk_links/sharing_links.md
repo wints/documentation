@@ -2,7 +2,7 @@
 <!--- iOS -->
 {% if page.ios %}
 
-We realized that creating links is great, but it's incredible hard to create a ton of different links up front for the different channels in the UIActivityViewController. Because of this, we offer a custom UIActivityItemProvider to make your life easier. This will automatically generate a link dynamically when the user presses a button to share.
+We realized that creating links is great, but it's incredibly hard to create a ton of different links up front for the different channels in the UIActivityViewController. Because of this, we offer a custom UIActivityItemProvider to make your life easier. This will automatically generate a link dynamically when the user presses a button to share.
 
 {% image src='/img/ingredients/sdk_links/ios_share_sheet.jpg' actual center alt='ios share sheet' %}
 
