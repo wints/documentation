@@ -51,6 +51,7 @@
     - type: recipe
       title: Third-Party Integrations
       pages:
+        - ab_testing_apptimize
         - advertising_facebook
         - advertising_google
         - advertising_twitter
