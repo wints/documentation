@@ -154,7 +154,34 @@ Only users who do not have the app will go through this flow. You can view the t
 
 ## Advanced: Customizing the Deepview templates
 
-Coming soon!
+Along with enabling deepview templates across different platforms, you can also create new templates on the [dashboard](https://dashboard.branch.io/#/settings/deepviews).
+
+You can create a new deepview by duplicating the Branch public template, or creating a new one.
+
+{% image src='/img/deepviews/deepviews_enable.png' quarter center alt='Deepviews tab' %}
+
+#### Basic
+
+The first tab displays your new template and provides two sections:
+	1. Deepview settings
+		- Title
+		- Key (The key that you will reference if you want to enable a specific tempalate in a [link](https://dev.branch.io/recipes/deepviews/#enabling-deepviews-per-link))
+	2. App Settings (**Note:** These fields, when edited and saved, will become effective for your entire app)
+		- OG Title
+		- OG Description
+		- OG Image Url
+
+{% image src='/img/deepviews/deepviews_editor_basic.png' third center alt='Deepviews tab' %}
+
+#### Editor
+
+The second tab gives you an interface to edit the html and css for your template. The rendered template will update as you modify the markup.
+
+{% protip title="Javascript is not allowed on deepview templates" %}
+Before rendering the template, we sanitize the markup of Javascript for security reasons. This includes script tags and event attributes on tags.
+{% endprotip %}
+
+{% image src='/img/deepviews/deepviews_editor_code.png' third center alt='Deepviews tab' %}
 
 -----
 
