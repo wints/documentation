@@ -48,6 +48,8 @@ Navigate to AndroidManifest.xml and add the following `<meta-data>` tags:
 
 {% endhighlight %}
 
+-----
+
 #### Step 2: Configure for deep linking
 
 Find the `Activity` you want to open up when a link is clicked. This is typically your `SplashActivity` or a `BaseActivity` that all other activities inherit from. Inside your `AndroidManifest.xml` where the `Activity` is defined, do the following:
@@ -75,6 +77,8 @@ Find the `Activity` you want to open up when a link is clicked. This is typicall
 </activity>
 
 {% endhighlight %}
+
+-----
 
 #### Step 3: Enable Auto Session Management - Custom Application Class
 
