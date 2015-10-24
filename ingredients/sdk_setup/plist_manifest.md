@@ -28,7 +28,7 @@ To set up your URI Scheme, you'll need to open your project in XCode and complet
 {% if page.android %}
 ### Manifest configuration
 
-#### Add your Branch key
+#### Step 1: Add your Branch key
 
 Your Branch Key can be retrieved on the [Settings](https://dashboard.branch.io/#/settings) page of the dashboard. Now you need to add it to your project workspace.
 
@@ -48,7 +48,7 @@ Navigate to AndroidManifest.xml and add the following `<meta-data>` tags:
 
 {% endhighlight %}
 
-#### Configure for deep linking
+#### Step 2: Configure for deep linking
 
 Find the `Activity` you want to open up when a link is clicked. This is typically your `SplashActivity` or a `BaseActivity` that all other activities inherit from. Inside your `AndroidManifest.xml` where the `Activity` is defined, do the following:
 
@@ -76,22 +76,22 @@ Find the `Activity` you want to open up when a link is clicked. This is typicall
 
 {% endhighlight %}
 
-#### Subclass the Branch activity
+#### Step 3: Enable Auto Session Management - Custom Application Class
 
-The last piece is to register our `Application` class, as Branch can automatically track the Android app lifecycle on API level 14 and above. Verify that your `minSdkVersion` is 14 or above.
+{% ingredient sdk_setup/android_app_alternatives %}{% endingredient %}
 
-{% protip title="What if I support pre14 Android?" %} If you need to support pre-14, please see our section about [session management below](/recipes/quickstart_guide/android/#initialization-to-support-android-pre-14). {% endprotip %}
+#### Step 3 Alternative: Enable Auto Session Management - No Application Class
 
-The final step in setting up the Branch SDK is as follows:
+If you don't have a custom application class, the last step is to register our `Application` class. The final step in setting up the Branch SDK is as follows:
 
 {% highlight xml %}
  <application
     android:name="io.branch.referral.BranchApp">
 {% endhighlight %}
 
-In case you already have an `Application` class, or cannot use our provided `Application` class, here are all three options to setting up Branch with your `Application` class.
+Note: Auto session tracking is only available for `minSdkVersion` 14 or above.
 
-{% ingredient sdk_setup/android_app_alternatives %}{% endingredient %}
+{% protip title="What if I support pre14 Android?" %} If you need to support pre-14, please see our section about [session management below](/recipes/quickstart_guide/android/#initialization-to-support-android-pre-14). {% endprotip %}
 
 {% endif %}
 <!---       /Android-specific Branch Key -->
