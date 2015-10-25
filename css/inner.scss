@@ -1,0 +1,27 @@
+.container-height {
+	overflow: hidden;
+}
+
+.container-height > [class*="col-"]{
+	margin-bottom: -99999px;
+	padding-bottom: 99999px;
+}
+
+.inner__sidebar {
+	background-color:#364351;
+}
+
+.inner__sidebar:before {
+	content: "\00a0";
+}
+
+.inner__sidebar__fixed {
+	position:fixed;
+	width:inherit;
+}
+
+@media (min-width: $screen-sm-min) {
+	.inner__content {
+		padding-left: 30px;
+	}
+}
