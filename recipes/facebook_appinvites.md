@@ -11,10 +11,16 @@ platforms:
 - ios
 - android
 ---
-
 Facebook launched it's new App Invites feature as an alternative to sharing to the wall to help you grow your app. It's similar to a direct SMS as it's a private invite from 1 friend to another as opposed to a public post on the wall. The good news is that your Branch deep links that you've set up for SMS, email and Twitter shares work the exact same way for invites. Here's a simple guide on how to do it.
 
 {% image src='/img/recipes/appinvites/appinvite.png' third center alt='app invite' %}
+
+{% protip%}Facebook has noted that App Invites for iOS do not support Deep Linking and attribution.
+
+<code>This means that iOS App Invites and Branch Links will not work correctly together.</code>
+
+[App Invites for Android](/recipes/facebook_appinvites/android/) and Branch Links will continue to work as expected.
+{% endprotip %}
 
 {% protip title="Still need to integrate Branch or Facebook?" %}This guide assumes that you have 1. already [integrated Branch](/recipes/quickstart_guide/ios/) and 2. configured your app to [send IDFA or GAID](/recipes/submitting_apps/ios/). These are prerequisites to install ads, so please do them first. If you need integrate Facebook, you can find instructions {% if page.ios %}[in this guide](https://developers.facebook.com/docs/ios/getting-started).{% endif %}{% if page.android %}[in this guide](https://developers.facebook.com/docs/android/getting-started).{% endif %}
 {% endprotip %}
