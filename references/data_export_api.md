@@ -33,12 +33,87 @@ Those files are fetchable, and will be available on our S3 bucket at that locati
 
 
 ##Event Export
-Structure for event data export
 
-id,name,metadata,timestamp,branch_identity_id,developer_identity,identity_creation_timestamp,branch_session_id,app_version,ip_address,session_start_timestamp,branch_device_fingerprint_id,device_first_seen_timestamp,device_os,device_os_version,device_metadata,hardware_id,google_advertising_id,branch_browser_fingerprint_id,browser_first_seen_timestamp,browser_os,browser_os_version,user_agent,first_referring_click_timestamp,first_referring_click_query_params,first_referring_branch_identity_id,first_referring_developer_identity,first_referring_hardware_id,first_referring_branch_link_id,first_referring_link_creation_timestamp,first_referring_link_channel,first_referring_link_feature,first_referring_link_campaign,first_referring_link_stage,first_referring_link_tags,first_referring_link_data,first_referring_link_creation_source,first_referring_link_url,session_referring_click_timestamp,session_referring_click_query_params,session_referring_branch_identity_id,session_referring_developer_identity,session_referring_hardware_id,session_referring_branch_link_id,session_referring_link_creation_timestamp,session_referring_link_channel,session_referring_link_feature,session_referring_link_campaign,session_referring_link_stage,session_referring_link_tags,session_referring_link_data,session_referring_link_creation_source,session_referring_link_url
+| Key | Value
+| --- | ---
+|id|
+|name|
+|metadata|
+|timestamp|
+|branch_identity_id|
+|developer_identity|
+|identity_creation_timestamp|
+|branch_session_id|
+|app_version,ip_address|
+|session_start_timestamp|
+|branch_device_fingerprint_id|
+|device_first_seen_timestamp|
+|device_os,device_os_version|
+|device_metadata|
+|hardware_id
+|google_advertising_id|
+|branch_browser_fingerprint_id|
+|browser_first_seen_timestamp|
+|browser_os|
+|browser_os_version|
+|user_agent|
+|first_referring_click_timestamp|
+|first_referring_click_query_params|
+|first_referring_branch_identity_id|
+|first_referring_developer_identity|
+|first_referring_hardware_id|
+|first_referring_branch_link_id|
+|first_referring_link_creation_timestamp|
+|first_referring_link_channel|
+|first_referring_link_feature|
+|first_referring_link_campaign|
+|first_referring_link_stage|
+|first_referring_link_tags|
+|first_referring_link_data|
+|first_referring_link_creation_source|
+|first_referring_link_url|
+|session_referring_click_timestamp|
+|session_referring_click_query_params|
+|session_referring_branch_identity_id|
+|session_referring_developer_identity|
+|session_referring_hardware_id|
+|session_referring_branch_link_id|
+|session_referring_link_creation_timestamp|
+|session_referring_link_channel|
+|session_referring_link_feature|
+|session_referring_link_campaign|
+|session_referring_link_stage|
+|session_referring_link_tags|
+|session_referring_link_data|
+|session_referring_link_creation_source|
+|session_referring_link_url|
 
 
 ##Link Click Export
-Structure for link click export
 
-click_timestamp,branch_link_click_id,branch_browser_fingerprint_id,os,os_version,model,browser,user_agent,ip_address,stage,sms_from_desktop,phone_number,redirect_method,link_creation_timestamp,link_channel,link_feature,link_campaign,link_stage,link_tags,link_data,link_creation_source,link_url,link_branch_identity_id,link_id
+| Key | Value
+| --- | ---
+|click_timestamp|
+|branch_link_click_id|
+|branch_browser_fingerprint_id|
+|os|
+|os_version|
+|model|
+|browser|
+|user_agent|
+|ip_address|
+|stage|
+|sms_from_desktop|
+|phone_number|
+|redirect_method|
+|link_creation_timestamp|
+|link_channel|
+|link_feature|
+|link_campaign|
+|link_stage|
+|link_tags|
+|link_data|
+|link_creation_source|
+|link_url|
+|link_branch_identity_id|
+|link_id|
