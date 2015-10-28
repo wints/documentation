@@ -1,93 +1,27 @@
 ---
 -
-  settings:
-    className: sidebar-border-cornflower
   navigation:
-    - type: overview
-      title: What is Branch?
-      pages:
-        - ''
-        - supported_standards
-        - how_branch_links_work
-        - link_configuration
-        - link_creation_guide
-    - type: recipe
-      title: Getting started with Branch
-      pages:
-        - your_first_marketing_link
-        - quickstart_guide
-        - measuring_installs
-    - type: recipe
-      title: Deeplinked features
-      pages:
-        - easy_deep_linking
-        - content_sharing
-        - personalized_welcome
-        - deepviews
-        - facebook_appinvites
-        - app_download_banner
-        - text_me_the_app_page
-        - branch_universal_links
-    - type: recipe
-      title: Testing and releasing
-      pages:
-        - testing_your_integration
-        - submitting_apps
--
-  settings:
-    className: sidebar-border-hippie_blue
-  navigation:
-    - type: recipe
-      title: Customize Your Integration
-      pages:
-        - matching_accuracy
-        - email_campaigns
-        - spotlight_indexing
-        - add_custom_link_data_and_routing
-        - referral_links_with_incentives
-        - advanced_referral_incentives
-        - dashboard_pro_tips
-        - webhooks_and_exporting_data
-    - type: recipe
-      title: Third-Party Integrations
-      pages:
-        - ab_testing_apptimize
-        - advertising_facebook
-        - advertising_google
-        - advertising_twitter
-        - analytics_adjust
-        - analytics_ga
-        - analytics_localytics
-        - analytics_mixpanel
-        - referrals_referral_saasquatch
-    - type: reference
-      title: API Reference
-      pages:
-        - developer_updates
-        - ios_sdk
-        - android_sdk
-        - web_sdk
-        - xamarin_sdk
-        - cordova_phonegap_sdk
-        - unity_sdk
-        - adobe_air_sdk
-        - titanium_sdk
-        - http_api
--
-  settings:
-    className: sidebar-border-blumine
-  navigation:
-    - type: link
-      title: Contact
-      pages:
-        - label: Send us an email
-          href: mailto:support@branch.io
-        - label: Live Branch system status
-          href: http://status.branch.io
-          target: _blank
-        - label: Follow @BranchDevTeam
-          href: https://twitter.com/BranchDevTeam
-          target: _blank
-        - label: Get the latest SDK update news
-          href: https://groups.google.com/forum/#!forum/branch-sdk-releases
-          target: _blank
+    - title: Get Started
+      children:
+        - What is Branch
+        - User Branch
+        - Connect Branch
+    - title: Features
+      children:
+        - title: Branch Links
+          children:
+            - Overview
+            - What's in a link?
+            - Customizing Links
+            - Link Creation Guide
+            - iOS Universal Links
+            - Google App Invites
+            - Facebook App Invites
+            - Testing
+        - Personalized onboarding
+        - title: Content Sharing & Indexing
+          children:
+            - Content sharing
+            - Branch Content Insights
+            - Apple Spotlight
+            - Google App Indexing
