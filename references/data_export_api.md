@@ -29,7 +29,7 @@ com/YOUR_APP_ID-2015-10-23-events-SOME_UNIQUE_NUMER.csv",
 "clicks_export_url":"https://branch-exports.s3.amazonaws.com/YOUR_APP_ID-2015-10-23-link_clicks-SOME_UNIQUE_NUMER.csv"
 }
 
-Those files are fetchable, and will be available on our S3 bucket at that location to download after 12:00am UTC of the previous day. It will return a 400 until the data has finished transferring over. Currently the files there work, but are of the old soon to be deprecated format. The updated schema, which again will be online in the next few weeks, is shown below. Lastly, I apologize again for this informal API doc while we move over this endpoints spec.
+Those files are fetchable, and will be available on our S3 bucket at that location to download after 12:00am UTC of the previous day. It will return a 400 until the data has finished transferring over. 
 
 
 ##Event Export
