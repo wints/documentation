@@ -19,12 +19,6 @@ module Jekyll
         response = conn.get @github_repo_path + '/ChangeLog.md'
         file = response.body.force_encoding('utf-8')
 
-        # replace start of comment with highlight liquid tag
-        file = file.gsub(/```\s*(?<lang>[a-z0-9]+)\n/, '{% highlight \k<lang> %}')
-        # replace end of code comment with highlight liquid tag
-        file = file.gsub(/```\n/, '{% endhighlight %}')
-        # remove Title from readme (i.e. # Web SDK)
-        file = file.gsub(/(^|\n)#\s.*/, '')
         # convert relative paths images to absolute paths
         file = file.gsub(/\!\[(?<alt>[^(]+)\]\((?!http)(?<url>\S+)\)/, '![\k<alt>](' + @github_base + @github_repo_path + '/' + '\k<url>' + ')')
       else
