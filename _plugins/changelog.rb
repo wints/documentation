@@ -28,7 +28,7 @@ module Jekyll
         # convert relative paths images to absolute paths
         file = file.gsub(/\!\[(?<alt>[^(]+)\]\((?!http)(?<url>\S+)\)/, '![\k<alt>](' + @github_base + @github_repo_path + '/' + '\k<url>' + ')')
       else
-        file = "Reference guides don't compile in `development`. Change the enviornment variable in _config.yml to `production` to test reference guides"
+        file = "Changelogs don't compile in `development`. Change the enviornment variable in _config.yml to `production` to test reference guides"
       end
 
 
