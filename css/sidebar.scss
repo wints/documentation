@@ -1,28 +1,28 @@
-.sidebar {
-	background-color: #F4F4F4;
-	border-left: 3px solid #F4F4F4;
-	padding: 15px;
-	margin-bottom:15px;
-}
-
-.sidebar.sidebar-border-cornflower {
-	border-color: #83C8E4;
-}
-
-.sidebar.sidebar-border-hippie_blue {
-	border-color: #5691AD;
-}
-
-.sidebar.sidebar-border-blumine {
-	border-color: #205E72;
-}
-
 .sidebar-group {
-	ul {
-		padding-left: 20px;
-		list-style-type: none;
-	}
-	li.active {
-		font-weight: 700;
-	}
+	list-style:none;
+	padding-left:20px;
+}
+
+.sidebar-group-title {
+	color:#ffffff;
+	font-weight:bold;
+	font-size:20px;
+}
+
+.sidebar-group .sidebar-group .sidebar-group-title {
+	font-size:14px;
+}
+
+.sidebar-group li a {
+	color:#e1e1e1;
+	font-size:14px;
+}
+
+.sidebar-link-selected a {
+	color:#ffffff;
+	font-weight:bold;
+}
+
+.sidebar-group li {
+	padding-top:6px;
 }

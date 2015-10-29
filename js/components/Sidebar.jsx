@@ -68,6 +68,28 @@ var GroupPages = React.createClass({
 	}
 });
 
+var LinkGroup = React.createClass({
+	render: function() {
+		var props = this.props;
+		var links = R.map(function(link) {
+			if (link.children) {
+				return (<div>
+						<h4 className="sidebar-group-title">{ link.title }</h4>
+						<LinkGroup group={ link.children }></LinkGroup>
+					</div>);
+			}
+			else {
+				return (<div>
+					<a href="#">{ link.title }</a>
+				</div>);
+			}
+		});
+		return (<li>
+			{ links(props.group) }
+		</li>);
+	}
+});
+
 var Sidebar = React.createClass({
 	getInitialState: function() {
 		return getStateFromStore();
@@ -84,25 +106,12 @@ var Sidebar = React.createClass({
 	render: function() {
 		var self = this;
 		var groups = R.map(function(group) {
-			if (!group.pages.length) { return; }
-			return (<div className="sidebar-group" key={ group.title }>
-					<div className="sidebar-title">{ group.title }</div>
-					<GroupPages
-						pages={ group.pages }
-						type={ group.type }
-						current_path={ self.props.current_path }
-						group_data={ self.props.site_map[group.type] }
-						platform={ self.state.platform }/>
-				</div>);
+			return (<LinkGroup group={ group }></LinkGroup>);
 		});
-		var classes = [ 'sidebar' ];
-		if (self.props.settings.className) {
-			classes.push(self.props.settings.className);
-		}
 		return (
-			<div className={classes.join(' ')}>
-				{ groups(this.props.layout) }
-			</div>);
+			<ul className="sidebar-group">
+				{ groups(self.props.layout) }
+			</ul>);
 	}
 });
 
@@ -126,4 +135,4 @@ var SidebarCollection = React.createClass({
 	}
 });
 
-module.exports = SidebarCollection;
+module.exports = Sidebar;

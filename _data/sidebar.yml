@@ -1,27 +1,27 @@
 ---
--
-  navigation:
-    - title: Get Started
+
+- title: Get Started
+  children:
+    - What is Branch
+    - User Branch
+    - Connect Branch
+- title: Features
+  children:
+    - title: Branch Links
+      type:
       children:
-        - What is Branch
-        - User Branch
-        - Connect Branch
-    - title: Features
+        - Overview
+        - What's in a link?
+        - Customizing Links
+        - Link Creation Guide
+        - iOS Universal Links
+        - Google App Invites
+        - Facebook App Invites
+        - Testing
+    - Personalized onboarding
+    - title: Content Sharing & Indexing
       children:
-        - title: Branch Links
-          children:
-            - Overview
-            - What's in a link?
-            - Customizing Links
-            - Link Creation Guide
-            - iOS Universal Links
-            - Google App Invites
-            - Facebook App Invites
-            - Testing
-        - Personalized onboarding
-        - title: Content Sharing & Indexing
-          children:
-            - Content sharing
-            - Branch Content Insights
-            - Apple Spotlight
-            - Google App Indexing
+        - Content sharing
+        - Branch Content Insights
+        - Apple Spotlight
+        - Google App Indexing

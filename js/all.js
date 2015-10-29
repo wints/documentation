@@ -5,7 +5,7 @@ window.Tab = require('./components/Tab');
 window.Tabs = require('./components/Tabs');
 window.Slides = require('./components/Slides');
 window.Slide = require('./components/Slide');
-window.SidebarCollection = require('./components/SidebarCollection');
+window.Sidebar = require('./components/Sidebar');
 window.PlatformSelector = require('./components/PlatformSelector');
 window.SearchBar = require('./components/SearchBar');
 
