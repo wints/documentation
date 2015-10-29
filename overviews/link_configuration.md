@@ -29,6 +29,8 @@ Every link that you create is completely customizable from a functionality persp
 
 ### Endpoint customization
 
+- **$fallback_url**: Change the redirect endpoint _all_ platforms - so you don't have to enable it by platform.
+
 - **$desktop_url**: Change the redirect endpoint on desktops. Default is set to a Branch hosted SMS to download page.
 
 - **$ios_url**: Change the redirect endpoint for iOS. Default is set to the App Store page for your app.

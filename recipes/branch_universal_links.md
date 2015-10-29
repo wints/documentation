@@ -1,12 +1,53 @@
 ---
 type: recipe
-title: "Enable iOS9 Universal Links"
-page_title: How To Setup iOS9 Universal Links With Branch
+title: "iOS9/6.0 Universal/App Links"
+page_title: How To Setup iOS9 or Android Universal App Links With Branch
 description: "Learn how to enable iOS9 Universal Links on your Branch deeplinks for tracking and deep linking."
-keywords: Contextual Deep Linking, Deep links, Deeplinks, Deep Linking, Deeplinking, Deferred Deep Linking, Deferred Deeplinking, Google App Indexing, Google App Invites, Apple Universal Links, Apple Spotlight Search, Facebook App Links, AppLinks, Deepviews, Deep views, Dashboard, iOS9
-hide_platform_selector: true
+keywords: Contextual Deep Linking, Deep links, Deeplinks, Deep Linking, Deeplinking, Deferred Deep Linking, Deferred Deeplinking, Google App Indexing, Google App Invites, Apple Universal Links, Android App Links, Apple Spotlight Search, Facebook App Links, AppLinks, Deepviews, Deep views, Dashboard, iOS9
+platforms:
+- ios
+- android
 ---
+{% if page.android %}
+App Links allow users visiting your website to route straight to your app if they have the app installed instead of first opening up the browser when a link is clicked. With Branch, you can enable Android App Links without all of the complicated server hosting. You simply need to add the correct intent strings.
 
+-----
+
+## Prerequisites for using Android App Links
+
+- Setup your Branch account and link routing for your app at [start.branch.io](https://start.branch.io). 
+- [optional] Configure deep linking {% if page.ios || page.android %}[with our simple guide](/recipes/easy_deep_linking/{{page.platform}}/){% else %}[with our simple guide](/recipes/easy_deep_linking/ios/){% endif %}.
+
+## Enable App Links on Dashboard
+
+Simply head to the [Branch dashboard's link settings page](https://dashboard.branch.io/#/settings/link) and toggle the App Links checkbox in the Android section.
+
+{% image src='/img/recipes/universal_links/enable_app_links.png' quarter center alt='enable app links' %}
+
+After that, you'll need to generate a SHA256 fingerprint of your app's signing certificate. This is the file that you use to build the debug and production version of your APK file before deploying it. Navigate to the keystore file and run this command on it to generate the fingerprint.
+
+`keytool -list -v -keystore my-release-key.keystore`
+
+You'll see a value like `14:6D:E9:83:C5:73:06:50:D8:EE:B9:95:2F:34:FC:64:16:A0:83:42:E6:1D:BE:A8:8A:04:96:B2:3F:CF:44:E5` come out the other end. Paste this into the Branch dashboard in the field that appeared after you enabled App Links. You can insert your debug and production fingerprints for testing.
+
+## Add Intent Filter to Manifest
+
+In order to receive the App Links intent so that the Branch SDK can retrieve the deep link data associated with the link, please add the below intent filter to your app's manifest file. Put this between the `activity` tags for the corresponding Activity that you want to open on click.
+
+{% highlight xml %}
+<!-- AppLink example -->
+<intent-filter android:autoVerify="true">
+    <action android:name="android.intent.action.VIEW" />
+    <category android:name="android.intent.category.DEFAULT" />
+    <category android:name="android.intent.category.BROWSABLE" />
+    <!-- <data android:scheme="https" android:host="bnc.lt" android:pathPrefix="/your_app_id_obtained form Branch dash board " /> -->
+    <data android:scheme="https" android:host="bnc.lt" android:pathPrefix="READ_FROM_DASHBOARD" /> <!-- Live App link-->
+    <data android:scheme="https" android:host="bnc.lt" android:pathPrefix="READ_FROM_DASHBOARD" /> <!-- Test App link-->
+</intent-filter>
+{% endhighlight %}
+{% endif %}
+
+{% if page.ios %}
 Universal Links allow users visiting your website to route straight to your app if they have the app installed instead of first opening up Safari when a link is clicked. 
 
 With Branch, you can enable Universal Links without all of the complicated server hosting and JSON signing. You simply need to add an entitlement to your app project.
@@ -139,6 +180,7 @@ This is what our Universal Link settings look like after going through steps 1 -
 
 
 With your [Apple Developer Account](/recipes/branch_universal_links/#configure-developerapplecom), [Xcode project](/recipes/branch_universal_links/#add-the-entitlement-in-xcode) and [Branch dashboard](/recipes/branch_universal_links/#enable-universal-links-on-the-branch-dashboard) configured correctly, all of your Branch links will immediately begin to function as Universal Links as soon as your users upgrade to iOS9.
+{% endif %}
 
 -----
 

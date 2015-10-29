@@ -24,6 +24,9 @@ Branch.getInstance().setIdentity("1234")
 {% endtab %}
 {% endtabs %}
 
+{% protip title='Note:' %}
+Only call setIdentity when the user logs in initially. We will cache the identity for future sessions.
+{% endprotip %}
 
 Add a `logout` call anywhere you allow the user to logout. 
 
