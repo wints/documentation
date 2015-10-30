@@ -3,7 +3,7 @@
 
 {% section pre_explanation %}{% endsection %}
 
-Branch automatically tracks unique devices. However, to make full use of our powerful API, you should also identify users with whichever form of unique identification your app uses. Add these two lines of code.
+Branch automatically tracks unique devices. However, to make full use of our powerful API, you should also identify users with whichever form of unique identification your app uses, especially for multi-device experiences. We recommend you call `setIdentity` prior to awarding credits/codes/referrals/links (etc). setIdentity will retroactively associate any previously recorded events from the current device only the first time this method is ever called with the supplied unique user id.
 
 {% if page.ios %}
 
