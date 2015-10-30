@@ -151,9 +151,9 @@ This will build and launch the testbed app in the respective simulator, and log 
 {% endif %}
 
 {% if page.web %}
-## Quick Install (Web SDK)
+### Quick Install (Web SDK)
 
-### Manual installation
+#### Manual installation
 
 _Be sure to replace `BRANCH KEY` with your actual Branch Key found in your [account dashboard](https://dashboard.branch.io/#/settings)._
 

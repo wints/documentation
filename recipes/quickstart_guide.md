@@ -54,7 +54,7 @@ Our linking infrastructure will support anything you want to build. If it doesn'
 -----
 
 {% if page.web %}
-{% ingredient sdk_setup/web_sdk_features.md %}{% endingredient %}
+{% ingredient sdk_setup/web_sdk_features %}{% endingredient %}
 {% endif %}
 
 
