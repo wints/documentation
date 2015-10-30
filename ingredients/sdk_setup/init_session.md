@@ -29,7 +29,7 @@ func application(application: UIApplication, didFinishLaunchingWithOptions launc
 {% endtab %}
 {% endtabs %}
 
-and paste the following right below it:
+and paste the following:
 
 {% tabs %}
 {% tab objective-c %}
