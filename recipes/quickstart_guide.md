@@ -1,6 +1,6 @@
 ---
 type: recipe
-title: "Step 2: SDK Integration"
+title: "SDK Integration Guide"
 ios_page_title: How to configure iOS Apps for Deep Links
 android_page_title: How to configure Android Apps for Deep Links
 ios_description: How to install the Branch SDK and configure your iOS app for deep links. Add a few lines of code and you can begin deep linking and tracking installs.
@@ -15,15 +15,28 @@ platforms:
 - unity
 - adobe
 - titanium
+- web
 ---
+# SDK Integration Guide
 
-## Configuring the links
+## Register for Branch
 
-First, please visit the [Branch link configuration tool](https://start.branch.io/) to setup all the redirection logic.
+In order to use Branch you must first sign up for an acount. You can sign up for your own app id at [https://dashboard.branch.io](https://dashboard.branch.io)
 
------
+{% protip title="When to use Branch links?" %}
 
-## Configuring your {{ page.platform_formatted }} app
+Ideally, you want to use our links any time you have an external link pointing to your app (share, invite, referral, etc) because:
+
+1. Our dashboard can tell you where your installs are coming from
+2. Our links are the highest possible converting channel to new downloads and users
+3. You can pass that shared data across install to give new users a custom welcome or show them the content they expect to see
+
+Our linking infrastructure will support anything you want to build. If it doesn't, we'll fix it so that it does: just reach out to alex@branch.io with requests.
+{% endprotip %}
+
+## Core functionality
+
+### Configuring your {{ page.platform_formatted }} app
 {% ingredient sdk_setup/installing_the_sdk %}{% endingredient %}
 
 -----
@@ -40,7 +53,12 @@ First, please visit the [Branch link configuration tool](https://start.branch.io
 
 -----
 
-## Creating links
+{% if page.web %}
+{% ingredient sdk_setup/web_sdk_features.md %}{% endingredient %}
+{% endif %}
+
+
+### Creating links
 
 {% ingredient sdk_links/creating_links %}{% override header %}{% endoverride %}{% endingredient %}
 
@@ -48,19 +66,28 @@ First, please visit the [Branch link configuration tool](https://start.branch.io
 You can also use the data to link directly to content! Instead of "foo": "bar", you could pass in "{% if page.ios %}pictureId{% endif %}{% if page.android %}picture_id{% endif %}": "1234", then when a user clicks on a link you can open the app straight to picture with Id 1234.
 {% endprotip %}
 
+### Configuring the links
+
+To configure the user experience for your links, use the [Branch link configuration tool](https://start.branch.io/) to set up all the redirection logic.
+
+{% if page.android %}
+Two important things to do in order to properly handle deep links from Facebook
+
+1. Make sure to update the Manifest so that the Activity with the intent filter for your URI scheme has *launchMode:singleTask*. See example [here](https://github.com/BranchMetrics/Branch-Android-SDK#register-an-activity-for-direct-deep-linking-optional-but-recommended)
+
+2. Make sure to add this snippet of code to the Activity registered as singleTask.
+```java
+@Override
+public void onNewIntent(Intent intent) {
+    // Because the activity is a singleTask activity, the new intent won't be
+    // launched but enters here, making handling it optional. For branch to work
+    // the intent must be updated by calling the following:
+    this.setIntent(intent);
+}
+{% endif %}
+
 -----
-
-## What's next?
-
-### [Head to Step 3: A dashboard introduction](/recipes/measuring_installs/)
-
------
-
-{% ingredient recipe_preview/contact_us %}{%endingredient%}
-
------
-
-## Advanced
+## Advanced functionality
 
 {% ingredient sdk_setup/callback_params %}{% endingredient %}
 
@@ -75,3 +102,4 @@ You can also use the data to link directly to content! Instead of "foo": "bar", 
 {% ingredient sdk_setup/install_referrer %}{% endingredient %}
 
 {% ingredient sdk_setup/xamarin_without_forms %}{% endingredient %}
+

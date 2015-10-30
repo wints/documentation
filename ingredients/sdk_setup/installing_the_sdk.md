@@ -21,10 +21,45 @@ Just add `compile 'io.branch.sdk.android:library:1.+'` to the dependencies secti
 _alternative #1 - use our .jar:_ In case you'd like to use our .jar instead, here's a [link](https://s3-us-west-1.amazonaws.com/branchhost/Branch-Android-SDK.zip) that always points to our latest. 
 
 _alternative #2 - download our code:_ In case you'd like full control, here is our [Android SDK](https://github.com/BranchMetrics/branch-android-sdk) project, including a full test-suite. Feel free to submodule and import into your workspace.
+
+The testbed project:
+https://s3-us-west-1.amazonaws.com/branchhost/Branch-Android-TestBed.zip
+
+Or just clone our github repo (link at top right of this page.)
+
 {% endif %}
 <!---       /Android-specific installing the SDK -->
 
 {% if page.cordova %}
+The Cordova SDK shares the same code base as the Branch Web SDK, and includes functions to call all of the same API endpoints.
+
+This Web SDK can also be used for Cordova/Phonegap applications.  It is provided as a plugin and can be installed with Cordova plugin or the Plugman tool.  Point the tool at this repositry, https://github.com/BranchMetrics/Cordova-Ionic-PhoneGap-Deferred-Deep-Linking-SDK.  For example:
+
+```sh
+cordova plugin add https://github.com/BranchMetrics/Cordova-Ionic-PhoneGap-Deferred-Deep-Linking-SDK
+```
+
+{% protip title="For Hybrid apps" %}
+Note that this SDK is meant for use with full Cordova/PhoneGap apps.  If you are building a hybrid app using an embedded web view and you want to access the Branch API from native code you will want to use the platform specific SDKs and pass data into Javascript if needed." {% endprotip %}
+
+### Running Cordova Testbed App
+This repo includes a sample app, that demonstrates all of the available methods in the Branch Cordova SDK.
+Building this app is very simple:
+
+Switch to the Cordova dir
+```js
+$ cd cordova-testbed
+```
+
+Run the init script to install all the required plugins
+```js
+$ ./init.sh
+```
+
+Build the Cordova app and launch in the iOS emulator
+```sh
+$ cordova emulate ios
+
 For Cordova/Ionic, the easiest way to install the SDK is via the Cordova plugin command line tool. 
 
 - cd into your project directory
@@ -52,19 +87,20 @@ The Branch Xamarin SDK is available as a [NuGet package](https://www.nuget.org/p
 
 {% if page.unity %}
 
-- You download the package from our [filehost on S3 here](https://s3-us-west-1.amazonaws.com/branchhost/BranchUnityWrapper.unitypackage). Or clone [our repository](https://github.com/BranchMetrics/Unity-Deferred-Deep-Linking-SDK) and access the package from there.
-- Add the package to your Unity project by clicking `Assets -> Import Package`.
+- You can download the package from our [filehost on S3 here](https://s3-us-west-1.amazonaws.com/branchhost/BranchUnityWrapper.unitypackage). Or clone [our repository](https://github.com/BranchMetrics/Unity-Deferred-Deep-Linking-SDK) and access the package from there.
 
-- Due to Unity requirements, our UnityPackage file must have all of its contents in a single folder. This means that you'll have to manually move the Plugins folder out of our Branch folder, and into the root of your Assets folder. If you have an existing Plugins folder, just merge our contents into it.
+After acquiring the `BranchUnityWrapper.unityPackage` through one of these choices, you can import it into your project by clicking `Assets -> Import Package`.
+
+## Move Plugins Folder
+Due to Unity requirements, our UnityPackage file must have all of its contents in a single folder. This means that you'll have to manually move the `Plugins` folder out of our `Branch` folder, and into the root of your `Assets` folder. If you have an existing Plugins folder, just merge our contents into it.
 
 {% image src='/img/ingredients/sdk_setup/unity_plugins_move.gif' half center alt='unity plugins' %}
 
-
-#### Enable Objective C exceptions
+#### iOS Note
 
 If you're creating an iOS app for your Unity project, you must enable Objective C exceptions in the Build Settings in order for Branch to compile.
 
-{% image src='/img/ingredients/sdk_setup/unity_enable_exceptions.png' half center alt='unity plugins' %}
+{% image src='/img/ingredients/sdk_setup/unity_enable_exceptions.png' half center alt='unity enable exceptions' %}
 
 #### iOS + Unity 4.6
 
@@ -86,24 +122,59 @@ Additionally, the Xcode project template for Unity 4.6.x (tested with 4.6.1, but
 
 All the files you need are included in [our repository](https://github.com/BranchMetrics/Titanium-Deferred-Deep-Linking-SDK), so go ahead and clone it.
 
-#### Building the SDK modules
 
-The iOS and Android Branch SDK Titanium modules can be built from their respective src/ directories: src/titanium/BranchSDK/iphone src/titanium/BranchSDK/android
+## Building the iOS and Android Branch SDK Modules in Appcelerator Studio
+
+**This tutorial assumes you are already familiar with the Titanium API, and Titanium modules**
+
+The iOS and Android Branch SDK Titanium modules can be built from their respective `src/` directories:
+`src/titanium/BranchSDK/iphone`
+`src/titanium/BranchSDK/android`
 
 To build the modules in Appcelerator Studio, they must first be imported into your project, or into a new project.
 
-1. Open the App Explorer view on the left (`Window -> Show View -> App Explorer`), then click `Import Project`.
-2. Appcelerator Studio will show a variety of import options. Open the `General` folder, and select `Existing Folder as New Project`.
-3. Select the Branch Titanium SDK folder by clicking `Browse`, and choose `src/titanium/BranchSDK/`, then click `Finish`.
-4. Select the desired module (iOS or Android) in top left of the Appcelerator Studio, above the App Explorer, and click the green play button.
-5.Titanium modules can be built to 3 different output locations. The first option (Titanium SDK), publishes the module to your specific Titanium SDK location. Either wise, you can publish the module to an existing Mobile App project, or a specific location. Publishing the module to a specific location will produce a .zip file.
+1. Open the App Explorer view on the left (Window -> Show View -> App Explorer), then click "Import Project".
+1. Appcelerator Studio will show a variety of import options. Open the "General" folder, and select "Existing Folder as New Project".
+1. Select the Branch Titanium SDK folder by clicking "Browse", and choose `src/titanium/BranchSDK/`, then click "Finish".
+1. Select the desired module (iOS or Android) in top left of the Appcelerator Studio, above the App Explorer, and click the green play button.
+1. Titanium modules can be built to 3 different output locations. The first option (Titanium SDK), publishes the module to your specific Titanium SDK location. Either wise, you can publish the module to an existing Mobile App project, or a specific location. Publishing the module to a specific location will produce a .zip file.
 
-#### Installing the modules
+## Installing the iOS and Android Branch SDK Modules
 
-1. Import the testbed app as an existing mobile project: `File -> Import`, then in the dialog open the `Appcelerator` folder and chose "Existing Mobile Project".
-2. The Branch Titanium testbed: `testbeds/titanium/Branch-Sdk-Testbed/`, requires the built Branch SDK modules prior to running. If you would like to add these to the testbed app, simply chose the testbed app or your local Titanium SDK as the output location (see above for building instructions).
-3. Browse to the testbed app directory: `testbeds/titanium/Branch-Sdk-Testbed/`, leave the default settings, and chose `Finish`.
-4. To launch the testbed app simply select the Android or iOS simulator in the top left of Appcelerator studio, above the App Explorer, then click the green play button.
+1. Import the testbed app as an existing mobile project: File -> Import, then in the dialog open the "Appcelerator" folder and chose "Existing Mobile Project".
+1. The Branch Titanium testbed: `testbeds/titanium/Branch-Sdk-Testbed/`, requires the built Branch SDK modules prior to running. If you would like to add these to the testbed app, simply chose the testbed app or your local Titanium SDK as the output location (see above for building instructions).
+1. Browse to the testbed app directory: `testbeds/titanium/Branch-Sdk-Testbed/`, leave the default settings, and chose "Finish".
+1. To launch the testbed app simply select the Android or iOS simulator in the top left of Appcelerator studio, above the App Explorer, then click the green play button.
 
 This will build and launch the testbed app in the respective simulator, and log output to the Appcelerator console.
+
+{% endif %}
+
+{% if page.web %}
+## Quick Install (Web SDK)
+
+### Manual installation
+
+_Be sure to replace `BRANCH KEY` with your actual Branch Key found in your [account dashboard](https://dashboard.branch.io/#/settings)._
+
+**[Formerly App ID](CHANGELOG.md)** Note that for the time being, initializing the Web SDK with an App ID will still work, it is strongly recomended you switch to using your live and test Branch Keys.
+
+```html
+<script type="text/javascript">
+
+	(function(b,r,a,n,c,h,_,s,d,k){if(!b[n]||!b[n]._q){for(;s<_.length;)c(h,_[s++]);d=r.createElement(a);d.async=1;d.src="https://cdn.branch.io/branch-v1.7.1.min.js";k=r.getElementsByTagName(a)[0];k.parentNode.insertBefore(d,k);b[n]=h}})(window,document,"script","branch",function(b,r){b[r]=function(){b._q.push([r,arguments])}},{_q:[],_v:1},"addListener applyCode banner closeBanner creditHistory credits data first getCode init link logout redeem referrals removeListener sendSMS setIdentity track validateCode".split(" "), 0);
+
+	branch.init('BRANCH KEY', function(err, data) {
+    	// callback to handle err or data
+	});
+</script>
+```
+
+#### Bower or npm installation
+
+If you use Bower or npm, you can run `bower install branch-sdk` or `npm install branch-sdk` respectively to get the SDK.
+
+#### Common.JS and RequireJS compatibility
+
+In addition to working as a standalone library, the Branch SDK works great in CommonJS environments (browserify, webpack) as well as RequireJS environments (RequireJS/AMD). Just `require('branch')` or `define(['branch'], function(branch) { ... });` to get started!
 {% endif %}
