@@ -14,6 +14,7 @@ platforms:
 - unity
 - adobe
 - titanium
+- web
 ---
 
 {%ingredient debug/intro %}{% endingredient %}
