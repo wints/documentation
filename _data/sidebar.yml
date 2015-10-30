@@ -63,7 +63,6 @@
     - type: reference
       title: API Reference
       pages:
-        - developer_updates
         - ios_sdk
         - android_sdk
         - web_sdk
