@@ -110,7 +110,8 @@ Here is an example CURL call to create a link with some example parameters. You 
 
     curl -X POST \
     -H "Content-Type: application/json" \
-    -d '{"branch_key":"key_live_jfdweptNITtAY5HVY3mBSojopgfGf8qQ", 
+    -d '{"branch_key":"key_live_jfdweptNITtAY5HVY3mBSojopgfGf8qQ",
+    "api":"sdk",
     "campaign":"announcement",
     "feature":"invite",
     "channel":"email",
