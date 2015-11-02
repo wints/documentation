@@ -1,6 +1,6 @@
 ---
 type: recipe
-title: "SDK Integration Guide"
+title: "Step 2: SDK Integration"
 page_title: How to configure the Branch Metrics SDK
 ios_page_title: How to configure the Branch Metrics iOS SDK for Deep Links
 android_page_title: How to configure the Branch Metrics Android SDK for Deep Links
