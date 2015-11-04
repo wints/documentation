@@ -15,7 +15,8 @@ You can test this out from the command line. Feel free to swap in your own `bran
 {% highlight sh %}
 curl -X POST \
 -H "Content-Type: application/json" \
--d '{"branch_key":"key_live_jfdweptNITtAY5HVY3mBSojopgfGf8qQ", 
+-d '{"branch_key":"key_live_jfdweptNITtAY5HVY3mBSojopgfGf8qQ",
+"sdk": "api",
 "campaign":"announcement",
 "feature":"invite",
 "channel":"email",
