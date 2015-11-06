@@ -10,7 +10,7 @@ hide_platform_selector: true
 # Data Export API
 
 #### Configuration
-In order to use this API you must have an App ID and a Public Key.  You can find your keys at: https://dashboard.branch.io/#/settings
+In order to use this API you must have an App ID and a Branch Public Key.  You can find your keys at: https://dashboard.branch.io/#/settings
 
 #### Base URL:
 https://api.branch.io/v2/export/
@@ -31,7 +31,7 @@ https://api.branch.io/v2/export/
 : The UTC date of the requested data export
 
 > Example:
-https://api.branch.io/v1/export/XXXXX?branch_secret=XXXXX&export_date=2015-10-01
+https://api.branch.io/v2/export/XXXXX?branch_secret=XXXXX&export_date=2015-10-01
 
 #### Response
 
