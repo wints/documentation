@@ -13,10 +13,7 @@ hide_platform_selector: true
 In order to use this API you must have an App ID and a Public Key.  You can find your keys at: https://dashboard.branch.io/#/settings
 
 #### Base URL:
-https://api.branch.io/v1/export/<branch key>
-
-(required) branch_secret
-(required) export_date <format YYYY-MM-DD>
+https://api.branch.io/v1/export/
 
 #### Endpoint
 	POST https://api.branch.io/v2/export
@@ -33,21 +30,20 @@ https://api.branch.io/v1/export/<branch key>
 **export_date** _required_
 : The UTC date of the requested data export
 
+> Example:
+https://api.branch.io/v1/export/XXXXX?branch_secret=XXXXX&export_date=2015-10-01
 
 #### Response
 
 The response payload will be in JSON format and for each export have an array of paths to files on s3 to download. Note that there may be multiple files (depending on the size of the day's export) and that each csv file will be gzip'd.
 
-
 ```js
-	{
-		"links_export_url": ["https://branch-exports.s3.amazonaws.com/YOUR_APP_ID-2015-10-23-links-HASH.csv.gz"],
-		"events_export_url": ["https://branch-exports.s3.amazonaws.com/YOUR_APP_ID-2015-10-23-events-HASH.csv.gz"],
-		"clicks_export_url": ["https://branch-exports.s3.amazonaws.com/YOUR_APP_ID-2015-10-23-link_clicks-HASH.csv.gz"]
-	}
+  {
+   "links_export_url": ["https://branch-exports.s3.amazonaws.com/YOUR_APP_ID-2015-10-23-links-HASH.csv.gz"],
+   "events_export_url": ["https://branch-exports.s3.amazonaws.com/YOUR_APP_ID-2015-10-23-events-HASH.csv.gz"],
+   "clicks_export_url": ["https://branch-exports.s3.amazonaws.com/YOUR_APP_ID-2015-10-23-link_clicks-HASH.csv.gz"]
+  }
 ```
-
-
 
 {% protip title='Note:' %}
 A full day's files will be available on our S3 bucket at that location to download around 1:00am UTC. It will return an HTTP400 from s3 until the UTC day is over and the data has been transfered to s3, therefore it is recommended you schedule any ETLs to fetch the data for the previous day around 1:00am UTC.
