@@ -13,7 +13,7 @@ hide_platform_selector: true
 In order to use this API you must have an App ID and a Public Key.  You can find your keys at: https://dashboard.branch.io/#/settings
 
 #### Base URL:
-https://api.branch.io/v1/export/
+https://api.branch.io/v2/export/
 
 #### Endpoint
 	POST https://api.branch.io/v2/export
