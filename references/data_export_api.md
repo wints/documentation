@@ -7,29 +7,100 @@ description: This Branch Metrics HExport API reference lists the specifications 
 keywords:  
 hide_platform_selector: true
 ---
-# Export API for Branch
+# Data Export API
 
-## Configuration
+#### Configuration
 In order to use this API you must have an App ID and a Public Key.  You can find your keys at: https://dashboard.branch.io/#/settings
 
-Base URL:
+#### Base URL:
 https://api.branch.io/v1/export/<branch key>
 
 (required) branch_secret
 (required) export_date <format YYYY-MM-DD>
 
-### Example HTTP GET
-curl "https://api.branch.io/v1/export/YOUR_PUBLIC_KEY?branch_secret=secret_live_hwLHJdvS9SrIbvKffKJlIivjqNwrG1vz&export_date=2015-10-23"
+#### Endpoint
+	POST https://api.branch.io/v2/export
+	Content-Type: application/json
 
-Response:
-{
-"links_export_url":"https://branch-exports.s3.amazonaws.com/YOUR_APP_ID-2015-10-23-links-SOME_UNIQUE_NUMER.csv",
-"events_export_url":"https://branch-exports.s3.amazonaws.
-com/YOUR_APP_ID-2015-10-23-events-SOME_UNIQUE_NUMER.csv",
-"clicks_export_url":"https://branch-exports.s3.amazonaws.com/YOUR_APP_ID-2015-10-23-link_clicks-SOME_UNIQUE_NUMER.csv"
-}
+#### Parameters
 
-Those files are fetchable, and will be available on our S3 bucket at that location to download after 12:00am UTC of the previous day. It will return a 400 until the data has finished transferring over. 
+**branch_key** _required_
+: The Branch key of the originating app
+
+**branch_secret** _required_
+: The Branch secret key of the originating app
+
+**export_date** _required_
+: The UTC date of the requested data export
+
+
+#### Response
+
+The response payload will be in JSON format and for each export have an array of paths to files on s3 to download. Note that there may be multiple files (depending on the size of the day's export) and that each csv file will be gzip'd.
+
+
+```js
+	{
+		"links_export_url": ["https://branch-exports.s3.amazonaws.com/YOUR_APP_ID-2015-10-23-links-HASH.csv.gz"],
+		"events_export_url": ["https://branch-exports.s3.amazonaws.com/YOUR_APP_ID-2015-10-23-events-HASH.csv.gz"],
+		"clicks_export_url": ["https://branch-exports.s3.amazonaws.com/YOUR_APP_ID-2015-10-23-link_clicks-HASH.csv.gz"]
+	}
+```
+
+
+
+{% protip title='Note:' %}
+A full day's files will be available on our S3 bucket at that location to download around 1:00am UTC. It will return an HTTP400 from s3 until the UTC day is over and the data has been transfered to s3, therefore it is recommended you schedule any ETLs to fetch the data for the previous day around 1:00am UTC.
+{% endprotip %}
+
+
+##Link Export
+
+| Key | Value
+| --- | ---
+|creation_timestamp|
+|link_id|
+|branch_identity_id|
+|channel|
+|feature|
+|campaign|
+|stage|
+|tags|
+|data|
+|creation_source|
+|alias|
+|domain|
+|url|
+
+
+##Link Click Export
+
+| Key | Value
+| --- | ---
+|click_timestamp|
+|branch_link_click_id|
+|branch_browser_fingerprint_id|
+|os|
+|os_version|
+|model|
+|browser|
+|user_agent|
+|ip_address|
+|stage|
+|sms_from_desktop|
+|phone_number|
+|redirect_method|
+|link_creation_timestamp|
+|link_channel|
+|link_feature|
+|link_campaign|
+|link_stage|
+|link_tags|
+|link_data|
+|link_creation_source|
+|link_url|
+|link_branch_identity_id|
+|link_id|
 
 
 ##Event Export
@@ -44,13 +115,15 @@ Those files are fetchable, and will be available on our S3 bucket at that locati
 |developer_identity|
 |identity_creation_timestamp|
 |branch_session_id|
-|app_version,ip_address|
+|app_version|
+|ip_address|
 |session_start_timestamp|
 |branch_device_fingerprint_id|
 |device_first_seen_timestamp|
-|device_os,device_os_version|
+|device_os|
+|device_os_version|
 |device_metadata|
-|hardware_id
+|hardware_id|
 |google_advertising_id|
 |branch_browser_fingerprint_id|
 |browser_first_seen_timestamp|
@@ -87,33 +160,3 @@ Those files are fetchable, and will be available on our S3 bucket at that locati
 |session_referring_link_data|
 |session_referring_link_creation_source|
 |session_referring_link_url|
-
-
-##Link Click Export
-
-| Key | Value
-| --- | ---
-|click_timestamp|
-|branch_link_click_id|
-|branch_browser_fingerprint_id|
-|os|
-|os_version|
-|model|
-|browser|
-|user_agent|
-|ip_address|
-|stage|
-|sms_from_desktop|
-|phone_number|
-|redirect_method|
-|link_creation_timestamp|
-|link_channel|
-|link_feature|
-|link_campaign|
-|link_stage|
-|link_tags|
-|link_data|
-|link_creation_source|
-|link_url|
-|link_branch_identity_id|
-|link_id|
