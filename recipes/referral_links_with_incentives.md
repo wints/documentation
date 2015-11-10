@@ -63,10 +63,8 @@ Again, it's not imperative that you attach any information to the link. As long 
 {% ingredient rewards/reward_example %}{% endingredient %}
 {% ingredient sdk_setup/is_referrable_protip %}{% endingredient %}
 {% ingredient sdk_setup/testing_rewards_protip %}{% endingredient %}
-{% ingredient rewards/rewards_are_flexible %}{% endingredient %}
 
 {% ingredient rewards/get_credits %}{% override different_bucket %}{% endoverride %}{% endingredient %}
-{% ingredient rewards/showing_referrals %}{% endingredient %}
 {% ingredient rewards/redeem_credits %}{% override different_bucket %}{% endoverride %}{% endingredient %}
 {% ingredient rewards/redeem_flow %}{% endingredient %}
 <!--- /Incentives: Tracking and Rewarding-->
@@ -82,7 +80,6 @@ This guide covered the basics. The following may be of interest to you, if you w
 {% ingredient recipe_preview/advanced_referral_incentives %}{% endingredient %}
 {% ingredient recipe_preview/personalized_welcome %}{% endingredient %}
 {% ingredient recipe_preview/influencers %}{% endingredient %}
-{% ingredient recipe_preview/channel_tags %}{% endingredient %}
 
 -----
 

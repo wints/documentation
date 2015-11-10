@@ -55,7 +55,7 @@ If you'd like to just build a Branch link by appending query parameters, we supp
 
 Here's an example of a finalized one:
 
-{% highlight javascript %}
+{% highlight sh %}
 https://bnc.lt/a/key_live_jbgnjxvlhSb6PGH23BhO4hiflcp3y7ky?has_app=yes&channel=facebook&stage=level4&feature=affiliate&data=data=ew0KICAgICJoaSI6ImhlbGxvIg0KfQ==
 {% endhighlight %}
 

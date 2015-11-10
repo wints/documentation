@@ -1,6 +1,6 @@
 ---
 type: recipe
-title: "Advertising: Google Search Ads"
+title: "Google Search Ads"
 page_title: "Advertising with Deep Links: Google Ads - Search and Display"
 description: 
 hide_platform_selector: true

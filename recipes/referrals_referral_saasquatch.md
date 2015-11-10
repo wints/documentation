@@ -1,6 +1,6 @@
 ---
 type: recipe
-title: "Referrals: Referral Saasquatch"
+title: "Referral Saasquatch"
 platforms:
 - ios
 - android

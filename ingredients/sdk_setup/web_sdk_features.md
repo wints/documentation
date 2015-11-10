@@ -1,6 +1,3 @@
-### Handling an incoming link
-{% ingredient web_sdk/smart_banner %}{% endingredient %}
-
 ### Using the Smart Banner
 {% ingredient web_sdk/smart_banner %}{% endingredient %}
 

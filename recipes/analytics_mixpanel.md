@@ -1,6 +1,6 @@
 ---
 type: recipe
-title: "Analytics: Mixpanel"
+title: "Mixpanel"
 ios_page_title: Sync Branch iOS data with Mixpanel
 android_page_title: Sync Branch Android data with Mixpanel
 ios_description: Learn how to synchronize your Branch iOS data with Mixpanel, for example to track in-app events, segment users from Branch installs and calculate LTV.

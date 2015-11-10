@@ -30,8 +30,6 @@ platforms:
 
 {%ingredient debug/set_debug %}{% endingredient %}
 
-{%ingredient debug/user_ids %}{% endingredient %}
-
 {%ingredient debug/dashboard_debug %}{% endingredient %}
 
 {%ingredient debug/connectivity %}{% endingredient %}
