@@ -41,6 +41,10 @@ obj.put("referringUserId", "1234"));{% endif %}{% endoverride %}
 {% ingredient sdk_links/sharing_teaser %}{% endingredient %}
 <!--- /Generating Links-->
 
+## Tracking Events
+
+{% ingredient events/standard_events %}{% endingredient %}
+{% ingredient events/custom_events %}{% endingredient %}
 
 ## Rewards
 {% ingredient rewards/overview %}
