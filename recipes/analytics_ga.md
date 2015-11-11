@@ -1,6 +1,6 @@
 ---
 type: recipe
-title: "Analytics: Google Analytics"
+title: "Google Analytics"
 ios_page_title: Send iOS Deep Link Data to Google Analytics
 android_page_title: Use Android Link Data in Google Analytics
 ios_description: This guide teaches you how to find and send iOS deep link data to Google Analytics through your Branch Metrics implementation.

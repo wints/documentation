@@ -60,6 +60,7 @@ branch.banner({
     feature: 'smart_banner',
     stage: 'shoe_page'
     data: {
+        '$deeplink_path': 'content/page/12354',
         deeplink: 'data',
         username: 'Alex'
     }

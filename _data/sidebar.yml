@@ -24,7 +24,6 @@
         - content_sharing
         - personalized_welcome
         - deepviews
-        - facebook_appinvites
         - app_download_banner
         - text_me_the_app_page
         - branch_universal_links
@@ -43,9 +42,8 @@
         - matching_accuracy
         - email_campaigns
         - spotlight_indexing
-        - add_custom_link_data_and_routing
         - referral_links_with_incentives
-        - advanced_referral_incentives
+        - facebook_appinvites
         - dashboard_pro_tips
         - webhooks_and_exporting_data
     - type: recipe

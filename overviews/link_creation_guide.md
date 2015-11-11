@@ -20,23 +20,76 @@ There are many, many ways to create links!
 
 Here is an example URL creation call in iOS. This would be called after using the initSession call with the appropriate app key to register the native library for your app.
 
+First create the object that you'd like to link to:
+
+{% tabs %}
+{% tab objective-c %}
+{% highlight objective-c %}
+BranchUniversalObject *branchUniversalObject = [[BranchUniversalObject alloc] initWithCanonicalIdentifier:@"item/12345"];
+branchUniversalObject.title = @"My Content Title";
+branchUniversalObject.contentDescription = @"My Content Description";
+branchUniversalObject.imageUrl = @"https://example.com/mycontent-12345.png";
+[branchUniversalObject addMetadataKey:@"property1" value:@"blue"];
+[branchUniversalObject addMetadataKey:@"property2" value:@"red"];
+{% endhighlight %}
+{% endtab %}
+{% tab swift %}
+{% highlight swift %}
+let branchUniversalObject: BranchUniversalObject = BranchUniversalObject(String: "item/12345")
+branchUniversalObject.title = "My Content Title"
+branchUniversalObject.contentDescription = "My Content Description"
+branchUniversalObject.imageUrl = "https://example.com/mycontent-12345.png"
+branchUniversalObject.addMetadataKey("property1", value: "blue")
+branchUniversalObject.addMetadataKey("property2", value: "red")
+{% endhighlight %}
+{% endtab %}
+{% endtabs %}
+
+Then define the properties of the link you'd like to create.
+
+{% tabs %}
+{% tab objective-c %}
 {% highlight objc %}
-NSMutableDictionary *params = [[NSMutableDictionary alloc] init];
+BranchLinkProperties *linkProperties = [[BranchLinkProperties alloc] init];
+linkProperties.feature = @"sharing";
+linkProperties.channel = @"facebook";
+[linkProperties addControlParam:@"$desktop_url" withValue:@"http://example.com/home"];
+[linkProperties addControlParam:@"$ios_url" withValue:@"http://example.com/ios"];
+{% endhighlight %}
+{% endtab %}
+{% tab swift %}
+{% highlight swift %}
+let linkProperties: BranchLinkProperties = BranchLinkProperties()
+linkProperties.feature = "sharing"
+linkProperties.channel = "facebook"
+linkProperties.addControlParam("$desktop_url", withValue: "http://example.com/home")
+linkProperties.addControlParam("$ios_url", withValue: "http://example.com/ios")
+{% endhighlight %}
+{% endtab %}
+{% endtabs %}
 
-[params setObject:@"1234" forKey:@"user_id"];
-[params setObject:@"https://s3-us-west-1.amazonaws.com/myapp/joes_pic.jpg" forKey:@"profile_pic" forKey:@"user_pic"];
+Lastly, create the link by referencing the universal object.
 
-[params setObject:@"Joe's referral link" forKey:@"$og_title"];
-[params setObject:@"https://s3-us-west-1.amazonaws.com/myapp/joes_pic.jpg" forKey:@"profile_pic" forKey:@"$og_image_url"];
-[params setObject:@"Joe likes long walks on the beach..." forKey:@"$og_description"];
-
-Branch *branch = [Branch getInstance:@"Your app key"];
-[branch getShortURLWithParams:params andChannel:@"sms" andFeature:BRANCH_FEATURE_TAG_SHARE andStage:@"added_to_cart" andCallback:^(NSString *url, NSError *error) {
-	if(!error) {
-		// embed the link into an SMS for sharing
-	}
+{% tabs %}
+{% tab objective-c %}
+{% highlight objc %}
+[branchUniversalObject getShortUrlWithLinkProperties:linkProperties andCallback:^(NSString *url, NSError *error) {
+    if (!error) {
+        NSLog(@"success getting url! %@", url);
+    }
 }];
 {% endhighlight %}
+{% endtab %}
+{% tab swift %}
+{% highlight swift %}
+branchUniversalObject.getShortUrlWithLinkProperties(linkProperties,  andCallback: { (url: String?, error: NSError?) -> Void in
+    if error == nil {
+        NSLog(@"got my Branch link to share: %@", url!)
+    }
+}];
+{% endhighlight %}
+{% endtab %}
+{% endtabs %}
 
 -----
 
@@ -55,7 +108,7 @@ If you'd like to just build a Branch link by appending query parameters, we supp
 
 Here's an example of a finalized one:
 
-{% highlight javascript %}
+{% highlight sh %}
 https://bnc.lt/a/key_live_jbgnjxvlhSb6PGH23BhO4hiflcp3y7ky?has_app=yes&channel=facebook&stage=level4&feature=affiliate&data=data=ew0KICAgICJoaSI6ImhlbGxvIg0KfQ==
 {% endhighlight %}
 

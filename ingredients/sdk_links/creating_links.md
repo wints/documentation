@@ -1,7 +1,7 @@
 {% section header %}### Creating links in your app{% endsection %}
 
 {% section explanation %}
-Links are the foundation to everything Branch offers. There are many different aspects to creating links but the most important are:
+`BranchUniversalObject` is the best way of tracking and sharing content with Branch. It provides convenient methods for sharing, deeplinking, and tracking how often that content is viewed. This information is then used to provide you with powerful content analytics. Most importantly, it makes it easy to:
 
 - Embed key/value deep link metadata. We'll make sure this gets delivered to the app with the clicking user
 - Label feature and channel for analytics on the dashboard
@@ -12,34 +12,78 @@ Here's how to create your own Branch Links. In order to share these links, we've
 <!--- iOS -->
 {% if page.ios %}
 
-On iOS, it's a rather simple method call.
+{% highlight objective-c %}
+#import "BranchUniversalObject.h"
+#import "BranchLinkProperties.h"
+{% endhighlight %}
+
+First create the object that you'd like to link to:
+
+{% tabs %}
+{% tab objective-c %}
+{% highlight objective-c %}
+BranchUniversalObject *branchUniversalObject = [[BranchUniversalObject alloc] initWithCanonicalIdentifier:@"item/12345"];
+branchUniversalObject.title = @"My Content Title";
+branchUniversalObject.contentDescription = @"My Content Description";
+branchUniversalObject.imageUrl = @"https://example.com/mycontent-12345.png";
+[branchUniversalObject addMetadataKey:@"property1" value:@"blue"];
+[branchUniversalObject addMetadataKey:@"property2" value:@"red"];
+{% endhighlight %}
+{% endtab %}
+{% tab swift %}
+{% highlight swift %}
+let branchUniversalObject: BranchUniversalObject = BranchUniversalObject(String: "item/12345")
+branchUniversalObject.title = "My Content Title"
+branchUniversalObject.contentDescription = "My Content Description"
+branchUniversalObject.imageUrl = "https://example.com/mycontent-12345.png"
+branchUniversalObject.addMetadataKey("property1", value: "blue")
+branchUniversalObject.addMetadataKey("property2", value: "red")
+{% endhighlight %}
+{% endtab %}
+{% endtabs %}
+
+Then define the properties of the link you'd like to create.
 
 {% tabs %}
 {% tab objective-c %}
 {% highlight objc %}
-NSMutableDictionary *params = [NSMutableDictionary dictionary];
-params[@"article_id"] = @"1234";
-params[@"$og_title"] = @"MyApp is disrupting apps";
-params[@"$og_image_url"] = @"http://yoursite.com/pics/987666.png";
-params[@"$desktop_url"] = @"mysite.com/article1234";
+BranchLinkProperties *linkProperties = [[BranchLinkProperties alloc] init];
+linkProperties.feature = @"sharing";
+linkProperties.channel = @"facebook";
+[linkProperties addControlParam:@"$desktop_url" withValue:@"http://example.com/home"];
+[linkProperties addControlParam:@"$ios_url" withValue:@"http://example.com/ios"];
+{% endhighlight %}
+{% endtab %}
+{% tab swift %}
+{% highlight swift %}
+let linkProperties: BranchLinkProperties = BranchLinkProperties()
+linkProperties.feature = "sharing"
+linkProperties.channel = "facebook"
+linkProperties.addControlParam("$desktop_url", withValue: "http://example.com/home")
+linkProperties.addControlParam("$ios_url", withValue: "http://example.com/ios")
+{% endhighlight %}
+{% endtab %}
+{% endtabs %}
 
-[[Branch getInstance] getShortURLWithParams:params andChannel:@"sms" andFeature:BRANCH_FEATURE_TAG_SHARE andCallback:^(NSString *url, NSError *error) {
-    if (!error) NSLog(@"got my Branch link to share: %@", url);
+Lastly, create the link by referencing the universal object.
+
+{% tabs %}
+{% tab objective-c %}
+{% highlight objc %}
+[branchUniversalObject getShortUrlWithLinkProperties:linkProperties andCallback:^(NSString *url, NSError *error) {
+    if (!error) {
+        NSLog(@"success getting url! %@", url);
+    }
 }];
 {% endhighlight %}
 {% endtab %}
 {% tab swift %}
 {% highlight swift %}
-params["article_id"] = "1234"
-params["$og_title"] = "MyApp is disrupting apps"
-params["$og_image_url"] = "http://yoursite.com/pics/987666.png";
-params["$desktop_url"] = "mysite.com/article1234"
-
-Branch.getInstance().getShortURLWithParams(params, andChannel: "sms", andFeature: BRANCH_FEATURE_TAG_SHARE, andCallback: { (url: String?, error: NSError?) -> Void in
+branchUniversalObject.getShortUrlWithLinkProperties(linkProperties,  andCallback: { (url: String?, error: NSError?) -> Void in
     if error == nil {
-        NSLog(@"got my Branch link to share: %@", url!)
+        NSLog("got my Branch link to share: %@", url)
     }
-})
+}];
 {% endhighlight %}
 {% endtab %}
 {% endtabs %}
@@ -51,40 +95,41 @@ Branch.getInstance().getShortURLWithParams(params, andChannel: "sms", andFeature
 <!--- Android -->
 {% if page.android %}
 
-When building a Branch link, we recommend you use our builder method to generate a Branch link. Generating a Branch link via our singleton is **deprecated**.
-
-**Generate a Branch link via our builder class:**
+First create the object that you'd like to link to:
 
 {% highlight java %}
-
-BranchShortLinkBuilder shortUrlBuilder = new BranchShortLinkBuilder(MainActivity.this)
-                        .addTag("tag1")
-                        .addTag("tag2")
-                        .setChannel("channel1")
-                        .setFeature("feature1")
-                        .setStage("1")
-                        .addParameters("name", "test name") // deeplink data - anything you want!
-                        .addParameters("message", "hello there with short url")
-                        .addParameters("$og_title", "this is a title")
-                        .addParameters("$og_description", "this is a description")
-                        .addParameters("$og_image_url", "https://imgurl.com/img.png");
-
-                // Get URL Asynchronously
-                shortUrlBuilder.generateShortUrl(new Branch.BranchLinkCreateListener() {
-                    @Override
-                    public void onLinkCreate(String url, BranchError error) {
-                        if (error != null) {
-                            Log.e("Branch Error", "Branch create short url failed. Caused by -" + error.getMessage());
-                        } else {
-                            Log.i("Branch", "Got a Branch URL " + url);
-                        }
-                    }
-                });
-                // OR Get the URL synchronously
-                String myUrl = shortUrlBuilder.getShortUrl();
-
+ BranchUniversalObject branchUniversalObject = new BranchUniversalObject()
+                .setCanonicalIdentifier("item/12345")
+                .setTitle("My Content Title")
+                .setContentDescription("My Content Description")
+                .setContentImageUrl("https://example.com/mycontent-12345.png")
+                .setContentIndexingMode(BranchUniversalObject.CONTENT_INDEX_MODE.PUBLIC)
+                .addContentMetadata("property1", "blue")
+                .addContentMetadata("property2", "red");
 {% endhighlight %}
 
+Then define the properties of the link you'd like to create.
+
+{% highlight java %}
+LinkProperties linkProperties = new LinkProperties()
+               .setChannel("facebook")
+               .setFeature("sharing")
+               .addControlParameter("$desktop_url", "http://example.com/home")
+               .addControlParameter("$ios_url", "http://example.com/ios");
+{% endhighlight %}
+
+Lastly, create the link by referencing the universal object.
+
+{% highlight java %}
+branchUniversalObject.generateShortUrl(context, linkProperties, new BranchLinkCreateListener() {
+    @Override
+    public void onLinkCreate(String url, BranchError error) {
+        if (error == null) {
+            Log.i("MyApp", "got my Branch link to share: " + url);
+        }
+    }
+});
+{% endhighlight %}
 {% endif %}
 <!--- /Android -->
 

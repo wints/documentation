@@ -28,6 +28,8 @@ You use the data to link directly to content! Instead of "foo": "bar", you could
 {% endprotip %}
 {% if page.ios or page.android %}
 
+{% ingredient sdk_links/tracking_views %}{% endingredient %}
+
 -----
 
 ## Sharing Methods (Optional)
