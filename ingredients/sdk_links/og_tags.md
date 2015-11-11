@@ -18,7 +18,7 @@ If you want to tailor how a link will appear on social media, you should make us
 
 {% tabs %}
 {% tab objective-c %}
-{% highlight objective-c %}
+{% highlight objc %}
 BranchUniversalObject *branchUniversalObject = [[BranchUniversalObject alloc] initWithCanonicalIdentifier:@"item/12345"];
 // Facebook OG tags -- this will overwrite any defaults you set up on the Branch Dashboard
 branchUniversalObject.title = @"My Content Title";
