@@ -1,15 +1,22 @@
 ---
 
+- title: Recipes
+  directory: recipe
+  children:
+    - deepviews
 - title: Get Started
+  directory: getStarted
   children:
     - What is Branch
     - User Branch
     - Connect Branch
 - title: Features
+  directory: features
   children:
     - title: Branch Links
-      type:
+      directory: branch_links
       children:
+        - deepviews
         - Overview
         - What's in a link?
         - Customizing Links
@@ -20,8 +27,25 @@
         - Testing
     - Personalized onboarding
     - title: Content Sharing & Indexing
+      directory: content_sharing
       children:
         - Content sharing
         - Branch Content Insights
         - Apple Spotlight
         - Google App Indexing
+- title: SDK
+  directory: sdk
+  children:
+    - children
+- title: API
+  directory: api
+  children:
+    - children
+- title: Dashboard
+  directory: dashboard
+  children:
+    - children
+- title: Integrations
+  directory: integrations
+  children:
+    - children

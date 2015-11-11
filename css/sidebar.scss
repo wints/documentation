@@ -1,6 +1,15 @@
+.sidebar-wrapper {
+	padding-left:20px;
+}
+
 .sidebar-group {
+	display:none;
 	list-style:none;
 	padding-left:20px;
+}
+
+.sidebar-group--expand {
+	display:block;
 }
 
 .sidebar-group-title {
@@ -9,8 +18,17 @@
 	font-size:20px;
 }
 
-.sidebar-group .sidebar-group .sidebar-group-title {
+.sidebar-group-title .fa {
+	width:12px;
+}
+
+.sidebar-group-title:hover {
+	cursor: pointer;
+}
+
+.sidebar-wrapper .sidebar-group .sidebar-group-title { /* titles of 2nd level or more */
 	font-size:14px;
+	font-weight:normal;
 }
 
 .sidebar-group li a {
@@ -18,7 +36,12 @@
 	font-size:14px;
 }
 
-.sidebar-link-selected a {
+.sidebar-wrapper .sidebar-group-selected .sidebar-group-title {
+	color:#ffffff;
+	font-weight:bold !important;
+}
+
+.sidebar-link-selected {
 	color:#ffffff;
 	font-weight:bold;
 }

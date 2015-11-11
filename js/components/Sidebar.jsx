@@ -10,83 +10,102 @@ function getStateFromStore() {
 }
 
 var LinkInternal = React.createClass({
+	componentDidMount: function() {
+		var page_key = this.props.page_key,
+			path = this.props.directory ? [ this.props.directory, page_key ] : [ page_key ],
+			isCurrentPath = this.props.current_path == path.join('/');
+		if (isCurrentPath) {
+			this.props.set_selected();
+		}
+	},
 	render: function() {
 		var props = this.props,
-			page_key = props.page_key,
-			page = props.group_data[page_key];
-		if (!page) {
-			throw 'ERROR: There is no PAGE: ' + page_key + ' with the TYPE: ' + props.type;
+			page_key = props.page_key;
+		if (!props.group_data || !props.group_data[page_key]) {
+			return (<a href="#">{ page_key }</a>);
 		}
-		var path = props.type ? [ props.type, page_key ] : [ page_key ],
+		var page = props.group_data[page_key],
+			path = props.directory ? [ props.directory, page_key ] : [ page_key ],
 			isCurrentPath = props.current_path == path.join('/');
-
 		if (page.platforms[props.platform]) {
 			path.push(props.platform);
 		}
-		return (<li className={ cx({ 'active': isCurrentPath }) }>
-				<a href={ '/' + path.join('/') }>{ page.title }</a>
-			</li>);
-	}
-});
-
-var LinkExternal = React.createClass({
-	render: function() {
-		var target = this.props.target || '_self';
-		return (<li>
-				<a href={ this.props.href } target={target}>{ this.props.label }</a>
-			</li>);
-	}
-});
-
-var GroupPages = React.createClass({
-	render: function() {
-		var props = this.props;
-		// overview pages live in root where as all other page types are in plural form. i.e. receipe -> recipes
-		var type = props.type != 'overview' ? props.type + 's' : null;
-		var pages = R.map(function(page) {
-			if (type == 'links') {
-				return (
-					<LinkExternal
-						key={page.label}
-						label={page.label}
-		                href={page.href}
-		                target={page.target} />);
-			}
-			else {
-				return (
-					<LinkInternal
-						key={page}
-						type={type}
-						page_key={page}
-						group_data={props.group_data}
-						platform={props.platform}
-						current_path={props.current_path}/>);
-			}
-		});
-
-		return <ul>{ pages(props.pages) }</ul>
+		return (<a href={ '/' + path.join('/') } className={ isCurrentPath ? 'sidebar-link-selected' : '' }>{ page.title }</a>);
 	}
 });
 
 var LinkGroup = React.createClass({
+	getInitialState: function() {
+		return {
+			selected: false,
+			expand: (this.props.directory == this.props.current_path.split('/')[this.props.level])
+		};
+	},
+	_toggle: function() {
+		this.setState({
+			expand: !this.state.expand
+		});
+	},
+	_setSelected: function() {
+		this.setState({
+			selected: true,
+			expand: true
+		});
+	},
 	render: function() {
 		var props = this.props;
-		var links = R.map(function(link) {
+		var links = R.mapObjIndexed(function(link, index) {
 			if (link.children) {
-				return (<div>
-						<h4 className="sidebar-group-title">{ link.title }</h4>
-						<LinkGroup group={ link.children }></LinkGroup>
-					</div>);
+				return (<li key={ index }>
+					<LinkGroup group={ link } level={ props.level + 1 }
+					           directory={ props.directory }
+					           current_path={ props.current_path }
+					           group_data={ props.group_data }
+					           platform={ props.platform }
+					           set_selected={this._setSelected} />
+				</li>);
 			}
 			else {
-				return (<div>
-					<a href="#">{ link.title }</a>
-				</div>);
+				return (<li key={ index }>
+					<LinkInternal directory={props.directory}
+					              page_key={link}
+					              group_data={props.group_data}
+					              platform={props.platform}
+					              current_path={props.current_path}
+					              set_selected={this._setSelected} />
+				</li>);
 			}
-		});
-		return (<li>
-			{ links(props.group) }
-		</li>);
+		}.bind(this));
+		if (props.group.children) {
+			var selectedClass = '',
+				groupClass = 'sidebar-group',
+				arrowClass = 'fa fa-caret-right';
+			if (this.state.expand) {
+				groupClass += ' sidebar-group--expand';
+				arrowClass = 'fa fa-caret-down';
+			}
+			if (this.state.selected) {
+				selectedClass += 'sidebar-group-selected';
+			}
+			return (<div className={ selectedClass }>
+				<h4 className="sidebar-group-title" onClick={ this._toggle }>
+					{ props.level == 0 ? <i className={ arrowClass } /> : null} { props.group.title }
+				</h4>
+				<ul className={ groupClass }>{ links(props.group.children) }</ul>
+			</div>);
+		}
+		else {
+			return (<ul className="sidebar-group">
+				<li>
+					<LinkInternal directory={props.directory}
+					              page_key={props.group}
+					              group_data={props.group_data}
+					              platform={props.platform}
+					              current_path={props.current_path}
+					              set_selected={this._setSelected} />
+				</li>
+			</ul>);
+		}
 	}
 });
 
@@ -104,34 +123,19 @@ var Sidebar = React.createClass({
 		this.setState(getStateFromStore());
 	},
 	render: function() {
-		var self = this;
-		var groups = R.map(function(group) {
-			return (<LinkGroup group={ group }></LinkGroup>);
-		});
-		return (
-			<ul className="sidebar-group">
-				{ groups(self.props.layout) }
-			</ul>);
-	}
-});
-
-var SidebarCollection = React.createClass({
-	render: function() {
-		var self = this,
-			props = self.props,
-			sidebars = [];
-		Object.keys(props.layout).forEach(function(key) {
-			sidebars.push(
-				<Sidebar key={key}
-					current_path={props.current_path}
-                    site_map={props.site_map}
-                    layout={props.layout[key].navigation}
-					settings={props.layout[key].settings} />);
-		});
-		return (
-			<div className="sidebar-collection">
-				{sidebars}
-			</div>);
+		var groups = R.mapObjIndexed(function(group, index) {
+			return (<LinkGroup
+				key={ index }
+				group={ group }
+				level={ 0 }
+				directory={ group.directory }
+				current_path={ this.props.current_path }
+				group_data={ this.props.site_map[group.directory] }
+				platform={ this.state.platform } />);
+		}.bind(this));
+		return (<div className="sidebar-wrapper">
+			{ groups(this.props.layout) }
+		</div>);
 	}
 });
 
