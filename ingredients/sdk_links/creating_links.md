@@ -83,7 +83,7 @@ branchUniversalObject.getShortUrlWithLinkProperties(linkProperties,  andCallback
     if error == nil {
         NSLog("got my Branch link to share: %@", url)
     }
-}];
+})
 {% endhighlight %}
 {% endtab %}
 {% endtabs %}
