@@ -58,7 +58,7 @@ ShareSheetStyle shareSheetStyle = new ShareSheetStyle(MainActivity.this, "Check 
 Then, you can show the share sheet by calling this method on the Branch Universal Object.
 
 {% highlight java %}
-branchUniversalObject.showShareSheet(MainActivity.this, 
+branchUniversalObject.showShareSheet(this, 
                                       linkProperties,
                                       shareSheetStyle,
                                        new Branch.BranchLinkShareListener() {

@@ -121,7 +121,7 @@ LinkProperties linkProperties = new LinkProperties()
 Lastly, create the link by referencing the universal object.
 
 {% highlight java %}
-branchUniversalObject.generateShortUrl(context, linkProperties, new BranchLinkCreateListener() {
+branchUniversalObject.generateShortUrl(this, linkProperties, new BranchLinkCreateListener() {
     @Override
     public void onLinkCreate(String url, BranchError error) {
         if (error == null) {
