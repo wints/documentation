@@ -46,6 +46,7 @@
 |link_url| string |
 |link_branch_identity_id| int |
 |link_id| int |
+|query_params| stringified JSON |
 
 
 ##Event Export
@@ -105,3 +106,6 @@
 |session_referring_link_data|stringified JSON |
 |session_referring_link_creation_source| string |
 |session_referring_link_url|string |
+|first_referring_click_id|int |
+|session_referring_click_id|int |
+
