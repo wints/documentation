@@ -18,7 +18,7 @@ You can find your keys at: https://dashboard.branch.io/#/settings
 https://api.branch.io/v2/export/
 
 #### Endpoint
-	POST https://api.branch.io/v2/export
+	GET https://api.branch.io/v2/export
 	Content-Type: application/json
 
 #### Parameters
