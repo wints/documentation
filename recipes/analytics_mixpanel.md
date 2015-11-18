@@ -37,7 +37,7 @@ In this example, we'll take an instance of an install responsible by Branch. We 
 
     [branch initSessionWithLaunchOptions:launchOptions andRegisterDeepLinkHandler:^(NSDictionary *params, NSError *error) {
         if (!error) {
-            if ([params[@"+clicked_branch_link"]]) {
+            if ([params[@"+branch_link_clicked"] boolValue] == @YES) {
             	// Add call here to let MP know a Branch-driven install occurred
             	[Mixpanel track:@"install" properties:params];
             }
