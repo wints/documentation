@@ -37,7 +37,7 @@ In this example, we'll take an instance of an install responsible by Branch. We 
 
     [branch initSessionWithLaunchOptions:launchOptions andRegisterDeepLinkHandler:^(NSDictionary *params, NSError *error) {
         if (!error) {
-        	if ([params[@"referred"]]) {
+            if ([params[@"+clicked_branch_link"]]) {
             	// Add call here to let MP know a Branch-driven install occurred
             	[Mixpanel track:@"install" properties:params];
             }
@@ -55,7 +55,7 @@ In this example, we'll take an instance of an install responsible by Branch. We 
         public void onInitFinished(JSONObject referringParams, Branch.BranchError error) {
             if (error == null) {
                 MixpanelAPI mp = MixpanelAPI.getInstance(getContext(), projectToken);
-                if (params.optBoolean("referred")) {
+                if (params.optBoolean("+clicked_branch_link")) {
                     mp.track("install", referringParams);
                 }
             }
