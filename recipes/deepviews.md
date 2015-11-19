@@ -188,9 +188,7 @@ Before rendering the template, we sanitize the markup of Javascript for security
 
 ## Advanced: Convert your mobile website into a Deepview
 
-You already have a website and you'd prefer to host the mobile web preview of the content. No problem! You can use the [Branch web SDK](https://github.com/BranchMetrics/Smart-App-Banner-Deep-Linking-Web-SDK/blob/master/WEB_GUIDE.md) to convert your mobile site into a deepview.
-
-{% ingredient web_sdk/smart_banner %}{% override header %}{% endoverride %}{% endingredient %}
+You already have a website and you'd prefer to host the mobile web preview of the content. No problem! Please see [this guide about deep linking from your mobile site.](https://dev.branch.io/recipes/deep_link_mobile_site/)
 
 -----
 
