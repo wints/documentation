@@ -16,6 +16,7 @@ $branch-font-path: "/font";
 @import "./platform_selector";
 @import "./homepage";
 @import "./inner";
+@import "./breadcrumbs";
 
 .btn-inactive {
 	border-color: white;

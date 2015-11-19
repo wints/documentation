@@ -8,42 +8,11 @@
 		<div class="col-sm-3 inner__sidebar">
 			<div class="inner__sidebar__fixed">
 				{% sidebar %}
-				<!--<ul class="sidebar-wrapper">-->
-					<!--<li>-->
-						<!--<h4 class="sidebar-group-title">Android</h4>-->
-						<!--<ul class="sidebar-group">-->
-							<!--<li>-->
-								<!--<h4 class="sidebar-group-title">Overview</h4>-->
-								<!--<ul class="sidebar-group">-->
-									<!--<li class="sidebar-link-selected"><a href="#">Key Features</a></li>-->
-									<!--<li><a href="#">Intents</a></li>-->
-									<!--<li><a href="#">Installs</a></li>-->
-									<!--<li><a href="#">Event Tracking</a></li>-->
-									<!--<li><a href="#">Dynamic deep link creation</a></li>-->
-								<!--</ul>-->
-							<!--</li>-->
-						<!--</ul>-->
-						<!--<ul class="sidebar-group">-->
-							<!--<li>-->
-								<!--<h4 class="sidebar-group-title">Overview</h4>-->
-							<!--</li>-->
-						<!--</ul>-->
-						<!--<ul class="sidebar-group">-->
-							<!--<li>-->
-								<!--<h4 class="sidebar-group-title">Overview</h4>-->
-							<!--</li>-->
-						<!--</ul>-->
-						<!--<ul class="sidebar-group">-->
-							<!--<li>-->
-								<!--<h4 class="sidebar-group-title">Overview</h4>-->
-							<!--</li>-->
-						<!--</ul>-->
-					<!--</li>-->
-				<!--</ul>-->
 			</div>
 		</div>
 		<div class="col-sm-9 inner__content">
-			{{ content }}
+			{% breadcrumbs %}
+			{{ content | toc_generate:"Steps" }}
 		</div>
 	</div>
 

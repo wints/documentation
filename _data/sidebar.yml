@@ -3,7 +3,7 @@
 - title: Recipes
   directory: recipe
   children:
-    - deepviews
+    - deepviews2
 - title: Get Started
   directory: getStarted
   children:
@@ -16,8 +16,8 @@
     - title: Branch Links
       directory: branch_links
       children:
-        - deepviews
         - Overview
+        - deepviews
         - What's in a link?
         - Customizing Links
         - Link Creation Guide
@@ -36,7 +36,7 @@
 - title: SDK
   directory: sdk
   children:
-    - children
+    - deepviews
 - title: API
   directory: api
   children:

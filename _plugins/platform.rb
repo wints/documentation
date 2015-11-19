@@ -29,7 +29,7 @@ module Jekyll
       self.data['platform'] = platform
       self.data['platform_formatted'] = formatted_platforms[platform] or platform
       self.data['default'] = isDefault
-      self.data['layout'] = type
+      self.data['layout'] = 'inner'
 
       path_page_name = page.name.split(".")[0]
       if path_page_name == 'index' then path_page_name = '' end
@@ -41,9 +41,10 @@ module Jekyll
 
   class PlatformGenerator < Generator
     def buildSiteMap(site)
-      group_pages = site.pages.select { |page| ['features' ].include?(page.data['type']) }
+      group_pages = site.pages.select { |page| ['features', 'sdk' ].include?(page.data['type']) }
       site.data['site_map'] = {
-        'features' => {}
+        'features' => {},
+        'sdk' => {}
       }
 
       group_pages.each do |page|
@@ -63,7 +64,7 @@ module Jekyll
 
     def generate(site)
       buildSiteMap(site)
-      filtered_pages = site.pages.select { |page| ['features'].include?(page.data['type']) }
+      filtered_pages = site.pages.select { |page| ['features', 'sdk'].include?(page.data['type']) }
       site.pages.reject! { |page| page.data['type'] == 'ingredient' }
 
       filtered_pages.each do |page|
