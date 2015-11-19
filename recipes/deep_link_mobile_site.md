@@ -9,7 +9,7 @@ hide_platform_selector: true
 
 As the owner of a company that maintains a website in addition to an app, you want to ensure that these products work well together. You'll be glad to know that Branch takes care of all of this for you with a couple lines of code on your site, and stays up to date with all new deep link standards and best practices. Here's a diagram that describes how it works.
 
-{% image src='/img/deepviews/deepview_websdk_routing.png' half center alt='Deepviews web routing' %}
+{% image src='/img/deepviews/deepview_websdk_routing.png' 2-thirds center alt='Deepviews web routing' %}
 
 ## Initialize the Deepview SDK on Page Load
 
@@ -50,9 +50,13 @@ Now. You've defined the deepview and link structure in the above call. The user 
 
 ### Create Your Own Banner
 
+Triggering the `deepviewCta` function will eject the user out to the appropriate app store if they don't have the app, so put this behind your button or hyperlink.
+
 {% highlight javascript %}
 branch.deepviewCta();
 {% endhighlight %}
+
+Here's an example calling the `deepviewCta` in a hyperlink form.
 
 {% highlight html %}
 <a id='downloadapp' onclick='branch.deepviewCta()'>View this in app</a>
