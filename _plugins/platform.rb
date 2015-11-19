@@ -41,10 +41,14 @@ module Jekyll
 
   class PlatformGenerator < Generator
     def buildSiteMap(site)
-      group_pages = site.pages.select { |page| ['features', 'sdk' ].include?(page.data['type']) }
+      group_pages = site.pages.select { |page| ['features', 'sdk', 'getStarted', 'dashboard', 'integrations', 'api'].include?(page.data['type']) }
       site.data['site_map'] = {
         'features' => {},
-        'sdk' => {}
+        'sdk' => {},
+        'getStarted' => {},
+        'dashboard' => {},
+        'integrations' => {},
+        'api' => {}
       }
 
       group_pages.each do |page|
