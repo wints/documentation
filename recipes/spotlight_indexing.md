@@ -30,7 +30,7 @@ branchUniversalObject.imageUrl = @"https://example.com/mycontent-12345.png";
 {% endtab %}
 {% tab swift %}
 {% highlight swift %}
-let branchUniversalObject: BranchUniversalObject = BranchUniversalObject(String: "item/12345")
+let branchUniversalObject: BranchUniversalObject = BranchUniversalObject(canonicalIdentifier: "item/12345")
 branchUniversalObject.title = "My Content Title"
 branchUniversalObject.contentDescription = "My Content Description"
 branchUniversalObject.imageUrl = "https://example.com/mycontent-12345.png"
