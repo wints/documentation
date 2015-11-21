@@ -1,13 +1,15 @@
 ---
 type: recipe
-title: "Deep link your site"
-page_title: "How to add deep linking to your site"
+title: "Website to app routing"
+page_title: "Automatically route website users to your app"
 description: Leanr how to add powerful, best in class deep linking to your mobile website..
 keywords: Contextual Deep Linking, Deep links, Deeplinks, Deep Linking, Deeplinking, Deferred Deep Linking, Deferred Deeplinking, Google App Indexing, Google App Invites, Apple Universal Links, Apple Spotlight Search, Facebook App Links, AppLinks, Deepviews, Deep views
 hide_platform_selector: true
 ---
 
-As the owner of a company that maintains a website in addition to an app, you want to ensure that these products work well together. You'll be glad to know that Branch takes care of all of this for you with a couple lines of code on your site, and stays up to date with all new deep link standards and best practices. Here's a diagram that describes how it works.
+As the owner of a company that maintains a website in addition to an app, you want to ensure that these products work well together. With Branch, if a user lands on your mobile website, but already has your app, you can deep link them directly into the app. If they don't have your app, you can easily and automatically give them the option of downloading it.
+
+It takes just a couple lines of code on your site, and stays up to date with all new deep link standards and best practices. Here's a diagram that describes how it works.
 
 {% image src='/img/deepviews/deepview_websdk_routing.png' 2-thirds center alt='Deepviews web routing' %}
 
