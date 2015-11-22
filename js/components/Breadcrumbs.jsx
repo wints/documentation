@@ -33,10 +33,17 @@ var Breadcrumbs = React.createClass({
 	render: function() {
 		var path = this.props.current_path.split('/'),
 			currentPage = path[path.length - 1],
-			tree = this.props.layout[0];
+			layout = this.props.layout;
 
 		var links = [],
-			breadcrumbs = this.extractPath(tree, currentPage);
+			breadcrumbs;
+		R.map(function(tree) {
+			var extract = this.extractPath(tree, currentPage);
+			if (extract !== null) {
+				breadcrumbs = extract;
+			}
+		}.bind(this))(layout);
+
 		if (breadcrumbs) {
 			breadcrumbs = breadcrumbs.reverse();
 			var breadcrumbsCount =  breadcrumbs.length;
