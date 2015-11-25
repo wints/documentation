@@ -11,7 +11,7 @@ hide_platform_selector: true
 
 ## Google Ads & Branch
 
-If you're running Google AdWords campaigns, whether they're of the Search or Display variety, Branch links can be placed inside your campaigns and deeplink a user through the install process. Imagine you're running a promo for 20% of your first purchae for new installs -- you can pass that data through Branch links and give people coming in from Google AdWords that experience!
+If you're running Google AdWords campaigns, whether they're of the Search or Display variety, Branch links can be placed inside your campaigns and deeplink a user through the install process. Imagine you're running a promo for 20% of your first purchase for new installs -- you can pass that data through Branch links and give people coming in from Google AdWords that experience!
 
 ## Pre-req: Create a Branch Link
 
