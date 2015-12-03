@@ -51,7 +51,7 @@ You use the data to link directly to content! Instead of "foo": "bar", you could
 What's next?
 
 {% ingredient recipe_preview/advertising_facebook %}{%endingredient%}
-{% ingredient recipe_preview/app_download_banner %}{% endingredient %}
+{% ingredient recipe_preview/web_to_app %}{% endingredient %}
 {% ingredient recipe_preview/text_me_the_app_page %}{% endingredient %}
 
 -----

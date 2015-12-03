@@ -41,9 +41,9 @@ You've got the basics, but let's take your integration to the next level:
 {% ingredient recipe_preview/easy_deep_linking %}{% endingredient %}
 {% ingredient recipe_preview/deepviews %}{% endingredient %}
 {% ingredient recipe_preview/content_sharing %}{% endingredient %}
-{% ingredient recipe_preview/app_download_banner %}{% endingredient %}
+{% ingredient recipe_preview/web_to_app %}{% endingredient %}
 {% ingredient recipe_preview/text_me_the_app_page %}{% endingredient %}
-{% ingredient recipe_preview/facebook_appinvites %}{% endingredient %}
+{% ingredient recipe_preview/google_app_index %}{% endingredient %}
 {% ingredient recipe_preview/personalized_welcome %}{% endingredient %}
 
 -----

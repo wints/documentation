@@ -28,6 +28,7 @@
         - app_download_banner
         - text_me_the_app_page
         - branch_universal_links
+        - google_app_indexing
     - type: recipe
       title: Testing and releasing
       pages:
