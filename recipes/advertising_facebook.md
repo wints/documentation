@@ -81,11 +81,9 @@ First, visit the marketing tab to see the performance of the individual link. Yo
 
 To view more details stats, click the _small button that looks like a bar chart_ on the far right. The first important note is that these stats are **limited to the date range** at the top. You can expand the range if you'd like.
 
-The first chart is what we call the _Click Flow_. From a Facebook installs perspective, this will just report for you the number of installs and reopens from the link. Currently, clicks is not accurate through this ad format.
+The chart is what we call the _Click Flow_. From a Facebook installs perspective, this will just report for you the number of installs and reopens from the link. Currently, clicks is not accurate through this ad format.
 
 {% image src='/img/recipes/deeplink_ads/click_flow_analytics.png' half nofloat alt='Facebook Example Ad' %}
-
-{% image src='/img/recipes/deeplink_ads/conversion_funnel.png' full nofloat alt='Facebook Example Ad' %}
 
 ## A note on testing
 
