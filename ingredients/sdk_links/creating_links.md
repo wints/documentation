@@ -1,6 +1,8 @@
 {% section header %}### Creating links in your app{% endsection %}
 
 {% section explanation %}
+
+{% if page.ios or page.android %}
 `BranchUniversalObject` is the best way of tracking and sharing content with Branch. It provides convenient methods for sharing, deeplinking, and tracking how often that content is viewed. This information is then used to provide you with powerful content analytics. Most importantly, it makes it easy to:
 
 - Embed key/value deep link metadata. We'll make sure this gets delivered to the app with the clicking user
@@ -8,6 +10,14 @@
 
 Here's how to create your own Branch Links. In order to share these links, we've built a _native share sheet for Android_ and implemented a simple way to use _UIActivityViewController on iOS_. 
 {% section learn-more %} Check out the section on [**content sharing**](/recipes/content_sharing/{% section platform %}{{page.platform}}{% endsection %}).{% endsection %}
+{% else %}
+Links are the foundation to everything Branch offers. There are many different aspects to creating links but the most important are:
+
+Embed key/value deep link metadata. We'll make sure this gets delivered to the app with the clicking user.
+
+Here's how to create your own Branch Links:
+{% endif %}
+
 {% endsection %}
 
 <!--- iOS -->

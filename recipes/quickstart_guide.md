@@ -16,6 +16,7 @@ platforms:
 - unity
 - adobe
 - titanium
+- web
 ---
 # SDK Integration Guide
 
@@ -66,7 +67,9 @@ Our linking infrastructure will support anything you want to build. If it doesn'
 You can also use the data to link directly to content! Instead of "property1": "red", you could pass in "picture_id": "1234", then when a user clicks on a link you can open the app straight to picture with ID 1234.
 {% endprotip %}
 
+{% if page.ios or page.android %}
 {% ingredient sdk_links/tracking_views %}{% endingredient %}
+{% endif %}
 
 -----
 
